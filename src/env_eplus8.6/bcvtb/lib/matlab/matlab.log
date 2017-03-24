@@ -1,0 +1,100 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2016 The MathWorks, Inc.
+                   R2016a (9.0.0.341360) 64-bit (glnxa64)
+                             February 11, 2016
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+*** Generating mex file
+*** Compiling code
+*** Compiling MATLAB interface for Mac OS X or Linux
+
+### Start Compiling establishBSDSocket
+    mex('-lxml2', '-I..', '-L../util', '-lbcvtb', '-compatibleArrayDims', '-I/mnt/hgfs/proj/bcvtb/git/migrateSVN/lib/matlab', '-c', '-outdir', '/tmp/tp05010f01_7de8_4153_a24d_c59df4505e3f', '/mnt/hgfs/proj/bcvtb/git/migrateSVN/lib/matlab/simulinkSocket.c')
+Building with 'gcc'.
+[Warning: You are using gcc version '4.9.3'. The version of gcc is not
+supported. The version currently supported with MEX is '4.7.x'. For a list of
+currently supported compilers see:
+http://www.mathworks.com/support/compilers/current_release.] 
+[> In legacycode.LCT/compile
+  In legacycode.LCT.legacyCodeImpl
+  In legacy_code (line 101)
+  In compile (line 94)] 
+MEX completed successfully.
+    mex('establishBSDSocket.c', '-lxml2', '-I..', '-L../util', '-lbcvtb', '-compatibleArrayDims', '-I/mnt/hgfs/proj/bcvtb/git/migrateSVN/lib/matlab', '/tmp/tp05010f01_7de8_4153_a24d_c59df4505e3f/simulinkSocket.o')
+Building with 'gcc'.
+[Warning: You are using gcc version '4.9.3'. The version of gcc is not
+supported. The version currently supported with MEX is '4.7.x'. For a list of
+currently supported compilers see:
+http://www.mathworks.com/support/compilers/current_release.] 
+[> In legacycode.LCT/compile
+  In legacycode.LCT.legacyCodeImpl
+  In legacy_code (line 101)
+  In compile (line 94)] 
+MEX completed successfully.
+### Finish Compiling establishBSDSocket
+### Exit
+*** Returned from legacy_code
+*** Generating mex file
+*** Compiling code
+*** Compiling MATLAB interface for Mac OS X or Linux
+
+### Start Compiling exchangeDoublesWithBSDSocket
+    mex('-lxml2', '-I..', '-L../util', '-lbcvtb', '-compatibleArrayDims', '-I/mnt/hgfs/proj/bcvtb/git/migrateSVN/lib/matlab', '-c', '-outdir', '/tmp/tp9f91e2df_cef0_4ac4_93b6_d530fc47a240', '/mnt/hgfs/proj/bcvtb/git/migrateSVN/lib/matlab/simulinkSocket.c')
+Building with 'gcc'.
+[Warning: You are using gcc version '4.9.3'. The version of gcc is not
+supported. The version currently supported with MEX is '4.7.x'. For a list of
+currently supported compilers see:
+http://www.mathworks.com/support/compilers/current_release.] 
+[> In legacycode.LCT/compile
+  In legacycode.LCT.legacyCodeImpl
+  In legacy_code (line 101)
+  In compile (line 94)] 
+MEX completed successfully.
+    mex('exchangeDoublesWithBSDSocket.c', '-lxml2', '-I..', '-L../util', '-lbcvtb', '-compatibleArrayDims', '-I/mnt/hgfs/proj/bcvtb/git/migrateSVN/lib/matlab', '/tmp/tp9f91e2df_cef0_4ac4_93b6_d530fc47a240/simulinkSocket.o')
+Building with 'gcc'.
+[Warning: You are using gcc version '4.9.3'. The version of gcc is not
+supported. The version currently supported with MEX is '4.7.x'. For a list of
+currently supported compilers see:
+http://www.mathworks.com/support/compilers/current_release.] 
+[> In legacycode.LCT/compile
+  In legacycode.LCT.legacyCodeImpl
+  In legacy_code (line 101)
+  In compile (line 94)] 
+MEX completed successfully.
+### Finish Compiling exchangeDoublesWithBSDSocket
+### Exit
+*** Returned from legacy_code
+*** Generating mex file
+*** Compiling code
+*** Compiling MATLAB interface for Mac OS X or Linux
+
+### Start Compiling closeBSDSocket
+    mex('-lxml2', '-I..', '-L../util', '-lbcvtb', '-compatibleArrayDims', '-I/mnt/hgfs/proj/bcvtb/git/migrateSVN/lib/matlab', '-c', '-outdir', '/tmp/tp1d455b60_f8f9_4e4e_a5ab_5d98f9b46e73', '/mnt/hgfs/proj/bcvtb/git/migrateSVN/lib/matlab/simulinkSocket.c')
+Building with 'gcc'.
+[Warning: You are using gcc version '4.9.3'. The version of gcc is not
+supported. The version currently supported with MEX is '4.7.x'. For a list of
+currently supported compilers see:
+http://www.mathworks.com/support/compilers/current_release.] 
+[> In legacycode.LCT/compile
+  In legacycode.LCT.legacyCodeImpl
+  In legacy_code (line 101)
+  In compile (line 94)] 
+MEX completed successfully.
+    mex('closeBSDSocket.c', '-lxml2', '-I..', '-L../util', '-lbcvtb', '-compatibleArrayDims', '-I/mnt/hgfs/proj/bcvtb/git/migrateSVN/lib/matlab', '/tmp/tp1d455b60_f8f9_4e4e_a5ab_5d98f9b46e73/simulinkSocket.o')
+Building with 'gcc'.
+[Warning: You are using gcc version '4.9.3'. The version of gcc is not
+supported. The version currently supported with MEX is '4.7.x'. For a list of
+currently supported compilers see:
+http://www.mathworks.com/support/compilers/current_release.] 
+[> In legacycode.LCT/compile
+  In legacycode.LCT.legacyCodeImpl
+  In legacy_code (line 101)
+  In compile (line 94)] 
+MEX completed successfully.
+### Finish Compiling closeBSDSocket
+### Exit
+*** Returned from legacy_code

@@ -1,0 +1,87 @@
+Program Version,EnergyPlus, Version 8.6.0-198c6a3cff, YMD=2017.03.23 21:53
+1,5,Environment Title[],Latitude[deg],Longitude[deg],Time Zone[],Elevation[m]
+2,6,Day of Simulation[],Month[],Day of Month[],DST Indicator[1=yes 0=no],Hour[],StartMinute[],EndMinute[],DayType
+3,3,Cumulative Day of Simulation[],Month[],Day of Month[],DST Indicator[1=yes 0=no],DayType  ! When Daily Meters Requested
+4,2,Cumulative Days of Simulation[],Month[]  ! When Monthly Meters Requested
+5,1,Cumulative Days of Simulation[] ! When Run Period Meters Requested
+729,9,Cooling:Electricity [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+635,9,Heating:Gas [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+695,9,Fans:Electricity [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+604,9,HeatingCoils:EnergyTransfer [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+717,9,CoolingCoils:EnergyTransfer [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+46,9,InteriorLights:Electricity [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+161,9,InteriorEquipment:Electricity [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+730,11,Cooling:Electricity [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+636,11,Heating:Gas [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+696,11,Fans:Electricity [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+605,11,HeatingCoils:EnergyTransfer [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+718,11,CoolingCoils:EnergyTransfer [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+47,11,InteriorLights:Electricity [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+162,11,InteriorEquipment:Electricity [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+16,9,Electricity:Facility [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+26,9,Electricity:Building [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+647,9,Electricity:HVAC [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+615,9,Gas:Facility [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+625,9,Gas:HVAC [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+17,11,Electricity:Facility [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+27,11,Electricity:Building [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+648,11,Electricity:HVAC [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+616,11,Gas:Facility [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+626,11,Gas:HVAC [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+End of Data Dictionary
+1,Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205,  40.35, -79.92,  -5.00, 380.00
+4,5, 2
+16,2821384494.663728,902509.4077951566, 1, 7,15,13065842.239662119, 4,11,15
+26,1905480000.0,427500.0, 1, 1,15,10800000.0, 1,11,15
+46,1225800000.0,337500.0, 1, 1,15,6750000.0, 1,11,15
+161,679680000.0,90000.0, 1, 1,15,4050000.0, 1,10,15
+604,1147333154.5367587,0.0, 1, 1,15,24475275.064683074, 1, 9,15
+615,1434166443.1709493,0.0, 1, 1,15,30594093.83085384, 1, 9,15
+625,1434166443.1709493,0.0, 1, 1,15,30594093.83085384, 1, 9,15
+635,1434166443.1709493,0.0, 1, 1,15,30594093.83085384, 1, 9,15
+647,915904494.6637015,426701.4265415251, 2,13,60,3291878.148819818, 5, 3,60
+695,723142494.6637006,426701.4265415251, 2,13,60,1851878.1488198185, 5, 8,15
+717,0.0,0.0, 1, 1,15,0.0, 1, 1,15
+729,192762000.0,0.0, 1, 1,15,1440000.0, 5, 3,60
+5,5
+17,2821384494.663728,902509.4077951566, 2, 1, 7,15,13065842.239662119, 2, 4,11,15
+27,1905480000.0,427500.0, 2, 1, 1,15,10800000.0, 2, 1,11,15
+47,1225800000.0,337500.0, 2, 1, 1,15,6750000.0, 2, 1,11,15
+162,679680000.0,90000.0, 2, 1, 1,15,4050000.0, 2, 1,10,15
+605,1147333154.5367587,0.0, 2, 1, 1,15,24475275.064683074, 2, 1, 9,15
+616,1434166443.1709493,0.0, 2, 1, 1,15,30594093.83085384, 2, 1, 9,15
+626,1434166443.1709493,0.0, 2, 1, 1,15,30594093.83085384, 2, 1, 9,15
+636,1434166443.1709493,0.0, 2, 1, 1,15,30594093.83085384, 2, 1, 9,15
+648,915904494.6637015,426701.4265415251, 2, 2,13,60,3291878.148819818, 2, 5, 3,60
+696,723142494.6637006,426701.4265415251, 2, 2,13,60,1851878.1488198185, 2, 5, 8,15
+718,0.0,0.0, 2, 1, 1,15,0.0, 2, 1, 1,15
+730,192762000.0,0.0, 2, 1, 1,15,1440000.0, 2, 5, 3,60
+1,Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205,  40.35, -79.92,  -5.00, 380.00
+4,5, 6
+16,2515924494.196676,427500.0, 1, 1,15,17689291.254372498, 1,10,15
+26,1905480000.0,427500.0, 1, 1,15,10800000.0, 1,11,15
+46,1225800000.0,337500.0, 1, 1,15,6750000.0, 1,11,15
+161,679680000.0,90000.0, 1, 1,15,4050000.0, 1,10,15
+604,49537422.57148837,0.0, 1, 1,15,6779100.504778344, 4, 8,15
+615,61921778.214360479,0.0, 1, 1,15,8473875.63097293, 4, 8,15
+625,61921778.214360479,0.0, 1, 1,15,8473875.63097293, 4, 8,15
+635,61921778.214360479,0.0, 1, 1,15,8473875.63097293, 4, 8,15
+647,610444494.1966759,0.0, 1, 1,15,7527019.748105588, 1, 9,45
+695,131282941.02858339,0.0, 1, 1,15,1355271.850773164, 2,10,45
+717,2251032894.2304975,0.0, 1, 1,15,27677840.104499286, 1, 9,45
+729,479161553.1680919,0.0, 1, 1,15,6277898.527495925, 1, 9,45
+5,5
+17,2515924494.196676,427500.0, 6, 1, 1,15,17689291.254372498, 6, 1,10,15
+27,1905480000.0,427500.0, 6, 1, 1,15,10800000.0, 6, 1,11,15
+47,1225800000.0,337500.0, 6, 1, 1,15,6750000.0, 6, 1,11,15
+162,679680000.0,90000.0, 6, 1, 1,15,4050000.0, 6, 1,10,15
+605,49537422.57148837,0.0, 6, 1, 1,15,6779100.504778344, 6, 4, 8,15
+616,61921778.214360479,0.0, 6, 1, 1,15,8473875.63097293, 6, 4, 8,15
+626,61921778.214360479,0.0, 6, 1, 1,15,8473875.63097293, 6, 4, 8,15
+636,61921778.214360479,0.0, 6, 1, 1,15,8473875.63097293, 6, 4, 8,15
+648,610444494.1966759,0.0, 6, 1, 1,15,7527019.748105588, 6, 1, 9,45
+696,131282941.02858339,0.0, 6, 1, 1,15,1355271.850773164, 6, 2,10,45
+718,2251032894.2304975,0.0, 6, 1, 1,15,27677840.104499286, 6, 1, 9,45
+730,479161553.1680919,0.0, 6, 1, 1,15,6277898.527495925, 6, 1, 9,45
+End of Data
+ Number of Records Written=          48
