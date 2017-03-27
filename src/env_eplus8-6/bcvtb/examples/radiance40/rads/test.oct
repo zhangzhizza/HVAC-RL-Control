@@ -1,4 +1,0 @@
-#?RADIANCE
-oconv room.rad
-FORMAT=Radiance_octree
-
