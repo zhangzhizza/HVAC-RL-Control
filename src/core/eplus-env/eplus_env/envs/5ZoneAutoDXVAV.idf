@@ -2801,71 +2801,71 @@
     PtolemyServer; !- Name of external interface
   
 
-  Output:Variable,*,Site Outdoor Air Drybulb Temperature,hourly;
+  Output:Variable,*,Site Outdoor Air Drybulb Temperature,timestep;
 
-  Output:Variable,*,Zone Air Temperature,hourly;
+  Output:Variable,*,Zone Air Temperature,timestep;
 
-  Output:Variable,*,Zone Air System Sensible Cooling Rate,hourly;
+  Output:Variable,*,Zone Air System Sensible Cooling Rate,timestep;
 
-  Output:Variable,*,Zone Air System Sensible Heating Rate,hourly;
+  Output:Variable,*,Zone Air System Sensible Heating Rate,timestep;
 
-  Output:Variable,*,Coil System Compressor Speed Ratio,hourly;
+  Output:Variable,*,Coil System Compressor Speed Ratio,timestep;
 
-  Output:Variable,*,Cooling Coil Electric Power,hourly;
+  Output:Variable,*,Cooling Coil Electric Power,timestep;
 
-  Output:Variable,*,Cooling Coil Runtime Fraction,hourly;
+  Output:Variable,*,Cooling Coil Runtime Fraction,timestep;
 
-  Output:Variable,*,Cooling Coil Basin Heater Electric Power,hourly;
+  Output:Variable,*,Cooling Coil Basin Heater Electric Power,timestep;
 
-  Output:Variable,*,Cooling Coil Basin Heater Electric Energy,hourly;
+  Output:Variable,*,Cooling Coil Basin Heater Electric Energy,timestep;
 
-  Output:Variable,*,Fan Electric Power,hourly;
+  Output:Variable,*,Fan Electric Power,timestep;
 
-  Output:Variable,*,Heating Coil Gas Rate,hourly;
+  Output:Variable,*,Heating Coil Gas Rate,timestep;
 
-  Output:Variable,*,People Occupant Count,hourly;
+  Output:Variable,*,People Occupant Count,timestep;
 
-  Output:Variable,*,Zone Air Terminal VAV Damper Position,hourly;
+  Output:Variable,*,Zone Air Terminal VAV Damper Position,timestep;
 
-  Output:Variable,*,Zone Air Terminal Minimum Air Flow Fraction,hourly;
+  Output:Variable,*,Zone Air Terminal Minimum Air Flow Fraction,timestep;
 
-  Output:Variable,*,Zone Air Terminal Outdoor Air Volume Flow Rate,hourly;
+  Output:Variable,*,Zone Air Terminal Outdoor Air Volume Flow Rate,timestep;
 
-  Output:Variable,SPACE1-1 In Node,System Node Temperature,hourly;
+  Output:Variable,SPACE1-1 In Node,System Node Temperature,timestep;
 
-  Output:Variable,SPACE2-1 In Node,System Node Temperature,hourly;
+  Output:Variable,SPACE2-1 In Node,System Node Temperature,timestep;
 
-  Output:Variable,SPACE3-1 In Node,System Node Temperature,hourly;
+  Output:Variable,SPACE3-1 In Node,System Node Temperature,timestep;
 
-  Output:Variable,SPACE4-1 In Node,System Node Temperature,hourly;
+  Output:Variable,SPACE4-1 In Node,System Node Temperature,timestep;
 
-  Output:Variable,SPACE5-1 In Node,System Node Temperature,hourly;
+  Output:Variable,SPACE5-1 In Node,System Node Temperature,timestep;
 
-  Output:Variable,SPACE1-1 In Node,System Node Standard Density Volume Flow Rate,hourly;
+  Output:Variable,SPACE1-1 In Node,System Node Standard Density Volume Flow Rate,timestep;
 
-  Output:Variable,SPACE2-1 In Node,System Node Standard Density Volume Flow Rate,hourly;
+  Output:Variable,SPACE2-1 In Node,System Node Standard Density Volume Flow Rate,timestep;
 
-  Output:Variable,SPACE3-1 In Node,System Node Standard Density Volume Flow Rate,hourly;
+  Output:Variable,SPACE3-1 In Node,System Node Standard Density Volume Flow Rate,timestep;
 
-  Output:Variable,SPACE4-1 In Node,System Node Standard Density Volume Flow Rate,hourly;
+  Output:Variable,SPACE4-1 In Node,System Node Standard Density Volume Flow Rate,timestep;
 
-  Output:Variable,SPACE5-1 In Node,System Node Standard Density Volume Flow Rate,hourly;
+  Output:Variable,SPACE5-1 In Node,System Node Standard Density Volume Flow Rate,timestep;
 
-  Output:Variable,SPACE1-1 In Node,System Node Current Density Volume Flow Rate,hourly;
+  Output:Variable,SPACE1-1 In Node,System Node Current Density Volume Flow Rate,timestep;
 
-  Output:Variable,SPACE2-1 In Node,System Node Current Density Volume Flow Rate,hourly;
+  Output:Variable,SPACE2-1 In Node,System Node Current Density Volume Flow Rate,timestep;
 
-  Output:Variable,SPACE3-1 In Node,System Node Current Density Volume Flow Rate,hourly;
+  Output:Variable,SPACE3-1 In Node,System Node Current Density Volume Flow Rate,timestep;
 
-  Output:Variable,SPACE4-1 In Node,System Node Current Density Volume Flow Rate,hourly;
+  Output:Variable,SPACE4-1 In Node,System Node Current Density Volume Flow Rate,timestep;
 
-  Output:Variable,SPACE5-1 In Node,System Node Current Density Volume Flow Rate,hourly;
+  Output:Variable,SPACE5-1 In Node,System Node Current Density Volume Flow Rate,timestep;
 
-  Output:Variable,Outside Air Inlet Node 1,System Node Standard Density Volume Flow Rate,hourly;
+  Output:Variable,Outside Air Inlet Node 1,System Node Standard Density Volume Flow Rate,timestep;
 
-  Output:Variable,Outside Air Inlet Node 1,System Node Current Density Volume Flow Rate,hourly;
+  Output:Variable,Outside Air Inlet Node 1,System Node Current Density Volume Flow Rate,timestep;
 
-  Output:Variable,*,Air System Outdoor Air Flow Fraction,hourly;
+  Output:Variable,*,Air System Outdoor Air Flow Fraction,timestep;
 
   Output:Meter,Cooling:Electricity,monthly;
 

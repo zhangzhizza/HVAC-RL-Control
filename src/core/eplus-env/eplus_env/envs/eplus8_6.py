@@ -1,6 +1,7 @@
 #Wrap the EnergyPLus simulator into the Openai gym env
 import socket              
 import os
+import time
 import signal
 import _thread
 import logging
@@ -65,6 +66,7 @@ class EplusEnv(Env):
         self._weather_path = weather_path
         self._variable_path = variable_path
         self._idf_path = idf_path
+        self._episode_existed = False;
 
         
         
@@ -84,6 +86,9 @@ class EplusEnv(Env):
         Return (current_simulation_time, 
                 [EnergyPlus results list requested by the variable.cfg])
         """
+        # End the last episode if exists
+        if self._episode_existed:
+            self._end_episode()
         
         # Create EnergyPlus simulaton process
         self.logger_main.info('Creating EnergyPlus simulation environment...')
@@ -108,7 +113,8 @@ class EplusEnv(Env):
                                 self._port,
                                 eplus_working_dir); 
                                     # Create the socket.cfg file in the working dir
-        self.logger_main.info('EnergyPlus working directory is in %s'%(eplus_working_dir));
+        self.logger_main.info('EnergyPlus working directory is in %s'
+                              %(eplus_working_dir));
         eplus_process = self._create_eplus(self._eplus_path, self._weather_path, 
                                             eplus_working_idf_path,
                                             eplus_working_out_path,
@@ -131,12 +137,15 @@ class EplusEnv(Env):
         # Start the first data exchange
         rcv_1st = conn.recv(1024).decode();
         self.logger_main.debug('Got the first message successfully: ' + rcv_1st);
-        version, flag, nDb, nIn, nBl, curSimTim, Dblist = disassembleMsg(rcv_1st);
+        version, flag, nDb, nIn, nBl, curSimTim, Dblist \
+                                                = self._disassembleMsg(rcv_1st);
         # Remember the message header, useful when send data back to EnergyPlus
         self._eplus_msg_header = [version, flag];
         self._curSimTim = curSimTim;
         
         self._conn = conn;
+        self._eplus_working_dir = eplus_working_dir;
+        self._episode_existed = True;
         
         return (curSimTim, Dblist)
 
@@ -166,7 +175,8 @@ class EplusEnv(Env):
         # Recieve from the EnergyPlus
         rcv = self._conn.recv(1024).decode();
         self.logger_main.debug('Got message successfully: ' + rcv);
-        version, flag, nDb, nIn, nBl, curSimTim, Dblist = disassembleMsg(rcv);
+        version, flag, nDb, nIn, nBl, curSimTim, Dblist \
+                                        = self._disassembleMsg(rcv);
         self._curSimTim = curSimTim;
         
         return (curSimTim, Dblist);
@@ -179,7 +189,8 @@ class EplusEnv(Env):
                       idf_path, out_path, eplus_working_dir):
         
         eplus_process = subprocess.Popen('%s -w %s -d %s -r %s'
-                        %(eplus_path, weather_path, out_path, idf_path),
+                        %(eplus_path + '/energyplus', weather_path, 
+                          out_path, idf_path),
                         shell = True,
                         cwd = eplus_working_dir,
                         stdout = subprocess.PIPE,
@@ -261,9 +272,42 @@ class EplusEnv(Env):
         won't terminating until this method is called. 
         """
         self._conn.close();
+        self._conn = None;
         self._socket.shutdown(socket.SHUT_RDWR);
         self._socket.close();
-    
+        self._run_eplus_outputProcessing();
+        time.sleep(1);# Sleep the thread so EnergyPlus has time to do the
+                      # post processing
+        os.killpg(os.getpgid(self._eplus_process.pid), signal.SIGTERM);
+        
+        
+    def _end_episode(self):
+        """
+        This method terminates the current EnergyPlus subprocess 
+        and run the EnergyPlus output processing function (ReadVarsESO).
+        
+        This method is usually called by the reset() function before it
+        resets the EnergyPlus environment.
+        """
+        self._conn.close();
+        self._conn = None;
+        self._run_eplus_outputProcessing();
+        time.sleep(1);# Sleep the thread so EnergyPlus has time to do the
+                      # post processing
+        os.killpg(os.getpgid(self._eplus_process.pid), signal.SIGTERM);
+        
+        
+    def _run_eplus_outputProcessing(self):
+        eplus_outputProcessing_process =\
+         subprocess.Popen('%s'
+                        %(self._eplus_path + '/PostProcess/ReadVarsESO'),
+                        shell = True,
+                        cwd = self._eplus_working_dir + '/output',
+                        stdout = subprocess.PIPE,
+                        stderr = subprocess.PIPE,
+                        preexec_fn=os.setsid)
+         
+        
     def _assembleMsg(self, version, flag, nDb, nIn, nBl, curSimTim, Dblist):
         """
         Assemble the send msg to the EnergyPlus based on the protocal.
@@ -292,31 +336,26 @@ class EplusEnv(Env):
         ret += '\n';
         
         return ret;
+    
+    def _disassembleMsg(self, rcv):
+        rcv = rcv.split(' ');
+        version = int(rcv[0]);
+        flag = int(rcv[1]);
+        nDb = int(rcv[2]);
+        nIn = int(rcv[3]);
+        nBl = int(rcv[4]);
+        curSimTim = float(rcv[5]);
+        Dblist = [];
+        for i in range(6, len(rcv) - 1):
+            Dblist.append(float(rcv[i]));
+        
+        return (version, flag, nDb, nIn, nBl, curSimTim, Dblist);
 
-register(
-    id='Eplus-v0',
-    entry_point='core.eplus_env.eplus8_6:EplusEnv',
-    kwargs={'eplus_path':CWD + '/core/eplus_env/EnergyPlus-8-6-0/energyplus',
-            'weather_path':CWD + '/core/eplus_env/pittsburgh.epw',
-            'bcvtb_path':CWD + '/core/eplus_env/bcvtb/',
-            'variable_path':CWD + '/core/eplus_env/variables.cfg',
-            'idf_path':CWD + '/core/eplus_env/5ZoneAutoDXVAV.idf'});
 
 
 
 
-def disassembleMsg(rcv):
-    rcv = rcv.split(' ');
-    version = int(rcv[0]);
-    flag = int(rcv[1]);
-    nDb = int(rcv[2]);
-    nIn = int(rcv[3]);
-    nBl = int(rcv[4]);
-    curSimTim = float(rcv[5]);
-    Dblist = [];
-    for i in range(6, len(rcv) - 1):
-        Dblist.append(float(rcv[i]));
-    return (version, flag, nDb, nIn, nBl, curSimTim, Dblist);
+
     
 
     
