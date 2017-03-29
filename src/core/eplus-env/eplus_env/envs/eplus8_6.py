@@ -6,19 +6,24 @@ import signal
 import _thread
 import logging
 import subprocess
+import pandas as pd
 
 from shutil import copyfile
 from gym import Env, spaces
 from gym.envs.registration import register
 from xml.etree.ElementTree import Element, SubElement, Comment, tostring
 
-from ..util.logger import Logger  
+from ..util.logger import Logger 
+from ..util.time import get_hours_to_now, get_time_string, get_delta_seconds
+from ..util.time_interpolate import get_time_interpolate
 
 
+YEAR = 1991 # Non leap year
 CWD = os.getcwd();
 LOG_LEVEL = 'DEBUG';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 LOGGER = Logger();
+ACTION_SIZE = 0;
 
 class EplusEnv(Env):
     """EnergyPlus v8.6 environment
@@ -41,7 +46,8 @@ class EplusEnv(Env):
     """
     def __init__(self, eplus_path, 
                  weather_path, bcvtb_path, 
-                 variable_path, idf_path):
+                 variable_path, idf_path,
+                 incl_forecast = False, forecast_step = 36):
             
         self.logger_main = LOGGER.getLogger('ROOT', LOG_LEVEL, LOG_FMT);
         
@@ -67,10 +73,24 @@ class EplusEnv(Env):
         self._variable_path = variable_path
         self._idf_path = idf_path
         self._episode_existed = False;
+        (self._eplus_run_st_mon, self._eplus_run_st_day,
+         self._eplus_run_ed_mon, self._eplus_run_ed_day,
+         self._eplus_run_stepsize) = self._get_eplus_run_info(idf_path);
+        self._eplus_run_stepsize = 3600 / self._eplus_run_stepsize 
+                                                            # Stepsize in second
+        self._eplus_one_epi_len = self._get_one_epi_len(self._eplus_run_st_mon,
+                                                        self._eplus_run_st_day,
+                                                        self._eplus_run_ed_mon,
+                                                        self._eplus_run_ed_day);
+        self._incl_forecast = incl_forecast;
+        self._forecast_step = forecast_step;
+        if incl_forecast:
+            self._weather = self._get_weather_info(self._eplus_run_st_mon,
+                                                   self._eplus_run_st_day,
+                                                   self._eplus_run_ed_mon,
+                                                   self._eplus_run_ed_day);
+        print (self._eplus_one_epi_len)
 
-        
-        
-        #######DON NOT FORGET TO CLOSE THE eplus_process.stdout
         
     def _reset(self):
         """Reset the environment.
@@ -83,12 +103,22 @@ class EplusEnv(Env):
         5: Establish the connection with EnergyPlus
         6: Read the first sensor data from the EnergyPlus
         
-        Return (current_simulation_time, 
-                [EnergyPlus results list requested by the variable.cfg])
+        Return: (float, [float], boolean) or (float, [float], [[float]], boolean)
+            Return a tuple with length 3 or 4, depending on whether to generate
+            the weather forecast. The index 0 is current_simulation_time in second, 
+            index 1 is EnergyPlus results in 1-D python list requested by the 
+            variable.cfg, index 3 (if generate the future weather forecast)
+            is a 2-D python list of weather forecast with rows the weather of 
+            one step and cols the weather variables (like oa or rh) - the 
+            order of the weather variables is the same as the .epw file, 
+            index 4 is the boolean indicating whether episode terminal.
         """
+        ret = [];
+        
         # End the last episode if exists
         if self._episode_existed:
             self._end_episode()
+            self.logger_main.debug('Last EnergyPlus process has been closed. ')
         
         # Create EnergyPlus simulaton process
         self.logger_main.info('Creating EnergyPlus simulation environment...')
@@ -139,15 +169,32 @@ class EplusEnv(Env):
         self.logger_main.debug('Got the first message successfully: ' + rcv_1st);
         version, flag, nDb, nIn, nBl, curSimTim, Dblist \
                                                 = self._disassembleMsg(rcv_1st);
+        ret.append(curSimTim);
+        ret.append(Dblist);
         # Remember the message header, useful when send data back to EnergyPlus
         self._eplus_msg_header = [version, flag];
         self._curSimTim = curSimTim;
         
+        # Read the weather forecast
+        if self._incl_forecast:
+            wea_forecast = self._get_weather_forecast(curSimTim); 
+            ret.append(wea_forecast);
+        
+        # Check if episode terminates
+        is_terminal = False;
+        if curSimTim >= self._eplus_one_epi_len:
+            is_terminal = True;
+        ret.append(is_terminal);
+        # Change some attributes
         self._conn = conn;
         self._eplus_working_dir = eplus_working_dir;
         self._episode_existed = True;
         
-        return (curSimTim, Dblist)
+        # Process for episode terminal
+        if is_terminal:
+            self._end_episode();
+            
+        return tuple(ret)
 
     def _step(self, action):
         """Execute the specified action.
@@ -161,10 +208,21 @@ class EplusEnv(Env):
         action: python list of float
           Control actions that will be passed to the EnergyPlus
 
-        Returns
-        (current_simulation_time, 
-                [EnergyPlus results list requested by the variable.cfg])
+        Return: (float, [float], boolean) or (float, [float], [[float]], boolean)
+                or None (only if the environment has reached the terminal)
+            Return a tuple with length 3 or 4, depending on whether to generate
+            the weather forecast. The index 0 is current_simulation_time in second, 
+            index 1 is EnergyPlus results in 1-D python list requested by the 
+            variable.cfg, index 3 (if generate the future weather forecast)
+            is a 2-D python list of weather forecast with rows the weather of 
+            one step and cols the weather variables (like oa or rh) - the 
+            order of the weather variables is the same as the .epw file, 
+            index 4 is the boolean indicating whether episode terminal.
         """
+        # Check terminal
+        if self._curSimTim >= self._eplus_one_epi_len:
+            return None;
+        ret = [];
         # Send to the EnergyPlus
         self.logger_main.debug('Perform one step.')
         header = self._eplus_msg_header;
@@ -177,9 +235,22 @@ class EplusEnv(Env):
         self.logger_main.debug('Got message successfully: ' + rcv);
         version, flag, nDb, nIn, nBl, curSimTim, Dblist \
                                         = self._disassembleMsg(rcv);
+        
+        ret.append(curSimTim);
+        ret.append(Dblist);
+        # Read the weather forecast
+        if self._incl_forecast:
+            wea_forecast = self._get_weather_forecast(curSimTim);
+            ret.append(wea_forecast);
+        # Check if episode terminates
+        is_terminal = False;
+        if curSimTim >= self._eplus_one_epi_len:
+            is_terminal = True;
+        ret.append(is_terminal);
+        # Change some attributes
         self._curSimTim = curSimTim;
         
-        return (curSimTim, Dblist);
+        return ret;
         
 
     def _render(self, mode='human', close=False):
@@ -239,7 +310,6 @@ class EplusEnv(Env):
                             ,{'port':str(port),
                               'hostname':host,})
         xml_str = tostring(top, encoding='ISO-8859-1').decode();
-        print(xml_str);
         
         with open(write_dir + '/' + 'socket.cfg', 'w+') as socket_file:
             socket_file.write(xml_str);
@@ -271,14 +341,10 @@ class EplusEnv(Env):
         because EnergyPlus runs on a different process. EnergyPlus process
         won't terminating until this method is called. 
         """
-        self._conn.close();
-        self._conn = None;
+        self._end_episode();
         self._socket.shutdown(socket.SHUT_RDWR);
         self._socket.close();
-        self._run_eplus_outputProcessing();
-        time.sleep(1);# Sleep the thread so EnergyPlus has time to do the
-                      # post processing
-        os.killpg(os.getpgid(self._eplus_process.pid), signal.SIGTERM);
+        
         
         
     def _end_episode(self):
@@ -289,11 +355,21 @@ class EplusEnv(Env):
         This method is usually called by the reset() function before it
         resets the EnergyPlus environment.
         """
+        # Send the final msg to EnergyPlus
+        header = self._eplus_msg_header;
+        tosend = self._assembleMsg(header[0], header[1], ACTION_SIZE, 0,
+                                   0, self._curSimTim, 
+                                   [0 for i in range(ACTION_SIZE)]);
+        self._conn.send(tosend.encode());
+        time.sleep(1) # Rest for a while so EnergyPlus finish post processing
+        # Remove the connection
         self._conn.close();
         self._conn = None;
+        # Process the output
         self._run_eplus_outputProcessing();
         time.sleep(1);# Sleep the thread so EnergyPlus has time to do the
                       # post processing
+        # Kill subprocess
         os.killpg(os.getpgid(self._eplus_process.pid), signal.SIGTERM);
         
         
@@ -350,9 +426,144 @@ class EplusEnv(Env):
             Dblist.append(float(rcv[i]));
         
         return (version, flag, nDb, nIn, nBl, curSimTim, Dblist);
-
-
-
+    
+    def _get_eplus_run_info(self, idf_path):
+        """
+        This method read the .idf file and find the running start month, start
+        date, end month, end date and the step size.
+        
+        Args:
+            idf_path: String
+                The .idf file path.
+        
+        Return: (int, int, int, int, int)
+            (start month, start date, end month, end date, step size)
+        """
+        ret = [];
+        
+        with open(idf_path, encoding = 'ISO-8859-1') as idf:
+            contents = idf.readlines();
+        
+        # Run period
+        tgtIndex = None;
+        
+        for i in range(len(contents)):
+            line = contents[i];
+            effectiveContent = line.strip().split('!')[0] # Ignore contents after '!'
+            effectiveContent = effectiveContent.strip().split(',')[0]
+                                                          # Remove tailing ','
+            if effectiveContent.lower() == 'runperiod':
+                tgtIndex = i;
+                break;
+        
+        for i in range(2, 6):
+            ret.append(int(contents[tgtIndex + i].strip()
+                                                 .split('!')[0]
+                                                 .strip()
+                                                 .split(',')[0]
+                                                 .strip()
+                                                 .split(';')[0]));
+        # Step size
+        line_count = 0;
+        for line in contents:
+            effectiveContent = line.strip().split('!')[0] # Ignore contents after '!'
+            effectiveContent = effectiveContent.strip().split(',');
+            if effectiveContent[0].strip().lower() == 'timestep':
+                if len(effectiveContent) > 0:
+                    ret.append(int(effectiveContent[1]
+                                   .split(';')[0]
+                                   .strip()));
+                else:
+                    ret.append(int(contents[i + 1].strip()
+                                                  .split('!')[0]
+                                                  .strip()
+                                                  .split(',')[0]
+                                                  .strip()
+                                                  .split(';')[0]));
+                break;
+            line_count += 1;
+            
+        return tuple(ret);
+            
+    def _get_weather_info(self, eplus_run_st_mon, eplus_run_st_day, 
+                          eplus_run_ed_mon, eplus_run_ed_day):
+        """
+        This function read the .epw file and extract the relevant section
+        (defined by the .idf runperiod) to a pd.DataFrame;
+        
+        Args:
+            eplus_run_st_mon, eplus_run_st_day,
+            eplus_run_ed_mon, eplus_run_ed_day: String
+                EnergyPlus run start month, start day, end month, end day.
+        
+        Return: pd.DataFrame
+            A pd.DataFrame with weather info, 2-D, index is time, each row
+            is the weather for a time step, each col is a weather variable.
+        """
+        
+        # Get start line number
+        hour_by_start = get_hours_to_now(eplus_run_st_mon, eplus_run_st_day);
+        stLine = hour_by_start + 8; # The weather data starts from line 9 in the .epw file
+        # Get end line number
+        hour_by_end = get_hours_to_now(eplus_run_ed_mon, eplus_run_ed_day) + 23;
+        enLine = hour_by_end + 8 ;
+        # Read data into the python list
+        weather_list = [];
+        with open(self._weather_path) as f:
+            weather = f.readlines();
+        for line_i in range(stLine, enLine + 1):
+            this_line = weather[line_i].split('\n')[0].split(',')[6:];
+                    # Weather data starts from 7th column
+            this_line = [float(item) for item in this_line];
+            weather_list.append(this_line);
+        # Create the pandas dataframe
+        weather_df = pd.DataFrame(weather_list);
+        timeidx = pd.date_range('%d/%d/%d 01:00:00'%(eplus_run_st_mon, 
+                                                     eplus_run_st_day,
+                                                     YEAR),
+                                periods = hour_by_end - hour_by_start + 1,
+                                freq = 'H');
+        weather_df.set_index(timeidx, inplace = True);
+        
+        return weather_df;
+        
+    def _get_weather_forecast(self, curSimTim):
+        """
+        This method gets the future steps' weather information from the 
+        weather file. 
+        
+        Return: 2-D python list.
+            Index 0 is the weather information for one step;
+            Index 1 is the weather variables with the same order as the
+            .epw file. 
+        """
+        forecastTimeList = [];
+        ret = [];
+        
+        for i in range(1, self._forecast_step + 1):
+            forecastTimeList.append(get_time_string(YEAR,
+                                                    self._eplus_run_st_mon,
+                                                    self._eplus_run_st_day,
+                                curSimTim + i * self._eplus_run_stepsize));
+        for time in forecastTimeList:
+            weatherAtTime = get_time_interpolate(self._weather, time);
+            ret.append(weatherAtTime);
+            
+        return ret;
+            
+    def _get_one_epi_len(self, st_mon, st_day, ed_mon, ed_day):
+        """
+        Get the length of one episode (One EnergyPlus process run to the end).
+        
+        Args:
+            st_mon, st_day, ed_mon, ed_day: int
+                The EnergyPlus simulation start month, start day, end month, 
+                end day.
+        
+        Return: int
+            The simulation time step that the simulation ends. 
+        """
+        return get_delta_seconds(YEAR, st_mon, st_day, ed_mon, ed_day);
 
 
 
