@@ -27,8 +27,10 @@ length 2 as action input, representing the heating setpoint and cooling setpoint
 the south zone. The ouput from reset or step function is different for the two environments. Eplus-v0 outputs a 
 1-D python tuple of [curSimTime, sensorOut, isTerminal] and Eplus-forecast-v0 outputs a 1-D python tuple of
 [curSimTime, sensorOut, weatherForecast, isTerminal]. 
-⋅⋅* curSimTime: current simulation time counting in seconds from Jan 1st 00:00:00.
-..* sensorOut: 1-D python list of float [Site Outdoor Air Drybulb Temperature (C), 
+
+* curSimTime: current simulation time counting in seconds from Jan 1st 00:00:00.
+
+* sensorOut: 1-D python list of float [Site Outdoor Air Drybulb Temperature (C), 
 Site Outdoor Air Relative Humidity (%), Site Wind Speed (m/s), Site Wind Direction (degree from north), 
 Site Diffuse Solar Radiation Rate per Area (W/m2), Site Direct Solar Radiation Rate per Area (W/m2), 
 Zone Air Temperature (C), Zone Air Relative Humidity (%), Zone Thermostat Heating Setpoint Temperature (C), 
@@ -36,7 +38,8 @@ Zone Thermostat Cooling Setpoint Temperature (C), Zone Thermal Comfort Fanger Mo
 Facility Total HVAC Electric Demand Power (W)]. **Note**: Zone People Occupant Count is here just for an indication
 whether the zone is occupied or not; don not use it directly please actual number of people in a room in reality 
 is very hard to detect (but occupancy or not is easy). 
-..* weatherForecast: 2-D python list with shape (36, 28) where row x is the weather forecast information for 
+
+* weatherForecast: 2-D python list with shape (36, 28) where row x is the weather forecast information for 
 the x time steps ahead of the curSimTime, where columns are the weather variables and the order is 
 Dry Bulb Temperature {C},Dew Point Temperature
 {C},Relative Humidity {%},Atmospheric Pressure {Pa},Extraterrestrial Horizontal Radiation
@@ -49,11 +52,13 @@ Cover {.1},Opaque Sky Cover {.1},Visibility {km},Ceiling Height {m},Present Weat
 Observation,Present Weather Codes,Precipitable Water {mm},Aerosol Optical Depth
 {.001},Snow Depth {cm},Days Since Last Snow,Albedo {.01},Liquid Precipitation Depth
 {mm},Liquid Precipitation Quantity {hr}.
-..* isTerminal: whether the current episode finishs or not. When the simulation time reaches the end of the 
+
+* isTerminal: whether the current episode finishs or not. When the simulation time reaches the end of the 
 EnergyPlus run period (Mar 31st 24:00:00), the episode ends. 
 #### Running output
 EnergyPlus logs its own output. The output will be stored under the directory $pwd/Eplus-env-runX/Eplus-env-sub_runX/output.
 The "sub_run" directory is the directory for each episode that the environment runs. 
+
 #### Example
 
 ```python
