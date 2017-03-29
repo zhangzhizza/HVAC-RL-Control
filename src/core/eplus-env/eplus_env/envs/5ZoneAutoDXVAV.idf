@@ -162,26 +162,14 @@
     2,                       !- Begin Month
     1,                       !- Begin Day of Month
     2,                       !- End Month
-    5,                       !- End Day of Month
-    Tuesday,                 !- Day of Week for Start Day
+    1,                       !- End Day of Month
+    Monday,                 !- Day of Week for Start Day
     Yes,                     !- Use Weather File Holidays and Special Days
     Yes,                     !- Use Weather File Daylight Saving Period
     No,                      !- Apply Weekend Holiday Rule
     Yes,                     !- Use Weather File Rain Indicators
-    Yes;                     !- Use Weather File Snow Indicators
-
-  RunPeriod,
-    ,                        !- Name
-    6,                       !- Begin Month
-    1,                       !- Begin Day of Month
-    6,                       !- End Month
-    5,                       !- End Day of Month
-    Tuesday,                 !- Day of Week for Start Day
-    Yes,                     !- Use Weather File Holidays and Special Days
-    Yes,                     !- Use Weather File Daylight Saving Period
-    No,                      !- Apply Weekend Holiday Rule
-    Yes,                     !- Use Weather File Rain Indicators
-    Yes;                     !- Use Weather File Snow Indicators
+    Yes,                     !- Use Weather File Snow Indicators
+    1;                       !- Number of Times Runperiod to be Repeated 
 
   Site:Location,
     CHICAGO_IL_USA TMY2-94846,  !- Name
