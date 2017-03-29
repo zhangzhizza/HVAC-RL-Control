@@ -630,45 +630,6 @@ SizingPeriod:DesignDay,
     For: AllDays,            !- Field 2
     Until: 24:00,0.0;        !- Field 3
 
-  Schedule:Compact,
-    ClothingSch, !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 4/1,            !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    1,                       !- Field 4
-    Through: 9/30,           !- Field 5
-    For: AllDays,            !- Field 6
-    Until: 24:00,            !- Field 7
-    .5,                      !- Field 8
-    Through: 12/31,          !- Field 9
-    For: AllDays,            !- Field 10
-    Until: 24:00,            !- Field 11
-    1;                       !- Field 12
-    
-  Schedule:Compact,
-    ActivitySch, !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    117;                     !- Field 4
-  
-  Schedule:Compact,
-    AirVelocitySch,     !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    .137;                    !- Field 4
-    
-  Schedule:Compact,
-    WorkEffSch,           !- Name
-    Fraction,                !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,0.0;        !- Field 3
-  
   Zone,
     PLENUM-1,                !- Name
     0,                       !- Direction of Relative North {deg}
@@ -875,18 +836,7 @@ SizingPeriod:DesignDay,
     ,                        !- Zone Floor Area per Person {m2/person}
     0.3,                     !- Fraction Radiant
     AutoCalculate,           !- Sensible Heat Fraction
-    ActSchd,                 !- Activity Level Schedule Name
-    3.82E-8,                 !- Carbon Dioxide Generation Rate {m3/s-W}
-    No,                      !- Enable ASHRAE 55 Comfort Warnings
-    ZoneAveraged ,           !- Mean Radiant Temperature Calculation Type
-    ,                        !- Surface Name/Angle Factor List Name
-    WorkEffSch,              !- Work Efficiency Schedule Name
-    DynamicClothingModelASHRAE55,                        
-                             !- Clothing Insulation Calculation Method
-    ,                        !- Clothing Insulation Calculation Method Schedule Name
-    ,                        !- Clothing Insulation Schedule Name
-    AirVelocitySch ,         !- Air Velocity Schedule Name
-    Fanger;                  !- Thermal Comfort Model 1 Type
+    ActSchd;                 !- Activity Level Schedule Name
 
   Lights,
     SPACE1-1 Lights 1,       !- Name
@@ -1097,18 +1047,7 @@ SizingPeriod:DesignDay,
     ,                        !- Zone Floor Area per Person {m2/person}
     0.3,                     !- Fraction Radiant
     AutoCalculate,           !- Sensible Heat Fraction
-    ActSchd,                 !- Activity Level Schedule Name
-    3.82E-8,                 !- Carbon Dioxide Generation Rate {m3/s-W}
-    No,                      !- Enable ASHRAE 55 Comfort Warnings
-    ZoneAveraged ,           !- Mean Radiant Temperature Calculation Type
-    ,                        !- Surface Name/Angle Factor List Name
-    WorkEffSch,              !- Work Efficiency Schedule Name
-    DynamicClothingModelASHRAE55,                        
-                             !- Clothing Insulation Calculation Method
-    ,                        !- Clothing Insulation Calculation Method Schedule Name
-    ,                        !- Clothing Insulation Schedule Namee
-    AirVelocitySch ,         !- Air Velocity Schedule Name
-    Fanger;                  !- Thermal Comfort Model 1 Type
+    ActSchd;                 !- Activity Level Schedule Name
 
   Lights,
     SPACE2-1 Lights 1,       !- Name
@@ -1283,18 +1222,7 @@ SizingPeriod:DesignDay,
     ,                        !- Zone Floor Area per Person {m2/person}
     0.3,                     !- Fraction Radiant
     AutoCalculate,           !- Sensible Heat Fraction
-    ActSchd,                 !- Activity Level Schedule Name
-    3.82E-8,                 !- Carbon Dioxide Generation Rate {m3/s-W}
-    No,                      !- Enable ASHRAE 55 Comfort Warnings
-    ZoneAveraged ,           !- Mean Radiant Temperature Calculation Type
-    ,                        !- Surface Name/Angle Factor List Name
-    WorkEffSch,              !- Work Efficiency Schedule Name
-    DynamicClothingModelASHRAE55,                        
-                             !- Clothing Insulation Calculation Method
-    ,                        !- Clothing Insulation Calculation Method Schedule Name
-    ,                        !- Clothing Insulation Schedule Name
-    AirVelocitySch ,         !- Air Velocity Schedule Name
-    Fanger;                  !- Thermal Comfort Model 1 Type
+    ActSchd;                 !- Activity Level Schedule Name
 
   Lights,
     SPACE3-1 Lights 1,       !- Name
@@ -1485,18 +1413,7 @@ SizingPeriod:DesignDay,
     ,                        !- Zone Floor Area per Person {m2/person}
     0.3,                     !- Fraction Radiant
     AutoCalculate,           !- Sensible Heat Fraction
-    ActSchd,                 !- Activity Level Schedule Name
-    3.82E-8,                 !- Carbon Dioxide Generation Rate {m3/s-W}
-    No,                      !- Enable ASHRAE 55 Comfort Warnings
-    ZoneAveraged ,           !- Mean Radiant Temperature Calculation Type
-    ,                        !- Surface Name/Angle Factor List Name
-    WorkEffSch,              !- Work Efficiency Schedule Name
-    DynamicClothingModelASHRAE55,                        
-                             !- Clothing Insulation Calculation Method
-    ,                        !- Clothing Insulation Calculation Method Schedule Name
-    ,                        !- Clothing Insulation Schedule Name
-    AirVelocitySch ,         !- Air Velocity Schedule Name
-    Fanger;                  !- Thermal Comfort Model 1 Type
+    ActSchd;                 !- Activity Level Schedule Name
 
   Lights,
     SPACE4-1 Lights 1,       !- Name
@@ -1671,18 +1588,7 @@ SizingPeriod:DesignDay,
     ,                        !- Zone Floor Area per Person {m2/person}
     0.3,                     !- Fraction Radiant
     AutoCalculate,           !- Sensible Heat Fraction
-    ActSchd,                 !- Activity Level Schedule Name
-    3.82E-8,                 !- Carbon Dioxide Generation Rate {m3/s-W}
-    No,                      !- Enable ASHRAE 55 Comfort Warnings
-    ZoneAveraged ,           !- Mean Radiant Temperature Calculation Type
-    ,                        !- Surface Name/Angle Factor List Name
-    WorkEffSch,              !- Work Efficiency Schedule Name
-    DynamicClothingModelASHRAE55,                        
-                             !- Clothing Insulation Calculation Method
-    ,                        !- Clothing Insulation Calculation Method Schedule Name
-    ,                        !- Clothing Insulation Schedule Name
-    AirVelocitySch ,         !- Air Velocity Schedule Name
-    Fanger;                  !- Thermal Comfort Model 1 Type
+    ActSchd;                 !- Activity Level Schedule Name
 
   Lights,
     SPACE5-1 Lights 1,       !- Name
@@ -2414,11 +2320,6 @@ SizingPeriod:DesignDay,
     Htg-SetP-Sch,            !- Heating Setpoint Temperature Schedule Name
     Clg-SetP-Sch;            !- Cooling Setpoint Temperature Schedule Name
 
-  ThermostatSetpoint:DualSetpoint,
-    Space1-DualSetP-RL,            !- Name
-    Space1-HtgSetP-RL,            !- Heating Setpoint Temperature Schedule Name
-    Space1-ClgSetP-RL;            !- Cooling Setpoint Temperature Schedule Name
-    
   ZoneHVAC:EquipmentList,
     SPACE1-1 Eq,             !- Name
     ZoneHVAC:AirDistributionUnit,  !- Zone Equipment 1 Object Type
@@ -2881,39 +2782,128 @@ SizingPeriod:DesignDay,
     Main Heating Coil 1 Outlet Node;  !- Node 3 Name
     
   !-External Interface
-  ExternalInterface, !- Object to activate the external interface
-    PtolemyServer; !- Name of external interface
-    
-  ExternalInterface:Schedule ,
-    Space1-HtgSetP-RL, !- Name
-    Temperature , !- ScheduleType
-    21; !- Initial value, used during warm-up
-    
-  ExternalInterface:Schedule ,
-    Space1-ClgSetP-RL, !- Name
-    Temperature , !- ScheduleType
-    25; !- Initial value, used during warm-up
-    
-  !- Site weather output  
+  !-ExternalInterface , !- Object to activate the external interface
+  !-  PtolemyServer; !- Name of external interface
+  
+
   Output:Variable,*,Site Outdoor Air Drybulb Temperature,timestep;
-  Output:Variable,*,Site Outdoor Air Relative Humidity,timestep;
-  Output:Variable,*,Site Wind Speed, timestep;
-  Output:Variable,*,Site Wind Direction, timestep;
-  Output:Variable,*,Site Diffuse Solar Radiation Rate per Area,timestep;
-  Output:Variable,*,Site Direct Solar Radiation Rate per Area,timestep;
-  !- Building room 1 output
+
   Output:Variable,*,Zone Air Temperature,timestep;
-  Output:Variable,*,Zone Air Relative Humidity,timestep;
-  Output:Variable,*,Zone Thermostat Heating Setpoint Temperature,timestep;
-  Output:Variable,*,Zone Thermostat Cooling Setpoint Temperature,timestep;
-  Output:Variable,*,Zone Thermal Comfort Fanger Model PMV,timestep; 
-  Output:Variable,*,Zone People Occupant Count, timestep;
-  !- Building HVAC output
-  Output:Variable,*,Facility Total HVAC Electric Demand Power,timestep;
+
+  Output:Variable,*,Zone Air System Sensible Cooling Rate,timestep;
+
+  Output:Variable,*,Zone Air System Sensible Heating Rate,timestep;
+
+  Output:Variable,*,Coil System Compressor Speed Ratio,timestep;
+
+  Output:Variable,*,Cooling Coil Electric Power,timestep;
+
+  Output:Variable,*,Cooling Coil Runtime Fraction,timestep;
+
+  Output:Variable,*,Cooling Coil Basin Heater Electric Power,timestep;
+
+  Output:Variable,*,Cooling Coil Basin Heater Electric Energy,timestep;
+
+  Output:Variable,*,Fan Electric Power,timestep;
+
+  Output:Variable,*,Heating Coil Gas Rate,timestep;
+
+  Output:Variable,*,People Occupant Count,timestep;
+
+  Output:Variable,*,Zone Air Terminal VAV Damper Position,timestep;
+
+  Output:Variable,*,Zone Air Terminal Minimum Air Flow Fraction,timestep;
+
+  Output:Variable,*,Zone Air Terminal Outdoor Air Volume Flow Rate,timestep;
+
+  Output:Variable,SPACE1-1 In Node,System Node Temperature,timestep;
+
+  Output:Variable,SPACE2-1 In Node,System Node Temperature,timestep;
+
+  Output:Variable,SPACE3-1 In Node,System Node Temperature,timestep;
+
+  Output:Variable,SPACE4-1 In Node,System Node Temperature,timestep;
+
+  Output:Variable,SPACE5-1 In Node,System Node Temperature,timestep;
+
+  Output:Variable,SPACE1-1 In Node,System Node Standard Density Volume Flow Rate,timestep;
+
+  Output:Variable,SPACE2-1 In Node,System Node Standard Density Volume Flow Rate,timestep;
+
+  Output:Variable,SPACE3-1 In Node,System Node Standard Density Volume Flow Rate,timestep;
+
+  Output:Variable,SPACE4-1 In Node,System Node Standard Density Volume Flow Rate,timestep;
+
+  Output:Variable,SPACE5-1 In Node,System Node Standard Density Volume Flow Rate,timestep;
+
+  Output:Variable,SPACE1-1 In Node,System Node Current Density Volume Flow Rate,timestep;
+
+  Output:Variable,SPACE2-1 In Node,System Node Current Density Volume Flow Rate,timestep;
+
+  Output:Variable,SPACE3-1 In Node,System Node Current Density Volume Flow Rate,timestep;
+
+  Output:Variable,SPACE4-1 In Node,System Node Current Density Volume Flow Rate,timestep;
+
+  Output:Variable,SPACE5-1 In Node,System Node Current Density Volume Flow Rate,timestep;
+
+  Output:Variable,Outside Air Inlet Node 1,System Node Standard Density Volume Flow Rate,timestep;
+
+  Output:Variable,Outside Air Inlet Node 1,System Node Current Density Volume Flow Rate,timestep;
+
+  Output:Variable,*,Air System Outdoor Air Flow Fraction,timestep;
+
+  Output:Meter,Cooling:Electricity,monthly;
+
+  Output:Meter,Heating:Gas,monthly;
+
+  Output:Meter,Fans:Electricity,monthly;
+
+  Output:Meter,HeatingCoils:EnergyTransfer,monthly;
+
+  Output:Meter,CoolingCoils:EnergyTransfer,monthly;
+
+  Output:Meter,InteriorLights:Electricity,monthly;
+
+  Output:Meter,InteriorEquipment:Electricity,monthly;
+
+  Output:Meter,Cooling:Electricity,runperiod;
+
+  Output:Meter,Heating:Gas,runperiod;
+
+  Output:Meter,Fans:Electricity,runperiod;
+
+  Output:Meter,HeatingCoils:EnergyTransfer,runperiod;
+
+  Output:Meter,CoolingCoils:EnergyTransfer,runperiod;
+
+  Output:Meter,InteriorLights:Electricity,runperiod;
+
+  Output:Meter,InteriorEquipment:Electricity,runperiod;
 
   Output:VariableDictionary,Regular;
+
   Output:Surfaces:Drawing,dxf;
-  
+
+  Output:Meter:MeterFileOnly,Electricity:Facility,monthly;
+
+  Output:Meter:MeterFileOnly,Electricity:Building,monthly;
+
+  Output:Meter:MeterFileOnly,Electricity:HVAC,monthly;
+
+  Output:Meter:MeterFileOnly,Gas:Facility,monthly;
+
+  Output:Meter:MeterFileOnly,Gas:HVAC,monthly;
+
+  Output:Meter:MeterFileOnly,Electricity:Facility,runperiod;
+
+  Output:Meter:MeterFileOnly,Electricity:Building,runperiod;
+
+  Output:Meter:MeterFileOnly,Electricity:HVAC,runperiod;
+
+  Output:Meter:MeterFileOnly,Gas:Facility,runperiod;
+
+  Output:Meter:MeterFileOnly,Gas:HVAC,runperiod;
+
   OutputControl:Table:Style,
     HTML,                    !- Column Separator
     InchPound;               !- Unit Conversion

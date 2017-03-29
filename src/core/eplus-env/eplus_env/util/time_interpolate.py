@@ -4,7 +4,13 @@ import numpy as np;
 def get_time_interpolate(dataframe, time):
     """
     The function returns row corresponding to the index defined by time.
-    If not exist, then interpolated data will be returned. 
+    If not exist, then interpolated data will be returned. If interpolation
+    returns nan which occurs when interpolating beyond the first row of the
+    data, then the first row of the data will be returned (e.g. The olddest
+    data in the dataframe is 1991-02-01 00:01:00, when requested for data at
+    1991-02-01 00:00:00, the 1991-02-01 00:01:00 row will be returned). If 
+    interpolation beyond the last row of the data, then the first row of the 
+    data will be returned. 
     
     Args:
         dataframe: pd.DataFrame
@@ -14,10 +20,13 @@ def get_time_interpolate(dataframe, time):
             Time represented as the String.
     
     Return: 1-D python list.
-        The row corresponding to the time.
+        The interpolated values at the time. 
     """
+    # If the time index exists, just return that index row
     if time in dataframe.index:
         return dataframe.loc[time].as_matrix().flatten();
+    
+    # Else, do interpolation
     indexAfterTime = (dataframe.index >= time).argmax();
     relevantRows = dataframe.iloc[indexAfterTime - 1:indexAfterTime + 1];
     relevantRows_inserted = relevantRows.reindex(pd

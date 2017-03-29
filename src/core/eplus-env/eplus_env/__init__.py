@@ -4,7 +4,7 @@ import os
 FD = os.path.dirname(os.path.realpath(__file__));
 
 register(
-    id='Eplus-noforecast-v0',
+    id='Eplus-v0',
     entry_point='eplus_env.envs:EplusEnv',
     kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-6-0/',
             'weather_path':FD + '/envs/pittsburgh.epw',

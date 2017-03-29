@@ -20,7 +20,7 @@ from ..util.time_interpolate import get_time_interpolate
 
 YEAR = 1991 # Non leap year
 CWD = os.getcwd();
-LOG_LEVEL = 'DEBUG';
+LOG_LEVEL = 'INFO';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 LOGGER = Logger();
 ACTION_SIZE = 0;
@@ -49,7 +49,7 @@ class EplusEnv(Env):
                  variable_path, idf_path,
                  incl_forecast = False, forecast_step = 36):
             
-        self.logger_main = LOGGER.getLogger('ROOT', LOG_LEVEL, LOG_FMT);
+        self.logger_main = LOGGER.getLogger('EPLUS_ENV_ROOT', LOG_LEVEL, LOG_FMT);
         
         # Set the environment variable for bcvtb
         os.environ['BCVTB_HOME'] = bcvtb_path;
@@ -89,6 +89,7 @@ class EplusEnv(Env):
                                                    self._eplus_run_st_day,
                                                    self._eplus_run_ed_mon,
                                                    self._eplus_run_ed_day);
+        self._epi_num = 0;
         print (self._eplus_one_epi_len)
 
         
@@ -119,6 +120,7 @@ class EplusEnv(Env):
         if self._episode_existed:
             self._end_episode()
             self.logger_main.debug('Last EnergyPlus process has been closed. ')
+            self._epi_num += 1;
         
         # Create EnergyPlus simulaton process
         self.logger_main.info('Creating EnergyPlus simulation environment...')
@@ -153,7 +155,8 @@ class EplusEnv(Env):
                                 %self._get_is_subprocess_running(eplus_process))
         self._eplus_process = eplus_process;
         # Log the Eplus output
-        eplus_logger = LOGGER.getLogger('ENERGYPLUS', LOG_LEVEL, LOG_FMT)
+        eplus_logger = LOGGER.getLogger('ENERGYPLUS-EPI_%d'%self._epi_num,
+                                        LOG_LEVEL, LOG_FMT);
         _thread.start_new_thread(self._log_subprocess_info,
                                 (eplus_process.stdout,
                                  eplus_logger));
@@ -361,7 +364,7 @@ class EplusEnv(Env):
                                    0, self._curSimTim, 
                                    [0 for i in range(ACTION_SIZE)]);
         self._conn.send(tosend.encode());
-        time.sleep(1) # Rest for a while so EnergyPlus finish post processing
+        time.sleep(2) # Rest for a while so EnergyPlus finish post processing
         # Remove the connection
         self._conn.close();
         self._conn = None;
