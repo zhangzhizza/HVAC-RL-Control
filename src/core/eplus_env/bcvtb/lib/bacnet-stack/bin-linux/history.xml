@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="gcc ../demo/bcvtb/globalwi.o -lc -lbacnet -lgcc -lm -L../lib -lbacnet">
+      <target file="globalwi" lastModified="1543ab1bf40">
+         <source file="../lib/libbacnet.a" lastModified="1543ab1bb58"/>
+      </target>
+   </processor>
+   <processor signature="gcc ../demo/bcvtb/bacrp.o -lc -lbacnet -lgcc -lm -L../lib -lbacnet">
+      <target file="bacrp" lastModified="1543ab1bf40">
+         <source file="../lib/libbacnet.a" lastModified="1543ab1bb58"/>
+      </target>
+   </processor>
+   <processor signature="gcc ../demo/bcvtb/bacwp.o -lc -lbacnet -lgcc -lm -L../lib -lbacnet">
+      <target file="bacwp" lastModified="1543ab1bf40">
+         <source file="../lib/libbacnet.a" lastModified="1543ab1bb58"/>
+      </target>
+   </processor>
+</history>

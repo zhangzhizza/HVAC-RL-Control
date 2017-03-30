@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="gcc noversion nomachine -c -Wall -Os -DBACFILE=1 -DPRINT_ENABLED=1 -DBACAPP_ALL -DBACDL_BIP=1 -c -Iinclude -Iports/linux -Idemo/object -Idemo/handler">
+      <target file="lsp.o" lastModified="1543ab1b388">
+         <source file="lsp.c" lastModified="15416bee1a8"/>
+      </target>
+      <target file="device.o" lastModified="1543ab1b388">
+         <source file="device.c" lastModified="15416bee1a8"/>
+      </target>
+      <target file="bv.o" lastModified="1543ab1b388">
+         <source file="bv.c" lastModified="15416bee1a8"/>
+      </target>
+      <target file="bi.o" lastModified="1543ab1afa0">
+         <source file="bi.c" lastModified="15416bee1a8"/>
+      </target>
+      <target file="lc.o" lastModified="1543ab1b388">
+         <source file="lc.c" lastModified="15416bee1a8"/>
+      </target>
+      <target file="av.o" lastModified="1543ab1b388">
+         <source file="av.c" lastModified="15416bee1a8"/>
+      </target>
+      <target file="ai.o" lastModified="1543ab1b388">
+         <source file="ai.c" lastModified="15416bee1a8"/>
+      </target>
+      <target file="bo.o" lastModified="1543ab1afa0">
+         <source file="bo.c" lastModified="15416bee1a8"/>
+      </target>
+      <target file="bacfile.o" lastModified="1543ab1b770">
+         <source file="bacfile.c" lastModified="15416bee1a8"/>
+      </target>
+      <target file="mso.o" lastModified="1543ab1afa0">
+         <source file="mso.c" lastModified="15416bee1a8"/>
+      </target>
+      <target file="ao.o" lastModified="1543ab1afa0">
+         <source file="ao.c" lastModified="15416bee1a8"/>
+      </target>
+   </processor>
+</history>
