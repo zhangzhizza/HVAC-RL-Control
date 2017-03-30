@@ -2347,7 +2347,7 @@ SizingPeriod:DesignDay,
     ThermostatSetpoint:SingleHeating,  !- Control 2 Object Type
     HeatingSetpoint,         !- Control 2 Name
     ThermostatSetpoint:DualSetpoint,  !- Control 3 Object Type
-    DualSetPoint;            !- Control 3 Name
+    Space1-DualSetP-RL;            !- Control 3 Name
 
   ZoneControl:Thermostat,
     SPACE2-1 Control,        !- Name

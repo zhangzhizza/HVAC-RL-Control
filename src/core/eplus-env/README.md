@@ -2,9 +2,9 @@
 
 This environment wraps the EnergyPlus-v-8-6 into the OpenAI gym environment interface. 
 ### Installation
-EnergyPlus is platform dependent. Current version only works in Linux OS. If Mac, download
-the EnergyPlus-v-8-6 from https://energyplus.net/downloads, extract it, and replace the 
-eplus_env/envs/EnergyPlus-8-6-0 with it. 
+EnergyPlus is platform dependent. So this repository does not include the EnergyPlus. Please download
+the EnergyPlus-v-8-6 from https://energyplus.net/downloads, extract it, and place it to the directory 
+eplus_env/envs/EnergyPlus-8-6-0. 
 
 The environment depends on BCVTB-1.6.0 (https://simulationresearch.lbl.gov/bcvtb). There 
 is no need to re-install it since this repository already had it. But BCVTB-1.6.0 is compiled
