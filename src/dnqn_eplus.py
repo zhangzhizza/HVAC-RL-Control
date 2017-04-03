@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Run Energy Plus Environment with LDQN."""
+"""Run Energy Plus Environment with DNQN."""
 import argparse
 import os
 import random
@@ -64,10 +64,11 @@ def main():
     parser = argparse.ArgumentParser(description='Run DNQN on EnergyPlus')
     parser.add_argument('--env', default='Eplus-v0', help='EnergyPlus env name')
     parser.add_argument(
-        '-o', '--output', default='ldqn-res', help='Directory to save data to')
+        '-o', '--output', default='dnqn-res', help='Directory to save data to')
     parser.add_argument('--seed', default=0, type=int, help='Random seed')
     parser.add_argument('--max_interactions', default=50000000, type=int);
     parser.add_argument('--mem_size', default=500000, type=int);
+    parser.add_argument('--train_size', default=10, type=int);
     parser.add_argument('--window_len', default=4, type=int);
     parser.add_argument('--gamma', default=0.99);
     parser.add_argument('--target_update_freq', default=10000, type=int);
@@ -80,7 +81,7 @@ def main():
     parser.add_argument('--start_epsilon', default=0.5, type=float);
     parser.add_argument('--end_epsilon', default=0.05);
     parser.add_argument('--e_decay_num_steps', default=1000000, type=int);
-    parser.add_argument('--burn_in_size', default=50000, type=int);
+    parser.add_argument('--burn_in_size', default=50, type=int);
     parser.add_argument('--is_warm_start', default=False, type=bool);
     parser.add_argument('--model_dir', default='None');
 
@@ -97,20 +98,21 @@ def main():
     
     #create the env
     env = gym.make(args.env);
-    env_eval = wrappers.Monitor(gym.make(args.env), args.output + '/eval_res', video_callable = lambda episode_id: episode_id%20 == 0);
+    env_eval = gym.make(args.env);
+   # env_eval = wrappers.Monitor(gym.make(args.env), args.output + '/eval_res', video_callable = lambda episode_id: episode_id%20 == 0);
 
     # 
     action_size = 3; # +0.5 or -0.5 or 0
-    input_size = 10;
+    state_size = 11;
     
     #create the agent
     replayMem = ReplayMemory(args.mem_size);
     preprocessor = Preprocessor();
 
-    dnqnAgent = DNQNAgent(preprocessor, replayMem, args.gamma
+    dnqnAgent = DNQNAgent(args.train_size, preprocessor, replayMem, args.gamma
                         , args.target_update_freq, args.burn_in_size
                         , args.train_freq, args.eval_freq, args.eval_epi_num
-                        , args.batch_size, input_size, action_size
+                        , args.batch_size, state_size, action_size
                         , args.learning_rate, args.start_epsilon
                         , args.end_epsilon, args.e_decay_num_steps
                         , args.output, args.save_freq);

@@ -2,6 +2,7 @@
 from operator import itemgetter
 import matplotlib.pyplot as plt
 import numpy as np
+import math
 
 
 
@@ -93,7 +94,7 @@ class Preprocessor:
         """
         Constructor.
         """
-    
+
     def process_observation(self, time, observation):
         """Preprocess the given time and observation to corresponding state.
         1. If occupant_num is 0, the PMV will be setted as 0
@@ -128,21 +129,28 @@ class Preprocessor:
         setpoint_this: list of float
            Current heating and cooling setpoint
 
-        reward: float
+        reward: list of float
+           The PMV and HVAC Power
 
         """
         Occupant_num = observation[-2]
         if (Occupant_num == 0):
             observation[10] = 0 
-        state_raw = observation[0:11] + [observation[-1]]
+
+        reward = [observation[10], observation[-1]]
+
+        state_raw = observation[0:10] + [observation[-1]]
+
         setpoint_this = observation[8:10]
-        reward = observation[10]
+
         return state_raw, setpoint_this, reward
 
 
-    def process_state_for_network(self, state, memories):
+    def process_state_for_network(self, state, mean, std):
         """Preprocess the given time and observation to corresponding state 
         before giving it to the network.
+
+        the state is standardized according to its mean and standard deviation
 
         Should be called just before the action is selected.
 
@@ -154,28 +162,22 @@ class Preprocessor:
 
         Parameters
         ----------
-        state: np.ndarray
-          Generally a numpy array. A single state from an environment.
+        state: list of features 
+          A single state from an environment.
+        mean: np.ndarray of float
+           Features mean
+        std: np.ndarray of float
+          Features standard deviation 
           
-
         Returns
         -------
-        processed_state: np.ndarray of float
-          Generally a numpy array. The state after processing. 
+        standardized_state: np.ndarray of float
+          Generally a numpy array. The state after standardization
 
         """
-        #do gray scale: https://en.wikipedia.org/wiki/Grayscale
+        
+        return np.nan_to_num(np.divide(np.subtract(np.array(state), mean), std)).reshape(1,11)
 
-        gray_frame = (0.2126 * state[:,:,0] + 0.7152 * state[:,:,1] 
-                      + 0.0722 * state[:,:,2]);
-        
-        #down sampling
-        gray_frame_down = imresize(gray_frame, DOWN_SIZE_DIM)/255.0;
-        
-        #crop
-        gray_frame_down = gray_frame_down[0:self._crop_x, 0:self._crop_y];
-        
-        return gray_frame_down;
 
     def process_state_for_memory(self, state):
         """Preprocess the given state before giving it to the replay memory.
@@ -185,7 +187,7 @@ class Preprocessor:
         This is a different method from the process_state_for_network
         because the replay memory may require a different storage
         format to reduce memory usage. For example, storing images as
-        uint8 in memory and the network expecting images in floating
+        uint16 in memory and the network expecting images in floating
         point.
 
         Parameters
@@ -202,11 +204,10 @@ class Preprocessor:
   
         state_unit8 = np.array(state).astype('uint16');
         
-
         return state_unit8;
 
 
-    def process_batch(self, samples):
+    def process_batch(self, samples, mean, std):
         """Process batch of samples.
 
         If your replay memory storage format is different than your
@@ -230,27 +231,36 @@ class Preprocessor:
             s = sample.s;
             s_p = sample.s_p;
             
-            assert (s.dtype is np.dtype('uint8'));
-            assert (s_p.dtype is np.dtype('uint8'))
+            assert (s.dtype is np.dtype('uint16'));
+            assert (s_p.dtype is np.dtype('uint16'))
             
             r = sample.r;
             a = sample.a;
             is_terminal = sample.is_terminal;
+
+            # get mean_array and std_array of state
+            mean_state_array = np.delete(mean, [10,11]) 
+            std_state_array = np.delete(std, [10,11])
+
+            # get mean_array and std_array for reward
+            mean_reward_array = np.array(mean_array[10], mean_array[-1]) 
+            std_reward_array = np.delete(std_array[10], std_array[-1])
             
-            #process, change the s and s_p in list of int 0~255 to list
-            #of float 0~1.
-            s = s/255.0;
-            s_p = s_p/255.0;
+            #standardize states 
+            s = self.process_state_for_network(self, s, 
+                mean_state_array, std_state_array)
+            s_p = self.process_state_for_network(self, s_p, 
+                mean_reward_array, std_state_array)
+
+            # process reward
+            r = self.process_reward(self, reward, mean_reward_array,std_reward_array)
             
-            #Add a new dimension to match the tensor dimension
-            #s = s.reshape((1,) + s.shape);
-            #s_p = s_p.reshape((1,) + s_p.shape);
             
             list_samples.append(Sample(s, a, r, s_p, is_terminal));
             
         return list_samples;
 
-    def process_reward(self, reward):
+    def process_reward(self, reward, mean, std):
         """Process the reward.
 
         Useful for things like reward clipping. The Atari environments
@@ -259,18 +269,60 @@ class Preprocessor:
 
         Parameters
         ----------
-        reward: float
-          Reward to process
+        reward: list of float
+          list[0]: PMV  list[1]: HVAC electric demand power
+
+        mean: numpy array 
+          mean of PMV and HVAC demand power
+        std: numpy array 
+          standard deviation of PMV and HVAC dmean power 
+
 
         Returns
         -------
-        processed_reward: float
+        processed_reward: float: negative value
           The processed reward
         """
-        if reward > 0:
-            return 1;
+        # stadardize reward 
+        if(math.isclose(std[0], 0, rel_tol=1e-5)):
+            PMV = 0
         else:
-            return 0;
+            # get absolute value of PMV (-2 and +2 is equal worse)
+            PMV = abs((reward[0] - mean[0])/std[0])
+    
+        # standardize power 
+        if(math.isclose(std[1], 0, rel_tol=1e-5)):
+            power = 0
+        else:
+            power = (reward[1] - mean[1])/std[1]
+
+        # sum the reward 
+        reward = -(PMV + power)
+
+        return reward
+     
+
+
+    def process_reward_memory(self, reward):
+        """Preprocess the given reward before giving it to the replay memory.
+
+        Should be called just before appending this to the replay memory.
+
+        Parameters
+        ----------
+        reward: list of float
+            list[0]: PMV  list[1]: HVAC electric demand power
+
+        Returns
+        -------
+        processed_reward for memory: numpy array with unit8. 
+          Generally a numpy array. The reward after processing. 
+
+        """
+        reward_unit16 = np.fabs(reward).astype('uint16')
+
+        return reward_unit16
+
 
     def reset(self):
         """Reset any internal state.
@@ -280,6 +332,7 @@ class Preprocessor:
         """
         #may not be applicable
         pass
+
 
 
 class ReplayMemory:
@@ -337,6 +390,7 @@ class ReplayMemory:
         self._i = 0;
         
         #rinf buf is [s,a,r,s',a',r',s'',a'',r'',s''',.....]
+
 
     def append(self, sample):
         """

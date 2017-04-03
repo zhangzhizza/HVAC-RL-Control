@@ -32,48 +32,48 @@ class Policy:
         """
         raise NotImplementedError('This method should be overriden.')
 
-def process_action(setpoint_this, action):
-    """ Process the actions to make it as heating and cooling set point to HVAC
-        The heating set point should be always lower than cooling set point
-    
+    def process_action(self, setpoint_this, action):
+        """ Process the actions to make it as heating and cooling set point to HVAC
+            The heating set point should be always lower than cooling set point
+        
 
-    Parameters
-    ----------
-    setpoint_this: list of float 
-        list[0]: current heating setpoint
-        list[1]: current cooling setpoint
+        Parameters
+        ----------
+        setpoint_this: list of float 
+            list[0]: current heating setpoint
+            list[1]: current cooling setpoint
 
-    tuple: (int, int) fist for heating, second for cooling
-        Action index in range [0, num_actions)
-        0 : -0.5 based on current set point
-        1: no change 
-        2: +0.5 based on current set poin
+        tuple: (int, int) fist for heating, second for cooling
+            Action index in range [0, num_actions)
+            0 : -0.5 based on current set point
+            1: no change 
+            2: +0.5 based on current set poin
 
-    Returns
-        -------
-        list: (int, int) fist is heating setpoint, second for cooling setpoint
+        Returns
+            -------
+            list: (int, int) fist is heating setpoint, second for cooling setpoint
 
-    """
-    setpoint_next = copy.deepcopy(setpoint_this)
-    #change setpoint following the command
-    if(action[0] == 0):
-        setpoint_next[0] = setpoint_this[0] - 0.5
-    elif(action[0] == 2):
-        setpoint_next[0] = setpoint_this[0] + 0.5
-    if(action[1] == 0):
-       setpoint_next[1] = setpoint_this[1] - 0.5
-    elif(action[1] == 2):
-       setpoint_next[1] = setpoint_this[1] + 0.5
-    ##Three cases coulde make heating setpoint higher than cooling setpoint
-    #case 1: heating no change and cooling decrease
-    #case 2: heating increase and cooling no change
-    #case 3: heating incease and cooling decrease
-    if(setpoint_next[0] > setpoint_next[1]):
-            # don't take any action
-            setpoint_next[0] = setpoint_this[0] 
-            setpoint_next[1] = setpoint_this[1] 
+        """
+        setpoint_next = copy.deepcopy(setpoint_this)
+        #change setpoint following the command
+        if(action[0] == 0):
+            setpoint_next[0] = setpoint_this[0] - 0.5
+        elif(action[0] == 2):
+            setpoint_next[0] = setpoint_this[0] + 0.5
+        if(action[1] == 0):
+           setpoint_next[1] = setpoint_this[1] - 0.5
+        elif(action[1] == 2):
+           setpoint_next[1] = setpoint_this[1] + 0.5
+        ##Three cases coulde make heating setpoint higher than cooling setpoint
+        #case 1: heating no change and cooling decrease
+        #case 2: heating increase and cooling no change
+        #case 3: heating incease and cooling decrease
+        if(setpoint_next[0] > setpoint_next[1]):
+                # don't take any action
+                setpoint_next[0] = setpoint_this[0] 
+                setpoint_next[1] = setpoint_this[1] 
 
-    return setpoint_next
+        return setpoint_next
 
 
 
@@ -101,7 +101,7 @@ class UniformRandomPolicy(Policy):
         self.num_actions = num_actions
 
 
-    def select_action(self, setpoint_this):
+    def select_action(self):
         """Return a random action index.
 
         The action will be processed as .
@@ -116,9 +116,8 @@ class UniformRandomPolicy(Policy):
         -------
         list: (int, int) fist is heating setpoint, second for cooling setpoint
         """
-        action = (np.random.randint(0, self.num_actions),np.random.randint(0, self.num_actions))
         
-        return process_action(setpoint_this, action)
+        return (np.random.randint(0, self.num_actions),np.random.randint(0, self.num_actions))
 
 
     def get_config(self):  # noqa: D102
