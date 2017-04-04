@@ -10,7 +10,7 @@ class Sample:
     """Represents a reinforcement learning sample.
 
     Used to store observed experience from an MDP. Represents a
-    standard `(s, a, r, s', terminal)` tuple.
+    standard `(obs, a, obs_nex', terminal)` tuple.
 
     Note: This is not the most efficient way to store things in the
     replay memory, but it is a convenient class to work with when
@@ -18,46 +18,38 @@ class Sample:
 
     Parameters
     ----------
-    state: array-like
-      Represents the state of the MDP before taking an action. In most
-      cases this will be a numpy array. Dimensions: (w, h, nframe)
-    action: int, float, tuple
-      For discrete action domains this will be an integer. For
-      continuous action domains this will be a floating point
-      number. For a parameterized action MDP this will be a tuple
-      containing the action and its associated parameters.
+    observation: array-like
+      Represents the observation from MDP before taking an action. In most
+      cases this will be a numpy array. Dimensions: (obs_size)
+    action: tuple(int, int)
+    
     reward: float
       The reward received for executing the given action in the given
       state and transitioning to the resulting state.
-    next_state: array-like
-      This is the state the agent transitions to after executing the
-      `action` in `state`. Expected to be the same type/dimensions as
-      the state.
+    next_observation: array-like
+      This is the observation the agent transitions to after executing the
+      `action` in state (a subset of 'observation') of 'observation'. 
+      Expected to be the same type/dimensions as the observation.
     is_terminal: boolean
       True if this action finished the episode. False otherwise.
     """
-    def __init__(self, s, a, r, s_p, is_terminal):
-        self._s = s;
+    def __init__(self, obs, a, obs_nex, is_terminal):
+        self._obs = obs;
         self._a = a;
-        self._r = r;
-        self._s_p = s_p;
+        self._obs_nex = obs_nex;
         self._is_terminal = is_terminal;
         
     @property
-    def s(self):
-        return self._s;
+    def obs(self):
+        return self._obs;
 
     @property
     def a(self):
         return self._a;
     
     @property
-    def r(self):
-        return self._r;
-    
-    @property
-    def s_p(self):
-        return self._s_p;
+    def obs_nex(self):
+        return self._obs_nex;
     
     @property
     def is_terminal(self):
@@ -68,17 +60,16 @@ class Sample:
         return self._id;
     
     def __str__(self):
-        return (str(self.s) + ',' + str(self.a) 
-                + ',' + str(self.r) + ',' 
-                + str(self.s_p) + ',' 
+        return (str(self._obs) + ',' + str(self._a) 
+                + ',' + str(self._obs_nex) + ',' 
                 + str(self.is_terminal));
     
     def __repr__(self):
-        return (str(self.s) + ',' + str(self.a) 
-                + ',' + str(self.r) + ',' 
-                + str(self.s_p) + ',' 
+        return (str(self._obs) + ',' + str(self._a) 
+                + ',' + str(self._obs_nex) + ',' 
                 + str(self.is_terminal));
                 
+
 class Preprocessor:
     """Preprocessor base class.
 
@@ -135,11 +126,7 @@ class Preprocessor:
         """
         Occupant_num = observation[-2]
         if (Occupant_num == 0):
-            observation[10] = 0 
 
-        reward = [observation[10], observation[-1]]
-
-        state_raw = observation[0:10] + [observation[-1]]
 
         setpoint_this = observation[8:10]
 
@@ -200,11 +187,7 @@ class Preprocessor:
         processed_state: np.ndarray of uint8. 
           Generally a numpy array. The state after processing. 
 
-        """
-  
-        state_unit8 = np.array(state).astype('uint16');
         
-        return state_unit8;
 
 
     def process_batch(self, samples, mean, std):
@@ -302,26 +285,6 @@ class Preprocessor:
         return reward
      
 
-
-    def process_reward_memory(self, reward):
-        """Preprocess the given reward before giving it to the replay memory.
-
-        Should be called just before appending this to the replay memory.
-
-        Parameters
-        ----------
-        reward: list of float
-            list[0]: PMV  list[1]: HVAC electric demand power
-
-        Returns
-        -------
-        processed_reward for memory: numpy array with unit8. 
-          Generally a numpy array. The reward after processing. 
-
-        """
-        reward_unit16 = np.fabs(reward).astype('uint16')
-
-        return reward_unit16
 
 
     def reset(self):
