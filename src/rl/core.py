@@ -87,6 +87,7 @@ class Preprocessor:
         """
 
     def process_observation(self, time, observation):
+        """               NOT USED               """
         """Preprocess the given time and observation to corresponding state.
         1. If occupant_num is 0, the PMV will be setted as 0
 
@@ -126,18 +127,22 @@ class Preprocessor:
         """
         Occupant_num = observation[-2]
         if (Occupant_num == 0):
+            reward = [0, observation[-1]] 
+        else:
+            reward = [observation[10], observation[-1]]
 
+        state_raw = observation[0:11] + [observation[-1]]
 
         setpoint_this = observation[8:10]
 
         return state_raw, setpoint_this, reward
 
 
-    def process_state_for_network(self, state, mean, std):
-        """Preprocess the given time and observation to corresponding state 
+    def process_observation_for_network(self, observation, mean, std):
+        """Preprocess the given observation to corresponding observation 
         before giving it to the network.
 
-        the state is standardized according to its mean and standard deviation
+        the observation is standardized according to its mean and standard deviation
 
         Should be called just before the action is selected.
 
@@ -149,8 +154,8 @@ class Preprocessor:
 
         Parameters
         ----------
-        state: list of features 
-          A single state from an environment.
+        observation: list of features 
+          A single observation from an environment.
         mean: np.ndarray of float
            Features mean
         std: np.ndarray of float
@@ -163,7 +168,8 @@ class Preprocessor:
 
         """
         
-        return np.nan_to_num(np.divide(np.subtract(np.array(state), mean), std)).reshape(1,11)
+        return np.nan_to_num(np.divide(np.
+            subtract(np.array(observation), mean), std))
 
 
     def process_state_for_memory(self, state):
@@ -187,7 +193,9 @@ class Preprocessor:
         processed_state: np.ndarray of uint8. 
           Generally a numpy array. The state after processing. 
 
+        """ 
         
+        raise NotImplementedError('This method should be overriden.')
 
 
     def process_batch(self, samples, mean, std):
@@ -211,78 +219,40 @@ class Preprocessor:
         list_samples = [];
         
         for sample in samples:
-            s = sample.s;
-            s_p = sample.s_p;
-            
-            assert (s.dtype is np.dtype('uint16'));
-            assert (s_p.dtype is np.dtype('uint16'))
-            
-            r = sample.r;
+            obs = sample.obs;
+            obs_nex = sample.obs_nex;
+        
             a = sample.a;
             is_terminal = sample.is_terminal;
 
-            # get mean_array and std_array of state
-            mean_state_array = np.delete(mean, [10,11]) 
-            std_state_array = np.delete(std, [10,11])
-
-            # get mean_array and std_array for reward
-            mean_reward_array = np.array(mean_array[10], mean_array[-1]) 
-            std_reward_array = np.delete(std_array[10], std_array[-1])
-            
             #standardize states 
-            s = self.process_state_for_network(self, s, 
-                mean_state_array, std_state_array)
-            s_p = self.process_state_for_network(self, s_p, 
-                mean_reward_array, std_state_array)
-
-            # process reward
-            r = self.process_reward(self, reward, mean_reward_array,std_reward_array)
+            obs = self.process_observation_for_network(obs, 
+                mean, std)
+            obs_nex = self.process_observation_for_network(obs_nex, 
+                mean, std)
             
-            
-            list_samples.append(Sample(s, a, r, s_p, is_terminal));
+            list_samples.append(Sample(obs, a, obs_nex, is_terminal));
             
         return list_samples;
 
-    def process_reward(self, reward, mean, std):
+
+    def process_reward(self, reward):
         """Process the reward.
 
-        Useful for things like reward clipping. The Atari environments
-        from DQN paper do this. Instead of taking real score, they
-        take the sign of the delta of the score.
 
         Parameters
         ----------
-        reward: list of float
-          list[0]: PMV  list[1]: HVAC electric demand power
-
-        mean: numpy array 
-          mean of PMV and HVAC demand power
-        std: numpy array 
-          standard deviation of PMV and HVAC dmean power 
+        reward: numpy array of float
+          [0]: PMV  [1]: HVAC electric demand power
 
 
         Returns
         -------
         processed_reward: float: negative value
           The processed reward
-        """
-        # stadardize reward 
-        if(math.isclose(std[0], 0, rel_tol=1e-5)):
-            PMV = 0
-        else:
-            # get absolute value of PMV (-2 and +2 is equal worse)
-            PMV = abs((reward[0] - mean[0])/std[0])
-    
-        # standardize power 
-        if(math.isclose(std[1], 0, rel_tol=1e-5)):
-            power = 0
-        else:
-            power = (reward[1] - mean[1])/std[1]
+        """ 
 
-        # sum the reward 
-        reward = -(PMV + power)
-
-        return reward
+        return -(abs(reward[0] + reward[1]))
      
 
 
