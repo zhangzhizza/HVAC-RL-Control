@@ -409,6 +409,7 @@ class DNQNAgent:
             action_counter = action_counter + 1 if action_counter < 4 else 1
             time_next, ob_next, is_terminal = env.step(action)
             setpoint_next = ob_next[8:10]
+            
 
       
             #check if exceed the max_episode_length
@@ -425,19 +426,19 @@ class DNQNAgent:
                 if action_counter % self._train_freq == 0 \
                     and action_counter > 0:
                     action_counter = 0;
-          #           #Eval the model
-          #           if train_counter % self._eval_freq == 0:
-          #               eval_res = self.evaluate(env_eval, self._eval_epi_num, 
-          #                                    show_detail = True);
-          #               eval_res_hist = np.append(eval_res_hist
-          # , np.array([step
-          # , eval_res[0], eval_res[1]]).reshape(1, 3)
-          # , axis = 0);
-          #               np.savetxt(self._log_dir + '/eval_res_hist.csv'
-          #       , eval_res_hist, delimiter = ',');
-          #               logging.info ('Global Step: %d, '%(step), 'evaluation average \
-          #                      reward is %0.04f, average episode length is %d.'\
-          #                          %eval_res);
+                    #Eval the model
+                    if train_counter % self._eval_freq == 0:
+                        eval_res = self.evaluate(env_eval, self._eval_epi_num, 
+                                              show_detail = True);
+                        eval_res_hist = np.append(eval_res_hist
+                                              , np.array([step
+                                              , eval_res[0], eval_res[1]]).reshape(1, 3)
+                                              , axis = 0);
+                        np.savetxt(self._log_dir + '/eval_res_hist.csv'
+                 , eval_res_hist, delimiter = ',');
+                        logging.info ('Global Step: %d, '%(step), 'evaluation average \
+                                reward is %0.04f, average episode length is %d.'\
+                                    %eval_res);
                         
                     train_counter += 1;
                     #Sample from the replay memory
@@ -506,6 +507,7 @@ class DNQNAgent:
                     
                     if train_counter % 100 == 0:
                         logging.info ("Global Step %d: loss %0.04f"%(step, sess_res[1]));
+
                         # Update the events file.
                         summary_str = self._sess.run(self._summary, feed_dict=feed_dict)
                         self._summary_writer.add_summary(summary_str, train_counter);
@@ -516,10 +518,6 @@ class DNQNAgent:
             if is_terminal:
                 time_this, ob_this, is_terminal = env.reset();
                 setpoint_this = ob_this[8:10]
-      
-
-                #state_this_net = self._preprocessor.process_state_for_network(state_this, 
-                 #      mean_state_array, std_state_array);
       
                 this_ep_length = 0;
                 action_counter = 0;
@@ -549,50 +547,39 @@ class DNQNAgent:
         average_reward = 0;
         average_episode_length = 0;
         time_this, ob_this, is_terminal = env.reset();
-        
-        state_this, setpoint_this, reward = (self._preprocessor
-          .process_observation(time_this, ob_this))
 
-        # get mean_array and std_array of state
-        mean_state_array = np.delete(self._mean_array, [10,11]) 
-        std_state_array = np.delete(self._std_array, [10,11])
+        obs_this_net = self._preprocessor.process_observation_for_network(
+                  ob_this, self._mean_array,  self._std_array)
 
-        # get mean_array and std_array for reward
-        mean_reward_array = np.array([self._mean_array[10], self._mean_array[-1]]) 
-        std_reward_array = np.array([self._std_array[10], self._std_array[-1]])
-
-        state_this_net = self._preprocessor.process_state_for_network(state_this, 
-          mean_state_array, std_state_array);
-
-
+        state_this_net = np.append(obs_this_net[0:10], obs_this_net[-1]).reshape(1,11)
+        setpoint_this = ob_this[8:10]
         
         this_ep_reward = 0;
         this_ep_length = 0;
         while episode_counter <= num_episodes:
-            coin = np.random.binomial(1, 0.5)
-            q_values = self.calc_q_values(state_this_net) 
-            q_values_1 = self.calc_q_values_1(state_this_net)
-            if(coin == 0):
-              command = [self._linearDecayGreedyEpsilonPolicy.select_action(q_values, True),
-                  self._linearDecayGreedyEpsilonPolicy.select_action(q_values_1, True)]
-            else:
-              command = [self._linearDecayGreedyEpsilonPolicy.select_action(q_values_1, True),
-                  self._linearDecayGreedyEpsilonPolicy.select_action(q_values, True)]
+
+            q_values = self.calc_q_values(state_this_net) + self.calc_q_values_1(state_this_net) 
+            action_mem = self._linearDecayGreedyEpsilonPolicy.select_action(q_values, False),
 
             # covert command to setpoint action 
-            action = self._policy.process_action(setpoint_this, command)
+            action = self._policy.process_action(setpoint_this, action_mem[0])
 
             time_next, ob_next, is_terminal = env.step(action)
 
-            state_next,setpoint_next, reward = self._preprocessor.process_observation(time_next, ob_next)
+            setpoint_next = ob_next[8:10]
 
-            state_next_net = self._preprocessor.process_state_for_network(state_next, 
-                   mean_state_array, std_state_array);
+            obs_next_net = self._preprocessor.process_observation_for_network(
+                  ob_next, self._mean_array,  self._std_array)
+
+
+
+            state_next_net = np.append(obs_next_net[0:10], obs_next_net[-1]).reshape(1,11)
       
-            reward_processed = self._preprocessor.process_reward(reward, mean_reward_array, std_reward_array)
+            reward = self._preprocessor.process_reward(
+                          np.append(obs_next_net[0:11], obs_next_net[-1]))
 
 
-            this_ep_reward += reward_processed;
+            this_ep_reward += reward;
 
     
             #Check if exceed the max_episode_length
@@ -601,12 +588,8 @@ class DNQNAgent:
                 is_terminal = True;
             #Check whether to start a new episode
             if is_terminal:
-                time_this, ob_this, is_terminal = env.reset();
-                state_this, setpoint_this, reward = (self._preprocessor
-                  .process_observation(time_this, ob_this))
-
-                state_this_net = self._preprocessor.process_state_for_network(state_this, 
-                    mean_state_array, std_state_array);
+                time_this, ob_this, is_terminal = env.reset()
+                setpoint_this = ob_this[8:10]
    
                 average_reward = (average_reward * (episode_counter - 1) 
                                   + this_ep_reward) / episode_counter;
@@ -626,6 +609,7 @@ class DNQNAgent:
                 this_ep_reward = 0;
                 
             else:
-                state_this_net = state_next_net;
+                ob_this = ob_next
+                setpoint_this = setpoint_next
                 this_ep_length += 1;
         return (average_reward, average_episode_length);
