@@ -154,6 +154,7 @@ class EplusEnv(Env):
         self.logger_main.debug('EnergyPlus process is still running ? %r' 
                                 %self._get_is_subprocess_running(eplus_process))
         self._eplus_process = eplus_process;
+       
         # Log the Eplus output
         eplus_logger = LOGGER.getLogger('ENERGYPLUS-EPI_%d'%self._epi_num,
                                         LOG_LEVEL, LOG_FMT);
@@ -372,8 +373,9 @@ class EplusEnv(Env):
         self._run_eplus_outputProcessing();
         time.sleep(1);# Sleep the thread so EnergyPlus has time to do the
                       # post processing
+
         # Kill subprocess
-        os.killpg(os.getpgid(self._eplus_process.pid), signal.SIGTERM);
+        os.kill(self._eplus_process.pid, signal.SIGTERM);
         
         
     def _run_eplus_outputProcessing(self):
