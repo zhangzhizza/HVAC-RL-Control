@@ -7,6 +7,12 @@ in your code.
 import numpy as np
 import copy
 
+ACTION_DICT = {0: (-0.5, -0.5), 1:(-0.5, 0),
+              2:(-0.5, 0.5), 3:(0, -0.5),
+              4:(0, 0), 5:(0, 0.5),
+              6:(0.5, -0.5), 7:(0.5, 0), 
+              8:(0.5, -0.5)}
+
 
 class Policy:
     """Base class representing an MDP policy.
@@ -33,8 +39,11 @@ class Policy:
         raise NotImplementedError('This method should be overriden.')
 
     def process_action(self, setpoint_this, action):
-        """ Process the actions to make it as heating and cooling set point to HVAC
-            The heating set point should be always lower than cooling set point
+        """ 
+          1. Process action index to action command tuple 
+          2 . Process action command tuple to heating and cooling set point to HVAC
+            
+          Note: The heating set point should be always lower than cooling set point
         
 
         Parameters
@@ -43,27 +52,21 @@ class Policy:
             list[0]: current heating setpoint
             list[1]: current cooling setpoint
 
-        tuple: (int, int) fist for heating, second for cooling
-            Action index in range [0, num_actions)
-            0 : -0.5 based on current set point
-            1: no change 
-            2: +0.5 based on current set poin
+        action: int 
+            # see ACTION_DICT at the top
 
         Returns
             -------
-            list: (int, int) fist is heating setpoint, second for cooling setpoint
+            list: (float, float) fist is heating setpoint, second for cooling setpoint
 
         """
+        # get new set point based on action index
         setpoint_next = copy.deepcopy(setpoint_this)
-        #change setpoint following the command
-        if(action[0] == 0):
-            setpoint_next[0] = setpoint_this[0] - 0.5
-        elif(action[0] == 2):
-            setpoint_next[0] = setpoint_this[0] + 0.5
-        if(action[1] == 0):
-           setpoint_next[1] = setpoint_this[1] - 0.5
-        elif(action[1] == 2):
-           setpoint_next[1] = setpoint_this[1] + 0.5
+   
+        setpoint_next[0]  = setpoint_this[0] + ACTION_DICT.get(action)[0]
+        setpoint_next[1]  = setpoint_this[1] + ACTION_DICT.get(action)[1]
+        
+
         ##Three cases coulde make heating setpoint higher than cooling setpoint
         #case 1: heating no change and cooling decrease
         #case 2: heating increase and cooling no change
@@ -74,8 +77,6 @@ class Policy:
                 setpoint_next[1] = setpoint_this[1] 
 
         return setpoint_next
-
-
 
 
 
@@ -114,10 +115,11 @@ class UniformRandomPolicy(Policy):
 
         Returns
         -------
-        list: (int, int) fist is heating setpoint, second for cooling setpoint
+        action index: int 
+          The index of perumuation set of ist is heating setpoint, second for cooling setpoint
         """
         
-        return (np.random.randint(0, self.num_actions),np.random.randint(0, self.num_actions))
+        return np.random.randint(0, self.num_actions)
 
 
     def get_config(self):  # noqa: D102
@@ -198,6 +200,7 @@ class LinearDecayGreedyEpsilonPolicy(Policy):
         self._end_value = end_value;
         self._decay_step = 1.0 * (start_value - end_value)/num_steps;
         self._decayed_epsilon = start_value;
+
         
     def select_action(self, q_values, is_training, **kwargs):
         """Decay parameter and select action.

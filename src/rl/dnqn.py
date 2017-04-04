@@ -1,6 +1,7 @@
 """Main LDQN agent."""
 import os
 import logging
+from sklearn import preprocessing
 import numpy as np
 import tensorflow as tf
 from keras.layers import (Activation, Convolution2D, Dense, Flatten, Input,
@@ -139,7 +140,6 @@ class DNQNAgent:
       log file save directory
     """
     def __init__(self,
-                 train_set_size,
                  preprocessor,
                  memory,
                  gamma,
@@ -169,7 +169,6 @@ class DNQNAgent:
         self._greedyPolicy = GreedyPolicy();
         self._num_burn_in = num_burn_in;
         self._preprocessor = preprocessor;
-        self._train_set_size = train_set_size;
         self._memory = memory;
         self._train_freq = train_freq;
         self._batch_size = batch_size;
@@ -304,62 +303,32 @@ class DNQNAgent:
                         feed_dict={self._state_placeholder:state});
 
     
-    def calc_trainSet(self, env):
+    def calc_mean_std(self):
         """
-        1. Filling states in training set, 
-        which is used for sample standarization
-        2. Calculate mean and standanr deviation of all features
+        Calculate mean and standanr deviation of all features
 
-        Note: training set should be released after using to save memory
-        so a training set class is not designed as replay memory
-
-        Parameters
-        ----------
-        env: gym.Env
-          This is Eplus environment. 
-
-        Parameters
+        Return
         ----------
         mean: numpy array
           The array of mean of each feature
         standard deviataion: numpy array
           The mean of standard deviataion of each feature
-        training_set: the whole training_set
 
         """
 
-        time_this, ob_this, is_terminal = env.reset();
-
-        # covert observation to current state and set point
-        state_this,setpoint_this, reward = (self._preprocessor
-                .process_observation(time_this, ob_this))
-
-        # save the first state in the training set 
-        training_set = np.array(ob_this)
-  
-  
-        for step in range(1, self._train_set_size):
-          # get action command 
-          command = self._uniformRandomPolicy.select_action()
-          # covert command to setpoint action 
-          action = self._policy.process_action(setpoint_this, command)
-          # take action, get new observation 
-          time_next, ob_next, is_terminal = env.step(action)
-        
-          
-          if not is_terminal:
-              # get the new state and set point
-              state_this,setpoint_this, reward = (self._preprocessor
-                  .process_observation(time_next, ob_next))
-
-              # save new state in the training set 
-              training_set = np.append(training_set, ob_next)
+        # get ob_next sets from memory
+        memory_len = len(self._memory)
+        all_obs_next = []
+        col_len = len(self._memory[memory_len - 1].obs_nex)
+      
+        for i in range(memory_len):
+            all_obs_next.append(self._memory[i].obs_nex)
        
         # cacualte average and standard diviation for each features   
-        return (np.mean(training_set.reshape(self._train_set_size, 
-                       len(ob_next)).transpose(), axis=1), 
-                np.std(training_set.reshape(self._train_set_size, 
-                       len(ob_next)).transpose(), axis=1))
+        return (np.mean(np.array(all_obs_next).reshape(memory_len, 
+                       col_len).transpose(), axis=1), 
+                np.std(np.array(all_obs_next).reshape(memory_len, 
+                       col_len).transpose(), axis=1))
 
           
 
@@ -390,30 +359,15 @@ class DNQNAgent:
 
    
         train_counter = 0;
-        self._mean_array, self._std_array = self.calc_trainSet(env)
 
-        # get mean_array and std_array of state
-        mean_state_array = np.delete(self._mean_array, [10,11]) 
-        std_state_array = np.delete(self._std_array, [10,11])
-
-        # get mean_array and std_array for reward
-        mean_reward_array = np.array([self._mean_array[10], self._mean_array[-1]]) 
-        std_reward_array = np.array([self._std_array[10], self._std_array[-1]])
-    
 
         eval_res_hist = np.zeros((1,3));
          
         time_this, ob_this, is_terminal = env.reset();
-        
-        state_this, setpoint_this, reward = (self._preprocessor
-          .process_observation(time_this, ob_this))
-        
-        state_this_net = self._preprocessor.process_state_for_network(state_this, 
-          mean_state_array, std_state_array);
-       
-        state_this_mem = self._preprocessor.process_state_for_memory(state_this);
 
-                                                    
+        setpoint_this = ob_this[8:10]
+        
+                                                 
         this_ep_length = 0;
         flag_print_1 = True;
         flag_print_2 = True;
@@ -425,122 +379,115 @@ class DNQNAgent:
             coin = np.random.binomial(1, 0.5)
             #Check which stage is the agent at. If at the collecting stage,
             #then the actions will be random action.
-            if step <= self._num_burn_in:
+            if step < self._num_burn_in:
                 if flag_print_1:
                     logging.info ("Collecting samples to fill the replay memory...");
                     flag_print_1 = False;
 
                 action_mem = self._uniformRandomPolicy.select_action();
+
                 action = self._policy.process_action(setpoint_this, action_mem)
 
-            else:
+            else:  
+   
+                obs_this_net = self._preprocessor.process_observation_for_network(
+                  ob_this, self._mean_array,  self._std_array)
+
+                state_this_net = np.append(obs_this_net[0:10], obs_this_net[-1]).reshape(1,11)
+                
                 if flag_print_2:
                     logging.info ("Start training process...");
                     flag_print_2 = False;
                 
-                q_values = self.calc_q_values(state_this_net) 
-                q_values_1 = self.calc_q_values_1(state_this_net) 
+                q_values = self.calc_q_values(state_this_net) + self.calc_q_values_1(state_this_net) 
                 
-                if(coin == 0):
-                  command = [self._linearDecayGreedyEpsilonPolicy.select_action(q_values, True),
-                  self._linearDecayGreedyEpsilonPolicy.select_action(q_values_1, True)]
-                else:
-                  command = [self._linearDecayGreedyEpsilonPolicy.select_action(q_values_1, True),
-                  self._linearDecayGreedyEpsilonPolicy.select_action(q_values, True)]
-
+                action_mem = self._linearDecayGreedyEpsilonPolicy.select_action(q_values, True),
+      
                 # covert command to setpoint action 
-                action = self._policy.process_action(setpoint_this, command)
+                action = self._policy.process_action(setpoint_this, action_mem[0])
 
             action_counter = action_counter + 1 if action_counter < 4 else 1
             time_next, ob_next, is_terminal = env.step(action)
-
-            state_next,setpoint_next, reward = self._preprocessor.process_observation(time_next, ob_next)
-            
-            state_next_mem = self._preprocessor.process_state_for_memory(state_next)
-
-            state_next_net = self._preprocessor.process_state_for_network(state_this, 
-               mean_state_array, std_state_array);
-      
-            reward_processed = self._preprocessor.process_reward(reward, 
-              mean_reward_array, std_reward_array)
-
-
-            reward_mem = self._preprocessor.process_reward_memory(reward);
+            setpoint_next = ob_next[8:10]
 
       
             #check if exceed the max_episode_length
             if max_episode_length != None and \
                 this_ep_length >= max_episode_length:
                 is_terminal = True;
-            self._memory.append(Sample(state_this_mem, action_mem
-                                       , reward_mem, state_next_mem
+            self._memory.append(Sample(ob_this, action_mem, ob_next
                                        , is_terminal))
-            
+            self._mean_array, self._std_array = self.calc_mean_std()
             #Check which stage is the agent at. If at the training stage,
             #then do the training
-            if step > self._num_burn_in:
+            if step >= self._num_burn_in:
                 #Check the train frequency
                 if action_counter % self._train_freq == 0 \
                     and action_counter > 0:
                     action_counter = 0;
-                    #Eval the model
-                    if train_counter % self._eval_freq == 0:
-                        eval_res = self.evaluate(env_eval, self._eval_epi_num, 
-                                             show_detail = True);
-                        eval_res_hist = np.append(eval_res_hist
-          , np.array([step
-          , eval_res[0], eval_res[1]]).reshape(1, 3)
-          , axis = 0);
-                        np.savetxt(self._log_dir + '/eval_res_hist.csv'
-                , eval_res_hist, delimiter = ',');
-                        logging.info ('Global Step: %d, '%(step), 'evaluation average \
-                               reward is %0.04f, average episode length is %d.'\
-                                   %eval_res);
+          #           #Eval the model
+          #           if train_counter % self._eval_freq == 0:
+          #               eval_res = self.evaluate(env_eval, self._eval_epi_num, 
+          #                                    show_detail = True);
+          #               eval_res_hist = np.append(eval_res_hist
+          # , np.array([step
+          # , eval_res[0], eval_res[1]]).reshape(1, 3)
+          # , axis = 0);
+          #               np.savetxt(self._log_dir + '/eval_res_hist.csv'
+          #       , eval_res_hist, delimiter = ',');
+          #               logging.info ('Global Step: %d, '%(step), 'evaluation average \
+          #                      reward is %0.04f, average episode length is %d.'\
+          #                          %eval_res);
                         
                     train_counter += 1;
                     #Sample from the replay memory
                     samples = self._preprocessor.process_batch(
                         self._memory.sample(self._batch_size), 
-                        mean_array, std_array);
+                        self._mean_array, self._std_array);
                     #Construct target values, one for each of the sample 
                     #in the minibatch
                     samples_x = None;
                     targets = None;
-
                     for sample in samples:
+                        sample_s = np.append(sample.obs[0:10], sample.obs[-1]).reshape(1,11)
+                        sample_s_nex = np.append(sample.obs_nex[0:10], 
+                          sample.obs_nex[-1]).reshape(1,11)
+                        sample_r = self._preprocessor.process_reward(
+                          np.append(sample.obs_nex[0:11], sample.obs_nex[-1]))
+
                         if(coin == 0):
-                            target = self.calc_q_values(sample.s); 
-                            q_s_p = self.calc_q_values(sample.s_p);
+                            target = self.calc_q_values(sample_s); 
+                            q_s_p = self.calc_q_values(sample_s_nex);
                             a_max = np.argmax(q_s_p); 
                         else:
-                            target = self.calc_q_values_1(sample.s); 
-                            q_s_p = self.calc_q_values_1(sample.s_p);
+                            target = self.calc_q_values_1(sample_s); 
+                            q_s_p = self.calc_q_values_1(sample_s_nex);
                             a_max = np.argmax(q_s_p); 
 
                         if sample.is_terminal:
-                            target[0, sample.a] = sample.r;
+                            target[0, sample.a] = sample_r;
                         else:
                             if(coin == 0):
-                                target[0, sample.a] = (sample.r 
+                                target[0, sample.a] = (sample_r
                                                 + self._gamma 
                                                 * self.calc_q_values_1(
-                                                    sample.s_p)[0, a_max]);
+                                                    sample_s_nex)[0, a_max]);
                             else:
-                                target[0, sample.a] = (sample.r 
+                                target[0, sample.a] = (sample_r
                                                 + self._gamma 
                                                 * self.calc_q_values(
-                                                    sample.s_p)[0, a_max]);
+                                                    sample_s_nex)[0, a_max]);
 
                         if targets is None:
                             targets = target;
                         else:
                             targets = np.append(targets, target, axis = 0);
                         if samples_x is None:
-                            samples_x = sample.s;
+                            samples_x = sample_s;
                         else:
-                            samples_x = np.append(samples_x, sample.s, axis = 0);
+                            samples_x = np.append(samples_x, sample_s, axis = 0);
                     #Run the training
-                    feed_dict = {self._img_placeholder:samples_x
+                    feed_dict = {self._state_placeholder:samples_x
                                 ,self._q_placeholder:targets}
 
                     if(coin == 0):
@@ -568,19 +515,17 @@ class DNQNAgent:
             #check whether to start a new episode
             if is_terminal:
                 time_this, ob_this, is_terminal = env.reset();
-                state_this,setpoint_this, reward = (self._preprocessor
-                                     .process_observation(time_this, ob_this))
+                setpoint_this = ob_this[8:10]
       
-                state_this_mem = self._preprocessor.process_state_for_memory(state_this);
 
-                state_this_net = self._preprocessor.process_state_for_network(state_this, 
-                       mean_state_array, std_state_array);
+                #state_this_net = self._preprocessor.process_state_for_network(state_this, 
+                 #      mean_state_array, std_state_array);
       
                 this_ep_length = 0;
                 action_counter = 0;
             else:
-                state_this_mem = state_next_mem;
-                state_this_net = state_next_net
+                ob_this = ob_next
+                setpoint_this = setpoint_next
                 this_ep_length += 1;
            
                 
