@@ -1,7 +1,6 @@
-"""Main LDQN agent."""
+"""Main DNQN agent."""
 import os
 import logging
-from sklearn import preprocessing
 import numpy as np
 import tensorflow as tf
 from keras.layers import (Activation, Convolution2D, Dense, Flatten, Input,
@@ -33,7 +32,7 @@ def create_model(input_state, num_actions,
 
     Parameters
     ----------
-    img: img placeholder.
+    input_state: state placeholder.
     window: int
       Each input to the network is a sequence of frames. This value
       defines how many frames are in the sequence.
@@ -95,7 +94,7 @@ def create_training_op(loss, optimizer, learning_rate):
     
 
 class DNQNAgent:
-    """Class implementing LDQN.
+    """Class implementing DNQN.
 
 
     Parameters
@@ -123,6 +122,8 @@ class DNQNAgent:
       replay memory, for every Q-network update that you run.
     batch_size: int
       How many samples in each minibatch.
+    state_size:int 
+      Number of features in the state.
     action_size: int
       Number of actions.
     learning_rate: float, 0~1
@@ -415,9 +416,14 @@ class DNQNAgent:
             if max_episode_length != None and \
                 this_ep_length >= max_episode_length:
                 is_terminal = True;
+
+            #save sample into memory 
             self._memory.append(Sample(ob_this, action_mem, ob_next
                                        , is_terminal))
+
+            #calcuate mean and std of each feature 
             self._mean_array, self._std_array = self.calc_mean_std()
+
             #Check which stage is the agent at. If at the training stage,
             #then do the training
             if step >= self._num_burn_in:
@@ -582,7 +588,7 @@ class DNQNAgent:
             state_next_net = np.append(obs_next_net[0:11], obs_next_net[12:]).reshape(1,13)
     
             
-            #10:PMV, 11: Occupant number , -2: pwer
+            #10:PMV, 11: Occupant number , -2: power
             reward = self._preprocessor.process_reward(
                           np.append(obs_next_net[10:12], obs_next_net[-2])) 
 
