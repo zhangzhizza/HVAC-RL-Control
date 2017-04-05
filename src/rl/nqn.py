@@ -51,7 +51,7 @@ def create_model(input_state, num_actions,
   
    
     """
-
+    input_state = Input(shape=(input_size,), name='input')
     with tf.name_scope('hidden1'):
         hidden1 = Dense(100, activation='sigmoid')(input_state)
     with tf.name_scope('output'):
@@ -357,13 +357,13 @@ class DNQNAgent:
    
         train_counter = 0;
 
+
         eval_res_hist = np.zeros((1,3));
          
-        time_this, ob_this, is_terminal = env.reset()
-
-        ob_this = self._preprocessor.process_observation(time_this, ob_this)
+        time_this, ob_this, is_terminal = env.reset();
 
         setpoint_this = ob_this[8:10]
+        
                                                  
         this_ep_length = 0;
         flag_print_1 = True;
@@ -389,28 +389,26 @@ class DNQNAgent:
    
                 obs_this_net = self._preprocessor.process_observation_for_network(
                   ob_this, self._mean_array,  self._std_array)
-         
-                state_this_net = np.append(obs_this_net[0:11], obs_this_net[12:]).reshape(1,13)
-              
+
+                state_this_net = np.append(obs_this_net[0:10], obs_this_net[-1]).reshape(1,11)
                 
                 if flag_print_2:
                     logging.info ("Start training process...");
                     flag_print_2 = False;
                 
                 q_values = self.calc_q_values(state_this_net) + self.calc_q_values_1(state_this_net) 
-        
-                action_mem = self._linearDecayGreedyEpsilonPolicy.select_action(q_values, True)
-
+                
+                action_mem = self._linearDecayGreedyEpsilonPolicy.select_action(q_values, True),
+      
                 # covert command to setpoint action 
-                action = self._policy.process_action(setpoint_this, action_mem)
+                action = self._policy.process_action(setpoint_this, action_mem[0])
 
             action_counter = action_counter + 1 if action_counter < 4 else 1
             time_next, ob_next, is_terminal = env.step(action)
-            ob_next = self._preprocessor.process_observation(time_next, ob_next)
-            
             setpoint_next = ob_next[8:10]
             
 
+      
             #check if exceed the max_episode_length
             if max_episode_length != None and \
                 this_ep_length >= max_episode_length:
@@ -427,10 +425,8 @@ class DNQNAgent:
                     action_counter = 0;
                     #Eval the model
                     if train_counter % self._eval_freq == 0:
-
                         eval_res = self.evaluate(env_eval, self._eval_epi_num, 
                                               show_detail = True);
-
                         eval_res_hist = np.append(eval_res_hist
                                               , np.array([step
                                               , eval_res[0], eval_res[1]]).reshape(1, 3)
@@ -451,12 +447,11 @@ class DNQNAgent:
                     samples_x = None;
                     targets = None;
                     for sample in samples:
-                        sample_s = np.append(sample.obs[0:11], sample.obs[12:]).reshape(1,13)
-
-                        sample_s_nex = np.append(sample.obs_nex[0:11], 
-                          sample.obs_nex[12:]).reshape(1,13)
+                        sample_s = np.append(sample.obs[0:10], sample.obs[-1]).reshape(1,11)
+                        sample_s_nex = np.append(sample.obs_nex[0:10], 
+                          sample.obs_nex[-1]).reshape(1,11)
                         sample_r = self._preprocessor.process_reward(
-                          np.append(sample.obs_nex[10:12], sample.obs_nex[-2]))
+                          np.append(sample.obs_nex[0:11], sample.obs_nex[-1]))
 
                         if(coin == 0):
                             target = self.calc_q_values(sample_s); 
@@ -489,7 +484,6 @@ class DNQNAgent:
                             samples_x = sample_s;
                         else:
                             samples_x = np.append(samples_x, sample_s, axis = 0);
-             
                     #Run the training
                     feed_dict = {self._state_placeholder:samples_x
                                 ,self._q_placeholder:targets}
@@ -527,11 +521,11 @@ class DNQNAgent:
             else:
                 ob_this = ob_next
                 setpoint_this = setpoint_next
-                time_this = time_next
                 this_ep_length += 1;
            
                 
             
+
     def evaluate(self, env, num_episodes, max_episode_length=None
                  , show_detail = False):
         """Test your agent with a provided environment.
@@ -549,14 +543,12 @@ class DNQNAgent:
         episode_counter = 1;
         average_reward = 0;
         average_episode_length = 0;
-        time_this, ob_this, is_terminal = env.reset()
-
-        ob_this = self._preprocessor.process_observation(time_this, ob_this)
+        time_this, ob_this, is_terminal = env.reset();
 
         obs_this_net = self._preprocessor.process_observation_for_network(
                   ob_this, self._mean_array,  self._std_array)
 
-        state_this_net = np.append(obs_this_net[0:11], obs_this_net[12:]).reshape(1,13)
+        state_this_net = np.append(obs_this_net[0:10], obs_this_net[-1]).reshape(1,11)
         setpoint_this = ob_this[8:10]
         
         this_ep_reward = 0;
@@ -564,27 +556,24 @@ class DNQNAgent:
         while episode_counter <= num_episodes:
 
             q_values = self.calc_q_values(state_this_net) + self.calc_q_values_1(state_this_net) 
-            action_mem = self._linearDecayGreedyEpsilonPolicy.select_action(q_values, False)
-        
+            action_mem = self._linearDecayGreedyEpsilonPolicy.select_action(q_values, False),
+
             # covert command to setpoint action 
-            action = self._policy.process_action(setpoint_this, action_mem)
+            action = self._policy.process_action(setpoint_this, action_mem[0])
 
             time_next, ob_next, is_terminal = env.step(action)
-
-            ob_next = self._preprocessor.process_observation(time_next, ob_next)
 
             setpoint_next = ob_next[8:10]
 
             obs_next_net = self._preprocessor.process_observation_for_network(
                   ob_next, self._mean_array,  self._std_array)
-  
 
-            state_next_net = np.append(obs_next_net[0:11], obs_next_net[12:]).reshape(1,13)
-    
-            
-            #10:PMV, 11: Occupant number , -2: pwer
+
+
+            state_next_net = np.append(obs_next_net[0:10], obs_next_net[-1]).reshape(1,11)
+      
             reward = self._preprocessor.process_reward(
-                          np.append(obs_next_net[10:12], obs_next_net[-2])) 
+                          np.append(obs_next_net[0:11], obs_next_net[-1]))
 
 
             this_ep_reward += reward;
@@ -619,6 +608,5 @@ class DNQNAgent:
             else:
                 ob_this = ob_next
                 setpoint_this = setpoint_next
-                time_this = time_next
                 this_ep_length += 1;
         return (average_reward, average_episode_length);

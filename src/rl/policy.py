@@ -60,8 +60,10 @@ class Policy:
             list: (float, float) fist is heating setpoint, second for cooling setpoint
 
         """
+
         # get new set point based on action index
         setpoint_next = copy.deepcopy(setpoint_this)
+
    
         setpoint_next[0]  = setpoint_this[0] + ACTION_DICT.get(action)[0]
         setpoint_next[1]  = setpoint_this[1] + ACTION_DICT.get(action)[1]
@@ -220,7 +222,11 @@ class LinearDecayGreedyEpsilonPolicy(Policy):
         sample = np.random.uniform();
         
         greedy = np.argmax(q_values);
+        
+
         uniformrand = np.random.randint(0, q_values.shape[1]);
+
+        
         
         if is_training:
             self._decayed_epsilon -= self._decay_step;
