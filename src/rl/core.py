@@ -3,6 +3,7 @@ from operator import itemgetter
 import matplotlib.pyplot as plt
 import numpy as np
 import math
+import copy
 
 
 
@@ -87,9 +88,10 @@ class Preprocessor:
         """
 
     def process_observation(self, time, observation):
-        """               NOT USED               """
         """Preprocess the given time and observation to corresponding state.
-        1. If occupant_num is 0, the PMV will be setted as 0
+        1. Convert time to time of day
+        2. When no occupant, PMV = 0
+        3. Add time to observation
 
         Should be callled just after obtain return from environment
 
@@ -115,7 +117,7 @@ class Preprocessor:
         
         Returns
         -------
-        state_raw: list of float
+        observation + time: list of float
             Current state
          
         setpoint_this: list of float
@@ -125,17 +127,14 @@ class Preprocessor:
            The PMV and HVAC Power
 
         """
-        Occupant_num = observation[-2]
-        if (Occupant_num == 0):
-            reward = [0, observation[-1]] 
-        else:
-            reward = [observation[10], observation[-1]]
+        # get day index, start with 0
+        day = int(time/86400)  #time counted as second  seconds in a day is 24*60*60 = 86,40
+        time_of_day = int((time - day*86400)/3600)
 
-        state_raw = observation[0:11] + [observation[-1]]
-
-        setpoint_this = observation[8:10]
-
-        return state_raw, setpoint_this, reward
+       
+        new_observation = copy.deepcopy(observation) +  [time_of_day]
+        
+        return new_observation
 
 
     def process_observation_for_network(self, observation, mean, std):
@@ -243,7 +242,7 @@ class Preprocessor:
         Parameters
         ----------
         reward: numpy array of float
-          [0]: PMV  [1]: HVAC electric demand power
+          [0]: PMV [1] Occupant [2]: HVAC electric demand power
 
 
         Returns
@@ -251,8 +250,10 @@ class Preprocessor:
         processed_reward: float: negative value
           The processed reward
         """ 
+        if(reward[1]) == 0:
+            reward[0] = 0
 
-        return -(abs(reward[0] + reward[1]))
+        return -(abs(reward[0]) + reward[2])
      
 
 

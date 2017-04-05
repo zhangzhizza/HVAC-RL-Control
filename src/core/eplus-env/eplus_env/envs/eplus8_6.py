@@ -20,7 +20,7 @@ from ..util.time_interpolate import get_time_interpolate
 
 YEAR = 1991 # Non leap year
 CWD = os.getcwd();
-LOG_LEVEL = 'INFO';
+LOG_LEVEL = 'ERROR';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 LOGGER = Logger();
 ACTION_SIZE = 0;
@@ -90,7 +90,7 @@ class EplusEnv(Env):
                                                    self._eplus_run_ed_mon,
                                                    self._eplus_run_ed_day);
         self._epi_num = 0;
-        print (self._eplus_one_epi_len)
+
 
         
     def _reset(self):
