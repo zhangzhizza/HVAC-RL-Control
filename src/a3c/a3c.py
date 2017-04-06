@@ -13,6 +13,9 @@ from a3c.objectives import a3c_loss
 from a3c.a3c_network import A3C_Network
 from a3c.utils import get_hard_target_model_updates
 from a3c.actions import actions
+from a3c.preprocessors import get_env_states_stats, 
+
+ACTIONS = actions;
 
 def create_training_op(loss, optimizer, learning_rate):
     """
@@ -115,12 +118,16 @@ class A3CThread:
         ### Get env states statistics under random policy ###
         #####################################################
         self._ob_mean, self._ob_stdv = get_env_states_stats(
-                                            env, actions, start_year,
-                         start_mon, start_date, start_day)
+                                            env, ACTIONS, env.start_year,
+                                            env.start_mon, env.start_day, 
+                                            env.start_weekday);
+        #####################################################
+        self._env = env;
             
-    def train(self, sess, tmax, coordinator, env):
-        # Init the env
-        time_this, ob_this, is_terminal = env.reset();
+    def train(self, sess, tmax, coordinator):
+        # Reset the env
+        time_this, ob_this_raw, is_terminal = self._env.reset();
+        
         
         while not coordinator.should_stop():
             # Synchronize local network parameters with 
