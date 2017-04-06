@@ -1,3 +1,4 @@
 gym
 numpy
-
+tensorflow
+keras
