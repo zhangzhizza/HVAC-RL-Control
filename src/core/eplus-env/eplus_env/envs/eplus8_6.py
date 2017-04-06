@@ -14,7 +14,8 @@ from gym.envs.registration import register
 from xml.etree.ElementTree import Element, SubElement, Comment, tostring
 
 from ..util.logger import Logger 
-from ..util.time import get_hours_to_now, get_time_string, get_delta_seconds
+from ..util.time import (get_hours_to_now, get_time_string, get_delta_seconds, 
+                         WEEKDAY_ENCODING)
 from ..util.time_interpolate import get_time_interpolate
 
 
@@ -75,6 +76,7 @@ class EplusEnv(Env):
         self._episode_existed = False;
         (self._eplus_run_st_mon, self._eplus_run_st_day,
          self._eplus_run_ed_mon, self._eplus_run_ed_day,
+         self._eplus_run_st_weekday,
          self._eplus_run_stepsize) = self._get_eplus_run_info(idf_path);
         self._eplus_run_stepsize = 3600 / self._eplus_run_stepsize 
                                                             # Stepsize in second
@@ -441,8 +443,9 @@ class EplusEnv(Env):
             idf_path: String
                 The .idf file path.
         
-        Return: (int, int, int, int, int)
-            (start month, start date, end month, end date, step size)
+        Return: (int, int, int, int, int, int)
+            (start month, start date, end month, end date, start weekday, 
+            step size)
         """
         ret = [];
         
@@ -468,6 +471,15 @@ class EplusEnv(Env):
                                                  .split(',')[0]
                                                  .strip()
                                                  .split(';')[0]));
+        # Start weekday
+        ret.append(WEEKDAY_ENCODING[contents[tgtIndex + i].strip()
+                                                          .split('!')[0]
+                                                          .strip()
+                                                          .split(',')[0]
+                                                          .strip()
+                                                          .split(';')[0]
+                                                          .strip()
+                                                          .lower()]);
         # Step size
         line_count = 0;
         for line in contents:
@@ -569,9 +581,22 @@ class EplusEnv(Env):
             The simulation time step that the simulation ends. 
         """
         return get_delta_seconds(YEAR, st_mon, st_day, ed_mon, ed_day);
-
-
-
+    
+    @property
+    def start_year(self):
+        return YEAR;
+    
+    @property
+    def start_mon(self):
+        return self._eplus_run_st_mon;
+    
+    @property
+    def start_day(self):
+        return self._eplus_run_st_day;
+    
+    @property
+    def start_weekday(self):
+        return self._eplus_run_st_weekday;
     
 
     
