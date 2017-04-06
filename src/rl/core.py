@@ -127,12 +127,19 @@ class Preprocessor:
            The PMV and HVAC Power
 
         """
+        #time counted as second 
+        seconds_in_day = 24*60*60
         # get day index, start with 0
-        day = int(time/86400)  #time counted as second  seconds in a day is 24*60*60 = 86,40
-        time_of_day = int((time - day*86400)/3600)
+        day = int(time/seconds_in_day)  
+        time_of_day = int((time - day*seconds_in_day)/3600)
+
+        seconds_in_week = 24*60*60*7
+        # get day of week 
+        week = int(time/seconds_in_week) 
+        day_of_week = int((time - week*seconds_in_week)/seconds_in_day)
 
        
-        new_observation = copy.deepcopy(observation) +  [time_of_day]
+        new_observation = copy.deepcopy(observation) +  [time_of_day] + [day_of_week]
         
         return new_observation
 

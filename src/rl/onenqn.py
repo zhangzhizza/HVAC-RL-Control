@@ -136,6 +136,7 @@ class OneNQNAgent:
       log file save directory
     """
     def __init__(self,
+                 train_set_size,
                  preprocessor,
                  memory,
                  gamma,
@@ -153,7 +154,7 @@ class OneNQNAgent:
                  num_steps,
                  log_dir,
                  save_freq):
-        
+        self._train_set_size = train_set_size;
         self._state_size = state_size;
         self._action_size = action_size;
         self._learning_rate = learning_rate;
@@ -332,32 +333,70 @@ class OneNQNAgent:
         self._sess.run(self._hard_copy_to_target_op);
 
     
-    def calc_mean_std(self):
+    def calc_trainSet(self, env):
         """
-        Calculate mean and standanr deviation of all features
-
-        Return
-        ----------
-        mean: numpy array
-          The array of mean of each feature
-        standard deviataion: numpy array
-          The mean of standard deviataion of each feature
-
+        1. Filling states in training set, 
+        which is used for sample standarization
+        2. Calculate mean and standanr deviation of all features
+ 
+         Note: training set should be released after using to save memory
+         so a training set class is not designed as replay memory
+ 
+         Parameters
+         ----------
+         env: gym.Env
+           This is Eplus environment. 
+  
+         Parameters
+         ----------
+         mean: numpy array
+           The array of mean of each feature
+         standard deviataion: numpy array
+           The mean of standard deviataion of each feature
+  
         """
+ 
+        time_this, ob_this, is_terminal = env.reset()
 
-        # get ob_next sets from memory
-        memory_len = len(self._memory)
-        all_obs_next = []
-        col_len = len(self._memory[memory_len - 1].obs_nex)
-      
-        for i in range(memory_len):
-            all_obs_next.append(self._memory[i].obs_nex)
-       
+        ob_this = self._preprocessor.process_observation(time_this, ob_this)
+
+        setpoint_this = ob_this[8:10]
+ 
+         # save the first state in the training set 
+        training_set = np.array(ob_this)
+   
+   
+        for step in range(1, self._train_set_size):
+
+          # get action command 
+          command = self._uniformRandomPolicy.select_action()
+          # covert command to setpoint action 
+          action = self._policy.process_action(setpoint_this, command)
+          # take action, get new observation 
+          time_next, ob_next, is_terminal = env.step(action)
+
+          ob_next = self._preprocessor.process_observation(time_next, ob_next)
+            
+          setpoint_next = ob_next[8:10]
+          
+          training_set = np.append(training_set, ob_next)
+           
+          if is_terminal:
+              time_this, ob_this, is_terminal = env.reset()
+
+              ob_this = self._preprocessor.process_observation(time_this, ob_this)
+
+              setpoint_this = ob_this[8:10]
+          else:
+              ob_this = ob_next
+              setpoint_this = setpoint_next
+              time_this = time_next
+        
         # cacualte average and standard diviation for each features   
-        return (np.mean(np.array(all_obs_next).reshape(memory_len, 
-                       col_len).transpose(), axis=1), 
-                np.std(np.array(all_obs_next).reshape(memory_len, 
-                       col_len).transpose(), axis=1))
+        return (np.mean(training_set.reshape(self._train_set_size, 
+                        len(ob_next)).transpose(), axis=1), 
+                 np.std(training_set.reshape(self._train_set_size, 
+                        len(ob_next)).transpose(), axis=1))
 
 
     def fit(self, env, env_eval, num_iterations, max_episode_length=None):
@@ -385,6 +424,10 @@ class OneNQNAgent:
           How long a single episode should last before the agent
           resets. Can help exploration.
         """
+
+        # caculate mean and standard deviation
+        self._mean_array, self._std_array = self.calc_trainSet(env)
+        print(self._mean_array, self._std_array)
         train_counter = 0;
         eval_res_hist = np.zeros((1,3));
 
@@ -418,7 +461,7 @@ class OneNQNAgent:
                 obs_this_net = self._preprocessor.process_observation_for_network(
                 ob_this, self._mean_array,  self._std_array)
          
-                state_this_net = np.append(obs_this_net[0:11], obs_this_net[12:]).reshape(1,13)
+                state_this_net = np.append(obs_this_net[0:11], obs_this_net[12:]).reshape(1,14)
 
                 action_mem = self.select_action(state_this_net, stage = 'training')
                 # covert command to setpoint action 
@@ -441,8 +484,6 @@ class OneNQNAgent:
             self._memory.append(Sample(ob_this, action_mem, ob_next
                                        , is_terminal))
 
-            #calcuate mean and std of each feature 
-            self._mean_array, self._std_array = self.calc_mean_std()
             
             #Check which stage is the agent at. If at the training stage,
             #then do the training
@@ -475,11 +516,10 @@ class OneNQNAgent:
                     samples_x = None;
                     targets = None;
                     for sample in samples:
-                        sample_s = np.append(sample.obs[0:11], sample.obs[12:]).reshape(1,13)
+                        sample_s = np.append(sample.obs[0:11], sample.obs[12:]).reshape(1,14)
                         sample_s_nex = np.append(sample.obs_nex[0:11], 
-                          sample.obs_nex[12:]).reshape(1,13)
-                        sample_r = self._preprocessor.process_reward(
-                          np.append(sample.obs_nex[10:12], sample.obs_nex[-2]))
+                          sample.obs_nex[12:]).reshape(1,14)
+                        sample_r = self._preprocessor.process_reward(sample.obs_nex[10:13])
 
                         target = self.calc_q_values(sample_s);
                         a_max = self.select_action(sample_s_nex, stage = 'greedy');
@@ -564,7 +604,7 @@ class OneNQNAgent:
         obs_this_net = self._preprocessor.process_observation_for_network(
                   ob_this, self._mean_array,  self._std_array)
 
-        state_this_net = np.append(obs_this_net[0:11], obs_this_net[12:]).reshape(1,13)
+        state_this_net = np.append(obs_this_net[0:11], obs_this_net[12:]).reshape(1,14)
         setpoint_this = ob_this[8:10]
         
         this_ep_reward = 0;
@@ -584,12 +624,11 @@ class OneNQNAgent:
                   ob_next, self._mean_array,  self._std_array)
   
 
-            state_next_net = np.append(obs_next_net[0:11], obs_next_net[12:]).reshape(1,13)
+            state_next_net = np.append(obs_next_net[0:11], obs_next_net[12:]).reshape(1,14)
     
             
             #10:PMV, 11: Occupant number , -2: power
-            reward = self._preprocessor.process_reward(
-                          np.append(obs_next_net[10:12], obs_next_net[-2])) 
+            reward = self._preprocessor.process_reward(obs_next_net[10:13])
             this_ep_reward += reward;
 
  
