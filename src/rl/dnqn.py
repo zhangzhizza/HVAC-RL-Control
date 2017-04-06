@@ -391,7 +391,7 @@ class DNQNAgent:
                 obs_this_net = self._preprocessor.process_observation_for_network(
                   ob_this, self._mean_array,  self._std_array)
          
-                state_this_net = np.append(obs_this_net[0:11], obs_this_net[12:]).reshape(1,13)
+                state_this_net = np.append(obs_this_net[0:11], obs_this_net[12:]).reshape(1,14)
               
                 
                 if flag_print_2:
@@ -457,12 +457,11 @@ class DNQNAgent:
                     samples_x = None;
                     targets = None;
                     for sample in samples:
-                        sample_s = np.append(sample.obs[0:11], sample.obs[12:]).reshape(1,13)
+                        sample_s = np.append(sample.obs[0:11], sample.obs[12:]).reshape(1,14)
 
                         sample_s_nex = np.append(sample.obs_nex[0:11], 
-                          sample.obs_nex[12:]).reshape(1,13)
-                        sample_r = self._preprocessor.process_reward(
-                          np.append(sample.obs_nex[10:12], sample.obs_nex[-2]))
+                          sample.obs_nex[12:]).reshape(1,14)
+                        sample_r = self._preprocessor.process_reward(obs_next_net[10:13])
 
                         if(coin == 0):
                             target = self.calc_q_values(sample_s); 
@@ -562,7 +561,7 @@ class DNQNAgent:
         obs_this_net = self._preprocessor.process_observation_for_network(
                   ob_this, self._mean_array,  self._std_array)
 
-        state_this_net = np.append(obs_this_net[0:11], obs_this_net[12:]).reshape(1,13)
+        state_this_net = np.append(obs_this_net[0:11], obs_this_net[12:]).reshape(1,14)
         setpoint_this = ob_this[8:10]
         
         this_ep_reward = 0;
@@ -585,12 +584,11 @@ class DNQNAgent:
                   ob_next, self._mean_array,  self._std_array)
   
 
-            state_next_net = np.append(obs_next_net[0:11], obs_next_net[12:]).reshape(1,13)
+            state_next_net = np.append(obs_next_net[0:11], obs_next_net[12:]).reshape(1,14)
     
             
             #10:PMV, 11: Occupant number , -2: power
-            reward = self._preprocessor.process_reward(
-                          np.append(obs_next_net[10:12], obs_next_net[-2])) 
+            reward = self._preprocessor.process_reward(obs_next_net[10:13])
 
 
             this_ep_reward += reward;
