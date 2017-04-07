@@ -387,7 +387,6 @@ class DNQNAgent:
                 action = self._policy.process_action(setpoint_this, action_mem)
 
             else:  
-   
                 obs_this_net = self._preprocessor.process_observation_for_network(
                   ob_this, self._mean_array,  self._std_array)
          
@@ -461,7 +460,7 @@ class DNQNAgent:
 
                         sample_s_nex = np.append(sample.obs_nex[0:11], 
                           sample.obs_nex[12:]).reshape(1,14)
-                        sample_r = self._preprocessor.process_reward(obs_next_net[10:13])
+                        sample_r = self._preprocessor.process_reward(sample.obs_nex[10:13])
 
                         if(coin == 0):
                             target = self.calc_q_values(sample_s); 
@@ -520,11 +519,12 @@ class DNQNAgent:
                         summary_str = self._sess.run(self._summary, feed_dict=feed_dict)
                         self._summary_writer.add_summary(summary_str, train_counter);
                         self._summary_writer.flush()
-            
+                    
             
             #check whether to start a new episode
             if is_terminal:
                 time_this, ob_this, is_terminal = env.reset();
+                ob_this = self._preprocessor.process_observation(time_this, ob_this)
                 setpoint_this = ob_this[8:10]
       
                 this_ep_length = 0;
@@ -602,6 +602,10 @@ class DNQNAgent:
             if is_terminal:
                 time_this, ob_this, is_terminal = env.reset()
                 setpoint_this = ob_this[8:10]
+                ob_this = self._preprocessor.process_observation(time_this, ob_this)
+
+                obs_this_net = self._preprocessor.process_observation_for_network(
+                  ob_this, self._mean_array,  self._std_array)
    
                 average_reward = (average_reward * (episode_counter - 1) 
                                   + this_ep_reward) / episode_counter;
@@ -621,8 +625,7 @@ class DNQNAgent:
                 this_ep_reward = 0;
                 
             else:
-                ob_this = ob_next
-                setpoint_this = setpoint_next
-                time_this = time_next
+                state_this_net = state_next_net
+    
                 this_ep_length += 1;
         return (average_reward, average_episode_length);

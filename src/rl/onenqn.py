@@ -427,7 +427,7 @@ class OneNQNAgent:
 
         # caculate mean and standard deviation
         self._mean_array, self._std_array = self.calc_trainSet(env)
-        print(self._mean_array, self._std_array)
+    
         train_counter = 0;
         eval_res_hist = np.zeros((1,3));
 
@@ -441,6 +441,7 @@ class OneNQNAgent:
         flag_print_1 = True;
         flag_print_2 = True;
         action_counter = 0;
+   
         for step in range(num_iterations):
             #Check which stage is the agent at. If at the collecting stage,
             #then the actions will be random action.
@@ -506,7 +507,7 @@ class OneNQNAgent:
                                reward is %0.04f, average episode length is %d.'\
                                    %eval_res);
                         
-                    train_counter += 1;
+                    
                     #Sample from the replay memory
                     samples = self._preprocessor.process_batch(
                         self._memory.sample(self._batch_size), 
@@ -523,6 +524,9 @@ class OneNQNAgent:
 
                         target = self.calc_q_values(sample_s);
                         a_max = self.select_action(sample_s_nex, stage = 'greedy');
+        
+                   
+
                         if sample.is_terminal:
                             target[0, sample.a] = sample_r;
                         else:
@@ -539,6 +543,8 @@ class OneNQNAgent:
                         else:
                             samples_x = np.append(samples_x, sample_s, axis = 0);
                     #Run the training
+          
+                    
                     feed_dict = {self._state_placeholder:samples_x
                                 ,self._q_placeholder:targets}
                     sess_res = self._sess.run([self._train_op, self._loss]
@@ -561,12 +567,15 @@ class OneNQNAgent:
                         # Update the events file.
                         summary_str = self._sess.run(self._summary, feed_dict=feed_dict)
                         self._summary_writer.add_summary(summary_str, train_counter);
+                        self._summary_writer.add_graph(self._sess.graph);
                         self._summary_writer.flush()
-            
+                    
+                    train_counter += 1;
             
             #check whether to start a new episode
             if is_terminal:
                 time_this, ob_this, is_terminal = env.reset()
+                ob_this = self._preprocessor.process_observation(time_this, ob_this)
                 setpoint_this = ob_this[8:10]
 
                 this_ep_length = 0;
