@@ -64,7 +64,7 @@ Observation,Present Weather Codes,Precipitable Water {mm},Aerosol Optical Depth
 * isTerminal: whether the current episode finishs or not. When the simulation time reaches the end of the 
 EnergyPlus run period (Mar 31st 24:00:00), the episode ends. 
 
-### Running output
+#### Running output
 
 EnergyPlus logs its own output. The output will be stored under the directory $pwd/Eplus-env-runX/Eplus-env-sub_runX/output. The "sub_run" directory is the directory for each episode that the environment runs.
 
@@ -111,4 +111,4 @@ while not isTerminal:
     curSimTime, ob, isTerminal = env.step(action);
                   
 env.end_env(); # Safe end the environment after use. 
-'''
+```
