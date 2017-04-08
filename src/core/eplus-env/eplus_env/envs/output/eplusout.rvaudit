@@ -1,0 +1,16 @@
+ ReadVarsESO
+ processing:.5ZoneAutoDXVAV_baseline.rvi
+ input file:output/eplusout.eso
+ output file:output/eplusout.csv
+ getting all vars from:output/eplusout.eso
+  number variables requested for output=         179
+ ReadVars Run Time=00hr 00min  2.07sec
+ ReadVarsESO program completed successfully.
+ ReadVarsESO
+ processing:.5ZoneAutoDXVAV_baseline.mvi
+ input file:output/eplusout.mtr
+ output file:output/eplusmtr.csv
+ getting all vars from:output/eplusout.mtr
+  number variables requested for output=          24
+ ReadVars Run Time=00hr 00min  0.00sec
+ ReadVarsESO program completed successfully.
