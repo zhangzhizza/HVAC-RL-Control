@@ -5,6 +5,7 @@ import numpy as np
 
 # Noforecast env
 env = gym.make('Eplus-v0');
+print (env.min_max_limits, env.start_year, env.start_mon, env.start_day, env.start_weekday)
 is_terminal = env.reset()[-1];
 while not is_terminal:
     time, ob, is_terminal = env.step([24,24]);

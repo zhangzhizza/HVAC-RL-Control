@@ -14,7 +14,8 @@ from gym.envs.registration import register
 from xml.etree.ElementTree import Element, SubElement, Comment, tostring
 
 from ..util.logger import Logger 
-from ..util.time import get_hours_to_now, get_time_string, get_delta_seconds
+from ..util.time import (get_hours_to_now, get_time_string, get_delta_seconds, 
+                         WEEKDAY_ENCODING)
 from ..util.time_interpolate import get_time_interpolate
 
 
@@ -75,6 +76,7 @@ class EplusEnv(Env):
         self._episode_existed = False;
         (self._eplus_run_st_mon, self._eplus_run_st_day,
          self._eplus_run_ed_mon, self._eplus_run_ed_day,
+         self._eplus_run_st_weekday,
          self._eplus_run_stepsize) = self._get_eplus_run_info(idf_path);
         self._eplus_run_stepsize = 3600 / self._eplus_run_stepsize 
                                                             # Stepsize in second
@@ -391,7 +393,7 @@ class EplusEnv(Env):
         time.sleep(1);# Sleep the thread so EnergyPlus has time to do the
                       # post processing
         # Kill subprocess
-        os.killpg(os.getpgid(self._eplus_process.pid), signal.SIGTERM);
+        os.killpg(self._eplus_process.pid, signal.SIGTERM);
         
         
     def _run_eplus_outputProcessing(self):
@@ -484,6 +486,15 @@ class EplusEnv(Env):
                                                  .split(',')[0]
                                                  .strip()
                                                  .split(';')[0]));
+        # Start weekday
+        ret.append(WEEKDAY_ENCODING[contents[tgtIndex + i + 1].strip()
+                                                          .split('!')[0]
+                                                          .strip()
+                                                          .split(',')[0]
+                                                          .strip()
+                                                          .split(';')[0]
+                                                          .strip()
+                                                          .lower()]);
         # Step size
         line_count = 0;
         for line in contents:
@@ -596,8 +607,42 @@ class EplusEnv(Env):
             is the minimum value, index 1 is the maximum value. 
         """
         return self._min_max_limits;
-
-
+    
+    @property
+    def start_year(self):
+        """
+        Return the EnergyPlus simulaton year.
+        
+        Return: int
+        """
+        return YEAR;
+    
+    @property
+    def start_mon(self):
+        """
+        Return the EnergyPlus simulaton start month.
+        
+        Return: int
+        """
+        return self._eplus_run_st_mon;
+    
+    @property
+    def start_day(self):
+        """
+        Return the EnergyPlus simulaton start day of the month.
+        
+        Return: int
+        """
+        return self._eplus_run_st_day;
+    
+    @property
+    def start_weekday(self):
+        """
+        Return the EnergyPlus simulaton start weekday. 0 is Monday, 6 is Sunday.
+        
+        Return: int
+        """
+        return self._eplus_run_st_weekday;
 
     
 
