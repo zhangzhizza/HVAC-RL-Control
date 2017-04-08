@@ -1,0 +1,3 @@
+,Environment:Site Outdoor Air Drybulb Temperature [C](TimeStep),Environment:Site Outdoor Air Relative Humidity [%](TimeStep),Environment:Site Wind Speed [m/s](TimeStep),Environment:Site Wind Direction [deg](TimeStep),Environment:Site Diffuse Solar Radiation Rate per Area [W/m2](TimeStep),Environment:Site Direct Solar Radiation Rate per Area [W/m2](TimeStep),Whole Building:Facility Total HVAC Electric Demand Power [W](TimeStep)
+max,26,100,23.1,357.5,389,905,6000
+min,-16.7,0,0,0,0,0,0
