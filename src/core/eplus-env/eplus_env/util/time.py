@@ -5,6 +5,9 @@ MON_DAYS_MAP = {1:31, 2:28, 3:31,
                7:31, 8:31, 9:30,
                10:31, 11:30, 12:31};
 
+WEEKDAY_ENCODING = {'monday':0, 'tuesday':1, 'wednesday':2, 'thursday':3,
+                    'friday':4, 'saturday': 5, 'sunday':6}
+
 def get_hours_to_now(month, day):
     """
     The function returns the number of hours by the start of the month:day.

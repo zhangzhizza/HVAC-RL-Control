@@ -30,14 +30,14 @@ the south zone. The ouput from reset or step function is different for the two e
 
 * curSimTime: current simulation time counting in seconds from Jan 1st 00:00:00.
 
-* sensorOut: 1-D python list of float [Site Outdoor Air Drybulb Temperature (C), 
-Site Outdoor Air Relative Humidity (%), Site Wind Speed (m/s), Site Wind Direction (degree from north), 
-Site Diffuse Solar Radiation Rate per Area (W/m2), Site Direct Solar Radiation Rate per Area (W/m2), 
-Zone Air Temperature (C), Zone Air Relative Humidity (%), Zone Thermostat Heating Setpoint Temperature (C), 
-Zone Thermostat Cooling Setpoint Temperature (C), Zone Thermal Comfort Fanger Model PMV, Zone People Occupant Count, 
-Facility Total HVAC Electric Demand Power (W)]. **Note**: Zone People Occupant Count is here just for an indication
-whether the zone is occupied or not; don not use it directly please actual number of people in a room in reality 
-is very hard to detect (but occupancy or not is easy). 
+* sensorOut: 1-D python list of float [**0** Site Outdoor Air Drybulb Temperature (C), 
+**1** Site Outdoor Air Relative Humidity (%), **2** Site Wind Speed (m/s), **3** Site Wind Direction (degree from north), 
+**4** Site Diffuse Solar Radiation Rate per Area (W/m2), **5** Site Direct Solar Radiation Rate per Area (W/m2), 
+**6** Zone Thermostat Heating Setpoint Temperature (C), **7** Zone Thermostat Cooling Setpoint Temperature (C),
+**8** Zone Air Temperature (C), **9** Zone Thermal Comfort Mean Radiant Temperature (C), **10** Zone Air Relative Humidity (%),  
+**11** Zone Thermal Comfort Clothing Value (clo), **12** Zone Thermal Comfort Fanger Model PPD, **13** Zone People Occupant Count, 
+**14** Facility Total HVAC Electric Demand Power (W)]. **Note**: Zone People Occupant Count is here just for an indication
+whether the zone is occupied or not (1 or 0). 
 
 * weatherForecast: 2-D python list with shape (36, 28) where row x is the weather forecast information for 
 the x time steps ahead of the curSimTime, where columns are the weather variables and the order is 
@@ -59,13 +59,45 @@ EnergyPlus run period (Mar 31st 24:00:00), the episode ends.
 EnergyPlus logs its own output. The output will be stored under the directory $pwd/Eplus-env-runX/Eplus-env-sub_runX/output.
 The "sub_run" directory is the directory for each episode that the environment runs. 
 
-#### Example
+### Running output
+
+EnergyPlus logs its own output. The output will be stored under the directory $pwd/Eplus-env-runX/Eplus-env-sub_runX/output. The "sub_run" directory is the directory for each episode that the environment runs.
+
+#### Public attributes
+* min_max_limits: The minimum and maximum possible values for all state features. Return a python list of tuples. The tuples are in the same
+order as the sensorOut order. The index 0 of the tuple is the minimum value and the index 1 is the maximum value. It returns:
+'''python
+min_max_limits = [(-16.7, 26.0),
+                  (  0.0, 100.0),
+                  (  0.0, 23.1),
+                  (  0.0, 360.0),
+                  (  0.0, 389.0),
+                  (  0.0, 905.0),
+                  ( 15.0, 30.0),
+                  ( 15.0, 30.0),
+                  ( 15.0, 30.0),
+                  ( 15.0, 30.0),
+                  (  0.0, 100.0),
+                  (  0.5, 1.0),
+                  (  0.0, 1.0),
+                  (  0.0, 1.0),
+                  (  0.0, 8000.0)];
+'''
+
+* start_year: EnergyPlus simulation start year, int.
+* start_mon: EnergyPlus simulation start month, int.
+* start_day: EnergyPlus simulation start day of the month, int.
+* start_weekday: EnergyPlus simulation start weekday, int. 0 is Monday. 
+
+
+### Example
 
 ```python
 import gym;
 import eplus_env;
 
 env = gym.make('Eplus-v0');
+min_max_limits = env.min_max_limits; # Access public attribute
 curSimTime, ob, isTerminal = env.reset(); # Reset the env (creat the EnergyPlus subprocess)
 while not isTerminal:
     action = someFuncToGetAction(curSimTime, ob); # Should return a python list of float with len 2
@@ -76,3 +108,4 @@ while not isTerminal:
     curSimTime, ob, isTerminal = env.step(action);
                   
 env.end_env(); # Safe end the environment after use. 
+'''
