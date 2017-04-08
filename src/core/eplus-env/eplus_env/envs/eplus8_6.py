@@ -23,7 +23,7 @@ CWD = os.getcwd();
 LOG_LEVEL = 'INFO';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 LOGGER = Logger();
-ACTION_SIZE = 0;
+ACTION_SIZE = 2;
 
 class EplusEnv(Env):
     """EnergyPlus v8.6 environment
@@ -90,7 +90,21 @@ class EplusEnv(Env):
                                                    self._eplus_run_ed_mon,
                                                    self._eplus_run_ed_day);
         self._epi_num = 0;
-        print (self._eplus_one_epi_len)
+        self._min_max_limits = [(-16.7, 26.0),
+                                (  0.0, 100.0),
+                                (  0.0, 23.1),
+                                (  0.0, 360.0),
+                                (  0.0, 389.0),
+                                (  0.0, 905.0),
+                                ( 15.0, 30.0),
+                                ( 15.0, 30.0),
+                                ( 15.0, 30.0),
+                                ( 15.0, 30.0),
+                                (  0.0, 100.0),
+                                (  0.5, 1.0),
+                                (  0.0, 1.0),
+                                (  0.0, 1.0),
+                                (  0.0, 8000.0)];
 
         
     def _reset(self):
@@ -361,9 +375,13 @@ class EplusEnv(Env):
         # Send the final msg to EnergyPlus
         header = self._eplus_msg_header;
         tosend = self._assembleMsg(header[0], header[1], ACTION_SIZE, 0,
-                                   0, self._curSimTim, 
-                                   [0 for i in range(ACTION_SIZE)]);
+                                    0, self._curSimTim, 
+                                   [24 for i in range(ACTION_SIZE)]);
         self._conn.send(tosend.encode());
+        # Recieve the final msg from Eplus
+        rcv = self._conn.recv(1024).decode();
+        self._conn.send(tosend.encode()); # Send again, don't know why
+        
         time.sleep(2) # Rest for a while so EnergyPlus finish post processing
         # Remove the connection
         self._conn.close();
@@ -567,6 +585,17 @@ class EplusEnv(Env):
             The simulation time step that the simulation ends. 
         """
         return get_delta_seconds(YEAR, st_mon, st_day, ed_mon, ed_day);
+    
+    @property
+    def min_max_limits(self):
+        """
+        Return the min_max_limits for all state features. 
+        
+        Return: python list of tuple.
+            In the order of the state features, and the index 0 of the tuple
+            is the minimum value, index 1 is the maximum value. 
+        """
+        return self._min_max_limits;
 
 
 
