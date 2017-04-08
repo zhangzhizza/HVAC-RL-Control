@@ -83,7 +83,7 @@
 ! System Equipment Autosize:      Yes
 ! Purchased Cooling:              None
 ! Purchased Heating:              None
-! Coils:                          COIL:DX:MultiSpeed:CoolingEmpirical, Coil:Heating:Fuel
+! Coils:                          COIL:DX:MultiSpeed:CoolingEmpirical, Coil:Heating:Electric
 ! Pumps:                          None
 ! Boilers:                        None
 ! Chillers:                       None
@@ -613,12 +613,6 @@ SizingPeriod:DesignDay,
   Schedule:Compact,
     BasinHeaterSched,        !- Name
     On/Off,                  !- Schedule Type Limits Name
-    Through: 1/31,           !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,1.0,        !- Field 3
-    Through: 2/2,            !- Field 5
-    For: AllDays,            !- Field 6
-    Until: 24:00,0.0,        !- Field 7
     Through: 12/31,          !- Field 9
     For: AllDays,            !- Field 10
     Until: 24:00,1.0;        !- Field 11
@@ -1807,8 +1801,8 @@ SizingPeriod:DesignDay,
     3.7,3.7,2.4;  !- X,Y,Z ==> Vertex 4 {m}
 
   Sizing:Parameters,
-    1.0,                     !- Heating Sizing Factor
-    1.0,                     !- Cooling Sizing Factor
+    1.3,                     !- Heating Sizing Factor
+    1.3,                     !- Cooling Sizing Factor
     ;                        !- Timesteps in Averaging Window
 
   Sizing:Zone,
@@ -1817,7 +1811,7 @@ SizingPeriod:DesignDay,
     16.,                     !- Zone Cooling Design Supply Air Temperature {C}
     ,                        !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
-    50.,                     !- Zone Heating Design Supply Air Temperature {C}
+    35.,                     !- Zone Heating Design Supply Air Temperature {C}
     ,                        !- Zone Heating Design Supply Air Temperature Difference {deltaC}
     0.009,                   !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
     0.004,                   !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
@@ -1848,7 +1842,7 @@ SizingPeriod:DesignDay,
     16.,                     !- Zone Cooling Design Supply Air Temperature {C}
     ,                        !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
-    50.,                     !- Zone Heating Design Supply Air Temperature {C}
+    35.,                     !- Zone Heating Design Supply Air Temperature {C}
     ,                        !- Zone Heating Design Supply Air Temperature Difference {deltaC}
     0.009,                   !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
     0.004,                   !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
@@ -1879,7 +1873,7 @@ SizingPeriod:DesignDay,
     16.,                     !- Zone Cooling Design Supply Air Temperature {C}
     ,                        !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
-    50.,                     !- Zone Heating Design Supply Air Temperature {C}
+    35.,                     !- Zone Heating Design Supply Air Temperature {C}
     ,                        !- Zone Heating Design Supply Air Temperature Difference {deltaC}
     0.009,                   !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
     0.004,                   !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
@@ -1910,7 +1904,7 @@ SizingPeriod:DesignDay,
     16.,                     !- Zone Cooling Design Supply Air Temperature {C}
     ,                        !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
-    50.,                     !- Zone Heating Design Supply Air Temperature {C}
+    35.,                     !- Zone Heating Design Supply Air Temperature {C}
     ,                        !- Zone Heating Design Supply Air Temperature Difference {deltaC}
     0.009,                   !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
     0.004,                   !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
@@ -1941,7 +1935,7 @@ SizingPeriod:DesignDay,
     16.,                     !- Zone Cooling Design Supply Air Temperature {C}
     ,                        !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
-    50.,                     !- Zone Heating Design Supply Air Temperature {C}
+    35.,                     !- Zone Heating Design Supply Air Temperature {C}
     ,                        !- Zone Heating Design Supply Air Temperature Difference {deltaC}
     0.009,                   !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
     0.004,                   !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
@@ -1970,12 +1964,12 @@ SizingPeriod:DesignDay,
     VAV Sys 1,               !- AirLoop Name
     sensible,                !- Type of Load to Size On
     autosize,                !- Design Outdoor Air Flow Rate {m3/s}
-    0.3,                     !- Central Heating Maximum System Air Flow Ratio
-    7.0,                     !- Preheat Design Temperature {C}
+    1.0,                     !- Central Heating Maximum System Air Flow Ratio
+    -15.0,                     !- Preheat Design Temperature {C}
     0.008,                   !- Preheat Design Humidity Ratio {kgWater/kgDryAir}
-    11.0,                    !- Precool Design Temperature {C}
+    30.0,                    !- Precool Design Temperature {C}
     0.008,                   !- Precool Design Humidity Ratio {kgWater/kgDryAir}
-    16.,                     !- Central Cooling Design Supply Air Temperature {C}
+    12.,                     !- Central Cooling Design Supply Air Temperature {C}
     18.,                     !- Central Heating Design Supply Air Temperature {C}
     noncoincident,           !- Type of Zone Sum to Use
     no,                      !- 100% Outdoor Air in Cooling
@@ -2458,14 +2452,14 @@ SizingPeriod:DesignDay,
     0.1,                     !- Constant Minimum Air Flow Fraction
     ,                        !- Fixed Minimum Air Flow Rate {m3/s}
     ,                        !- Minimum Air Flow Fraction Schedule Name
-    Coil:Heating:Fuel,       !- Reheat Coil Object Type
+    Coil:Heating:Electric,       !- Reheat Coil Object Type
     SPACE1-1 Zone Coil,      !- Reheat Coil Name
     0.0,                     !- Maximum Hot Water or Steam Flow Rate {m3/s}
     0.0,                     !- Minimum Hot Water or Steam Flow Rate {m3/s}
     SPACE1-1 In Node,        !- Air Outlet Node Name
     0.001,                   !- Convergence Tolerance
-    ReverseWithLimits,       !- Damper Heating Action
-    0.002032,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
+    Reverse,       !- Damper Heating Action
+    ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     AutoCalculate,           !- Maximum Flow Fraction During Reheat
     ,                        !- Maximum Reheat Air Temperature {C}
     ZoneMinOARequirements;   !- Design Specification Outdoor Air Object Name
@@ -2500,14 +2494,14 @@ SizingPeriod:DesignDay,
     0.1,                     !- Constant Minimum Air Flow Fraction
     ,                        !- Fixed Minimum Air Flow Rate {m3/s}
     ,                        !- Minimum Air Flow Fraction Schedule Name
-    Coil:Heating:Fuel,       !- Reheat Coil Object Type
+    Coil:Heating:Electric,       !- Reheat Coil Object Type
     SPACE2-1 Zone Coil,      !- Reheat Coil Name
     0.0,                     !- Maximum Hot Water or Steam Flow Rate {m3/s}
     0.0,                     !- Minimum Hot Water or Steam Flow Rate {m3/s}
     SPACE2-1 In Node,        !- Air Outlet Node Name
     0.001,                   !- Convergence Tolerance
-    ReverseWithLimits,       !- Damper Heating Action
-    0.002032,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
+    Reverse,       !- Damper Heating Action
+    ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     ,                        !- Maximum Flow Fraction During Reheat
     ,                        !- Maximum Reheat Air Temperature {C}
     ZoneMinOARequirements;   !- Design Specification Outdoor Air Object Name
@@ -2522,14 +2516,14 @@ SizingPeriod:DesignDay,
     0.1,                     !- Constant Minimum Air Flow Fraction
     ,                        !- Fixed Minimum Air Flow Rate {m3/s}
     ,                        !- Minimum Air Flow Fraction Schedule Name
-    Coil:Heating:Fuel,       !- Reheat Coil Object Type
+    Coil:Heating:Electric,       !- Reheat Coil Object Type
     SPACE3-1 Zone Coil,      !- Reheat Coil Name
     0.0,                     !- Maximum Hot Water or Steam Flow Rate {m3/s}
     0.0,                     !- Minimum Hot Water or Steam Flow Rate {m3/s}
     SPACE3-1 In Node,        !- Air Outlet Node Name
     0.001,                   !- Convergence Tolerance
-    ReverseWithLimits,       !- Damper Heating Action
-    0.002032,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
+    Reverse,       !- Damper Heating Action
+    ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     ,                        !- Maximum Flow Fraction During Reheat
     ,                        !- Maximum Reheat Air Temperature {C}
     ZoneMinOARequirements;   !- Design Specification Outdoor Air Object Name
@@ -2544,14 +2538,14 @@ SizingPeriod:DesignDay,
     0.1,                     !- Constant Minimum Air Flow Fraction
     ,                        !- Fixed Minimum Air Flow Rate {m3/s}
     ,                        !- Minimum Air Flow Fraction Schedule Name
-    Coil:Heating:Fuel,       !- Reheat Coil Object Type
+    Coil:Heating:Electric,       !- Reheat Coil Object Type
     SPACE4-1 Zone Coil,      !- Reheat Coil Name
     0.0,                     !- Maximum Hot Water or Steam Flow Rate {m3/s}
     0.0,                     !- Minimum Hot Water or Steam Flow Rate {m3/s}
     SPACE4-1 In Node,        !- Air Outlet Node Name
     0.001,                   !- Convergence Tolerance
-    ReverseWithLimits,       !- Damper Heating Action
-    0.002032,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
+    Reverse,       !- Damper Heating Action
+    ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     ,                        !- Maximum Flow Fraction During Reheat
     ,                        !- Maximum Reheat Air Temperature {C}
     ZoneMinOARequirements;   !- Design Specification Outdoor Air Object Name
@@ -2566,59 +2560,54 @@ SizingPeriod:DesignDay,
     0.1,                     !- Constant Minimum Air Flow Fraction
     ,                        !- Fixed Minimum Air Flow Rate {m3/s}
     ,                        !- Minimum Air Flow Fraction Schedule Name
-    Coil:Heating:Fuel,       !- Reheat Coil Object Type
+    Coil:Heating:Electric,       !- Reheat Coil Object Type
     SPACE5-1 Zone Coil,      !- Reheat Coil Name
     0.0,                     !- Maximum Hot Water or Steam Flow Rate {m3/s}
     0.0,                     !- Minimum Hot Water or Steam Flow Rate {m3/s}
     SPACE5-1 In Node,        !- Air Outlet Node Name
     0.001,                   !- Convergence Tolerance
-    ReverseWithLimits,       !- Damper Heating Action
-    0.002032,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
+    Reverse,       !- Damper Heating Action
+    ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     ,                        !- Maximum Flow Fraction During Reheat
     ,                        !- Maximum Reheat Air Temperature {C}
     ZoneMinOARequirements;   !- Design Specification Outdoor Air Object Name
 
-  Coil:Heating:Fuel,
+  Coil:Heating:Electric,
     SPACE1-1 Zone Coil,      !- Name
     ReheatCoilAvailSched,    !- Availability Schedule Name
-    NaturalGas,              !- Fuel Type
-    0.8,                     !- Burner Efficiency
+    0.98,                     !- Efficiency
     autosize,                !- Nominal Capacity {W}
     SPACE1-1 Zone Coil Air In Node,  !- Air Inlet Node Name
     SPACE1-1 In Node;        !- Air Outlet Node Name
 
-  Coil:Heating:Fuel,
+  Coil:Heating:Electric,
     SPACE2-1 Zone Coil,      !- Name
     ReheatCoilAvailSched,    !- Availability Schedule Name
-    NaturalGas,              !- Fuel Type
-    0.8,                     !- Burner Efficiency
+    0.98,                     !- Efficiency
     autosize,                !- Nominal Capacity {W}
     SPACE2-1 Zone Coil Air In Node,  !- Air Inlet Node Name
     SPACE2-1 In Node;        !- Air Outlet Node Name
 
-  Coil:Heating:Fuel,
+  Coil:Heating:Electric,
     SPACE3-1 Zone Coil,      !- Name
     ReheatCoilAvailSched,    !- Availability Schedule Name
-    NaturalGas,              !- Fuel Type
-    0.8,                     !- Burner Efficiency
+    0.98,                     !- Efficiency
     autosize,                !- Nominal Capacity {W}
     SPACE3-1 Zone Coil Air In Node,  !- Air Inlet Node Name
     SPACE3-1 In Node;        !- Air Outlet Node Name
 
-  Coil:Heating:Fuel,
+  Coil:Heating:Electric,
     SPACE4-1 Zone Coil,      !- Name
     ReheatCoilAvailSched,    !- Availability Schedule Name
-    NaturalGas,              !- Fuel Type
-    0.8,                     !- Burner Efficiency
+    0.98,                     !- Burner Efficiency
     autosize,                !- Nominal Capacity {W}
     SPACE4-1 Zone Coil Air In Node,  !- Air Inlet Node Name
     SPACE4-1 In Node;        !- Air Outlet Node Name
 
-  Coil:Heating:Fuel,
+  Coil:Heating:Electric,
     SPACE5-1 Zone Coil,      !- Name
     ReheatCoilAvailSched,    !- Availability Schedule Name
-    NaturalGas,              !- Fuel Type
-    0.8,                     !- Burner Efficiency
+    0.98,                     !- Burner Efficiency
     autosize,                !- Nominal Capacity {W}
     SPACE5-1 Zone Coil Air In Node,  !- Air Inlet Node Name
     SPACE5-1 In Node;        !- Air Outlet Node Name
@@ -2692,7 +2681,7 @@ SizingPeriod:DesignDay,
     DX Cooling Coil System 1,!- Component 2 Name
     Mixed Air Node 1,        !- Component 2 Inlet Node Name
     Main Cooling Coil 1 Outlet Node,  !- Component 2 Outlet Node Name
-    Coil:Heating:Fuel,       !- Component 3 Object Type
+    Coil:Heating:Electric,       !- Component 3 Object Type
     Main Heating Coil 1,     !- Component 3 Name
     Main Cooling Coil 1 Outlet Node,  !- Component 3 Inlet Node Name
     Main Heating Coil 1 Outlet Node,  !- Component 3 Outlet Node Name
@@ -2737,7 +2726,7 @@ SizingPeriod:DesignDay,
     Main Cooling Coil 1,     !- Name
     CoolingCoilAvailSched,   !- Availability Schedule Name
     autosize,                !- High Speed Gross Rated Total Cooling Capacity {W}
-    0.8,                     !- High Speed Rated Sensible Heat Ratio
+    autosize,                     !- High Speed Rated Sensible Heat Ratio
     3.0,                     !- High Speed Gross Rated Cooling COP {W/W}
     autosize,                !- High Speed Rated Air Flow Rate {m3/s}
     450,                     !- Unit Internal Static Air Pressure {Pa}
@@ -2749,7 +2738,7 @@ SizingPeriod:DesignDay,
     PackagedRatedCoolEIRFFlow,  !- Energy Input Ratio Function of Flow Fraction Curve Name
     VarSpeedCyclingPLFFPLR,  !- Part Load Fraction Correlation Curve Name
     autosize,                !- Low Speed Gross Rated Total Cooling Capacity {W}
-    0.8,                     !- Low Speed Gross Rated Sensible Heat Ratio
+    autosize,                     !- Low Speed Gross Rated Sensible Heat Ratio
     4.2,                     !- Low Speed Gross Rated Cooling COP {W/W}
     autosize,                !- Low Speed Rated Air Flow Rate {m3/s}
     VarSpeedCoolCapLSFT,     !- Low Speed Total Cooling Capacity Function of Temperature Curve Name
@@ -2772,11 +2761,10 @@ SizingPeriod:DesignDay,
     Main Cooling Coil 1 Condenser Node,  !- Name
     -1.0;                    !- Height Above Ground {m}
 
-  Coil:Heating:Fuel,
+  Coil:Heating:Electric,
     Main heating Coil 1,     !- Name
     ReheatCoilAvailSched,    !- Availability Schedule Name
-    NaturalGas,              !- Fuel Type
-    0.8,                     !- Burner Efficiency
+    0.98,                     !- Burner Efficiency
     autosize,                !- Nominal Capacity {W}
     Main Cooling Coil 1 Outlet Node,  !- Air Inlet Node Name
     Main Heating Coil 1 Outlet Node,  !- Air Outlet Node Name
@@ -2820,10 +2808,13 @@ SizingPeriod:DesignDay,
     ProportionalMinimum,     !- Minimum Limit Type
     Min OA Sched;            !- Minimum Outdoor Air Schedule Name
 
-  SetpointManager:Scheduled,
+  SetpointManager:Warmest,
     Supply Air Temp Manager 1,  !- Name
     Temperature,             !- Control Variable
-    Seasonal Reset Supply Air Temp Sch,  !- Schedule Name
+    VAV Sys 1,               !- HVAC Air Loop Name
+    12,                      !- Minimum setpoint temperature
+    18,                      !- Maximum setpoint temperature
+    MaximumTemperature,      !- Strategy
     Supply Air Temp Nodes 1; !- Setpoint Node or NodeList Name
 
   SetpointManager:MixedAir,
@@ -2884,7 +2875,7 @@ SizingPeriod:DesignDay,
   
   OutputControl:Table:Style,
     HTML,                    !- Column Separator
-    InchPound;               !- Unit Conversion
+    ;               !- Unit Conversion
 
   Output:Table:SummaryReports,
     AllSummary;              !- Report 1 Name
