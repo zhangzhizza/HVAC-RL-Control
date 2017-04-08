@@ -106,7 +106,7 @@ class EplusEnv(Env):
                                 (  0.5, 1.0),
                                 (  0.0, 1.0),
                                 (  0.0, 1.0),
-                                (  0.0, 8000.0)];
+                                (  0.0, 33000.0)];
 
         
     def _reset(self):
@@ -170,6 +170,7 @@ class EplusEnv(Env):
         self.logger_main.debug('EnergyPlus process is still running ? %r' 
                                 %self._get_is_subprocess_running(eplus_process))
         self._eplus_process = eplus_process;
+       
         # Log the Eplus output
         eplus_logger = LOGGER.getLogger('ENERGYPLUS-EPI_%d'%self._epi_num,
                                         LOG_LEVEL, LOG_FMT);
@@ -392,9 +393,9 @@ class EplusEnv(Env):
         self._run_eplus_outputProcessing();
         time.sleep(1);# Sleep the thread so EnergyPlus has time to do the
                       # post processing
+
         # Kill subprocess
         os.killpg(self._eplus_process.pid, signal.SIGTERM);
-        
         
     def _run_eplus_outputProcessing(self):
         eplus_outputProcessing_process =\
@@ -459,8 +460,9 @@ class EplusEnv(Env):
             idf_path: String
                 The .idf file path.
         
-        Return: (int, int, int, int, int)
-            (start month, start date, end month, end date, step size)
+        Return: (int, int, int, int, int, int)
+            (start month, start date, end month, end date, start weekday, 
+            step size)
         """
         ret = [];
         
@@ -643,8 +645,6 @@ class EplusEnv(Env):
         Return: int
         """
         return self._eplus_run_st_weekday;
-
-    
 
     
 """
