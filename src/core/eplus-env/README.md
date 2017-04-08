@@ -85,7 +85,7 @@ min_max_limits = [(-16.7, 26.0),
                   (  0.5, 1.0),
                   (  0.0, 1.0),
                   (  0.0, 1.0),
-                  (  0.0, 8000.0)];
+                  (  0.0, 33000.0)];
 
 * start_year: EnergyPlus simulation start year, int.
 * start_mon: EnergyPlus simulation start month, int.
