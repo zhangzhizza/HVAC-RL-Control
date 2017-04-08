@@ -2,6 +2,7 @@ import random
 import datetime
 import numpy as np
 
+
 def get_env_states_stats(env, actions, start_year,
                          start_mon, start_date, start_day):
     """
@@ -42,7 +43,8 @@ def get_env_states_stats(env, actions, start_year,
         actRandom = actions[actIdx];
         htStpt_this = ob_this[8 + 2] # Heating stpt
         clStpt_this = ob_this[9 + 2] # Cooling stpt
-        resStpt, effeAct = get_legal_action(htStpt_this, clStpt_this, actRandom);
+        resStpt, effeAct = get_legal_action(htStpt_this, clStpt_this, 
+                                            actRandom, (15, 30));
         time_next, ob_next, is_terminal = env.step([resStpt[0], resStpt[1]]);
         ob_next = process_raw_state_1([time_next], ob_next, start_year, start_mon, 
                           start_date, start_day);
@@ -85,7 +87,7 @@ def get_time_from_seconds(second, start_year, start_mon,
     return (nowWeekday, nowHour);
 
 def process_raw_state_1(simTime, state, start_year, start_mon, 
-                          start_date, start_day):
+                          start_day, start_weekday):
     """
     Raw state processing 1. Do the following things:
     1. Insert day of the week and hour of the day to start of the state list;
@@ -102,9 +104,9 @@ def process_raw_state_1(simTime, state, start_year, start_mon,
             Start year.
         start_mon: int 
             Start month.
-        start_date: int.
+        start_day: int.
             The day of the month at the start time. 
-        start_day: int 
+        start_weekday: int 
             The start weekday. 0 is Monday and 6 is Sunday.
     Return: python list, 1-D or 2-D
         Deepcopy of the processed state. It can be only one sample (1-D) or 
@@ -135,8 +137,8 @@ def process_raw_state_1(simTime, state, start_year, start_mon,
     for i in range(state.shape[0]):
         state_i_list = state[i,:].tolist();
         nowWeekday, nowHour = get_time_from_seconds(simTime[i], start_year, 
-                                                    start_mon, start_date, 
-                                                    start_day);
+                                                    start_mon, start_day, 
+                                                    start_weekday);
         state_i_list.insert(0, nowHour);     # Add weekday and hour infomation
         state_i_list.insert(0, nowWeekday);
         state_i_list[11 + 2] = 1 if state_i_list[11 + 2] > 0 else 0; 
@@ -147,70 +149,187 @@ def process_raw_state_1(simTime, state, start_year, start_mon,
             ret = state_i_list;
     return ret;
 
-def process_raw_state_2(state_prcd_1, sample_mean, sample_stdv):
+def process_raw_state_2(state_prcd_1, min_max_limits):
     """
     Raw state processing 2. Do the following things:
-    1. Standarderlize the state by the sample mean and sample stdv:
-        std = (raw - mean)/stdv;
-    2. Do 1 except for PMV and occupancy status. For PMV, divide the raw value
-       by 3: 
-        PMV <-- PMV/3.0
-       For occupancy count, 1 --> 1, and 0 --> -1.
+    1. Standarderlize the state using the min max normalization;
     
     Args:
         state_prcd_1: python list, 1-D or 2-D
             The processed state by process_raw_state_1. It can be only one 
             sample (1-D) or multiple samples (2-D, where each row is a sample)
-        sample_mean: np.ndarray
-            The 1-D numpy array with the length the same as state_prcd_1, 
-            showing the mean of the each state feature.
-        sample_stdv: np.ndarray
-            The 1-D numpy array with the length the same as state_prcd_1,
-            showing the standard deviation of the each state feature.
+        min_max_limits: python list, 2-D, 2*m where m is the number of state 
+                        features
+            The minimum and maximum possible values for each state feature. 
+            The first row is the minimum values and the second row is the maximum
+            values.
+            
     Return: python list, 1-D or 2-D
-        Processed state. It can be only one sample (1-D) or multiple samples 
-        (2-D, where each row is a sample).
+        Min max normalized state. It can be only one sample (1-D) or multiple 
+        samples (2-D, where each row is a sample).
     """
     state_prcd_1 = np.array(state_prcd_1);
-    # Reshape the state to 2-D if it is 1-D
-    if len(state_prcd_1.shape) == 1:
-        state_prcd_1 = state_prcd_1.reshape(1, -1);
-    # Get a copy of occupancy status and PMV
+    min_max_limits = np.array(min_max_limits);
+    # Do min-max normalization
+    std_state = (state_prcd_1 - min_max_limits[0,:])/(min_max_limits[1,:] -
+                                                      min_max_limits[0,:]);
+    return std_state.tolist()
     
-    .......
-    # Do standarderlization
-    std_state = (np.array(state_prcd_1) - sample_mean)/sample_stdv;
-    # 
+def process_raw_state_cmbd(raw_state, simTime, start_year, start_mon, 
+                          start_date, start_day, min_max_limits):
+    """
+    Process the raw state by calling process_raw_state_1 and process_raw_state_2
+    in order.
+    
+    Args:
+        raw_state: python list, 1-D or 2-D
+            The raw observation from the environment. It can be only one 
+            sample (1-D) or multiple samples (2-D, where each row is a sample).
+        simTime: python list, 1-D 
+            Delta seconds from the start time, each item in the list
+            corresponds to a row in the state. 
+        start_year: int 
+            Start year.
+        start_mon: int 
+            Start month.
+        start_date: int.
+            The day of the month at the start time. 
+        start_day: int 
+            The start weekday. 0 is Monday and 6 is Sunday.
+        min_max_limits: python list, 2-D, 2*m where m is the number of state 
+                        features
+            The minimum and maximum possible values for each state feature. 
+            The first row is the minimum values and the second row is the maximum
+            values.
+    
+    Return: python list, 1-D or 2-D
+        Processed min-max normalized (0 to 1) state It can be only one sample 
+        (1-D) or multiple samples (2-D, where each row is a sample).
+        State feature order:
+            0. Day of the week
+            1. Hour of the day
+            2. Site Outdoor Air Drybulb Temperature 
+            3. Site Outdoor Air Relative Humidity
+            4. Site Wind Speed 
+            5. Site Wind Direction 
+            6. Site Diffuse Solar Radiation Rate per Area 
+            7. Site Direct Solar Radiation Rate per Area
+            8. Zone Air Temperature 
+            9. Zone Air Relative Humidity
+            10. Zone Thermostat Heating Setpoint Temperature 
+            11. Zone Thermostat Cooling Setpoint Temperature 
+            12. Zone Thermal Comfort Fanger Model PMV
+            13. Zone People Occupancy status 
+            14. Facility Total HVAC Electric Demand Power 
+    """
+    state_after_1 = process_raw_state_1(simTime, raw_state, start_year, start_mon, 
+                                        start_date, start_day);
+    state_after_2 = process_raw_state_2(state_after_1, min_max_limits)
+    
+    return state_after_2;
     
     
-    
-    
-def get_legal_action(htStpt, clStpt, action):
+def get_legal_action(htStpt, clStpt, action_raw, stptLmt):
     """
     Check whether the action is legal, which is that the resulting cooling
-    setpoint must be higher or equal to the resulting heating setpoint. 
+    setpoint must be higher or equal to the resulting heating setpoint; also, 
+    both heating and cooling setpoint must be within the range of stptLmt.
     
-    If the original action is legal, return the resulting heating and cooling
-    setpoint; else, return original heating and cooling setpoint. In either 
-    case, the effective action will also be returned.
+    The stptLmt will be firstly checked. The resuling heating setpoint and 
+    cooling setpoint will be truncated by the stptLmt. Then clStpt > htStpt
+    rule will be checked. If violated, the original htStpt and clStpt will be
+    returned; else, the resulting htStpt and clStpt will be returned. 
     
     Args:
         htStpt: float
             Heating setpoint of the current observation.
         clStpt: float
             Cooling setpoint of the current observation.
-        action: (float, float)
-            The action taken to the current heating and cooling setpoint.
+        action_raw: (float, float)
+            The raw action planned to be taken to the current heating and 
+            cooling setpoint.
+        stptLmt: (float, float)
+            The low limit (included) and high limit (included) for the heating
+            and cooling setpoint. 
         
     Return: ((float, float), (float, float))
         A tuple with length 2. The index 0 is a tuple of resulting heating and
         cooling setpoint, and the index 1 is a tuple of resulting effective 
         action.
     """
-    res_htStpt = htStpt + action[0];
-    res_clStpt = clStpt + action[1];
+    res_htStpt = max(min(htStpt + action_raw[0], stptLmt[1]), stptLmt[0]);
+    res_clStpt = max(min(clStpt + action_raw[1], stptLmt[1]), stptLmt[0]);
     if res_clStpt < res_htStpt:
         return ((htStpt, clStpt),(0.0, 0.0));
     else:
-        return ((res_htStpt, res_clStpt),action);
+        return ((res_htStpt, res_clStpt),
+                (res_htStpt - htStpt, res_clStpt - clStpt)); 
     
+def get_reward(normalized_hvac_energy, raw_pmv):
+    """
+    Get the reward from hvac energy and pmv.
+    
+    Args:
+        normalized_hvac_energy: float
+            Normalized HVAC energy ranging from 0 to 1.
+        raw_pmv: float
+            Raw PMV value.
+    """
+    return normalized_hvac_energy + abs(raw_pmv)/3.0;
+    
+class HistoryPreprocessor(Preprocessor):
+    """Keeps the last k states.
+
+    Useful for seeing the trend of the change, but the state
+    contains only positions.
+
+    When the environment starts, this will just fill the initial
+    sequence values with zeros k times.
+
+    Args:
+        history_length: int
+            Number of previous states to prepend to state being processed.
+
+    """
+
+    def __init__(self, history_length=1):
+        self._history_length = history_length;
+        self._flag_start_net = True;
+        self._stacked_return_net = None;
+
+    def process_state_for_network(self, state):
+        """Take the current state and return a stacked state with current
+        state and the history states. 
+        
+        Args:
+            state: python 1-D list.
+                Expect python 1-D list representing the current state.
+        
+        Return: np.ndarray, dim = 1*m where m is the state_dim * history_length
+            Stacked states.
+        """
+        state = np.array(state).reshape(1, -1);
+        state_dim = state.shape[-1];
+        if self._flag_start_net:
+            self._stacked_return_net = np.zeros((self._history_length, state_dim));
+            self._stacked_return_net[-1,:] = state;
+            self._flag_start_net = False;
+        else:
+            for i in range(self._history_length - 1):
+                self._stacked_return_net[i, :] = \
+                    self._stacked_return_net[i+1, :];
+            self._stacked_return_net[-1, :] = state;
+            
+        return np.copy(self._stacked_return_net.flatten().reshape(1, -1));
+
+
+    def reset(self):
+        """Reset the history sequence.
+
+        Useful when you start a new episode.
+        """
+        self._flag_start_net = True;
+
+    def get_config(self):
+        return {'history_length': self.history_length}
+ 

@@ -31,7 +31,7 @@ Class A3C_Network:
                                                      name='state_pl');
             # Build the operations that computes predictions from the nn model.
             self._policy_pred, self._v_pred = \
-                create_model(self._state_placeholder, action_size);
+                self._create_model(self._state_placeholder, action_size);
             
     @property
     def state_placeholder(self):

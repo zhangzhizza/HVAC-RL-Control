@@ -13,53 +13,27 @@ from a3c.objectives import a3c_loss
 from a3c.a3c_network import A3C_Network
 from a3c.utils import get_hard_target_model_updates
 from a3c.actions import actions
-from a3c.preprocessors import get_env_states_stats, 
+from a3c.min_max_limits import min_max_limits, stpt_limits
+from a3c.preprocessors import HistoryPreprocessor, process_raw_state_cmbd, get_legal_action, get_reward
+
 
 ACTIONS = actions;
-
-def create_training_op(loss, optimizer, learning_rate):
-    """
-    Some of the codes are modified based on Tensorflow sample code from
-    https://www.tensorflow.org/versions/r0.10/tutorials/mnist/tf/
-    
-    Sets up the training Ops.
-
-    Creates a summarizer to track the loss over time in TensorBoard.
-
-    Creates an optimizer and applies the gradients to all trainable variables.
-
-    Args:
-        loss: Loss tensor.
-        learning_rate: The learning rate to use for gradient descent.
-        optimizer: tf.train.Optimizer object
-
-    Returns:
-        train_op: The Op for training.
-     """
-    # Create a variable to track the global step.
-    global_step = tf.Variable(0, name='global_step', trainable=False)
-    # Add a scalar summary for the snapshot loss.
-    tf.summary.scalar('loss', loss)
-    # Create the gradient descent optimizer with the given learning rate.
-    _optimizer = optimizer(learning_rate = learning_rate)
-    # Use the optimizer to apply the gradients that minimize the loss
-    # (and also increment the global step counter) as a single training step.
-    grads_and_vars = _optimizer.compute_gradients(loss);
-    train_op = _optimizer.apply_gradients(grads_and_vars
-                                        , global_step=global_step)
-    return train_op;
-    
+HT_STPT_IDX_RAW = 8;
+CL_STPT_IDX_RAW = 9;
+HVAC_EGY_IDX_RAW = 12;
+PMV_IDX_RAW = 10;
 
 class A3CThread:
     
     def __init__(self, graph, scope_name, global_name, state_dim, action_size,
                  vloss_frac, ploss_frac, hregu_frac, shared_optimizer,
-                 clip_norm, global_train_step, env):
+                 clip_norm, global_train_step, env, window_len):
         
         ###########################################
         ### Create the policy and value network ###
         ###########################################
-        self._a3c_network = A3C_Network(graph, scope_name, state_dim, 
+        network_state_dim = state_dim * window_len;
+        self._a3c_network = A3C_Network(graph, scope_name, network_state_dim, 
                                         action_size);
         self._policy_pred = self._a3c_network.policy_pred;
         self._value_pred = self._a3c_network.value_pred;
@@ -79,11 +53,12 @@ class A3CThread:
                                                           shape=(None),
                                                           name='action_idx_pl');
             pi_one_hot = tf.reduce_sum((tf.one_hot(self._action_idx_placeholder,
-                                                   action_size) * policy_pred),
+                                                   action_size) * 
+                                        self._policy_pred),
                                         1, True); 
             # Add to the Graph the Ops for loss calculation.
             loss = a3c_loss(self._q_true_placeholder, self._value_pred, 
-                                  self._policy_pred, pi_one_hot,vloss_frac, 
+                                  self._policy_pred, pi_one_hot, vloss_frac, 
                                   ploss_frac, hregu_frac);
         
         #####################################
@@ -104,7 +79,7 @@ class A3CThread:
                                             global_name);
             self._train_op = shared_optimizer.apply_gradients(
                                                     zip(grads,global_vars),
-                                                    global_step=global_step);
+                                                    global_step=global_train_step);
             
         ######################################
         ### Create local network update op ###
@@ -113,28 +88,133 @@ class A3CThread:
                                                                scope_name, 
                                                                global_name);
         
-        
-        #####################################################
-        ### Get env states statistics under random policy ###
-        #####################################################
-        self._ob_mean, self._ob_stdv = get_env_states_stats(
-                                            env, ACTIONS, env.start_year,
-                                            env.start_mon, env.start_day, 
-                                            env.start_weekday);
         #####################################################
         self._env = env;
+        self._env_st_yr = env.start_year;
+        self._env_st_mn = env.start_mon;
+        self._env_st_dy = env.start_day;
+        self._env_st_wd = env.start_weekday;
+        self._network_state_dim = network_state_dim;
+        self._window_len = window_len;
+        self._histProcessor = HistoryPreprocessor(window_len);
             
-    def train(self, sess, tmax, coordinator):
+    def train(self, sess, t_max, coordinator, global_counter, global_lock, gamma):
+        t = 0;
+        t_st = 0;
         # Reset the env
         time_this, ob_this_raw, is_terminal = self._env.reset();
-        
+        # Process and normalize the raw observation
+        ob_this_prcd = process_raw_state_cmbd(ob_this_raw, time_this, 
+                                              self._env_st_yr, self._env_st_mn, 
+                                              self._env_st_dy, self._env_st_wd, 
+                                              min_max_limits); # 1-D list
+        # Get the history stacked state
+        ob_this_hist_prcd = self._histProcessor.\
+                            process_state_for_network(ob_this_prcd) # 2-D array
         
         while not coordinator.should_stop():
             # Synchronize local network parameters with 
             # the global network parameters
             sess.run(self._local_net_update);
+            # Reset the counter
+            t_st = t;
             # Interact with env
-   
+            trajectory_list = []; # A list of (s_t, a_t, r_t) tuples
+            while (not is_terminal) and (t - t_st != self._t_max):
+                # Get the action
+                action_raw_idx = self._select_sto_action(ob_this_hist_prcd, sess);
+                action_raw_tup = actions[action_raw_idx];
+                cur_htStpt = ob_this_raw[HT_STPT_IDX_RAW];
+                cur_clStpt = ob_this_raw[CL_STPT_IDX_RAW];
+                action_stpt_prcd, action_effec = get_legal_action(
+                                                        cur_htStpt, cur_clStpt, 
+                                                    action_raw_tup, stpt_limits);
+                action_stpt_prcd = list(action_stpt_prcd);
+                # Take the action
+                time_next, ob_next_raw, is_terminal = \
+                                                self._env.step(action_stpt_prcd);
+                # Process and normalize the raw observation
+                ob_next_prcd = process_raw_state_cmbd(ob_next_raw, time_next, 
+                                              self._env_st_yr, self._env_st_mn, 
+                                              self._env_st_dy, self._env_st_wd, 
+                                              min_max_limits); # 1-D list
+                # Get the reward
+                normalized_hvac_energy = ob_next_prcd[HVAC_EGY_IDX_RAW + 2];
+                raw_pmv = ob_next_raw[PMV_IDX_RAW];
+                reward_next = get_reward(normalized_hvac_energy, raw_pmv);
+                # Get the history stacked state
+                ob_next_hist_prcd = self._histProcessor.\
+                            process_state_for_network(ob_next_prcd) # 2-D array
+                # Remember the trajectory 
+                trajectory_list.append((ob_this_hist_prcd, action_raw_idx, 
+                                        reward_next)) # Should I use the raw action or effective action ????????????
+                # Update lock counter and global counter
+                t += 1;
+                with global_lock:
+                    global_counter.value += 1;
+                # ...
+                if not is_terminal:
+                    ob_this_hist_prcd = ob_next_hist_prcd;
+                    ob_this_raw = ob_next_raw;
+                else:
+                    # Reset the env
+                    time_this, ob_this_raw, is_terminal_cp = self._env.reset();
+                    # Process and normalize the raw observation
+                    ob_this_prcd = process_raw_state_cmbd(ob_this_raw, time_this, 
+                                              self._env_st_yr, self._env_st_mn, 
+                                              self._env_st_dy, self._env_st_wd, 
+                                              min_max_limits); # 1-D list
+                    # Get the history stacked state
+                    self._histProcessor.reset();
+                    ob_this_hist_prcd = self._histProcessor.\
+                            process_state_for_network(ob_this_prcd) # 2-D array
+            # Prepare for the training step
+            R = 0 if is_terminal else sess.run(
+                            self._value_pred,
+                            feed_dict = {self._state_placeholder:ob_this_hist_prcd})
+            traj_len = len(trajectory_list);
+            act_idx_list = np.zeros(traj_len);
+            q_true_list = np.zeros((traj_len, 1));
+            state_list = np.zeros((traj_len, self._network_state_dim));
+            for i in range(traj_len):
+                traj_i_from_last = trajectory_list[traj_len - i - 1]; #(s_t, a_t, r_t);
+                R = gamma * R + traj_i_from_last[2];
+                act_idx_list[i] = traj_i_from_last[1];
+                q_true_list[i, :] = R;
+                state_list[i, :] = traj_i_from_last[0];
+            # Perform training
+            sess.run(_train_op, 
+                     feed_dict = {self._q_true_placeholder: q_true_list,
+                                  self._state_placeholder: state_list,
+                                  self._action_idx_placeholder: act_idx_list});
+            # ...
+            is_terminal = is_terminal_cp;
+            # Check whether training should stop
+            if global_counter.value > t_max:
+                coordinator.request_stop()
+                
+    
+    def _select_sto_action(self, state, sess):
+        """
+        Given a state, run stochastic policy network to give an action.
+        
+        Args:
+            state: np.ndarray, 1*m where m is the state feature dimension.
+                Processed normalized state.
+            sess: tf.Session.
+                The tf session.
+        
+        Return: int 
+            The action index.
+        """
+        softmax_a = sess.run(self._policy_pred, 
+                             feed_dict={self._state_placeholder:state}).flatten();
+        uni_rdm = np.random.uniform();
+        imd_x = uni_rdm;
+        for i in range(softmax_a.shape[-1]):
+            imd_x -= softmax_a[i];
+            if imd_x <= 0.0:
+                return i;
     
 
 class A3CAgent:
@@ -231,9 +311,6 @@ class A3CAgent:
         self._eval_epi_num = eval_epi_num;
         self._mean_array = np.array([])
         self._std_array = np.array([])
-
-
-
         
     def compile(self, optimizer, loss_func, is_warm_start, model_dir):
         """
@@ -246,6 +323,8 @@ class A3CAgent:
         
         """
         g = tf.Graph();
+        # Create the global network
+        global_network = A3C_Network(g, 'global', state_dim, action_size)
         with g.as_default():
             # Generate placeholders state and "true" q values
             state_placeholder = tf.placeholder(tf.float32
