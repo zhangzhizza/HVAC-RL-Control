@@ -2874,6 +2874,7 @@ SizingPeriod:DesignDay,
   Output:Variable,*,Zone People Occupant Count, timestep;
   Output:Variable,*,Zone Thermal Comfort Fanger Model PPD,timestep;
   Output:Variable,*,Zone Thermal Comfort Clothing Value,timestep;
+  Output:Variable,*,Zone Thermal Comfort Mean Radiant Temperature,timestep;
   
   !- Building HVAC output
   Output:Variable,*,Facility Total HVAC Electric Demand Power,timestep;
