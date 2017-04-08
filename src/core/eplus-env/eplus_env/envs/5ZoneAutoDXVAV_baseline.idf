@@ -1911,6 +1911,29 @@ SizingPeriod:DesignDay,
     ,                        !- Fraction of Autosized Heating Design Capacity
     VAV;                     !- Central Cooling Capacity Control Method
 
+
+  Schedule:Compact,
+    Htg-SetP-Sch-extream,            !- Name
+    Temperature,             !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: SummerDesignDay,    !- Field 2
+    Until: 24:00,12.8,       !- Field 3
+    For: WinterDesignDay,    !- Field 5
+    Until: 24:00,21.1,       !- Field 6
+    For: WeekDays,           !- Field 8
+    Until: 7:00,24,        !- Field 9
+    Until: 18:00,24,       !- Field 11
+    Until: 24:00,24,       !- Field 13
+    For: WeekEnds Holiday,   !- Field 15
+    Until: 7:00,24,        !- Field 16
+    Until: 13:00,24,       !- Field 18
+    Until: 24:00,24,       !- Field 20
+    For: AllOtherDays,       !- Field 22
+    Until: 7:00,12.8,        !- Field 23
+    Until: 18:00,21.1,       !- Field 25
+    Until: 24:00,12.8;       !- Field 27
+
+    
   Schedule:Compact,
     Htg-SetP-Sch,            !- Name
     Temperature,             !- Schedule Type Limits Name
@@ -1939,6 +1962,30 @@ SizingPeriod:DesignDay,
     For: AllDays,            !- Field 2
     Until: 24:00,12.8;       !- Field 3
 
+  Schedule:Compact,
+    Clg-SetP-Sch-extream,            !- Name
+    Temperature,             !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: SummerDesignDay,    !- Field 2
+    Until: 24:00,23.9,       !- Field 3
+    For: WinterDesignDay,    !- Field 5
+    Until: 24:00,40.0,       !- Field 6
+    For: WeekDays,           !- Field 8
+    Until: 7:00,24,        !- Field 9
+    Until: 18:00,24,       !- Field 11
+    Until: 24:00,24,       !- Field 13
+    For: WeekEnds Holiday,   !- Field 15
+    Until: 7:00,24,        !- Field 16
+    Until: 13:00,24,       !- Field 18
+    Until: 24:00,24,       !- Field 20
+    For: AllOtherDays,       !- Field 22
+    Until: 7:00,40.0,        !- Field 23
+    Until: 18:00,23.9,       !- Field 25
+    Until: 24:00,40.0;       !- Field 27
+    
+    
+
+    
   Schedule:Compact,
     Clg-SetP-Sch,            !- Name
     Temperature,             !- Schedule Type Limits Name
@@ -1992,59 +2039,23 @@ SizingPeriod:DesignDay,
   Schedule:Compact,
     FanAvailSched,           !- Name
     Fraction,                !- Schedule Type Limits Name
-    Through: 3/31,           !- Field 1
+    Through: 12/31,           !- Field 1
     For: AllDays,            !- Field 2
-    Until: 24:00,1.0,        !- Field 3
-    Through: 9/30,           !- Field 5
-    For: WeekDays,           !- Field 6
-    Until: 7:00,0.0,         !- Field 7
-    Until: 17:00,1.0,        !- Field 9
-    Until: 24:00,0.0,        !- Field 11
-    For: SummerDesignDay WinterDesignDay, !- Field 13
-    Until: 24:00,1.0,        !- Field 14
-    For: AllOtherDays,       !- Field 16
-    Until: 24:00,0.0,        !- Field 17
-    Through: 12/31,          !- Field 19
-    For: AllDays,            !- Field 20
-    Until: 24:00,1.0;        !- Field 21
+    Until: 24:00,1.0;        !- Field 3
 
   Schedule:Compact,
     CoolingCoilAvailSched,   !- Name
     Fraction,                !- Schedule Type Limits Name
-    Through: 3/31,           !- Field 1
+    Through: 12/31,           !- Field 1
     For: AllDays,            !- Field 2
-    Until: 24:00,0.0,        !- Field 3
-    Through: 9/30,           !- Field 5
-    For: WeekDays,           !- Field 6
-    Until: 7:00,0.0,         !- Field 7
-    Until: 17:00,1.0,        !- Field 9
-    Until: 24:00,0.0,        !- Field 11
-    For: SummerDesignDay WinterDesignDay, !- Field 13
-    Until: 24:00,1.0,        !- Field 14
-    For: AllOtherDays,       !- Field 16
-    Until: 24:00,0.0,        !- Field 17
-    Through: 12/31,          !- Field 19
-    For: AllDays,            !- Field 20
-    Until: 24:00,0.0;        !- Field 21
+    Until: 24:00,1.0;        !- Field 3
 
   Schedule:Compact,
     ReheatCoilAvailSched,    !- Name
     Fraction,                !- Schedule Type Limits Name
-    Through: 3/31,           !- Field 1
+    Through: 12/31,           !- Field 1
     For: AllDays,            !- Field 2
-    Until: 24:00,1.0,        !- Field 3
-    Through: 9/30,           !- Field 5
-    For: WeekDays,           !- Field 6
-    Until: 7:00,0.0,         !- Field 7
-    Until: 17:00,1.0,        !- Field 9
-    Until: 24:00,0.0,        !- Field 11
-    For: SummerDesignDay WinterDesignDay, !- Field 13
-    Until: 24:00,1.0,        !- Field 14
-    For: AllOtherDays,       !- Field 16
-    Until: 24:00,0.0,        !- Field 17
-    Through: 12/31,          !- Field 19
-    For: AllDays,            !- Field 20
-    Until: 24:00,1.0;        !- Field 21
+    Until: 24:00,1.0;        !- Field 3
 
   Schedule:Compact,
     Seasonal Reset Supply Air Temp Sch,  !- Name
@@ -2317,8 +2328,8 @@ SizingPeriod:DesignDay,
 
   ThermostatSetpoint:DualSetpoint,
     DualSetPoint,            !- Name
-    Htg-SetP-Sch,            !- Heating Setpoint Temperature Schedule Name
-    Clg-SetP-Sch;            !- Cooling Setpoint Temperature Schedule Name
+    Htg-SetP-Sch-extream,            !- Heating Setpoint Temperature Schedule Name
+    Clg-SetP-Sch-extream;            !- Cooling Setpoint Temperature Schedule Name
 
   ZoneHVAC:EquipmentList,
     SPACE1-1 Eq,             !- Name
@@ -2903,6 +2914,27 @@ SizingPeriod:DesignDay,
   Output:Meter:MeterFileOnly,Gas:Facility,runperiod;
 
   Output:Meter:MeterFileOnly,Gas:HVAC,runperiod;
+  
+  !- Site weather output  
+  Output:Variable,*,Site Outdoor Air Drybulb Temperature,timestep;
+  Output:Variable,*,Site Outdoor Air Relative Humidity,timestep;
+  Output:Variable,*,Site Wind Speed, timestep;
+  Output:Variable,*,Site Wind Direction, timestep;
+  Output:Variable,*,Site Diffuse Solar Radiation Rate per Area,timestep;
+  Output:Variable,*,Site Direct Solar Radiation Rate per Area,timestep;
+  !- Building room 1 output
+  Output:Variable,*,Zone Air Temperature,timestep;
+  Output:Variable,*,Zone Air Relative Humidity,timestep;
+  Output:Variable,*,Zone Thermostat Heating Setpoint Temperature,timestep;
+  Output:Variable,*,Zone Thermostat Cooling Setpoint Temperature,timestep;
+  Output:Variable,*,Zone Thermal Comfort Fanger Model PMV,timestep; 
+  Output:Variable,*,Zone People Occupant Count, timestep;
+  !- Building HVAC output
+  Output:Variable,*,Facility Total HVAC Electric Demand Power,timestep;
+  
+  !- Debug
+  Output:Variable,*,System Node Temperature, timestep;
+  Output:Variable,*,System Node Mass Flow Rate,timestep;
 
   OutputControl:Table:Style,
     HTML,                    !- Column Separator

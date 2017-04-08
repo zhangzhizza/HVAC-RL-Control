@@ -2086,59 +2086,23 @@ SizingPeriod:DesignDay,
   Schedule:Compact,
     FanAvailSched,           !- Name
     Fraction,                !- Schedule Type Limits Name
-    Through: 3/31,           !- Field 1
+    Through: 12/31,           !- Field 1
     For: AllDays,            !- Field 2
-    Until: 24:00,1.0,        !- Field 3
-    Through: 9/30,           !- Field 5
-    For: WeekDays,           !- Field 6
-    Until: 7:00,0.0,         !- Field 7
-    Until: 17:00,1.0,        !- Field 9
-    Until: 24:00,0.0,        !- Field 11
-    For: SummerDesignDay WinterDesignDay, !- Field 13
-    Until: 24:00,1.0,        !- Field 14
-    For: AllOtherDays,       !- Field 16
-    Until: 24:00,0.0,        !- Field 17
-    Through: 12/31,          !- Field 19
-    For: AllDays,            !- Field 20
-    Until: 24:00,1.0;        !- Field 21
+    Until: 24:00,1.0;        !- Field 3
 
   Schedule:Compact,
     CoolingCoilAvailSched,   !- Name
     Fraction,                !- Schedule Type Limits Name
-    Through: 3/31,           !- Field 1
+    Through: 12/31,           !- Field 1
     For: AllDays,            !- Field 2
-    Until: 24:00,0.0,        !- Field 3
-    Through: 9/30,           !- Field 5
-    For: WeekDays,           !- Field 6
-    Until: 7:00,0.0,         !- Field 7
-    Until: 17:00,1.0,        !- Field 9
-    Until: 24:00,0.0,        !- Field 11
-    For: SummerDesignDay WinterDesignDay, !- Field 13
-    Until: 24:00,1.0,        !- Field 14
-    For: AllOtherDays,       !- Field 16
-    Until: 24:00,0.0,        !- Field 17
-    Through: 12/31,          !- Field 19
-    For: AllDays,            !- Field 20
-    Until: 24:00,0.0;        !- Field 21
+    Until: 24:00,1.0;        !- Field 3
 
   Schedule:Compact,
     ReheatCoilAvailSched,    !- Name
     Fraction,                !- Schedule Type Limits Name
-    Through: 3/31,           !- Field 1
+    Through: 12/31,           !- Field 1
     For: AllDays,            !- Field 2
-    Until: 24:00,1.0,        !- Field 3
-    Through: 9/30,           !- Field 5
-    For: WeekDays,           !- Field 6
-    Until: 7:00,0.0,         !- Field 7
-    Until: 17:00,1.0,        !- Field 9
-    Until: 24:00,0.0,        !- Field 11
-    For: SummerDesignDay WinterDesignDay, !- Field 13
-    Until: 24:00,1.0,        !- Field 14
-    For: AllOtherDays,       !- Field 16
-    Until: 24:00,0.0,        !- Field 17
-    Through: 12/31,          !- Field 19
-    For: AllDays,            !- Field 20
-    Until: 24:00,1.0;        !- Field 21
+    Until: 24:00,1.0;        !- Field 3
 
   Schedule:Compact,
     Seasonal Reset Supply Air Temp Sch,  !- Name
@@ -2908,6 +2872,9 @@ SizingPeriod:DesignDay,
   Output:Variable,*,Zone Thermostat Cooling Setpoint Temperature,timestep;
   Output:Variable,*,Zone Thermal Comfort Fanger Model PMV,timestep; 
   Output:Variable,*,Zone People Occupant Count, timestep;
+  Output:Variable,*,Zone Thermal Comfort Fanger Model PPD,timestep;
+  Output:Variable,*,Zone Thermal Comfort Clothing Value,timestep;
+  Output:Variable,*,Zone Thermal Comfort Mean Radiant Temperature,timestep;
   !- Building HVAC output
   Output:Variable,*,Facility Total HVAC Electric Demand Power,timestep;
 
