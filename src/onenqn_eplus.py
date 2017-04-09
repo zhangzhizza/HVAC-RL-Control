@@ -74,14 +74,14 @@ def main():
     parser.add_argument('--save_freq', default=2500, type=int);
     parser.add_argument('--train_freq', default=4, type=int);
     parser.add_argument('--eval_freq', default=2500, type=int);
-    parser.add_argument('--eval_epi_num', default=20, type=int);#######3
-    parser.add_argument('--batch_size', default=32, type=int);
+    parser.add_argument('--eval_epi_num', default=2, type=int);#######3
+    parser.add_argument('--batch_size', default=3, type=int);
     parser.add_argument('--train_set_size', default=8640, type=int);
     parser.add_argument('--learning_rate', default=0.0001);
     parser.add_argument('--start_epsilon', default=1, type=float);
     parser.add_argument('--end_epsilon', default=0.05);
     parser.add_argument('--e_decay_num_steps', default=1000000, type=int);
-    parser.add_argument('--burn_in_size', default=50000, type=int);
+    parser.add_argument('--burn_in_size', default=10, type=int);
     parser.add_argument('--is_warm_start', default=False, type=bool);
     parser.add_argument('--model_dir', default='None');
 
@@ -103,7 +103,7 @@ def main():
 
     # 
     action_size = 9; # the element of permutation set with (-0.5, 0. 0.5)
-    state_size = 14;
+    state_size = 16;
     
     #create the agent
     replayMem = ReplayMemory(args.mem_size);

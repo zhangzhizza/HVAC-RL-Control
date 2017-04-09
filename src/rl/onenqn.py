@@ -52,7 +52,7 @@ def create_model(input_state, num_actions,
     """
 
     with tf.name_scope('hidden1'):
-        hidden1 = Dense(100, activation='sigmoid')(input_state)
+        hidden1 = Dense(256, activation='sigmoid')(input_state)
     with tf.name_scope('output'):
         output = Dense(num_actions, activation='softmax')(hidden1)
     return output;
@@ -174,8 +174,11 @@ class OneNQNAgent:
         self._save_freq = save_freq;
         self._eval_freq = eval_freq;
         self._eval_epi_num = eval_epi_num;
-        self._mean_array = np.array([])
-        self._std_array = np.array([])
+        self._min_array = np.array([-16.7, 0.0, 0.0, 0.0, 0.0, 0.0, 15.0, 15.0, 15.0, 10.0, 
+          0.0, 0.0, 0.5, 0.0, 0.0, 0, 0]) 
+        self._max_array = np.array([26, 100.0, 23.1, 357.5, 389.0, 905.0, 30.0, 30.0, 37.0,
+          39.0, 100.0, 1, 100, 20.0, 6000.0, 23, 6])
+  
 
 
         
@@ -332,71 +335,6 @@ class OneNQNAgent:
         """
         self._sess.run(self._hard_copy_to_target_op);
 
-    
-    def calc_trainSet(self, env):
-        """
-        1. Filling states in training set, 
-        which is used for sample standarization
-        2. Calculate mean and standanr deviation of all features
- 
-         Note: training set should be released after using to save memory
-         so a training set class is not designed as replay memory
- 
-         Parameters
-         ----------
-         env: gym.Env
-           This is Eplus environment. 
-  
-         Parameters
-         ----------
-         mean: numpy array
-           The array of mean of each feature
-         standard deviataion: numpy array
-           The mean of standard deviataion of each feature
-  
-        """
- 
-        time_this, ob_this, is_terminal = env.reset()
-
-        ob_this = self._preprocessor.process_observation(time_this, ob_this)
-
-        setpoint_this = ob_this[8:10]
- 
-         # save the first state in the training set 
-        training_set = np.array(ob_this)
-   
-   
-        for step in range(1, self._train_set_size):
-
-          # get action command 
-          command = self._uniformRandomPolicy.select_action()
-          # covert command to setpoint action 
-          action = self._policy.process_action(setpoint_this, command)
-          # take action, get new observation 
-          time_next, ob_next, is_terminal = env.step(action)
-
-          ob_next = self._preprocessor.process_observation(time_next, ob_next)
-            
-          setpoint_next = ob_next[8:10]
-          
-          training_set = np.append(training_set, ob_next)
-           
-          if is_terminal:
-              time_this, ob_this, is_terminal = env.reset()
-
-              ob_this = self._preprocessor.process_observation(time_this, ob_this)
-
-              setpoint_this = ob_this[8:10]
-          else:
-              ob_this = ob_next
-              setpoint_this = setpoint_next
-              time_this = time_next
-        
-        # cacualte average and standard diviation for each features   
-        return (np.mean(training_set.reshape(self._train_set_size, 
-                        len(ob_next)).transpose(), axis=1), 
-                 np.std(training_set.reshape(self._train_set_size, 
-                        len(ob_next)).transpose(), axis=1))
 
 
     def fit(self, env, env_eval, num_iterations, max_episode_length=None):
@@ -423,11 +361,26 @@ class OneNQNAgent:
         max_episode_length: int
           How long a single episode should last before the agent
           resets. Can help exploration.
-        """
 
-        # caculate mean and standard deviation
-        self._mean_array, self._std_array = self.calc_trainSet(env)
-    
+        Note: index of observation + time:
+             0: Site Outdoor Air Drybulb Temperature (C), 
+             1: Site Outdoor Air Relative Humidity (%), 
+             2: Site Wind Speed (m/s), 
+             3: Site Wind Direction (degree from north), 
+             4: Site Diffuse Solar Radiation Rate per Area (W/m2), 
+             5: Site Direct Solar Radiation Rate per Area (W/m2),
+             6: Zone Thermostat Heating Setpoint Temperature (C), 
+             7: Zone Thermostat Cooling Setpoint Temperature (C), 
+             8: Zone Air Temperature (C), 
+             9: Zone Thermal Comfort Mean Radiant Temperature (C),
+             10: Zone Air Relative Humidity (%), 
+             11: Zone Thermal Comfort Clothing Value (clo),
+             12: Zone Thermal Comfort Fanger Model PPD, 
+             13: Zone People Occupant Count, 
+             14: Facility Total HVAC Electric Demand Power (W)],
+             15: time of day
+             16: day of year
+       """
         train_counter = 0;
         eval_res_hist = np.zeros((1,3));
 
@@ -435,7 +388,7 @@ class OneNQNAgent:
 
         ob_this = self._preprocessor.process_observation(time_this, ob_this)
 
-        setpoint_this = ob_this[8:10]
+        setpoint_this = ob_this[6:8]
                                                     
         this_ep_length = 0;
         flag_print_1 = True;
@@ -454,27 +407,25 @@ class OneNQNAgent:
                 action = self._policy.process_action(setpoint_this, action_mem)
 
             else:
-
                 if flag_print_2:
                     logging.info ("Start training process...");
                     flag_print_2 = False;
 
                 obs_this_net = self._preprocessor.process_observation_for_network(
-                ob_this, self._mean_array,  self._std_array)
+                ob_this, self._min_array,  self._max_array)
          
-                state_this_net = np.append(obs_this_net[0:11], obs_this_net[12:]).reshape(1,14)
+                state_this_net = np.append(obs_this_net[0:13], obs_this_net[14:]).reshape(1,16)
 
                 action_mem = self.select_action(state_this_net, stage = 'training')
                 # covert command to setpoint action 
-                action = self._policy.process_action(setpoint_this, action_mem)
+                action = self._policy.process_action(setpoint_this, action_mem)         
 
             action_counter = action_counter + 1 if action_counter < 4 else 1;
 
             time_next, ob_next, is_terminal = env.step(action)
             ob_next = self._preprocessor.process_observation(time_next, ob_next)
             
-            setpoint_next = ob_next[8:10]
-
+            setpoint_next = ob_next[6:8]
             
             #check if exceed the max_episode_length
             if max_episode_length != None and \
@@ -511,16 +462,16 @@ class OneNQNAgent:
                     #Sample from the replay memory
                     samples = self._preprocessor.process_batch(
                         self._memory.sample(self._batch_size), 
-                        self._mean_array, self._std_array);
+                        self._min_array, self._max_array);
                     #Construct target values, one for each of the sample 
                     #in the minibatch
                     samples_x = None;
                     targets = None;
                     for sample in samples:
-                        sample_s = np.append(sample.obs[0:11], sample.obs[12:]).reshape(1,14)
-                        sample_s_nex = np.append(sample.obs_nex[0:11], 
-                          sample.obs_nex[12:]).reshape(1,14)
-                        sample_r = self._preprocessor.process_reward(sample.obs_nex[10:13])
+                        sample_s = np.append(sample.obs[0:13], sample.obs[14:]).reshape(1,16)
+                        sample_s_nex = np.append(sample.obs_nex[0:13], 
+                          sample.obs_nex[14:]).reshape(1,16)
+                        sample_r = self._preprocessor.process_reward(sample.obs_nex[12:15])
 
                         target = self.calc_q_values(sample_s);
                         a_max = self.select_action(sample_s_nex, stage = 'greedy');
@@ -576,7 +527,7 @@ class OneNQNAgent:
             if is_terminal:
                 time_this, ob_this, is_terminal = env.reset()
                 ob_this = self._preprocessor.process_observation(time_this, ob_this)
-                setpoint_this = ob_this[8:10]
+                setpoint_this = ob_this[6:8]
 
                 this_ep_length = 0;
                 action_counter = 0;
@@ -611,10 +562,10 @@ class OneNQNAgent:
         ob_this = self._preprocessor.process_observation(time_this, ob_this)
 
         obs_this_net = self._preprocessor.process_observation_for_network(
-                  ob_this, self._mean_array,  self._std_array)
+                  ob_this, self._min_array,  self._max_array)
 
-        state_this_net = np.append(obs_this_net[0:11], obs_this_net[12:]).reshape(1,14)
-        setpoint_this = ob_this[8:10]
+        state_this_net = np.append(obs_this_net[0:13], obs_this_net[14:]).reshape(1,16)
+        setpoint_this = ob_this[6:8]
         
         this_ep_reward = 0;
         this_ep_length = 0;
@@ -624,22 +575,20 @@ class OneNQNAgent:
             action = self._policy.process_action(setpoint_this, action_mem)
 
             time_next, ob_next, is_terminal = env.step(action)
-
+           
             ob_next = self._preprocessor.process_observation(time_next, ob_next)
 
-            setpoint_next = ob_next[8:10]
+            setpoint_next = ob_next[6:8]
 
             obs_next_net = self._preprocessor.process_observation_for_network(
-                  ob_next, self._mean_array,  self._std_array)
+                  ob_next, self._min_array,  self._max_array)
   
-
-            state_next_net = np.append(obs_next_net[0:11], obs_next_net[12:]).reshape(1,14)
-    
-            
+            state_next_net = np.append(obs_next_net[0:13], obs_next_net[14:]).reshape(1,16)
+               
             #10:PMV, 11: Occupant number , -2: power
-            reward = self._preprocessor.process_reward(obs_next_net[10:13])
+            reward = self._preprocessor.process_reward(obs_next_net[12:15])
+       
             this_ep_reward += reward;
-
  
             #Check if exceed the max_episode_length
             if max_episode_length is not None and \
@@ -648,7 +597,7 @@ class OneNQNAgent:
             #Check whether to start a new episode
             if is_terminal:
                 time_this, ob_this, is_terminal = env.reset()
-                setpoint_this = ob_this[8:10]
+                setpoint_this = ob_this[6:8]
 
                 average_reward = (average_reward * (episode_counter - 1) 
                                   + this_ep_reward) / episode_counter;

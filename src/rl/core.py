@@ -144,11 +144,12 @@ class Preprocessor:
         return new_observation
 
 
-    def process_observation_for_network(self, observation, mean, std):
+    def process_observation_for_network(self, observation, minV, maxV):
         """Preprocess the given observation to corresponding observation 
         before giving it to the network.
 
-        the observation is standardized according to its mean and standard deviation
+        the observation is standardized according to its min and max value
+        of each features
 
         Should be called just before the action is selected.
 
@@ -162,10 +163,10 @@ class Preprocessor:
         ----------
         observation: list of features 
           A single observation from an environment.
-        mean: np.ndarray of float
-           Features mean
-        std: np.ndarray of float
-          Features standard deviation 
+        minV: np.ndarray of float
+           Features min
+        maxV: np.ndarray of float
+          Features max 
           
         Returns
         -------
@@ -174,8 +175,8 @@ class Preprocessor:
 
         """
         
-        return np.nan_to_num(np.divide(np.
-            subtract(np.array(observation), mean), std))
+        return np.nan_to_num(np.divide(np.subtract(np.array(observation), minV), 
+            (maxV - minV)))
 
 
     def process_state_for_memory(self, state):
@@ -204,7 +205,7 @@ class Preprocessor:
         raise NotImplementedError('This method should be overriden.')
 
 
-    def process_batch(self, samples, mean, std):
+    def process_batch(self, samples, minV, maxV):
         """Process batch of samples.
 
         If your replay memory storage format is different than your
@@ -233,15 +234,34 @@ class Preprocessor:
 
             #standardize states 
             obs = self.process_observation_for_network(obs, 
-                mean, std)
+                minV, maxV)
             obs_nex = self.process_observation_for_network(obs_nex, 
-                mean, std)
+                minV, maxV)
             
             list_samples.append(Sample(obs, a, obs_nex, is_terminal));
             
         return list_samples;
 
+    def process_reward_comfort(self, reward):
+        """Process the reward.
 
+
+        Parameters
+        ----------
+        reward: numpy array of float
+          [0]: PMV [1] Occupant [2]: HVAC electric demand power
+
+
+        Returns
+        -------
+        processed_reward: float: negative value
+          The processed reward
+        """ 
+        if(reward[1]) == 0:
+            reward[0] = 0
+
+        return -reward[0]
+     
     def process_reward(self, reward):
         """Process the reward.
 
@@ -260,7 +280,7 @@ class Preprocessor:
         if(reward[1]) == 0:
             reward[0] = 0
 
-        return -(abs(reward[0]) + reward[2])
+        return -(reward[0] + reward[2])
      
 
 
