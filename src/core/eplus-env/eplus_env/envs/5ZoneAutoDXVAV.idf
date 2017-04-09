@@ -2869,6 +2869,10 @@ SizingPeriod:DesignDay,
   
   !- Building HVAC output
   Output:Variable,*,Facility Total HVAC Electric Demand Power,timestep;
+  
+  !- Debug
+  Output:Variable,*,System Node Temperature, timestep;
+  Output:Variable,*,System Node Mass Flow Rate, timestep;
 
   Output:VariableDictionary,Regular;
   Output:Surfaces:Drawing,dxf;

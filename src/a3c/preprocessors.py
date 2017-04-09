@@ -2,59 +2,60 @@ import random
 import datetime
 import numpy as np
 
+from a3c.state_index import *
 
-def get_env_states_stats(env, actions, start_year,
-                         start_mon, start_date, start_day):
-    """
-    Run the env for one episode under the random policy to compute the mean
-    and standard deviation of the states.
+#def get_env_states_stats(env, actions, start_year,
+                         #start_mon, start_date, start_day):
+    #"""
+    #Run the env for one episode under the random policy to compute the mean
+    #and standard deviation of the states.
     
-    Args:
-        env: gym.env 
-            The gym environment.
-        actions: python list of tuples
-            A python list of tuples, where each item in the list represents one 
-            action choice. 
-        start_year: int 
-            Start year.
-        start_mon: int 
-            Start month.
-        start_date: int.
-            The day of the month at the start time.
-        start_day: int 
-            The start weekday. 0 is Monday and 6 is Sunday.
+    #Args:
+        #env: gym.env 
+            #The gym environment.
+        #actions: python list of tuples
+            #A python list of tuples, where each item in the list represents one 
+            #action choice. 
+        #start_year: int 
+            #Start year.
+        #start_mon: int 
+            #Start month.
+        #start_date: int.
+            #The day of the month at the start time.
+        #start_day: int 
+            #The start weekday. 0 is Monday and 6 is Sunday.
             
-    Return: (np.ndarray, np.ndarray)
-        Two 1-D numpy array, each has length of the raw state dim + 2 (weekday
-        and hour of the day). The first array is the mean of each state feature,
-        and the second array is the standard deviation of each state feature. 
+    #Return: (np.ndarray, np.ndarray)
+        #Two 1-D numpy array, each has length of the raw state dim + 2 (weekday
+        #and hour of the day). The first array is the mean of each state feature,
+        #and the second array is the standard deviation of each state feature. 
     
-    """
-    states_hist = [];
-    # Init env reset
-    time_this, ob_this, is_terminal = env.reset();
-    ob_this = process_raw_state_1([time_this], ob_this, start_year, start_mon, 
-                          start_date, start_day)
+    #"""
+    #states_hist = [];
+    ## Init env reset
+    #time_this, ob_this, is_terminal = env.reset();
+    #ob_this = process_raw_state_1([time_this], ob_this, start_year, start_mon, 
+                          #start_date, start_day)
     
-    states_hist.append(ob_this);
-    # Interact with the env until terminal
-    while not is_terminal:
-        actIdx = random.randint(0, len(actions) - 1);
-        actRandom = actions[actIdx];
-        htStpt_this = ob_this[8 + 2] # Heating stpt
-        clStpt_this = ob_this[9 + 2] # Cooling stpt
-        resStpt, effeAct = get_legal_action(htStpt_this, clStpt_this, 
-                                            actRandom, (15, 30));
-        time_next, ob_next, is_terminal = env.step([resStpt[0], resStpt[1]]);
-        ob_next = process_raw_state_1([time_next], ob_next, start_year, start_mon, 
-                          start_date, start_day);
-        states_hist.append(ob_next);
-        ob_this = ob_next;
-    # Calculate the statistics
-    sample_mean = np.mean(np.array(states_hist), axis = 0);
-    sample_stdv = np.std(np.array(states_hist), axis = 0);
+    #states_hist.append(ob_this);
+    ## Interact with the env until terminal
+    #while not is_terminal:
+        #actIdx = random.randint(0, len(actions) - 1);
+        #actRandom = actions[actIdx];
+        #htStpt_this = ob_this[8 + 2] # Heating stpt
+        #clStpt_this = ob_this[9 + 2] # Cooling stpt
+        #resStpt, effeAct = get_legal_action(htStpt_this, clStpt_this, 
+                                            #actRandom, (15, 30));
+        #time_next, ob_next, is_terminal = env.step([resStpt[0], resStpt[1]]);
+        #ob_next = process_raw_state_1([time_next], ob_next, start_year, start_mon, 
+                          #start_date, start_day);
+        #states_hist.append(ob_next);
+        #ob_this = ob_next;
+    ## Calculate the statistics
+    #sample_mean = np.mean(np.array(states_hist), axis = 0);
+    #sample_stdv = np.std(np.array(states_hist), axis = 0);
     
-    return (sample_mean, sample_stdv);
+    #return (sample_mean, sample_stdv);
         
 
 def get_time_from_seconds(second, start_year, start_mon, 
@@ -120,13 +121,15 @@ def process_raw_state_1(simTime, state, start_year, start_mon,
             5. Site Wind Direction (degree from north)
             6. Site Diffuse Solar Radiation Rate per Area (W/m2)
             7. Site Direct Solar Radiation Rate per Area (W/m2)
-            8. Zone Air Temperature (C)
-            9. Zone Air Relative Humidity (%)
-            10. Zone Thermostat Heating Setpoint Temperature (C)
-            11. Zone Thermostat Cooling Setpoint Temperature (C)
-            12. Zone Thermal Comfort Fanger Model PMV
-            13. Zone People Occupancy status (0 or 1)
-            14. Facility Total HVAC Electric Demand Power (W)
+            8. Zone Thermostat Heating Setpoint Temperature (C) 
+            9. Zone Thermostat Cooling Setpoint Temperature (C) 
+            10. Zone Air Temperature (C)
+            11. Zone Thermal Comfort Mean Radiant Temperature (C)
+            12. Zone Air Relative Humidity (%)
+            13. Zone Thermal Comfort Clothing Value (clo) 
+            14. Zone Thermal Comfort Fanger Model PPD
+            15. Zone People Occupancy status (0 or 1)
+            16. Facility Total HVAC Electric Demand Power (W)
     """
     ret = [];
     state = np.array(state);
@@ -141,8 +144,8 @@ def process_raw_state_1(simTime, state, start_year, start_mon,
                                                     start_weekday);
         state_i_list.insert(0, nowHour);     # Add weekday and hour infomation
         state_i_list.insert(0, nowWeekday);
-        state_i_list[11 + 2] = 1 if state_i_list[11 + 2] > 0 else 0; 
-                                             # Occupancy count --> occupancy
+        state_i_list[ZPCT_RAW_IDX + 2] = 1 if state_i_list[ZPCT_RAW_IDX + 2] > 0 \
+                                           else 0; # Occupancy count --> occupancy
         if state.shape[0] > 1:
             ret.append(state_i_list);
         else:
