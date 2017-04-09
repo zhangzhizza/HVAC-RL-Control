@@ -2,6 +2,7 @@
 import socket              
 import os
 import time
+import copy
 import signal
 import _thread
 import logging
@@ -608,7 +609,7 @@ class EplusEnv(Env):
             In the order of the state features, and the index 0 of the tuple
             is the minimum value, index 1 is the maximum value. 
         """
-        return self._min_max_limits;
+        return copy.deepcopy(self._min_max_limits);
     
     @property
     def start_year(self):
