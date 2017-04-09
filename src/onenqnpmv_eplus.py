@@ -14,7 +14,7 @@ from keras.models import Model
 from keras.optimizers import Adam
 
 import rl 
-from rl.onenqn import OneNQNAgent
+from rl.onenqnpmv import OneNQNAgent
 from rl.core import ReplayMemory, Preprocessor
 from rl.objectives import mean_huber_loss
 from gym import wrappers
@@ -103,7 +103,7 @@ def main():
 
     # 
     action_size = 9; # the element of permutation set with (-0.5, 0. 0.5)
-    state_size = 16;
+    state_size = 6;
     
     #create the agent
     replayMem = ReplayMemory(args.mem_size);

@@ -174,10 +174,10 @@ class OneNQNAgent:
         self._save_freq = save_freq;
         self._eval_freq = eval_freq;
         self._eval_epi_num = eval_epi_num;
-        self._min_array = np.array([-16.7, 0.0, 0.0, 0.0, 0.0, 0.0, 15.0, 15.0, 15.0, 10.0, 
-          0.0, 0.0, 0.5, 0.0, 0.0, 0, 0]) 
-        self._max_array = np.array([26, 100.0, 23.1, 357.5, 389.0, 905.0, 30.0, 30.0, 37.0,
-          39.0, 100.0, 1, 100, 20.0, 6000.0, 23, 6])
+        self._min_array = np.array([-16.7, 0.0, 0.0, 0.0, 0.0, 0.0, 15.0, 15.0, 15.0, 15.0, 
+          0.0, 0.5, 0.0, 0.0, 0.0, 0, 0]) 
+        self._max_array = np.array([26, 100.0, 23.1, 360.0, 389.0, 905.0, 30.0, 30.0, 30.0,
+          30.0, 100.0, 1.0, 100, 20.0, 33000.0, 23, 6])
   
 
 
@@ -589,7 +589,6 @@ class OneNQNAgent:
                
             #10:PMV, 11: Occupant number , -2: power
             reward = self._preprocessor.process_reward_comfort(obs_next_net[12:14])
-          
        
             this_ep_reward += reward;
 

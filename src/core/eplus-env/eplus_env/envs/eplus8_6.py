@@ -21,7 +21,7 @@ from ..util.time_interpolate import get_time_interpolate
 
 YEAR = 1991 # Non leap year
 CWD = os.getcwd();
-LOG_LEVEL = 'INFO';
+LOG_LEVEL = 'ERROR';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 LOGGER = Logger();
 ACTION_SIZE = 2;
@@ -102,9 +102,9 @@ class EplusEnv(Env):
                                 ( 15.0, 30.0),
                                 (  0.0, 100.0),
                                 (  0.5, 1.0),
-                                (  0.0, 1.0),
-                                (  0.0, 1.0),
-                                (  0.0, 33000.0)];
+                                (  0.0, 100.0),
+                                (  0.0, 20.0),
+                                (  186.0, 33000.0)];
 
         
     def _reset(self):
@@ -387,7 +387,7 @@ class EplusEnv(Env):
                       # post processing
 
         # Kill subprocess
-        os.killpg(self._eplus_process.pid, signal.SIGTERM);
+        os.kill(self._eplus_process.pid, signal.SIGTERM);
         
     def _run_eplus_outputProcessing(self):
         eplus_outputProcessing_process =\
