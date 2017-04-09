@@ -13,21 +13,17 @@ from a3c.objectives import a3c_loss
 from a3c.a3c_network import A3C_Network
 from a3c.utils import get_hard_target_model_updates
 from a3c.actions import actions
-from a3c.min_max_limits import min_max_limits, stpt_limits
+from a3c.action_limits import stpt_limits
 from a3c.preprocessors import HistoryPreprocessor, process_raw_state_cmbd, get_legal_action, get_reward
 
 
 ACTIONS = actions;
-HT_STPT_IDX_RAW = 8;
-CL_STPT_IDX_RAW = 9;
-HVAC_EGY_IDX_RAW = 12;
-PMV_IDX_RAW = 10;
 
 class A3CThread:
     
     def __init__(self, graph, scope_name, global_name, state_dim, action_size,
                  vloss_frac, ploss_frac, hregu_frac, shared_optimizer,
-                 clip_norm, global_train_step, env, window_len):
+                 clip_norm, global_train_step, window_len):
         
         ###########################################
         ### Create the policy and value network ###
@@ -68,7 +64,7 @@ class A3CThread:
             tf.summary.scalar('loss', loss)
             # Compute the gradients
             local_vars = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, 
-                                           scope);
+                                           scope_name);
             grads_and_vars = shared_optimizer.compute_gradients(loss, local_vars);
             grads = [item[0] for item in grads_and_vars]; # Need only the gradients
             grads, grad_norms = tf.clip_by_global_norm(grads, clip_norm) 
@@ -89,18 +85,21 @@ class A3CThread:
                                                                global_name);
         
         #####################################################
-        self._env = env;
-        self._env_st_yr = env.start_year;
-        self._env_st_mn = env.start_mon;
-        self._env_st_dy = env.start_day;
-        self._env_st_wd = env.start_weekday;
         self._network_state_dim = network_state_dim;
         self._window_len = window_len;
         self._histProcessor = HistoryPreprocessor(window_len);
             
-    def train(self, sess, t_max, coordinator, global_counter, global_lock, gamma):
+    def train(self, sess, t_max, env, coordinator, 
+              global_counter, global_lock, gamma):
         t = 0;
         t_st = 0;
+        # Prepare env-related information
+        env_st_yr = env.start_year;
+        env_st_mn = env.start_mon;
+        env_st_dy = env.start_day;
+        env_st_wd = env.start_weekday;
+        env_state_limits = env.min_max_limits;
+        pcd_state_limits = 
         # Reset the env
         time_this, ob_this_raw, is_terminal = self._env.reset();
         # Process and normalize the raw observation

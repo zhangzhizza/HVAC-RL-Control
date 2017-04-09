@@ -211,19 +211,21 @@ def process_raw_state_cmbd(raw_state, simTime, start_year, start_mon,
         State feature order:
             0. Day of the week
             1. Hour of the day
-            2. Site Outdoor Air Drybulb Temperature 
+            2. Site Outdoor Air Drybulb Temperature
             3. Site Outdoor Air Relative Humidity
-            4. Site Wind Speed 
-            5. Site Wind Direction 
-            6. Site Diffuse Solar Radiation Rate per Area 
+            4. Site Wind Speed
+            5. Site Wind Direction
+            6. Site Diffuse Solar Radiation Rate per Area
             7. Site Direct Solar Radiation Rate per Area
-            8. Zone Air Temperature 
-            9. Zone Air Relative Humidity
-            10. Zone Thermostat Heating Setpoint Temperature 
-            11. Zone Thermostat Cooling Setpoint Temperature 
-            12. Zone Thermal Comfort Fanger Model PMV
-            13. Zone People Occupancy status 
-            14. Facility Total HVAC Electric Demand Power 
+            8. Zone Thermostat Heating Setpoint Temperature
+            9. Zone Thermostat Cooling Setpoint Temperature 
+            10. Zone Air Temperature
+            11. Zone Thermal Comfort Mean Radiant Temperature
+            12. Zone Air Relative Humidity
+            13. Zone Thermal Comfort Clothing Value
+            14. Zone Thermal Comfort Fanger Model PPD
+            15. Zone People Occupancy status 
+            16. Facility Total HVAC Electric Demand Power
     """
     state_after_1 = process_raw_state_1(simTime, raw_state, start_year, start_mon, 
                                         start_date, start_day);
@@ -268,17 +270,23 @@ def get_legal_action(htStpt, clStpt, action_raw, stptLmt):
         return ((res_htStpt, res_clStpt),
                 (res_htStpt - htStpt, res_clStpt - clStpt)); 
     
-def get_reward(normalized_hvac_energy, raw_pmv):
+def get_reward(normalized_hvac_energy, normalized_ppd, e_weight, p_weight):
     """
     Get the reward from hvac energy and pmv.
     
     Args:
         normalized_hvac_energy: float
             Normalized HVAC energy ranging from 0 to 1.
-        raw_pmv: float
-            Raw PMV value.
+        normalized_ppd: float
+            Normalized PPD ranging from 0 to 1.
+        e_weight: float
+            The weight to HVAC energy consumption.
+        p_weight: float
+            The weight to PPD. 
+    Return: float
+        The combined reward. 
     """
-    return normalized_hvac_energy + abs(raw_pmv)/3.0;
+    return e_weight * normalized_hvac_energy + p_weight * normalized_ppd;
     
 class HistoryPreprocessor(Preprocessor):
     """Keeps the last k states.
