@@ -14,20 +14,20 @@ from gym.envs.registration import register
 from xml.etree.ElementTree import Element, SubElement, Comment, tostring
 
 from ..util.logger import Logger 
-from ..util.time import get_hours_to_now, get_time_string, get_delta_seconds
+from ..util.time import (get_hours_to_now, get_time_string, get_delta_seconds, 
+                         WEEKDAY_ENCODING)
 from ..util.time_interpolate import get_time_interpolate
 
 
 YEAR = 1991 # Non leap year
 CWD = os.getcwd();
-LOG_LEVEL = 'ERROR';
+LOG_LEVEL = 'INFO';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 LOGGER = Logger();
-ACTION_SIZE = 0;
+ACTION_SIZE = 2;
 
 class EplusEnv(Env):
     """EnergyPlus v8.6 environment
-
     Args
     ----------
     eplus_path: String
@@ -40,7 +40,6 @@ class EplusEnv(Env):
       variable.cfg path.
     idf_path: String
       EnergyPlus input description file (.idf).
-
     Attributes
     ----------
     """
@@ -75,6 +74,7 @@ class EplusEnv(Env):
         self._episode_existed = False;
         (self._eplus_run_st_mon, self._eplus_run_st_day,
          self._eplus_run_ed_mon, self._eplus_run_ed_day,
+         self._eplus_run_st_weekday,
          self._eplus_run_stepsize) = self._get_eplus_run_info(idf_path);
         self._eplus_run_stepsize = 3600 / self._eplus_run_stepsize 
                                                             # Stepsize in second
@@ -90,12 +90,25 @@ class EplusEnv(Env):
                                                    self._eplus_run_ed_mon,
                                                    self._eplus_run_ed_day);
         self._epi_num = 0;
-
+        self._min_max_limits = [(-16.7, 26.0),
+                                (  0.0, 100.0),
+                                (  0.0, 23.1),
+                                (  0.0, 360.0),
+                                (  0.0, 389.0),
+                                (  0.0, 905.0),
+                                ( 15.0, 30.0),
+                                ( 15.0, 30.0),
+                                ( 15.0, 30.0),
+                                ( 15.0, 30.0),
+                                (  0.0, 100.0),
+                                (  0.5, 1.0),
+                                (  0.0, 1.0),
+                                (  0.0, 1.0),
+                                (  0.0, 33000.0)];
 
         
     def _reset(self):
         """Reset the environment.
-
         This method does the followings:
         1: Make a new EnergyPlus working directory
         2: Copy .idf and variables.cfg file to the working directory
@@ -206,12 +219,10 @@ class EplusEnv(Env):
         This method does the followings:
         1: Send a list of float to EnergyPlus
         2: Recieve EnergyPlus results for the next step (state)
-
         Parameters
         ----------
         action: python list of float
           Control actions that will be passed to the EnergyPlus
-
         Return: (float, [float], boolean) or (float, [float], [[float]], boolean)
                 or None (only if the environment has reached the terminal)
             Return a tuple with length 3 or 4, depending on whether to generate
@@ -275,16 +286,13 @@ class EplusEnv(Env):
     
     def _get_eplus_working_folder(self, parent_dir, dir_sig = '-run'):
         """Return Eplus output folder. Author: CMU-10703 Spring 2017 TA
-
         Assumes folders in the parent_dir have suffix -run{run
         number}. Finds the highest run number and sets the output folder
         to that number + 1. 
-
         Parameters
         ----------
         parent_dir: str
         Parent dir of the Eplus output directory.
-
         Returns
         -------
         parent_dir/run_dir
@@ -362,9 +370,13 @@ class EplusEnv(Env):
         # Send the final msg to EnergyPlus
         header = self._eplus_msg_header;
         tosend = self._assembleMsg(header[0], header[1], ACTION_SIZE, 0,
-                                   0, self._curSimTim, 
-                                   [0 for i in range(ACTION_SIZE)]);
+                                    0, self._curSimTim, 
+                                   [24 for i in range(ACTION_SIZE)]);
         self._conn.send(tosend.encode());
+        # Recieve the final msg from Eplus
+        rcv = self._conn.recv(1024).decode();
+        self._conn.send(tosend.encode()); # Send again, don't know why
+        
         time.sleep(2) # Rest for a while so EnergyPlus finish post processing
         # Remove the connection
         self._conn.close();
@@ -375,8 +387,7 @@ class EplusEnv(Env):
                       # post processing
 
         # Kill subprocess
-        os.kill(self._eplus_process.pid, signal.SIGTERM);
-        
+        os.killpg(self._eplus_process.pid, signal.SIGTERM);
         
     def _run_eplus_outputProcessing(self):
         eplus_outputProcessing_process =\
@@ -441,8 +452,9 @@ class EplusEnv(Env):
             idf_path: String
                 The .idf file path.
         
-        Return: (int, int, int, int, int)
-            (start month, start date, end month, end date, step size)
+        Return: (int, int, int, int, int, int)
+            (start month, start date, end month, end date, start weekday, 
+            step size)
         """
         ret = [];
         
@@ -468,6 +480,15 @@ class EplusEnv(Env):
                                                  .split(',')[0]
                                                  .strip()
                                                  .split(';')[0]));
+        # Start weekday
+        ret.append(WEEKDAY_ENCODING[contents[tgtIndex + i + 1].strip()
+                                                          .split('!')[0]
+                                                          .strip()
+                                                          .split(',')[0]
+                                                          .strip()
+                                                          .split(';')[0]
+                                                          .strip()
+                                                          .lower()]);
         # Step size
         line_count = 0;
         for line in contents:
@@ -569,14 +590,56 @@ class EplusEnv(Env):
             The simulation time step that the simulation ends. 
         """
         return get_delta_seconds(YEAR, st_mon, st_day, ed_mon, ed_day);
-
-
-
     
+    @property
+    def min_max_limits(self):
+        """
+        Return the min_max_limits for all state features. 
+        
+        Return: python list of tuple.
+            In the order of the state features, and the index 0 of the tuple
+            is the minimum value, index 1 is the maximum value. 
+        """
+        return self._min_max_limits;
+    
+    @property
+    def start_year(self):
+        """
+        Return the EnergyPlus simulaton year.
+        
+        Return: int
+        """
+        return YEAR;
+    
+    @property
+    def start_mon(self):
+        """
+        Return the EnergyPlus simulaton start month.
+        
+        Return: int
+        """
+        return self._eplus_run_st_mon;
+    
+    @property
+    def start_day(self):
+        """
+        Return the EnergyPlus simulaton start day of the month.
+        
+        Return: int
+        """
+        return self._eplus_run_st_day;
+    
+    @property
+    def start_weekday(self):
+        """
+        Return the EnergyPlus simulaton start weekday. 0 is Monday, 6 is Sunday.
+        
+        Return: int
+        """
+        return self._eplus_run_st_weekday;
 
     
 """
-
 while True:   
    rcv = c.recv(1024).decode();
    logging.info('Got message: ' + rcv);
@@ -586,5 +649,4 @@ while True:
 import gym
 import core.eplus_env.eplus8_6;
 env = gym.make('Eplus-v0')
-
 """

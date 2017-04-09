@@ -43,7 +43,8 @@ class Policy:
           1. Process action index to action command tuple 
           2 . Process action command tuple to heating and cooling set point to HVAC
             
-          Note: The heating set point should be always lower than cooling set point
+          Note: 1. The heating set point should be always lower than cooling set point
+          2. Add contraint, 15 < heating and cooling setpoint < 30 
         
 
         Parameters
@@ -73,7 +74,9 @@ class Policy:
         #case 1: heating no change and cooling decrease
         #case 2: heating increase and cooling no change
         #case 3: heating incease and cooling decrease
-        if(setpoint_next[0] > setpoint_next[1]):
+        if(setpoint_next[0] > setpoint_next[1] or setpoint_next[0] < 15 
+            or setpoint_next[1] < 15 or setpoint_next[0] > 30 or 
+            setpoint_next[1] > 30):
                 # don't take any action
                 setpoint_next[0] = setpoint_this[0] 
                 setpoint_next[1] = setpoint_this[1] 
