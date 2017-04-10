@@ -440,8 +440,6 @@ class OneNQNAgent:
             # the following process is for saving memory
             action_counter = action_counter + 1 if action_counter < 4 else 1;
 
-
-
             time_next, ob_next, is_terminal = env.step(action)
             ob_next = self._preprocessor.process_observation(time_next, ob_next)
             obs_next_net = self._preprocessor.process_observation_for_network(
@@ -628,7 +626,6 @@ class OneNQNAgent:
             reward = self._preprocessor.process_reward_comfort(obs_next_net[12:14])
        
             this_ep_reward += reward;
-
  
             #Check if exceed the max_episode_length
             if max_episode_length is not None and \

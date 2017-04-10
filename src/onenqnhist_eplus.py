@@ -68,10 +68,10 @@ def main():
         '-o', '--output', default='onenqnhist-res', help='Directory to save data to')
     parser.add_argument('--seed', default=0, type=int, help='Random seed')
     parser.add_argument('--max_interactions', default=50000000, type=int);
-    parser.add_argument('--mem_size', default=500000, type=int);
+    parser.add_argument('--mem_size', default=8640, type=int);
     parser.add_argument('--window_len', default=4, type=int);
     parser.add_argument('--gamma', default=0.99);
-    parser.add_argument('--target_update_freq', default=10000, type=int);
+    parser.add_argument('--target_update_freq', default=5000, type=int);
     parser.add_argument('--save_freq', default=2500, type=int);
     parser.add_argument('--train_freq', default=4, type=int);
     parser.add_argument('--eval_freq', default=2500, type=int);
@@ -79,9 +79,9 @@ def main():
     parser.add_argument('--batch_size', default=32, type=int);
     parser.add_argument('--train_set_size', default=8640, type=int);
     parser.add_argument('--learning_rate', default=0.0001);
-    parser.add_argument('--start_epsilon', default=1, type=float);
+    parser.add_argument('--start_epsilon', default=0.5, type=float);
     parser.add_argument('--end_epsilon', default=0.05);
-    parser.add_argument('--e_decay_num_steps', default=1000000, type=int);
+    parser.add_argument('--e_decay_num_steps', default=86400, type=int);
     parser.add_argument('--burn_in_size', default=50000, type=int);
     parser.add_argument('--is_warm_start', default=False, type=bool);
     parser.add_argument('--model_dir', default='None');
