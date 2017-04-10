@@ -403,7 +403,7 @@ class OneNQNAgent:
                     logging.info ("Collecting samples to fill the replay memory...");
                     flag_print_1 = False;
 
-                action_mem = self._uniformRandomPolicy.select_action()
+                action_mem = self.select_action(None, stage = 'collecting');
                 action = self._policy.process_action(setpoint_this, action_mem)
 
             else:
@@ -597,7 +597,13 @@ class OneNQNAgent:
             #Check whether to start a new episode
             if is_terminal:
                 time_this, ob_this, is_terminal = env.reset()
+                ob_this = self._preprocessor.process_observation(time_this, ob_this)
                 setpoint_this = ob_this[6:8]
+                obs_this_net = self._preprocessor.process_observation_for_network(
+                  ob_this, self._min_array,  self._max_array)
+
+                state_this_net = np.append(obs_this_net[0:13], 
+                  obs_this_net[14:]).reshape(1,16)
 
                 average_reward = (average_reward * (episode_counter - 1) 
                                   + this_ep_reward) / episode_counter;
@@ -619,6 +625,7 @@ class OneNQNAgent:
             else:
                 ob_this = ob_next
                 setpoint_this = setpoint_next
+                state_this_net = state_next_net
                 time_this = time_next
                 this_ep_length += 1;
         return (average_reward, average_episode_length);

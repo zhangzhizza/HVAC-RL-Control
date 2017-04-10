@@ -10,11 +10,12 @@ from keras.optimizers import Adam
 import matplotlib.pyplot as plt
 import rl as tfrl
 import rl.utils
+from rl.preprocessors import HistoryPreprocessor
 from rl.policy import (Policy, UniformRandomPolicy, GreedyEpsilonPolicy
                                , GreedyPolicy, LinearDecayGreedyEpsilonPolicy)
 from rl.utils import (init_weights_uniform, get_hard_target_model_updates
                               , get_uninitialized_variables)
-from rl.core import Sample
+from rl.core import (Sample,Statesample)
 
 logging.getLogger().setLevel(logging.INFO)
 
@@ -52,7 +53,8 @@ def create_model(input_state, num_actions,
     """
 
     with tf.name_scope('hidden1'):
-        hidden1 = Dense(256, activation='sigmoid')(input_state)
+        x = Flatten()(input_state);
+        hidden1 = Dense(256, activation='sigmoid')(x)
     with tf.name_scope('output'):
         output = Dense(num_actions, activation='softmax')(hidden1)
     return output;
@@ -136,7 +138,7 @@ class OneNQNAgent:
       log file save directory
     """
     def __init__(self,
-                 train_set_size,
+                 historypreprocessor,
                  preprocessor,
                  memory,
                  gamma,
@@ -146,6 +148,7 @@ class OneNQNAgent:
                  eval_freq,
                  eval_epi_num,
                  batch_size,
+                 window_size,
                  state_size,
                  action_size,
                  learning_rate,
@@ -154,10 +157,10 @@ class OneNQNAgent:
                  num_steps,
                  log_dir,
                  save_freq):
-        self._train_set_size = train_set_size;
         self._state_size = state_size;
         self._action_size = action_size;
         self._learning_rate = learning_rate;
+        self._window_size = window_size;
         self._log_dir = log_dir;
         self._policy = Policy()
         self._uniformRandomPolicy = UniformRandomPolicy(action_size);
@@ -165,6 +168,7 @@ class OneNQNAgent:
             LinearDecayGreedyEpsilonPolicy(start_e, end_e, num_steps);
         self._greedyPolicy = GreedyPolicy();
         self._num_burn_in = num_burn_in;
+        self._historypreprocessor = historypreprocessor;
         self._preprocessor = preprocessor;
         self._memory = memory;
         self._train_freq = train_freq;
@@ -203,7 +207,8 @@ class OneNQNAgent:
         with g.as_default():
         # Generate placeholders for the x and y.
             state_placeholder = tf.placeholder(tf.float32
-                                             , shape=(None, self._state_size)
+                                             , shape=(None, self._state_size
+                                             , self._window_size)
                                              , name='state_pl');
 
             q_placeholder = tf.placeholder(tf.float32
@@ -386,16 +391,28 @@ class OneNQNAgent:
 
         time_this, ob_this, is_terminal = env.reset()
 
-        ob_this = self._preprocessor.process_observation(time_this, ob_this)
+        ob_this = self._preprocessor.process_observation(time_this, ob_this) 
 
         setpoint_this = ob_this[6:8]
+
+        obs_this_net = self._preprocessor.process_observation_for_network(
+                ob_this, self._min_array,  self._max_array)
+
+        state_this_net = obs_this_net[8:14]
+
+        state_this_mem_hist = (self._historypreprocessor
+                            .process_state_for_memory(
+                              np.array(state_this_net)));
+
                                                     
+
         this_ep_length = 0;
         flag_print_1 = True;
         flag_print_2 = True;
         action_counter = 0;
    
         for step in range(num_iterations):
+            # the following if else is for select action
             #Check which stage is the agent at. If at the collecting stage,
             #then the actions will be random action.
             if step <= self._num_burn_in:
@@ -411,22 +428,32 @@ class OneNQNAgent:
                 if flag_print_2:
                     logging.info ("Start training process...");
                     flag_print_2 = False;
+                       
+                state_this_net_hist = (self._historypreprocessor
+                            .process_state_for_network(
+                                state_this_net));
 
-                obs_this_net = self._preprocessor.process_observation_for_network(
-                ob_this, self._min_array,  self._max_array)
-         
-                state_this_net = obs_this_net[8:14].reshape(1,6)
-
-                action_mem = self.select_action(state_this_net, stage = 'training')
+                action_mem = self.select_action(state_this_net_hist, stage = 'training')
                 # covert command to setpoint action 
                 action = self._policy.process_action(setpoint_this, action_mem)
 
+            # the following process is for saving memory
             action_counter = action_counter + 1 if action_counter < 4 else 1;
+
+
 
             time_next, ob_next, is_terminal = env.step(action)
             ob_next = self._preprocessor.process_observation(time_next, ob_next)
+            obs_next_net = self._preprocessor.process_observation_for_network(
+                ob_next, self._min_array,  self._max_array)
+            state_next_net = obs_next_net[8:14]
+            state_next_mem_hist = (self._historypreprocessor
+                            .process_state_for_memory(
+                                np.array(state_next_net)));                  
             
             setpoint_next = ob_next[6:8]
+
+            reward = self._preprocessor.process_reward_comfort(obs_next_net[12:14])
             
             #check if exceed the max_episode_length
             if max_episode_length != None and \
@@ -434,10 +461,11 @@ class OneNQNAgent:
                 is_terminal = True;
 
             #save sample into memory 
-            self._memory.append(Sample(ob_this, action_mem, ob_next
-                                       , is_terminal))
+            self._memory.append(Statesample(state_this_mem_hist, action_mem, 
+              reward, state_next_mem_hist, is_terminal))
 
-            
+
+            # the following code is for evaluation and training
             #Check which stage is the agent at. If at the training stage,
             #then do the training
             if step > self._num_burn_in:
@@ -461,38 +489,32 @@ class OneNQNAgent:
                         
                     
                     #Sample from the replay memory
-                    samples = self._preprocessor.process_batch(
-                        self._memory.sample(self._batch_size), 
-                        self._min_array, self._max_array);
+                    samples = self._preprocessor.process_batch_hist(
+                        self._memory.sample(self._batch_size));
+
                     #Construct target values, one for each of the sample 
                     #in the minibatch
                     samples_x = None;
                     targets = None;
                     for sample in samples:
-                        sample_s = sample.obs[8:14].reshape(1,6)
-                        sample_s_nex = sample.obs_nex[8:14].reshape(1,6)
-                        sample_r = self._preprocessor.process_reward_comfort(sample.obs_nex[12:14])
-
-                        target = self.calc_q_values(sample_s);
-                        a_max = self.select_action(sample_s_nex, stage = 'greedy');
-        
-                   
+                        target = self.calc_q_values(sample.s);
+                        a_max = self.select_action(sample.s_p, stage = 'greedy');
 
                         if sample.is_terminal:
-                            target[0, sample.a] = sample_r;
+                            target[0, sample.a] = sample.r;
                         else:
-                            target[0, sample.a] = (sample_r
+                            target[0, sample.a] = (sample.r
                                                 + self._gamma 
                                                 * self.calc_q_values_1(
-                                                    sample_s_nex)[0, a_max]);
+                                                    sample.s_p)[0, a_max]);
                         if targets is None:
                             targets = target;
                         else:
                             targets = np.append(targets, target, axis = 0);
                         if samples_x is None:
-                            samples_x = sample_s;
+                            samples_x = sample.s;
                         else:
-                            samples_x = np.append(samples_x, sample_s, axis = 0);
+                            samples_x = np.append(samples_x, sample.s, axis = 0);
                     #Run the training
           
                     
@@ -528,13 +550,20 @@ class OneNQNAgent:
                 time_this, ob_this, is_terminal = env.reset()
                 ob_this = self._preprocessor.process_observation(time_this, ob_this)
                 setpoint_this = ob_this[6:8]
+                obs_this_net = self._preprocessor.process_observation_for_network(
+                ob_this, self._min_array,  self._max_array)
+                state_this_net = obs_this_net[8:14]
 
+                state_this_mem_hist = (self._historypreprocessor
+                                    .process_state_for_memory(
+                                      np.array(state_this_net)));
                 this_ep_length = 0;
                 action_counter = 0;
             else:
-                ob_this = ob_next
                 setpoint_this = setpoint_next
-                time_this = time_next
+                state_this_net = state_next_net
+                state_this_mem_hist = state_next_mem_hist
+                ob_this = ob_next
                 this_ep_length += 1;
            
                 
@@ -554,6 +583,7 @@ class OneNQNAgent:
         You can also call the render function here if you want to
         visually inspect your policy.
         """
+        historypreprocessor = HistoryPreprocessor(self._window_size);
         episode_counter = 1;
         average_reward = 0;
         average_episode_length = 0;
@@ -563,15 +593,18 @@ class OneNQNAgent:
         obs_this_net = self._preprocessor.process_observation_for_network(
                   ob_this, self._min_array,  self._max_array)
  
-        state_this_net = obs_this_net[8:14].reshape(1,6)
+        state_this_net = obs_this_net[8:14]
         
         setpoint_this = ob_this[6:8]
 
-        
+        state_this_net_hist = (self._historypreprocessor
+                            .process_state_for_network(
+                                state_this_net));
+
         this_ep_reward = 0;
         this_ep_length = 0;
         while episode_counter <= num_episodes:
-            action_mem = self.select_action(state_this_net, stage = 'testing');
+            action_mem = self.select_action(state_this_net_hist, stage = 'testing');
 
             # covert command to setpoint action 
             action = self._policy.process_action(setpoint_this, action_mem)
@@ -585,13 +618,18 @@ class OneNQNAgent:
             obs_next_net = self._preprocessor.process_observation_for_network(
                   ob_next, self._min_array,  self._max_array)
   
-            state_next_net = obs_next_net[8:14].reshape(1,6)
+            state_next_net = obs_next_net[8:14]
+          
+            state_next_net_hist = (self._historypreprocessor
+                            .process_state_for_network(
+                                state_next_net));
                
-            #10:PMV, 11: Occupant number , -2: power
+            #12:PPD, 13: Occupant number ,
             reward = self._preprocessor.process_reward_comfort(obs_next_net[12:14])
        
             this_ep_reward += reward;
 
+ 
             #Check if exceed the max_episode_length
             if max_episode_length is not None and \
                 this_ep_length >= max_episode_length:
@@ -600,11 +638,16 @@ class OneNQNAgent:
             if is_terminal:
                 time_this, ob_this, is_terminal = env.reset()
                 ob_this = self._preprocessor.process_observation(time_this, ob_this)
-                setpoint_this = ob_this[6:8]
                 obs_this_net = self._preprocessor.process_observation_for_network(
-                  ob_this, self._min_array,  self._max_array)
- 
-                state_this_net = obs_this_net[8:14].reshape(1,6)
+                          ob_this, self._min_array,  self._max_array)
+         
+                state_this_net = obs_this_net[8:14]
+                
+                setpoint_this = ob_this[6:8]
+
+                state_this_net_hist = (self._historypreprocessor
+                                    .process_state_for_network(
+                                        state_this_net));
 
                 average_reward = (average_reward * (episode_counter - 1) 
                                   + this_ep_reward) / episode_counter;
@@ -624,8 +667,7 @@ class OneNQNAgent:
                 this_ep_reward = 0;
                 
             else:
-                ob_this = ob_next
+                state_this_net_hist = state_next_net_hist
                 setpoint_this = setpoint_next
-                state_this_net = state_next_net
                 this_ep_length += 1;
         return (average_reward, average_episode_length);

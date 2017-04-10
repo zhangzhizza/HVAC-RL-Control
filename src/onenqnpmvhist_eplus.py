@@ -14,8 +14,9 @@ from keras.models import Model
 from keras.optimizers import Adam
 
 import rl 
-from rl.onenqnpmv import OneNQNAgent
+from rl.onenqnpmvhist import OneNQNAgent
 from rl.core import ReplayMemory, Preprocessor
+from rl.preprocessors import HistoryPreprocessor
 from rl.objectives import mean_huber_loss
 from gym import wrappers
 import eplus_env
@@ -64,7 +65,7 @@ def main():
     parser = argparse.ArgumentParser(description='Run ONENQN on EnergyPlus')
     parser.add_argument('--env', default='Eplus-v0', help='EnergyPlus env name')
     parser.add_argument(
-        '-o', '--output', default='onenqnpmv-res', help='Directory to save data to')
+        '-o', '--output', default='onenqnpmvhist-res', help='Directory to save data to')
     parser.add_argument('--seed', default=0, type=int, help='Random seed')
     parser.add_argument('--max_interactions', default=50000000, type=int);
     parser.add_argument('--mem_size', default=500000, type=int);
@@ -74,7 +75,7 @@ def main():
     parser.add_argument('--save_freq', default=2500, type=int);
     parser.add_argument('--train_freq', default=4, type=int);
     parser.add_argument('--eval_freq', default=2500, type=int);
-    parser.add_argument('--eval_epi_num', default=20, type=int);#######3
+    parser.add_argument('--eval_epi_num', default=20, type=int);
     parser.add_argument('--batch_size', default=32, type=int);
     parser.add_argument('--train_set_size', default=8640, type=int);
     parser.add_argument('--learning_rate', default=0.0001);
@@ -108,11 +109,13 @@ def main():
     #create the agent
     replayMem = ReplayMemory(args.mem_size);
     preprocessor = Preprocessor();
+    histPreprocessor = HistoryPreprocessor(args.window_len);
 
-    onenqnAgent = OneNQNAgent(args.train_set_size, preprocessor, replayMem, args.gamma
+    onenqnAgent = OneNQNAgent(histPreprocessor, preprocessor, replayMem, args.gamma
                         , args.target_update_freq, args.burn_in_size
                         , args.train_freq, args.eval_freq, args.eval_epi_num
-                        , args.batch_size, state_size, action_size
+                        , args.batch_size, args.window_len
+                        , state_size, action_size
                         , args.learning_rate, args.start_epsilon
                         , args.end_epsilon, args.e_decay_num_steps
                         , args.output, args.save_freq);
