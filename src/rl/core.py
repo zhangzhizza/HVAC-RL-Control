@@ -69,6 +69,79 @@ class Sample:
         return (str(self._obs) + ',' + str(self._a) 
                 + ',' + str(self._obs_nex) + ',' 
                 + str(self.is_terminal));
+
+class Statesample:
+    """Represents a reinforcement learning sample.
+
+    Used to store observed experience from an MDP. Represents a
+    standard `(s, a, r, s', terminal)` tuple.
+
+    Note: This is not the most efficient way to store things in the
+    replay memory, but it is a convenient class to work with when
+    sampling batches, or saving and loading samples while debugging.
+
+    Parameters
+    ----------
+    state: array-like
+      Represents the state of the MDP before taking an action. In most
+      cases this will be a numpy array. Dimensions: (w, h, nframe)
+    action: int, float, tuple
+      For discrete action domains this will be an integer. For
+      continuous action domains this will be a floating point
+      number. For a parameterized action MDP this will be a tuple
+      containing the action and its associated parameters.
+    reward: float
+      The reward received for executing the given action in the given
+      state and transitioning to the resulting state.
+    next_state: array-like
+      This is the state the agent transitions to after executing the
+      `action` in `state`. Expected to be the same type/dimensions as
+      the state.
+    is_terminal: boolean
+      True if this action finished the episode. False otherwise.
+    """
+    def __init__(self, s, a, r, s_p, is_terminal):
+        self._s = s;
+        self._a = a;
+        self._r = r;
+        self._s_p = s_p;
+        self._is_terminal = is_terminal;
+        
+    @property
+    def s(self):
+        return self._s;
+
+    @property
+    def a(self):
+        return self._a;
+    
+    @property
+    def r(self):
+        return self._r;
+    
+    @property
+    def s_p(self):
+        return self._s_p;
+    
+    @property
+    def is_terminal(self):
+        return self._is_terminal;
+    
+    @property
+    def id(self):
+        return self._id;
+    
+    def __str__(self):
+        return (str(self.s) + ',' + str(self.a) 
+                + ',' + str(self.r) + ',' 
+                + str(self.s_p) + ',' 
+                + str(self.is_terminal));
+    
+    def __repr__(self):
+        return (str(self.s) + ',' + str(self.a) 
+                + ',' + str(self.r) + ',' 
+                + str(self.s_p) + ',' 
+                + str(self.is_terminal));
                 
 
 class Preprocessor:
@@ -203,7 +276,38 @@ class Preprocessor:
         """ 
         
         raise NotImplementedError('This method should be overriden.')
+    
+    def process_batch_hist(self, samples):
+        """Process batch of samples with history stack.
 
+        If your replay memory storage format is different than your
+        network input, you may want to apply this function to your
+        sampled batch before running it through your update function.
+
+        Parameters
+        ----------
+        samples: list(tensorflow_rl.core.Sample)
+          List of samples to process
+
+        Returns
+        -------
+        processed_samples: list(tensorflow_rl.core.Sample)
+          Samples after processing. Can be modified in anyways, but
+          the list length will generally stay the same.
+        """
+        list_samples = [];
+        
+        for sample in samples:
+            s = sample.s;
+            s_p = sample.s_p;
+            r = sample.r
+        
+            a = sample.a;
+            is_terminal = sample.is_terminal;
+            
+            list_samples.append(Statesample(s, a, r, s_p, is_terminal));
+            
+        return list_samples;
 
     def process_batch(self, samples, minV, maxV):
         """Process batch of samples.
@@ -258,9 +362,10 @@ class Preprocessor:
           The processed reward
         """ 
         if(reward[1]) == 0:
-            reward[0] = 0
+            return 0
+        else:
+            return -(reward[0])
 
-        return -reward[0]
      
     def process_reward(self, reward):
         """Process the reward.
@@ -278,9 +383,9 @@ class Preprocessor:
           The processed reward
         """ 
         if(reward[1]) == 0:
-            reward[0] = 0
-
-        return -(reward[0] + reward[2])
+            return -reward[2]
+        else:
+            return -(reward[0] + reward[2])
      
 
 
