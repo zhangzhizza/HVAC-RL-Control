@@ -403,8 +403,7 @@ class OneNQNAgent:
         state_this_mem_hist = (self._historypreprocessor
                             .process_state_for_memory(
                               np.array(state_this_net)));
-
-                                                    
+                                                  
 
         this_ep_length = 0;
         flag_print_1 = True;
@@ -629,7 +628,6 @@ class OneNQNAgent:
 
        
             this_ep_reward += reward;
-
  
             #Check if exceed the max_episode_length
             if max_episode_length is not None and \
