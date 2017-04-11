@@ -270,9 +270,12 @@ def get_legal_action(htStpt, clStpt, action_raw, stptLmt):
         return ((res_htStpt, res_clStpt),
                 (res_htStpt - htStpt, res_clStpt - clStpt)); 
     
-def get_reward(normalized_hvac_energy, normalized_ppd, e_weight, p_weight):
+def get_reward(normalized_hvac_energy, normalized_ppd, e_weight, p_weight,
+               occupancy_status):
     """
-    Get the reward from hvac energy and pmv.
+    Get the reward from hvac energy and pmv. If occupancy status is 0 (not 
+    occupied), then the PPD will be 0.0; else, PPD is the original normalized
+    PPD. 
     
     Args:
         normalized_hvac_energy: float
@@ -283,12 +286,19 @@ def get_reward(normalized_hvac_energy, normalized_ppd, e_weight, p_weight):
             The weight to HVAC energy consumption.
         p_weight: float
             The weight to PPD. 
+        occupancy_status: float
+            The occupancy status, 1 or 0.
     Return: float
         The combined reward. 
     """
-    return e_weight * normalized_hvac_energy + p_weight * normalized_ppd;
+    if occupancy_status == 0.0:
+        effect_normalized_ppd = 0.0;
+    else:
+        effect_normalized_ppd = normalized_ppd;
+        
+    return - (e_weight * normalized_hvac_energy + p_weight * effect_normalized_ppd);
     
-class HistoryPreprocessor(Preprocessor):
+class HistoryPreprocessor:
     """Keeps the last k states.
 
     Useful for seeing the trend of the change, but the state
