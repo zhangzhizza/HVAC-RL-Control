@@ -6,7 +6,7 @@ from keras.models import Model
 
 from a3c.objectives import a3c_loss
 
-Class A3C_Network:
+class A3C_Network:
     """
     The class that creates the policy and value network for the A3C. 
     """

@@ -1,8 +1,6 @@
 """Loss functions."""
 
 import tensorflow as tf
-import semver
-
 
 def a3c_loss(R, v_pred, pi, pi_one_hot, vloss_frac, ploss_frac, hregu_frac):
     """

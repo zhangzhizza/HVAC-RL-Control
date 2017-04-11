@@ -14,6 +14,7 @@ import os
 import random
 import gym
 import logging
+import multiprocessing
 
 import numpy as np
 import tensorflow as tf
@@ -21,8 +22,9 @@ import tensorflow as tf
 import eplus_env
 
 from util.logger import Logger
+from a3c.a3c import A3CAgent
         
-NAME = 'A3C_Agent'
+NAME = 'A3C_AGENT_MAIN'
 LOG_LEVEL = 'INFO'
 LOG_FORMATTER = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 
@@ -64,62 +66,74 @@ def get_output_folder(parent_dir, env_name):
 
 
 def main(): 
-    logger = Logger();
-    main_logger = logger.getLogger(NAME, LOG_LEVEL, LOG_FORMATTER);
-    main_logger.debug ('A3C agent starts!');
+    main_logger = Logger().getLogger(NAME, LOG_LEVEL, LOG_FORMATTER);
     parser = argparse.ArgumentParser(description='Run A3C on EnergyPlus')
     parser.add_argument('--env', default='Eplus-v0', help='EnergyPlus env name')
     parser.add_argument(
         '-o', '--output', default='a3c-res', help='Directory to save data to')
-    parser.add_argument('--seed', default=0, type=int, help='Random seed')
     parser.add_argument('--max_interactions', default=50000000, type=int);
     parser.add_argument('--window_len', default=16, type=int);
     parser.add_argument('--gamma', default=0.99);
-    parser.add_argument('--save_freq', default=2500, type=int);
-    parser.add_argument('--train_interval', default=4, type=int, 
-                        help = 'Steps of environment interaction before \
-                                performing training.');
-    parser.add_argument('--eval_freq', default=5000, type=int);
-    parser.add_argument('--eval_epi_num', default=20, type=int);
-    parser.add_argument('--learning_rate', default=0.0001)
+    parser.add_argument('--v_loss_frac', default=0.5, type=float);
+    parser.add_argument('--p_loss_frac', default=1.0, type=float);
+    parser.add_argument('--h_regu_frac', default=0.01, type=float);
+    parser.add_argument('--num_threads', default=2, type=float,
+                        help='The number of threads to be used for the asynchronous'
+                        ' training. Default is 2. If -1, then this value equals to'
+                        ' the max available CPUs.');
+    parser.add_argument('--learning_rate', default=0.0001, type=float);
+    parser.add_argument('--rmsprop_decay', default=0.99, type=float);
+    parser.add_argument('--rmsprop_momet', default=0.0, type=float);
+    parser.add_argument('--rmsprop_epsil', default=1e-10, type=float);
+    parser.add_argument('--clip_norm', default=40.0, type=float);
+    parser.add_argument('--train_freq', default=4, type=int);
+    parser.add_argument('--e_weight', default=0.5, type=float,
+                        help='Reward weight on HVAC energy consumption.');
+    parser.add_argument('--p_weight', default=0.5, type=float,
+                        help='Reward wegith on PPD.');
+    parser.add_argument('--save_freq', default=10000, type=int);
+    parser.add_argument('--eval_freq', default=20000, type=int);
+    parser.add_argument('--eval_epi_num', default=10, type=int);
     parser.add_argument('--is_warm_start', default=False, type=bool);
     parser.add_argument('--model_dir', default='None');
-
-    args = parser.parse_args()
-
+    
+    args = parser.parse_args();
     args.output = get_output_folder(args.output, args.env)
     tf.gfile.MakeDirs(args.output + '/model_data')
-    
+    args.num_threads = multiprocessing.cpu_count() if args.num_threads < 0\
+                       else args.num_threads;
     main_logger.info(args)
     
-    # Create the env
-    env = gym.make(args.env);
+    # Create the env for evaluation
     env_eval = gym.make(args.env);
-
+    # Action size
     action_size = 9; # the element of permutation set with (-0.5, 0. 0.5)
-    
+    # State size
+    state_dim = 15 + 2 # 15 for the raw state dim, 2 is the additonal time info
     # Create the agent
-    preprocessor = Preprocessor();
-
-    dnqnAgent = DNQNAgent(preprocessor, replayMem, args.gamma
-                        , args.target_update_freq, args.burn_in_size
-                        , args.train_freq, args.eval_freq, args.eval_epi_num
-                        , args.batch_size, state_size, action_size
-                        , args.learning_rate, args.start_epsilon
-                        , args.end_epsilon, args.e_decay_num_steps
-                        , args.output, args.save_freq);
-    logging.info ('Start compiling...')
-
-    dnqnAgent.compile(tf.train.AdamOptimizer, mean_huber_loss,
-        args.is_warm_start, args.model_dir);
-    
-    #run the training
-    logging.info ('Start the learning...')
-    dnqnAgent.fit(env, env_eval, args.max_interactions, max_episode_length=None)
+    a3c_agent = A3CAgent(state_dim = state_dim, window_len = args.window_len,
+                         action_size = action_size, vloss_frac = args.v_loss_frac,
+                         ploss_frac = args.p_loss_frac, 
+                         hregu_frac = args.h_regu_frac,
+                         num_threads = args.num_threads, 
+                         learning_rate = args.learning_rate, 
+                         rmsprop_decay = args.rmsprop_decay,
+                         rmsprop_momet = args.rmsprop_momet,
+                         rmsprop_epsil = args.rmsprop_epsil,
+                         clip_norm = args.clip_norm, log_dir = args.output);
+    main_logger.info ('Start compiling...')
+    (g, sess, coordinator, global_network, workers, global_summary_writer, 
+     global_saver) = a3c_agent.compile(args.is_warm_start, args.model_dir);
+    # Start the training
+    main_logger.info ('Start the learning...')
+    a3c_agent.fit(sess, coordinator, global_network, workers, 
+                  global_summary_writer, global_saver, args.env, args.train_freq,
+                  args.gamma, args.e_weight, args.p_weight, args.save_freq, 
+                  args.max_interactions, env_eval, 
+                  args.eval_epi_num, args.eval_freq);
         
         
 
 if __name__ == '__main__':
-    logging.getLogger().setLevel(logging.INFO);
     main()
  
