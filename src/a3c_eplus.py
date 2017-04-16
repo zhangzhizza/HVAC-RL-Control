@@ -71,13 +71,13 @@ def main():
     parser.add_argument('--env', default='Eplus-v0', help='EnergyPlus env name')
     parser.add_argument(
         '-o', '--output', default='a3c-res', help='Directory to save data to')
-    parser.add_argument('--max_interactions', default=50000000, type=int);
-    parser.add_argument('--window_len', default=16, type=int);
+    parser.add_argument('--max_interactions', default=10000000, type=int);
+    parser.add_argument('--window_len', default=4, type=int);
     parser.add_argument('--gamma', default=0.99);
     parser.add_argument('--v_loss_frac', default=0.5, type=float);
     parser.add_argument('--p_loss_frac', default=1.0, type=float);
     parser.add_argument('--h_regu_frac', default=0.01, type=float);
-    parser.add_argument('--num_threads', default=2, type=float,
+    parser.add_argument('--num_threads', default=2, type=int,
                         help='The number of threads to be used for the asynchronous'
                         ' training. Default is 2. If -1, then this value equals to'
                         ' the max available CPUs.');
@@ -85,15 +85,22 @@ def main():
     parser.add_argument('--rmsprop_decay', default=0.99, type=float);
     parser.add_argument('--rmsprop_momet', default=0.0, type=float);
     parser.add_argument('--rmsprop_epsil', default=1e-10, type=float);
-    parser.add_argument('--clip_norm', default=40.0, type=float);
-    parser.add_argument('--train_freq', default=4, type=int);
+    parser.add_argument('--clip_norm', default=5.0, type=float);
+    parser.add_argument('--train_freq', default=5, type=int);
     parser.add_argument('--e_weight', default=0.5, type=float,
                         help='Reward weight on HVAC energy consumption.');
     parser.add_argument('--p_weight', default=0.5, type=float,
                         help='Reward wegith on PPD.');
-    parser.add_argument('--save_freq', default=10000, type=int);
-    parser.add_argument('--eval_freq', default=20000, type=int);
+    parser.add_argument('--save_freq', default=50000, type=int);
+    parser.add_argument('--save_scope', default='all', 
+                        help='The tensorflow graph save scope, default is global '
+                        'which only saves the global network. Choice is all which '
+                        'saves all variables under the graph. ');
+    parser.add_argument('--eval_freq', default=50000, type=int);
     parser.add_argument('--eval_epi_num', default=10, type=int);
+    parser.add_argument('--init_e', default = 0.0, type=float);
+    parser.add_argument('--end_e', default = 0.0, type=float);
+    parser.add_argument('--decay_steps', default = 1000000, type=int);
     parser.add_argument('--is_warm_start', default=False, type=bool);
     parser.add_argument('--model_dir', default='None');
     
@@ -107,7 +114,7 @@ def main():
     # Create the env for evaluation
     env_eval = gym.make(args.env);
     # Action size
-    action_size = 9; # the element of permutation set with (-0.5, 0. 0.5)
+    action_size = 4; #
     # State size
     state_dim = 15 + 2 # 15 for the raw state dim, 2 is the additonal time info
     # Create the agent
@@ -120,10 +127,13 @@ def main():
                          rmsprop_decay = args.rmsprop_decay,
                          rmsprop_momet = args.rmsprop_momet,
                          rmsprop_epsil = args.rmsprop_epsil,
-                         clip_norm = args.clip_norm, log_dir = args.output);
+                         clip_norm = args.clip_norm, log_dir = args.output,
+                         init_epsilon = args.init_e, end_epsilon = args.end_e, 
+                         decay_steps = args.decay_steps);
     main_logger.info ('Start compiling...')
     (g, sess, coordinator, global_network, workers, global_summary_writer, 
-     global_saver) = a3c_agent.compile(args.is_warm_start, args.model_dir);
+     global_saver) = a3c_agent.compile(args.is_warm_start, args.model_dir, 
+                                       args.save_scope);
     # Start the training
     main_logger.info ('Start the learning...')
     a3c_agent.fit(sess, coordinator, global_network, workers, 

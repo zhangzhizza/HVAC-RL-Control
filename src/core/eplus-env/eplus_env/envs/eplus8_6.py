@@ -285,7 +285,7 @@ class EplusEnv(Env):
     def _create_eplus(self, eplus_path, weather_path, 
                       idf_path, out_path, eplus_working_dir):
         
-        eplus_process = subprocess.Popen('%s -w %s -d %s -r %s'
+        eplus_process = subprocess.Popen('%s -w %s -d %s %s'
                         %(eplus_path + '/energyplus', weather_path, 
                           out_path, idf_path),
                         shell = True,
@@ -396,7 +396,7 @@ class EplusEnv(Env):
         self._conn.close();
         self._conn = None;
         # Process the output
-        self._run_eplus_outputProcessing();
+        #self._run_eplus_outputProcessing();
         time.sleep(1);# Sleep the thread so EnergyPlus has time to do the
                       # post processing
 

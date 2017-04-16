@@ -6,6 +6,8 @@ from keras.models import Model
 
 from a3c.objectives import a3c_loss
 
+NN_WIDTH = 512;
+
 class A3C_Network:
     """
     The class that creates the policy and value network for the A3C. 
@@ -63,11 +65,11 @@ class A3C_Network:
             The policy and the value for the state. 
             
         """
-        with tf.name_scope('shared_layer'):
-            layer = Dense(512, activation = 'relu')(input_state);
-            layer = Dense(512, activation = 'relu')(layer);
-            layer = Dense(512, activation = 'relu')(layer);
-            layer = Dense(512, activation = 'relu')(layer);
+        with tf.name_scope('shared_layers'):
+            layer = Dense(NN_WIDTH, activation = 'relu')(input_state);
+            layer = Dense(NN_WIDTH, activation = 'relu')(layer);
+            layer = Dense(NN_WIDTH, activation = 'relu')(layer);
+            layer = Dense(NN_WIDTH, activation = 'relu')(layer);
         with tf.name_scope('policy_network'):
             policy = Dense(num_actions, activation = 'softmax')(layer);
         with tf.name_scope('value_network'):

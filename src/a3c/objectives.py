@@ -34,7 +34,7 @@ def a3c_loss(R, v_pred, pi, pi_one_hot, vloss_frac, ploss_frac, hregu_frac):
         with tf.name_scope('value_mse_loss'):
             v_mse_loss = 0.5 * tf.reduce_sum(tf.square(R - v_pred));
         with tf.name_scope('policy_loss'):
-            policy_loss = tf.reduce_sum(tf.log(pi_one_hot) * (R - v_pred));
+            policy_loss = tf.reduce_sum(tf.log(pi_one_hot) * tf.stop_gradient(R - v_pred));
         with tf.name_scope('entropy'):
             entropy = -tf.reduce_sum(pi * tf.log(pi));
         with tf.name_scope('weighted_loss'):

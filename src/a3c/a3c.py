@@ -14,14 +14,14 @@ from multiprocessing import Value, Lock
 from util.logger import Logger
 from a3c.objectives import a3c_loss
 from a3c.a3c_network import A3C_Network
-from a3c.actions import actions
+from a3c.actions import actions_delta_stpt, actions_htcl_cmd
 from a3c.action_limits import stpt_limits
 from a3c.preprocessors import HistoryPreprocessor, process_raw_state_cmbd, get_legal_action, get_reward
 from a3c.utils import init_variables, get_hard_target_model_updates, get_uninitialized_variables
 from a3c.state_index import *
 
 
-ACTIONS = actions;
+ACTIONS = actions_htcl_cmd;
 STPT_LIMITS = stpt_limits;
 LOG_LEVEL = 'INFO';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
@@ -33,7 +33,8 @@ class A3CThread:
     
     def __init__(self, graph, scope_name, global_name, state_dim, action_size,
                  vloss_frac, ploss_frac, hregu_frac, shared_optimizer,
-                 clip_norm, global_train_step, window_len):
+                 clip_norm, global_train_step, window_len, init_epsilon,
+                 end_epsilon, decay_steps):
         """
         Constructor.
         
@@ -97,6 +98,7 @@ class A3CThread:
                                                    action_size) * 
                                         self._policy_pred),
                                         1, True); 
+            self._pi_one_hot = pi_one_hot;
             # Add to the Graph the Ops for loss calculation.
             loss = a3c_loss(self._q_true_placeholder, self._value_pred, 
                                   self._policy_pred, pi_one_hot, vloss_frac, 
@@ -115,7 +117,7 @@ class A3CThread:
             grads = [item[0] for item in grads_and_vars]; # Need only the gradients
             grads, grad_norms = tf.clip_by_global_norm(grads, clip_norm) 
                                                           # Grad clipping
-
+            self._grads = grads;
             # Apply local gradients to global network
             global_vars = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, 
                                             global_name);
@@ -134,6 +136,12 @@ class A3CThread:
         self._network_state_dim = network_state_dim;
         self._window_len = window_len;
         self._histProcessor = HistoryPreprocessor(window_len);
+        self._scope_name = scope_name;
+        self._graph = graph;
+        self._grad_norms = grad_norms;
+        self._action_size = action_size;
+        self._epsilon_decay_delta = (init_epsilon - end_epsilon)/decay_steps;
+        self._e_greedy = init_epsilon;
         
             
     def train(self, sess, t_max, env_name, coordinator, global_counter, global_lock, 
@@ -212,15 +220,25 @@ class A3CThread:
         while not coordinator.should_stop():
             # Synchronize local network parameters with 
             # the global network parameters
-            sess.run(self._local_net_update);
+            #    print (self._scope_name, 'global  vars', sess.run(tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, 
+            #                                'global')))
+            #    print (self._scope_name, 'local vars', sess.run(tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, 
+            #                                self._scope_name)));
+            sess.run(self._local_net_update);   
+            #with self._graph.as_default():
+             #   print (self._scope_name, 'local vars after update', sess.run(tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, 
+              #                              self._scope_name)));
             # Reset the counter
             t_st = t;
             # Interact with env
             trajectory_list = []; # A list of (s_t, a_t, r_t) tuples
             while (not is_terminal) and (t - t_st != t_max):
+                self._local_logger.debug('The processed stacked state at %0.04f '
+                                         'is %s.'%(time_this, str(ob_this_hist_prcd)));
                 # Get the action
-                action_raw_idx = self._select_sto_action(ob_this_hist_prcd, sess);
-                action_raw_tup = actions[action_raw_idx];
+                action_raw_idx = self._select_sto_action(ob_this_hist_prcd, sess,
+                                                         self._e_greedy);
+                action_raw_tup = ACTIONS[action_raw_idx];
                 cur_htStpt = ob_this_raw[HTSP_RAW_IDX];
                 cur_clStpt = ob_this_raw[CLSP_RAW_IDX];
                 action_stpt_prcd, action_effec = get_legal_action(
@@ -240,6 +258,17 @@ class A3CThread:
                 occupancy_status = ob_next_prcd[ZPCT_RAW_IDX + 2];
                 reward_next = get_reward(normalized_hvac_energy, normalized_ppd, 
                                          e_weight, p_weight, occupancy_status);
+                self._local_logger.debug('Environment debug: raw action idx is %d, '
+                                         'current heating setpoint is %0.04f, '
+                                         'current cooling setpoint is %0.04f, '
+                                         'actual action is %s, '
+                                         'sim time next is %0.04f, '
+                                         'raw observation next is %s, '
+                                         'processed observation next is %s, '
+                                         'reward next is %0.04f.'
+                                         %(action_raw_idx, cur_htStpt, cur_clStpt,
+                                           str(action_stpt_prcd), time_next, 
+                                           ob_next_raw, ob_next_prcd, reward_next));
                 # Get the history stacked state
                 ob_next_hist_prcd = self._histProcessor.\
                             process_state_for_network(ob_next_prcd) # 2-D array
@@ -249,6 +278,7 @@ class A3CThread:
                 
                 # Update lock counter and global counter, do eval
                 t += 1;
+                self._update_e_greedy(); # Update the epsilon value
                 with global_lock:
                     # Do the evaluation
                     if global_counter.value % eval_freq == 0:
@@ -276,6 +306,7 @@ class A3CThread:
                 if not is_terminal:
                     ob_this_hist_prcd = ob_next_hist_prcd;
                     ob_this_raw = ob_next_raw;
+                    ob_this_prcd = ob_next_prcd;
                 else:
                     # Reset the env
                     time_this, ob_this_raw, is_terminal_cp = env.reset();
@@ -305,8 +336,11 @@ class A3CThread:
             training_feed_dict = {self._q_true_placeholder: q_true_list,
                                   self._state_placeholder: state_list,
                                   self._action_idx_placeholder: act_idx_list};
-            _, loss_res = sess.run([self._train_op, self._loss], 
+            _, loss_res, value_pred = sess.run([self._train_op, self._loss, 
+                                                self._value_pred], 
                                    feed_dict = training_feed_dict);
+            self._local_logger.debug('Value prediction is %s, R is %s.'
+                                     %(str(value_pred), str(q_true_list)));
             # Display and record the loss for this thread
             if (t/t_max) % 100 == 0:
                 self._local_logger.info ('Local step %d, global step %d: loss ' 
@@ -326,8 +360,10 @@ class A3CThread:
         env.end_env();
             
             
-    
-    def _select_sto_action(self, state, sess):
+    def _update_e_greedy(self):
+        self._e_greedy -= self._epsilon_decay_delta;
+        
+    def _select_sto_action(self, state, sess, e_greedy):
         """
         Given a state, run stochastic policy network to give an action.
         
@@ -340,8 +376,15 @@ class A3CThread:
         Return: int 
             The action index.
         """
+        # Random
+        uni_rdm_greedy = np.random.uniform();
+        if uni_rdm_greedy < e_greedy:
+            return np.random.choice(self._action_size);
+        # On policy
         softmax_a = sess.run(self._policy_pred, 
                              feed_dict={self._state_placeholder:state}).flatten();
+        self._local_logger.debug('Policy network output: %s, sum to %0.04f'
+                                 %(str(softmax_a), sum(softmax_a)));
         uni_rdm = np.random.uniform();
         imd_x = uni_rdm;
         for i in range(softmax_a.shape[-1]):
@@ -366,7 +409,10 @@ class A3CAgent:
                  rmsprop_momet,
                  rmsprop_epsil,
                  clip_norm,
-                 log_dir):
+                 log_dir,
+                 init_epsilon,
+                 end_epsilon,
+                 decay_steps):
         
         self._state_dim = state_dim;
         self._window_len = window_len;
@@ -382,8 +428,11 @@ class A3CAgent:
         self._rmsprop_epsil = rmsprop_epsil;
         self._clip_norm = clip_norm;
         self._log_dir = log_dir
+        self._init_epsilon = init_epsilon;
+        self._end_epsilon = end_epsilon;
+        self._decay_steps = decay_steps;
         
-    def compile(self, is_warm_start, model_dir):
+    def compile(self, is_warm_start, model_dir, save_scope = 'global'):
         """
         This method sets up the required TF graph and operations.
         
@@ -410,15 +459,6 @@ class A3CAgent:
             # Create a global train step variable to record global steps
             global_train_step = tf.Variable(0, name='global_train_step', 
                                             trainable=False);
-            # Create a saver for writing training checkpoints, only variables in
-            # global network will be saved
-            saver = tf.train.Saver(var_list = g.get_collection(
-                                                tf.GraphKeys.TRAINABLE_VARIABLES,
-                                                scope='global'));
-            # Create a session for running Ops on the Graph.
-            sess = tf.Session()
-            # Instantiate a SummaryWriter to output summaries and the Graph.
-            summary_writer = tf.summary.FileWriter(self._log_dir, sess.graph)
             # Init ops
             #init_global_op = init_variables(g, 'global');
             #init_allot_op = init_variables(g, 'RMSProp');
@@ -426,16 +466,31 @@ class A3CAgent:
         workers = [A3CThread(g, 'worker_%d'%(i), 'global', self._state_dim,
                              self._action_size, self._vloss_frac, self._ploss_frac,
                              self._hregu_frac, shared_optimizer, self._clip_norm,
-                             global_train_step, self._window_len)
+                             global_train_step, self._window_len, self._init_epsilon,
+                             self._end_epsilon, self._decay_steps)
                   for i in range(self._num_threads)];
         # Init global network variables or warm start
         with g.as_default():
+            # Create a session for running Ops on the Graph.
+            sess = tf.Session()
+            # Instantiate a SummaryWriter to output summaries and the Graph.
+            summary_writer = tf.summary.FileWriter(self._log_dir, sess.graph)
+            # Create a saver for writing training checkpoints
+            if save_scope == 'global':
+                save_var_list = g.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES,
+                                             scope=save_scope)
+            if save_scope == 'all':
+                save_var_list = None;
+            saver = tf.train.Saver(var_list = save_var_list);
+            # Init ops
             init_global_all_op = tf.global_variables_initializer();
             if not is_warm_start:
                 sess.run(init_global_all_op);
             else:
                 saver.restore(sess, model_dir);
-        
+        # Graph construction finished. No addiontal elements can be added to 
+        # the graph. This is for thread safety.  
+        g.finalize(); 
         return (g, sess, coordinator, global_network, workers, summary_writer, 
                 saver);
 
@@ -516,7 +571,7 @@ class A3CEval:
         while episode_counter <= self._num_episodes:
             # Get the action
             action_raw_idx = self._select_sto_action(ob_this_hist_prcd);
-            action_raw_tup = actions[action_raw_idx];
+            action_raw_tup = ACTIONS[action_raw_idx];
             cur_htStpt = ob_this_raw[HTSP_RAW_IDX];
             cur_clStpt = ob_this_raw[CLSP_RAW_IDX];
             action_stpt_prcd, action_effec = get_legal_action(
@@ -539,7 +594,8 @@ class A3CEval:
                                     self._e_weight, self._p_weight, 
                                     occupancy_status);
             this_ep_reward += reward_next;
-            this_ep_max_ppd = max(normalized_ppd, this_ep_max_ppd);
+            this_ep_max_ppd = max(normalized_ppd if occupancy_status > 0 else 0,
+                                  this_ep_max_ppd);
             # Get the history stacked state
             ob_next_hist_prcd = self._histProcessor.\
                             process_state_for_network(ob_next_prcd) # 2-D array
@@ -568,6 +624,7 @@ class A3CEval:
                 this_ep_max_ppd = 0;
                  
             else:
+                time_this = time_next;
                 ob_this_hist_prcd = ob_next_hist_prcd;
                 ob_this_raw = ob_next_raw;
                 
@@ -586,9 +643,14 @@ class A3CEval:
         Return: int 
             The action index.
         """
+        
         softmax_a = self._sess.run(self._global_network.policy_pred, 
                         feed_dict={self._global_network.state_placeholder:state})\
                         .flatten();
+        ### DEBUG
+        dbg_rdm = np.random.uniform();
+        if dbg_rdm < 0.01:
+            print ('softmax', softmax_a)
         uni_rdm = np.random.uniform();
         imd_x = uni_rdm;
         for i in range(softmax_a.shape[-1]):
