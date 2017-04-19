@@ -2,10 +2,12 @@
 import socket              
 import os
 import time
+import copy
 import signal
 import _thread
 import logging
 import subprocess
+import threading
 import pandas as pd
 
 from shutil import copyfile
@@ -21,13 +23,14 @@ from ..util.time_interpolate import get_time_interpolate
 
 YEAR = 1991 # Non leap year
 CWD = os.getcwd();
-LOG_LEVEL = 'ERROR';
+LOG_LEVEL_MAIN = 'INFO';
+LOG_LEVEL_EPLS = 'ERROR'
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
-LOGGER = Logger();
 ACTION_SIZE = 2;
 
 class EplusEnv(Env):
     """EnergyPlus v8.6 environment
+
     Args
     ----------
     eplus_path: String
@@ -40,6 +43,7 @@ class EplusEnv(Env):
       variable.cfg path.
     idf_path: String
       EnergyPlus input description file (.idf).
+
     Attributes
     ----------
     """
@@ -47,8 +51,10 @@ class EplusEnv(Env):
                  weather_path, bcvtb_path, 
                  variable_path, idf_path,
                  incl_forecast = False, forecast_step = 36):
-            
-        self.logger_main = LOGGER.getLogger('EPLUS_ENV_ROOT', LOG_LEVEL, LOG_FMT);
+        self._thread_name = threading.current_thread().getName();
+        print (threading.current_thread());
+        self.logger_main = Logger().getLogger('EPLUS_ENV_ROOT-%s'%self._thread_name, 
+                                            LOG_LEVEL_MAIN, LOG_FMT);
         
         # Set the environment variable for bcvtb
         os.environ['BCVTB_HOME'] = bcvtb_path;
@@ -64,6 +70,7 @@ class EplusEnv(Env):
         self.logger_main.info('Socket is listening on host %s port %d'%(sockname));
   
         self._env_working_dir_parent = self._get_eplus_working_folder(CWD, '-run');
+        os.makedirs(self._env_working_dir_parent);
         self._host = host;
         self._port = port;
         self._socket = s;
@@ -103,12 +110,13 @@ class EplusEnv(Env):
                                 (  0.0, 100.0),
                                 (  0.5, 1.0),
                                 (  0.0, 100.0),
-                                (  0.0, 20.0),
-                                (  186.0, 33000.0)];
+                                (  0.0, 1.0),
+                                (  0.0, 33000.0)];
 
         
     def _reset(self):
         """Reset the environment.
+
         This method does the followings:
         1: Make a new EnergyPlus working directory
         2: Copy .idf and variables.cfg file to the working directory
@@ -169,8 +177,9 @@ class EplusEnv(Env):
         self._eplus_process = eplus_process;
        
         # Log the Eplus output
-        eplus_logger = LOGGER.getLogger('ENERGYPLUS-EPI_%d'%self._epi_num,
-                                        LOG_LEVEL, LOG_FMT);
+        eplus_logger = Logger().getLogger('ENERGYPLUS-EPI_%d-%s'%(self._epi_num,
+                                                                  self._thread_name),
+                                        LOG_LEVEL_EPLS, LOG_FMT);
         _thread.start_new_thread(self._log_subprocess_info,
                                 (eplus_process.stdout,
                                  eplus_logger));
@@ -219,10 +228,12 @@ class EplusEnv(Env):
         This method does the followings:
         1: Send a list of float to EnergyPlus
         2: Recieve EnergyPlus results for the next step (state)
+
         Parameters
         ----------
         action: python list of float
           Control actions that will be passed to the EnergyPlus
+
         Return: (float, [float], boolean) or (float, [float], [[float]], boolean)
                 or None (only if the environment has reached the terminal)
             Return a tuple with length 3 or 4, depending on whether to generate
@@ -274,7 +285,7 @@ class EplusEnv(Env):
     def _create_eplus(self, eplus_path, weather_path, 
                       idf_path, out_path, eplus_working_dir):
         
-        eplus_process = subprocess.Popen('%s -w %s -d %s -r %s'
+        eplus_process = subprocess.Popen('%s -w %s -d %s %s'
                         %(eplus_path + '/energyplus', weather_path, 
                           out_path, idf_path),
                         shell = True,
@@ -286,13 +297,16 @@ class EplusEnv(Env):
     
     def _get_eplus_working_folder(self, parent_dir, dir_sig = '-run'):
         """Return Eplus output folder. Author: CMU-10703 Spring 2017 TA
+
         Assumes folders in the parent_dir have suffix -run{run
         number}. Finds the highest run number and sets the output folder
         to that number + 1. 
+
         Parameters
         ----------
         parent_dir: str
         Parent dir of the Eplus output directory.
+
         Returns
         -------
         parent_dir/run_dir
@@ -382,12 +396,12 @@ class EplusEnv(Env):
         self._conn.close();
         self._conn = None;
         # Process the output
-        self._run_eplus_outputProcessing();
+        #self._run_eplus_outputProcessing();
         time.sleep(1);# Sleep the thread so EnergyPlus has time to do the
                       # post processing
 
         # Kill subprocess
-        os.kill(self._eplus_process.pid, signal.SIGTERM);
+        os.killpg(self._eplus_process.pid, signal.SIGTERM);
         
     def _run_eplus_outputProcessing(self):
         eplus_outputProcessing_process =\
@@ -600,7 +614,7 @@ class EplusEnv(Env):
             In the order of the state features, and the index 0 of the tuple
             is the minimum value, index 1 is the maximum value. 
         """
-        return self._min_max_limits;
+        return copy.deepcopy(self._min_max_limits);
     
     @property
     def start_year(self):
@@ -640,6 +654,7 @@ class EplusEnv(Env):
 
     
 """
+
 while True:   
    rcv = c.recv(1024).decode();
    logging.info('Got message: ' + rcv);
@@ -649,4 +664,5 @@ while True:
 import gym
 import core.eplus_env.eplus8_6;
 env = gym.make('Eplus-v0')
+
 """

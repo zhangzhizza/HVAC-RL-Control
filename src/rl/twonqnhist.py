@@ -55,8 +55,10 @@ def create_model(input_state, num_actions,
     with tf.name_scope('hidden1'):
         x = Flatten()(input_state);
         hidden1 = Dense(256, activation='sigmoid')(x)
+    with tf.name_scope('hidden2'):
+        hidden2 = Dense(128, activation='sigmoid')(hidden1)
     with tf.name_scope('output'):
-        output = Dense(num_actions, activation='softmax')(hidden1)
+        output = Dense(num_actions, activation='softmax')(hidden2)
     return output;
 
 
@@ -93,8 +95,8 @@ def create_training_op(loss, optimizer, learning_rate):
     return train_op;
     
 
-class OneNQNAgent:
-    """Class implementing One NQN.
+class TwoNQNAgent:
+    """Class implementing Two NQN.
 
 
     Parameters

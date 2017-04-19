@@ -15,7 +15,7 @@ from keras.models import Model
 from keras.optimizers import Adam
 
 import rl 
-from rl.onenqnhist import OneNQNAgent
+from rl.nqn import NQNAgent
 from rl.core import ReplayMemory, Preprocessor
 from rl.preprocessors import HistoryPreprocessor
 from rl.objectives import mean_huber_loss
@@ -62,15 +62,16 @@ def get_output_folder(parent_dir, env_name):
 
 
 def main(): 
-    logging.info ('ONENQN started!!!!!!!!!!!!!!!!!!!!!');
-    parser = argparse.ArgumentParser(description='Run ONENQN on EnergyPlus')
+    logging.info ('4nqn started!!!!!!!!!!!!!!!!!!!!!');
+    parser = argparse.ArgumentParser(description='Run 4nqn on EnergyPlus')
     parser.add_argument('--env', default='Eplus-v0', help='EnergyPlus env name')
     parser.add_argument(
-        '-o', '--output', default='onenqnhist-res', help='Directory to save data to')
+        '-o', '--output', default='nqn-res', help='Directory to save data to')
     parser.add_argument('--seed', default=0, type=int, help='Random seed')
     parser.add_argument('--max_interactions', default=50000000, type=int);
     parser.add_argument('--mem_size', default=8640, type=int);
     parser.add_argument('--window_len', default=4, type=int);
+    parser.add_argument('--reward_weight', default=0.5, type=float);
     parser.add_argument('--gamma', default=0.99);
     parser.add_argument('--target_update_freq', default=5000, type=int);
     parser.add_argument('--save_freq', default=2500, type=int);
@@ -100,35 +101,35 @@ def main():
     
     #create the env
     env = gym.make(args.env);
-    time.sleep(60)
+    time.sleep(5)
     env_eval = gym.make(args.env);
    # env_eval = wrappers.Monitor(gym.make(args.env), args.output + '/eval_res', video_callable = lambda episode_id: episode_id%20 == 0);
 
     # 
-    action_size = 8; # the element of permutation set with (-0.5, 0. 0.5)
-    state_size = 16;
+    action_size = 4; # the element of permutation set with (-0.5, 0. 0.5)
+    state_size = 17;
     
     #create the agent
     replayMem = ReplayMemory(args.mem_size);
     preprocessor = Preprocessor();
     histPreprocessor = HistoryPreprocessor(args.window_len);
 
-    onenqnAgent = OneNQNAgent(histPreprocessor, preprocessor, replayMem, args.gamma
+    nqnAgent = NQNAgent(histPreprocessor, preprocessor, replayMem, args.gamma
                         , args.target_update_freq, args.burn_in_size
                         , args.train_freq, args.eval_freq, args.eval_epi_num
                         , args.batch_size, args.window_len
                         , state_size, action_size
                         , args.learning_rate, args.start_epsilon
                         , args.end_epsilon, args.e_decay_num_steps
-                        , args.output, args.save_freq);
+                        , args.reward_weight, args.output, args.save_freq);
     logging.info ('Start compiling...')
 
-    onenqnAgent.compile(tf.train.AdamOptimizer, mean_huber_loss,
+    nqnAgent.compile(tf.train.AdamOptimizer, mean_huber_loss,
         args.is_warm_start, args.model_dir);
     
     #run the training
     logging.info ('Start the learning...')
-    onenqnAgent.fit(env, env_eval, args.max_interactions, max_episode_length=None)
+    nqnAgent.fit(env, env_eval, args.max_interactions, max_episode_length=None)
         
         
 

@@ -15,7 +15,7 @@ from keras.models import Model
 from keras.optimizers import Adam
 
 import rl 
-from rl.onenqnhist import OneNQNAgent
+from rl.twonqnhist import TwoNQNAgent
 from rl.core import ReplayMemory, Preprocessor
 from rl.preprocessors import HistoryPreprocessor
 from rl.objectives import mean_huber_loss
@@ -62,11 +62,11 @@ def get_output_folder(parent_dir, env_name):
 
 
 def main(): 
-    logging.info ('ONENQN started!!!!!!!!!!!!!!!!!!!!!');
-    parser = argparse.ArgumentParser(description='Run ONENQN on EnergyPlus')
+    logging.info ('TwoNQN started!!!!!!!!!!!!!!!!!!!!!');
+    parser = argparse.ArgumentParser(description='Run TwoNQN on EnergyPlus')
     parser.add_argument('--env', default='Eplus-v0', help='EnergyPlus env name')
     parser.add_argument(
-        '-o', '--output', default='onenqnhist-res', help='Directory to save data to')
+        '-o', '--output', default='twonqnhist-res', help='Directory to save data to')
     parser.add_argument('--seed', default=0, type=int, help='Random seed')
     parser.add_argument('--max_interactions', default=50000000, type=int);
     parser.add_argument('--mem_size', default=8640, type=int);
@@ -113,7 +113,7 @@ def main():
     preprocessor = Preprocessor();
     histPreprocessor = HistoryPreprocessor(args.window_len);
 
-    onenqnAgent = OneNQNAgent(histPreprocessor, preprocessor, replayMem, args.gamma
+    onenqnAgent = TwoNQNAgent(histPreprocessor, preprocessor, replayMem, args.gamma
                         , args.target_update_freq, args.burn_in_size
                         , args.train_freq, args.eval_freq, args.eval_epi_num
                         , args.batch_size, args.window_len

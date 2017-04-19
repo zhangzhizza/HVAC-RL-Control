@@ -433,7 +433,7 @@ class OneNQNAgent:
                             .process_state_for_network(
                                 state_this_net));
 
-                action_mem = self.select_action(state_this_net_hist, stage = 'training')
+                action_mem = self.select_action(state_this_net_hist, stage = 'testing')
                 # covert command to setpoint action 
                 action = self._policy.process_action(setpoint_this, action_mem)
 

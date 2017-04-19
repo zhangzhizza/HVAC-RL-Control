@@ -32,7 +32,7 @@ pushd $PYLON5
 source /home/chenluz/deeprl-hw2-gpu/bin/activate
 
 # run the experiment script
-python /home/chenluz/project/src/onenqnhist_eplus.py
+python /home/chenluz/project/src/nqn_eplus.py --reward_weight 0.1
 
 # turn off the virtualenv
 deactivate
