@@ -83,7 +83,7 @@ def main():
     parser.add_argument('--end_epsilon', default=0.05);
     parser.add_argument('--e_decay_num_steps', default=86400, type=int);
     parser.add_argument('--burn_in_size', default=50000, type=int);
-    parser.add_argument('--is_warm_start', default=False, type=bool);
+    parser.add_argument('--is_warm_start', default=True, type=bool);
     parser.add_argument('--model_dir', default='None');
 
     args = parser.parse_args()
@@ -125,8 +125,11 @@ def main():
         args.is_warm_start, args.model_dir);
     
     #run the training
-    logging.info ('Start the learning...')
-    onenqnAgent.fit(env, env_eval, args.max_interactions, max_episode_length=None)
+    #logging.info ('Start the learning...')
+    #onenqnAgent.fit(env, env_eval, args.max_interactions, max_episode_length=None)
+
+    logging.info ('Start the evaluating...')
+    onenqnAgent.evaluate(env_eval, 100)
         
         
 

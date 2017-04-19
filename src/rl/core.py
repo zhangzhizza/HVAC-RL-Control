@@ -247,8 +247,14 @@ class Preprocessor:
           Generally a numpy array. The state after standardization
 
         """
-        
-        return np.nan_to_num(np.divide(np.subtract(np.array(observation), minV), 
+        state = copy.deepcopy(observation)
+        occupant_count = observation[13]
+        if(occupant_count == 0):
+            occupancy = 0
+        else:
+            occupancy = 1
+        state[13] = occupancy
+        return np.nan_to_num(np.divide(np.subtract(np.array(state), minV), 
             (maxV - minV)))
 
 
@@ -346,6 +352,7 @@ class Preprocessor:
             
         return list_samples;
 
+
     def process_reward_comfort(self, reward):
         """Process the reward.
 
@@ -367,9 +374,8 @@ class Preprocessor:
             return -(reward[0])
 
      
-    def process_reward(self, reward):
+    def process_reward(self, reward, weight):
         """Process the reward.
-
 
         Parameters
         ----------
@@ -385,10 +391,9 @@ class Preprocessor:
         if(reward[1]) == 0:
             return -reward[2]
         else:
-            return -(reward[0] + reward[2])
+            return -(weight*reward[0] + (1.0 - weight)*reward[2])
+
      
-
-
 
     def reset(self):
         """Reset any internal state.

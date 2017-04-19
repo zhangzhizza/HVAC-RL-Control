@@ -18,6 +18,7 @@ from rl.utils import (init_weights_uniform, get_hard_target_model_updates
 from rl.core import (Sample,Statesample)
 
 logging.getLogger().setLevel(logging.INFO)
+NN_WIDTH = 512;
 
 def create_model(input_state, num_actions,
                  model_name='q_network'):  # noqa: D103
@@ -54,10 +55,17 @@ def create_model(input_state, num_actions,
 
     with tf.name_scope('hidden1'):
         x = Flatten()(input_state);
-        hidden1 = Dense(256, activation='sigmoid')(x)
+        hidden1 = Dense(NN_WIDTH, activation='relu')(x)
+    with tf.name_scope('hidden2'):
+        hidden2 = Dense(NN_WIDTH, activation='relu')(hidden1)
+    with tf.name_scope('hidden3'):
+        hidden3 = Dense(NN_WIDTH, activation='relu')(hidden2)
+    with tf.name_scope('hidden4'):
+        hidden4 = Dense(NN_WIDTH, activation='relu')(hidden3)
     with tf.name_scope('output'):
-        output = Dense(num_actions, activation='softmax')(hidden1)
+        output = Dense(num_actions, activation='softmax')(hidden4)
     return output;
+
 
 
 def create_training_op(loss, optimizer, learning_rate):
@@ -93,8 +101,8 @@ def create_training_op(loss, optimizer, learning_rate):
     return train_op;
     
 
-class OneNQNAgent:
-    """Class implementing One NQN.
+class NQNAgent:
+    """Class implementing NQN.
 
 
     Parameters
@@ -155,8 +163,10 @@ class OneNQNAgent:
                  start_e,
                  end_e,
                  num_steps,
+                 reward_weight,
                  log_dir,
                  save_freq):
+        self._reward_weight = reward_weight;
         self._state_size = state_size;
         self._action_size = action_size;
         self._learning_rate = learning_rate;
@@ -181,7 +191,7 @@ class OneNQNAgent:
         self._min_array = np.array([-16.7, 0.0, 0.0, 0.0, 0.0, 0.0, 15.0, 15.0, 15.0, 15.0, 
           0.0, 0.5, 0.0, 0.0, 0.0, 0, 0]) 
         self._max_array = np.array([26, 100.0, 23.1, 360.0, 389.0, 905.0, 30.0, 30.0, 30.0,
-          30.0, 100.0, 1.0, 100, 20.0, 33000.0, 23, 6])
+          30.0, 100.0, 1.0, 100, 1.0, 33000.0, 23, 6])
   
 
 
@@ -398,12 +408,11 @@ class OneNQNAgent:
         obs_this_net = self._preprocessor.process_observation_for_network(
                 ob_this, self._min_array,  self._max_array)
 
-        state_this_net = np.append(obs_this_net[0:13], obs_this_net[14:])
 
         state_this_mem_hist = (self._historypreprocessor
                             .process_state_for_memory(
-                              np.array(state_this_net)));
-                                                  
+                              np.array(obs_this_net)));
+                    
 
         this_ep_length = 0;
         flag_print_1 = True;
@@ -430,7 +439,7 @@ class OneNQNAgent:
                        
                 state_this_net_hist = (self._historypreprocessor
                             .process_state_for_network(
-                                state_this_net));
+                                obs_this_net));
 
                 action_mem = self.select_action(state_this_net_hist, stage = 'training')
                 # covert command to setpoint action 
@@ -445,14 +454,14 @@ class OneNQNAgent:
             ob_next = self._preprocessor.process_observation(time_next, ob_next)
             obs_next_net = self._preprocessor.process_observation_for_network(
                 ob_next, self._min_array,  self._max_array)
-            state_next_net = np.append(obs_next_net[0:13], obs_next_net[14:])
+        
             state_next_mem_hist = (self._historypreprocessor
                             .process_state_for_memory(
-                                np.array(state_next_net)));                  
+                                np.array(obs_next_net)));                  
             
             setpoint_next = ob_next[6:8]
 
-            reward = self._preprocessor.process_reward(obs_next_net[12:15])
+            reward = self._preprocessor.process_reward(obs_next_net[12:15], self._reward_weight)
             
             #check if exceed the max_episode_length
             if max_episode_length != None and \
@@ -462,7 +471,7 @@ class OneNQNAgent:
             #save sample into memory 
             self._memory.append(Statesample(state_this_mem_hist, action_mem, 
               reward, state_next_mem_hist, is_terminal))
-
+        
 
             # the following code is for evaluation and training
             #Check which stage is the agent at. If at the training stage,
@@ -551,16 +560,15 @@ class OneNQNAgent:
                 setpoint_this = ob_this[6:8]
                 obs_this_net = self._preprocessor.process_observation_for_network(
                 ob_this, self._min_array,  self._max_array)
-                state_this_net = np.append(obs_this_net[0:13], obs_this_net[14:])
 
                 state_this_mem_hist = (self._historypreprocessor
                                     .process_state_for_memory(
-                                      np.array(state_this_net)));
+                                      np.array(obs_this_net)));
                 this_ep_length = 0;
                 action_counter = 0;
             else:
                 setpoint_this = setpoint_next
-                state_this_net = state_next_net
+                obs_this_net = obs_next_net
                 state_this_mem_hist = state_next_mem_hist
                 ob_this = ob_next
                 this_ep_length += 1;
@@ -592,14 +600,12 @@ class OneNQNAgent:
   
         obs_this_net = self._preprocessor.process_observation_for_network(
                   ob_this, self._min_array,  self._max_array)
- 
-        state_this_net = np.append(obs_this_net[0:13], obs_this_net[14:])
         
         setpoint_this = ob_this[6:8]
 
         state_this_net_hist = (self._historypreprocessor
                             .process_state_for_network(
-                                state_this_net));
+                                obs_this_net));
 
         this_ep_reward = 0;
         this_ep_length = 0;
@@ -618,16 +624,14 @@ class OneNQNAgent:
             obs_next_net = self._preprocessor.process_observation_for_network(
                   ob_next, self._min_array,  self._max_array)
   
-            state_next_net = np.append(obs_next_net[0:13], obs_next_net[14:])
           
             state_next_net_hist = (self._historypreprocessor
                             .process_state_for_network(
-                                state_next_net));
+                                obs_next_net));
                
             #12:PPD, 13: Occupant number , 14: power
-            reward = self._preprocessor.process_reward(obs_next_net[12:15])
+            reward = self._preprocessor.process_reward(obs_next_net[12:15], self._reward_weight)
 
-       
             this_ep_reward += reward;
  
             #Check if exceed the max_episode_length
@@ -641,13 +645,12 @@ class OneNQNAgent:
                 obs_this_net = self._preprocessor.process_observation_for_network(
                           ob_this, self._min_array,  self._max_array)
          
-                state_this_net = np.append(obs_this_net[0:13], obs_this_net[14:])
                 
                 setpoint_this = ob_this[6:8]
 
                 state_this_net_hist = (self._historypreprocessor
                                     .process_state_for_network(
-                                        state_this_net));
+                                        obs_this_net));
 
                 average_reward = (average_reward * (episode_counter - 1) 
                                   + this_ep_reward) / episode_counter;
