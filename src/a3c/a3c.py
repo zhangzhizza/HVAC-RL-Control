@@ -14,14 +14,14 @@ from multiprocessing import Value, Lock
 from util.logger import Logger
 from a3c.objectives import a3c_loss
 from a3c.a3c_network import A3C_Network
-from a3c.actions import actions_delta_stpt, actions_htcl_cmd
+from a3c.actions import actions_delta_stpt, actions_htcl_cmd, actions_htcl_cmd_exp1, actions_htcl_cmd_exp2
 from a3c.action_limits import stpt_limits
 from a3c.preprocessors import HistoryPreprocessor, process_raw_state_cmbd, get_legal_action, get_reward
 from a3c.utils import init_variables, get_hard_target_model_updates, get_uninitialized_variables
 from a3c.state_index import *
 
 
-ACTIONS = actions_htcl_cmd;
+ACTIONS = actions_htcl_cmd_exp2;
 STPT_LIMITS = stpt_limits;
 LOG_LEVEL = 'INFO';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
@@ -147,7 +147,7 @@ class A3CThread:
     def train(self, sess, t_max, env_name, coordinator, global_counter, global_lock, 
               gamma, e_weight, p_weight, save_freq, log_dir, global_saver, 
               global_summary_writer, T_max, global_agent_eval, eval_freq, 
-              global_res_list):
+              global_res_list, reward_mode):
         """
         The function that the thread worker works to train the networks.
         
@@ -257,7 +257,8 @@ class A3CThread:
                 normalized_ppd = ob_next_prcd[ZPPD_RAW_IDX + 2];
                 occupancy_status = ob_next_prcd[ZPCT_RAW_IDX + 2];
                 reward_next = get_reward(normalized_hvac_energy, normalized_ppd, 
-                                         e_weight, p_weight, occupancy_status);
+                                         e_weight, p_weight, occupancy_status,
+                                         mode = reward_mode);
                 self._local_logger.debug('Environment debug: raw action idx is %d, '
                                          'current heating setpoint is %0.04f, '
                                          'current cooling setpoint is %0.04f, '
@@ -283,7 +284,8 @@ class A3CThread:
                     # Do the evaluation
                     if global_counter.value % eval_freq == 0:
                         self._local_logger.info('Evaluating...');
-                        eval_res = global_agent_eval.evaluate(self._local_logger);
+                        eval_res = global_agent_eval.evaluate(self._local_logger, 
+                                                              reward_mode);
                         global_res_list.append([global_counter.value, eval_res[0],
                                                 eval_res[1]]);
                         np.savetxt(log_dir + '/eval_res_hist.csv', 
@@ -498,7 +500,7 @@ class A3CAgent:
     def fit(self, sess, coordinator, global_network, workers, 
             global_summary_writer, global_saver, env_name, t_max, gamma, 
             e_weight, p_weight, save_freq, T_max, env_eval, eval_epi_num,
-            eval_freq):
+            eval_freq, reward_mode):
         """
         """
         threads = [];
@@ -517,7 +519,8 @@ class A3CAgent:
                                                 global_saver, 
                                                 global_summary_writer,T_max,
                                                 global_agent_eval, eval_freq,
-                                                global_res_list);
+                                                global_res_list,
+                                                reward_mode);
             thread = threading.Thread(target = (worker_train));
             thread.start();
             time.sleep(1); # Wait for a while for the env to setup
@@ -548,7 +551,7 @@ class A3CEval:
         self._p_weight = p_weight;
         
 
-    def evaluate(self, local_logger):
+    def evaluate(self, local_logger, reward_mode):
         """
         """
         episode_counter = 1;
@@ -592,7 +595,7 @@ class A3CEval:
             occupancy_status = ob_next_prcd[ZPCT_RAW_IDX + 2];
             reward_next = get_reward(normalized_hvac_energy, normalized_ppd, 
                                     self._e_weight, self._p_weight, 
-                                    occupancy_status);
+                                    occupancy_status, reward_mode);
             this_ep_reward += reward_next;
             this_ep_max_ppd = max(normalized_ppd if occupancy_status > 0 else 0,
                                   this_ep_max_ppd);
