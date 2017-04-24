@@ -3,7 +3,7 @@ import datetime
 import numpy as np
 
 from a3c.state_index import *
-
+from numpy import linalg as LA
 #def get_env_states_stats(env, actions, start_year,
                          #start_mon, start_date, start_day):
     #"""
@@ -271,7 +271,7 @@ def get_legal_action(htStpt, clStpt, action_raw, stptLmt):
                 (res_htStpt - htStpt, res_clStpt - clStpt)); 
     
 def get_reward(normalized_hvac_energy, normalized_ppd, e_weight, p_weight,
-               occupancy_status):
+               occupancy_status, mode):
     """
     Get the reward from hvac energy and pmv. If occupancy status is 0 (not 
     occupied), then the PPD will be 0.0; else, PPD is the original normalized
@@ -295,8 +295,11 @@ def get_reward(normalized_hvac_energy, normalized_ppd, e_weight, p_weight,
         effect_normalized_ppd = 0.0;
     else:
         effect_normalized_ppd = normalized_ppd;
-        
-    return - (e_weight * normalized_hvac_energy + p_weight * effect_normalized_ppd);
+    if mode == 'l2':
+        ret = - LA.norm(np.array([effect_normalized_ppd, normalized_hvac_energy]));
+    if mode == 'linear':
+        ret = - (e_weight * normalized_hvac_energy + p_weight * effect_normalized_ppd);
+    return ret;
     
 class HistoryPreprocessor:
     """Keeps the last k states.

@@ -91,6 +91,7 @@ def main():
                         help='Reward weight on HVAC energy consumption.');
     parser.add_argument('--p_weight', default=0.5, type=float,
                         help='Reward wegith on PPD.');
+    parser.add_argument('--reward_mode', default='linear', type=str);
     parser.add_argument('--save_freq', default=50000, type=int);
     parser.add_argument('--save_scope', default='all', 
                         help='The tensorflow graph save scope, default is global '
@@ -114,7 +115,7 @@ def main():
     # Create the env for evaluation
     env_eval = gym.make(args.env);
     # Action size
-    action_size = 4; #
+    action_size = 10; #
     # State size
     state_dim = 15 + 2 # 15 for the raw state dim, 2 is the additonal time info
     # Create the agent
@@ -140,7 +141,7 @@ def main():
                   global_summary_writer, global_saver, args.env, args.train_freq,
                   args.gamma, args.e_weight, args.p_weight, args.save_freq, 
                   args.max_interactions, env_eval, 
-                  args.eval_epi_num, args.eval_freq);
+                  args.eval_epi_num, args.eval_freq, args.reward_mode);
         
         
 
