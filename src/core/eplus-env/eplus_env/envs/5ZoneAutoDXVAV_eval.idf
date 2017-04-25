@@ -169,12 +169,12 @@
     Yes,                     !- Use Weather File Snow Indicators
     1;                       !- Number of Times Runperiod to be Repeated 
 
-  Site:Location,
-  Pittsburgh Allegheny Co Ap_PA_USA Design_Conditions,     !- Location Name
-      40.35,     !- Latitude {N+ S-}
-     -79.92,     !- Longitude {W- E+}
+ Site:Location,
+  State College  Penn State   S_PA_USA Design_Conditions,     !- Location Name
+      40.72,     !- Latitude {N+ S-}
+     -77.93,     !- Longitude {W- E+}
       -5.00,     !- Time Zone Relative to GMT {GMT+/-}
-     380.00;     !- Elevation {m}
+     376.00;     !- Elevation {m}
 
   SimulationControl,
     Yes,                     !- Do Zone Sizing Calculation
@@ -555,6 +555,94 @@ SizingPeriod:DesignDay,
     For: Weekends WinterDesignDay Holiday, !- Field 21
     Until: 24:00,0.0;        !- Field 22
 
+Schedule:File,
+S1_Office_-_Private People Schedule,   !- Name
+obFMU Fraction,          !- Schedule Type Limits Name
+./stochastic_occup.csv,    !- File Name
+3,                       !- Column Number
+7,                       !- Rows to Skip at Top
+2184,                     !- Number of Hours of Data
+Comma,                   !- Column Separator
+No,                      !- Interpolate to Timestep
+15;                      !- Minutes per Item
+    
+Schedule:File,
+S2_Office_-_Private People Schedule,   !- Name
+obFMU Fraction,          !- Schedule Type Limits Name
+./stochastic_occup.csv,    !- File Name
+4,                       !- Column Number
+7,                       !- Rows to Skip at Top
+2184,                     !- Number of Hours of Data
+Comma,                   !- Column Separator
+No,                      !- Interpolate to Timestep
+15;                      !- Minutes per Item
+
+Schedule:File,
+S3_Office_-_Private People Schedule,   !- Name
+obFMU Fraction,          !- Schedule Type Limits Name
+./stochastic_occup.csv,    !- File Name
+5,                       !- Column Number
+7,                       !- Rows to Skip at Top
+2184,                     !- Number of Hours of Data
+Comma,                   !- Column Separator
+No,                      !- Interpolate to Timestep
+15;                      !- Minutes per Item
+
+Schedule:File,
+S4_Office_-_Private People Schedule,   !- Name
+obFMU Fraction,          !- Schedule Type Limits Name
+./stochastic_occup.csv,    !- File Name
+6,                       !- Column Number
+7,                       !- Rows to Skip at Top
+2184,                     !- Number of Hours of Data
+Comma,                   !- Column Separator
+No,                      !- Interpolate to Timestep
+15;                      !- Minutes per Item
+
+Schedule:File,
+S1_Office_-_Private Equip Schedule,   !- Name
+obFMU Fraction,          !- Schedule Type Limits Name
+./stochastic_equip.csv,    !- File Name
+3,                       !- Column Number
+7,                       !- Rows to Skip at Top
+2184,                     !- Number of Hours of Data
+Comma,                   !- Column Separator
+No,                      !- Interpolate to Timestep
+15;                      !- Minutes per Item
+    
+Schedule:File,
+S2_Office_-_Private Equip Schedule,   !- Name
+obFMU Fraction,          !- Schedule Type Limits Name
+./stochastic_equip.csv,    !- File Name
+4,                       !- Column Number
+7,                       !- Rows to Skip at Top
+2184,                     !- Number of Hours of Data
+Comma,                   !- Column Separator
+No,                      !- Interpolate to Timestep
+15;                      !- Minutes per Item
+
+Schedule:File,
+S3_Office_-_Private Equip Schedule,   !- Name
+obFMU Fraction,          !- Schedule Type Limits Name
+./stochastic_equip.csv,    !- File Name
+5,                       !- Column Number
+7,                       !- Rows to Skip at Top
+2184,                     !- Number of Hours of Data
+Comma,                   !- Column Separator
+No,                      !- Interpolate to Timestep
+15;                      !- Minutes per Item
+
+Schedule:File,
+S4_Office_-_Private Equip Schedule,   !- Name
+obFMU Fraction,          !- Schedule Type Limits Name
+./stochastic_equip.csv,    !- File Name
+6,                       !- Column Number
+7,                       !- Rows to Skip at Top
+2184,                     !- Number of Hours of Data
+Comma,                   !- Column Separator
+No,                      !- Interpolate to Timestep
+15;                      !- Minutes per Item
+    
   Schedule:Compact,
     LIGHTS-1,                !- Name
     Fraction,                !- Schedule Type Limits Name
@@ -862,7 +950,7 @@ SizingPeriod:DesignDay,
   People,
     SPACE1-1 People 1,       !- Name
     SPACE1-1,                !- Zone or ZoneList Name
-    OCCUPY-1,                !- Number of People Schedule Name
+    S1_Office_-_Private People Schedule,                !- Number of People Schedule Name
     people,                  !- Number of People Calculation Method
     11,                      !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
@@ -899,7 +987,7 @@ SizingPeriod:DesignDay,
   ElectricEquipment,
     SPACE1-1 ElecEq 1,       !- Name
     SPACE1-1,                !- Zone or ZoneList Name
-    EQUIP-1,                 !- Schedule Name
+    S1_Office_-_Private Equip Schedule,                 !- Schedule Name
     EquipmentLevel,          !- Design Level Calculation Method
     1056,                    !- Design Level {W}
     ,                        !- Watts per Zone Floor Area {W/m2}
@@ -1084,7 +1172,7 @@ SizingPeriod:DesignDay,
   People,
     SPACE2-1 People 1,       !- Name
     SPACE2-1,                !- Zone or ZoneList Name
-    OCCUPY-1,                !- Number of People Schedule Name
+    S2_Office_-_Private People Schedule,                !- Number of People Schedule Name
     people,                  !- Number of People Calculation Method
     5,                       !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
@@ -1121,7 +1209,7 @@ SizingPeriod:DesignDay,
   ElectricEquipment,
     SPACE2-1 ElecEq 1,       !- Name
     SPACE2-1,                !- Zone or ZoneList Name
-    EQUIP-1,                 !- Schedule Name
+    S2_Office_-_Private Equip Schedule,                 !- Schedule Name
     EquipmentLevel,          !- Design Level Calculation Method
     456,                     !- Design Level {W}
     ,                        !- Watts per Zone Floor Area {W/m2}
@@ -1270,7 +1358,7 @@ SizingPeriod:DesignDay,
   People,
     SPACE3-1 People 1,       !- Name
     SPACE3-1,                !- Zone or ZoneList Name
-    OCCUPY-1,                !- Number of People Schedule Name
+    S3_Office_-_Private People Schedule,                !- Number of People Schedule Name
     people,                  !- Number of People Calculation Method
     11,                      !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
@@ -1307,7 +1395,7 @@ SizingPeriod:DesignDay,
   ElectricEquipment,
     SPACE3-1 ElecEq 1,       !- Name
     SPACE3-1,                !- Zone or ZoneList Name
-    EQUIP-1,                 !- Schedule Name
+    S3_Office_-_Private Equip Schedule,                 !- Schedule Name
     EquipmentLevel,          !- Design Level Calculation Method
     1056,                    !- Design Level {W}
     ,                        !- Watts per Zone Floor Area {W/m2}
@@ -1472,7 +1560,7 @@ SizingPeriod:DesignDay,
   People,
     SPACE4-1 People 1,       !- Name
     SPACE4-1,                !- Zone or ZoneList Name
-    OCCUPY-1,                !- Number of People Schedule Name
+    S4_Office_-_Private People Schedule,                !- Number of People Schedule Name
     people,                  !- Number of People Calculation Method
     5,                       !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
@@ -1509,7 +1597,7 @@ SizingPeriod:DesignDay,
   ElectricEquipment,
     SPACE4-1 ElecEq 1,       !- Name
     SPACE4-1,                !- Zone or ZoneList Name
-    EQUIP-1,                 !- Schedule Name
+    S4_Office_-_Private Equip Schedule,                 !- Schedule Name
     EquipmentLevel,          !- Design Level Calculation Method
     456,                     !- Design Level {W}
     ,                        !- Watts per Zone Floor Area {W/m2}
@@ -1801,8 +1889,8 @@ SizingPeriod:DesignDay,
     3.7,3.7,2.4;  !- X,Y,Z ==> Vertex 4 {m}
 
   Sizing:Parameters,
-    1.3,                     !- Heating Sizing Factor
-    1.3,                     !- Cooling Sizing Factor
+    1.44,                     !- Heating Sizing Factor
+    1.44,                     !- Cooling Sizing Factor
     ;                        !- Timesteps in Averaging Window
 
   Sizing:Zone,
@@ -2019,27 +2107,6 @@ SizingPeriod:DesignDay,
     Until: 7:00,12.8,        !- Field 23
     Until: 18:00,21.1,       !- Field 25
     Until: 24:00,12.8;       !- Field 27
-    
-  Schedule:Compact,
-    Htg-SetP-Sch_Space1,            !- Name
-    Temperature,             !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: SummerDesignDay,    !- Field 2
-    Until: 24:00,12.8,       !- Field 3
-    For: WinterDesignDay,    !- Field 5
-    Until: 24:00,23.9,       !- Field 6
-    For: WeekDays,           !- Field 8
-    Until: 7:00,12.8,        !- Field 9
-    Until: 18:00,23.9,       !- Field 11
-    Until: 24:00,12.8,       !- Field 13
-    For: WeekEnds Holiday,   !- Field 15
-    Until: 7:00,12.8,        !- Field 16
-    Until: 13:00,23.9,       !- Field 18
-    Until: 24:00,12.8,       !- Field 20
-    For: AllOtherDays,       !- Field 22
-    Until: 7:00,12.8,        !- Field 23
-    Until: 18:00,23.9,       !- Field 25
-    Until: 24:00,12.8;       !- Field 27
 
   Schedule:Compact,
     PlenumHtg-SetP-Sch,      !- Name
@@ -2055,28 +2122,7 @@ SizingPeriod:DesignDay,
     For: SummerDesignDay,    !- Field 2
     Until: 24:00,23.9,       !- Field 3
     For: WinterDesignDay,    !- Field 5
-    Until: 24:00,40,       !- Field 6
-    For: WeekDays,           !- Field 8
-    Until: 7:00,40.0,        !- Field 9
-    Until: 18:00,23.9,       !- Field 11
-    Until: 24:00,40.0,       !- Field 13
-    For: WeekEnds Holiday,   !- Field 15
-    Until: 7:00,40.0,        !- Field 16
-    Until: 13:00,23.9,       !- Field 18
-    Until: 24:00,32.2,       !- Field 20
-    For: AllOtherDays,       !- Field 22
-    Until: 7:00,40.0,        !- Field 23
-    Until: 18:00,23.9,       !- Field 25
-    Until: 24:00,40.0;       !- Field 27
-
-  Schedule:Compact,
-    Clg-SetP-Sch_Space1,            !- Name
-    Temperature,             !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: SummerDesignDay,    !- Field 2
-    Until: 24:00,23.9,       !- Field 3
-    For: WinterDesignDay,    !- Field 5
-    Until: 24:00,40,       !- Field 6
+    Until: 24:00,40.0,       !- Field 6
     For: WeekDays,           !- Field 8
     Until: 7:00,40.0,        !- Field 9
     Until: 18:00,23.9,       !- Field 11
@@ -2347,7 +2393,7 @@ SizingPeriod:DesignDay,
     ThermostatSetpoint:SingleHeating,  !- Control 2 Object Type
     HeatingSetpoint,         !- Control 2 Name
     ThermostatSetpoint:DualSetpoint,  !- Control 3 Object Type
-    DualSetPoint_Space1;            !- Control 3 Name
+    Space1-DualSetP-RL;            !- Control 3 Name
 
   ZoneControl:Thermostat,
     SPACE2-1 Control,        !- Name
@@ -2412,12 +2458,12 @@ SizingPeriod:DesignDay,
   ThermostatSetpoint:DualSetpoint,
     DualSetPoint,            !- Name
     Htg-SetP-Sch,            !- Heating Setpoint Temperature Schedule Name
-    Clg-SetP-Sch;            !- Cooling Setpoint Temperature Schedule 
-    
+    Clg-SetP-Sch;            !- Cooling Setpoint Temperature Schedule Name
+
   ThermostatSetpoint:DualSetpoint,
-    DualSetPoint_Space1,            !- Name
-    Htg-SetP-Sch_Space1,            !- Heating Setpoint Temperature Schedule Name
-    Clg-SetP-Sch_Space1;            !- Cooling Setpoint Temperature Schedule Name
+    Space1-DualSetP-RL,            !- Name
+    Space1-HtgSetP-RL,            !- Heating Setpoint Temperature Schedule Name
+    Space1-ClgSetP-RL;            !- Cooling Setpoint Temperature Schedule Name
     
   ZoneHVAC:EquipmentList,
     SPACE1-1 Eq,             !- Name
@@ -2850,14 +2896,23 @@ SizingPeriod:DesignDay,
     ProportionalMinimum,     !- Minimum Limit Type
     Min OA Sched;            !- Minimum Outdoor Air Schedule Name
 
-  SetpointManager:Warmest,
-    Supply Air Temp Manager 1,  !- Name
-    Temperature,             !- Control Variable
-    VAV Sys 1,               !- HVAC Air Loop Name
-    12,                      !- Minimum setpoint temperature
-    18,                      !- Maximum setpoint temperature
-    MaximumTemperature,      !- Strategy
-    Supply Air Temp Nodes 1; !- Setpoint Node or NodeList Name
+SetpointManager:OutdoorAirReset,
+Supply Air Temp Manager 1,  !- Name
+Temperature,  !- Control Variable
+18,  !- Setpoint at Outdoor Low Temperature {C}
+0.0,   !- Outdoor Low Temperature {C}
+12,  !- Setpoint at Outdoor High Temperature {C}
+32.0,  !- Outdoor High Temperature {C}
+Supply Air Temp Nodes 1;  !- Setpoint Node or NodeList Name
+
+!SetpointManager:Warmest,
+!    Supply Air Temp Manager 1,  !- Name
+!    Temperature,             !- Control Variable
+!    VAV Sys 1,               !- HVAC Air Loop Name
+!    12,                      !- Minimum setpoint temperature
+!    18,                      !- Maximum setpoint temperature
+!    MaximumTemperature,      !- Strategy
+!    Supply Air Temp Nodes 1; !- Setpoint Node or NodeList Name
 
   SetpointManager:MixedAir,
     Mixed Air and Coil Exit Temp Manager 1,  !- Name
@@ -2877,8 +2932,21 @@ SizingPeriod:DesignDay,
     Main Cooling Coil 1 Outlet Node,  !- Node 2 Name
     Main Heating Coil 1 Outlet Node;  !- Node 3 Name
     
+  !-External Interface
+  ExternalInterface, !- Object to activate the external interface
+    PtolemyServer; !- Name of external interface
     
- !- Site weather output  
+  ExternalInterface:Schedule ,
+    Space1-HtgSetP-RL, !- Name
+    Temperature , !- ScheduleType
+    21; !- Initial value, used during warm-up
+    
+  ExternalInterface:Schedule ,
+    Space1-ClgSetP-RL, !- Name
+    Temperature , !- ScheduleType
+    25; !- Initial value, used during warm-up
+    
+  !- Site weather output  
   Output:Variable,*,Site Outdoor Air Drybulb Temperature,timestep;
   Output:Variable,*,Site Outdoor Air Relative Humidity,timestep;
   Output:Variable,*,Site Wind Speed, timestep;
