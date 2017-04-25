@@ -7,6 +7,7 @@ import signal
 import _thread
 import logging
 import subprocess
+import threading
 import pandas as pd
 
 from shutil import copyfile
@@ -22,9 +23,9 @@ from ..util.time_interpolate import get_time_interpolate
 
 YEAR = 1991 # Non leap year
 CWD = os.getcwd();
-LOG_LEVEL = 'INFO';
+LOG_LEVEL_MAIN = 'INFO';
+LOG_LEVEL_EPLS = 'ERROR'
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
-LOGGER = Logger();
 ACTION_SIZE = 2;
 
 class EplusEnv(Env):
@@ -50,8 +51,10 @@ class EplusEnv(Env):
                  weather_path, bcvtb_path, 
                  variable_path, idf_path,
                  incl_forecast = False, forecast_step = 36):
-            
-        self.logger_main = LOGGER.getLogger('EPLUS_ENV_ROOT', LOG_LEVEL, LOG_FMT);
+        self._thread_name = threading.current_thread().getName();
+        print (threading.current_thread());
+        self.logger_main = Logger().getLogger('EPLUS_ENV_ROOT-%s'%self._thread_name, 
+                                            LOG_LEVEL_MAIN, LOG_FMT);
         
         # Set the environment variable for bcvtb
         os.environ['BCVTB_HOME'] = bcvtb_path;
@@ -67,6 +70,7 @@ class EplusEnv(Env):
         self.logger_main.info('Socket is listening on host %s port %d'%(sockname));
   
         self._env_working_dir_parent = self._get_eplus_working_folder(CWD, '-run');
+        os.makedirs(self._env_working_dir_parent);
         self._host = host;
         self._port = port;
         self._socket = s;
@@ -173,8 +177,9 @@ class EplusEnv(Env):
         self._eplus_process = eplus_process;
        
         # Log the Eplus output
-        eplus_logger = LOGGER.getLogger('ENERGYPLUS-EPI_%d'%self._epi_num,
-                                        LOG_LEVEL, LOG_FMT);
+        eplus_logger = Logger().getLogger('ENERGYPLUS-EPI_%d-%s'%(self._epi_num,
+                                                                  self._thread_name),
+                                        LOG_LEVEL_EPLS, LOG_FMT);
         _thread.start_new_thread(self._log_subprocess_info,
                                 (eplus_process.stdout,
                                  eplus_logger));
@@ -280,7 +285,7 @@ class EplusEnv(Env):
     def _create_eplus(self, eplus_path, weather_path, 
                       idf_path, out_path, eplus_working_dir):
         
-        eplus_process = subprocess.Popen('%s -w %s -d %s -r %s'
+        eplus_process = subprocess.Popen('%s -w %s -d %s %s'
                         %(eplus_path + '/energyplus', weather_path, 
                           out_path, idf_path),
                         shell = True,
@@ -391,7 +396,7 @@ class EplusEnv(Env):
         self._conn.close();
         self._conn = None;
         # Process the output
-        self._run_eplus_outputProcessing();
+        #self._run_eplus_outputProcessing();
         time.sleep(1);# Sleep the thread so EnergyPlus has time to do the
                       # post processing
 
