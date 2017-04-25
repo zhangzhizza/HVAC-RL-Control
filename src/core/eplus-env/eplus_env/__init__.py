@@ -22,3 +22,12 @@ register(
             'idf_path':FD + '/envs/5ZoneAutoDXVAV.idf',
             'incl_forecast': True,
             'forecast_step': 36});
+    
+register(
+    id='Eplus-eval-v0',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-6-0/',
+            'weather_path':FD + '/envs/pennstate.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/variables.cfg',
+            'idf_path':FD + '/envs/5ZoneAutoDXVAV_eval.idf'});

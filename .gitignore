@@ -6,7 +6,7 @@ src/core/eplus-env/eplus_env/envs/output
 src/*-res
 midway/
 proposal/
-
+src/*res
 
 *.swp
 *.pyc
