@@ -7,11 +7,9 @@ in your code.
 import numpy as np
 import copy
 
-ACTION_DICT = {0: (-0.5, -0.5), 1:(-0.5, 0),
-              2:(-0.5, 0.5), 3:(0, -0.5),
-              4:(0, 0), 5:(0, 0.5),
-              6:(0.5, -0.5), 7:(0.5, 0), 
-              8:(0.5, -0.5)}
+ACTION_DICT = {0: (-1.0, -1.0), 1:(1.0, 1.0),
+              2:(0, 0), 3:(-1.0, 1.0)}
+ACTION_Limit = {"low" : 15, "high":30}
 
 
 class Policy:
@@ -43,7 +41,8 @@ class Policy:
           1. Process action index to action command tuple 
           2 . Process action command tuple to heating and cooling set point to HVAC
             
-          Note: The heating set point should be always lower than cooling set point
+          Note: 1. The heating set point should be always lower than cooling set point
+          2. Add contraint, 15 < heating and cooling setpoint < 30 
         
 
         Parameters
@@ -60,21 +59,19 @@ class Policy:
             list: (float, float) fist is heating setpoint, second for cooling setpoint
 
         """
+
         # get new set point based on action index
         setpoint_next = copy.deepcopy(setpoint_this)
-   
-        setpoint_next[0]  = setpoint_this[0] + ACTION_DICT.get(action)[0]
-        setpoint_next[1]  = setpoint_this[1] + ACTION_DICT.get(action)[1]
-        
 
-        ##Three cases coulde make heating setpoint higher than cooling setpoint
-        #case 1: heating no change and cooling decrease
-        #case 2: heating increase and cooling no change
-        #case 3: heating incease and cooling decrease
-        if(setpoint_next[0] > setpoint_next[1]):
-                # don't take any action
-                setpoint_next[0] = setpoint_this[0] 
-                setpoint_next[1] = setpoint_this[1] 
+        setpoint_next[0]  = setpoint_this[0] + ACTION_DICT.get(action)[0]
+        setpoint_next[1]  = setpoint_this[1] + ACTION_DICT.get(action)[1] 
+
+        # if reach the constraint
+        if(setpoint_next[0] < ACTION_Limit["low"] or setpoint_next[1] < ACTION_Limit["low"] 
+            or setpoint_next[0] > ACTION_Limit["high"] or setpoint_next[1] > ACTION_Limit["high"] ):
+                # go back to orginal 
+                setpoint_next[0] = setpoint_this[0]
+                setpoint_next[1] = setpoint_this[1]
 
         return setpoint_next
 
@@ -220,7 +217,11 @@ class LinearDecayGreedyEpsilonPolicy(Policy):
         sample = np.random.uniform();
         
         greedy = np.argmax(q_values);
+        
+
         uniformrand = np.random.randint(0, q_values.shape[1]);
+
+        
         
         if is_training:
             self._decayed_epsilon -= self._decay_step;

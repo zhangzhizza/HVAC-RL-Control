@@ -33,21 +33,19 @@ class HistoryPreprocessor(Preprocessor):
     def process_state_for_network(self, state):
         """You only want history when you're deciding the current action to take.
         
-        state: np.ndarray, dimension: (w, h)
-          Expect a 2D numpy array for the image.
+        state: np.ndarray, one dimension
+          Expect a one dimension array for state features 
         """
-        state_shape = state.shape;
         if self._flag_start_net:
-            self._stacked_return_net = np.zeros((state_shape[0]
-                                             , state_shape[1]
-                                             , self._history_length));
-            self._stacked_return_net[:,:,-1] = state;
+            self._stacked_return_net = np.zeros((state.size
+                                             ,self._history_length));
+            self._stacked_return_net[:,-1] = state;
             self._flag_start_net = False;
         else:
             for i in range(self._history_length - 1):
-                self._stacked_return_net[:,:,i] = \
-                    self._stacked_return_net[:,:,i + 1];
-            self._stacked_return_net[:,:,-1] = state;
+                self._stacked_return_net[:,i] = \
+                    self._stacked_return_net[:,i + 1];
+            self._stacked_return_net[:,-1] = state;
             
         return np.copy(self._stacked_return_net.reshape((1,) 
                                                + self._stacked_return_net.shape));
@@ -55,22 +53,19 @@ class HistoryPreprocessor(Preprocessor):
     def process_state_for_memory(self, state):
         """You only want history when you're deciding the current action to take.
         
-        state: np.ndarray, dimension: (w, h)
-          Expect a 2D numpy array for the image.
+        state: np.ndarray, one dimension
+          Expect a one dimension array for observation features 
         """
-        state_shape = state.shape;
         if self._flag_start_mem:
-            self._stacked_return_mem = np.zeros((state_shape[0]
-                                             , state_shape[1]
-                                             , self._history_length)
-                                             , dtype = 'uint8');
-            self._stacked_return_mem[:,:,-1] = state;
+            self._stacked_return_mem = np.zeros((state.size
+                                             ,self._history_length));
+            self._stacked_return_mem[:,-1] = state;
             self._flag_start_mem = False;
         else:
             for i in range(self._history_length - 1):
-                self._stacked_return_mem[:,:,i] = \
-                    self._stacked_return_mem[:,:,i + 1];
-            self._stacked_return_mem[:,:,-1] = state;
+                self._stacked_return_mem[:,i] = \
+                    self._stacked_return_mem[:,i + 1];
+            self._stacked_return_mem[:,-1] = state;
             
         return np.copy(self._stacked_return_mem.reshape((1,) 
                                                + self._stacked_return_mem.shape));

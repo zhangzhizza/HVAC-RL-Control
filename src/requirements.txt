@@ -1,5 +1,13 @@
+attrs
 gym
+h5py
+keras
+matplotlib
 numpy
 tensorflow
-keras
 semver
+pillow
+protobuf>=3.0
+pydot-ng
+scipy
+

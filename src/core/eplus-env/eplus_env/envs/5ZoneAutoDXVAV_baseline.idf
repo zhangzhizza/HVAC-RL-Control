@@ -2878,6 +2878,7 @@ SizingPeriod:DesignDay,
     Main Heating Coil 1 Outlet Node;  !- Node 3 Name
     
     
+
  !- Site weather output  
   Output:Variable,*,Site Outdoor Air Drybulb Temperature,timestep;
   Output:Variable,*,Site Outdoor Air Relative Humidity,timestep;
@@ -2914,4 +2915,3 @@ SizingPeriod:DesignDay,
 
   Output:Table:SummaryReports,
     AllSummary;              !- Report 1 Name
-

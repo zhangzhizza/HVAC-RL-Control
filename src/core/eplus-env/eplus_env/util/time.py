@@ -54,4 +54,3 @@ def get_delta_seconds(st_year, st_mon, st_day, ed_mon, ed_day):
     delta_sec = (endTime - startTime).total_seconds();
     
     return delta_sec;
-    
