@@ -14,7 +14,7 @@ from keras.models import Model
 from keras.optimizers import Adam
 
 import rl 
-from rl.dnqn import DNQNAgent
+from rl.onenqn import OneNQNAgent
 from rl.core import ReplayMemory, Preprocessor
 from rl.objectives import mean_huber_loss
 from gym import wrappers
@@ -60,27 +60,28 @@ def get_output_folder(parent_dir, env_name):
 
 
 def main(): 
-    logging.info ('DNQN started!!!!!!!!!!!!!!!!!!!!!');
-    parser = argparse.ArgumentParser(description='Run DNQN on EnergyPlus')
+    logging.info ('ONENQN started!!!!!!!!!!!!!!!!!!!!!');
+    parser = argparse.ArgumentParser(description='Run ONENQN on EnergyPlus')
     parser.add_argument('--env', default='Eplus-v0', help='EnergyPlus env name')
     parser.add_argument(
-        '-o', '--output', default='dnqn-res', help='Directory to save data to')
+        '-o', '--output', default='onenqn-res', help='Directory to save data to')
     parser.add_argument('--seed', default=0, type=int, help='Random seed')
     parser.add_argument('--max_interactions', default=50000000, type=int);
-    parser.add_argument('--mem_size', default=86400, type=int);
+    parser.add_argument('--mem_size', default=500000, type=int);
     parser.add_argument('--window_len', default=4, type=int);
     parser.add_argument('--gamma', default=0.99);
     parser.add_argument('--target_update_freq', default=10000, type=int);
     parser.add_argument('--save_freq', default=2500, type=int);
     parser.add_argument('--train_freq', default=4, type=int);
     parser.add_argument('--eval_freq', default=2500, type=int);
-    parser.add_argument('--eval_epi_num', default=2, type=int);#######3
-    parser.add_argument('--batch_size', default=3, type=int);
+    parser.add_argument('--eval_epi_num', default=20, type=int);#######3
+    parser.add_argument('--batch_size', default=32, type=int);
+    parser.add_argument('--train_set_size', default=8640, type=int);
     parser.add_argument('--learning_rate', default=0.0001);
-    parser.add_argument('--start_epsilon', default=0.5, type=float);
+    parser.add_argument('--start_epsilon', default=1, type=float);
     parser.add_argument('--end_epsilon', default=0.05);
     parser.add_argument('--e_decay_num_steps', default=1000000, type=int);
-    parser.add_argument('--burn_in_size', default=5, type=int);
+    parser.add_argument('--burn_in_size', default=50000, type=int);
     parser.add_argument('--is_warm_start', default=False, type=bool);
     parser.add_argument('--model_dir', default='None');
 
@@ -102,13 +103,13 @@ def main():
 
     # 
     action_size = 9; # the element of permutation set with (-0.5, 0. 0.5)
-    state_size = 14;
+    state_size = 16;
     
     #create the agent
     replayMem = ReplayMemory(args.mem_size);
     preprocessor = Preprocessor();
 
-    dnqnAgent = DNQNAgent(preprocessor, replayMem, args.gamma
+    onenqnAgent = OneNQNAgent(args.train_set_size, preprocessor, replayMem, args.gamma
                         , args.target_update_freq, args.burn_in_size
                         , args.train_freq, args.eval_freq, args.eval_epi_num
                         , args.batch_size, state_size, action_size
@@ -117,12 +118,12 @@ def main():
                         , args.output, args.save_freq);
     logging.info ('Start compiling...')
 
-    dnqnAgent.compile(tf.train.AdamOptimizer, mean_huber_loss,
+    onenqnAgent.compile(tf.train.AdamOptimizer, mean_huber_loss,
         args.is_warm_start, args.model_dir);
     
     #run the training
     logging.info ('Start the learning...')
-    dnqnAgent.fit(env, env_eval, args.max_interactions, max_episode_length=None)
+    onenqnAgent.fit(env, env_eval, args.max_interactions, max_episode_length=None)
         
         
 

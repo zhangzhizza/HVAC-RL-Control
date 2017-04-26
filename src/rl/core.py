@@ -3,6 +3,7 @@ from operator import itemgetter
 import matplotlib.pyplot as plt
 import numpy as np
 import math
+import copy
 
 
 
@@ -68,6 +69,79 @@ class Sample:
         return (str(self._obs) + ',' + str(self._a) 
                 + ',' + str(self._obs_nex) + ',' 
                 + str(self.is_terminal));
+
+class Statesample:
+    """Represents a reinforcement learning sample.
+
+    Used to store observed experience from an MDP. Represents a
+    standard `(s, a, r, s', terminal)` tuple.
+
+    Note: This is not the most efficient way to store things in the
+    replay memory, but it is a convenient class to work with when
+    sampling batches, or saving and loading samples while debugging.
+
+    Parameters
+    ----------
+    state: array-like
+      Represents the state of the MDP before taking an action. In most
+      cases this will be a numpy array. Dimensions: (w, h, nframe)
+    action: int, float, tuple
+      For discrete action domains this will be an integer. For
+      continuous action domains this will be a floating point
+      number. For a parameterized action MDP this will be a tuple
+      containing the action and its associated parameters.
+    reward: float
+      The reward received for executing the given action in the given
+      state and transitioning to the resulting state.
+    next_state: array-like
+      This is the state the agent transitions to after executing the
+      `action` in `state`. Expected to be the same type/dimensions as
+      the state.
+    is_terminal: boolean
+      True if this action finished the episode. False otherwise.
+    """
+    def __init__(self, s, a, r, s_p, is_terminal):
+        self._s = s;
+        self._a = a;
+        self._r = r;
+        self._s_p = s_p;
+        self._is_terminal = is_terminal;
+        
+    @property
+    def s(self):
+        return self._s;
+
+    @property
+    def a(self):
+        return self._a;
+    
+    @property
+    def r(self):
+        return self._r;
+    
+    @property
+    def s_p(self):
+        return self._s_p;
+    
+    @property
+    def is_terminal(self):
+        return self._is_terminal;
+    
+    @property
+    def id(self):
+        return self._id;
+    
+    def __str__(self):
+        return (str(self.s) + ',' + str(self.a) 
+                + ',' + str(self.r) + ',' 
+                + str(self.s_p) + ',' 
+                + str(self.is_terminal));
+    
+    def __repr__(self):
+        return (str(self.s) + ',' + str(self.a) 
+                + ',' + str(self.r) + ',' 
+                + str(self.s_p) + ',' 
+                + str(self.is_terminal));
                 
 
 class Preprocessor:
@@ -87,9 +161,10 @@ class Preprocessor:
         """
 
     def process_observation(self, time, observation):
-        """               NOT USED               """
         """Preprocess the given time and observation to corresponding state.
-        1. If occupant_num is 0, the PMV will be setted as 0
+        1. Convert time to time of day
+        2. When no occupant, PMV = 0
+        3. Add time to observation
 
         Should be callled just after obtain return from environment
 
@@ -115,7 +190,7 @@ class Preprocessor:
         
         Returns
         -------
-        state_raw: list of float
+        observation + time: list of float
             Current state
          
         setpoint_this: list of float
@@ -125,24 +200,29 @@ class Preprocessor:
            The PMV and HVAC Power
 
         """
-        Occupant_num = observation[-2]
-        if (Occupant_num == 0):
-            reward = [0, observation[-1]] 
-        else:
-            reward = [observation[10], observation[-1]]
+        #time counted as second 
+        seconds_in_day = 24*60*60
+        # get day index, start with 0
+        day = int(time/seconds_in_day)  
+        time_of_day = int((time - day*seconds_in_day)/3600)
 
-        state_raw = observation[0:11] + [observation[-1]]
+        seconds_in_week = 24*60*60*7
+        # get day of week 
+        week = int(time/seconds_in_week) 
+        day_of_week = int((time - week*seconds_in_week)/seconds_in_day)
 
-        setpoint_this = observation[8:10]
+       
+        new_observation = copy.deepcopy(observation) +  [time_of_day] + [day_of_week]
+        
+        return new_observation
 
-        return state_raw, setpoint_this, reward
 
-
-    def process_observation_for_network(self, observation, mean, std):
+    def process_observation_for_network(self, observation, minV, maxV):
         """Preprocess the given observation to corresponding observation 
         before giving it to the network.
 
-        the observation is standardized according to its mean and standard deviation
+        the observation is standardized according to its min and max value
+        of each features
 
         Should be called just before the action is selected.
 
@@ -156,10 +236,10 @@ class Preprocessor:
         ----------
         observation: list of features 
           A single observation from an environment.
-        mean: np.ndarray of float
-           Features mean
-        std: np.ndarray of float
-          Features standard deviation 
+        minV: np.ndarray of float
+           Features min
+        maxV: np.ndarray of float
+          Features max 
           
         Returns
         -------
@@ -167,9 +247,15 @@ class Preprocessor:
           Generally a numpy array. The state after standardization
 
         """
-        
-        return np.nan_to_num(np.divide(np.
-            subtract(np.array(observation), mean), std))
+        state = copy.deepcopy(observation)
+        occupant_count = observation[13]
+        if(occupant_count == 0):
+            occupancy = 0
+        else:
+            occupancy = 1
+        state[13] = occupancy
+        return np.nan_to_num(np.divide(np.subtract(np.array(state), minV), 
+            (maxV - minV)))
 
 
     def process_state_for_memory(self, state):
@@ -196,9 +282,40 @@ class Preprocessor:
         """ 
         
         raise NotImplementedError('This method should be overriden.')
+    
+    def process_batch_hist(self, samples):
+        """Process batch of samples with history stack.
 
+        If your replay memory storage format is different than your
+        network input, you may want to apply this function to your
+        sampled batch before running it through your update function.
 
-    def process_batch(self, samples, mean, std):
+        Parameters
+        ----------
+        samples: list(tensorflow_rl.core.Sample)
+          List of samples to process
+
+        Returns
+        -------
+        processed_samples: list(tensorflow_rl.core.Sample)
+          Samples after processing. Can be modified in anyways, but
+          the list length will generally stay the same.
+        """
+        list_samples = [];
+        
+        for sample in samples:
+            s = sample.s;
+            s_p = sample.s_p;
+            r = sample.r
+        
+            a = sample.a;
+            is_terminal = sample.is_terminal;
+            
+            list_samples.append(Statesample(s, a, r, s_p, is_terminal));
+            
+        return list_samples;
+
+    def process_batch(self, samples, minV, maxV):
         """Process batch of samples.
 
         If your replay memory storage format is different than your
@@ -227,23 +344,23 @@ class Preprocessor:
 
             #standardize states 
             obs = self.process_observation_for_network(obs, 
-                mean, std)
+                minV, maxV)
             obs_nex = self.process_observation_for_network(obs_nex, 
-                mean, std)
+                minV, maxV)
             
             list_samples.append(Sample(obs, a, obs_nex, is_terminal));
             
         return list_samples;
 
 
-    def process_reward(self, reward):
+    def process_reward_comfort(self, reward):
         """Process the reward.
 
 
         Parameters
         ----------
         reward: numpy array of float
-          [0]: PMV  [1]: HVAC electric demand power
+          [0]: PMV [1] Occupant [2]: HVAC electric demand power
 
 
         Returns
@@ -251,11 +368,32 @@ class Preprocessor:
         processed_reward: float: negative value
           The processed reward
         """ 
+        if(reward[1]) == 0:
+            return 0
+        else:
+            return -(reward[0])
 
-        return -(abs(reward[0] + reward[1]))
      
+    def process_reward(self, reward, weight):
+        """Process the reward.
+
+        Parameters
+        ----------
+        reward: numpy array of float
+          [0]: PMV [1] Occupant [2]: HVAC electric demand power
 
 
+        Returns
+        -------
+        processed_reward: float: negative value
+          The processed reward
+        """ 
+        if(reward[1]) == 0:
+            return -reward[2]
+        else:
+            return -(weight*reward[0] + (1.0 - weight)*reward[2])
+
+     
 
     def reset(self):
         """Reset any internal state.
