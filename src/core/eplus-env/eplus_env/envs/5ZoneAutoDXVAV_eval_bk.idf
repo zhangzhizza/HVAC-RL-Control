@@ -2107,27 +2107,6 @@ No,                      !- Interpolate to Timestep
     Until: 7:00,12.8,        !- Field 23
     Until: 18:00,21.1,       !- Field 25
     Until: 24:00,12.8;       !- Field 27
-    
-  Schedule:Compact,
-    Htg-SetP-Sch_Space1,            !- Name
-    Temperature,             !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: SummerDesignDay,    !- Field 2
-    Until: 24:00,12.8,       !- Field 3
-    For: WinterDesignDay,    !- Field 5
-    Until: 24:00,23.9,       !- Field 6
-    For: WeekDays,           !- Field 8
-    Until: 7:00,12.8,        !- Field 9
-    Until: 18:00,23.9,       !- Field 11
-    Until: 24:00,12.8,       !- Field 13
-    For: WeekEnds Holiday,   !- Field 15
-    Until: 7:00,12.8,        !- Field 16
-    Until: 13:00,23.9,       !- Field 18
-    Until: 24:00,12.8,       !- Field 20
-    For: AllOtherDays,       !- Field 22
-    Until: 7:00,12.8,        !- Field 23
-    Until: 18:00,23.9,       !- Field 25
-    Until: 24:00,12.8;       !- Field 27
 
   Schedule:Compact,
     PlenumHtg-SetP-Sch,      !- Name
@@ -2144,27 +2123,6 @@ No,                      !- Interpolate to Timestep
     Until: 24:00,23.9,       !- Field 3
     For: WinterDesignDay,    !- Field 5
     Until: 24:00,40.0,       !- Field 6
-    For: WeekDays,           !- Field 8
-    Until: 7:00,40.0,        !- Field 9
-    Until: 18:00,23.9,       !- Field 11
-    Until: 24:00,40.0,       !- Field 13
-    For: WeekEnds Holiday,   !- Field 15
-    Until: 7:00,40.0,        !- Field 16
-    Until: 13:00,23.9,       !- Field 18
-    Until: 24:00,32.2,       !- Field 20
-    For: AllOtherDays,       !- Field 22
-    Until: 7:00,40.0,        !- Field 23
-    Until: 18:00,23.9,       !- Field 25
-    Until: 24:00,40.0;       !- Field 27
-    
-  Schedule:Compact,
-    Clg-SetP-Sch_Space1,            !- Name
-    Temperature,             !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: SummerDesignDay,    !- Field 2
-    Until: 24:00,23.9,       !- Field 3
-    For: WinterDesignDay,    !- Field 5
-    Until: 24:00,40,       !- Field 6
     For: WeekDays,           !- Field 8
     Until: 7:00,40.0,        !- Field 9
     Until: 18:00,23.9,       !- Field 11
@@ -2435,7 +2393,7 @@ No,                      !- Interpolate to Timestep
     ThermostatSetpoint:SingleHeating,  !- Control 2 Object Type
     HeatingSetpoint,         !- Control 2 Name
     ThermostatSetpoint:DualSetpoint,  !- Control 3 Object Type
-    DualSetPoint_Space1;            !- Control 3 Name
+    Space1-DualSetP-RL;            !- Control 3 Name
 
   ZoneControl:Thermostat,
     SPACE2-1 Control,        !- Name
@@ -2506,11 +2464,6 @@ No,                      !- Interpolate to Timestep
     Space1-DualSetP-RL,            !- Name
     Space1-HtgSetP-RL,            !- Heating Setpoint Temperature Schedule Name
     Space1-ClgSetP-RL;            !- Cooling Setpoint Temperature Schedule Name
-    
-  ThermostatSetpoint:DualSetpoint,
-    DualSetPoint_Space1,            !- Name
-    Htg-SetP-Sch_Space1,            !- Heating Setpoint Temperature Schedule Name
-    Clg-SetP-Sch_Space1;            !- Cooling Setpoint Temperature Schedule Name
     
   ZoneHVAC:EquipmentList,
     SPACE1-1 Eq,             !- Name
