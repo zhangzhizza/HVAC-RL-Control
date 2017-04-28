@@ -1,8 +1,6 @@
 """Loss functions."""
 
 import tensorflow as tf
-import semver
-
 
 def huber_loss(y_true, y_pred, max_grad=1.):
     """Calculate the huber loss.

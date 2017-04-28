@@ -61,14 +61,16 @@ class Policy:
         """
 
         # get new set point based on action index
+        # Update by Zhiang: correct way to apply the constriant
         setpoint_next = copy.deepcopy(setpoint_this)
 
-        setpoint_next[0]  = setpoint_this[0] + ACTION_DICT.get(action)[0]
-        setpoint_next[1]  = setpoint_this[1] + ACTION_DICT.get(action)[1] 
+        setpoint_next[0]  = max(min(setpoint_this[0] + ACTION_DICT.get(action)[0], 
+                                    ACTION_Limit['high']), ACTION_Limit['low']);
+        setpoint_next[1]  = max(min(setpoint_this[1] + ACTION_DICT.get(action)[1],
+                                    ACTION_Limit['high']), ACTION_Limit['low']) 
 
-        # if reach the constraint
-        if(setpoint_next[0] < ACTION_Limit["low"] or setpoint_next[1] < ACTION_Limit["low"] 
-            or setpoint_next[0] > ACTION_Limit["high"] or setpoint_next[1] > ACTION_Limit["high"] ):
+        # if heating setpoint is higher than the cooling setpoint
+        if(setpoint_next[0] > setpoint_next[1]):
                 # go back to orginal 
                 setpoint_next[0] = setpoint_this[0]
                 setpoint_next[1] = setpoint_this[1]

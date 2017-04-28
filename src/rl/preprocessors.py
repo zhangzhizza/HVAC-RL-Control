@@ -1,7 +1,6 @@
 """Suggested Preprocessors."""
 
 import numpy as np
-from PIL import Image
 
 from rl import utils
 from rl.core import Preprocessor

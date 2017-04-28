@@ -1,6 +1,4 @@
 """Common functions you may find useful in your implementation."""
-
-import semver
 import tensorflow as tf
 
 
@@ -27,12 +25,8 @@ def get_uninitialized_variables(sess, variables=None):
 
     if len(variables) == 0:
         return []
-
-    if semver.match(tf.__version__, '<1.0.0'):
-        init_flag = sess.run(
-            tf.pack([tf.is_variable_initialized(v) for v in variables]))
-    else:
-        init_flag = sess.run(
+    
+    init_flag = sess.run(
             tf.stack([tf.is_variable_initialized(v) for v in variables]))
     return [v for v, f in zip(variables, init_flag) if not f]
 

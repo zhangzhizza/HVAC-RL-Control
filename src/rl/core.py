@@ -1,6 +1,7 @@
 """Core classes."""
 from operator import itemgetter
-import matplotlib.pyplot as plt
+from util.time import get_time_from_seconds
+from rl.state_index import ZPCT_RAW_IDX;
 import numpy as np
 import math
 import copy
@@ -160,7 +161,8 @@ class Preprocessor:
         Constructor.
         """
 
-    def process_observation(self, time, observation):
+    def process_observation(self, time, observation, st_year, st_mon,
+                           st_date, st_day):
         """Preprocess the given time and observation to corresponding state.
         1. Convert time to time of day
         2. When no occupant, PMV = 0
@@ -186,6 +188,8 @@ class Preprocessor:
              Zone Thermostat Cooling Setpoint Temperature (C), 
              Zone Thermal Comfort Fanger Model PMV, Zone People Occupant Count, 
              Facility Total HVAC Electric Demand Power (W)]
+        st_year, st_mon, st_date, st_day: int
+            Environment start year, start month, start date and start day (weekday). 
 
         
         Returns
@@ -200,17 +204,20 @@ class Preprocessor:
            The PMV and HVAC Power
 
         """
-        #time counted as second 
-        seconds_in_day = 24*60*60
-        # get day index, start with 0
-        day = int(time/seconds_in_day)  
-        time_of_day = int((time - day*seconds_in_day)/3600)
+        # #time counted as second 
+        # seconds_in_day = 24*60*60
+        # # get day index, start with 0
+        # day = int(time/seconds_in_day)  
+        # time_of_day = int((time - day*seconds_in_day)/3600)
 
-        seconds_in_week = 24*60*60*7
-        # get day of week 
-        week = int(time/seconds_in_week) 
-        day_of_week = int((time - week*seconds_in_week)/seconds_in_day)
+        # seconds_in_week = 24*60*60*7
+        # # get day of week 
+        # week = int(time/seconds_in_week) 
+        # day_of_week = int((time - week*seconds_in_week)/seconds_in_day)
 
+        # Update by Zhiang: a more robust way to calculate the hour and day
+        day_of_week, time_of_day = \
+                        get_time_from_seconds(time, st_year, st_mon, st_date, st_day) 
        
         new_observation = copy.deepcopy(observation) +  [time_of_day] + [day_of_week]
         
@@ -248,12 +255,12 @@ class Preprocessor:
 
         """
         state = copy.deepcopy(observation)
-        occupant_count = observation[13]
+        occupant_count = observation[ZPCT_RAW_IDX]
         if(occupant_count == 0):
             occupancy = 0
         else:
             occupancy = 1
-        state[13] = occupancy
+        state[ZPCT_RAW_IDX] = occupancy
         return np.nan_to_num(np.divide(np.subtract(np.array(state), minV), 
             (maxV - minV)))
 
@@ -381,17 +388,20 @@ class Preprocessor:
         ----------
         reward: numpy array of float
           [0]: PMV [1] Occupant [2]: HVAC electric demand power
-
+        weight: weight on PPD
 
         Returns
         -------
         processed_reward: float: negative value
           The processed reward
         """ 
-        if(reward[1]) == 0:
-            return -reward[2]
-        else:
-            return -(weight*reward[0] + (1.0 - weight)*reward[2])
+        # Update by Zhiang: when unoccupied, the weight on energy reward 
+        # should still be applied 
+        comfort_reward = 0;
+        energy_reward = reward[2];
+        if(reward[1]) == 1:
+            comfort_reward = reward[0];
+        return -(weight * comfort_reward + (1.0 - weight) * energy_reward);
 
      
 
@@ -482,9 +492,9 @@ class ReplayMemory:
     def sample(self, batch_size, indexes=None):
         
         totalChoice = np.array(range(self._real_time_state_len));
-        sampled_idxs = np.random.choice(totalChoice
-                                            , batch_size
-                                            , replace = False).tolist();
+        sampled_idxs = np.random.choice(totalChoice,
+                                        batch_size,
+                                        replace = False).tolist();
         return itemgetter(*sampled_idxs)(self._stateRingList);
     
     def __len__(self):

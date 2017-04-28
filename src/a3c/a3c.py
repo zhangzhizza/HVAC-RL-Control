@@ -496,16 +496,30 @@ class A3CAgent:
         return (g, sess, coordinator, global_network, workers, summary_writer, 
                 saver);
 
+    def test(self, sess, global_network, env_test_name, num_episodes, e_weight, p_weight, 
+                reward_mode):
+        env_test = gym.make(env_test_name);
+        a3c_eval = A3CEval(sess, global_network, env_test, num_episodes, self._window_len, 
+                            e_weight, p_weight);
+        eval_logger = Logger().getLogger('A3C_Main_Test-%s'%(threading.current_thread()
+                                                                      .getName()),LOG_LEVEL, 
+                                                            LOG_FMT);
+        eval_logger.info("Testing...")
+        eval_res = a3c_eval.evaluate(eval_logger, reward_mode);
+        eval_logger.info("Testing finished.")
 
     def fit(self, sess, coordinator, global_network, workers, 
             global_summary_writer, global_saver, env_name, t_max, gamma, 
-            e_weight, p_weight, save_freq, T_max, env_eval, eval_epi_num,
+            e_weight, p_weight, save_freq, T_max, eval_epi_num,
             eval_freq, reward_mode):
         """
         """
         threads = [];
         global_counter = Value('d', 0.0);
         global_lock = Lock();
+        # Create the env for training evaluation
+        env_eval = gym.make(env_name);
+
         global_agent_eval = A3CEval(sess, global_network, env_eval, eval_epi_num, 
                                     self._window_len, e_weight, p_weight);
         global_res_list = [];
