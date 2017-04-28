@@ -1,0 +1,7 @@
+"""State feature index"""
+HTSP_RAW_IDX = 6;
+CLSP_RAW_IDX = 7;
+ZPCT_RAW_IDX = 13;
+ZPPD_RAW_IDX = 12;
+ZPCT_RAW_IDX = 13;
+HVACE_RAW_IDX = 14;

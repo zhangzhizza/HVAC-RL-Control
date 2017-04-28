@@ -104,6 +104,9 @@ def main():
     parser.add_argument('--decay_steps', default = 1000000, type=int);
     parser.add_argument('--is_warm_start', default=False, type=bool);
     parser.add_argument('--model_dir', default='None');
+    parser.add_argument('--job_mode', default='Train', type=str,
+                        help='The job mode, choice of Train or Test. Default is Train.');
+    parser.add_argument('--test_env', default='Eplus-eval-v0', type=str);
     
     args = parser.parse_args();
     args.output = get_output_folder(args.output, args.env)
@@ -112,8 +115,6 @@ def main():
                        else args.num_threads;
     main_logger.info(args)
     
-    # Create the env for evaluation
-    env_eval = gym.make(args.env);
     # Action size
     action_size = 10; #
     # State size
@@ -135,14 +136,18 @@ def main():
     (g, sess, coordinator, global_network, workers, global_summary_writer, 
      global_saver) = a3c_agent.compile(args.is_warm_start, args.model_dir, 
                                        args.save_scope);
-    # Start the training
-    main_logger.info ('Start the learning...')
-    a3c_agent.fit(sess, coordinator, global_network, workers, 
-                  global_summary_writer, global_saver, args.env, args.train_freq,
-                  args.gamma, args.e_weight, args.p_weight, args.save_freq, 
-                  args.max_interactions, env_eval, 
-                  args.eval_epi_num, args.eval_freq, args.reward_mode);
-        
+    if args.job_mode.lower() == "train":
+        # Start the training
+        main_logger.info ('Start the learning...')
+        a3c_agent.fit(sess, coordinator, global_network, workers, 
+                      global_summary_writer, global_saver, args.env, args.train_freq,
+                      args.gamma, args.e_weight, args.p_weight, args.save_freq, 
+                      args.max_interactions,
+                      args.eval_epi_num, args.eval_freq, args.reward_mode);
+    if args.job_mode.lower() == 'test':
+        main_logger.info ('Start the testing...')
+        a3c_agent.test(sess, global_network, args.test_env, args.eval_epi_num, args.e_weight, 
+                       args.p_weight, args.reward_mode);
         
 
 if __name__ == '__main__':

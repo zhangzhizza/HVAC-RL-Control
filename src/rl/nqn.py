@@ -7,7 +7,6 @@ from keras.layers import (Activation, Convolution2D, Dense, Flatten, Input,
                           Permute)
 from keras.models import Model
 from keras.optimizers import Adam
-import matplotlib.pyplot as plt
 import rl as tfrl
 import rl.utils
 from rl.preprocessors import HistoryPreprocessor
@@ -16,6 +15,7 @@ from rl.policy import (Policy, UniformRandomPolicy, GreedyEpsilonPolicy
 from rl.utils import (init_weights_uniform, get_hard_target_model_updates
                               , get_uninitialized_variables)
 from rl.core import (Sample,Statesample)
+from rl.state_index import HTSP_RAW_IDX, CLSP_RAW_IDX, ZPPD_RAW_IDX, ZPCT_RAW_IDX, HVACE_RAW_IDX;
 
 logging.getLogger().setLevel(logging.INFO)
 NN_WIDTH = 512;
@@ -63,10 +63,8 @@ def create_model(input_state, num_actions,
     with tf.name_scope('hidden4'):
         hidden4 = Dense(NN_WIDTH, activation='relu')(hidden3)
     with tf.name_scope('output'):
-        output = Dense(num_actions, activation='softmax')(hidden4)
+        output = Dense(num_actions)(hidden4) # Update by Zhiang: Delete the softmax layer, change to linear
     return output;
-
-
 
 def create_training_op(loss, optimizer, learning_rate):
     """
@@ -394,26 +392,29 @@ class NQNAgent:
              13: Zone People Occupant Count, 
              14: Facility Total HVAC Electric Demand Power (W)],
              15: time of day
-             16: day of year
+             16: day of week
         """
+        env_st_yr = env.start_year;
+        env_st_mn = env.start_mon;
+        env_st_dy = env.start_day;
+        env_st_wd = env.start_weekday;
+
         train_counter = 0;
         eval_res_hist = np.zeros((1,3));
 
         time_this, ob_this, is_terminal = env.reset()
+        # Add time info to the raw observation
+        ob_this = self._preprocessor.process_observation(time_this, ob_this, env_st_yr
+                                                        , env_st_mn, env_st_dy, env_st_wd); 
 
-        ob_this = self._preprocessor.process_observation(time_this, ob_this) 
-
-        setpoint_this = ob_this[6:8]
-
+        setpoint_this = [ob_this[HTSP_RAW_IDX], ob_this[CLSP_RAW_IDX]]; # Update from Zhiang: more flexible way to get the setpoint
+        # Min max normalization for the state
         obs_this_net = self._preprocessor.process_observation_for_network(
                 ob_this, self._min_array,  self._max_array)
-
-
+        # Stack the states
         state_this_mem_hist = (self._historypreprocessor
                             .process_state_for_memory(
                               np.array(obs_this_net)));
-                    
-
         this_ep_length = 0;
         flag_print_1 = True;
         flag_print_2 = True;
@@ -432,36 +433,33 @@ class NQNAgent:
                 action = self._policy.process_action(setpoint_this, action_mem)
 
             else:
-
                 if flag_print_2:
                     logging.info ("Start training process...");
-                    flag_print_2 = False;
-                       
+                    flag_print_2 = False;      
                 state_this_net_hist = (self._historypreprocessor
-                            .process_state_for_network(
-                                obs_this_net));
-
+                                           .process_state_for_network(
+                                            obs_this_net));
                 action_mem = self.select_action(state_this_net_hist, stage = 'training')
                 # covert command to setpoint action 
                 action = self._policy.process_action(setpoint_this, action_mem)
 
             # the following process is for saving memory
             action_counter = action_counter + 1 if action_counter < 4 else 1;
-
-
-
             time_next, ob_next, is_terminal = env.step(action)
-            ob_next = self._preprocessor.process_observation(time_next, ob_next)
+            ob_next = self._preprocessor.process_observation(time_next, ob_next, env_st_yr
+                                                        , env_st_mn, env_st_dy, env_st_wd)
             obs_next_net = self._preprocessor.process_observation_for_network(
-                ob_next, self._min_array,  self._max_array)
+                                                ob_next, self._min_array,  self._max_array)
         
             state_next_mem_hist = (self._historypreprocessor
-                            .process_state_for_memory(
-                                np.array(obs_next_net)));                  
+                                       .process_state_for_memory(np.array(obs_next_net)));                  
             
-            setpoint_next = ob_next[6:8]
+            setpoint_next = [ob_next[HTSP_RAW_IDX], ob_next[CLSP_RAW_IDX]];
 
-            reward = self._preprocessor.process_reward(obs_next_net[12:15], self._reward_weight)
+            reward = self._preprocessor.process_reward([obs_next_net[ZPPD_RAW_IDX], 
+                                                        obs_next_net[ZPCT_RAW_IDX],
+                                                        obs_next_net[HVACE_RAW_IDX]], 
+                                                        self._reward_weight)
             
             #check if exceed the max_episode_length
             if max_episode_length != None and \
@@ -485,21 +483,18 @@ class NQNAgent:
                     if train_counter % self._eval_freq == 0:
                         eval_res = self.evaluate(env_eval, self._eval_epi_num
                                              , show_detail = True);
-                        eval_res_hist = np.append(eval_res_hist
-          , np.array([step
-          , eval_res[0], eval_res[1]]).reshape(1, 3)
-          , axis = 0);
-                        np.savetxt(self._log_dir + '/eval_res_hist.csv'
-                , eval_res_hist, delimiter = ',');
-                        logging.info ('Global Step: %d, '%(step), 'evaluation average \
+                        eval_res_hist = np.append(eval_res_hist, np.array([step, 
+                                        eval_res[0], eval_res[1]]).reshape(1, 3),
+                                        axis = 0);
+                        np.savetxt(self._log_dir + '/eval_res_hist.csv', eval_res_hist, 
+                                    delimiter = ',');
+                        logging.info ('Global Step: %d, evaluation average \
                                reward is %0.04f, average episode length is %d.'\
-                                   %eval_res);
-                        
-                    
+                                   %(step, eval_res[0], eval_res[1]));         
                     #Sample from the replay memory
-                    samples = self._preprocessor.process_batch_hist(
-                        self._memory.sample(self._batch_size));
-
+                    #samples = self._preprocessor.process_batch_hist(
+                    #                      self._memory.sample(self._batch_size));
+                    samples = self._memory.sample(self._batch_size); # Update by Zhiang: no need to process
                     #Construct target values, one for each of the sample 
                     #in the minibatch
                     samples_x = None;
@@ -507,7 +502,6 @@ class NQNAgent:
                     for sample in samples:
                         target = self.calc_q_values(sample.s);
                         a_max = self.select_action(sample.s_p, stage = 'greedy');
-
                         if sample.is_terminal:
                             target[0, sample.a] = sample.r;
                         else:
@@ -523,14 +517,11 @@ class NQNAgent:
                             samples_x = sample.s;
                         else:
                             samples_x = np.append(samples_x, sample.s, axis = 0);
-                    #Run the training
-          
-                    
+                    #Run the training        
                     feed_dict = {self._state_placeholder:samples_x
                                 ,self._q_placeholder:targets}
                     sess_res = self._sess.run([self._train_op, self._loss]
-                                              , feed_dict = feed_dict);
-                    
+                                              , feed_dict = feed_dict);               
                     #Update the target parameters
                     if train_counter % self._target_update_freq == 0:
                         self.update_policy();
@@ -556,14 +547,18 @@ class NQNAgent:
             #check whether to start a new episode
             if is_terminal:
                 time_this, ob_this, is_terminal = env.reset()
-                ob_this = self._preprocessor.process_observation(time_this, ob_this)
-                setpoint_this = ob_this[6:8]
+                # Add time info to the raw observation
+                ob_this = self._preprocessor.process_observation(time_this, ob_this, 
+                                                                env_st_yr, env_st_mn, 
+                                                                env_st_dy, env_st_wd); 
+                setpoint_this = [ob_this[HTSP_RAW_IDX], ob_this[CLSP_RAW_IDX]];
+                # Min max normalization for the state
                 obs_this_net = self._preprocessor.process_observation_for_network(
-                ob_this, self._min_array,  self._max_array)
-
+                                          ob_this, self._min_array,  self._max_array)
+                # Stack the states
                 state_this_mem_hist = (self._historypreprocessor
-                                    .process_state_for_memory(
-                                      np.array(obs_this_net)));
+                                           .process_state_for_memory(
+                                                              np.array(obs_this_net)));
                 this_ep_length = 0;
                 action_counter = 0;
             else:
@@ -572,9 +567,6 @@ class NQNAgent:
                 state_this_mem_hist = state_next_mem_hist
                 ob_this = ob_next
                 this_ep_length += 1;
-           
-                
-            
 
     def evaluate(self, env, num_episodes, max_episode_length=None
                  , show_detail = True):
@@ -590,50 +582,49 @@ class NQNAgent:
         You can also call the render function here if you want to
         visually inspect your policy.
         """
+        env_st_yr = env.start_year;
+        env_st_mn = env.start_mon;
+        env_st_dy = env.start_day;
+        env_st_wd = env.start_weekday;
         historypreprocessor = HistoryPreprocessor(self._window_size);
         episode_counter = 1;
         average_reward = 0;
         average_episode_length = 0;
         time_this, ob_this, is_terminal = env.reset()
-
-        ob_this = self._preprocessor.process_observation(time_this, ob_this)
-  
+        # Add time info to the raw observation
+        ob_this = self._preprocessor.process_observation(time_this, ob_this, 
+                                                         env_st_yr, env_st_mn, 
+                                                         env_st_dy, env_st_wd); 
+        setpoint_this = [ob_this[HTSP_RAW_IDX], ob_this[CLSP_RAW_IDX]];
+        # Min max normalization for the state
         obs_this_net = self._preprocessor.process_observation_for_network(
-                  ob_this, self._min_array,  self._max_array)
-        
-        setpoint_this = ob_this[6:8]
-
+                                    ob_this, self._min_array,  self._max_array)
+        # Stack the states
         state_this_net_hist = (self._historypreprocessor
-                            .process_state_for_network(
-                                obs_this_net));
-
+                                   .process_state_for_network(
+                                                     np.array(obs_this_net)));
         this_ep_reward = 0;
         this_ep_length = 0;
         while episode_counter <= num_episodes:
             action_mem = self.select_action(state_this_net_hist, stage = 'testing');
-
             # covert command to setpoint action 
             action = self._policy.process_action(setpoint_this, action_mem)
-
             time_next, ob_next, is_terminal = env.step(action)
-           
-            ob_next = self._preprocessor.process_observation(time_next, ob_next)
-
-            setpoint_next = ob_next[6:8]
-
+            ob_next = self._preprocessor.process_observation(time_next, ob_next,
+                                                            env_st_yr, env_st_mn, 
+                                                            env_st_dy, env_st_wd)
+            setpoint_next = [ob_next[HTSP_RAW_IDX], ob_next[CLSP_RAW_IDX]];
             obs_next_net = self._preprocessor.process_observation_for_network(
-                  ob_next, self._min_array,  self._max_array)
-  
-          
+                                          ob_next, self._min_array,  self._max_array) 
             state_next_net_hist = (self._historypreprocessor
-                            .process_state_for_network(
-                                obs_next_net));
+                                       .process_state_for_network(obs_next_net));
                
             #12:PPD, 13: Occupant number , 14: power
-            reward = self._preprocessor.process_reward(obs_next_net[12:15], self._reward_weight)
-
+            reward = self._preprocessor.process_reward([obs_next_net[ZPPD_RAW_IDX], 
+                                                        obs_next_net[ZPCT_RAW_IDX],
+                                                        obs_next_net[HVACE_RAW_IDX]], 
+                                                        self._reward_weight)
             this_ep_reward += reward;
- 
             #Check if exceed the max_episode_length
             if max_episode_length is not None and \
                 this_ep_length >= max_episode_length:
@@ -641,23 +632,23 @@ class NQNAgent:
             #Check whether to start a new episode
             if is_terminal:
                 time_this, ob_this, is_terminal = env.reset()
-                ob_this = self._preprocessor.process_observation(time_this, ob_this)
+                # Add time info to the raw observation
+                ob_this = self._preprocessor.process_observation(time_this, ob_this, 
+                                                         env_st_yr, env_st_mn, 
+                                                         env_st_dy, env_st_wd); 
+                setpoint_this = [ob_this[HTSP_RAW_IDX], ob_this[CLSP_RAW_IDX]];
+                # Min max normalization for the state
                 obs_this_net = self._preprocessor.process_observation_for_network(
-                          ob_this, self._min_array,  self._max_array)
-         
-                
-                setpoint_this = ob_this[6:8]
-
+                                    ob_this, self._min_array,  self._max_array)
+                # Stack the states
                 state_this_net_hist = (self._historypreprocessor
-                                    .process_state_for_network(
-                                        obs_this_net));
-
+                                   .process_state_for_network(
+                                                     np.array(obs_this_net)));
                 average_reward = (average_reward * (episode_counter - 1) 
                                   + this_ep_reward) / episode_counter;
                 average_episode_length = (average_episode_length 
                                           * (episode_counter - 1) 
-                                          + this_ep_length) /  episode_counter;
-                
+                                          + this_ep_length) /  episode_counter;    
                 episode_counter += 1;
                 if show_detail:
                     logging.info ('Episode ends. Cumulative reward is %0.04f '
