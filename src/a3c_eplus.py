@@ -92,6 +92,7 @@ def main():
     parser.add_argument('--p_weight', default=0.5, type=float,
                         help='Reward wegith on PPD.');
     parser.add_argument('--reward_mode', default='linear', type=str);
+    parser.add_argument('--action_space', default='default', type=str);
     parser.add_argument('--save_freq', default=50000, type=int);
     parser.add_argument('--save_scope', default='all', 
                         help='The tensorflow graph save scope, default is global '
@@ -115,13 +116,11 @@ def main():
                        else args.num_threads;
     main_logger.info(args)
     
-    # Action size
-    action_size = 10; #
     # State size
     state_dim = 15 + 2 # 15 for the raw state dim, 2 is the additonal time info
     # Create the agent
     a3c_agent = A3CAgent(state_dim = state_dim, window_len = args.window_len,
-                         action_size = action_size, vloss_frac = args.v_loss_frac,
+                         vloss_frac = args.v_loss_frac,
                          ploss_frac = args.p_loss_frac, 
                          hregu_frac = args.h_regu_frac,
                          num_threads = args.num_threads, 
@@ -131,7 +130,8 @@ def main():
                          rmsprop_epsil = args.rmsprop_epsil,
                          clip_norm = args.clip_norm, log_dir = args.output,
                          init_epsilon = args.init_e, end_epsilon = args.end_e, 
-                         decay_steps = args.decay_steps);
+                         decay_steps = args.decay_steps,
+                         action_space_name = args.action_space);
     main_logger.info ('Start compiling...')
     (g, sess, coordinator, global_network, workers, global_summary_writer, 
      global_saver) = a3c_agent.compile(args.is_warm_start, args.model_dir, 

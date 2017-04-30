@@ -47,3 +47,4 @@ actions_htcl_cmd_exp2 = [( 1.0,  1.0),
                     (-5.0, -5.0),
                     (-5.0,  5.0),
                     ( 0.0,  0.0)];
+action_map = {'default': actions_htcl_cmd, 'exp1': actions_htcl_cmd_exp1, 'exp2':actions_htcl_cmd_exp2}
