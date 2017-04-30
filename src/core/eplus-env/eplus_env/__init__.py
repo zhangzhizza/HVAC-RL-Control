@@ -36,6 +36,16 @@ register(
             'idf_path':FD + '/envs/5ZoneAutoDXVAV_eval.idf',
             'env_name': 'Eplus-eval-v0'});
     
+register(
+    id='Eplus-eval-multiagent-v0',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-6-0/',
+            'weather_path':FD + '/envs/pennstate.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/variables_multiagent.cfg',
+            'idf_path':FD + '/envs/5ZoneAutoDXVAV_eval_multiagent.idf',
+            'env_name': 'Eplus-eval-multiagent-v0'});
+
 # Replace some schedule file path in 5ZoneAutoDXVAV_eval.idf with the 
 # absolute path
 sch_path_dict = {'S1_Office_-_Private People Schedule': FD + '/envs/stochastic_occup.csv',
