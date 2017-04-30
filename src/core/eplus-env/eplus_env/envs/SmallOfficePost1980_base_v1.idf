@@ -243,7 +243,7 @@
       -5.00,     !- Time Zone Relative to GMT {GMT+/-}
      380.00;     !- Elevation {m}
 
-! Pittsburgh Allegheny Co Ap_PA_USA Annual Heating 99.6%, MaxDB=-15.4°C
+! Pittsburgh Allegheny Co Ap_PA_USA Annual Heating 99.6%, MaxDB=-15.4Â°C
 
   SizingPeriod:DesignDay,
   Pittsburgh Allegheny Co Ap Ann Htg 99.6% Condns DB,     !- Name
@@ -273,7 +273,7 @@
            ,      !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance (taud)
        0.00;      !- Clearness {0.0 to 1.1}
 
-! Pittsburgh Allegheny Co Ap_PA_USA Annual Cooling (DB=>MWB) .4%, MaxDB=32.2°C MWB=22.5°C
+! Pittsburgh Allegheny Co Ap_PA_USA Annual Cooling (DB=>MWB) .4%, MaxDB=32.2Â°C MWB=22.5Â°C
 
  SizingPeriod:DesignDay,
   Pittsburgh Allegheny Co Ap Ann Clg .4% Condns DB=>MWB,     !- Name
@@ -4773,7 +4773,7 @@
   Output:Variable,*,Site Diffuse Solar Radiation Rate per Area,timestep;
   Output:Variable,*,Site Direct Solar Radiation Rate per Area,timestep;
   !- Building room 1 output
-  Output:Variable,,Zone Air Temperature,timestep;
+  Output:Variable,Perimeter_ZN_1,Zone Air Temperature,timestep;
   Output:Variable,Perimeter_ZN_1,Zone Air Relative Humidity,timestep;
   Output:Variable,Perimeter_ZN_1,Zone Thermostat Heating Setpoint Temperature,timestep;
   Output:Variable,Perimeter_ZN_1,Zone Thermostat Cooling Setpoint Temperature,timestep;
