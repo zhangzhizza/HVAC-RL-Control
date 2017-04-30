@@ -1679,7 +1679,7 @@
     WORK_EFF_SCH,            !- Work Efficiency Schedule Name
     DynamicClothingModelASHRAE55,  !- Clothing Insulation Calculation Method
     ,                        !- Clothing Insulation Calculation Method Schedule Name
-    ,            !- Clothing Insulation Schedule Name
+    ,                        !- Clothing Insulation Schedule Name
     AIR_VELO_SCH,            !- Air Velocity Schedule Name
     FANGER;                  !- Thermal Comfort Model 1 Type
 
@@ -1699,9 +1699,9 @@
     ZoneAveraged,            !- Mean Radiant Temperature Calculation Type
     ,                        !- Surface Name/Angle Factor List Name
     WORK_EFF_SCH,            !- Work Efficiency Schedule Name
-    ClothingInsulationSchedule,  !- Clothing Insulation Calculation Method
+    DynamicClothingModelASHRAE55,  !- Clothing Insulation Calculation Method
     ,                        !- Clothing Insulation Calculation Method Schedule Name
-    CLOTHING_SCH,            !- Clothing Insulation Schedule Name
+    ,                        !- Clothing Insulation Schedule Name
     AIR_VELO_SCH,            !- Air Velocity Schedule Name
     FANGER;                  !- Thermal Comfort Model 1 Type
 
@@ -1721,9 +1721,9 @@
     ZoneAveraged,            !- Mean Radiant Temperature Calculation Type
     ,                        !- Surface Name/Angle Factor List Name
     WORK_EFF_SCH,            !- Work Efficiency Schedule Name
-    ClothingInsulationSchedule,  !- Clothing Insulation Calculation Method
+    DynamicClothingModelASHRAE55,  !- Clothing Insulation Calculation Method
     ,                        !- Clothing Insulation Calculation Method Schedule Name
-    CLOTHING_SCH,            !- Clothing Insulation Schedule Name
+    ,                        !- Clothing Insulation Schedule Name
     AIR_VELO_SCH,            !- Air Velocity Schedule Name
     FANGER;                  !- Thermal Comfort Model 1 Type
 
@@ -1743,9 +1743,9 @@
     ZoneAveraged,            !- Mean Radiant Temperature Calculation Type
     ,                        !- Surface Name/Angle Factor List Name
     WORK_EFF_SCH,            !- Work Efficiency Schedule Name
-    ClothingInsulationSchedule,  !- Clothing Insulation Calculation Method
+    DynamicClothingModelASHRAE55,  !- Clothing Insulation Calculation Method
     ,                        !- Clothing Insulation Calculation Method Schedule Name
-    CLOTHING_SCH,            !- Clothing Insulation Schedule Name
+    ,                        !- Clothing Insulation Schedule Name
     AIR_VELO_SCH,            !- Air Velocity Schedule Name
     FANGER;                  !- Thermal Comfort Model 1 Type
 
@@ -1765,9 +1765,9 @@
     ZoneAveraged,            !- Mean Radiant Temperature Calculation Type
     ,                        !- Surface Name/Angle Factor List Name
     WORK_EFF_SCH,            !- Work Efficiency Schedule Name
-    ClothingInsulationSchedule,  !- Clothing Insulation Calculation Method
+    DynamicClothingModelASHRAE55,  !- Clothing Insulation Calculation Method
     ,                        !- Clothing Insulation Calculation Method Schedule Name
-    CLOTHING_SCH,            !- Clothing Insulation Schedule Name
+    ,                        !- Clothing Insulation Schedule Name
     AIR_VELO_SCH,            !- Air Velocity Schedule Name
     FANGER;                  !- Thermal Comfort Model 1 Type
 
