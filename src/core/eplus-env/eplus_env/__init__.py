@@ -11,7 +11,8 @@ register(
             'weather_path':FD + '/envs/pittsburgh.epw',
             'bcvtb_path':FD + '/envs/bcvtb/',
             'variable_path':FD + '/envs/variables.cfg',
-            'idf_path':FD + '/envs/5ZoneAutoDXVAV.idf'});
+            'idf_path':FD + '/envs/5ZoneAutoDXVAV.idf',
+            'env_name': 'Eplus-v0'});
 
 register(
     id='Eplus-forecast-v0',
@@ -22,7 +23,8 @@ register(
             'variable_path':FD + '/envs/variables.cfg',
             'idf_path':FD + '/envs/5ZoneAutoDXVAV.idf',
             'incl_forecast': True,
-            'forecast_step': 36});
+            'forecast_step': 36,
+            'env_name': 'Eplus-forecast-v0'});
     
 register(
     id='Eplus-eval-v0',
@@ -31,7 +33,8 @@ register(
             'weather_path':FD + '/envs/pennstate.epw',
             'bcvtb_path':FD + '/envs/bcvtb/',
             'variable_path':FD + '/envs/variables.cfg',
-            'idf_path':FD + '/envs/5ZoneAutoDXVAV_eval.idf'});
+            'idf_path':FD + '/envs/5ZoneAutoDXVAV_eval.idf',
+            'env_name': 'Eplus-eval-v0'});
     
 # Replace some schedule file path in 5ZoneAutoDXVAV_eval.idf with the 
 # absolute path
