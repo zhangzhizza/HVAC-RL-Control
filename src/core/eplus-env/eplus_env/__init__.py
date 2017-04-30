@@ -25,6 +25,15 @@ register(
             'incl_forecast': True,
             'forecast_step': 36,
             'env_name': 'Eplus-forecast-v0'});
+register(
+    id='Eplus-eval-multiagent-v1',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-6-0/',
+            'weather_path':FD + '/envs/pittsburgh.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/variables_base_v1.cfg',
+            'idf_path':FD + '/envs/SmallOfficePost1980_base_v1.idf',
+            'env_name': 'Eplus-small-office-v1'});
     
 register(
     id='Eplus-eval-v0',
@@ -35,9 +44,9 @@ register(
             'variable_path':FD + '/envs/variables.cfg',
             'idf_path':FD + '/envs/5ZoneAutoDXVAV_eval.idf',
             'env_name': 'Eplus-eval-v0'});
-    
+
 register(
-    id='Eplus-eval-multiagent-v0',
+    id='Eplus-small-office-v0',
     entry_point='eplus_env.envs:EplusEnv',
     kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-6-0/',
             'weather_path':FD + '/envs/pennstate.epw',
@@ -94,7 +103,8 @@ sch_path_dict = {'ZN_0': FD + '/envs/occupant_base_v1.csv',
                  'ZN_2': FD + '/envs/occupant_base_v1.csv',
                  'ZN_3': FD + '/envs/occupant_base_v1.csv',
                  'ZN_4': FD + '/envs/occupant_base_v1.csv',
-                 'MinOA_Sched': FD + '/envs/occupant_base_v1.csv'};
+                 'MinOA_Sched': FD + '/envs/occupant_base_v1.csv',
+                 'HVACOperationSchd':FD + '/envs/hvac.csv'};
 contents = None;
 with open(FD + '/envs/SmallOfficePost1980_base_v1.idf', 'r', encoding = 'ISO-8859-1') as idf:
     contents = idf.readlines();
@@ -113,7 +123,8 @@ with open(FD + '/envs/SmallOfficePost1980_base_v1.idf', 'r', encoding = 'ISO-885
                                 'ZN_2', 
                                 'ZN_3',
                                 'ZN_4',
-                                'MinOA_Sched']:
+                                'MinOA_Sched',
+                                'HVACOperationSchd']:
             if schedule_on:
                 remember_str = effectiveContent;
                 remember_idx = i + 2; 

@@ -4784,6 +4784,6 @@
   Output:Variable,Perimeter_ZN_1 PEOPLE 1,Zone Thermal Comfort Mean Radiant Temperature,timestep;
   
   !- Building HVAC output
-  Output:Meter,Cooling:Electricity,timestep;
-  Output:Meter,Heating:Gas,timestep;
+  Output:Variable,Perimeter_ZN_1,Fan Electric Power,timestep;
+  Output:Variable,Perimeter_ZN_1,Heating Coil Gas Rate,timestep;
 

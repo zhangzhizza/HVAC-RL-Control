@@ -194,7 +194,9 @@ class EplusEnv(Env):
         rcv_1st = conn.recv(1024).decode();
         self.logger_main.debug('Got the first message successfully: ' + rcv_1st);
         version, flag, nDb, nIn, nBl, curSimTim, Dblist \
-                                                = self._disassembleMsg(rcv_1st);
+                                                = self._disassembleMsg(rcv_1st); 
+
+        Dblist = [sum(Dblist)] #to get total power of an individual zone
         ret.append(curSimTim);
         ret.append(Dblist);
         # Remember the message header, useful when send data back to EnergyPlus
@@ -261,6 +263,7 @@ class EplusEnv(Env):
         self.logger_main.debug('Got message successfully: ' + rcv);
         version, flag, nDb, nIn, nBl, curSimTim, Dblist \
                                         = self._disassembleMsg(rcv);
+        Dblist = [sum(Dblist)] #to get total power of an individual zone
         
         ret.append(curSimTim);
         ret.append(Dblist);
