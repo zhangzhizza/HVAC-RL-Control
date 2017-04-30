@@ -2501,11 +2501,6 @@ No,                      !- Interpolate to Timestep
     DualSetPoint,            !- Name
     Htg-SetP-Sch,            !- Heating Setpoint Temperature Schedule Name
     Clg-SetP-Sch;            !- Cooling Setpoint Temperature Schedule Name
-
-  ThermostatSetpoint:DualSetpoint,
-    Space1-DualSetP-RL,            !- Name
-    Space1-HtgSetP-RL,            !- Heating Setpoint Temperature Schedule Name
-    Space1-ClgSetP-RL;            !- Cooling Setpoint Temperature Schedule Name
     
   ThermostatSetpoint:DualSetpoint,
     DualSetPoint_Space1,            !- Name
@@ -2978,20 +2973,6 @@ Supply Air Temp Nodes 1;  !- Setpoint Node or NodeList Name
     Mixed Air Node 1,        !- Node 1 Name
     Main Cooling Coil 1 Outlet Node,  !- Node 2 Name
     Main Heating Coil 1 Outlet Node;  !- Node 3 Name
-    
-  !-External Interface
-  ExternalInterface, !- Object to activate the external interface
-    PtolemyServer; !- Name of external interface
-    
-  ExternalInterface:Schedule ,
-    Space1-HtgSetP-RL, !- Name
-    Temperature , !- ScheduleType
-    21; !- Initial value, used during warm-up
-    
-  ExternalInterface:Schedule ,
-    Space1-ClgSetP-RL, !- Name
-    Temperature , !- ScheduleType
-    25; !- Initial value, used during warm-up
     
   !- Site weather output  
   Output:Variable,*,Site Outdoor Air Drybulb Temperature,timestep;

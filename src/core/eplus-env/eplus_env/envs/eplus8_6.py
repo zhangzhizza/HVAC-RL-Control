@@ -50,7 +50,7 @@ class EplusEnv(Env):
     def __init__(self, eplus_path, 
                  weather_path, bcvtb_path, 
                  variable_path, idf_path,
-                 incl_forecast = False, forecast_step = 36):
+                 incl_forecast = False, forecast_step = 36, env_name = ''):
         self._thread_name = threading.current_thread().getName();
         print (threading.current_thread());
         self.logger_main = Logger().getLogger('EPLUS_ENV_ROOT-%s'%self._thread_name, 
@@ -69,7 +69,7 @@ class EplusEnv(Env):
         s.listen(60)                # Listen on request
         self.logger_main.info('Socket is listening on host %s port %d'%(sockname));
   
-        self._env_working_dir_parent = self._get_eplus_working_folder(CWD, '-run');
+        self._env_working_dir_parent = self._get_eplus_working_folder(CWD, '-%s-run'%(env_name));
         os.makedirs(self._env_working_dir_parent);
         self._host = host;
         self._port = port;

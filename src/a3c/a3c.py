@@ -14,14 +14,14 @@ from multiprocessing import Value, Lock
 from util.logger import Logger
 from a3c.objectives import a3c_loss
 from a3c.a3c_network import A3C_Network
-from a3c.actions import actions_delta_stpt, actions_htcl_cmd, actions_htcl_cmd_exp1, actions_htcl_cmd_exp2
+from a3c.actions import action_map
 from a3c.action_limits import stpt_limits
 from a3c.preprocessors import HistoryPreprocessor, process_raw_state_cmbd, get_legal_action, get_reward
 from a3c.utils import init_variables, get_hard_target_model_updates, get_uninitialized_variables
 from a3c.state_index import *
+from a3c.a3c_eval import A3CEval_multiagent, A3CEval
 
-
-ACTIONS = actions_htcl_cmd_exp2;
+ACTION_MAP = action_map;
 STPT_LIMITS = stpt_limits;
 LOG_LEVEL = 'INFO';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
@@ -147,7 +147,7 @@ class A3CThread:
     def train(self, sess, t_max, env_name, coordinator, global_counter, global_lock, 
               gamma, e_weight, p_weight, save_freq, log_dir, global_saver, 
               global_summary_writer, T_max, global_agent_eval, eval_freq, 
-              global_res_list, reward_mode):
+              global_res_list, reward_mode, action_space_name):
         """
         The function that the thread worker works to train the networks.
         
@@ -190,6 +190,7 @@ class A3CThread:
                 The evaluation frequency regarding the global training step.
                 
         """
+        action_space = ACTION_MAP[action_space_name];
         self._local_logger = Logger().getLogger('A3C_Worker-%s'
                                     %(threading.current_thread().getName()),
                                               LOG_LEVEL, LOG_FMT);
@@ -238,7 +239,7 @@ class A3CThread:
                 # Get the action
                 action_raw_idx = self._select_sto_action(ob_this_hist_prcd, sess,
                                                          self._e_greedy);
-                action_raw_tup = ACTIONS[action_raw_idx];
+                action_raw_tup = action_space[action_raw_idx];
                 cur_htStpt = ob_this_raw[HTSP_RAW_IDX];
                 cur_clStpt = ob_this_raw[CLSP_RAW_IDX];
                 action_stpt_prcd, action_effec = get_legal_action(
@@ -285,7 +286,7 @@ class A3CThread:
                     if global_counter.value % eval_freq == 0:
                         self._local_logger.info('Evaluating...');
                         eval_res = global_agent_eval.evaluate(self._local_logger, 
-                                                              reward_mode);
+                                                              reward_mode, action_space_name);
                         global_res_list.append([global_counter.value, eval_res[0],
                                                 eval_res[1]]);
                         np.savetxt(log_dir + '/eval_res_hist.csv', 
@@ -401,7 +402,6 @@ class A3CAgent:
     def __init__(self,
                  state_dim,
                  window_len,
-                 action_size,
                  vloss_frac, 
                  ploss_frac, 
                  hregu_frac,
@@ -414,12 +414,13 @@ class A3CAgent:
                  log_dir,
                  init_epsilon,
                  end_epsilon,
-                 decay_steps):
+                 decay_steps,
+                 action_space_name):
         
         self._state_dim = state_dim;
         self._window_len = window_len;
         self._effec_state_dim = state_dim * window_len;
-        self._action_size = action_size;
+        self._action_size = len(ACTION_MAP[action_space_name]);
         self._vloss_frac = vloss_frac;
         self._ploss_frac = ploss_frac;
         self._hregu_frac = hregu_frac;
@@ -433,6 +434,7 @@ class A3CAgent:
         self._init_epsilon = init_epsilon;
         self._end_epsilon = end_epsilon;
         self._decay_steps = decay_steps;
+        self._action_space_name = action_space_name;
         
     def compile(self, is_warm_start, model_dir, save_scope = 'global'):
         """
@@ -497,15 +499,17 @@ class A3CAgent:
                 saver);
 
     def test(self, sess, global_network, env_test_name, num_episodes, e_weight, p_weight, 
-                reward_mode):
+                reward_mode, test_mode, agent_num):
         env_test = gym.make(env_test_name);
-        a3c_eval = A3CEval(sess, global_network, env_test, num_episodes, self._window_len, 
-                            e_weight, p_weight);
-        eval_logger = Logger().getLogger('A3C_Main_Test-%s'%(threading.current_thread()
-                                                                      .getName()),LOG_LEVEL, 
-                                                            LOG_FMT);
+        if test_mode == 'single':
+        	a3c_eval = A3CEval(sess, global_network, env_test, num_episodes, self._window_len, e_weight, p_weight);
+        	eval_logger = Logger().getLogger('A3C_Test_Single-%s'%(threading.current_thread().getName()),LOG_LEVEL, LOG_FMT);
+        if test_mode == 'multiple':
+        	a3c_eval = A3CEval_multiagent(sess, global_network, env_test, num_episodes, self._window_len, e_weight, p_weight, agent_num)
+        	eval_logger = Logger().getLogger('A3C_Test_Multiple-%s'%(threading.current_thread().getName()),LOG_LEVEL, LOG_FMT);
+        
         eval_logger.info("Testing...")
-        eval_res = a3c_eval.evaluate(eval_logger, reward_mode);
+        eval_res = a3c_eval.evaluate(eval_logger, reward_mode, self._action_space_name);
         eval_logger.info("Testing finished.")
 
     def fit(self, sess, coordinator, global_network, workers, 
@@ -534,7 +538,7 @@ class A3CAgent:
                                                 global_summary_writer,T_max,
                                                 global_agent_eval, eval_freq,
                                                 global_res_list,
-                                                reward_mode);
+                                                reward_mode, self._action_space_name);
             thread = threading.Thread(target = (worker_train));
             thread.start();
             time.sleep(1); # Wait for a while for the env to setup
@@ -543,134 +547,3 @@ class A3CAgent:
             
         coordinator.join(threads);
            
-                
-class A3CEval:
-    def __init__(self, sess, global_network, env, num_episodes, window_len, 
-                 e_weight, p_weight):
-        self._sess = sess;
-        self._global_network = global_network;
-        self._env = env;
-        self._num_episodes = num_episodes;
-        self._histProcessor = HistoryPreprocessor(window_len);
-        # Prepare env-related information
-        self._env_st_yr = env.start_year;
-        self._env_st_mn = env.start_mon;
-        self._env_st_dy = env.start_day;
-        self._env_st_wd = env.start_weekday;
-        env_state_limits = env.min_max_limits;
-        env_state_limits.insert(0, (0, 23)); # Add hour limit
-        env_state_limits.insert(0, (0, 6)); # Add weekday limit
-        self._pcd_state_limits = np.transpose(env_state_limits);
-        self._e_weight = e_weight;
-        self._p_weight = p_weight;
-        
-
-    def evaluate(self, local_logger, reward_mode):
-        """
-        """
-        episode_counter = 1;
-        average_reward = 0;
-        average_max_ppd = 0;
-        # Reset the env
-        time_this, ob_this_raw, is_terminal = self._env.reset();
-        # Process and normalize the raw observation
-        ob_this_prcd = process_raw_state_cmbd(ob_this_raw, [time_this], 
-                                              self._env_st_yr, self._env_st_mn, 
-                                              self._env_st_dy, self._env_st_wd, 
-                                              self._pcd_state_limits); # 1-D list
-        # Get the history stacked state
-        self._histProcessor.reset();
-        ob_this_hist_prcd = self._histProcessor.\
-                            process_state_for_network(ob_this_prcd) # 2-D array
-        # Do the eval
-        this_ep_reward = 0;
-        this_ep_max_ppd = 0;
-        while episode_counter <= self._num_episodes:
-            # Get the action
-            action_raw_idx = self._select_sto_action(ob_this_hist_prcd);
-            action_raw_tup = ACTIONS[action_raw_idx];
-            cur_htStpt = ob_this_raw[HTSP_RAW_IDX];
-            cur_clStpt = ob_this_raw[CLSP_RAW_IDX];
-            action_stpt_prcd, action_effec = get_legal_action(
-                                                        cur_htStpt, cur_clStpt, 
-                                                    action_raw_tup, STPT_LIMITS);
-            action_stpt_prcd = list(action_stpt_prcd);
-            # Perform the action
-            time_next, ob_next_raw, is_terminal = \
-                                                self._env.step(action_stpt_prcd);
-            # Process and normalize the raw observation
-            ob_next_prcd = process_raw_state_cmbd(ob_next_raw, [time_next], 
-                                              self._env_st_yr, self._env_st_mn, 
-                                              self._env_st_dy, self._env_st_wd, 
-                                              self._pcd_state_limits); # 1-D list
-            # Get the reward
-            normalized_hvac_energy = ob_next_prcd[HVACE_RAW_IDX + 2];
-            normalized_ppd = ob_next_prcd[ZPPD_RAW_IDX + 2];
-            occupancy_status = ob_next_prcd[ZPCT_RAW_IDX + 2];
-            reward_next = get_reward(normalized_hvac_energy, normalized_ppd, 
-                                    self._e_weight, self._p_weight, 
-                                    occupancy_status, reward_mode);
-            this_ep_reward += reward_next;
-            this_ep_max_ppd = max(normalized_ppd if occupancy_status > 0 else 0,
-                                  this_ep_max_ppd);
-            # Get the history stacked state
-            ob_next_hist_prcd = self._histProcessor.\
-                            process_state_for_network(ob_next_prcd) # 2-D array
-            # Check whether to start a new episode
-            if is_terminal:
-                time_this, ob_this_raw, is_terminal = self._env.reset();
-                # Process and normalize the raw observation
-                ob_this_prcd = process_raw_state_cmbd(ob_this_raw, [time_this], 
-                                              self._env_st_yr, self._env_st_mn, 
-                                              self._env_st_dy, self._env_st_wd, 
-                                              self._pcd_state_limits); # 1-D list
-                # Get the history stacked state
-                self._histProcessor.reset();
-                ob_this_hist_prcd = self._histProcessor.\
-                            process_state_for_network(ob_this_prcd) # 2-D array
-                # Update the average reward
-                average_reward = (average_reward * (episode_counter - 1) 
-                                  + this_ep_reward) / episode_counter;
-                average_max_ppd = (average_max_ppd * (episode_counter - 1)
-                                  + this_ep_max_ppd) / episode_counter;
-                local_logger.info('Evaluation: average reward by now is %0.04f'
-                                  ', average max PPD is %0.04f'%(average_reward, 
-                                                                 average_max_ppd));
-                episode_counter += 1;
-                this_ep_reward = 0;
-                this_ep_max_ppd = 0;
-                 
-            else:
-                time_this = time_next;
-                ob_this_hist_prcd = ob_next_hist_prcd;
-                ob_this_raw = ob_next_raw;
-                
-        return (average_reward, average_max_ppd);
-    
-    def _select_sto_action(self, state):
-        """
-        Given a state, run stochastic policy network to give an action.
-        
-        Args:
-            state: np.ndarray, 1*m where m is the state feature dimension.
-                Processed normalized state.
-            sess: tf.Session.
-                The tf session.
-        
-        Return: int 
-            The action index.
-        """
-        
-        softmax_a = self._sess.run(self._global_network.policy_pred, 
-                        feed_dict={self._global_network.state_placeholder:state})\
-                        .flatten();
-        ### DEBUG
-        dbg_rdm = np.random.uniform();
-        if dbg_rdm < 0.01:
-            print ('softmax', softmax_a)
-        uni_rdm = np.random.uniform();
-        imd_x = uni_rdm;
-        for i in range(softmax_a.shape[-1]):
-            imd_x -= softmax_a[i];
-            if imd_x <= 0.0:
-                return i;

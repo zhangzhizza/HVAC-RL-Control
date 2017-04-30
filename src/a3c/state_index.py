@@ -16,4 +16,4 @@ ZCLO_RAW_IDX = 11;
 ZPPD_RAW_IDX = 12;
 ZPCT_RAW_IDX = 13;
 HVACE_RAW_IDX = 14;
-
+ZN_OB_NUM = 8 # Eight elements are related to zone observation
