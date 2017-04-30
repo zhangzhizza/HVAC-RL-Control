@@ -154,7 +154,7 @@ class EplusEnv(Env):
                                   self._get_file_name(self._idf_path));
         eplus_working_var_path = (eplus_working_dir + 
                                   '/' + 
-                                  self._get_file_name(self._variable_path));
+                                  'variables.cfg'); # Variable file must be with this name
         eplus_working_out_path = (eplus_working_dir + 
                                   '/' + 
                                   'output');

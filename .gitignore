@@ -8,6 +8,7 @@ midway/
 proposal/
 src/*res
 src/a3c-eval/
+src/*-eval/
 
 *.swp
 *.pyc
