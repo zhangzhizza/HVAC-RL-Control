@@ -2,8 +2,9 @@ src/virt_env
 reference/
 src/*Eplus-env-run*
 src/core/eplus-env/eplus_env/envs/EnergyPlus-8-6-0
-src/core/eplus-env/eplus_env/envs/output
+src/core/eplus-env/eplus_env/envs/*output*
 src/*res
+src/*-eval/
 
 *.swp
 *.pyc
