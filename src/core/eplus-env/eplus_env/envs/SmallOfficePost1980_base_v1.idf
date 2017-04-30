@@ -2049,7 +2049,7 @@
   Schedule:File,
     ZN_0,                    !- Name
     Fraction,              !- Schedule Type Limits Name
-    occupant4.csv,            !- File Name
+/home/zhiangz/Dropbox/cmu-extracourses/10703/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/occupant_base_v1.csv, !- File Name-env-v1
     3,                       !- Column Number
     7,                       !- Rows to Skip at Top
     8760,                        !- Number of Hours of Data
@@ -2060,7 +2060,7 @@
   Schedule:File,
     ZN_1,                    !- Name
     Fraction,              !- Schedule Type Limits Name
-    occupant4.csv,            !- File Name
+/home/zhiangz/Dropbox/cmu-extracourses/10703/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/occupant_base_v1.csv, !- File Name-env-v1
     4,                       !- Column Number
     7,                       !- Rows to Skip at Top
     8760,                        !- Number of Hours of Data
@@ -2071,7 +2071,7 @@
   Schedule:File,
     ZN_2,                    !- Name
     Fraction,              !- Schedule Type Limits Name
-    occupant4.csv,            !- File Name
+/home/zhiangz/Dropbox/cmu-extracourses/10703/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/occupant_base_v1.csv, !- File Name-env-v1
     5,                       !- Column Number
     7,                       !- Rows to Skip at Top
     8760,                        !- Number of Hours of Data
@@ -2082,7 +2082,7 @@
   Schedule:File,
     ZN_3,                    !- Name
     Fraction,              !- Schedule Type Limits Name
-    occupant4.csv,            !- File Name
+/home/zhiangz/Dropbox/cmu-extracourses/10703/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/occupant_base_v1.csv, !- File Name-env-v1
     6,                       !- Column Number
     7,                       !- Rows to Skip at Top
     8760,                        !- Number of Hours of Data
@@ -2093,7 +2093,7 @@
   Schedule:File,
     ZN_4,                    !- Name
     Fraction,              !- Schedule Type Limits Name
-    occupant4.csv,            !- File Name
+/home/zhiangz/Dropbox/cmu-extracourses/10703/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/occupant_base_v1.csv, !- File Name-env-v1
     7,                       !- Column Number
     7,                       !- Rows to Skip at Top
     8760,                        !- Number of Hours of Data
@@ -3896,7 +3896,7 @@
   Schedule:File,
     MinOA_Sched,                    !- Name
     Fraction,              !- Schedule Type Limits Name
-    occupant4.csv,            !- File Name
+/home/zhiangz/Dropbox/cmu-extracourses/10703/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/occupant_base_v1.csv, !- File Name-env-v1
     3,                       !- Column Number
     7,                       !- Rows to Skip at Top
     8760,                        !- Number of Hours of Data

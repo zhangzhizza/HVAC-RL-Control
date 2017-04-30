@@ -26,6 +26,7 @@ class A3CEval_multiagent:
         self._pcd_state_limits = np.transpose(env_state_limits);
         self._e_weight = e_weight;
         self._p_weight = p_weight;
+        self._agent_num = agent_num;
         
 
     def evaluate(self, local_logger, reward_mode, action_space_name):
@@ -33,14 +34,14 @@ class A3CEval_multiagent:
         """
         action_space = ACTION_MAP[action_space_name];
         episode_counter = 1;
-        average_reward = np.zeros(agent_num);
+        average_reward = np.zeros(self._agent_num);
         # Reset the env
         time_this, ob_this_raw_all, is_terminal = self._env.reset();
         # Extract state for each agent
-        ob_this_raw_list = [self._get_agent_state(ob_this_raw_all, agent_id = agent_i) for agent_i in range(agent_num)];
+        ob_this_raw_list = [self._get_agent_state(ob_this_raw_all, agent_id = agent_i) for agent_i in range(self._agent_num)];
         # Get the history stacked state for each agent
         ob_this_hist_prcd_list = [];
-        for agent_i in range(agent_num):
+        for agent_i in range(self._agent_num):
             # Process and normalize the raw observation
             ob_this_raw_agent_i = ob_this_raw_list[agent_i];
             ob_this_prcd_agent_i = process_raw_state_cmbd(ob_this_raw_agent_i, [time_this], 
@@ -52,11 +53,11 @@ class A3CEval_multiagent:
             ob_this_hist_prcd_agent_i = histProcessor_i.process_state_for_network(ob_this_prcd_agent_i) # 2-D array
             ob_this_hist_prcd_list.append(ob_this_hist_prcd_agent_i);
         # Do the eval
-        this_ep_reward = np.zeros(agent_num);
+        this_ep_reward = np.zeros(self._agent_num);
         while episode_counter <= self._num_episodes:
             # Get the action
             action_list = [];
-            for agent_i in range(agent_num):
+            for agent_i in range(self._agent_num):
                 action_raw_idx_i = self._select_sto_action(ob_this_hist_prcd_list[agent_i]);
                 action_raw_tup_i = action_space[action_raw_idx_i];
                 cur_htStpt_i = ob_this_raw_list[agent_i][HTSP_RAW_IDX];
@@ -67,33 +68,33 @@ class A3CEval_multiagent:
             # Perform the action
             time_next, ob_next_raw_all, is_terminal = self._env.step(action_list);
             # Extract the state for each agent
-            ob_next_raw_list = [self._get_agent_state(ob_next_raw_all, agent_i = agent_i) for agent_i in range(agent_num)];
+            ob_next_raw_list = [self._get_agent_state(ob_next_raw_all, agent_id = agent_i) for agent_i in range(self._agent_num)];
             # Process the state and normalize it
             ob_next_prcd_list = [process_raw_state_cmbd(ob_next_raw_agent_i, [time_next], self._env_st_yr, self._env_st_mn, 
                                                         self._env_st_dy, self._env_st_wd, self._pcd_state_limits) \
                                 for ob_next_raw_agent_i in ob_next_raw_list];
             # Get the reward
-            reward_list = [];
-            for agent_i in range(agent_num):
+            reward_next_list = [];
+            for agent_i in range(self._agent_num):
                 ob_next_prcd_i = ob_next_prcd_list[agent_i];
                 normalized_hvac_energy_i = ob_next_prcd_i[HVACE_RAW_IDX + 2];
                 normalized_ppd_i = ob_next_prcd_i[ZPPD_RAW_IDX + 2];
                 occupancy_status = ob_next_prcd_i[ZPCT_RAW_IDX + 2];
                 reward_next_i = get_reward(normalized_hvac_energy_i, normalized_ppd_i, self._e_weight, self._p_weight, occupancy_status,
                                            reward_mode);
-                reward_list.append(reward_next_i);
-            this_ep_reward += reward_next;
+                reward_next_list.append(reward_next_i);
+            this_ep_reward += reward_next_list;
             # Get the history stacked state
             ob_next_hist_prcd_list = [self._histProcessor_list[agent_i].process_state_for_network(ob_next_prcd_list[agent_i])\
-                                      for agent_i in range(agent_num)] # 2-D array
+                                      for agent_i in range(self._agent_num)] # 2-D array
             # Check whether to start a new episode
             if is_terminal:
                 time_this, ob_this_raw_all, is_terminal = self._env.reset();
                 # Extract state for each agent
-                ob_this_raw_list = [self._get_agent_state(ob_this_raw_all, agent_id = agent_i) for agent_i in range(agent_num)];
+                ob_this_raw_list = [self._get_agent_state(ob_this_raw_all, agent_id = agent_i) for agent_i in range(self._agent_num)];
                 # Get the history stacked state for each agent
                 ob_this_hist_prcd_list = [];
-                for agent_i in range(agent_num):
+                for agent_i in range(self._agent_num):
                     # Process and normalize the raw observation
                     ob_this_raw_agent_i = ob_this_raw_list[agent_i];
                     ob_this_prcd_agent_i = process_raw_state_cmbd(ob_this_raw_agent_i, [time_this], 
@@ -104,11 +105,11 @@ class A3CEval_multiagent:
                     histProcessor_i.reset();
                     ob_this_hist_prcd_agent_i = histProcessor_i.process_state_for_network(ob_this_prcd_agent_i) # 2-D array
                     ob_this_hist_prcd_list.append(ob_this_hist_prcd_agent_i);
-                    # Update the average reward
-                    average_reward = (average_reward * (episode_counter - 1) + this_ep_reward) / episode_counter;
-                    local_logger.info('Evaluation: average reward by now is ' + str(average_reward));
-                    episode_counter += 1;
-                    this_ep_reward = np.zeros(agent_num);
+                # Update the average reward
+                average_reward = (average_reward * (episode_counter - 1) + this_ep_reward) / episode_counter;
+                local_logger.info('Evaluation: average reward by now is ' + str(average_reward));
+                episode_counter += 1;
+                this_ep_reward = np.zeros(self._agent_num);
                  
             else:
                 time_this = time_next;
