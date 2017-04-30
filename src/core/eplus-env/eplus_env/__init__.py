@@ -26,7 +26,7 @@ register(
             'forecast_step': 36,
             'env_name': 'Eplus-forecast-v0'});
 register(
-    id='Eplus-eval-multiagent-v1',
+    id='Eplus-small-office-v1',
     entry_point='eplus_env.envs:EplusEnv',
     kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-6-0/',
             'weather_path':FD + '/envs/pittsburgh.epw',
@@ -46,7 +46,7 @@ register(
             'env_name': 'Eplus-eval-v0'});
 
 register(
-    id='Eplus-small-office-v0',
+    id='Eplus-eval-multiagent-v0',
     entry_point='eplus_env.envs:EplusEnv',
     kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-6-0/',
             'weather_path':FD + '/envs/pennstate.epw',
