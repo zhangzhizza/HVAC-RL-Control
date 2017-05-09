@@ -2897,6 +2897,10 @@ SizingPeriod:DesignDay,
   Output:Variable,VAV SYS 1 OUTLET NODE,System Node Temperature, timestep;
   Output:Variable,SPACE1-1 IN NODE,System Node Mass Flow Rate, timestep;
   Output:Variable,VAV SYS 1 OUTLET NODE,System Node Mass Flow Rate, timestep;
+  Output:Variable,SPACE1-1 VAV Reheat,Zone Air Terminal Outdoor Air Volume Flow Rate, timestep;
+  Output:Variable,SPACE1-1 VAV Reheat,Zone Air Terminal VAV Damper Position, timestep;
+  Output:Variable,*, Air System Outdoor Air Mass Flow Rate, timestep;
+
 
   Output:VariableDictionary,Regular;
   Output:Surfaces:Drawing,dxf;
