@@ -37,6 +37,7 @@ class A3CEval_multiagent:
         average_reward = np.zeros(self._agent_num);
         # Reset the env
         time_this, ob_this_raw_all, is_terminal = self._env.reset();
+        print ((ob_this_raw_all))
         # Extract state for each agent
         ob_this_raw_list = [self._get_agent_state(ob_this_raw_all, agent_id = agent_i) for agent_i in range(self._agent_num)];
         # Get the history stacked state for each agent

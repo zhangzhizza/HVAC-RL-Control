@@ -15,7 +15,10 @@ building model has the following changes compared to the Eplus-v0 env:
 as the Eplus-eval-v0, i.e. stochastic occupancy/equipment, different weather file, etc. However, this environment outputs 
 the observations for all 4 perimeter zones, and takes the heating/cooling setpoint of the all 4 perimeter zones as the inputs. 
 Thus, the output order is [weather info (6 in total), zone 1 observations (8 in total), ... , zone 4 observations (8 in total), HVAC total energy consumption
- (1 in total)]. The input order is [heating and cooling setpoint for zone 1 (2 in total), ... , heating and cooling setpoint for zone 4 (2 in total)].   
+ (1 in total)]. The input order is [heating and cooling setpoint for zone 1 (2 in total), ... , heating and cooling setpoint for zone 4 (2 in total)].  
+
+ **2017-05-09**: Two new environment has been added, Eplus-v1 and Eplus-eval-v1. They the same as the Eplus-v0 and Eplus-eval-v0, except
+ the simulation time step is 5 min and running period is one whole year. Also, the clothing value and mean radiant temperature are deleted. 
 
 ###
 This environment wraps the EnergyPlus-v-8-6 into the OpenAI gym environment interface. 

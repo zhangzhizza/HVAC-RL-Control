@@ -68,9 +68,9 @@ def main():
     parser.add_argument(
         '-o', '--output', default='a3c-eval', help='Directory to save data to')
     parser.add_argument('--window_len', default=4, type=int);
-    parser.add_argument('--e_weight', default=0.5, type=float,
+    parser.add_argument('--e_weight', default=0.4, type=float,
                         help='Reward weight on HVAC energy consumption.');
-    parser.add_argument('--p_weight', default=0.5, type=float,
+    parser.add_argument('--p_weight', default=0.6, type=float,
                         help='Reward wegith on PPD.');
     parser.add_argument('--reward_mode', default='linear', type=str);
     parser.add_argument('--action_space', type=str);
@@ -78,7 +78,7 @@ def main():
     parser.add_argument('--model_dir', default='None');
     parser.add_argument('--test_env', default='Eplus-eval-v0', type=str);
     parser.add_argument('--test_mode', default='single', type=str);
-    parser.add_argument('--agent_num', default=4, type=int);
+    parser.add_argument('--agent_num', default=5, type=int);
     
     args = parser.parse_args();
     args.output = get_output_folder(args.output, args.test_env)

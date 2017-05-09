@@ -97,7 +97,8 @@ class EplusEnv(Env):
                                                    self._eplus_run_ed_mon,
                                                    self._eplus_run_ed_day);
         self._epi_num = 0;
-        self._min_max_limits = [(-16.7, 26.0),
+        if int(env_name[-1]) == 0:
+            self._min_max_limits = [(-16.7, 26.0),
                                 (  0.0, 100.0),
                                 (  0.0, 23.1),
                                 (  0.0, 360.0),
@@ -109,6 +110,20 @@ class EplusEnv(Env):
                                 ( 15.0, 30.0),
                                 (  0.0, 100.0),
                                 (  0.5, 1.0),
+                                (  0.0, 100.0),
+                                (  0.0, 1.0),
+                                (  0.0, 33000.0)];
+        elif int(env_name[-1]) == 1:
+            self._min_max_limits = [(-16.7, 26.0),
+                                (  0.0, 100.0),
+                                (  0.0, 23.1),
+                                (  0.0, 360.0),
+                                (  0.0, 389.0),
+                                (  0.0, 905.0),
+                                ( 15.0, 30.0),
+                                ( 15.0, 30.0),
+                                ( 15.0, 30.0),
+                                (  0.0, 100.0),
                                 (  0.0, 100.0),
                                 (  0.0, 1.0),
                                 (  0.0, 33000.0)];
@@ -191,7 +206,7 @@ class EplusEnv(Env):
         conn, addr = self._socket.accept()     # Establish connection with client.
         self.logger_main.info('Got connection from %s at port %d.'%(addr));
         # Start the first data exchange
-        rcv_1st = conn.recv(1024).decode();
+        rcv_1st = conn.recv(2048).decode();
         self.logger_main.debug('Got the first message successfully: ' + rcv_1st);
         version, flag, nDb, nIn, nBl, curSimTim, Dblist \
                                                 = self._disassembleMsg(rcv_1st);
@@ -257,7 +272,7 @@ class EplusEnv(Env):
         self._conn.send(tosend.encode());
         
         # Recieve from the EnergyPlus
-        rcv = self._conn.recv(1024).decode();
+        rcv = self._conn.recv(2048).decode();
         self.logger_main.debug('Got message successfully: ' + rcv);
         version, flag, nDb, nIn, nBl, curSimTim, Dblist \
                                         = self._disassembleMsg(rcv);

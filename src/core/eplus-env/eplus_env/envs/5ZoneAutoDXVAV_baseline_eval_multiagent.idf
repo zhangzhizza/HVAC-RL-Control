@@ -600,6 +600,18 @@ No,                      !- Interpolate to Timestep
 15;                      !- Minutes per Item
 
 Schedule:File,
+S5_Office_-_Private People Schedule,   !- Name
+Fraction,          !- Schedule Type Limits Name
+./stochastic_occup.csv,    !- File Name
+7,                       !- Column Number
+7,                       !- Rows to Skip at Top
+8760,                     !- Number of Hours of Data
+Comma,                   !- Column Separator
+No,                      !- Interpolate to Timestep
+15;                      !- Minutes per Item
+
+
+Schedule:File,
 S1_Office_-_Private Equip Schedule,   !- Name
 Fraction,          !- Schedule Type Limits Name
 ./stochastic_equip.csv,    !- File Name
@@ -637,6 +649,17 @@ S4_Office_-_Private Equip Schedule,   !- Name
 Fraction,          !- Schedule Type Limits Name
 ./stochastic_equip.csv,    !- File Name
 6,                       !- Column Number
+7,                       !- Rows to Skip at Top
+8760,                     !- Number of Hours of Data
+Comma,                   !- Column Separator
+No,                      !- Interpolate to Timestep
+15;                      !- Minutes per Item
+
+Schedule:File,
+S5_Office_-_Private Equip Schedule,   !- Name
+Fraction,          !- Schedule Type Limits Name
+./stochastic_equip.csv,    !- File Name
+7,                       !- Column Number
 7,                       !- Rows to Skip at Top
 8760,                     !- Number of Hours of Data
 Comma,                   !- Column Separator
@@ -1746,7 +1769,7 @@ No,                      !- Interpolate to Timestep
   People,
     SPACE5-1 People 1,       !- Name
     SPACE5-1,                !- Zone or ZoneList Name
-    OCCUPY-1,                !- Number of People Schedule Name
+    S5_Office_-_Private People Schedule,                !- Number of People Schedule Name
     people,                  !- Number of People Calculation Method
     20,                      !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
@@ -1783,7 +1806,7 @@ No,                      !- Interpolate to Timestep
   ElectricEquipment,
     SPACE5-1 ElecEq 1,       !- Name
     SPACE5-1,                !- Zone or ZoneList Name
-    EQUIP-1,                 !- Schedule Name
+    S5_Office_-_Private Equip Schedule,                 !- Schedule Name
     EquipmentLevel,          !- Design Level Calculation Method
     1976,                    !- Design Level {W}
     ,                        !- Watts per Zone Floor Area {W/m2}
@@ -2121,12 +2144,8 @@ No,                      !- Interpolate to Timestep
     Until: 18:00,23.9,       !- Field 11
     Until: 24:00,12.8,       !- Field 13
     For: WeekEnds Holiday,   !- Field 15
-    Until: 7:00,12.8,        !- Field 16
-    Until: 13:00,23.9,       !- Field 18
     Until: 24:00,12.8,       !- Field 20
     For: AllOtherDays,       !- Field 22
-    Until: 7:00,12.8,        !- Field 23
-    Until: 18:00,23.9,       !- Field 25
     Until: 24:00,12.8;       !- Field 27
 
   Schedule:Compact,
@@ -2162,20 +2181,16 @@ No,                      !- Interpolate to Timestep
     Temperature,             !- Schedule Type Limits Name
     Through: 12/31,          !- Field 1
     For: SummerDesignDay,    !- Field 2
-    Until: 24:00,23.9,       !- Field 3
+    Until: 24:00,26.0,       !- Field 3
     For: WinterDesignDay,    !- Field 5
     Until: 24:00,40,       !- Field 6
     For: WeekDays,           !- Field 8
     Until: 7:00,40.0,        !- Field 9
-    Until: 18:00,23.9,       !- Field 11
+    Until: 18:00,26.0,       !- Field 11
     Until: 24:00,40.0,       !- Field 13
     For: WeekEnds Holiday,   !- Field 15
-    Until: 7:00,40.0,        !- Field 16
-    Until: 13:00,23.9,       !- Field 18
-    Until: 24:00,32.2,       !- Field 20
+    Until: 24:00,40.0,       !- Field 20
     For: AllOtherDays,       !- Field 22
-    Until: 7:00,40.0,        !- Field 23
-    Until: 18:00,23.9,       !- Field 25
     Until: 24:00,40.0;       !- Field 27
 
   Schedule:Compact,
@@ -2479,7 +2494,7 @@ No,                      !- Interpolate to Timestep
     ThermostatSetpoint:SingleHeating,  !- Control 2 Object Type
     HeatingSetpoint,         !- Control 2 Name
     ThermostatSetpoint:DualSetpoint,  !- Control 3 Object Type
-    DualSetPoint;            !- Control 3 Name
+    DualSetPoint_SpaceAll;            !- Control 3 Name
 
   ThermostatSetpoint:SingleHeating,
     HeatingSetpoint,         !- Name
@@ -2982,14 +2997,25 @@ Supply Air Temp Nodes 1;  !- Setpoint Node or NodeList Name
   Output:Variable,*,Site Wind Direction, timestep;
   Output:Variable,*,Site Diffuse Solar Radiation Rate per Area,timestep;
   Output:Variable,*,Site Direct Solar Radiation Rate per Area,timestep;
+
+  Output:Variable,SPACE1-1,Zone People Occupant Count, timestep;
+  Output:Variable,SPACE1-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PPD,timestep;
+  Output:Variable,SPACE2-1,Zone People Occupant Count, timestep;
+  Output:Variable,SPACE2-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PPD,timestep;
+  Output:Variable,SPACE3-1,Zone People Occupant Count, timestep;
+  Output:Variable,SPACE3-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PPD,timestep;
+  Output:Variable,SPACE4-1,Zone People Occupant Count, timestep;
+  Output:Variable,SPACE4-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PPD,timestep;
+  Output:Variable,SPACE5-1,Zone People Occupant Count, timestep;
+  Output:Variable,SPACE5-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PPD,timestep;
+
   !- Building room 1 output
   Output:Variable,SPACE1-1,Zone Air Temperature,timestep;
   Output:Variable,SPACE1-1,Zone Air Relative Humidity,timestep;
   Output:Variable,SPACE1-1,Zone Thermostat Heating Setpoint Temperature,timestep;
   Output:Variable,SPACE1-1,Zone Thermostat Cooling Setpoint Temperature,timestep;
   Output:Variable,SPACE1-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PMV,timestep; 
-  Output:Variable,SPACE1-1,Zone People Occupant Count, timestep;
-  Output:Variable,SPACE1-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PPD,timestep;
+
   Output:Variable,SPACE1-1 PEOPLE 1,Zone Thermal Comfort Clothing Value,timestep;
   Output:Variable,SPACE1-1 PEOPLE 1,Zone Thermal Comfort Mean Radiant Temperature,timestep;
   !- Building room 2 output
@@ -2998,8 +3024,7 @@ Supply Air Temp Nodes 1;  !- Setpoint Node or NodeList Name
   Output:Variable,SPACE2-1,Zone Thermostat Heating Setpoint Temperature,timestep;
   Output:Variable,SPACE2-1,Zone Thermostat Cooling Setpoint Temperature,timestep;
   Output:Variable,SPACE2-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PMV,timestep; 
-  Output:Variable,SPACE2-1,Zone People Occupant Count, timestep;
-  Output:Variable,SPACE2-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PPD,timestep;
+
   Output:Variable,SPACE2-1 PEOPLE 1,Zone Thermal Comfort Clothing Value,timestep;
   Output:Variable,SPACE2-1 PEOPLE 1,Zone Thermal Comfort Mean Radiant Temperature,timestep;
   !- Building room 3 output
@@ -3008,8 +3033,7 @@ Supply Air Temp Nodes 1;  !- Setpoint Node or NodeList Name
   Output:Variable,SPACE3-1,Zone Thermostat Heating Setpoint Temperature,timestep;
   Output:Variable,SPACE3-1,Zone Thermostat Cooling Setpoint Temperature,timestep;
   Output:Variable,SPACE3-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PMV,timestep; 
-  Output:Variable,SPACE3-1,Zone People Occupant Count, timestep;
-  Output:Variable,SPACE3-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PPD,timestep;
+
   Output:Variable,SPACE3-1 PEOPLE 1,Zone Thermal Comfort Clothing Value,timestep;
   Output:Variable,SPACE3-1 PEOPLE 1,Zone Thermal Comfort Mean Radiant Temperature,timestep;
   !- Building room 4 output
@@ -3018,10 +3042,18 @@ Supply Air Temp Nodes 1;  !- Setpoint Node or NodeList Name
   Output:Variable,SPACE4-1,Zone Thermostat Heating Setpoint Temperature,timestep;
   Output:Variable,SPACE4-1,Zone Thermostat Cooling Setpoint Temperature,timestep;
   Output:Variable,SPACE4-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PMV,timestep; 
-  Output:Variable,SPACE4-1,Zone People Occupant Count, timestep;
-  Output:Variable,SPACE4-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PPD,timestep;
+
   Output:Variable,SPACE4-1 PEOPLE 1,Zone Thermal Comfort Clothing Value,timestep;
   Output:Variable,SPACE4-1 PEOPLE 1,Zone Thermal Comfort Mean Radiant Temperature,timestep;
+    !- Building room 5 output
+  Output:Variable,SPACE5-1,Zone Air Temperature,timestep;
+  Output:Variable,SPACE5-1,Zone Air Relative Humidity,timestep;
+  Output:Variable,SPACE5-1,Zone Thermostat Heating Setpoint Temperature,timestep;
+  Output:Variable,SPACE5-1,Zone Thermostat Cooling Setpoint Temperature,timestep;
+  Output:Variable,SPACE5-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PMV,timestep; 
+
+  Output:Variable,SPACE5-1 PEOPLE 1,Zone Thermal Comfort Clothing Value,timestep;
+  Output:Variable,SPACE5-1 PEOPLE 1,Zone Thermal Comfort Mean Radiant Temperature,timestep;
   !- Building HVAC output
   Output:Variable,*,Facility Total HVAC Electric Demand Power,timestep;
   
