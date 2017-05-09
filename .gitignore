@@ -4,7 +4,7 @@ src/*Eplus-env-run*
 src/*Eplus-env*run*
 src/core/eplus-env/eplus_env/envs/EnergyPlus-8-6-0
 src/core/eplus-env/eplus_env/envs/*output*
-src/*-res
+src/*-res*
 midway/
 proposal/
 src/*res
