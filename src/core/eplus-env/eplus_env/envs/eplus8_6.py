@@ -206,7 +206,7 @@ class EplusEnv(Env):
         conn, addr = self._socket.accept()     # Establish connection with client.
         self.logger_main.info('Got connection from %s at port %d.'%(addr));
         # Start the first data exchange
-        rcv_1st = conn.recv(2048).decode();
+        rcv_1st = conn.recv(2048).decode(encoding = 'ISO-8859-1');
         self.logger_main.debug('Got the first message successfully: ' + rcv_1st);
         version, flag, nDb, nIn, nBl, curSimTim, Dblist \
                                                 = self._disassembleMsg(rcv_1st);
@@ -272,7 +272,7 @@ class EplusEnv(Env):
         self._conn.send(tosend.encode());
         
         # Recieve from the EnergyPlus
-        rcv = self._conn.recv(2048).decode();
+        rcv = self._conn.recv(2048).decode(encoding = 'ISO-8859-1');
         self.logger_main.debug('Got message successfully: ' + rcv);
         version, flag, nDb, nIn, nBl, curSimTim, Dblist \
                                         = self._disassembleMsg(rcv);
@@ -403,7 +403,7 @@ class EplusEnv(Env):
                                    [24 for i in range(ACTION_SIZE)]);
         self._conn.send(tosend.encode());
         # Recieve the final msg from Eplus
-        rcv = self._conn.recv(1024).decode();
+        rcv = self._conn.recv(2048).decode(encoding = 'ISO-8859-1');
         self._conn.send(tosend.encode()); # Send again, don't know why
         
         time.sleep(2) # Rest for a while so EnergyPlus finish post processing
