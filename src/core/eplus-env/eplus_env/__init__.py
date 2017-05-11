@@ -67,7 +67,7 @@ register(
             'env_name': 'Eplus-eval-v1'});
 
 register(
-    id='Eplus-eval-v1',
+    id='Eplus-eval-v2',
     entry_point='eplus_env.envs:EplusEnv',
     kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-6-0/',
             'weather_path':FD + '/envs/weather/pennstate.epw',
