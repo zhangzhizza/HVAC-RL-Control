@@ -2496,7 +2496,7 @@ SizingPeriod:DesignDay,
     ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     AutoCalculate,           !- Maximum Flow Fraction During Reheat
     ,                        !- Maximum Reheat Air Temperature {C}
-    ZoneMinOARequirements;   !- Design Specification Outdoor Air Object Name
+    ;   !- Design Specification Outdoor Air Object Name
 
 ! Outdoor air specification should be consistent with Sizing:Zone object inputs.
 
@@ -2542,7 +2542,7 @@ SizingPeriod:DesignDay,
     ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     ,                        !- Maximum Flow Fraction During Reheat
     ,                        !- Maximum Reheat Air Temperature {C}
-    ZoneMinOARequirements;   !- Design Specification Outdoor Air Object Name
+    ;   !- Design Specification Outdoor Air Object Name
 
   AirTerminal:SingleDuct:VAV:Reheat,
     SPACE3-1 VAV Reheat,     !- Name
@@ -2564,7 +2564,7 @@ SizingPeriod:DesignDay,
     ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     ,                        !- Maximum Flow Fraction During Reheat
     ,                        !- Maximum Reheat Air Temperature {C}
-    ZoneMinOARequirements;   !- Design Specification Outdoor Air Object Name
+    ;   !- Design Specification Outdoor Air Object Name
 
   AirTerminal:SingleDuct:VAV:Reheat,
     SPACE4-1 VAV Reheat,     !- Name
@@ -2586,7 +2586,7 @@ SizingPeriod:DesignDay,
     ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     ,                        !- Maximum Flow Fraction During Reheat
     ,                        !- Maximum Reheat Air Temperature {C}
-    ZoneMinOARequirements;   !- Design Specification Outdoor Air Object Name
+    ;   !- Design Specification Outdoor Air Object Name
 
   AirTerminal:SingleDuct:VAV:Reheat,
     SPACE5-1 VAV Reheat,     !- Name
@@ -2608,7 +2608,7 @@ SizingPeriod:DesignDay,
     ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     ,                        !- Maximum Flow Fraction During Reheat
     ,                        !- Maximum Reheat Air Temperature {C}
-    ZoneMinOARequirements;   !- Design Specification Outdoor Air Object Name
+    ;   !- Design Specification Outdoor Air Object Name
 
   Coil:Heating:Electric,
     SPACE1-1 Zone Coil,      !- Name

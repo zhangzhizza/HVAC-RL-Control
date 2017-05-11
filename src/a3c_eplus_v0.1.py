@@ -90,6 +90,9 @@ def main():
                         help='Reward weight on HVAC energy consumption.');
     parser.add_argument('--p_weight', default=0.5, type=float,
                         help='Reward wegith on PPD.');
+    parser.add_argument('--ppd_penalty_limit', default=0.15, type=float,
+                        help='Larger than ppd_penalty_limit PPD will be changed '
+                             'to the max PPD. Should be 0~1.')
     parser.add_argument('--reward_mode', default='linear', type=str);
     parser.add_argument('--action_space', default='default', type=str);
     parser.add_argument('--save_freq', default=50000, type=int);
@@ -145,11 +148,12 @@ def main():
                       global_summary_writer, global_saver, [args.env, args.test_env], args.train_freq,
                       args.gamma, args.e_weight, args.p_weight, args.save_freq, 
                       args.max_interactions,
-                      args.eval_epi_num, args.eval_freq, args.reward_mode);
+                      args.eval_epi_num, args.eval_freq, args.reward_mode,
+                      args.ppd_penalty_limit);
     if args.job_mode.lower() == 'test':
         main_logger.info ('Start the testing...')
         a3c_agent.test(sess, global_network, args.test_env, args.eval_epi_num, args.e_weight, 
-                       args.p_weight, args.reward_mode);
+                       args.p_weight, args.reward_mode, args.ppd_penalty_limit);
         
 
 if __name__ == '__main__':

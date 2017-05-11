@@ -242,7 +242,7 @@ def get_legal_action(htStpt, clStpt, action_raw, stptLmt):
                 (res_htStpt - htStpt, res_clStpt - clStpt)); 
     
 def get_reward(normalized_hvac_energy, normalized_ppd, e_weight, p_weight,
-               occupancy_status, mode):
+               occupancy_status, mode, ppd_penalty_limit):
     """
     Get the reward from hvac energy and pmv. If occupancy status is 0 (not 
     occupied), then the PPD will be 0.0; else, PPD is the original normalized
@@ -266,6 +266,9 @@ def get_reward(normalized_hvac_energy, normalized_ppd, e_weight, p_weight,
         effect_normalized_ppd = 0.0;
     else:
         effect_normalized_ppd = normalized_ppd;
+    # Penalize on larger than ppd_penalty_limit PPD
+    if effect_normalized_ppd > ppd_penalty_limit:
+        effect_normalized_ppd = 1.0;
     if mode == 'l2':
         ret = - LA.norm(np.array([effect_normalized_ppd, normalized_hvac_energy]));
     if mode == 'linear':
