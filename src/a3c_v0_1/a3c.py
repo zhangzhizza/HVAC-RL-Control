@@ -149,7 +149,8 @@ class A3CThread:
     def train(self, sess, t_max, env_name, coordinator, global_counter, global_lock, 
               gamma, e_weight, p_weight, save_freq, log_dir, global_saver, 
               global_summary_writer, T_max, global_agent_eval_list, eval_freq, 
-              global_res_list, reward_mode, action_space_name, dropout_prob):
+              global_res_list, reward_mode, action_space_name, dropout_prob,
+              ppd_penalty_limit):
         """
         The function that the thread worker works to train the networks.
         
@@ -190,6 +191,8 @@ class A3CThread:
                 A shared A3C evaluation object list. 
             eval_freq: int 
                 The evaluation frequency regarding the global training step.
+            ppd_penalty_limit: float
+                Larger than ppd_penalty_limit PPD will be changed to 1.0.
                 
         """
         action_space = ACTION_MAP[action_space_name];
@@ -261,7 +264,8 @@ class A3CThread:
                 occupancy_status = ob_next_prcd[ZPCT_RAW_IDX + 2];
                 reward_next = get_reward(normalized_hvac_energy, normalized_ppd, 
                                          e_weight, p_weight, occupancy_status,
-                                         mode = reward_mode);
+                                         mode = reward_mode, 
+                                         ppd_penalty_limit = ppd_penalty_limit);
                 self._local_logger.debug('Environment debug: raw action idx is %d, '
                                          'current heating setpoint is %0.04f, '
                                          'current cooling setpoint is %0.04f, '
@@ -290,7 +294,8 @@ class A3CThread:
                         global_res_list.append([global_counter.value]);
                         for global_agent_eval in global_agent_eval_list:
                             eval_res = global_agent_eval.evaluate(self._local_logger, 
-                                                              reward_mode, action_space_name);
+                                                              reward_mode, action_space_name,
+                                                              ppd_penalty_limit);
                             global_res_list[-1].extend([eval_res[0],eval_res[1]]);
                         np.savetxt(log_dir + '/eval_res_hist.csv', 
                                    np.array(global_res_list), delimiter = ',');
@@ -505,7 +510,7 @@ class A3CAgent:
                 saver);
 
     def test(self, sess, global_network, env_test_name, num_episodes, e_weight, p_weight, 
-                reward_mode, test_mode, agent_num):
+                reward_mode, test_mode, agent_num, ppd_penalty_limit):
         env_test = gym.make(env_test_name);
         if test_mode == 'single':
         	a3c_eval = A3CEval(sess, global_network, env_test, num_episodes, self._window_len, e_weight, p_weight);
@@ -515,13 +520,13 @@ class A3CAgent:
         	eval_logger = Logger().getLogger('A3C_Test_Multiple-%s'%(threading.current_thread().getName()),LOG_LEVEL, LOG_FMT);
         
         eval_logger.info("Testing...")
-        eval_res = a3c_eval.evaluate(eval_logger, reward_mode, self._action_space_name);
+        eval_res = a3c_eval.evaluate(eval_logger, reward_mode, self._action_space_name, ppd_penalty_limit);
         eval_logger.info("Testing finished.")
 
     def fit(self, sess, coordinator, global_network, workers, 
             global_summary_writer, global_saver, env_name_list, t_max, gamma, 
             e_weight, p_weight, save_freq, T_max, eval_epi_num,
-            eval_freq, reward_mode):
+            eval_freq, reward_mode, ppd_penalty_limit):
         """
         """
         threads = [];
@@ -548,7 +553,7 @@ class A3CAgent:
                                                 global_agent_eval_list, eval_freq,
                                                 global_res_list,
                                                 reward_mode, self._action_space_name, 
-                                                self._dropout_prob);
+                                                self._dropout_prob, ppd_penalty_limit);
             thread = threading.Thread(target = (worker_train));
             thread.start();
             time.sleep(1); # Wait for a while for the env to setup

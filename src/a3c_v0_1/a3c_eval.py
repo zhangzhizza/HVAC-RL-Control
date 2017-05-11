@@ -29,7 +29,7 @@ class A3CEval_multiagent:
         self._agent_num = agent_num;
         
 
-    def evaluate(self, local_logger, reward_mode, action_space_name):
+    def evaluate(self, local_logger, reward_mode, action_space_name, ppd_penalty_limit):
         """
         """
         action_space = ACTION_MAP[action_space_name];
@@ -82,7 +82,7 @@ class A3CEval_multiagent:
                 normalized_ppd_i = ob_next_prcd_i[ZPPD_RAW_IDX + 2];
                 occupancy_status = ob_next_prcd_i[ZPCT_RAW_IDX + 2];
                 reward_next_i = get_reward(normalized_hvac_energy_i, normalized_ppd_i, self._e_weight, self._p_weight, occupancy_status,
-                                           reward_mode);
+                                           reward_mode, ppd_penalty_limit);
                 reward_next_list.append(reward_next_i);
             this_ep_reward += reward_next_list;
             # Get the history stacked state
@@ -175,7 +175,7 @@ class A3CEval:
         self._p_weight = p_weight;
         
 
-    def evaluate(self, local_logger, reward_mode, action_space_name):
+    def evaluate(self, local_logger, reward_mode, action_space_name, ppd_penalty_limit):
         """
         """
         action_space = ACTION_MAP[action_space_name];
@@ -220,7 +220,8 @@ class A3CEval:
             occupancy_status = ob_next_prcd[ZPCT_RAW_IDX + 2];
             reward_next = get_reward(normalized_hvac_energy, normalized_ppd, 
                                     self._e_weight, self._p_weight, 
-                                    occupancy_status, reward_mode);
+                                    occupancy_status, reward_mode, 
+                                    ppd_penalty_limit);
             this_ep_reward += reward_next;
             this_ep_max_ppd = max(normalized_ppd if occupancy_status > 0 else 0,
                                   this_ep_max_ppd);
