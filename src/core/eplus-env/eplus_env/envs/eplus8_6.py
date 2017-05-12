@@ -52,7 +52,6 @@ class EplusEnv(Env):
                  variable_path, idf_path,
                  incl_forecast = False, forecast_step = 36, env_name = ''):
         self._thread_name = threading.current_thread().getName();
-        print (threading.current_thread());
         self.logger_main = Logger().getLogger('EPLUS_ENV_ROOT-%s'%self._thread_name, 
                                             LOG_LEVEL_MAIN, LOG_FMT);
         
@@ -60,14 +59,14 @@ class EplusEnv(Env):
         os.environ['BCVTB_HOME'] = bcvtb_path;
         
         # Create a socket for communication with the EnergyPlus
-        self.logger_main.info('Creating socket for communication...')
+        self.logger_main.debug('Creating socket for communication...')
         s = socket.socket()
         host = socket.gethostname() # Get local machine name
         s.bind((host, 0))           # Bind to the host and any available port
         sockname = s.getsockname();
         port = sockname[1];         # Get the port number
         s.listen(60)                # Listen on request
-        self.logger_main.info('Socket is listening on host %s port %d'%(sockname));
+        self.logger_main.debug('Socket is listening on host %s port %d'%(sockname));
   
         self._env_working_dir_parent = self._get_eplus_working_folder(CWD, '-%s-run'%(env_name));
         os.makedirs(self._env_working_dir_parent);
@@ -204,7 +203,7 @@ class EplusEnv(Env):
             
         # Establish connection with EnergyPlus
         conn, addr = self._socket.accept()     # Establish connection with client.
-        self.logger_main.info('Got connection from %s at port %d.'%(addr));
+        self.logger_main.debug('Got connection from %s at port %d.'%(addr));
         # Start the first data exchange
         rcv_1st = conn.recv(2048).decode(encoding = 'ISO-8859-1');
         self.logger_main.debug('Got the first message successfully: ' + rcv_1st);

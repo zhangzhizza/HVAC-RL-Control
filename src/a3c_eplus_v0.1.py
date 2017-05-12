@@ -153,7 +153,7 @@ def main():
     if args.job_mode.lower() == 'test':
         main_logger.info ('Start the testing...')
         a3c_agent.test(sess, global_network, args.test_env, args.eval_epi_num, args.e_weight, 
-                       args.p_weight, args.reward_mode, args.ppd_penalty_limit);
+                       args.p_weight, args.reward_mode, args.ppd_penalty_limit, args.output);
         
 
 if __name__ == '__main__':

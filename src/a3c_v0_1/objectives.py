@@ -30,6 +30,7 @@ def a3c_loss(R, v_pred, pi, pi_one_hot, vloss_frac, ploss_frac, hregu_frac):
             The a3c loss. 
     
     """
+    pi = pi + 1e-10; # To avoid log zero
     with tf.name_scope('a3c_loss'):
         with tf.name_scope('value_mse_loss'):
             v_mse_loss = 0.5 * tf.reduce_sum(tf.square(R - v_pred));
