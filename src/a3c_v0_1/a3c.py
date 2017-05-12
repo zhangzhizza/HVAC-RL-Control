@@ -399,7 +399,7 @@ class A3CThread:
         softmax_a = softmax_a.flatten();
         self._local_logger.debug('Policy network output: %s, sum to %0.04f'
                                  %(str(softmax_a), sum(softmax_a)));
-        uni_rdm = np.random.uniform(1e-10); # Avoid select an action with too small probability
+        uni_rdm = np.random.uniform(1e-9); # Avoid select an action with too small probability
         imd_x = uni_rdm;
         for i in range(softmax_a.shape[-1]):
             imd_x -= softmax_a[i];
