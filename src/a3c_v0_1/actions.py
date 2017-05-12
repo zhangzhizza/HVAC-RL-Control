@@ -55,4 +55,10 @@ actions_htcl_cmd_exp3 = [( 1.0,  1.0),
                     (-0.5, -0.5),
                     (-0.5,  0.5),
                     ( 0.0,  0.0)];
-action_map = {'default': actions_htcl_cmd, 'exp1': actions_htcl_cmd_exp1, 'exp2':actions_htcl_cmd_exp2, 'exp3': actions_htcl_cmd_exp3}
+
+actions_htcl_cmd_exp4 = [( 0.5,  0.5),
+                    (-0.5, -0.5),
+                    (-0.5,  0.5),
+                    ( 0.0,  0.0)];
+
+action_map = {'default': actions_htcl_cmd, 'exp1': actions_htcl_cmd_exp1, 'exp2':actions_htcl_cmd_exp2, 'exp3': actions_htcl_cmd_exp3, 'exp4': actions_htcl_cmd_exp4}

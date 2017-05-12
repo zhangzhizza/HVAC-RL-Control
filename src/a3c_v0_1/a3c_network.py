@@ -33,7 +33,7 @@ class A3C_Network:
                                                      name='state_pl');
             self._keep_prob = tf.placeholder(tf.float32, name='keep_prob');
             # Build the operations that computes predictions from the nn model.
-            self._policy_pred, self._v_pred = \
+            self._policy_pred, self._v_pred, self._shared_layer= \
                 self._create_model(self._state_placeholder, self._keep_prob, action_size);
             
     @property
@@ -51,7 +51,11 @@ class A3C_Network:
     @property
     def value_pred(self):
         return self._v_pred;
-    
+
+    @property
+    def shared_layer(self):
+        return self._shared_layer;
+
     def _create_model(self, input_state, keep_prob, num_actions): 
         """
         Create the model for the policy network and value network.
@@ -83,4 +87,4 @@ class A3C_Network:
             policy = Dense(num_actions, activation = 'softmax')(layer);
         with tf.name_scope('value_network'):
             value = Dense(1)(layer);
-        return (policy, value);
+        return (policy, value, layer);

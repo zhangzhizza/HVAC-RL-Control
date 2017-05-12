@@ -82,6 +82,7 @@ class A3CThread:
         self._value_pred = self._a3c_network.value_pred;
         self._state_placeholder = self._a3c_network.state_placeholder;
         self._keep_prob = self._a3c_network.keep_prob;
+        self._shared_layer = self._a3c_network.shared_layer;
         
         with graph.as_default(), tf.name_scope(scope_name):
         
@@ -198,7 +199,7 @@ class A3CThread:
         action_space = ACTION_MAP[action_space_name];
         self._local_logger = Logger().getLogger('A3C_Worker-%s'
                                     %(threading.current_thread().getName()),
-                                              LOG_LEVEL, LOG_FMT);
+                                              LOG_LEVEL, LOG_FMT, log_dir + '/main.log');
         self._local_logger.info('Local worker starts!')
         t = 0;
         t_st = 0;
@@ -353,7 +354,7 @@ class A3CThread:
             self._local_logger.debug('Value prediction is %s, R is %s.'
                                      %(str(value_pred), str(q_true_list)));
             # Display and record the loss for this thread
-            if (t/t_max) % 100 == 0:
+            if (t/t_max) % 200 == 0:
                 self._local_logger.info ('Local step %d, global step %d: loss ' 
                                        '%0.04f'%(t, global_counter.value, loss_res));
                 # Update the events file.
@@ -392,17 +393,22 @@ class A3CThread:
         if uni_rdm_greedy < e_greedy:
             return np.random.choice(self._action_size);
         # On policy
-        softmax_a = sess.run(self._policy_pred, 
+        softmax_a, shared_layer = sess.run([self._policy_pred, self._shared_layer],
                              feed_dict={self._state_placeholder:state,
-                                        self._keep_prob: 1.0}).flatten();
+                                        self._keep_prob: 1.0})
+        softmax_a = softmax_a.flatten();
         self._local_logger.debug('Policy network output: %s, sum to %0.04f'
                                  %(str(softmax_a), sum(softmax_a)));
-        uni_rdm = np.random.uniform();
+        uni_rdm = np.random.uniform(1e-10); # Avoid select an action with too small probability
         imd_x = uni_rdm;
         for i in range(softmax_a.shape[-1]):
             imd_x -= softmax_a[i];
             if imd_x <= 0.0:
-                return i;
+                selected_act = i;
+                return selected_act;
+        # Debug
+        print ('state ', state);
+        print ('Softmax output debug ', softmax_a, 'shared_layer ', shared_layer);
     
 
 class A3CAgent:
@@ -510,14 +516,16 @@ class A3CAgent:
                 saver);
 
     def test(self, sess, global_network, env_test_name, num_episodes, e_weight, p_weight, 
-                reward_mode, test_mode, agent_num, ppd_penalty_limit):
+                reward_mode, test_mode, agent_num, ppd_penalty_limit, log_dir):
         env_test = gym.make(env_test_name);
         if test_mode == 'single':
         	a3c_eval = A3CEval(sess, global_network, env_test, num_episodes, self._window_len, e_weight, p_weight);
-        	eval_logger = Logger().getLogger('A3C_Test_Single-%s'%(threading.current_thread().getName()),LOG_LEVEL, LOG_FMT);
+        	eval_logger = Logger().getLogger('A3C_Test_Single-%s'%(threading.current_thread().getName()),
+                                                 LOG_LEVEL, LOG_FMT, log_dir + '/main.log');
         if test_mode == 'multiple':
         	a3c_eval = A3CEval_multiagent(sess, global_network, env_test, num_episodes, self._window_len, e_weight, p_weight, agent_num)
-        	eval_logger = Logger().getLogger('A3C_Test_Multiple-%s'%(threading.current_thread().getName()),LOG_LEVEL, LOG_FMT);
+        	eval_logger = Logger().getLogger('A3C_Test_Multiple-%s'%(threading.current_thread().getName()),
+                                                 LOG_LEVEL, LOG_FMT, log_dir + '/main.log');
         
         eval_logger.info("Testing...")
         eval_res = a3c_eval.evaluate(eval_logger, reward_mode, self._action_space_name, ppd_penalty_limit);
