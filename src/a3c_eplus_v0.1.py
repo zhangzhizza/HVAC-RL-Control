@@ -86,9 +86,9 @@ def main():
     parser.add_argument('--rmsprop_epsil', default=1e-10, type=float);
     parser.add_argument('--clip_norm', default=5.0, type=float);
     parser.add_argument('--train_freq', default=5, type=int);
-    parser.add_argument('--e_weight', default=0.5, type=float,
+    parser.add_argument('--e_weight', default=0.4, type=float,
                         help='Reward weight on HVAC energy consumption.');
-    parser.add_argument('--p_weight', default=0.5, type=float,
+    parser.add_argument('--p_weight', default=0.6, type=float,
                         help='Reward wegith on PPD.');
     parser.add_argument('--ppd_penalty_limit', default=0.15, type=float,
                         help='Larger than ppd_penalty_limit PPD will be changed '
