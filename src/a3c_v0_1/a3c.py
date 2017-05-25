@@ -244,7 +244,7 @@ class A3CThread:
                                          'is %s.'%(time_this, str(ob_this_hist_prcd)));
                 # Get the action
                 action_raw_idx = self._select_sto_action(ob_this_hist_prcd, sess,
-                                                         self._e_greedy);
+                                                         self._e_greedy, dropout_prob); # DROPOUT DEBUG
                 action_raw_tup = action_space[action_raw_idx];
                 cur_htStpt = ob_this_raw[HTSP_RAW_IDX];
                 cur_clStpt = ob_this_raw[CLSP_RAW_IDX];
@@ -332,7 +332,7 @@ class A3CThread:
             R = 0 if is_terminal else sess.run(
                             self._value_pred,
                             feed_dict = {self._state_placeholder:ob_this_hist_prcd,
-                                         self._keep_prob: 1.0})
+                                         self._keep_prob: 1.0 - dropout_prob}) # DROPOUT DEBUG
             traj_len = len(trajectory_list);
             act_idx_list = np.zeros(traj_len, dtype = np.uint8);
             q_true_list = np.zeros((traj_len, 1));
@@ -375,7 +375,7 @@ class A3CThread:
     def _update_e_greedy(self):
         self._e_greedy -= self._epsilon_decay_delta;
         
-    def _select_sto_action(self, state, sess, e_greedy):
+    def _select_sto_action(self, state, sess, e_greedy, dropout_prob):
         """
         Given a state, run stochastic policy network to give an action.
         
@@ -395,7 +395,7 @@ class A3CThread:
         # On policy
         softmax_a, shared_layer = sess.run([self._policy_pred, self._shared_layer],
                              feed_dict={self._state_placeholder:state,
-                                        self._keep_prob: 1.0})
+                                        self._keep_prob: 1.0 - dropout_prob}) # DROPOUT DEBUG
         softmax_a = softmax_a.flatten();
         self._local_logger.debug('Policy network output: %s, sum to %0.04f'
                                  %(str(softmax_a), sum(softmax_a)));
