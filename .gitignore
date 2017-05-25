@@ -10,6 +10,7 @@ proposal/
 src/*res
 src/a3c-eval/
 src/*-eval/
+src/*.ipynb_checkpoints*
 
 *.swp
 *.pyc
