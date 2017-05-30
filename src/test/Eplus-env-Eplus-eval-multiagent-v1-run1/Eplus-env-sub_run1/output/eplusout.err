@@ -1,0 +1,130 @@
+Program Version,EnergyPlus, Version 8.6.0-198c6a3cff, YMD=2017.05.29 12:34,IDD_Version 8.6.0
+   ************* IDF Context for following error/warning message:
+   ************* Note -- lines truncated at 300 characters, if necessary...
+   *************    569 Schedule:File,
+   ************* indicated Name=S1_Office_-_Private People Schedule
+   ************* Only last 3 lines before error line shown.....
+   *************    570 S1_Office_-_Private People Schedule,   !- Name
+   *************    571 Fraction,          !- Schedule Type Limits Name
+   *************    572 /home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v1.csv, !- File Name-eval_env
+   ** Warning ** IP: IDF line~572 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_OCCUP_V1.CSV
+   ************* IDF Context for following error/warning message:
+   ************* Note -- lines truncated at 300 characters, if necessary...
+   *************    580 Schedule:File,
+   ************* indicated Name=S2_Office_-_Private People Schedule
+   ************* Only last 3 lines before error line shown.....
+   *************    581 S2_Office_-_Private People Schedule,   !- Name
+   *************    582 Fraction,          !- Schedule Type Limits Name
+   *************    583 /home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v1.csv, !- File Name-eval_env
+   ** Warning ** IP: IDF line~583 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_OCCUP_V1.CSV
+   ************* IDF Context for following error/warning message:
+   ************* Note -- lines truncated at 300 characters, if necessary...
+   *************    591 Schedule:File,
+   ************* indicated Name=S3_Office_-_Private People Schedule
+   ************* Only last 3 lines before error line shown.....
+   *************    592 S3_Office_-_Private People Schedule,   !- Name
+   *************    593 Fraction,          !- Schedule Type Limits Name
+   *************    594 /home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v1.csv, !- File Name-eval_env
+   ** Warning ** IP: IDF line~594 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_OCCUP_V1.CSV
+   ************* IDF Context for following error/warning message:
+   ************* Note -- lines truncated at 300 characters, if necessary...
+   *************    602 Schedule:File,
+   ************* indicated Name=S4_Office_-_Private People Schedule
+   ************* Only last 3 lines before error line shown.....
+   *************    603 S4_Office_-_Private People Schedule,   !- Name
+   *************    604 Fraction,          !- Schedule Type Limits Name
+   *************    605 /home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v1.csv, !- File Name-eval_env
+   ** Warning ** IP: IDF line~605 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_OCCUP_V1.CSV
+   ************* IDF Context for following error/warning message:
+   ************* Note -- lines truncated at 300 characters, if necessary...
+   *************    613 Schedule:File,
+   ************* indicated Name=S5_Office_-_Private People Schedule
+   ************* Only last 3 lines before error line shown.....
+   *************    614 S5_Office_-_Private People Schedule,   !- Name
+   *************    615 Fraction,          !- Schedule Type Limits Name
+   *************    616 /home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v1.csv, !- File Name-eval_env
+   ** Warning ** IP: IDF line~616 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_OCCUP_V1.CSV
+   ************* IDF Context for following error/warning message:
+   ************* Note -- lines truncated at 300 characters, if necessary...
+   *************    624 Schedule:File,
+   ************* indicated Name=S1_Office_-_Private Equip Schedule
+   ************* Only last 3 lines before error line shown.....
+   *************    625 S1_Office_-_Private Equip Schedule,   !- Name
+   *************    626 Fraction,          !- Schedule Type Limits Name
+   *************    627 /home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v1.csv, !- File Name-eval_env
+   ** Warning ** IP: IDF line~627 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_EQUIP_V1.CSV
+   ************* IDF Context for following error/warning message:
+   ************* Note -- lines truncated at 300 characters, if necessary...
+   *************    635 Schedule:File,
+   ************* indicated Name=S2_Office_-_Private Equip Schedule
+   ************* Only last 3 lines before error line shown.....
+   *************    636 S2_Office_-_Private Equip Schedule,   !- Name
+   *************    637 Fraction,          !- Schedule Type Limits Name
+   *************    638 /home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v1.csv, !- File Name-eval_env
+   ** Warning ** IP: IDF line~638 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_EQUIP_V1.CSV
+   ************* IDF Context for following error/warning message:
+   ************* Note -- lines truncated at 300 characters, if necessary...
+   *************    646 Schedule:File,
+   ************* indicated Name=S3_Office_-_Private Equip Schedule
+   ************* Only last 3 lines before error line shown.....
+   *************    647 S3_Office_-_Private Equip Schedule,   !- Name
+   *************    648 Fraction,          !- Schedule Type Limits Name
+   *************    649 /home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v1.csv, !- File Name-eval_env
+   ** Warning ** IP: IDF line~649 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_EQUIP_V1.CSV
+   ************* IDF Context for following error/warning message:
+   ************* Note -- lines truncated at 300 characters, if necessary...
+   *************    657 Schedule:File,
+   ************* indicated Name=S4_Office_-_Private Equip Schedule
+   ************* Only last 3 lines before error line shown.....
+   *************    658 S4_Office_-_Private Equip Schedule,   !- Name
+   *************    659 Fraction,          !- Schedule Type Limits Name
+   *************    660 /home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v1.csv, !- File Name-eval_env
+   ** Warning ** IP: IDF line~660 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_EQUIP_V1.CSV
+   ************* IDF Context for following error/warning message:
+   ************* Note -- lines truncated at 300 characters, if necessary...
+   *************    668 Schedule:File,
+   ************* indicated Name=S5_Office_-_Private Equip Schedule
+   ************* Only last 3 lines before error line shown.....
+   *************    669 S5_Office_-_Private Equip Schedule,   !- Name
+   *************    670 Fraction,          !- Schedule Type Limits Name
+   *************    671 /home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v1.csv, !- File Name-eval_env
+   ** Warning ** IP: IDF line~671 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_EQUIP_V1.CSV
+   ************* Beginning Zone Sizing Calculations
+   ** Warning ** CheckUsedConstructions: There are 5 nominally unused constructions in input.
+   **   ~~~   ** For explicit details on each unused construction, use Output:Diagnostics,DisplayExtraWarnings;
+   ************* Beginning System Sizing Calculations
+   ************* Testing Individual Branch Integrity
+   ************* All Branches passed integrity testing
+   ************* Testing Individual Supply Air Path Integrity
+   ************* All Supply Air Paths passed integrity testing
+   ************* Testing Individual Return Air Path Integrity
+   ************* All Return Air Paths passed integrity testing
+   ************* No node connection errors were found.
+   ************* Beginning Simulation
+   ** Warning ** SimHVAC: Maximum iterations (20) exceeded for all HVAC loops, at State College  Penn State   Su PA USA TMY3 WMO#=725128, 01/02 02:20 - 02:25
+   **   ~~~   ** The solution for one or more of the Air Loop HVAC systems did not appear to converge
+   **   ~~~   ** ...use Output:Diagnostics,DisplayExtraWarnings; to show more details on each max iteration exceeded.
+   ************* Simulation Error Summary *************
+   ************* There are 5 unused schedules in input.
+   ************* Use Output:Diagnostics,DisplayUnusedSchedules; to see them.
+   *************
+   ************* ===== Final Error Summary =====
+   ************* The following error categories occurred.  Consider correcting or noting.
+   ************* Nominally Unused Constructions
+   ************* ..The nominally unused constructions warning is provided to alert you to potential conditions that can cause
+   ************* ..extra time during simulation. Each construction is calculated by the algorithm indicated in the HeatBalanceAlgorithm
+   ************* ..object. You may remove the constructions indicated (when you use the DisplayExtraWarnings option).
+   *************
+   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 1 Warning; 0 Severe Errors.
+   ************* EnergyPlus Completed Successfully-- 12 Warning; 0 Severe Errors; Elapsed Time=00hr 01min 40.80sec
