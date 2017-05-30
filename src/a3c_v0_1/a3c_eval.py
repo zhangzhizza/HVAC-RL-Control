@@ -37,7 +37,7 @@ class A3CEval_multiagent:
         average_reward = np.zeros(self._agent_num);
         # Reset the env
         time_this, ob_this_raw_all, is_terminal = self._env.reset();
-        print ((ob_this_raw_all))
+        #ob_this_raw_all[-1] = 0; #print
         # Extract state for each agent
         ob_this_raw_list = [self._get_agent_state(ob_this_raw_all, agent_id = agent_i) for agent_i in range(self._agent_num)];
         # Get the history stacked state for each agent
@@ -67,7 +67,12 @@ class A3CEval_multiagent:
                 action_stpt_prcd_i = list(action_stpt_prcd_i);
                 action_list.extend(action_stpt_prcd_i);
             # Perform the action
+            
+            if ob_this_hist_prcd_list[0][0][-14] < 0.3 or ob_this_hist_prcd_list[0][0][-14] > 0.9:
+                action_list = [15, 30, 15, 30, 15, 30, 15, 30, 15, 30];# print print print
+
             time_next, ob_next_raw_all, is_terminal = self._env.step(action_list);
+            #ob_next_raw_all[-1] = 0;# print
             # Extract the state for each agent
             ob_next_raw_list = [self._get_agent_state(ob_next_raw_all, agent_id = agent_i) for agent_i in range(self._agent_num)];
             # Process the state and normalize it

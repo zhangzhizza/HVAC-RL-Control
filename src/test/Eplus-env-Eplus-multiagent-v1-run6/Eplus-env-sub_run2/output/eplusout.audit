@@ -1,0 +1,34 @@
+  Processing Data Dictionary -- Complete
+  Maximum number of Alpha Args=        4500
+  Maximum number of Numeric Args=       21040
+  Number of Object Definitions=         768
+  Number of Section Definitions=           2
+  Total Number of Alpha Fields=       18770
+  Total Number of Numeric Fields=       40080
+  Total Number of Fields=       58850
+  Processing Input Data File -- Start
+  Echo of input lines is off. May be activated by setting the environmental variable DISPLAYINPUTINAUDIT=YES
+  Processing Input Data File -- Complete
+  Maximum number of Alpha IDF Args=          30
+  Maximum number of Numeric IDF Args=          26
+  Number of IDF "Lines"=         296
+  Number of Defaulted Fields=          52
+  Number of Fields with Defaults=         733
+  Number of Autosized Fields=          39
+  Number of Autosizable Fields =          53
+  Number of Autocalculated Fields=           5
+  Number of Autocalculatable Fields =         111
+ Getting object=VERSION
+ Getting object=HEATBALANCEALGORITHM
+ Getting object=TIMESTEP
+ Getting object=SIMULATIONCONTROL
+ Getting object=OUTPUT:SURFACES:DRAWING
+ Getting object=OUTPUT:VARIABLEDICTIONARY
+ Getting object=BRANCH
+ Getting object=CURVE:BIQUADRATIC
+ Getting object=CURVE:CUBIC
+ Getting object=CURVE:QUADRATIC
+ Getting object=NODELIST
+ Getting object=BRANCHLIST
+ Getting object=DESIGNSPECIFICATION:OUTDOORAIR
+ Getting object=SCHEDULE:COMPACT

@@ -86,6 +86,26 @@ register(
             'idf_path':FD + '/envs/idf/envs/v0/learning/5ZoneAutoDXVAV_eval_multiagent.idf',
             'env_name': 'Eplus-eval-multiagent-v0'});
 
+register(
+    id='Eplus-eval-multiagent-v1',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-6-0/',
+            'weather_path':FD + '/envs/weather/pennstate.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/idf/cfg/variables_multiagent_v1.cfg',
+            'idf_path':FD + '/envs/idf/envs/v1/learning/5ZoneAutoDXVAV_multiagent_eval_v1.idf',
+            'env_name': 'Eplus-eval-multiagent-v1'});
+
+register(
+    id='Eplus-multiagent-v1',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-6-0/',
+            'weather_path':FD + '/envs/weather/pittsburgh.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/idf/cfg/variables_multiagent_v1.cfg',
+            'idf_path':FD + '/envs/idf/envs/v1/learning/5ZoneAutoDXVAV_multiagent_v1.idf',
+            'env_name': 'Eplus-multiagent-v1'});
+
 def setSchedulePath(sch_path_dict, tgtIDFPath):
     """
     Set the abosolute path for the Schedule:File.
@@ -140,6 +160,21 @@ sch_path_dict = {'S1_Office_-_Private People Schedule': FD + '/envs/idf/schedule
                  'S4_Office_-_Private Equip Schedule': FD + '/envs/idf/schedules/stochastic_equip_v1.csv',
                  'S5_Office_-_Private Equip Schedule': FD + '/envs/idf/schedules/stochastic_equip_v1.csv'};
 setSchedulePath(sch_path_dict, FD + '/envs/idf/envs/v1/learning/5ZoneAutoDXVAV_eval_v1.idf');
+
+# Replace some schedule file path in 5ZoneAutoDXVAV_multiagent_eval_v1.idf with the 
+# absolute path
+sch_path_dict = {'S1_Office_-_Private People Schedule': FD + '/envs/idf/schedules/stochastic_occup_v1.csv',
+                 'S2_Office_-_Private People Schedule': FD + '/envs/idf/schedules/stochastic_occup_v1.csv',
+                 'S3_Office_-_Private People Schedule': FD + '/envs/idf/schedules/stochastic_occup_v1.csv',
+                 'S4_Office_-_Private People Schedule': FD + '/envs/idf/schedules/stochastic_occup_v1.csv',
+                 'S5_Office_-_Private People Schedule': FD + '/envs/idf/schedules/stochastic_occup_v1.csv',
+                 'S1_Office_-_Private Equip Schedule': FD + '/envs/idf/schedules/stochastic_equip_v1.csv',
+                 'S2_Office_-_Private Equip Schedule': FD + '/envs/idf/schedules/stochastic_equip_v1.csv',
+                 'S3_Office_-_Private Equip Schedule': FD + '/envs/idf/schedules/stochastic_equip_v1.csv',
+                 'S4_Office_-_Private Equip Schedule': FD + '/envs/idf/schedules/stochastic_equip_v1.csv',
+                 'S5_Office_-_Private Equip Schedule': FD + '/envs/idf/schedules/stochastic_equip_v1.csv'};
+setSchedulePath(sch_path_dict, FD + '/envs/idf/envs/v1/learning/5ZoneAutoDXVAV_multiagent_eval_v1.idf');
+
 
 # Replace some schedule file path in 5ZoneAutoDXVAV_eval_v2.idf with the 
 # absolute path

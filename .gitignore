@@ -11,6 +11,9 @@ src/*res
 src/a3c-eval/
 src/*-eval/
 src/*.ipynb_checkpoints*
+src/post_process/*.ipynb_checkpoints*
+src/*case*
+src/core/eplus-env/eplus_env/envs/v1-*
 
 *.swp
 *.pyc

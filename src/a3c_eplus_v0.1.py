@@ -111,6 +111,8 @@ def main():
     parser.add_argument('--job_mode', default='Train', type=str,
                         help='The job mode, choice of Train or Test. Default is Train.');
     parser.add_argument('--test_env', default='Eplus-eval-v1', type=str);
+    parser.add_argument('--test_mode', default='Multiple', type=str);
+    parser.add_argument('--agent_num', default=5, type=int);
     
     args = parser.parse_args();
     args.output = get_output_folder(args.output, args.env)
@@ -153,7 +155,8 @@ def main():
     if args.job_mode.lower() == 'test':
         main_logger.info ('Start the testing...')
         a3c_agent.test(sess, global_network, args.test_env, args.eval_epi_num, args.e_weight, 
-                       args.p_weight, args.reward_mode, args.ppd_penalty_limit, args.output);
+                       args.p_weight, args.reward_mode, args.test_mode.lower(), args.agent_num, 
+                       args.ppd_penalty_limit, args.output);
         
 
 if __name__ == '__main__':

@@ -1,0 +1,57 @@
+  Processing Data Dictionary -- Complete
+  Maximum number of Alpha Args=        4500
+  Maximum number of Numeric Args=       21040
+  Number of Object Definitions=         768
+  Number of Section Definitions=           2
+  Total Number of Alpha Fields=       18770
+  Total Number of Numeric Fields=       40080
+  Total Number of Fields=       58850
+  Processing Input Data File -- Start
+  Echo of input lines is off. May be activated by setting the environmental variable DISPLAYINPUTINAUDIT=YES
+   ** Warning ** IP: IDF line~572 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_OCCUP_V1.CSV
+   ** Warning ** IP: IDF line~583 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_OCCUP_V1.CSV
+   ** Warning ** IP: IDF line~594 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_OCCUP_V1.CSV
+   ** Warning ** IP: IDF line~605 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_OCCUP_V1.CSV
+   ** Warning ** IP: IDF line~616 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_OCCUP_V1.CSV
+   ** Warning ** IP: IDF line~627 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_EQUIP_V1.CSV
+   ** Warning ** IP: IDF line~638 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_EQUIP_V1.CSV
+   ** Warning ** IP: IDF line~649 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_EQUIP_V1.CSV
+   ** Warning ** IP: IDF line~660 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_EQUIP_V1.CSV
+   ** Warning ** IP: IDF line~671 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v1.cs
+   **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/CORE/EPLUS-ENV/EPLUS_ENV/ENVS/IDF/SCHEDULES/STOCHASTIC_EQUIP_V1.CSV
+  Processing Input Data File -- Complete
+  Maximum number of Alpha IDF Args=          29
+  Maximum number of Numeric IDF Args=          26
+  Number of IDF "Lines"=         316
+  Number of Defaulted Fields=          52
+  Number of Fields with Defaults=         780
+  Number of Autosized Fields=          39
+  Number of Autosizable Fields =          53
+  Number of Autocalculated Fields=           5
+  Number of Autocalculatable Fields =         111
+ Getting object=VERSION
+ Getting object=HEATBALANCEALGORITHM
+ Getting object=TIMESTEP
+ Getting object=SIMULATIONCONTROL
+ Getting object=OUTPUT:SURFACES:DRAWING
+ Getting object=OUTPUT:VARIABLEDICTIONARY
+ Getting object=BRANCH
+ Getting object=CURVE:BIQUADRATIC
+ Getting object=CURVE:CUBIC
+ Getting object=CURVE:QUADRATIC
+ Getting object=NODELIST
+ Getting object=BRANCHLIST
+ Getting object=DESIGNSPECIFICATION:OUTDOORAIR
+ Getting object=SCHEDULE:COMPACT
+  Processing Schedule Input -- Start
+ Getting object=SCHEDULETYPELIMITS
+ Getting object=SCHEDULE:FILE

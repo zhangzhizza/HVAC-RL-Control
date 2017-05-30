@@ -569,7 +569,7 @@ SizingPeriod:DesignDay,
 Schedule:File,
 S1_Office_-_Private People Schedule,   !- Name
 Fraction,          !- Schedule Type Limits Name
-/home/zhiangz/Dropbox/cmu-extracourses/10703/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v2.csv, !- File Name-eval_env
+/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v2.csv, !- File Name-eval_env
 3,                       !- Column Number
 7,                       !- Rows to Skip at Top
 8760,                     !- Number of Hours of Data
@@ -580,7 +580,7 @@ No,                      !- Interpolate to Timestep
 Schedule:File,
 S2_Office_-_Private People Schedule,   !- Name
 Fraction,          !- Schedule Type Limits Name
-/home/zhiangz/Dropbox/cmu-extracourses/10703/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v2.csv, !- File Name-eval_env
+/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v2.csv, !- File Name-eval_env
 4,                       !- Column Number
 7,                       !- Rows to Skip at Top
 8760,                     !- Number of Hours of Data
@@ -591,7 +591,7 @@ No,                      !- Interpolate to Timestep
 Schedule:File,
 S3_Office_-_Private People Schedule,   !- Name
 Fraction,          !- Schedule Type Limits Name
-/home/zhiangz/Dropbox/cmu-extracourses/10703/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v2.csv, !- File Name-eval_env
+/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v2.csv, !- File Name-eval_env
 5,                       !- Column Number
 7,                       !- Rows to Skip at Top
 8760,                     !- Number of Hours of Data
@@ -602,7 +602,7 @@ No,                      !- Interpolate to Timestep
 Schedule:File,
 S4_Office_-_Private People Schedule,   !- Name
 Fraction,          !- Schedule Type Limits Name
-/home/zhiangz/Dropbox/cmu-extracourses/10703/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v2.csv, !- File Name-eval_env
+/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v2.csv, !- File Name-eval_env
 6,                       !- Column Number
 7,                       !- Rows to Skip at Top
 8760,                     !- Number of Hours of Data
@@ -613,7 +613,7 @@ No,                      !- Interpolate to Timestep
 Schedule:File,
 S5_Office_-_Private People Schedule,   !- Name
 Fraction,          !- Schedule Type Limits Name
-/home/zhiangz/Dropbox/cmu-extracourses/10703/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v2.csv, !- File Name-eval_env
+/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_occup_v2.csv, !- File Name-eval_env
 7,                       !- Column Number
 7,                       !- Rows to Skip at Top
 8760,                     !- Number of Hours of Data
@@ -624,7 +624,7 @@ No,                      !- Interpolate to Timestep
 Schedule:File,
 S1_Office_-_Private Equip Schedule,   !- Name
 Fraction,          !- Schedule Type Limits Name
-/home/zhiangz/Dropbox/cmu-extracourses/10703/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v2.csv, !- File Name-eval_env
+/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v2.csv, !- File Name-eval_env
 3,                       !- Column Number
 7,                       !- Rows to Skip at Top
 8760,                     !- Number of Hours of Data
@@ -635,7 +635,7 @@ No,                      !- Interpolate to Timestep
 Schedule:File,
 S2_Office_-_Private Equip Schedule,   !- Name
 Fraction,          !- Schedule Type Limits Name
-/home/zhiangz/Dropbox/cmu-extracourses/10703/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v2.csv, !- File Name-eval_env
+/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v2.csv, !- File Name-eval_env
 4,                       !- Column Number
 7,                       !- Rows to Skip at Top
 8760,                     !- Number of Hours of Data
@@ -646,7 +646,7 @@ No,                      !- Interpolate to Timestep
 Schedule:File,
 S3_Office_-_Private Equip Schedule,   !- Name
 Fraction,          !- Schedule Type Limits Name
-/home/zhiangz/Dropbox/cmu-extracourses/10703/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v2.csv, !- File Name-eval_env
+/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v2.csv, !- File Name-eval_env
 5,                       !- Column Number
 7,                       !- Rows to Skip at Top
 8760,                     !- Number of Hours of Data
@@ -657,7 +657,7 @@ No,                      !- Interpolate to Timestep
 Schedule:File,
 S4_Office_-_Private Equip Schedule,   !- Name
 Fraction,          !- Schedule Type Limits Name
-/home/zhiangz/Dropbox/cmu-extracourses/10703/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v2.csv, !- File Name-eval_env
+/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v2.csv, !- File Name-eval_env
 6,                       !- Column Number
 7,                       !- Rows to Skip at Top
 8760,                     !- Number of Hours of Data
@@ -668,7 +668,7 @@ No,                      !- Interpolate to Timestep
 Schedule:File,
 S5_Office_-_Private Equip Schedule,   !- Name
 Fraction,          !- Schedule Type Limits Name
-/home/zhiangz/Dropbox/cmu-extracourses/10703/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v2.csv, !- File Name-eval_env
+/home/zhiangz/Documents/HVAC-RL-Control/src/core/eplus-env/eplus_env/envs/idf/schedules/stochastic_equip_v2.csv, !- File Name-eval_env
 7,                       !- Column Number
 7,                       !- Rows to Skip at Top
 8760,                     !- Number of Hours of Data

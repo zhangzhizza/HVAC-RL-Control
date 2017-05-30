@@ -26,7 +26,7 @@ CWD = os.getcwd();
 LOG_LEVEL_MAIN = 'INFO';
 LOG_LEVEL_EPLS = 'ERROR'
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
-ACTION_SIZE = 2;
+ACTION_SIZE = 2 * 5;
 
 class EplusEnv(Env):
     """EnergyPlus v8.6 environment

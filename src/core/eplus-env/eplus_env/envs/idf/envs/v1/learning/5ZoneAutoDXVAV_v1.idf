@@ -2009,7 +2009,7 @@ SizingPeriod:DesignDay,
     Until: 24:00,21.1,       !- Field 6
     For: WeekDays,           !- Field 8
     Until: 7:00,12.8,        !- Field 9
-    Until: 18:00,21.1,       !- Field 11
+    Until: 18:00,21.1,       !- Field 11 !!!!!!!!!!!!!!!!
     Until: 24:00,12.8,       !- Field 13
     For: WeekEnds Holiday,   !- Field 15
     Until: 7:00,12.8,        !- Field 16
@@ -2037,7 +2037,7 @@ SizingPeriod:DesignDay,
     Until: 24:00,40.0,       !- Field 6
     For: WeekDays,           !- Field 8
     Until: 7:00,40.0,        !- Field 9
-    Until: 18:00,23.9,       !- Field 11
+    Until: 18:00,23.9,       !- Field 11 !!!!!!!!!!!!!!!!!!!!!!!!!
     Until: 24:00,40.0,       !- Field 13
     For: WeekEnds Holiday,   !- Field 15
     Until: 7:00,40.0,        !- Field 16
