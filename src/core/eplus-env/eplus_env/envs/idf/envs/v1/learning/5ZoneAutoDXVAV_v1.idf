@@ -2864,6 +2864,7 @@ SizingPeriod:DesignDay,
   Output:Variable,SPACE1-1,Zone Air Temperature,timestep;
   Output:Variable,SPACE1-1,Zone Air Relative Humidity,timestep;
   Output:Variable,SPACE1-1,Zone Thermostat Heating Setpoint Temperature,timestep;
+  Output:Variable,SPACE1-1,Zone Mean Radiant Temperature, timestep;
   Output:Variable,SPACE1-1,Zone Thermostat Cooling Setpoint Temperature,timestep;
   Output:Variable,SPACE1-1,Zone People Occupant Count, timestep;
   Output:Variable,SPACE1-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PPD,timestep;
