@@ -3,4 +3,5 @@ keras
 numpy
 tensorflow
 scipy
+matplotlib
 
