@@ -13,14 +13,15 @@ from multiprocessing import Value, Lock
 from keras import backend as K
 
 from util.logger import Logger
-from a3c_v0_1.objectives import a3c_loss
-from a3c_v0_1.a3c_network import A3C_Network
-from a3c_v0_1.actions import action_map
-from a3c_v0_1.action_limits import stpt_limits
-from a3c_v0_1.preprocessors import HistoryPreprocessor, process_raw_state_cmbd, get_legal_action, get_reward
-from a3c_v0_1.utils import init_variables, get_hard_target_model_updates, get_uninitialized_variables
-from a3c_v0_1.state_index import *
-from a3c_v0_1.a3c_eval import A3CEval_multiagent, A3CEval
+from a3c_v0_2.objectives import a3c_loss
+from a3c_v0_2.a3c_network import A3C_Network
+from a3c_v0_2.actions import action_map
+from a3c_v0_2.action_limits import stpt_limits
+from a3c_v0_2.preprocessors import HistoryPreprocessor, process_raw_state_cmbd, get_legal_action, get_reward
+from a3c_v0_2.utils import init_variables, get_hard_target_model_updates, get_uninitialized_variables
+from a3c_v0_2.state_index import *
+from a3c_v0_2.a3c_eval import A3CEval_multiagent, A3CEval
+from a3c_v0_2.buildingOptStatus import BuildingWeekdayPatOpt
 
 ACTION_MAP = action_map;
 STPT_LIMITS = stpt_limits;
@@ -223,7 +224,8 @@ class A3CThread:
         # Get the history stacked state
         ob_this_hist_prcd = self._histProcessor.\
                             process_state_for_network(ob_this_prcd) # 2-D array
-        
+        # Create an object for deciding building operation status
+        bld_opt = BuildingWeekdayPatOpt(env_st_yr, env_st_mn, env_st_dy, env_st_wd);
         while not coordinator.should_stop():
             # Synchronize local network parameters with 
             # the global network parameters
@@ -262,10 +264,10 @@ class A3CThread:
                 # Get the reward
                 normalized_hvac_energy = ob_next_prcd[HVACE_RAW_IDX + 2];
                 normalized_ppd = ob_next_prcd[ZPPD_RAW_IDX + 2];
-                occupancy_status = ob_next_prcd[ZPCT_RAW_IDX + 2];
+                is_opt = bld_opt.get_is_opt(time_next, ob_next_raw);
                 reward_next = get_reward(normalized_hvac_energy, normalized_ppd, 
-                                         e_weight, p_weight, mode = reward_mode,
-                                         ppd_penalty_limit, is_opt = is_opt);
+                                         e_weight, p_weight, reward_mode,
+                                         ppd_penalty_limit, is_opt);
                 self._local_logger.debug('Environment debug: raw action idx is %d, '
                                          'current heating setpoint is %0.04f, '
                                          'current cooling setpoint is %0.04f, '

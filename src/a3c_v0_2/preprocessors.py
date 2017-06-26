@@ -2,7 +2,7 @@ import random
 import datetime
 import numpy as np
 
-from a3c_v0_1.state_index import *
+from a3c_v0_2.state_index import *
 from util.time import get_time_from_seconds
 from numpy import linalg as LA
 #def get_env_states_stats(env, actions, start_year,

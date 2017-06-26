@@ -4,7 +4,7 @@ from keras.layers import (Activation, Dense, Flatten, Input,
                           Permute)
 from keras.models import Model
 
-from a3c_v0_1.objectives import a3c_loss
+from a3c_v0_2.objectives import a3c_loss
 
 NN_WIDTH = 512;
 
