@@ -1,8 +1,9 @@
 import numpy as np
-from a3c_v0_1.actions import action_map
-from a3c_v0_1.action_limits import stpt_limits
-from a3c_v0_1.preprocessors import HistoryPreprocessor, process_raw_state_cmbd, get_legal_action, get_reward
-from a3c_v0_1.state_index import *
+from a3c_v0_2.actions import action_map
+from a3c_v0_2.action_limits import stpt_limits
+from a3c_v0_2.preprocessors import HistoryPreprocessor, process_raw_state_cmbd, get_legal_action, get_reward
+from a3c_v0_2.state_index import *
+from a3c_v0_2.buildingOptStatus import BuildingWeekdayPatOpt
 
 ACTION_MAP = action_map;
 STPT_LIMITS = stpt_limits;
@@ -55,6 +56,8 @@ class A3CEval_multiagent:
             ob_this_hist_prcd_list.append(ob_this_hist_prcd_agent_i);
         # Do the eval
         this_ep_reward = np.zeros(self._agent_num);
+        # Create an object for deciding building operation status
+        bld_opt = BuildingWeekdayPatOpt(self._env_st_yr, self._env_st_mn, self._env_st_dy, self._env_st_wd);
         while episode_counter <= self._num_episodes:
             # Get the action
             action_list = [];
@@ -85,9 +88,9 @@ class A3CEval_multiagent:
                 ob_next_prcd_i = ob_next_prcd_list[agent_i];
                 normalized_hvac_energy_i = ob_next_prcd_i[HVACE_RAW_IDX + 2];
                 normalized_ppd_i = ob_next_prcd_i[ZPPD_RAW_IDX + 2];
-                occupancy_status = ob_next_prcd_i[ZPCT_RAW_IDX + 2];
-                reward_next_i = get_reward(normalized_hvac_energy_i, normalized_ppd_i, self._e_weight, self._p_weight, occupancy_status,
-                                           reward_mode, ppd_penalty_limit);
+                is_opt = bld_opt.get_is_opt(time_next, ob_next_raw_list[agent_i]);
+                reward_next_i = get_reward(normalized_hvac_energy_i, normalized_ppd_i, self._e_weight, self._p_weight,
+                                           reward_mode, ppd_penalty_limit, is_opt);
                 reward_next_list.append(reward_next_i);
             this_ep_reward += reward_next_list;
             # Get the history stacked state
@@ -198,6 +201,8 @@ class A3CEval:
         self._histProcessor.reset();
         ob_this_hist_prcd = self._histProcessor.\
                             process_state_for_network(ob_this_prcd) # 2-D array
+        # Create an object for deciding building operation status
+        bld_opt = BuildingWeekdayPatOpt(self._env_st_yr, self._env_st_mn, self._env_st_dy, self._env_st_wd);
         # Do the eval
         this_ep_reward = 0;
         this_ep_max_ppd = 0;
@@ -222,13 +227,12 @@ class A3CEval:
             # Get the reward
             normalized_hvac_energy = ob_next_prcd[HVACE_RAW_IDX + 2];
             normalized_ppd = ob_next_prcd[ZPPD_RAW_IDX + 2];
-            occupancy_status = ob_next_prcd[ZPCT_RAW_IDX + 2];
+            is_opt = bld_opt.get_is_opt(time_next, ob_next_raw);
             reward_next = get_reward(normalized_hvac_energy, normalized_ppd, 
-                                    self._e_weight, self._p_weight, 
-                                    occupancy_status, reward_mode, 
-                                    ppd_penalty_limit);
+                                    self._e_weight, self._p_weight, reward_mode, 
+                                    ppd_penalty_limit, is_opt);
             this_ep_reward += reward_next;
-            this_ep_max_ppd = max(normalized_ppd if occupancy_status > 0 else 0,
+            this_ep_max_ppd = max(normalized_ppd if is_opt == True else 0,
                                   this_ep_max_ppd);
             # Get the history stacked state
             ob_next_hist_prcd = self._histProcessor.\

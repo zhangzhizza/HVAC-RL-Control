@@ -35,6 +35,16 @@ register(
             'env_name': 'Eplus-v2'});
 
 register(
+    id='Eplus-v3',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-6-0/',
+            'weather_path':FD + '/envs/weather/pittsburgh.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/idf/cfg/variables_v3.cfg',
+            'idf_path':FD + '/envs/idf/envs/v3/learning/5ZoneAutoDXVAV_v3.idf',
+            'env_name': 'Eplus-v3'});
+
+register(
     id='Eplus-forecast-v0',
     entry_point='eplus_env.envs:EplusEnv',
     kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-6-0/',
@@ -75,6 +85,16 @@ register(
             'variable_path':FD + '/envs/idf/cfg/variables_v2.cfg',
             'idf_path':FD + '/envs/idf/envs/v2/learning/5ZoneAutoDXVAV_eval_v2.idf',
             'env_name': 'Eplus-eval-v2'});
+
+register(
+    id='Eplus-eval-v3',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-6-0/',
+            'weather_path':FD + '/envs/weather/pennstate.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/idf/cfg/variables_v3.cfg',
+            'idf_path':FD + '/envs/idf/envs/v3/learning/5ZoneAutoDXVAV_eval_v3.idf',
+            'env_name': 'Eplus-eval-v3'});
     
 register(
     id='Eplus-eval-multiagent-v0',
@@ -189,3 +209,17 @@ sch_path_dict = {'S1_Office_-_Private People Schedule': FD + '/envs/idf/schedule
                  'S4_Office_-_Private Equip Schedule': FD + '/envs/idf/schedules/stochastic_equip_v2.csv',
                  'S5_Office_-_Private Equip Schedule': FD + '/envs/idf/schedules/stochastic_equip_v2.csv'};
 setSchedulePath(sch_path_dict, FD + '/envs/idf/envs/v2/learning/5ZoneAutoDXVAV_eval_v2.idf');
+
+# Replace some schedule file path in 5ZoneAutoDXVAV_eval_v3.idf with the 
+# absolute path
+sch_path_dict = {'S1_Office_-_Private People Schedule': FD + '/envs/idf/schedules/stochastic_occup_v3.csv',
+                 'S2_Office_-_Private People Schedule': FD + '/envs/idf/schedules/stochastic_occup_v3.csv',
+                 'S3_Office_-_Private People Schedule': FD + '/envs/idf/schedules/stochastic_occup_v3.csv',
+                 'S4_Office_-_Private People Schedule': FD + '/envs/idf/schedules/stochastic_occup_v3.csv',
+                 'S5_Office_-_Private People Schedule': FD + '/envs/idf/schedules/stochastic_occup_v3.csv',
+                 'S1_Office_-_Private Equip Schedule': FD + '/envs/idf/schedules/stochastic_equip_v3.csv',
+                 'S2_Office_-_Private Equip Schedule': FD + '/envs/idf/schedules/stochastic_equip_v3.csv',
+                 'S3_Office_-_Private Equip Schedule': FD + '/envs/idf/schedules/stochastic_equip_v3.csv',
+                 'S4_Office_-_Private Equip Schedule': FD + '/envs/idf/schedules/stochastic_equip_v3.csv',
+                 'S5_Office_-_Private Equip Schedule': FD + '/envs/idf/schedules/stochastic_equip_v3.csv'};
+setSchedulePath(sch_path_dict, FD + '/envs/idf/envs/v3/learning/5ZoneAutoDXVAV_eval_v3.idf');

@@ -17,9 +17,11 @@ the observations for all 4 perimeter zones, and takes the heating/cooling setpoi
 Thus, the output order is [weather info (6 in total), zone 1 observations (8 in total), ... , zone 4 observations (8 in total), HVAC total energy consumption
  (1 in total)]. The input order is [heating and cooling setpoint for zone 1 (2 in total), ... , heating and cooling setpoint for zone 4 (2 in total)].  
 
- **2017-05-09** and  **2017-05-09**: Four new environment has been added, Eplus-v1, Eplus-eval-v1, Eplus-v2, Eplus-eval-v2. They are the same as the Eplus-v0 and Eplus-eval-v0, except
+ **2017-05-09**: Four new environment has been added, Eplus-v1, Eplus-eval-v1, Eplus-v2, Eplus-eval-v2. They are the same as the Eplus-v0 and Eplus-eval-v0, except
  the simulation time step is 5 min. Also, for v2 environments, running period is one whole year. Also, the clothing value and mean radiant temperature are deleted from the state observation. In addition, the zone outdoor air control is changed to remove the hard limits on zone minimum outdoor air flow rate.  
 
+**2017-06-26**: v3 environments are added. v3 environments are modified based on the v1 environments, with the following changes: occupancy status is no longer
+a state observation; no holidays are observed for the *-eval environment; baseline and default HVAC operation periods are 7:00 to 18:00. 
 
 
 ###
