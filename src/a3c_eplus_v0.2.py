@@ -107,6 +107,7 @@ def main():
     parser.add_argument('--init_e', default = 0.0, type=float);
     parser.add_argument('--end_e', default = 0.0, type=float);
     parser.add_argument('--decay_steps', default = 1000000, type=int);
+    parser.add_argument('--net_length', default = 4, type=int);
     parser.add_argument('--dropout_prob', default = 0.5, type=float);
     parser.add_argument('--is_warm_start', default=False, type=bool);
     parser.add_argument('--model_dir', default='None');
@@ -138,6 +139,7 @@ def main():
                          init_epsilon = args.init_e, end_epsilon = args.end_e, 
                          decay_steps = args.decay_steps,
                          action_space_name = args.action_space,
+                         net_length = args.net_length,
                          dropout_prob = args.dropout_prob);
     main_logger.info ('Start compiling...')
     (g, sess, coordinator, global_network, workers, global_summary_writer, 

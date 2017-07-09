@@ -13,7 +13,7 @@ class A3C_Network:
     The class that creates the policy and value network for the A3C. 
     """
     
-    def __init__(self, graph, scope_name, state_dim, action_size):
+    def __init__(self, graph, scope_name, state_dim, action_size, net_length):
         """
         Constructor.
         
@@ -34,7 +34,7 @@ class A3C_Network:
             self._keep_prob = tf.placeholder(tf.float32, name='keep_prob');
             # Build the operations that computes predictions from the nn model.
             self._policy_pred, self._v_pred, self._shared_layer= \
-                self._create_model(self._state_placeholder, self._keep_prob, action_size);
+                self._create_model(self._state_placeholder, self._keep_prob, action_size, net_length);
             
     @property
     def state_placeholder(self):
@@ -56,7 +56,7 @@ class A3C_Network:
     def shared_layer(self):
         return self._shared_layer;
 
-    def _create_model(self, input_state, keep_prob, num_actions): 
+    def _create_model(self, input_state, keep_prob, num_actions, net_length): 
         """
         Create the model for the policy network and value network.
         The policy network and the value network share the model for feature
@@ -79,10 +79,8 @@ class A3C_Network:
         with tf.name_scope('shared_layers'):
             # Dropout layer for the first relu layer.
             layer = tf.nn.dropout(input_state, keep_prob);
-            layer = Dense(NN_WIDTH, activation = 'relu')(layer);
-            layer = Dense(NN_WIDTH, activation = 'relu')(layer);
-            layer = Dense(NN_WIDTH, activation = 'relu')(layer);
-            layer = Dense(NN_WIDTH, activation = 'relu')(layer);
+            for _ in range(net_length):
+                layer = Dense(NN_WIDTH, activation = 'relu')(layer);
         with tf.name_scope('policy_network'):
             policy = Dense(num_actions, activation = 'softmax')(layer);
         with tf.name_scope('value_network'):
