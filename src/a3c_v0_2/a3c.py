@@ -34,7 +34,7 @@ class A3CThread:
     """
     
     def __init__(self, graph, scope_name, global_name, state_dim, action_size,
-                 vloss_frac, ploss_frac, hregu_frac, shared_optimizer,
+                 net_length, vloss_frac, ploss_frac, hregu_frac, shared_optimizer,
                  clip_norm, global_train_step, window_len, init_epsilon,
                  end_epsilon, decay_steps):
         """
@@ -52,6 +52,8 @@ class A3CThread:
                 observation of the environment plus 2 (time info). 
             action_size: int 
                 Number of action choices. 
+            net_length: int
+                The number of layers in the neural network.
             vloss_frac: float
                 Used for constructing the loss operation. The fraction to the 
                 value loss. 
@@ -78,7 +80,7 @@ class A3CThread:
         ###########################################
         network_state_dim = state_dim * window_len;
         self._a3c_network = A3C_Network(graph, scope_name, network_state_dim, 
-                                        action_size);
+                                        action_size, net_length);
         self._policy_pred = self._a3c_network.policy_pred;
         self._value_pred = self._a3c_network.value_pred;
         self._state_placeholder = self._a3c_network.state_placeholder;
@@ -432,6 +434,7 @@ class A3CAgent:
                  end_epsilon,
                  decay_steps,
                  action_space_name,
+                 net_length,
                  dropout_prob):
         
         self._state_dim = state_dim;
@@ -452,6 +455,7 @@ class A3CAgent:
         self._end_epsilon = end_epsilon;
         self._decay_steps = decay_steps;
         self._action_space_name = action_space_name;
+        self._net_length = net_length;
         self._dropout_prob = dropout_prob;
         
     def compile(self, is_warm_start, model_dir, save_scope = 'global'):
@@ -467,7 +471,7 @@ class A3CAgent:
         g = tf.Graph();
         # Create the global network
         global_network = A3C_Network(g, 'global', self._effec_state_dim,
-                                     self._action_size);
+                                     self._action_size, self._net_length);
         with g.as_default():
             # Create a shared optimizer
             with tf.name_scope('optimizer'):
@@ -486,10 +490,10 @@ class A3CAgent:
             #init_allot_op = init_variables(g, 'RMSProp');
         # Create the thread workers list
         workers = [A3CThread(g, 'worker_%d'%(i), 'global', self._state_dim,
-                             self._action_size, self._vloss_frac, self._ploss_frac,
-                             self._hregu_frac, shared_optimizer, self._clip_norm,
-                             global_train_step, self._window_len, self._init_epsilon,
-                             self._end_epsilon, self._decay_steps)
+                             self._action_size, self._net_length, self._vloss_frac, 
+                             self._ploss_frac, self._hregu_frac, shared_optimizer, 
+                             self._clip_norm, global_train_step, self._window_len, 
+                             self._init_epsilon, self._end_epsilon, self._decay_steps)
                   for i in range(self._num_threads)];
         # Init global network variables or warm start
         with g.as_default():
