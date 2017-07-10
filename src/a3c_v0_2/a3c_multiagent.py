@@ -13,8 +13,8 @@ from multiprocessing import Value, Lock
 from keras import backend as K
 
 from util.logger import Logger
-from a3c_v0_2.objectives import a3c_loss
-from a3c_v0_2.a3c_network import A3C_Network
+from a3c_v0_2.objectives import a3c_loss_multiagent
+from a3c_v0_2.a3c_network import A3C_Network_Multiagent
 from a3c_v0_2.actions import action_map
 from a3c_v0_2.action_limits import stpt_limits
 from a3c_v0_2.preprocessors import HistoryPreprocessor, process_raw_state_cmbd, get_legal_action, get_reward
@@ -34,9 +34,10 @@ class A3CThread:
     """
     
     def __init__(self, graph, scope_name, global_name, state_dim, action_size,
-                 net_length, vloss_frac, ploss_frac, hregu_frac, shared_optimizer,
-                 clip_norm, global_train_step, window_len, init_epsilon,
-                 end_epsilon, decay_steps):
+                 net_length_global, net_length_local, agt_num, vloss_frac, 
+                 ploss_frac, hregu_frac, shared_optimizer, clip_norm, 
+                 global_train_step, window_len, init_epsilon, end_epsilon, 
+                 decay_steps):
         """
         Constructor.
         
@@ -52,8 +53,10 @@ class A3CThread:
                 observation of the environment plus 2 (time info). 
             action_size: int 
                 Number of action choices. 
-            net_length: int
-                The number of layers in the neural network.
+            net_length_global, net_length_local: int
+                The number of layers in the global and the local network.
+            agt_num: int
+                The number of agents (rooms).
             vloss_frac: float
                 Used for constructing the loss operation. The fraction to the 
                 value loss. 
@@ -79,11 +82,10 @@ class A3CThread:
         ### Create the policy and value network ###
         ###########################################
         network_state_dim = state_dim * window_len;
-        # ==
-        self._a3c_network = A3C_Network(graph, scope_name, network_state_dim, 
-                                        action_size, net_length);
-        self._policy_pred = self._a3c_network.policy_pred;
-        self._value_pred = self._a3c_network.value_pred;
+        self._a3c_network = A3C_Network_Multiagent(graph, scope_name, network_state_dim, 
+                                action_size, net_length_global, net_length_local, agt_num);
+        self._policy_pred_list = self._a3c_network.policy_pred_list;
+        self._value_pred_list = self._a3c_network.value_pred_list;
         self._state_placeholder = self._a3c_network.state_placeholder;
         self._keep_prob = self._a3c_network.keep_prob;
         self._shared_layer = self._a3c_network.shared_layer;
@@ -94,24 +96,19 @@ class A3CThread:
         ### Create the loss operation ###
         #################################
             # Generate placeholders state and "true" q values
-            self._q_true_placeholder = tf.placeholder(tf.float32,
-                                                      shape=(None, 1),
-                                                      name='q_true_pl');
+            self._q_true_pl_list = [tf.placeholder(tf.float32, shape=(None, 1), 
+                                    name='q_true_pl') for _ in range(agt_num)];
             # Generate the tensor for one hot policy probablity
-            self._action_idx_placeholder = tf.placeholder(tf.uint8,
-                                                          shape=(None),
-                                                          name='action_idx_pl');
-            pi_one_hot = tf.reduce_sum((tf.one_hot(self._action_idx_placeholder,
-                                                   action_size) * 
-                                        self._policy_pred),
-                                        1, True); 
-            self._pi_one_hot = pi_one_hot;
+            self._action_idx_pl_list = [tf.placeholder(tf.uint8, shape=(None), 
+                                    name='action_idx_pl') for _ in range(agt_num)];
+            self._pi_one_hot_list = [tf.reduce_sum((tf.one_hot(self._action_idx_pl_list[i], 
+                                    action_size) * self._policy_pred_list[i]), 1, True) \
+                                    for i in range(agt_num)]; 
             # Add to the Graph the Ops for loss calculation.
-            loss = a3c_loss(self._q_true_placeholder, self._value_pred, 
-                                  self._policy_pred, pi_one_hot, vloss_frac, 
-                                  ploss_frac, hregu_frac);
-            self._loss = loss;
-        
+            loss = a3c_loss_multiagent(self._q_true_pl_list, self._value_pred_list, 
+                                  self._policy_pred_list, self._pi_one_hot_list, 
+                                  vloss_frac, ploss_frac, hregu_frac);
+            self._loss = loss;         
         #####################################
         ### Create the training operation ###
         #####################################
@@ -150,7 +147,7 @@ class A3CThread:
         self._epsilon_decay_delta = (init_epsilon - end_epsilon)/decay_steps;
         self._e_greedy = init_epsilon;
         
-            
+    ========>        
     def train(self, sess, t_max, env_name, coordinator, global_counter, global_lock, 
               gamma, e_weight, p_weight, save_freq, log_dir, global_saver, 
               global_summary_writer, T_max, global_agent_eval_list, eval_freq, 
@@ -435,7 +432,9 @@ class A3CAgent:
                  end_epsilon,
                  decay_steps,
                  action_space_name,
-                 net_length,
+                 net_length_global,
+                 net_length_local,
+                 agt_num,
                  dropout_prob):
         
         self._state_dim = state_dim;
@@ -456,7 +455,9 @@ class A3CAgent:
         self._end_epsilon = end_epsilon;
         self._decay_steps = decay_steps;
         self._action_space_name = action_space_name;
-        self._net_length = net_length;
+        self._net_length_global = net_length_global;
+        self._net_length_local = net_length_local;
+        self._agt_num = agt_num;
         self._dropout_prob = dropout_prob;
         
     def compile(self, is_warm_start, model_dir, save_scope = 'global'):
@@ -464,6 +465,14 @@ class A3CAgent:
         This method sets up the required TF graph and operations.
         
         Args:
+            is_warm_start: boolean
+                If true, construct the graph from the saved model.
+            model_dir: str
+                The saved model directory.
+            save_scope: str
+                Choice of all or global. If all, save all a3c network models
+                including the global network and the local workers; if global,
+                save just the global network model.
         
         Return:
         
@@ -471,9 +480,9 @@ class A3CAgent:
         """
         g = tf.Graph();
         # Create the global network
-        # ==
-        global_network = A3C_Network(g, 'global', self._effec_state_dim,
-                                     self._action_size, self._net_length); 
+        global_network = A3C_Network_Multiagent(g, 'global', self._effec_state_dim,
+                                     self._action_size, self._net_length_global,
+                                     self._net_length_local, self._agt_num);
         with g.as_default():
             # Create a shared optimizer
             with tf.name_scope('optimizer'):
