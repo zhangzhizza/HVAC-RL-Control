@@ -79,7 +79,6 @@ class A3CThread:
         ### Create the policy and value network ###
         ###########################################
         network_state_dim = state_dim * window_len;
-        # ==
         self._a3c_network = A3C_Network(graph, scope_name, network_state_dim, 
                                         action_size, net_length);
         self._policy_pred = self._a3c_network.policy_pred;
@@ -435,7 +434,9 @@ class A3CAgent:
                  end_epsilon,
                  decay_steps,
                  action_space_name,
-                 net_length,
+                 net_length_global,
+                 net_length_local,
+                 agt_num,
                  dropout_prob):
         
         self._state_dim = state_dim;
@@ -456,7 +457,9 @@ class A3CAgent:
         self._end_epsilon = end_epsilon;
         self._decay_steps = decay_steps;
         self._action_space_name = action_space_name;
-        self._net_length = net_length;
+        self._net_length_global = net_length_global;
+        self._net_length_local = net_length_local;
+        self._agt_num = agt_num;
         self._dropout_prob = dropout_prob;
         
     def compile(self, is_warm_start, model_dir, save_scope = 'global'):
@@ -464,6 +467,14 @@ class A3CAgent:
         This method sets up the required TF graph and operations.
         
         Args:
+            is_warm_start: boolean
+                If true, construct the graph from the saved model.
+            model_dir: str
+                The saved model directory.
+            save_scope: str
+                Choice of all or global. If all, save all a3c network models
+                including the global network and the local workers; if global,
+                save just the global network model.
         
         Return:
         
@@ -471,9 +482,8 @@ class A3CAgent:
         """
         g = tf.Graph();
         # Create the global network
-        # ==
         global_network = A3C_Network(g, 'global', self._effec_state_dim,
-                                     self._action_size, self._net_length); 
+                                     self._action_size, self._net_length);
         with g.as_default():
             # Create a shared optimizer
             with tf.name_scope('optimizer'):
