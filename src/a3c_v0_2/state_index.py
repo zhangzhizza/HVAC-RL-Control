@@ -1,5 +1,5 @@
 """
-State feature index.
+State feature index for single agent case.
 """
 OADT_RAW_IDX = 0; # Outdoor air temperature
 OARH_RAW_IDX = 1; # Outdoor air RH
@@ -14,3 +14,5 @@ ZARH_RAW_IDX = 9; # Zone air RH
 ZPPD_RAW_IDX = 10; # Zone PPD
 HVACE_RAW_IDX = 11; # HVAC electric power demand
 ZN_OB_NUM = 5 # Five elements are related to zone observation
+
+

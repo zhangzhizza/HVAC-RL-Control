@@ -28,7 +28,9 @@ NAME = 'A3C_AGENT_MAIN'
 LOG_LEVEL = 'INFO'
 LOG_FORMATTER = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 # State size
-state_dim = 12 + 2 # 12 for the raw state dim, 2 is the additonal time info
+cm_state_dim = 7 # 7 common state features, like weather/hvac energy
+zn_state_dim = 5 # 5 zone level state features
+ad_state_dim = 2 # 2 additional state features
 
 def get_output_folder(parent_dir, env_name):
     """Return save folder.
@@ -68,8 +70,8 @@ def get_output_folder(parent_dir, env_name):
 
 
 def main(): 
-    parser = argparse.ArgumentParser(description='Run A3C on EnergyPlus')
-    parser.add_argument('--env', default='Eplus-v1', help='EnergyPlus env name')
+    parser = argparse.ArgumentParser(description='Run A3C (multiagent version) on EnergyPlus')
+    parser.add_argument('--env', default='Eplus-ma-v0', help='EnergyPlus env name')
     parser.add_argument(
         '-o', '--output', default='a3c-res-v0.2', help='Directory to save data to')
     parser.add_argument('--max_interactions', default=15000000, type=int);
@@ -107,14 +109,14 @@ def main():
     parser.add_argument('--init_e', default = 0.0, type=float);
     parser.add_argument('--end_e', default = 0.0, type=float);
     parser.add_argument('--decay_steps', default = 1000000, type=int);
-    parser.add_argument('--net_length', default = 4, type=int);
+    parser.add_argument('--net_length_1stShared', default = 8, type=int);
+    parser.add_argument('--net_length_2ndShared', default = 4, type=int);
     parser.add_argument('--dropout_prob', default = 0.5, type=float);
     parser.add_argument('--is_warm_start', default=False, type=bool);
     parser.add_argument('--model_dir', default='None');
     parser.add_argument('--job_mode', default='Train', type=str,
                         help='The job mode, choice of Train or Test. Default is Train.');
     parser.add_argument('--test_env', default='Eplus-eval-v1', type=str);
-    parser.add_argument('--test_mode', default='Multiple', type=str);
     parser.add_argument('--agent_num', default=5, type=int);
     
     args = parser.parse_args();
@@ -125,7 +127,9 @@ def main():
     main_logger = Logger().getLogger(NAME, LOG_LEVEL, LOG_FORMATTER, args.output + '/main.log');
     main_logger.info(args)
     
-    # Create the agent
+    state_dim = cm_state_dim + args.agent_num * zn_state_dim + ad_state_dim 
+
+    # Create the agent 
     a3c_agent = A3CAgent(state_dim = state_dim, window_len = args.window_len,
                          vloss_frac = args.v_loss_frac,
                          ploss_frac = args.p_loss_frac, 
@@ -139,7 +143,9 @@ def main():
                          init_epsilon = args.init_e, end_epsilon = args.end_e, 
                          decay_steps = args.decay_steps,
                          action_space_name = args.action_space,
-                         net_length = args.net_length,
+                         net_length_global = args.net_length_1stShared,
+                         net_length_local = args.net_length_2ndShared,
+                         agt_num = args.agent_num,
                          dropout_prob = args.dropout_prob);
     main_logger.info ('Start compiling...')
     (g, sess, coordinator, global_network, workers, global_summary_writer, 
@@ -157,7 +163,7 @@ def main():
     if args.job_mode.lower() == 'test':
         main_logger.info ('Start the testing...')
         a3c_agent.test(sess, global_network, args.test_env, args.eval_epi_num, args.e_weight, 
-                       args.p_weight, args.reward_mode, args.test_mode.lower(), args.agent_num, 
+                       args.p_weight, args.reward_mode, args.test_mode.lower(), 
                        args.ppd_penalty_limit, args.output);
         
 

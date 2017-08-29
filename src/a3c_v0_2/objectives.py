@@ -44,3 +44,38 @@ def a3c_loss(R, v_pred, pi, pi_one_hot, vloss_frac, ploss_frac, hregu_frac):
                                               hregu_frac * entropy); 
         
     return loss;
+
+def a3c_loss_multiagent(R_list, v_pred_list, pi_list, pi_one_hot_list, vloss_frac,
+                        ploss_frac, hregu_frac):
+    """
+    The loss function for the a3c multiagent is the mean of the a3c loss functions
+    for every agent.
+
+    Args:
+        R_list: list of tf tensors
+            The target Q value for each state in the sample.
+        v_pred_list: list of tf tensors
+            The predicted V value for each state in the sample.
+        pi_list: list of tf tensors
+            The probability of taking actions at a state. 
+        pi_one_hot_list: list of tf tensors
+            The probability of taking the action a_i at the state i.
+        vloss_frac, ploss_frac, hregu_frac: float.
+            The hyperparameter for the weights of each loss. 
+    
+    Return:
+        tf tensor.
+            The a3c_multiagent loss. 
+    """
+    with tf.name_scope('a3c_loss_multiagent'):
+        with tf.name_scope('agent_0'):
+            loss = a3c_loss(R_list[0], v_pred_list[0], pi_list[0], pi_one_hot_list[0], 
+                           vloss_frac, ploss_frac, hregu_frac);
+        for i in range(1, len(R_list)):
+            with tf.name_scope('agent_%d'%(i)):
+                loss += a3c_loss(R_list[i], v_pred_list[i], pi_list[i], pi_one_hot_list[i], 
+                            vloss_frac, ploss_frac, hregu_frac);
+        loss = loss / tf.float(len(R_list));
+    return loss;
+
+
