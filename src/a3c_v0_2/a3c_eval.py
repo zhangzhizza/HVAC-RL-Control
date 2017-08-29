@@ -70,10 +70,6 @@ class A3CEval_multiagent:
                 action_stpt_prcd_i = list(action_stpt_prcd_i);
                 action_list.extend(action_stpt_prcd_i);
             # Perform the action
-            
-            if ob_this_hist_prcd_list[0][0][-14] < 0.3 or ob_this_hist_prcd_list[0][0][-14] > 0.9:
-                action_list = [15, 30, 15, 30, 15, 30, 15, 30, 15, 30];# print print print
-
             time_next, ob_next_raw_all, is_terminal = self._env.step(action_list);
             #ob_next_raw_all[-1] = 0;# print
             # Extract the state for each agent
