@@ -1,12 +1,14 @@
 #!python
 """
+This is the entry script for the A3C HVAC control algorithm. 
+
 Run EnergyPlus Environment with Asynchronous Advantage Actor Critic (A3C).
 
 Algorithm taken from https://arxiv.org/abs/1602.01783
 'Asynchronous Methods for Deep Reinforcement Learning'
 
 Author: Zhiang Zhang
-Last update: Apr 4th, 2017
+Last update: Aug 28th, 2017
 
 """
 import argparse
@@ -29,18 +31,17 @@ LOG_LEVEL = 'INFO'
 LOG_FORMATTER = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 
 def get_output_folder(parent_dir, env_name):
-    """Return save folder.
-
-    Assumes folders in the parent_dir have suffix -run{run
-    number}. Finds the highest run number and sets the output folder
-    to that number + 1. This is just convenient so that if you run the
-    same script multiple times tensorboard can plot all of the results
-    on the same plots with different names.
+    """
+    The function give a string name of the folder that the output will be
+    stored. It finds the existing folder in the parent_dir with the highest
+    number of '-run#', and add 1 to the highest number of '-run#'.
 
     Parameters
     ----------
     parent_dir: str
       Path of the directory containing all experiment runs.
+    env_name: str
+      The EnergyPlus environment name. 
 
     Returns
     -------
@@ -70,8 +71,10 @@ def main():
     parser.add_argument('--env', default='Eplus-v1', help='EnergyPlus env name')
     parser.add_argument(
         '-o', '--output', default='a3c-res-v0.1', help='Directory to save data to')
-    parser.add_argument('--max_interactions', default=15000000, type=int);
-    parser.add_argument('--window_len', default=4, type=int);
+    parser.add_argument('--max_interactions', default=15000000, type=int, 
+    	help='The max number of interactions with the environment for A3C, default is 15000000.');
+    parser.add_argument('--window_len', default=4, type=int, help='The state stacking window length, default is 4.');
+    parser.add_argument('--state_dim', default=15, type=int, help='The state dimension, default is 15.');
     parser.add_argument('--gamma', default=0.99);
     parser.add_argument('--v_loss_frac', default=0.5, type=float);
     parser.add_argument('--p_loss_frac', default=1.0, type=float);
@@ -87,14 +90,14 @@ def main():
     parser.add_argument('--clip_norm', default=5.0, type=float);
     parser.add_argument('--train_freq', default=5, type=int);
     parser.add_argument('--e_weight', default=0.4, type=float,
-                        help='Reward weight on HVAC energy consumption.');
+                        help='Reward weight on HVAC energy consumption, default is 0.4.');
     parser.add_argument('--p_weight', default=0.6, type=float,
-                        help='Reward wegith on PPD.');
+                        help='Reward wegith on PPD, default is 0.6.');
     parser.add_argument('--ppd_penalty_limit', default=0.15, type=float,
                         help='Larger than ppd_penalty_limit PPD will be changed '
-                             'to the max PPD. Should be 0~1.')
+                             'to the max PPD. Should be 0~1, default is 0.15.')
     parser.add_argument('--reward_mode', default='linear', type=str);
-    parser.add_argument('--action_space', default='default', type=str);
+    parser.add_argument('--action_space', default='default', type=str, help='The action space name, default is default.');
     parser.add_argument('--save_freq', default=50000, type=int);
     parser.add_argument('--save_scope', default='all', 
                         help='The tensorflow graph save scope, default is global '
@@ -106,13 +109,17 @@ def main():
     parser.add_argument('--end_e', default = 0.0, type=float);
     parser.add_argument('--decay_steps', default = 1000000, type=int);
     parser.add_argument('--dropout_prob', default = 0.5, type=float);
-    parser.add_argument('--is_warm_start', default=False, type=bool);
+    parser.add_argument('--is_warm_start', default=False, type=bool, 
+    	help='This is a bool argument, including this arg makes the algorithm read the trained neural network from the model_dir.');
     parser.add_argument('--model_dir', default='None');
     parser.add_argument('--job_mode', default='Train', type=str,
                         help='The job mode, choice of Train or Test. Default is Train.');
     parser.add_argument('--test_env', default='Eplus-eval-v1', type=str);
-    parser.add_argument('--test_mode', default='Multiple', type=str);
-    parser.add_argument('--agent_num', default=5, type=int);
+    parser.add_argument('--test_mode', default='Multiple', type=str, help='The test mode, choice of Single and Multiple. '
+    	'Default is Multiple. If Single, the trained agent will control the single zone, else, the trained agent will control '
+    	'multiple zones.');
+    parser.add_argument('--agent_num', default=5, type=int, help='Used when test_mode is Multiple. Default is 5. This value '
+    	'Determines how many zones are controlled by the agent in the testing time.');
     
     args = parser.parse_args();
     args.output = get_output_folder(args.output, args.env)
@@ -123,7 +130,7 @@ def main():
     main_logger.info(args)
     
     # State size
-    state_dim = 13 + 2 # 15 for the raw state dim, 2 is the additonal time info
+    state_dim = args.state_dim # 15 for the raw state dim, 2 is the additonal time info
     # Create the agent
     a3c_agent = A3CAgent(state_dim = state_dim, window_len = args.window_len,
                          vloss_frac = args.v_loss_frac,

@@ -69,6 +69,12 @@ class A3CThread:
             window_len: int 
                 The window length to include the history state into the state
                 representation. 
+            init_epsilon: float
+                The initial epsilon value for exploration.
+            end_epsilon: float
+                The final epsilon value for exploration.
+            decay_steps: float
+                The epsilon decay steps.
         
         """
         
@@ -225,16 +231,7 @@ class A3CThread:
                             process_state_for_network(ob_this_prcd) # 2-D array
         
         while not coordinator.should_stop():
-            # Synchronize local network parameters with 
-            # the global network parameters
-            #    print (self._scope_name, 'global  vars', sess.run(tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, 
-            #                                'global')))
-            #    print (self._scope_name, 'local vars', sess.run(tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, 
-            #                                self._scope_name)));
             sess.run(self._local_net_update);   
-            #with self._graph.as_default():
-             #   print (self._scope_name, 'local vars after update', sess.run(tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, 
-              #                              self._scope_name)));
             # Reset the counter
             t_st = t;
             # Interact with env
@@ -384,6 +381,10 @@ class A3CThread:
                 Processed normalized state.
             sess: tf.Session.
                 The tf session.
+            e_greedy: float
+                The exploration probability.
+            dropout_prob: float
+                The dropout probability, currently not in use. 
         
         Return: int 
             The action index.
@@ -406,13 +407,48 @@ class A3CThread:
             if imd_x <= 0.0:
                 selected_act = i;
                 return selected_act;
-        # Debug
-        print ('state ', state);
-        print ('Softmax output debug ', softmax_a, 'shared_layer ', shared_layer);
     
 
 class A3CAgent:
     """
+    The A3C Agent class. 
+
+    Args:
+        state_dim: int
+            The state dimension.
+        window_len: int
+            The state stack window length.
+        vloss_frac: float
+            The value loss fraction.
+        ploss_frac: float
+            The policy loss fraction.
+        hregu_frac: float
+            The enthalpy regulation fraction.
+        num_threads: int
+            The number of threads to be used.
+        learning_rate: float
+            The learning rate.
+        rmsprop_decay: float
+            The decay rate of the RMSProp optimizer.
+        rmsprop_momet: float
+            The momentum value of the RMSProp optimizer.
+        rmsprop_epsil: float
+            The epsilon value of the RMSProp optimizer.
+        clip_norm: float
+            The gradient clip value.
+        log_dir: str
+            The log file storage directory.
+        init_epsilon: float
+            The initial epsilon value for exploration.
+        end_epsilon: float
+            The final epsilon value for exploration.
+        decay_steps: float
+            The epsilon decay steps.
+        action_space_name: str
+            The action space name.
+        dropout_prob: float
+            The dropout probility. Current not in use. 
+
     """
     def __init__(self,
                  state_dim,
@@ -458,9 +494,16 @@ class A3CAgent:
         This method sets up the required TF graph and operations.
         
         Args:
+            is_warm_start: bool
+                Whether to read trained neural network from the file, and train based on that. 
+            model_dir: str
+                If is_warm_start is true, this arg is the model directory.
+            save_scope: str
+                The model save scope, choice of global (save global network only) and all (save all networks).
         
-        Return:
-        
+        Return: tuple
+            (tf.graph, tf.session, tf.train.Coordinator(), tf.tensor of the global_network, 
+            tf.tensor of the workers' network, tf.summary.FileWriter, tf.train.Saver)
         
         """
         g = tf.Graph();
@@ -517,6 +560,38 @@ class A3CAgent:
 
     def test(self, sess, global_network, env_test_name, num_episodes, e_weight, p_weight, 
                 reward_mode, test_mode, agent_num, ppd_penalty_limit, log_dir):
+
+        """
+        This method is used to test the trained agent for HVAC control.
+        
+        Args:
+            sess: tf.Session
+                The tf.Session object.
+            global_network: tf.Tensor
+                The global network tensor.
+            env_test_name: str
+                The test environment name.
+            num_episodes: int
+                The test episode number.
+            e_weight: float
+                The penalty weight on energy.
+            p_weight: float
+                The penalty weight on comfort.
+            reward_mode: str
+                The reward mode.
+            test_mode: str
+                The test mode, choice of Single or Multiple.
+            agent_num: int
+                If the test_mode is Multiple, then this arg determines how many zones 
+                will be controlled. 
+            ppd_penalty_limit: float
+                After the PPD exceeds this limit, it will be set to 1.0.
+            log_dir: str
+                The log directory.
+        
+        Return: None
+        
+        """
         env_test = gym.make(env_test_name);
         if test_mode == 'single':
         	a3c_eval = A3CEval(sess, global_network, env_test, num_episodes, self._window_len, e_weight, p_weight);
@@ -536,6 +611,47 @@ class A3CAgent:
             e_weight, p_weight, save_freq, T_max, eval_epi_num,
             eval_freq, reward_mode, ppd_penalty_limit):
         """
+        This method is used to train the neural network. 
+        
+        Args:
+            sess: tf.Session
+                The tf.Session object.
+            coordinator: tf.train.Coordinator
+                The multithreading coordinator object.
+            global_network: tf.Tensor
+                The global network tensor.
+            workers: list
+                The workers' network tensor list.
+            global_summary_writer: tf.summary.FileWriter
+                The FileWriter object.
+            global_saver: tf.train.saver
+                The Saver object. 
+            env_name_list: list
+                The list of the environment names. 
+            t_max: int
+                The interaction number with the environment before performing
+                one training.
+            gamma: float
+                The discount rate.
+            e_weight: float
+                The penalty weight on energy.
+            p_weight: float
+                The penalty weight on comfort.
+            save_freq: int
+                The frequency to save the training.
+            T_max: int
+                The global maximum number of interactions with the environment.
+            eval_epi_num: int
+                The evaluation episode number. 
+            eval_freq: int
+                The evaluation frequency.
+            reward_mode: str
+                The reward mode.
+            ppd_penalty_limit: float
+                If PPD value exceeds this limit, then it will be set to 1.0. 
+        
+        Return: None
+        
         """
         threads = [];
         global_counter = Value('d', 0.0);
