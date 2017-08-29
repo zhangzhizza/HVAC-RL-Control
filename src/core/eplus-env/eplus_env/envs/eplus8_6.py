@@ -43,6 +43,12 @@ class EplusEnv(Env):
       variable.cfg path.
     idf_path: String
       EnergyPlus input description file (.idf).
+    incl_forecast: bool
+      Whether to include forecasted weather in the state observation. 
+    forecast_step: int
+      How many steps for the weather forecast. 
+    env_name: str
+      The environment name. 
 
     Attributes
     ----------
@@ -680,16 +686,3 @@ class EplusEnv(Env):
         return self._eplus_run_st_weekday;
 
     
-"""
-
-while True:   
-   rcv = c.recv(1024).decode();
-   logging.info('Got message: ' + rcv);
-   version, flag, nDb, nIn, nBl, curSimTim, Dblist = disassembleMsg(rcv);
-   tosend = assembleMsg(version, flag, 0, nIn, nBl, curSimTim, []);
-   c.send(tosend.encode());
-import gym
-import core.eplus_env.eplus8_6;
-env = gym.make('Eplus-v0')
-
-"""
