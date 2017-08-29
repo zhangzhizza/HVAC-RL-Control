@@ -10,6 +10,28 @@ STPT_LIMITS = stpt_limits;
 class A3CEval_multiagent:
     def __init__(self, sess, global_network, env, num_episodes, window_len, 
                  e_weight, p_weight, agent_num):
+        """
+        This is the class for evaluation under the multi-zone control mode. 
+
+        Args:
+            sess: tf.Session
+                The tf.Session object.
+            global_network: tf.Tensor
+                The global network object.
+            env: str
+                The test environment name.
+            num_episodes: int
+                The number of episode
+            window_len: int
+                The length of the state stacking window.
+            e_weight: float
+                The penalty weight on energy.
+            p_weight: float
+                The penalty weight on comfort.
+            agent_num: int
+                The number of zones to be controlled. 
+
+        """
         self._sess = sess;
         self._global_network = global_network;
         self._env = env;
@@ -31,6 +53,19 @@ class A3CEval_multiagent:
 
     def evaluate(self, local_logger, reward_mode, action_space_name, ppd_penalty_limit):
         """
+        This method do the evaluation for the trained agent. 
+
+        Args:
+            local_logger: util.Logger
+                The logger object for local logging. 
+            reward_mode: str
+                The reward mode.
+            action_space_name: str
+                The name for the action space.
+            ppd_penalty_limit: float
+                If the PPD exceed this limit, then it will be set to 1.0.
+        Return: tuple
+            The average reward for each controlled zone. 
         """
         action_space = ACTION_MAP[action_space_name];
         episode_counter = 1;
@@ -131,8 +166,6 @@ class A3CEval_multiagent:
         Args:
             state: np.ndarray, 1*m where m is the state feature dimension.
                 Processed normalized state.
-            sess: tf.Session.
-                The tf session.
         
         Return: int 
             The action index.
@@ -154,6 +187,17 @@ class A3CEval_multiagent:
                 return i;
 
     def _get_agent_state(self, ob_this_raw_all, agent_id):
+        """
+        This method returns the state corresponding to each controlled zone. 
+
+        Args:
+            ob_this_raw_all: list
+                All state observations for this time step.
+            agent_id: int
+                The # of the agent.
+        Return: list
+            The state observation for the agent.  
+        """
         ret = ob_this_raw_all[:DIS_RAW_IDX + 1]; # Copy the weather observations
         ret.extend(ob_this_raw_all[DIS_RAW_IDX + ZN_OB_NUM * agent_id + 1: DIS_RAW_IDX + ZN_OB_NUM * agent_id + 1 + ZN_OB_NUM]);
         ret.append(ob_this_raw_all[-1]);
@@ -162,6 +206,26 @@ class A3CEval_multiagent:
 class A3CEval:
     def __init__(self, sess, global_network, env, num_episodes, window_len, 
                  e_weight, p_weight):
+        """
+        This is the class for evaluation under the single-zone control mode. 
+
+        Args:
+            sess: tf.Session
+                The tf.Session object.
+            global_network: tf.Tensor
+                The global network object.
+            env: str
+                The test environment name.
+            num_episodes: int
+                The number of episode
+            window_len: int
+                The length of the state stacking window.
+            e_weight: float
+                The penalty weight on energy.
+            p_weight: float
+                The penalty weight on comfort.
+
+        """
         self._sess = sess;
         self._global_network = global_network;
         self._env = env;
@@ -182,6 +246,19 @@ class A3CEval:
 
     def evaluate(self, local_logger, reward_mode, action_space_name, ppd_penalty_limit):
         """
+        This method do the evaluation for the trained agent. 
+
+        Args:
+            local_logger: util.Logger
+                The logger object for local logging. 
+            reward_mode: str
+                The reward mode.
+            action_space_name: str
+                The name for the action space.
+            ppd_penalty_limit: float
+                If the PPD exceed this limit, then it will be set to 1.0.
+        Return: tuple
+            The average reward for each controlled zone. 
         """
         action_space = ACTION_MAP[action_space_name];
         episode_counter = 1;
@@ -271,8 +348,6 @@ class A3CEval:
         Args:
             state: np.ndarray, 1*m where m is the state feature dimension.
                 Processed normalized state.
-            sess: tf.Session.
-                The tf session.
         
         Return: int 
             The action index.
