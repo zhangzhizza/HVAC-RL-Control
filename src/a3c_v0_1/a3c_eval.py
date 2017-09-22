@@ -1,11 +1,9 @@
 import numpy as np
 from a3c_v0_1.actions import action_map
-from a3c_v0_1.action_limits import stpt_limits
 from a3c_v0_1.preprocessors import HistoryPreprocessor, process_raw_state_cmbd, get_legal_action, get_reward
 from a3c_v0_1.state_index import *
 
 ACTION_MAP = action_map;
-STPT_LIMITS = stpt_limits;
 
 class A3CEval_multiagent:
     def __init__(self, sess, global_network, env, num_episodes, window_len, 
@@ -51,7 +49,7 @@ class A3CEval_multiagent:
         self._agent_num = agent_num;
         
 
-    def evaluate(self, local_logger, reward_mode, action_space_name, ppd_penalty_limit):
+    def evaluate(self, local_logger, reward_mode, action_space_name, ppd_penalty_limit, STPT_LIMITS):
         """
         This method do the evaluation for the trained agent. 
 
@@ -240,7 +238,7 @@ class A3CEval:
         self._p_weight = p_weight;
         
 
-    def evaluate(self, local_logger, reward_mode, action_space_name, ppd_penalty_limit):
+    def evaluate(self, local_logger, action_space_name, reward_func, rewardArgs, action_func, action_limits):
         """
         This method do the evaluation for the trained agent. 
 
@@ -278,11 +276,7 @@ class A3CEval:
             # Get the action
             action_raw_idx = self._select_sto_action(ob_this_hist_prcd);
             action_raw_tup = action_space[action_raw_idx];
-            cur_htStpt = ob_this_raw[HTSP_RAW_IDX];
-            cur_clStpt = ob_this_raw[CLSP_RAW_IDX];
-            action_stpt_prcd, action_effec = get_legal_action(
-                                                        cur_htStpt, cur_clStpt, 
-                                                    action_raw_tup, STPT_LIMITS);
+            action_stpt_prcd, action_effec = action_func(action_raw_tup, action_limits, ob_this_raw);
             action_stpt_prcd = list(action_stpt_prcd);
             # Perform the action
             time_next, ob_next_raw, is_terminal = \
@@ -293,13 +287,7 @@ class A3CEval:
                                               self._env_st_dy, self._env_st_wd, 
                                               self._pcd_state_limits); # 1-D list
             # Get the reward
-            normalized_hvac_energy = ob_next_prcd[HVACE_RAW_IDX + 2];
-            normalized_ppd = ob_next_prcd[ZPPD_RAW_IDX + 2];
-            occupancy_status = ob_next_prcd[ZPCT_RAW_IDX + 2];
-            reward_next = get_reward(normalized_hvac_energy, normalized_ppd, 
-                                    self._e_weight, self._p_weight, 
-                                    occupancy_status, reward_mode, 
-                                    ppd_penalty_limit);
+            reward_next = reward_func(ob_next_prcd, e_weight, p_weight, *rewardArgs);
             this_ep_reward += reward_next;
             this_ep_max_ppd = max(normalized_ppd if occupancy_status > 0 else 0,
                                   this_ep_max_ppd);

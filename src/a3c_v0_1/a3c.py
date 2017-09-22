@@ -16,14 +16,12 @@ from util.logger import Logger
 from a3c_v0_1.objectives import a3c_loss
 from a3c_v0_1.a3c_network import A3C_Network
 from a3c_v0_1.actions import action_map
-from a3c_v0_1.action_limits import stpt_limits
-from a3c_v0_1.preprocessors import HistoryPreprocessor, process_raw_state_cmbd, get_legal_action, get_reward
+from a3c_v0_1.preprocessors import HistoryPreprocessor, process_raw_state_cmbd
 from a3c_v0_1.utils import init_variables, get_hard_target_model_updates, get_uninitialized_variables
 from a3c_v0_1.state_index import *
 from a3c_v0_1.a3c_eval import A3CEval_multiagent, A3CEval
 
 ACTION_MAP = action_map;
-STPT_LIMITS = stpt_limits;
 LOG_LEVEL = 'INFO';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 
@@ -156,8 +154,8 @@ class A3CThread:
     def train(self, sess, t_max, env_name, coordinator, global_counter, global_lock, 
               gamma, e_weight, p_weight, save_freq, log_dir, global_saver, 
               global_summary_writer, T_max, global_agent_eval_list, eval_freq, 
-              global_res_list, reward_mode, action_space_name, dropout_prob,
-              ppd_penalty_limit):
+              global_res_list, action_space_name, dropout_prob,
+              reward_func, rewardArgs, action_func, action_limits):
         """
         The function that the thread worker works to train the networks.
         
@@ -243,11 +241,8 @@ class A3CThread:
                 action_raw_idx = self._select_sto_action(ob_this_hist_prcd, sess,
                                                          self._e_greedy, dropout_prob = dropout_prob); ####DEBUG FOR DROPOUT
                 action_raw_tup = action_space[action_raw_idx];
-                cur_htStpt = ob_this_raw[HTSP_RAW_IDX];
-                cur_clStpt = ob_this_raw[CLSP_RAW_IDX];
-                action_stpt_prcd, action_effec = get_legal_action(
-                                                        cur_htStpt, cur_clStpt, 
-                                                    action_raw_tup, STPT_LIMITS);
+                
+                action_stpt_prcd, action_effec = action_func(action_raw_tup, action_limits, ob_this_raw);
                 action_stpt_prcd = list(action_stpt_prcd);
                 # Take the action
                 time_next, ob_next_raw, is_terminal = \
@@ -257,24 +252,18 @@ class A3CThread:
                                               env_st_yr, env_st_mn, env_st_dy,
                                               env_st_wd, pcd_state_limits); # 1-D list
                 # Get the reward
-                normalized_hvac_energy = ob_next_prcd[HVACE_RAW_IDX + 2];
-                normalized_ppd = ob_next_prcd[ZPPD_RAW_IDX + 2];
-                occupancy_status = ob_next_prcd[ZPCT_RAW_IDX + 2];
-                reward_next = get_reward(normalized_hvac_energy, normalized_ppd, 
-                                         e_weight, p_weight, occupancy_status,
-                                         mode = reward_mode, 
-                                         ppd_penalty_limit = ppd_penalty_limit);
+                reward_next = reward_func(ob_next_prcd, e_weight, p_weight, *rewardArgs);
                 self._local_logger.debug('Environment debug: raw action idx is %d, '
-                                         'current heating setpoint is %0.04f, '
-                                         'current cooling setpoint is %0.04f, '
+                                         'current raw observation is %s, '
                                          'actual action is %s, '
                                          'sim time next is %0.04f, '
                                          'raw observation next is %s, '
                                          'processed observation next is %s, '
                                          'reward next is %0.04f.'
-                                         %(action_raw_idx, cur_htStpt, cur_clStpt,
+                                         %(action_raw_idx, ob_this_raw,
                                            str(action_stpt_prcd), time_next, 
                                            ob_next_raw, ob_next_prcd, reward_next));
+
                 # Get the history stacked state
                 ob_next_hist_prcd = self._histProcessor.\
                             process_state_for_network(ob_next_prcd) # 2-D array
@@ -291,9 +280,9 @@ class A3CThread:
                         self._local_logger.info('Evaluating...');
                         global_res_list.append([global_counter.value]);
                         for global_agent_eval in global_agent_eval_list:
-                            eval_res = global_agent_eval.evaluate(self._local_logger, 
-                                                              reward_mode, action_space_name,
-                                                              ppd_penalty_limit);
+                            eval_res = global_agent_eval.evaluate(self._local_logger,
+                                                    action_space_name, reward_func, rewardArgs, 
+                                                    action_func, action_limits);
                             global_res_list[-1].extend([eval_res[0],eval_res[1]]);
                         np.savetxt(log_dir + '/eval_res_hist.csv', 
                                    np.array(global_res_list), delimiter = ',');
@@ -609,7 +598,7 @@ class A3CAgent:
     def fit(self, sess, coordinator, global_network, workers, 
             global_summary_writer, global_saver, env_name_list, t_max, gamma, 
             e_weight, p_weight, save_freq, T_max, eval_epi_num,
-            eval_freq, reward_mode, ppd_penalty_limit):
+            eval_freq, reward_func, rewardArgs, action_func, action_limits):
         """
         This method is used to train the neural network. 
         
@@ -676,8 +665,10 @@ class A3CAgent:
                                                 global_summary_writer,T_max,
                                                 global_agent_eval_list, eval_freq,
                                                 global_res_list,
-                                                reward_mode, self._action_space_name, 
-                                                self._dropout_prob, ppd_penalty_limit);
+                                                self._action_space_name, 
+                                                self._dropout_prob, reward_func, 
+                                                rewardArgs, action_func, action_limits);
+
             thread = threading.Thread(target = (worker_train));
             thread.start();
             time.sleep(1); # Wait for a while for the env to setup

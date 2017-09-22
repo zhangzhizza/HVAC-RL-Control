@@ -1,0 +1,71 @@
+Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2017.09.21 05:39,IDD_Version 8.3.0
+   ** Warning ** ManageSizing: For a zone sizing run, there must be at least 1 Sizing:Zone input object. SimulationControl Zone Sizing option ignored.
+   ** Warning ** ManageSizing: For a plant sizing run, there must be at least 1 Sizing:Plant object input. SimulationControl Plant Sizing option ignored.
+   ** Warning ** CheckUsedConstructions: There are 1 nominally unused constructions in input.
+   **   ~~~   ** For explicit details on each unused construction, use Output:Diagnostics,DisplayExtraWarnings;
+   ************* Testing Individual Branch Integrity
+   ************* All Branches passed integrity testing
+   ************* Testing Individual Supply Air Path Integrity
+   ************* All Supply Air Paths passed integrity testing
+   ************* Testing Individual Return Air Path Integrity
+   ************* All Return Air Paths passed integrity testing
+   ************* No node connection errors were found.
+   ************* Beginning Simulation
+   ** Warning ** ZoneHVAC:LowTemperatureRadiant:VariableFlow [WEST ZONE RADIANT FLOOR]
+   **   ~~~   ** Surface [ZN001:FLR001] temperature below dew-point temperature--potential for condensation exists
+   **   ~~~   ** Flow to the radiant system will be shut-off to avoid condensation
+   **   ~~~   ** Predicted radiant system surface temperature = 12.63
+   **   ~~~   ** Zone dew-point temperature + safety delta T= 13.21
+   **   ~~~   **  Environment=Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300, at Simulation time=01/17 13:45 - 14:00
+   **   ~~~   ** Note that a 1.0000 C safety was chosen in the input for the shut-off criteria
+   **   ~~~   ** Note also that this affects all surfaces that are part of this radiant system
+   ** Warning ** ZoneHVAC:LowTemperatureRadiant:VariableFlow [NORTH ZONE RADIANT FLOOR]
+   **   ~~~   ** Surface [ZN003:FLR001] temperature below dew-point temperature--potential for condensation exists
+   **   ~~~   ** Flow to the radiant system will be shut-off to avoid condensation
+   **   ~~~   ** Predicted radiant system surface temperature = 19.35
+   **   ~~~   ** Zone dew-point temperature + safety delta T= 19.63
+   **   ~~~   **  Environment=Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300, at Simulation time=03/27 15:00 - 15:15
+   **   ~~~   ** Note that a 1.0000 C safety was chosen in the input for the shut-off criteria
+   **   ~~~   ** Note also that this affects all surfaces that are part of this radiant system
+   ** Warning ** ZoneHVAC:LowTemperatureRadiant:VariableFlow [EAST ZONE RADIANT FLOOR]
+   **   ~~~   ** Surface [ZN002:FLR001] temperature below dew-point temperature--potential for condensation exists
+   **   ~~~   ** Flow to the radiant system will be shut-off to avoid condensation
+   **   ~~~   ** Predicted radiant system surface temperature = 18.41
+   **   ~~~   ** Zone dew-point temperature + safety delta T= 18.63
+   **   ~~~   **  Environment=Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300, at Simulation time=04/11 15:00 - 15:15
+   **   ~~~   ** Note that a 1.0000 C safety was chosen in the input for the shut-off criteria
+   **   ~~~   ** Note also that this affects all surfaces that are part of this radiant system
+   ************* Simulation Error Summary *************
+   *************
+   ************* ===== Recurring Error Summary =====
+   ************* The following recurring error messages occurred.
+   *************
+   *************  ** Warning ** ZoneHVAC:LowTemperatureRadiant:VariableFlow [WEST ZONE RADIANT FLOOR] condensation shut-off occurrence continues.
+   *************  **   ~~~   **   This error occurred 28264 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=31.387852 C  Min=10.651235 C
+   *************
+   *************  ** Warning ** ZoneHVAC:LowTemperatureRadiant:VariableFlow [NORTH ZONE RADIANT FLOOR] condensation shut-off occurrence continues.
+   *************  **   ~~~   **   This error occurred 21336 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=30.628388 C  Min=13.031907 C
+   *************
+   *************  ** Warning ** ZoneHVAC:LowTemperatureRadiant:VariableFlow [EAST ZONE RADIANT FLOOR] condensation shut-off occurrence continues.
+   *************  **   ~~~   **   This error occurred 20226 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=31.401737 C  Min=13.640881 C
+   *************
+   *************
+   ************* ===== Final Error Summary =====
+   ************* The following error categories occurred.  Consider correcting or noting.
+   ************* Nominally Unused Constructions
+   ************* ..The nominally unused constructions warning is provided to alert you to potential conditions that can cause
+   ************* ..extra time during simulation. Each construction is calculated by the algorithm indicated in the HeatBalanceAlgorithm
+   ************* ..object. You may remove the constructions indicated (when you use the DisplayExtraWarnings option).
+   *************
+   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 2 Warning; 0 Severe Errors.
+   ************* EnergyPlus Completed Successfully-- 69829 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  9.41sec
