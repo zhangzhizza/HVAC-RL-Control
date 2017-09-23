@@ -106,7 +106,7 @@ def get_args():
     	'Determines how many zones are controlled by the agent in the testing time.');
     return parser;
 
-def effective_main(args, reward_func, rewardArgs, action_func, action_limits):
+def effective_main(args, reward_func, rewardArgs, action_func, action_limits, raw_state_process_func):
     
     args.output = get_output_folder(args.output, args.env)
     tf.gfile.MakeDirs(args.output + '/model_data')
@@ -131,7 +131,9 @@ def effective_main(args, reward_func, rewardArgs, action_func, action_limits):
                          init_epsilon = args.init_e, end_epsilon = args.end_e, 
                          decay_steps = args.decay_steps,
                          action_space_name = args.action_space,
-                         dropout_prob = args.dropout_prob);
+                         dropout_prob = args.dropout_prob,
+                         global_logger = main_logger
+                         );
     main_logger.info ('Start compiling...')
     (g, sess, coordinator, global_network, workers, global_summary_writer, 
      global_saver) = a3c_agent.compile(args.is_warm_start, args.model_dir, 
@@ -142,11 +144,12 @@ def effective_main(args, reward_func, rewardArgs, action_func, action_limits):
         a3c_agent.fit(sess, coordinator, global_network, workers, 
                       global_summary_writer, global_saver, [args.env, args.test_env], args.train_freq,
                       args.gamma, args.e_weight, args.p_weight, args.save_freq, args.max_interactions,
-                      args.eval_epi_num, args.eval_freq, reward_func, rewardArgs, action_func, action_limits);
+                      args.eval_epi_num, args.eval_freq, reward_func, rewardArgs, action_func, 
+                      action_limits, raw_state_process_func);
 
     if args.job_mode.lower() == 'test':
         main_logger.info ('Start the testing...')
         a3c_agent.test(sess, global_network, args.test_env, args.eval_epi_num, args.e_weight, 
                        args.p_weight, args.reward_mode, args.test_mode.lower(), args.agent_num, 
-                       args.ppd_penalty_limit, args.output);
+                       args.ppd_penalty_limit, args.output, raw_state_process_func);
 

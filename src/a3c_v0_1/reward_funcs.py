@@ -65,6 +65,6 @@ def err_energy_reward_iw(ob_next_prcd, e_weight, p_weight, err_penalty_scl):
     normalized_hvac_energy = ob_next_prcd[HVACE_RAW_IDX + TIMESTATE_LEN];
     normalized_zat = ob_next_prcd[ZAT_RAW_IDX + TIMESTATE_LEN];
     normalized_zatssp = ob_next_prcd[ZATSSP_RAW_IDX + TIMESTATE_LEN];
-    noralized_err = min(abs(normalized_zat - normalized_zatssp) * err_penalty_scl, 1.0); 
-    ret = - (e_weight * normalized_hvac_energy + p_weight * noralized_err);
+    normalized_err = min(abs(normalized_zat - normalized_zatssp) * err_penalty_scl, 1.0); 
+    ret = - (e_weight * normalized_hvac_energy + p_weight * normalized_err);
     return ret;

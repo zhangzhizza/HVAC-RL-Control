@@ -11,7 +11,6 @@ def process_raw_state_1(simTime, state, start_year, start_mon,
     """
     Raw state processing 1. Do the following things:
     1. Insert day of the week and hour of the day to start of the state list;
-    2. Change the occupant count to the occupancy status (0 or 1).
     
     Args:
         simTime: python list, 1-D 
@@ -31,24 +30,6 @@ def process_raw_state_1(simTime, state, start_year, start_mon,
     Return: python list, 1-D or 2-D
         Deepcopy of the processed state. It can be only one sample (1-D) or 
         multiple samples (2-D, where each row is a sample).
-        State feature order:
-            0. Day of the week (0-6, 0 is Monday)
-            1. Hour of the day (0-23)
-            2. Site Outdoor Air Drybulb Temperature (C)
-            3. Site Outdoor Air Relative Humidity (%)
-            4. Site Wind Speed (m/s)
-            5. Site Wind Direction (degree from north)
-            6. Site Diffuse Solar Radiation Rate per Area (W/m2)
-            7. Site Direct Solar Radiation Rate per Area (W/m2)
-            8. Zone Thermostat Heating Setpoint Temperature (C) 
-            9. Zone Thermostat Cooling Setpoint Temperature (C) 
-            10. Zone Air Temperature (C)
-            11. Zone Thermal Comfort Mean Radiant Temperature (C)
-            12. Zone Air Relative Humidity (%)
-            13. Zone Thermal Comfort Clothing Value (clo) 
-            14. Zone Thermal Comfort Fanger Model PPD
-            15. Zone People Occupancy status (0 or 1)
-            16. Facility Total HVAC Electric Demand Power (W)
     """
     ret = [];
     state = np.array(state);
@@ -63,8 +44,8 @@ def process_raw_state_1(simTime, state, start_year, start_mon,
                                                     start_weekday);
         state_i_list.insert(0, nowHour);     # Add weekday and hour infomation
         state_i_list.insert(0, nowWeekday);
-        state_i_list[ZPCT_RAW_IDX + 2] = 1 if state_i_list[ZPCT_RAW_IDX + 2] > 0 \
-                                           else 0; # Occupancy count --> occupancy
+        #state_i_list[ZPCT_RAW_IDX + 2] = 1 if state_i_list[ZPCT_RAW_IDX + 2] > 0 \
+        #                                   else 0; # Occupancy count --> occupancy
         if state.shape[0] > 1:
             ret.append(state_i_list);
         else:
@@ -128,100 +109,13 @@ def process_raw_state_cmbd(raw_state, simTime, start_year, start_mon,
         Processed min-max normalized (0 to 1) state It can be only one sample 
         (1-D) or multiple samples (2-D, where each row is a sample).
         State feature order:
-            0. Day of the week
-            1. Hour of the day
-            2. Site Outdoor Air Drybulb Temperature
-            3. Site Outdoor Air Relative Humidity
-            4. Site Wind Speed
-            5. Site Wind Direction
-            6. Site Diffuse Solar Radiation Rate per Area
-            7. Site Direct Solar Radiation Rate per Area
-            8. Zone Thermostat Heating Setpoint Temperature
-            9. Zone Thermostat Cooling Setpoint Temperature 
-            10. Zone Air Temperature
-            11. Zone Thermal Comfort Mean Radiant Temperature
-            12. Zone Air Relative Humidity
-            13. Zone Thermal Comfort Clothing Value
-            14. Zone Thermal Comfort Fanger Model PPD
-            15. Zone People Occupancy status 
-            16. Facility Total HVAC Electric Demand Power
+        
     """
     state_after_1 = process_raw_state_1(simTime, raw_state, start_year, start_mon, 
                                         start_date, start_day);
     state_after_2 = process_raw_state_2(state_after_1, min_max_limits)
     
     return state_after_2;
-    
-    
-def get_legal_action(htStpt, clStpt, action_raw, stptLmt):
-    """
-    Check whether the action is legal, which is that the resulting cooling
-    setpoint must be higher or equal to the resulting heating setpoint; also, 
-    both heating and cooling setpoint must be within the range of stptLmt.
-    
-    The stptLmt will be firstly checked. The resuling heating setpoint and 
-    cooling setpoint will be truncated by the stptLmt. Then clStpt > htStpt
-    rule will be checked. If violated, the original htStpt and clStpt will be
-    returned; else, the resulting htStpt and clStpt will be returned. 
-    
-    Args:
-        htStpt: float
-            Heating setpoint of the current observation.
-        clStpt: float
-            Cooling setpoint of the current observation.
-        action_raw: (float, float)
-            The raw action planned to be taken to the current heating and 
-            cooling setpoint.
-        stptLmt: (float, float)
-            The low limit (included) and high limit (included) for the heating
-            and cooling setpoint. 
-        
-    Return: ((float, float), (float, float))
-        A tuple with length 2. The index 0 is a tuple of resulting heating and
-        cooling setpoint, and the index 1 is a tuple of resulting effective 
-        action.
-    """
-    res_htStpt = max(min(htStpt + action_raw[0], stptLmt[1]), stptLmt[0]);
-    res_clStpt = max(min(clStpt + action_raw[1], stptLmt[1]), stptLmt[0]);
-    if res_clStpt < res_htStpt:
-        return ((htStpt, clStpt),(0.0, 0.0));
-    else:
-        return ((res_htStpt, res_clStpt),
-                (res_htStpt - htStpt, res_clStpt - clStpt)); 
-    
-def get_reward(normalized_hvac_energy, normalized_ppd, e_weight, p_weight,
-               occupancy_status, mode, ppd_penalty_limit):
-    """
-    Get the reward from hvac energy and pmv. If occupancy status is 0 (not 
-    occupied), then the PPD will be 0.0; else, PPD is the original normalized
-    PPD. 
-    
-    Args:
-        normalized_hvac_energy: float
-            Normalized HVAC energy ranging from 0 to 1.
-        normalized_ppd: float
-            Normalized PPD ranging from 0 to 1.
-        e_weight: float
-            The weight to HVAC energy consumption.
-        p_weight: float
-            The weight to PPD. 
-        occupancy_status: float
-            The occupancy status, 1 or 0.
-    Return: float
-        The combined reward. 
-    """
-    if occupancy_status == 0.0:
-        effect_normalized_ppd = 0.0;
-    else:
-        effect_normalized_ppd = normalized_ppd;
-    # Penalize on larger than ppd_penalty_limit PPD
-    if effect_normalized_ppd > ppd_penalty_limit:
-        effect_normalized_ppd = 1.0;
-    if mode == 'l2':
-        ret = - LA.norm(np.array([effect_normalized_ppd, normalized_hvac_energy]));
-    if mode == 'linear':
-        ret = - (e_weight * normalized_hvac_energy + p_weight * effect_normalized_ppd);
-    return ret;
     
 class HistoryPreprocessor:
     """Keeps the last k states.

@@ -23,8 +23,8 @@ from ..util.time_interpolate import get_time_interpolate
 
 YEAR = 1991 # Non leap year
 CWD = os.getcwd();
-LOG_LEVEL_MAIN = 'DEBUG';
-LOG_LEVEL_EPLS = 'DEBUG'
+LOG_LEVEL_MAIN = 'INFO';
+LOG_LEVEL_EPLS = 'INFO'
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 ACTION_SIZE = 2 * 5;
 
@@ -57,8 +57,9 @@ class EplusEnv(Env):
                  weather_path, bcvtb_path, 
                  variable_path, idf_path, env_name,
                  incl_forecast = False, forecast_step = 36):
+        self._env_name = env_name;
         self._thread_name = threading.current_thread().getName();
-        self.logger_main = Logger().getLogger('EPLUS_ENV_ROOT-%s'%self._thread_name, 
+        self.logger_main = Logger().getLogger('EPLUS_ENV_%s_%s_ROOT'%(env_name, self._thread_name), 
                                             LOG_LEVEL_MAIN, LOG_FMT);
         
         # Set the environment variable for bcvtb
@@ -74,7 +75,7 @@ class EplusEnv(Env):
         s.listen(60)                # Listen on request
         self.logger_main.debug('Socket is listening on host %s port %d'%(sockname));
   
-        self._env_working_dir_parent = self._get_eplus_working_folder(CWD, '-%s-run'%(env_name));
+        self._env_working_dir_parent = self._get_eplus_working_folder(CWD, '-%s-res'%(env_name));
         os.makedirs(self._env_working_dir_parent);
         self._host = host;
         self._port = port;
@@ -223,8 +224,8 @@ class EplusEnv(Env):
         self._eplus_process = eplus_process;
        
         # Log the Eplus output
-        eplus_logger = Logger().getLogger('ENERGYPLUS-EPI_%d-%s'%(self._epi_num,
-                                                                  self._thread_name),
+        eplus_logger = Logger().getLogger('EPLUS_ENV_%s_%s-EPLUSPROCESS_EPI_%d'
+                                        %(self._env_name, self._thread_name, self._epi_num),
                                         LOG_LEVEL_EPLS, LOG_FMT);
         _thread.start_new_thread(self._log_subprocess_info,
                                 (eplus_process.stdout,
@@ -294,31 +295,20 @@ class EplusEnv(Env):
         # Check terminal
         if self._curSimTim >= self._eplus_one_epi_len:
             return None;
-        # Check if will terminal
-        will_terminal = False;
-        if self._curSimTim + self._eplus_run_stepsize >= self._eplus_one_epi_len:
-            will_terminal = True;
         ret = [];
         # Send to the EnergyPlus
         self.logger_main.debug('Perform one step.')
         header = self._eplus_msg_header;
         runFlag = 0 # 0 is normal flag
-        if will_terminal:
-            runFlag = 1.0;
         tosend = self._assembleMsg(header[0], runFlag, len(action), 0,
                                    0, self._curSimTim, action);
         self._conn.send(tosend.encode());
         # Recieve from the EnergyPlus
         rcv = self._conn.recv(2048).decode(encoding = 'ISO-8859-1');
         self.logger_main.debug('Got message successfully: ' + rcv);
-        # Process received msg
-        if not will_terminal:         
-            version, flag, nDb, nIn, nBl, curSimTim, Dblist \
+        # Process received msg        
+        version, flag, nDb, nIn, nBl, curSimTim, Dblist \
                                         = self._disassembleMsg(rcv);     
-            
-        else:
-            curSimTim = self._curSimTim + self._eplus_run_stepsize;
-            Dblist = None;
         ret.append(curSimTim);
         ret.append(Dblist);
         # Read the weather forecast
@@ -438,18 +428,18 @@ class EplusEnv(Env):
         resets the EnergyPlus environment.
         """
         # Send the final msg to EnergyPlus
-        header = self._eplus_msg_header;
-        tosend = self._assembleMsg(header[0], 1.0, ACTION_SIZE, 0,
-                                    0, self._curSimTim, 
-                                   [24 for i in range(ACTION_SIZE)]);
-        self.logger_main.debug('Send final msg to Eplus.');
-        self._conn.send(tosend.encode());
+        #header = self._eplus_msg_header;
+        #tosend = self._assembleMsg(header[0], 1.0, ACTION_SIZE, 0,
+        #                            0, self._curSimTim, 
+        #                           [24 for i in range(ACTION_SIZE)]);
+        #self.logger_main.debug('Send final msg to Eplus.');
+        #self._conn.send(tosend.encode());
         # Recieve the final msg from Eplus
         #rcv = self._conn.recv(2048).decode(encoding = 'ISO-8859-1');
         #self.logger_main.debug('Final msh from Eplus: %s', rcv)
         #self._conn.send(tosend.encode()); # Send again, don't know why
         
-        time.sleep(2) # Rest for a while so EnergyPlus finish post processing
+        #time.sleep(0.2) # Rest for a while so EnergyPlus finish post processing
         # Remove the connection
         self._conn.close();
         self._conn = None;
@@ -581,7 +571,6 @@ class EplusEnv(Env):
                 break;
             line_count += 1;
             
-        print (ret)
         return tuple(ret);
             
     def _get_weather_info(self, eplus_run_st_mon, eplus_run_st_day, 

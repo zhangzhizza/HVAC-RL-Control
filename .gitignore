@@ -2,18 +2,17 @@ src/virt_env
 reference/
 src/*Eplus-env-run*
 src/*Eplus-env*run*
-src/core/eplus-env/eplus_env/envs/EnergyPlus-8-*
-src/core/eplus-env/eplus_env/envs/*output*
-src/*-res*
+**/EnergyPlus-8-*/
+**/*output*/
 midway/
 proposal/
-src/*res
 src/a3c-eval/
 src/*-eval/
-src/*.ipynb_checkpoints*
-src/post_process/*.ipynb_checkpoints*
+**/*.ipynb_checkpoints*
 src/*case*
 src/core/eplus-env/eplus_env/envs/v1-*
+**/*Res*/
+**/*res*/
 
 *.swp
 *.pyc
