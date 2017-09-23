@@ -177,8 +177,8 @@ RunPeriod,
     wholeyear,               !- Name
     1,                       !- Begin Month
     1,                       !- Begin Day of Month
-    1,                      !- End Month
-    1,                      !- End Day of Month
+    3,                      !- End Month
+    31,                      !- End Day of Month
     Sunday,          !- Day of Week for Start Day
     No,                      !- Use Weather File Holidays and Special Days
     No,                      !- Use Weather File Daylight Saving Period

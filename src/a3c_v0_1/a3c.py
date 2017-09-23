@@ -24,6 +24,7 @@ from a3c_v0_1.a3c_eval import A3CEval_multiagent, A3CEval
 ACTION_MAP = action_map;
 LOG_LEVEL = 'INFO';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
+TIME_DIM = 2;
 
 class A3CThread:
     """
@@ -154,8 +155,8 @@ class A3CThread:
     def train(self, sess, t_max, env_name, coordinator, global_counter, global_lock, 
               gamma, e_weight, p_weight, save_freq, log_dir, global_saver, 
               global_summary_writer, T_max, global_agent_eval_list, eval_freq, 
-              global_res_list, action_space_name, dropout_prob,
-              reward_func, rewardArgs, action_func, action_limits):
+              global_res_list, action_space_name, dropout_prob, reward_func, 
+              rewardArgs, action_func, action_limits, raw_state_process_func):
         """
         The function that the thread worker works to train the networks.
         
@@ -201,7 +202,7 @@ class A3CThread:
                 
         """
         action_space = ACTION_MAP[action_space_name];
-        self._local_logger = Logger().getLogger('A3C_Worker-%s'
+        self._local_logger = Logger().getLogger('A3C_AGENT_WORKER-%s'
                                     %(threading.current_thread().getName()),
                                               LOG_LEVEL, LOG_FMT, log_dir + '/main.log');
         self._local_logger.info('Local worker starts!')
@@ -220,6 +221,7 @@ class A3CThread:
         pcd_state_limits = np.transpose(env_state_limits);
         # Reset the env
         time_this, ob_this_raw, is_terminal = env.reset();
+        ob_this_raw = raw_state_process_func(ob_this_raw);
         # Process and normalize the raw observation
         ob_this_prcd = process_raw_state_cmbd(ob_this_raw, [time_this], env_st_yr, 
                                               env_st_mn, env_st_dy, env_st_wd, 
@@ -247,6 +249,7 @@ class A3CThread:
                 # Take the action
                 time_next, ob_next_raw, is_terminal = \
                                                 env.step(action_stpt_prcd);
+                ob_next_raw = raw_state_process_func(ob_next_raw);
                 # Process and normalize the raw observation
                 ob_next_prcd = process_raw_state_cmbd(ob_next_raw, [time_next], 
                                               env_st_yr, env_st_mn, env_st_dy,
@@ -282,8 +285,8 @@ class A3CThread:
                         for global_agent_eval in global_agent_eval_list:
                             eval_res = global_agent_eval.evaluate(self._local_logger,
                                                     action_space_name, reward_func, rewardArgs, 
-                                                    action_func, action_limits);
-                            global_res_list[-1].extend([eval_res[0],eval_res[1]]);
+                                                    action_func, action_limits, raw_state_process_func);
+                            global_res_list[-1].extend([eval_res]);
                         np.savetxt(log_dir + '/eval_res_hist.csv', 
                                    np.array(global_res_list), delimiter = ',');
                         self._local_logger.info ('Global step: %d, '
@@ -307,6 +310,7 @@ class A3CThread:
                     # Reset the env
                     time_this, ob_this_raw, is_terminal_cp = env.reset();
                     # Process and normalize the raw observation
+                    ob_this_raw = raw_state_process_func(ob_this_raw);
                     ob_this_prcd = process_raw_state_cmbd(ob_this_raw, [time_this], 
                                               env_st_yr, env_st_mn, env_st_dy,
                                               env_st_wd, pcd_state_limits); # 1-D list
@@ -456,8 +460,9 @@ class A3CAgent:
                  end_epsilon,
                  decay_steps,
                  action_space_name,
-                 dropout_prob):
-        
+                 dropout_prob,
+                 global_logger):
+        state_dim += TIME_DIM; # Add time info dimension
         self._state_dim = state_dim;
         self._window_len = window_len;
         self._effec_state_dim = state_dim * window_len;
@@ -477,6 +482,7 @@ class A3CAgent:
         self._decay_steps = decay_steps;
         self._action_space_name = action_space_name;
         self._dropout_prob = dropout_prob;
+        self._global_logger = global_logger;
         
     def compile(self, is_warm_start, model_dir, save_scope = 'global'):
         """
@@ -583,22 +589,24 @@ class A3CAgent:
         """
         env_test = gym.make(env_test_name);
         if test_mode == 'single':
-        	a3c_eval = A3CEval(sess, global_network, env_test, num_episodes, self._window_len, e_weight, p_weight);
+        	a3c_eval = A3CEval(sess, global_network, env_test, num_episodes, 
+                                self._window_len, e_weight, p_weight);
         	eval_logger = Logger().getLogger('A3C_Test_Single-%s'%(threading.current_thread().getName()),
                                                  LOG_LEVEL, LOG_FMT, log_dir + '/main.log');
         if test_mode == 'multiple':
-        	a3c_eval = A3CEval_multiagent(sess, global_network, env_test, num_episodes, self._window_len, e_weight, p_weight, agent_num)
+        	a3c_eval = A3CEval_multiagent(sess, global_network, env_test, num_episodes, self._window_len, 
+                                            e_weight, p_weight, agent_num)
         	eval_logger = Logger().getLogger('A3C_Test_Multiple-%s'%(threading.current_thread().getName()),
                                                  LOG_LEVEL, LOG_FMT, log_dir + '/main.log');
         
         eval_logger.info("Testing...")
-        eval_res = a3c_eval.evaluate(eval_logger, reward_mode, self._action_space_name, ppd_penalty_limit);
+        eval_res = a3c_eval.evaluate(eval_logger, reward_mode, self._action_space_name, 
+                                        ppd_penalty_limit, raw_state_process_func);
         eval_logger.info("Testing finished.")
 
-    def fit(self, sess, coordinator, global_network, workers, 
-            global_summary_writer, global_saver, env_name_list, t_max, gamma, 
-            e_weight, p_weight, save_freq, T_max, eval_epi_num,
-            eval_freq, reward_func, rewardArgs, action_func, action_limits):
+    def fit(self, sess, coordinator, global_network, workers, global_summary_writer, global_saver, 
+            env_name_list, t_max, gamma, e_weight, p_weight, save_freq, T_max, eval_epi_num, eval_freq,
+            reward_func, rewardArgs, action_func, action_limits, raw_state_process_func):
         """
         This method is used to train the neural network. 
         
@@ -647,6 +655,7 @@ class A3CAgent:
         global_lock = Lock();
         # Create the env for training evaluation
         global_agent_eval_list = [];
+        self._global_logger.info('Prepare the evaluation environments %s ...', env_name_list);
         for env_name in env_name_list:
             env_eval = gym.make(env_name);
             global_agent_eval = A3CEval(sess, global_network, env_eval, eval_epi_num, 
@@ -656,18 +665,14 @@ class A3CAgent:
         global_res_list = [];
         thread_counter = 0;
         for worker in workers:
+            self._global_logger.info('Prepare the local workers ...');
             worker_train = lambda: worker.train(sess, t_max, 
-                                                env_name_list[0], 
-                                                coordinator, global_counter, 
-                                                global_lock, gamma, e_weight,
-                                                p_weight, save_freq, self._log_dir, 
-                                                global_saver, 
-                                                global_summary_writer,T_max,
-                                                global_agent_eval_list, eval_freq,
-                                                global_res_list,
-                                                self._action_space_name, 
-                                                self._dropout_prob, reward_func, 
-                                                rewardArgs, action_func, action_limits);
+                                                env_name_list[0], coordinator, global_counter, 
+                                                global_lock, gamma, e_weight, p_weight, save_freq,
+                                                self._log_dir, global_saver, global_summary_writer,
+                                                T_max, global_agent_eval_list, eval_freq, global_res_list,
+                                                self._action_space_name, self._dropout_prob, reward_func, 
+                                                rewardArgs, action_func, action_limits, raw_state_process_func);
 
             thread = threading.Thread(target = (worker_train));
             thread.start();

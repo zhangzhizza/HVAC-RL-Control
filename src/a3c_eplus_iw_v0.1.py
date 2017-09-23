@@ -14,6 +14,7 @@ Last update: Aug 28th, 2017
 from main_args import *
 from a3c_v0_1.reward_funcs import err_energy_reward_iw     
 from a3c_v0_1.action_funcs import mull_stpt_iw
+from a3c_v0_1.raw_state_processors import raw_state_process_iw
 from a3c_v0_1.action_limits import act_limits_smlRefBld   
 
 def main():
@@ -28,7 +29,8 @@ def main():
     rewardArgs = [args.err_penalty_scl];
     action_func = mull_stpt_iw;
     action_limits = act_limits_smlRefBld;
-    effective_main(args, reward_func, rewardArgs, action_func, action_limits);
+    raw_state_process_func = raw_state_process_iw;
+    effective_main(args, reward_func, rewardArgs, action_func, action_limits, raw_state_process_func);
         
 
 if __name__ == '__main__':

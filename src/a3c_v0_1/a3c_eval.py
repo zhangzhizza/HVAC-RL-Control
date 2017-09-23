@@ -1,6 +1,6 @@
 import numpy as np
 from a3c_v0_1.actions import action_map
-from a3c_v0_1.preprocessors import HistoryPreprocessor, process_raw_state_cmbd, get_legal_action, get_reward
+from a3c_v0_1.preprocessors import HistoryPreprocessor, process_raw_state_cmbd
 from a3c_v0_1.state_index import *
 
 ACTION_MAP = action_map;
@@ -49,7 +49,8 @@ class A3CEval_multiagent:
         self._agent_num = agent_num;
         
 
-    def evaluate(self, local_logger, reward_mode, action_space_name, ppd_penalty_limit, STPT_LIMITS):
+    def evaluate(self, local_logger, reward_mode, action_space_name, 
+                 ppd_penalty_limit, STPT_LIMITS, raw_state_process_func):
         """
         This method do the evaluation for the trained agent. 
 
@@ -78,6 +79,7 @@ class A3CEval_multiagent:
         for agent_i in range(self._agent_num):
             # Process and normalize the raw observation
             ob_this_raw_agent_i = ob_this_raw_list[agent_i];
+            ob_this_raw_agent_i = raw_state_process_func(ob_this_raw_agent_i);
             ob_this_prcd_agent_i = process_raw_state_cmbd(ob_this_raw_agent_i, [time_this], 
                                                         self._env_st_yr, self._env_st_mn, 
                                                         self._env_st_dy, self._env_st_wd, 
@@ -105,6 +107,7 @@ class A3CEval_multiagent:
             # Extract the state for each agent
             ob_next_raw_list = [self._get_agent_state(ob_next_raw_all, agent_id = agent_i) for agent_i in range(self._agent_num)];
             # Process the state and normalize it
+            ob_next_raw_list = [raw_state_process_func(ob_next_raw_agent_i) for ob_next_raw_agent_i in ob_next_raw_list];
             ob_next_prcd_list = [process_raw_state_cmbd(ob_next_raw_agent_i, [time_next], self._env_st_yr, self._env_st_mn, 
                                                         self._env_st_dy, self._env_st_wd, self._pcd_state_limits) \
                                 for ob_next_raw_agent_i in ob_next_raw_list];
@@ -131,7 +134,7 @@ class A3CEval_multiagent:
                 ob_this_hist_prcd_list = [];
                 for agent_i in range(self._agent_num):
                     # Process and normalize the raw observation
-                    ob_this_raw_agent_i = ob_this_raw_list[agent_i];
+                    ob_this_raw_agent_i = raw_state_process_func(ob_this_raw_list[agent_i]);
                     ob_this_prcd_agent_i = process_raw_state_cmbd(ob_this_raw_agent_i, [time_this], 
                                                         self._env_st_yr, self._env_st_mn, 
                                                         self._env_st_dy, self._env_st_wd, 
@@ -238,7 +241,8 @@ class A3CEval:
         self._p_weight = p_weight;
         
 
-    def evaluate(self, local_logger, action_space_name, reward_func, rewardArgs, action_func, action_limits):
+    def evaluate(self, local_logger, action_space_name, reward_func, rewardArgs, 
+                action_func, action_limits, raw_state_process_func):
         """
         This method do the evaluation for the trained agent. 
 
@@ -257,9 +261,10 @@ class A3CEval:
         action_space = ACTION_MAP[action_space_name];
         episode_counter = 1;
         average_reward = 0;
-        average_max_ppd = 0;
+        #average_max_ppd = 0;
         # Reset the env
         time_this, ob_this_raw, is_terminal = self._env.reset();
+        ob_this_raw = raw_state_process_func(ob_this_raw);
         # Process and normalize the raw observation
         ob_this_prcd = process_raw_state_cmbd(ob_this_raw, [time_this], 
                                               self._env_st_yr, self._env_st_mn, 
@@ -271,7 +276,7 @@ class A3CEval:
                             process_state_for_network(ob_this_prcd) # 2-D array
         # Do the eval
         this_ep_reward = 0;
-        this_ep_max_ppd = 0;
+        #this_ep_max_ppd = 0;
         while episode_counter <= self._num_episodes:
             # Get the action
             action_raw_idx = self._select_sto_action(ob_this_hist_prcd);
@@ -281,22 +286,24 @@ class A3CEval:
             # Perform the action
             time_next, ob_next_raw, is_terminal = \
                                                 self._env.step(action_stpt_prcd);
+            ob_next_raw = raw_state_process_func(ob_next_raw);
             # Process and normalize the raw observation
             ob_next_prcd = process_raw_state_cmbd(ob_next_raw, [time_next], 
                                               self._env_st_yr, self._env_st_mn, 
                                               self._env_st_dy, self._env_st_wd, 
                                               self._pcd_state_limits); # 1-D list
             # Get the reward
-            reward_next = reward_func(ob_next_prcd, e_weight, p_weight, *rewardArgs);
+            reward_next = reward_func(ob_next_prcd, self._e_weight, self._p_weight, *rewardArgs);
             this_ep_reward += reward_next;
-            this_ep_max_ppd = max(normalized_ppd if occupancy_status > 0 else 0,
-                                  this_ep_max_ppd);
+            #this_ep_max_ppd = max(normalized_ppd if occupancy_status > 0 else 0,
+            #                      this_ep_max_ppd);
             # Get the history stacked state
             ob_next_hist_prcd = self._histProcessor.\
                             process_state_for_network(ob_next_prcd) # 2-D array
             # Check whether to start a new episode
             if is_terminal:
                 time_this, ob_this_raw, is_terminal = self._env.reset();
+                ob_this_raw = raw_state_process_func(ob_this_raw);
                 # Process and normalize the raw observation
                 ob_this_prcd = process_raw_state_cmbd(ob_this_raw, [time_this], 
                                               self._env_st_yr, self._env_st_mn, 
@@ -309,21 +316,20 @@ class A3CEval:
                 # Update the average reward
                 average_reward = (average_reward * (episode_counter - 1) 
                                   + this_ep_reward) / episode_counter;
-                average_max_ppd = (average_max_ppd * (episode_counter - 1)
-                                  + this_ep_max_ppd) / episode_counter;
+                #average_max_ppd = (average_max_ppd * (episode_counter - 1)
+                #                  + this_ep_max_ppd) / episode_counter;
                 local_logger.info('Evaluation: average reward by now is %0.04f'
-                                  ', average max PPD is %0.04f'%(average_reward, 
-                                                                 average_max_ppd));
+                                  %(average_reward));
                 episode_counter += 1;
                 this_ep_reward = 0;
-                this_ep_max_ppd = 0;
+                #this_ep_max_ppd = 0;
                  
             else:
                 time_this = time_next;
                 ob_this_hist_prcd = ob_next_hist_prcd;
                 ob_this_raw = ob_next_raw;
                 
-        return (average_reward, average_max_ppd);
+        return (average_reward);
     
     def _select_sto_action(self, state):
         """
