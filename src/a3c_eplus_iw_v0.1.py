@@ -12,7 +12,7 @@ Last update: Aug 28th, 2017
 
 """
 from main_args import *
-from a3c_v0_1.reward_funcs import err_energy_reward_iw     
+from a3c_v0_1.reward_funcs import err_energy_reward_iw, err_energy_reward_iw_v2     
 from a3c_v0_1.action_funcs import mull_stpt_iw, mull_stpt_oaeTrans_iw
 from a3c_v0_1.raw_state_processors import raw_state_process_iw
 from a3c_v0_1.action_limits import act_limits_iw_1, act_limits_iw_2   
@@ -26,9 +26,13 @@ def main():
     parser.add_argument('--act_func', default='1', type=str,
                         help='The action function corresponding to the action space, default is 1, '
                              'corresponding to the actions space iw_1')
+    parser.add_argument('--reward_func', default='1', type=str)
     args = parser.parse_args();
     # Prepare case specific args
-    reward_func = err_energy_reward_iw;
+    if args.reward_func == '1':
+      reward_func = err_energy_reward_iw;
+    elif args.reward_func == '2':
+      reward_func = err_energy_reward_iw_v2;
     rewardArgs = [args.err_penalty_scl];
     if args.act_func == '1':
       action_func = mull_stpt_iw;
