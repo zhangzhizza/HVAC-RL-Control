@@ -66,3 +66,38 @@ def mull_stpt_iw(action_raw, stptLmt, ob_this_raw):
     res_swt_ssp = max(min(swt_ssp_cur + action_raw[1], stptLmt[1][1]), stptLmt[1][0]);
     return ((res_oae_ssp, res_swt_ssp),
                 (res_oae_ssp - oae_ssp_cur, res_swt_ssp - swt_ssp_cur)); 
+
+def mull_stpt_oaeTrans_iw(action_raw, stptLmt, ob_this_raw):
+    """
+    Transfer the mull op to OAE setpoint.
+    Check whether the action is legal, which is swt ssp must be within the range of stptLmt.
+    
+    Args:
+        action_raw: (float, float)
+            The raw action planned to be taken to the current heating and 
+            cooling setpoint.
+        stptLmt: (float, float)
+            The low limit (included) and high limit (included) for the heating
+            and cooling setpoint. 
+        ob_this_raw: 
+        
+    Return: ((float, float), (float, float))
+        A tuple with length 2. The index 0 is a tuple of resulting heating and
+        cooling setpoint, and the index 1 is a tuple of resulting effective 
+        action.
+    """
+    OAT_RAW_IDX = 0;
+    SWT_RAW_IDX = 7;
+    oat_cur = ob_this_raw[OAT_RAW_IDX]
+    swt_ssp_cur = ob_this_raw[SWT_RAW_IDX];
+    # Transfer the mull op from 1/0 to OAE setpoint
+    if action_raw[0] == 0.0:
+        res_oae_ssp = oat_cur - 5.0; # If OAE setpoint < next step OAT, mull op is off
+    else:
+        res_oae_ssp = oat_cur + 5.0; # If OAE setpoint > next step OAT, mull op is on
+    # Get the next step SWT ssp
+    res_swt_ssp = swt_ssp_cur + action_raw[1];
+    res_oae_ssp = max(min(res_oae_ssp, stptLmt[0][1]), stptLmt[0][0]);
+    res_swt_ssp = max(min(res_swt_ssp, stptLmt[1][1]), stptLmt[1][0]);
+    return ((res_oae_ssp, res_swt_ssp),
+                (action_raw[0], res_swt_ssp - swt_ssp_cur)) 
