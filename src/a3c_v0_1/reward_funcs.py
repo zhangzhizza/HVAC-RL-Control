@@ -68,3 +68,61 @@ def err_energy_reward_iw(ob_next_prcd, e_weight, p_weight, err_penalty_scl):
     normalized_err = min(abs(normalized_zat - normalized_zatssp) * err_penalty_scl, 1.0); 
     ret = - (e_weight * normalized_hvac_energy + p_weight * normalized_err);
     return ret;
+
+def err_energy_reward_iw(ob_next_prcd, e_weight, p_weight, err_penalty_scl):
+    """
+    Get the reward from heating demand and error between indoor setpoint and temp. 
+    
+    Args:
+        ob_next_prcd:
+
+        e_weight: float
+            The weight to HVAC energy consumption.
+        p_weight: float
+            The weight to PPD. 
+
+        ppd_penalty_limit:
+
+    Return: float
+        The combined reward. 
+    """
+    HVACE_RAW_IDX = 10;
+    ZAT_RAW_IDX = 9;
+    ZATSSP_RAW_IDX = 8;
+    normalized_hvac_energy = ob_next_prcd[HVACE_RAW_IDX + TIMESTATE_LEN];
+    normalized_zat = ob_next_prcd[ZAT_RAW_IDX + TIMESTATE_LEN];
+    normalized_zatssp = ob_next_prcd[ZATSSP_RAW_IDX + TIMESTATE_LEN];
+    normalized_err = min(abs(normalized_zat - normalized_zatssp) * err_penalty_scl, 1.0); 
+    ret = - (e_weight * normalized_hvac_energy + p_weight * normalized_err);
+    return ret;
+
+def err_energy_reward_iw_v2(ob_next_prcd, e_weight, p_weight, err_penalty_scl):
+    """
+    Get the reward from heating demand and error between indoor setpoint and temp. 
+    
+    Args:
+        ob_next_prcd:
+
+        e_weight: float
+            The weight to HVAC energy consumption.
+        p_weight: float
+            The weight to PPD. 
+
+        ppd_penalty_limit:
+
+    Return: float
+        The combined reward. 
+    """
+    HVACE_RAW_IDX = 10;
+    ZAT_RAW_IDX = 9;
+    ZATSSP_RAW_IDX = 8;
+    normalized_hvac_energy = ob_next_prcd[HVACE_RAW_IDX + TIMESTATE_LEN];
+    normalized_zat = ob_next_prcd[ZAT_RAW_IDX + TIMESTATE_LEN];
+    normalized_zatssp = ob_next_prcd[ZATSSP_RAW_IDX + TIMESTATE_LEN];
+    normalized_err = (normalized_zat - normalized_zatssp) * err_penalty_scl; # Negative means zone is too cold
+    ret = 0;
+    if normalized_err < -1.0:
+        ret = - 1.0; # The minimum reward
+    else:
+        ret = - (e_weight * normalized_hvac_energy + p_weight * normalized_err);
+    return ret;
