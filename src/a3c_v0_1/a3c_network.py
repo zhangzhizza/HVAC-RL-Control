@@ -7,7 +7,7 @@ from keras.models import Model
 from a3c_v0_1.objectives import a3c_loss
 
 NN_WIDTH = 512;
-NN_LENGTH = 4;
+NN_LENGTH = 8;
 
 class A3C_Network:
     """
