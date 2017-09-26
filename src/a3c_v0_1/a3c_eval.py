@@ -302,17 +302,6 @@ class A3CEval:
                             process_state_for_network(ob_next_prcd) # 2-D array
             # Check whether to start a new episode
             if is_terminal:
-                time_this, ob_this_raw, is_terminal = self._env.reset();
-                ob_this_raw = raw_state_process_func(ob_this_raw);
-                # Process and normalize the raw observation
-                ob_this_prcd = process_raw_state_cmbd(ob_this_raw, [time_this], 
-                                              self._env_st_yr, self._env_st_mn, 
-                                              self._env_st_dy, self._env_st_wd, 
-                                              self._pcd_state_limits); # 1-D list
-                # Get the history stacked state
-                self._histProcessor.reset();
-                ob_this_hist_prcd = self._histProcessor.\
-                            process_state_for_network(ob_this_prcd) # 2-D array
                 # Update the average reward
                 average_reward = (average_reward * (episode_counter - 1) 
                                   + this_ep_reward) / episode_counter;
@@ -321,8 +310,21 @@ class A3CEval:
                 local_logger.info('Evaluation: average reward by now is %0.04f'
                                   %(average_reward));
                 episode_counter += 1;
-                this_ep_reward = 0;
-                #this_ep_max_ppd = 0;
+                if episode_counter <= self._num_episodes:
+                    time_this, ob_this_raw, is_terminal = self._env.reset();
+                    ob_this_raw = raw_state_process_func(ob_this_raw);
+                    # Process and normalize the raw observation
+                    ob_this_prcd = process_raw_state_cmbd(ob_this_raw, [time_this], 
+                                              self._env_st_yr, self._env_st_mn, 
+                                              self._env_st_dy, self._env_st_wd, 
+                                              self._pcd_state_limits); # 1-D list
+                    # Get the history stacked state
+                    self._histProcessor.reset();
+                    ob_this_hist_prcd = self._histProcessor.\
+                                process_state_for_network(ob_this_prcd) # 2-D array
+                
+                    this_ep_reward = 0;
+                    #this_ep_max_ppd = 0;
                  
             else:
                 time_this = time_next;
