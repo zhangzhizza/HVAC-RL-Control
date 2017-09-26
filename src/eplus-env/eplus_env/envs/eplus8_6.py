@@ -154,11 +154,11 @@ class EplusEnv(Env):
                                     ( 0.0, 360.0), # WD
                                     ( 0.0, 378.0), # DifS
                                     ( 0.0, 1000),  # DirS 
-                                    ( 0.0, 15.0),  # OAESSP
+                                    ( -30.0, 30.0),  # OAESSPs
                                     ( 20.0, 75.0), # SWTSSP
                                     ( 10.0, 30.0), # IATSSP
                                     ( 10.0, 30.0), # IAT
-                                    ( 0.0, 65.0)]  # HTDMD ;
+                                    ( 0.0, 85.0)]  # HTDMD ;
 
         
     def _reset(self):
