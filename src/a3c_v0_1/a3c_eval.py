@@ -279,7 +279,7 @@ class A3CEval:
         #this_ep_max_ppd = 0;
         while episode_counter <= self._num_episodes:
             # Get the action
-            action_raw_idx = self._select_sto_action(ob_this_hist_prcd);
+            action_raw_idx = self._select_sto_action(ob_this_hist_prcd, local_logger);
             action_raw_tup = action_space[action_raw_idx];
             action_stpt_prcd, action_effec = action_func(action_raw_tup, action_limits, ob_this_raw);
             action_stpt_prcd = list(action_stpt_prcd);
@@ -352,7 +352,7 @@ class A3CEval:
         ### DEBUG
         dbg_rdm = np.random.uniform();
         if dbg_rdm < 0.01:
-            print ('softmax', softmax_a)
+            local_logger.info('Softmax %s', softmax_a)
         uni_rdm = np.random.uniform();
         imd_x = uni_rdm;
         for i in range(softmax_a.shape[-1]):
