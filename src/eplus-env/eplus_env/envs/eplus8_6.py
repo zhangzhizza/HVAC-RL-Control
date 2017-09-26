@@ -158,7 +158,7 @@ class EplusEnv(Env):
                                     ( 20.0, 75.0), # SWTSSP
                                     ( 10.0, 30.0), # IATSSP
                                     ( 10.0, 30.0), # IAT
-                                    ( 0.0, 65.0)]  # HTDMD ;
+                                    ( 0.0, 85.0)]  # HTDMD ;
 
         
     def _reset(self):
