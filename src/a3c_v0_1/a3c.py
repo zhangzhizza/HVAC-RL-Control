@@ -344,7 +344,9 @@ class A3CThread:
             _, loss_res, value_pred = sess.run([self._train_op, self._loss, 
                                                 self._value_pred], 
                                    feed_dict = training_feed_dict);
-            self._local_logger.debug('Value prediction is %s, R is %s.'
+            dbg_rdm = np.random.uniform();
+            if dbg_rdm < 0.01:
+                self._local_logger.debug('Value prediction is %s, R is %s.'
                                      %(str(value_pred), str(q_true_list)));
             # Display and record the loss for this thread
             if (t/t_max) % 200 == 0:
@@ -394,7 +396,8 @@ class A3CThread:
                              feed_dict={self._state_placeholder:state,
                                         self._keep_prob: 1.0 - dropout_prob}) ####DEBUG FOR DROPOUT
         softmax_a = softmax_a.flatten();
-        self._local_logger.debug('Policy network output: %s, sum to %0.04f'
+        if uni_rdm_greedy < 0.01:
+            self._local_logger.debug('Policy network output: %s, sum to %0.04f'
                                  %(str(softmax_a), sum(softmax_a)));
         uni_rdm = np.random.uniform(); # Avoid select an action with too small probability
         imd_x = uni_rdm;
