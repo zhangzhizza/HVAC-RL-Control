@@ -22,7 +22,7 @@ from a3c_v0_1.state_index import *
 from a3c_v0_1.a3c_eval import A3CEval_multiagent, A3CEval
 
 ACTION_MAP = action_map;
-LOG_LEVEL = 'INFO';
+LOG_LEVEL = 'DEBUG';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 TIME_DIM = 2;
 
@@ -237,8 +237,8 @@ class A3CThread:
             # Interact with env
             trajectory_list = []; # A list of (s_t, a_t, r_t) tuples
             while (not is_terminal) and (t - t_st != t_max):
-                self._local_logger.debug('The processed stacked state at %0.04f '
-                                         'is %s.'%(time_this, str(ob_this_hist_prcd)));
+                #self._local_logger.debug('The processed stacked state at %0.04f '
+                #                         'is %s.'%(time_this, str(ob_this_hist_prcd)));
                 # Get the action
                 action_raw_idx = self._select_sto_action(ob_this_hist_prcd, sess,
                                                          self._e_greedy, dropout_prob = dropout_prob); ####DEBUG FOR DROPOUT
