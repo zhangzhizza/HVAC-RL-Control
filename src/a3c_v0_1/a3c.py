@@ -22,7 +22,7 @@ from a3c_v0_1.state_index import *
 from a3c_v0_1.a3c_eval import A3CEval_multiagent, A3CEval
 
 ACTION_MAP = action_map;
-LOG_LEVEL = 'INFO';
+LOG_LEVEL = 'DEBUG';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 TIME_DIM = 2;
 
@@ -256,12 +256,15 @@ class A3CThread:
                                               env_st_wd, pcd_state_limits); # 1-D list
                 # Get the reward
                 reward_next = reward_func(ob_next_prcd, e_weight, p_weight, *rewardArgs);
-                self._local_logger.debug('Environment debug: raw action idx is %d, '
-                                         'current raw observation is %s, '
-                                         'actual action is %s, '
-                                         'sim time next is %0.04f, '
-                                         'raw observation next is %s, '
-                                         'processed observation next is %s, '
+                dbg_rdm = np.random.uniform();
+                if dbg_rdm < 0.01:
+                    self._local_logger.debug('TRAINING DEBUG INFO ======>>>>>>>>>>'
+                                         'Environment debug: raw action idx is %d, \n'
+                                         'current raw observation is %s, \n'
+                                         'actual action is %s, \n'
+                                         'sim time next is %0.04f, \n'
+                                         'raw observation next is %s, \n'
+                                         'processed observation next is %s, \n'
                                          'reward next is %0.04f.'
                                          %(action_raw_idx, ob_this_raw,
                                            str(action_stpt_prcd), time_next, 
