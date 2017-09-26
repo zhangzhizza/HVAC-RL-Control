@@ -124,5 +124,6 @@ def err_energy_reward_iw_v2(ob_next_prcd, e_weight, p_weight, err_penalty_scl):
     if normalized_err < -1.0:
         ret = - 1.0; # The minimum reward
     else:
+        normalized_err = min(abs(normalized_err), 1.0)
         ret = - (e_weight * normalized_hvac_energy + p_weight * normalized_err);
     return ret;
