@@ -333,7 +333,7 @@ class A3CEval:
                 
         return (average_reward);
     
-    def _select_sto_action(self, state):
+    def _select_sto_action(self, state, local_logger):
         """
         Given a state, run stochastic policy network to give an action.
         
@@ -352,7 +352,7 @@ class A3CEval:
         ### DEBUG
         dbg_rdm = np.random.uniform();
         if dbg_rdm < 0.01:
-            local_logger.info('Softmax %s', softmax_a)
+            local_logger.info('Softmax %s'%softmax_a)
         uni_rdm = np.random.uniform();
         imd_x = uni_rdm;
         for i in range(softmax_a.shape[-1]):

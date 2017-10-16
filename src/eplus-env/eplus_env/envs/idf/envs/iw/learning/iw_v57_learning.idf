@@ -35980,7 +35980,7 @@ ExternalInterface,           !- Object to activate the external interface
 ExternalInterface:Schedule,
 	hw_sp_stpt,                 !- Name
     Temperature,             !- ScheduleType
-    60;                      !- Initial value, used during warm-up
+    20;                      !- Initial value, used during warm-up
 
 ExternalInterface:Schedule,
 	HWOEN_stpt_sch,                 !- Name
