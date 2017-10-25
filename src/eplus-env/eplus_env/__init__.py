@@ -145,6 +145,26 @@ register(
             'idf_path':FD + '/envs/idf/envs/iw/learning/iw_v57_learning_eval.idf',
             'env_name': 'IW-eval-v57'});
 
+register(
+    id='IW-v5702',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-3-0/',
+            'weather_path':FD + '/envs/weather/pittsburgh.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/idf/envs/iw/learning/iw_v57_2_learning.cfg',
+            'idf_path':FD + '/envs/idf/envs/iw/learning/iw_v57_2_learning.idf',
+            'env_name': 'IW-v5702'});
+
+register(
+    id='IW-eval-v5702',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-3-0/',
+            'weather_path':FD + '/envs/weather/pittsburgh.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/idf/envs/iw/learning/iw_v57_2_learning_eval.cfg',
+            'idf_path':FD + '/envs/idf/envs/iw/learning/iw_v57_2_learning_eval.idf',
+            'env_name': 'IW-eval-v5702'});
+
 def setSchedulePath(sch_path_dict, tgtIDFPath):
     """
     Set the abosolute path for the Schedule:File.
@@ -253,3 +273,14 @@ sch_path_dict = {'oat_2017': FD + '/envs/idf/envs/iw/learning/x.csv',
                  'solDir_2017': FD + '/envs/idf/envs/iw/learning/x.csv',
                  'solDif_2017': FD + '/envs/idf/envs/iw/learning/x.csv'};
 setSchedulePath(sch_path_dict, FD + '/envs/idf/envs/iw/learning/iw_v57_learning_eval.idf');
+
+# Replace some schedule file path in iw_v57_2_learning_eval.idf with the 
+# absolute path
+sch_path_dict = {'oat_2017': FD + '/envs/idf/envs/iw/learning/x.csv',
+                 'oah_2017': FD + '/envs/idf/envs/iw/learning/x.csv',
+                 'oadwp_2017': FD + '/envs/idf/envs/iw/learning/x.csv',
+                 'oawds_2017': FD + '/envs/idf/envs/iw/learning/x.csv',
+                 'oawdd_2017': FD + '/envs/idf/envs/iw/learning/x.csv',
+                 'solDir_2017': FD + '/envs/idf/envs/iw/learning/x.csv',
+                 'solDif_2017': FD + '/envs/idf/envs/iw/learning/x.csv'};
+setSchedulePath(sch_path_dict, FD + '/envs/idf/envs/iw/learning/iw_v57_2_learning_eval.idf');

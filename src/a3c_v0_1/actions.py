@@ -92,7 +92,48 @@ iw_2 = [(0.0, 0.0),
         (1.0, 5.0),
         (1.0, 10.0)];
 
+iw_3 = [(0.0, -70.0),
+        (1.0, -1.0),
+        (1.0, -5.0),
+        (1.0, -10.0),
+        (1.0, 0.0),
+        (1.0, 1.0),
+        (1.0, 5.0),
+        (1.0, 10.0),
+        (1.0, 70.0)];
+
+# NOTE: action like (0, -70.0) or (1.0, 70) is too easy to be stuck. 
+
+iw_actFunc3_1 = [[-1.0],
+        [-5.0],
+        [-10.0],
+        [0.0],
+        [1.0],
+        [5.0],
+        [10.0]];
+
+iw_actFunc4_1 = [[15.0],
+        [20.0],
+        [30.0],
+        [40.0],
+        [50.0],
+        [60.0],
+        [70.0]];
+
+iw_actFunc5_1 = [[-5.0],
+        [-2.0],
+        [-1.0],
+        [-0.5],
+        [0.0],
+        [0.5],
+        [1.0],
+        [2.0],
+        [5.0]];
+
 action_map = {'default': actions_htcl_cmd, 'exp1': actions_htcl_cmd_exp1, 
               'exp2':actions_htcl_cmd_exp2, 'exp3': actions_htcl_cmd_exp3, 
               'exp4': actions_htcl_cmd_exp4,
-              'iw_1': iw_1, 'iw_2': iw_2}
+              'iw_1': iw_1, 'iw_2': iw_2, 'iw_3': iw_3, 'iw_af3_1': iw_actFunc3_1, 
+              'iw_af4_1': iw_actFunc4_1, 'iw_af5_1': iw_actFunc5_1};
+
+

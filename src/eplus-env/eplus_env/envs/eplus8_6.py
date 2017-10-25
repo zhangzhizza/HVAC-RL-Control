@@ -146,7 +146,7 @@ class EplusEnv(Env):
                                 (  0.0, 100.0),
                                 (  0.0, 100.0),
                                 (  0.0, 33000.0)];
-        elif (('IW-v57' in env_name) or ('IW-eval-v57' in env_name)): ### Change
+        elif (('IW-v57' == env_name) or ('IW-eval-v57' == env_name)): ### Change
 
             self._min_max_limits = [(-13.0, 26.0), # OA
                                     ( 0.0, 100.0), # RH
@@ -158,6 +158,22 @@ class EplusEnv(Env):
                                     ( 20.0, 75.0), # SWTSSP
                                     ( 10.0, 30.0), # IATSSP
                                     ( 10.0, 30.0), # IAT
+                                    ( 0.0, 85.0)]  # HTDMD ;
+
+        elif (('IW-v5702' == env_name) or ('IW-eval-v5702' == env_name)): ### Change
+
+            self._min_max_limits = [(-13.0, 26.0), # OA
+                                    ( 0.0, 100.0), # RH
+                                    ( 0.0, 11.0),  # WS
+                                    ( 0.0, 360.0), # WD
+                                    ( 0.0, 378.0), # DifS
+                                    ( 0.0, 1000),  # DirS 
+                                    ( -30.0, 30.0),  # OAESSPs
+                                    ( 0.0, 100.0), # PPD
+                                    ( 10.0, 30.0), # IATSSP
+                                    ( 10.0, 30.0), # IAT
+                                    ( 10.0, 30.0), # IAT Logics
+                                    ( 0.0,  1.0), # Occupy flag
                                     ( 0.0, 85.0)]  # HTDMD ;
 
         
