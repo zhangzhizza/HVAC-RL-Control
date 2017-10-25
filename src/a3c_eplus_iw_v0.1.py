@@ -12,10 +12,14 @@ Last update: Aug 28th, 2017
 
 """
 from main_args import *
-from a3c_v0_1.reward_funcs import err_energy_reward_iw, err_energy_reward_iw_v2, err_energy_reward_iw_v3, err_energy_reward_iw_v4 
-from a3c_v0_1.action_funcs import mull_stpt_iw, mull_stpt_oaeTrans_iw
+from a3c_v0_1.reward_funcs import err_energy_reward_iw, err_energy_reward_iw_v2, \
+                                  err_energy_reward_iw_v3, err_energy_reward_iw_v4, \
+                                  err_energy_reward_iw_v5, err_energy_reward_iw_v6, \
+                                  ppd_energy_reward_iw_timeRelated, ppd_energy_reward_iw_timeRelated_v2
+from a3c_v0_1.action_funcs import mull_stpt_iw, mull_stpt_oaeTrans_iw, mull_stpt_noExpTurnOffMullOP, \
+                                  mull_stpt_directSelect, iw_iat_stpt_noExpHeatingOp
 from a3c_v0_1.raw_state_processors import raw_state_process_iw
-from a3c_v0_1.action_limits import act_limits_iw_1, act_limits_iw_2   
+from a3c_v0_1.action_limits import act_limits_iw_1, act_limits_iw_2, act_limits_iw_3
 
 def main():
     # Common args
@@ -37,13 +41,34 @@ def main():
       reward_func = err_energy_reward_iw_v3;
     elif args.reward_func == '4':
       reward_func = err_energy_reward_iw_v4;
+    elif args.reward_func == '5':
+      reward_func = err_energy_reward_iw_v5;
+    elif args.reward_func == '6':
+      reward_func = err_energy_reward_iw_v6;
+    elif args.reward_func == '7':
+      reward_func = ppd_energy_reward_iw_timeRelated;
+    elif args.reward_func == '8':
+      reward_func = ppd_energy_reward_iw_timeRelated_v2;
+      
+
+
     rewardArgs = [args.err_penalty_scl];
+
     if args.act_func == '1':
       action_func = mull_stpt_iw;
       action_limits = act_limits_iw_1;
     elif args.act_func == '2':
       action_func = mull_stpt_oaeTrans_iw;
       action_limits = act_limits_iw_2;
+    elif args.act_func == '3':
+      action_func = mull_stpt_noExpTurnOffMullOP;
+      action_limits = act_limits_iw_2
+    elif args.act_func == '4':
+      action_func = mull_stpt_directSelect;
+      action_limits = act_limits_iw_2
+    elif args.act_func == '5':
+      action_func = iw_iat_stpt_noExpHeatingOp;
+      action_limits = act_limits_iw_3;
     raw_state_process_func = raw_state_process_iw;
     effective_main(args, reward_func, rewardArgs, action_func, action_limits, raw_state_process_func);
         

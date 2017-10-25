@@ -77,9 +77,9 @@ def get_args():
     parser.add_argument('--rmsprop_epsil', default=1e-10, type=float);
     parser.add_argument('--clip_norm', default=5.0, type=float);
     parser.add_argument('--train_freq', default=5, type=int);
-    parser.add_argument('--e_weight', default=0.4, type=float,
+    parser.add_argument('--rwd_e_para', default=0.4, type=float,
                         help='Reward weight on HVAC energy consumption, default is 0.4.');
-    parser.add_argument('--p_weight', default=0.6, type=float,
+    parser.add_argument('--rwd_p_para', default=0.6, type=float,
                         help='Reward wegith on PPD, default is 0.6.');  
     parser.add_argument('--action_space', default='default', type=str, help='The action space name, default is default.');
     parser.add_argument('--save_freq', default=50000, type=int);
@@ -142,8 +142,8 @@ def effective_main(args, reward_func, rewardArgs, action_func, action_limits, ra
         # Start the training
         main_logger.info ('Start the learning...')
         a3c_agent.fit(sess, coordinator, global_network, workers, 
-                      global_summary_writer, global_saver, [args.env, args.test_env], args.train_freq,
-                      args.gamma, args.e_weight, args.p_weight, args.save_freq, args.max_interactions,
+                      global_summary_writer, global_saver, [args.env], args.train_freq,# Debug[args.env, args.test_env]
+                      args.gamma, args.rwd_e_para, args.rwd_p_para, args.save_freq, args.max_interactions,
                       args.eval_epi_num, args.eval_freq, reward_func, rewardArgs, action_func, 
                       action_limits, raw_state_process_func);
 

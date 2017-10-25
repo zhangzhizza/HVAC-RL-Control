@@ -116,8 +116,10 @@ class A3CThread:
         #####################################
         ### Create the training operation ###
         #####################################
+            merged_summary_list = [];
             # Add a scalar summary for the snapshot loss.
             self._loss_summary = tf.summary.scalar('loss', loss)
+            merged_summary_list.append(self._loss_summary);
             # Compute the gradients
             local_vars = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, 
                                            scope_name);
@@ -125,14 +127,21 @@ class A3CThread:
             grads = [item[0] for item in grads_and_vars]; # Need only the gradients
             grads, grad_norms = tf.clip_by_global_norm(grads, clip_norm) 
                                                           # Grad clipping
-            self._grads = grads;
+            # Add a histogram for the snapshot gradient and variable values
+            for var_i in range(len(grads_and_vars)):
+                merged_summary_list.append(tf.summary.histogram(
+                            grads_and_vars[var_i][1].name + '/grad', grads[var_i]));
+            for var in local_vars:
+                merged_summary_list.append(tf.summary.histogram(var.name, var));
             # Apply local gradients to global network
+            self._grads = grads;
             global_vars = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, 
                                             global_name);
             self._train_op = shared_optimizer.apply_gradients(
                                                     zip(grads,global_vars),
                                                     global_step=global_train_step);
-            
+            # Merge three summaries into one
+            self._merged_summary = tf.summary.merge(merged_summary_list);
         ######################################
         ### Create local network update op ###
         ######################################
@@ -240,8 +249,10 @@ class A3CThread:
                 #self._local_logger.debug('The processed stacked state at %0.04f '
                 #                         'is %s.'%(time_this, str(ob_this_hist_prcd)));
                 # Get the action
+                dbg_rdm = np.random.uniform(); # For debug
                 action_raw_idx = self._select_sto_action(ob_this_hist_prcd, sess,
-                                                         self._e_greedy, dropout_prob = dropout_prob); ####DEBUG FOR DROPOUT
+                                                         self._e_greedy, dbg_rdm, 
+                                                         dropout_prob = dropout_prob); ####DEBUG FOR DROPOUT
                 action_raw_tup = action_space[action_raw_idx];
                 
                 action_stpt_prcd, action_effec = action_func(action_raw_tup, action_limits, ob_this_raw);
@@ -256,8 +267,8 @@ class A3CThread:
                                               env_st_wd, pcd_state_limits); # 1-D list
                 # Get the reward
                 reward_next = reward_func(ob_next_prcd, e_weight, p_weight, *rewardArgs);
-                dbg_rdm = np.random.uniform();
-                if dbg_rdm < 0.01:
+                
+                if dbg_rdm < 0.005:
                     self._local_logger.debug('TRAINING DEBUG INFO ======>>>>>>>>>>'
                                          'Environment debug: raw action idx is %d, \n'
                                          'current raw observation is %s, \n'
@@ -265,7 +276,8 @@ class A3CThread:
                                          'sim time next is %0.04f, \n'
                                          'raw observation next is %s, \n'
                                          'processed observation next is %s, \n'
-                                         'reward next is %0.04f.'
+                                         'reward next is %0.04f. \n'
+                                         '============================================='
                                          %(action_raw_idx, ob_this_raw,
                                            str(action_stpt_prcd), time_next, 
                                            ob_next_raw, ob_next_prcd, reward_next));
@@ -277,7 +289,7 @@ class A3CThread:
                 trajectory_list.append((ob_this_hist_prcd, action_raw_idx, 
                                         reward_next)) 
                 
-                # Update lock counter and global counter, do eval
+                # Update local counter and global counter, do eval
                 t += 1;
                 self._update_e_greedy(); # Update the epsilon value
                 with global_lock:
@@ -345,17 +357,21 @@ class A3CThread:
                                                 self._value_pred], 
                                    feed_dict = training_feed_dict);
             dbg_rdm = np.random.uniform();
-            if dbg_rdm < 0.01:
+            if dbg_rdm < 0.005:
                 self._local_logger.debug('Value prediction is %s, R is %s.'
                                      %(str(value_pred), str(q_true_list)));
             # Display and record the loss for this thread
-            if (t/t_max) % 200 == 0:
+            printStatusFreq = 100;
+            if (t/t_max) % printStatusFreq == 0:
                 self._local_logger.info ('Local step %d, global step %d: loss ' 
                                        '%0.04f'%(t, global_counter.value, loss_res));
                 # Update the events file.
-                summary_str = sess.run(self._loss_summary, 
-                                             feed_dict=training_feed_dict)
-                global_summary_writer.add_summary(summary_str, t);
+                #summary_str = sess.run(self._loss_summary, 
+                #                             feed_dict=training_feed_dict)
+            saveSummaryFreq = 1000;
+            if (t/t_max) % saveSummaryFreq == 0: 
+                summary_str_all = sess.run(self._merged_summary, feed_dict = training_feed_dict);
+                global_summary_writer.add_summary(summary_str_all, t);
                 global_summary_writer.flush();
             # ...
             if is_terminal:
@@ -370,7 +386,7 @@ class A3CThread:
     def _update_e_greedy(self):
         self._e_greedy -= self._epsilon_decay_delta;
         
-    def _select_sto_action(self, state, sess, e_greedy, dropout_prob):
+    def _select_sto_action(self, state, sess, e_greedy, dbg_rdm, dropout_prob):
         """
         Given a state, run stochastic policy network to give an action.
         
@@ -396,7 +412,7 @@ class A3CThread:
                              feed_dict={self._state_placeholder:state,
                                         self._keep_prob: 1.0 - dropout_prob}) ####DEBUG FOR DROPOUT
         softmax_a = softmax_a.flatten();
-        if uni_rdm_greedy < 0.01:
+        if dbg_rdm < 0.005:
             self._local_logger.debug('Policy network output: %s, sum to %0.04f'
                                  %(str(softmax_a), sum(softmax_a)));
         uni_rdm = np.random.uniform(); # Avoid select an action with too small probability
@@ -524,9 +540,6 @@ class A3CAgent:
             # Create a global train step variable to record global steps
             global_train_step = tf.Variable(0, name='global_train_step', 
                                             trainable=False);
-            # Init ops
-            #init_global_op = init_variables(g, 'global');
-            #init_allot_op = init_variables(g, 'RMSProp');
         # Create the thread workers list
         workers = [A3CThread(g, 'worker_%d'%(i), 'global', self._state_dim,
                              self._action_size, self._vloss_frac, self._ploss_frac,
@@ -610,7 +623,7 @@ class A3CAgent:
                                         ppd_penalty_limit, raw_state_process_func);
         eval_logger.info("Testing finished.")
 
-    def fit(self, sess, coordinator, global_network, workers, global_summary_writer, global_saver, 
+    def fit(self, sess, coordinator, global_network, workers, global_summary_writer, global_saver,
             env_name_list, t_max, gamma, e_weight, p_weight, save_freq, T_max, eval_epi_num, eval_freq,
             reward_func, rewardArgs, action_func, action_limits, raw_state_process_func):
         """
@@ -687,4 +700,3 @@ class A3CAgent:
             thread_counter += 1;
             
         coordinator.join(threads);
-           
