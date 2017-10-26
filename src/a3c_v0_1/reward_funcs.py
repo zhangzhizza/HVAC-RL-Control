@@ -387,3 +387,57 @@ def ppd_energy_reward_iw_timeRelated_v2(ob_next_prcd, e_weight, p_weight, ppd_pe
     # The combined reward
     ret = e_weight * energy_rwd + p_weight * comfort_rwd;
     return ret;
+
+def ppd_energy_reward_iw_timeRelated_v3(ob_next_prcd, e_weight, p_weight, ppd_penalty_limit):
+    """
+    Get the reward from hvac energy and pmv. If occupancy status is 0 (not 
+    occupied), then the PPD will be 0.0; else, PPD is the original normalized
+    PPD. 
+    
+    Args:
+        ob_next_prcd:
+
+        e_weight: float
+            The weight to HVAC energy consumption.
+        p_weight: float
+            The weight to PPD. 
+        mode:
+
+        ppd_penalty_limit:
+
+    Return: float
+        The combined reward. 
+    """
+    HVACE_RAW_IDX = 12;
+    ZPPD_RAW_IDX = 7;
+    ZPCT_RAW_IDX = 11;
+    ZIAT_SSP_LG_RAW_IDX = 10;
+    ZIAT_RAW_IDX = 9;
+    HOUR_RAW_IDX = -1;
+    WEEKDAY_RAW_IDX = -2;
+    normalized_weekday = ob_next_prcd[WEEKDAY_RAW_IDX + TIMESTATE_LEN];
+    normalized_hour = ob_next_prcd[HOUR_RAW_IDX + TIMESTATE_LEN];
+    normalized_hvac_energy = ob_next_prcd[HVACE_RAW_IDX + TIMESTATE_LEN];
+    normalized_ppd = ob_next_prcd[ZPPD_RAW_IDX + TIMESTATE_LEN];
+    normalized_pct = ob_next_prcd[ZPCT_RAW_IDX + TIMESTATE_LEN];
+    normalized_iatssp_lg = ob_next_prcd[ZIAT_SSP_LG_RAW_IDX + TIMESTATE_LEN];
+    normalized_iat = ob_next_prcd[ZIAT_RAW_IDX + TIMESTATE_LEN];
+    comfort_rwd = 0;
+    # Determine the occupied period or not to determine the comfort reward
+    if normalized_pct < 0.5: # Not in occupy mode
+        if (normalized_iatssp_lg - normalized_iat) > 0: # IAT is colder than ssp by logics
+            ret = -1.0;
+            return ret + 1.0;
+        else:
+            comfort_rwd = 0.0;
+    else: # In occupy mode
+        if normalized_ppd > ppd_penalty_limit:
+            ret = -1.0;
+            return ret + 1.0;
+        else:
+            comfort_rwd = -normalized_ppd;
+    # Energy reward
+    energy_rwd = -normalized_hvac_energy;
+    # The combined reward
+    ret = e_weight * energy_rwd + p_weight * comfort_rwd;
+    return ret + 1.0;
