@@ -16,7 +16,7 @@ from a3c_v0_1.reward_funcs import err_energy_reward_iw, err_energy_reward_iw_v2,
                                   err_energy_reward_iw_v3, err_energy_reward_iw_v4, \
                                   err_energy_reward_iw_v5, err_energy_reward_iw_v6, \
                                   ppd_energy_reward_iw_timeRelated, ppd_energy_reward_iw_timeRelated_v2, \
-                                  ppd_energy_reward_iw_timeRelated_v3
+                                  ppd_energy_reward_iw_timeRelated_v3, ppd_energy_reward_iw_timeRelated_v4
 from a3c_v0_1.action_funcs import mull_stpt_iw, mull_stpt_oaeTrans_iw, mull_stpt_noExpTurnOffMullOP, \
                                   mull_stpt_directSelect, iw_iat_stpt_noExpHeatingOp
 from a3c_v0_1.raw_state_processors import raw_state_process_iw
@@ -52,6 +52,9 @@ def main():
       reward_func = ppd_energy_reward_iw_timeRelated_v2;
     elif args.reward_func == '9':
       reward_func = ppd_energy_reward_iw_timeRelated_v3;
+    elif args.reward_func == '10':
+      reward_func = ppd_energy_reward_iw_timeRelated_v4;
+    
       
 
 
