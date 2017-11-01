@@ -268,7 +268,7 @@ class A3CThread:
                 # Get the reward
                 reward_next = reward_func(ob_next_prcd, e_weight, p_weight, *rewardArgs);
                 
-                if dbg_rdm < 0.005:
+                if dbg_rdm < 0.001:
                     self._local_logger.debug('TRAINING DEBUG INFO ======>>>>>>>>>>'
                                          'Environment debug: raw action idx is %d, \n'
                                          'current raw observation is %s, \n'
@@ -357,7 +357,7 @@ class A3CThread:
                                                 self._value_pred], 
                                    feed_dict = training_feed_dict);
             dbg_rdm = np.random.uniform();
-            if dbg_rdm < 0.005:
+            if dbg_rdm < 0.001:
                 self._local_logger.debug('Value prediction is %s, R is %s.'
                                      %(str(value_pred), str(q_true_list)));
             # Display and record the loss for this thread
@@ -412,7 +412,7 @@ class A3CThread:
                              feed_dict={self._state_placeholder:state,
                                         self._keep_prob: 1.0 - dropout_prob}) ####DEBUG FOR DROPOUT
         softmax_a = softmax_a.flatten();
-        if dbg_rdm < 0.005:
+        if dbg_rdm < 0.001:
             self._local_logger.debug('Policy network output: %s, sum to %0.04f'
                                  %(str(softmax_a), sum(softmax_a)));
         uni_rdm = np.random.uniform(); # Avoid select an action with too small probability
