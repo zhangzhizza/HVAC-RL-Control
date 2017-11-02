@@ -20,7 +20,7 @@ from a3c_v0_1.reward_funcs import err_energy_reward_iw, err_energy_reward_iw_v2,
 from a3c_v0_1.action_funcs import mull_stpt_iw, mull_stpt_oaeTrans_iw, mull_stpt_noExpTurnOffMullOP, \
                                   mull_stpt_directSelect, iw_iat_stpt_noExpHeatingOp
 from a3c_v0_1.raw_state_processors import raw_state_process_iw
-from a3c_v0_1.action_limits import act_limits_iw_1, act_limits_iw_2, act_limits_iw_3
+from a3c_v0_1.action_limits import act_limits_iw_1, act_limits_iw_2, act_limits_iw_3, act_limits_iw_4
 
 def main():
     # Common args
@@ -75,6 +75,9 @@ def main():
     elif args.act_func == '5':
       action_func = iw_iat_stpt_noExpHeatingOp;
       action_limits = act_limits_iw_3;
+    elif args.act_func == '6':
+      action_func = iw_iat_stpt_noExpHeatingOp;
+      action_limits = act_limits_iw_4;
     raw_state_process_func = raw_state_process_iw;
     effective_main(args, reward_func, rewardArgs, action_func, action_limits, raw_state_process_func);
         
