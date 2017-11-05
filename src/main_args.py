@@ -80,7 +80,7 @@ def get_args():
     parser.add_argument('--rwd_e_para', default=0.4, type=float,
                         help='Reward weight on HVAC energy consumption, default is 0.4.');
     parser.add_argument('--rwd_p_para', default=0.6, type=float,
-                        help='Reward wegith on PPD, default is 0.6.');  
+                        help='Reward wegith on PPD, default is 0.6.');
     parser.add_argument('--action_space', default='default', type=str, help='The action space name, default is default.');
     parser.add_argument('--save_freq', default=50000, type=int);
     parser.add_argument('--save_scope', default='all', 
