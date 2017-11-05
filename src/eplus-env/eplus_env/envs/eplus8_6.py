@@ -56,7 +56,8 @@ class EplusEnv(Env):
     def __init__(self, eplus_path, 
                  weather_path, bcvtb_path, 
                  variable_path, idf_path, env_name,
-                 incl_forecast = False, forecast_step = 36):
+                 incl_forecast = False, forecast_step = 36,
+                 act_repeat = 1):
         self._env_name = env_name;
         self._thread_name = threading.current_thread().getName();
         self.logger_main = Logger().getLogger('EPLUS_ENV_%s_%s_ROOT'%(env_name, self._thread_name), 
@@ -103,7 +104,12 @@ class EplusEnv(Env):
                                                    self._eplus_run_ed_mon,
                                                    self._eplus_run_ed_day);
         self._epi_num = 0;
-        if int(env_name[-1]) == 0:
+        self._act_repeat = act_repeat;
+
+        env_5702x_list = {'IW-v570202', 'IW-eval-v570202', 'IW-v570203', 'IW-eval-v570203',
+                           'IW-v570204', 'IW-eval-v570204'};
+        if (('Eplus-v0' == env_name) or ('Eplus-forecast-v0' == env_name) \
+            or ('Eplus-eval-v0' == env_name) or ('Eplus-eval-multiagent-v0' == env_name)):
             self._min_max_limits = [(-16.7, 26.0),
                                 (  0.0, 100.0),
                                 (  0.0, 23.1),
@@ -119,7 +125,10 @@ class EplusEnv(Env):
                                 (  0.0, 100.0),
                                 (  0.0, 1.0),
                                 (  0.0, 33000.0)];
-        elif int(env_name[-1]) == 1:
+
+        elif (('Eplus-v1' == env_name) or ('Eplus-forecast-v1' == env_name) \
+            or ('Eplus-eval-v1' == env_name) or ('Eplus-eval-multiagent-v1' == env_name) \
+            or ('Eplus-multiagent-v1' == env_name)):
             self._min_max_limits = [(-16.7, 26.0),
                                 (  0.0, 100.0),
                                 (  0.0, 23.1),
@@ -133,7 +142,10 @@ class EplusEnv(Env):
                                 (  0.0, 100.0),
                                 (  0.0, 1.0),
                                 (  0.0, 33000.0)];
-        elif int(env_name[-1]) == 3:
+
+        elif (('Eplus-v3' == env_name) or ('Eplus-forecast-v3' == env_name) \
+            or ('Eplus-eval-v3' == env_name) or ('Eplus-eval-multiagent-v3' == env_name) \
+            or ('Eplus-multiagent-v3' == env_name)):
             self._min_max_limits = [(-16.7, 26.0),
                                 (  0.0, 100.0),
                                 (  0.0, 23.1),
@@ -146,6 +158,7 @@ class EplusEnv(Env):
                                 (  0.0, 100.0),
                                 (  0.0, 100.0),
                                 (  0.0, 33000.0)];
+
         elif (('IW-v57' == env_name) or ('IW-eval-v57' == env_name)): ### Change
 
             self._min_max_limits = [(-13.0, 26.0), # OA
@@ -176,8 +189,8 @@ class EplusEnv(Env):
                                     ( 0.0,  1.0), # Occupy flag
                                     ( 0.0, 85.0)]  # HTDMD ;
 
-        elif (('IW-v570202' == env_name) or ('IW-eval-v570202' == env_name)): ### Change
-
+        
+        elif (env_name in env_5702x_list): ### Change
             self._min_max_limits = [(-13.0, 26.0), # OA
                                     ( 0.0, 100.0), # RH
                                     ( 0.0, 11.0),  # WS
@@ -191,8 +204,7 @@ class EplusEnv(Env):
                                     ( 18.0, 25.0), # IAT Logics
                                     ( 0.0,  1.0), # Occupy flag
                                     ( 0.0, 85.0)]  # HTDMD ;
-
-        
+ 
     def _reset(self):
         """Reset the environment.
 
@@ -329,28 +341,36 @@ class EplusEnv(Env):
             return None;
         ret = [];
         # Send to the EnergyPlus
-        self.logger_main.debug('Perform one step.')
-        header = self._eplus_msg_header;
-        runFlag = 0 # 0 is normal flag
-        tosend = self._assembleMsg(header[0], runFlag, len(action), 0,
-                                   0, self._curSimTim, action);
-        self._conn.send(tosend.encode());
-        # Recieve from the EnergyPlus
-        rcv = self._conn.recv(2048).decode(encoding = 'ISO-8859-1');
-        self.logger_main.debug('Got message successfully: ' + rcv);
-        # Process received msg        
-        version, flag, nDb, nIn, nBl, curSimTim, Dblist \
-                                        = self._disassembleMsg(rcv);     
+        act_repeat_i = 0;
+        is_terminal = False;
+        curSimTim = self._curSimTim;
+        integral_item_list = []; # Now just hard code to the energy, the last item in state observation
+        while act_repeat_i < self._act_repeat and (not is_terminal):
+            self.logger_main.debug('Perform one step.')
+            header = self._eplus_msg_header;
+            runFlag = 0 # 0 is normal flag
+            tosend = self._assembleMsg(header[0], runFlag, len(action), 0,
+                                       0, curSimTim, action);
+            self._conn.send(tosend.encode());
+            # Recieve from the EnergyPlus
+            rcv = self._conn.recv(2048).decode(encoding = 'ISO-8859-1');
+            self.logger_main.debug('Got message successfully: ' + rcv);
+            # Process received msg        
+            version, flag, nDb, nIn, nBl, curSimTim, Dblist \
+                                        = self._disassembleMsg(rcv);
+            integral_item_list.append(Dblist[-1]); # Hard code that the last item is the integral item
+            if curSimTim >= self._eplus_one_epi_len:
+                is_terminal = True;
+            act_repeat_i += 1;
+        # Construct the return. The return is the state observation of the last step plus the integral item
         ret.append(curSimTim);
+        Dblist[-1] = 1.0 * sum(integral_item_list)/len(integral_item_list);
         ret.append(Dblist);
         # Read the weather forecast
         if self._incl_forecast:
             wea_forecast = self._get_weather_forecast(curSimTim);
             ret.append(wea_forecast);
-        # Check if episode terminates
-        is_terminal = False;
-        if curSimTim >= self._eplus_one_epi_len:
-              is_terminal = True;
+        # Add terminal status
         ret.append(is_terminal);
         # Change some attributes
         self._curSimTim = curSimTim;

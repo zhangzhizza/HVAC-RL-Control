@@ -273,13 +273,14 @@ class A3CThread:
                                          'Environment debug: raw action idx is %d, \n'
                                          'current raw observation is %s, \n'
                                          'actual action is %s, \n'
+                                         'sim time this is %0.04f, \n' 
                                          'sim time next is %0.04f, \n'
                                          'raw observation next is %s, \n'
                                          'processed observation next is %s, \n'
                                          'reward next is %0.04f. \n'
                                          '============================================='
                                          %(action_raw_idx, ob_this_raw,
-                                           str(action_stpt_prcd), time_next, 
+                                           str(action_stpt_prcd), time_this, time_next, 
                                            ob_next_raw, ob_next_prcd, reward_next));
 
                 # Get the history stacked state
