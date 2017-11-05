@@ -34316,21 +34316,21 @@ Output:Variable,
     IW Occupy Mode Flag, !- Variable Name
     timestep; !- Reporting
 
-Output:Variable,People off-yujie,Zone Thermal Comfort Fanger Model PPD,timestep;
-Output:Variable,People off-bapp,Zone Thermal Comfort Fanger Model PPD,timestep;
-Output:Variable,People off-weili,Zone Thermal Comfort Fanger Model PPD,timestep;
-Output:Variable,People off-zhiang,Zone Thermal Comfort Fanger Model PPD,timestep;
-Output:Variable,People off-nina,Zone Thermal Comfort Fanger Model PPD,timestep;
-Output:Variable,People off-volker,Zone Thermal Comfort Fanger Model PPD,timestep;
-Output:Variable,People off-erica,Zone Thermal Comfort Fanger Model PPD,timestep;
-Output:Variable,People off-james,Zone Thermal Comfort Fanger Model PPD,timestep;
-Output:Variable,People off-vivian,Zone Thermal Comfort Fanger Model PPD,timestep;
-Output:Variable,People off-chenlu,Zone Thermal Comfort Fanger Model PPD,timestep;
-Output:Variable,People off-omer,Zone Thermal Comfort Fanger Model PPD,timestep;
-Output:Variable,People smallConf,Zone Thermal Comfort Fanger Model PPD,timestep;
-Output:Variable,People largeConf1,Zone Thermal Comfort Fanger Model PPD,timestep;
-Output:Variable,People largeConf0,Zone Thermal Comfort Fanger Model PPD,timestep;
-Output:Variable,People off-surekha,Zone Thermal Comfort Fanger Model PPD,timestep;
+!Output:Variable,People off-yujie,Zone Thermal Comfort Fanger Model PPD,timestep;
+!Output:Variable,People off-bapp,Zone Thermal Comfort Fanger Model PPD,timestep;
+!Output:Variable,People off-weili,Zone Thermal Comfort Fanger Model PPD,timestep;
+!Output:Variable,People off-zhiang,Zone Thermal Comfort Fanger Model PPD,timestep;
+!Output:Variable,People off-nina,Zone Thermal Comfort Fanger Model PPD,timestep;
+!Output:Variable,People off-volker,Zone Thermal Comfort Fanger Model PPD,timestep;
+!Output:Variable,People off-erica,Zone Thermal Comfort Fanger Model PPD,timestep;
+!Output:Variable,People off-james,Zone Thermal Comfort Fanger Model PPD,timestep;
+!Output:Variable,People off-vivian,Zone Thermal Comfort Fanger Model PPD,timestep;
+!Output:Variable,People off-chenlu,Zone Thermal Comfort Fanger Model PPD,timestep;
+!Output:Variable,People off-omer,Zone Thermal Comfort Fanger Model PPD,timestep;
+!Output:Variable,People smallConf,Zone Thermal Comfort Fanger Model PPD,timestep;
+!Output:Variable,People largeConf1,Zone Thermal Comfort Fanger Model PPD,timestep;
+!Output:Variable,People largeConf0,Zone Thermal Comfort Fanger Model PPD,timestep;
+!Output:Variable,People off-surekha,Zone Thermal Comfort Fanger Model PPD,timestep;
 
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUT:EnergyManagementSystem ===========
 Output:EnergyManagementSystem,

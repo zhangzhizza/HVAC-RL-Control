@@ -278,6 +278,7 @@ class A3CEval:
         this_ep_reward = 0;
         #this_ep_max_ppd = 0;
         while episode_counter <= self._num_episodes:
+            local_logger.debug('Observation this: %s' %(ob_this_raw));
             # Get the action
             action_raw_idx = self._select_sto_action(ob_this_hist_prcd, local_logger);
             action_raw_tup = action_space[action_raw_idx];
