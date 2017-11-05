@@ -185,6 +185,27 @@ register(
             'idf_path':FD + '/envs/idf/envs/iw/learning/iw_v57_2_learning_eval.idf',
             'env_name': 'IW-eval-v570202'});
 
+register(
+    id='IW-v570203',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-3-0/',
+            'weather_path':FD + '/envs/weather/pittsburgh.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/idf/envs/iw/learning/iw_v57_2_learning.cfg',
+            'idf_path':FD + '/envs/idf/envs/iw/learning/iw_v57_2_oneMon_learning.idf',
+            'env_name': 'IW-v570203'});
+
+register(
+    id='IW-v570204',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-3-0/',
+            'weather_path':FD + '/envs/weather/pittsburgh.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/idf/envs/iw/learning/iw_v57_2_learning.cfg',
+            'idf_path':FD + '/envs/idf/envs/iw/learning/iw_v57_2_learning.idf',
+            'env_name': 'IW-v570204',
+            'act_repeat': 6});
+
 def setSchedulePath(sch_path_dict, tgtIDFPath):
     """
     Set the abosolute path for the Schedule:File.
