@@ -278,9 +278,14 @@ class A3CEval:
         this_ep_reward = 0;
         #this_ep_max_ppd = 0;
         while episode_counter <= self._num_episodes:
-            local_logger.debug('Observation this: %s' %(ob_this_raw));
+            dbg_rdm = np.random.uniform();
+            is_dbg_out = False;
+            if dbg_rdm < 0.005:
+                is_dbg_out = True;
+            if is_dbg_out:
+                local_logger.debug('Observation this: %s' %(ob_this_raw));
             # Get the action
-            action_raw_idx = self._select_sto_action(ob_this_hist_prcd, local_logger);
+            action_raw_idx = self._select_sto_action(ob_this_hist_prcd, local_logger, is_dbg_out);
             action_raw_tup = action_space[action_raw_idx];
             action_stpt_prcd, action_effec = action_func(action_raw_tup, action_limits, ob_this_raw);
             action_stpt_prcd = list(action_stpt_prcd);
@@ -334,7 +339,7 @@ class A3CEval:
                 
         return (average_reward);
     
-    def _select_sto_action(self, state, local_logger):
+    def _select_sto_action(self, state, local_logger, is_dbg_out):
         """
         Given a state, run stochastic policy network to give an action.
         
@@ -351,8 +356,7 @@ class A3CEval:
                                    self._global_network.keep_prob: 1.0})\
                         .flatten();
         ### DEBUG
-        dbg_rdm = np.random.uniform();
-        if dbg_rdm < 0.01:
+        if is_dbg_out:
             local_logger.info('Softmax %s'%softmax_a)
         uni_rdm = np.random.uniform();
         imd_x = uni_rdm;
