@@ -322,6 +322,7 @@ class A3CThread:
                     ob_this_hist_prcd = ob_next_hist_prcd;
                     ob_this_raw = ob_next_raw;
                     ob_this_prcd = ob_next_prcd;
+                    time_this = time_next;
                 else:
                     # Reset the env
                     time_this, ob_this_raw, is_terminal_cp = env.reset();
