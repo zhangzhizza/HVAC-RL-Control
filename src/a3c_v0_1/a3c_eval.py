@@ -1,4 +1,5 @@
 import numpy as np
+import tensorflow as tf
 from a3c_v0_1.actions import action_map
 from a3c_v0_1.preprocessors import HistoryPreprocessor, process_raw_state_cmbd
 from a3c_v0_1.state_index import *
@@ -225,6 +226,11 @@ class A3CEval:
         """
         self._sess = sess;
         self._global_network = global_network;
+        # Print debug
+        #print ('Eval global network ..............................................................')
+        #global_collection = self._global_network.graph.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, 
+        #                                   'global');
+        #print (sess.run(global_collection[0]));
         self._env = env;
         self._num_episodes = num_episodes;
         self._histProcessor = HistoryPreprocessor(window_len);
@@ -280,7 +286,7 @@ class A3CEval:
         while episode_counter <= self._num_episodes:
             dbg_rdm = np.random.uniform();
             is_dbg_out = False;
-            if dbg_rdm < 0.005:
+            if dbg_rdm < 0.1:
                 is_dbg_out = True;
             if is_dbg_out:
                 local_logger.debug('Observation this: %s' %(ob_this_raw));

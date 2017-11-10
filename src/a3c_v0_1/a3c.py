@@ -240,7 +240,17 @@ class A3CThread:
                             process_state_for_network(ob_this_prcd) # 2-D array
         
         while not coordinator.should_stop():
-            sess.run(self._local_net_update);   
+            sess.run(self._local_net_update);
+            # print debug
+            #print ('global net ......................................................')
+            #global_collection = self._graph.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, 
+            #                               'global');
+            #print (sess.run(global_collection[0]));
+            #print ('worker 0 net ......................................................')
+            #worker_collection = self._graph.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, 
+            #                               'worker_0');
+            #print (sess.run(worker_collection[0]));
+
             # Reset the counter
             t_st = t;
             # Interact with env
@@ -250,8 +260,11 @@ class A3CThread:
                 #                         'is %s.'%(time_this, str(ob_this_hist_prcd)));
                 # Get the action
                 dbg_rdm = np.random.uniform(); # For debug
+                dbg_thres = 0.0001;
+                is_show_dbg = True if dbg_rdm < dbg_thres else False;
+
                 action_raw_idx = self._select_sto_action(ob_this_hist_prcd, sess,
-                                                         self._e_greedy, dbg_rdm, 
+                                                         self._e_greedy, is_show_dbg, 
                                                          dropout_prob = dropout_prob); ####DEBUG FOR DROPOUT
                 action_raw_tup = action_space[action_raw_idx];
                 
@@ -268,7 +281,7 @@ class A3CThread:
                 # Get the reward
                 reward_next = reward_func(ob_next_prcd, e_weight, p_weight, *rewardArgs);
                 
-                if dbg_rdm < 0.001:
+                if is_show_dbg:
                     self._local_logger.debug('TRAINING DEBUG INFO ======>>>>>>>>>>'
                                          'Environment debug: raw action idx is %d, \n'
                                          'current raw observation is %s, \n'
@@ -295,7 +308,7 @@ class A3CThread:
                 self._update_e_greedy(); # Update the epsilon value
                 with global_lock:
                     # Do the evaluation
-                    if global_counter.value % eval_freq == 0:
+                    if global_counter.value % eval_freq == 0: 
                         self._local_logger.info('Evaluating...');
                         global_res_list.append([global_counter.value]);
                         for global_agent_eval in global_agent_eval_list:
@@ -355,6 +368,7 @@ class A3CThread:
                                   self._state_placeholder: state_list,
                                   self._action_idx_placeholder: act_idx_list,
                                   self._keep_prob: 1.0 - dropout_prob};
+            
             _, loss_res, value_pred = sess.run([self._train_op, self._loss, 
                                                 self._value_pred], 
                                    feed_dict = training_feed_dict);
@@ -388,7 +402,7 @@ class A3CThread:
     def _update_e_greedy(self):
         self._e_greedy -= self._epsilon_decay_delta;
         
-    def _select_sto_action(self, state, sess, e_greedy, dbg_rdm, dropout_prob):
+    def _select_sto_action(self, state, sess, e_greedy, is_show_dbg, dropout_prob):
         """
         Given a state, run stochastic policy network to give an action.
         
@@ -414,7 +428,7 @@ class A3CThread:
                              feed_dict={self._state_placeholder:state,
                                         self._keep_prob: 1.0 - dropout_prob}) ####DEBUG FOR DROPOUT
         softmax_a = softmax_a.flatten();
-        if dbg_rdm < 0.001:
+        if is_show_dbg:
             self._local_logger.debug('Policy network output: %s, sum to %0.04f'
                                  %(str(softmax_a), sum(softmax_a)));
         uni_rdm = np.random.uniform(); # Avoid select an action with too small probability
