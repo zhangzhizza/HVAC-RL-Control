@@ -26,6 +26,7 @@ class A3C_Network:
             state_dim, action_size: int
                 The number of the state dimension and number of action choices. 
         """
+        self._graph = graph;
         with graph.as_default(), tf.name_scope(scope_name):
             # Generate placeholder for state
             self._state_placeholder = tf.placeholder(tf.float32,
@@ -52,6 +53,10 @@ class A3C_Network:
     @property
     def value_pred(self):
         return self._v_pred;
+
+    @property
+    def graph(self):
+        return self._graph;
 
     @property
     def shared_layer(self):

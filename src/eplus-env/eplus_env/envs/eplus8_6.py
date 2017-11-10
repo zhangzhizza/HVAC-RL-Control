@@ -106,8 +106,8 @@ class EplusEnv(Env):
         self._epi_num = 0;
         self._act_repeat = act_repeat;
 
-        env_5702x_list = {'IW-v570202', 'IW-eval-v570202', 'IW-v570203', 'IW-eval-v570203',
-                           'IW-v570204', 'IW-eval-v570204'};
+        env_5702x_82_list = {'IW-v570202', 'IW-eval-v570202', 'IW-v570203', 'IW-eval-v570203',
+                           'IW-v570204', 'IW-eval-v570204', 'IW-v82'};
         if (('Eplus-v0' == env_name) or ('Eplus-forecast-v0' == env_name) \
             or ('Eplus-eval-v0' == env_name) or ('Eplus-eval-multiagent-v0' == env_name)):
             self._min_max_limits = [(-16.7, 26.0),
@@ -190,7 +190,7 @@ class EplusEnv(Env):
                                     ( 0.0, 85.0)]  # HTDMD ;
 
         
-        elif (env_name in env_5702x_list): ### Change
+        elif (env_name in env_5702x_82_list): ### Change
             self._min_max_limits = [(-13.0, 26.0), # OA
                                     ( 0.0, 100.0), # RH
                                     ( 0.0, 11.0),  # WS
