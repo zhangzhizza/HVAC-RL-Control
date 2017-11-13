@@ -16513,61 +16513,7 @@ EnergyManagementSystem:OutputVariable,
     ,      ! EMS Program or Subroutine Name
     ;
 
-EnergyManagementSystem:OutputVariable,
-    IW Outdoor Dry Bulb Air Temperature, ! Name
-    OAT2017_SENSOR, ! EMS Variable Name
-    Averaged, ! Type of Data in Variable
-    ZoneTimeStep, ! Update Frequency
-    ,      ! EMS Program or Subroutine Name
-    C;
 
-EnergyManagementSystem:OutputVariable,
-    IW Outdoor Air Relative Humidity, ! Name
-    OAH2017_SENSOR, ! EMS Variable Name
-    Averaged, ! Type of Data in Variable
-    ZoneTimeStep, ! Update Frequency
-    ,      ! EMS Program or Subroutine Name
-    %;
-
-EnergyManagementSystem:OutputVariable,
-    IW Outdoor Air Dew Point, ! Name
-    OADWP2017_SENSOR, ! EMS Variable Name
-    Averaged, ! Type of Data in Variable
-    ZoneTimeStep, ! Update Frequency
-    ,      ! EMS Program or Subroutine Name
-    C;
-
-EnergyManagementSystem:OutputVariable,
-    IW Outdoor Air Wind Speed, ! Name
-    OAWDS2017_SENSOR, ! EMS Variable Name
-    Averaged, ! Type of Data in Variable
-    ZoneTimeStep, ! Update Frequency
-    ,      ! EMS Program or Subroutine Name
-    m/s;
-
-EnergyManagementSystem:OutputVariable,
-    IW Outdoor Air Wind Direction, ! Name
-    OAWDD2017_SENSOR, ! EMS Variable Name
-    Averaged, ! Type of Data in Variable
-    ZoneTimeStep, ! Update Frequency
-    ,      ! EMS Program or Subroutine Name
-    deg;
-
-EnergyManagementSystem:OutputVariable,
-    IW Outdoor Direct Beam Solar Radiation, ! Name
-    SOLDIR2017_SENSOR, ! EMS Variable Name
-    Averaged, ! Type of Data in Variable
-    ZoneTimeStep, ! Update Frequency
-    ,      ! EMS Program or Subroutine Name
-    W/m2;
-
-EnergyManagementSystem:OutputVariable,
-    IW Outdoor Diffuse Horizontal Solar Radiation, ! Name
-    SOLDIF2017_SENSOR, ! EMS Variable Name
-    Averaged, ! Type of Data in Variable
-    ZoneTimeStep, ! Update Frequency
-    ,      ! EMS Program or Subroutine Name
-    W/m2;
 
 EnergyManagementSystem:OutputVariable,
     IW Mullion Operation Flag Action, ! Name
