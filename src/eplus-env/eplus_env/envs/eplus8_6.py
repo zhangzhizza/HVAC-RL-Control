@@ -21,12 +21,15 @@ from ..util.time import (get_hours_to_now, get_time_string, get_delta_seconds,
 from ..util.time_interpolate import get_time_interpolate
 
 
+WEATHER_FORECAST_COLS_SELECT = {'tmy3': [0, 2, 8, 9],
+                                'actW': [0, 1, 5, 6]}
 YEAR = 1991 # Non leap year
 CWD = os.getcwd();
 LOG_LEVEL_MAIN = 'INFO';
 LOG_LEVEL_EPLS = 'INFO'
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 ACTION_SIZE = 2 * 5;
+
 
 class EplusEnv(Env):
     """EnergyPlus v8.6 environment
@@ -45,7 +48,7 @@ class EplusEnv(Env):
       EnergyPlus input description file (.idf).
     incl_forecast: bool
       Whether to include forecasted weather in the state observation. 
-    forecast_step: int
+    forecast_hour: int
       How many steps for the weather forecast. 
     env_name: str
       The environment name. 
@@ -53,11 +56,10 @@ class EplusEnv(Env):
     Attributes
     ----------
     """
-    def __init__(self, eplus_path, 
-                 weather_path, bcvtb_path, 
-                 variable_path, idf_path, env_name,
-                 incl_forecast = False, forecast_step = 36,
-                 act_repeat = 1):
+
+    def __init__(self, eplus_path, weather_path, bcvtb_path, variable_path, idf_path, env_name,
+                 min_max_limits, incl_forecast = False, forecastSource = 'tmy3', forecastFilePath = None,
+                 forecast_hour = 12, act_repeat = 1):
         self._env_name = env_name;
         self._thread_name = threading.current_thread().getName();
         self.logger_main = Logger().getLogger('EPLUS_ENV_%s_%s_ROOT'%(env_name, self._thread_name), 
@@ -96,16 +98,20 @@ class EplusEnv(Env):
                                                         self._eplus_run_st_day,
                                                         self._eplus_run_ed_mon,
                                                         self._eplus_run_ed_day);
+        self._weatherForecastSrc = forecastSource;
         self._incl_forecast = incl_forecast;
-        self._forecast_step = forecast_step;
+        self._forecast_hour = forecast_hour;
         if incl_forecast:
             self._weather = self._get_weather_info(self._eplus_run_st_mon,
                                                    self._eplus_run_st_day,
                                                    self._eplus_run_ed_mon,
-                                                   self._eplus_run_ed_day);
+                                                   self._eplus_run_ed_day,
+                                                   self._eplus_run_stepsize, 
+                                                   self._weatherForecastSrc);
         self._epi_num = 0;
         self._act_repeat = act_repeat;
 
+        """legacy env
         env_5702x_82_list = {'IW-v570202', 'IW-eval-v570202', 'IW-v570203', 'IW-eval-v570203',
                            'IW-v570204', 'IW-eval-v570204', 'IW-v82'};
         if (('Eplus-v0' == env_name) or ('Eplus-forecast-v0' == env_name) \
@@ -204,6 +210,9 @@ class EplusEnv(Env):
                                     ( 18.0, 25.0), # IAT Logics
                                     ( 0.0,  1.0), # Occupy flag
                                     ( 0.0, 85.0)]  # HTDMD ;
+        """
+        self._min_max_limits = min_max_limits;
+
  
     def _reset(self):
         """Reset the environment.
@@ -295,7 +304,7 @@ class EplusEnv(Env):
         # Read the weather forecast
         if self._incl_forecast:
             wea_forecast = self._get_weather_forecast(curSimTim); 
-            ret.append(wea_forecast);
+            ret[-1].extend(wea_forecast);
         
         # Check if episode terminates
         is_terminal = False;
@@ -369,7 +378,7 @@ class EplusEnv(Env):
         # Read the weather forecast
         if self._incl_forecast:
             wea_forecast = self._get_weather_forecast(curSimTim);
-            ret.append(wea_forecast);
+            ret[-1].extend(wea_forecast);
         # Add terminal status
         ret.append(is_terminal);
         # Change some attributes
@@ -625,8 +634,8 @@ class EplusEnv(Env):
             
         return tuple(ret);
             
-    def _get_weather_info(self, eplus_run_st_mon, eplus_run_st_day, 
-                          eplus_run_ed_mon, eplus_run_ed_day):
+    def _get_weather_info(self, eplus_run_st_mon, eplus_run_st_day, eplus_run_ed_mon, 
+                        eplus_run_ed_day, eplus_run_stepsize, weatherForecastSrc):
         """
         This function read the .epw file and extract the relevant section
         (defined by the .idf runperiod) to a pd.DataFrame;
@@ -640,29 +649,48 @@ class EplusEnv(Env):
             A pd.DataFrame with weather info, 2-D, index is time, each row
             is the weather for a time step, each col is a weather variable.
         """
+        # Set some info based on tmy3 or actual weather file
+        if weatherForecastSrc == 'tmy3':
+            lineRowBias = 8; # The weather data starts from line 9 in the .epw file, line 2 in the real weather file
+            lineColBias = 6; # The Weather data starts from column 7 in the .epw file, col 2 in the real weather file
+            weatherFileStepSize = 1;
+            tgt_idxs = WEATHER_FORECAST_COLS_SELECT['tmy3']
+            stHour = '01:00:00';
+
+        else:
+            lineRowBias = 1;
+            lineColBias = 1;
+            weatherFileStepSize = int(3600/eplus_run_stepsize);
+            tgt_idxs = WEATHER_FORECAST_COLS_SELECT['actW']
+            stHour = '01:00:00' if weatherFileStepSize == 1 else\
+                    '00:%02d:00'%(60/weatherFileStepSize);
+
         
         # Get start line number
         hour_by_start = get_hours_to_now(eplus_run_st_mon, eplus_run_st_day);
-        stLine = hour_by_start + 8; # The weather data starts from line 9 in the .epw file
+        file_line_by_start = hour_by_start * weatherFileStepSize;
+        stLine = file_line_by_start + lineRowBias; 
         # Get end line number
-        hour_by_end = get_hours_to_now(eplus_run_ed_mon, eplus_run_ed_day) + 23;
-        enLine = hour_by_end + 8 ;
+        hour_by_end = get_hours_to_now(eplus_run_ed_mon, eplus_run_ed_day) + 24;
+        file_line_by_end = hour_by_end * weatherFileStepSize;
+        enLine = file_line_by_end + lineRowBias ;
         # Read data into the python list
         weather_list = [];
-        with open(self._weather_path) as f:
+        weatherForecastFile = self._weather_path if weatherForecastSrc == 'tmy3' \
+                            else weatherForecastSrc;
+        with open(weatherForecastFile) as f:
             weather = f.readlines();
-        for line_i in range(stLine, enLine + 1):
-            this_line = weather[line_i].split('\n')[0].split(',')[6:];
-                    # Weather data starts from 7th column
-            this_line = [float(item) for item in this_line];
+        for line_i in range(stLine, enLine):
+            this_line = weather[line_i].split('\n')[0].split(',')[lineColBias:];    
+            this_line = [float(this_line[tgt_idx]) for tgt_idx in tgt_idxs];
             weather_list.append(this_line);
         # Create the pandas dataframe
         weather_df = pd.DataFrame(weather_list);
-        timeidx = pd.date_range('%d/%d/%d 01:00:00'%(eplus_run_st_mon, 
-                                                     eplus_run_st_day,
-                                                     YEAR),
-                                periods = hour_by_end - hour_by_start + 1,
-                                freq = 'H');
+        timeidx = pd.date_range('%d/%d/%d %s'%(eplus_run_st_mon, 
+                                               eplus_run_st_day,
+                                               YEAR, stHour),
+                                periods = (hour_by_end - hour_by_start) * weatherFileStepSize,
+                                freq = '%dMin'%(60/weatherFileStepSize));
         weather_df.set_index(timeidx, inplace = True);
         
         return weather_df;
@@ -677,17 +705,18 @@ class EplusEnv(Env):
             Index 1 is the weather variables with the same order as the
             .epw file. 
         """
+        forecastStepSize = 3600; # seconds
         forecastTimeList = [];
         ret = [];
         
-        for i in range(1, self._forecast_step + 1):
+        for i in range(1, self._forecast_hour + 1):
             forecastTimeList.append(get_time_string(YEAR,
                                                     self._eplus_run_st_mon,
                                                     self._eplus_run_st_day,
-                                curSimTim + i * self._eplus_run_stepsize));
+                                curSimTim + i * forecastStepSize));
         for time in forecastTimeList:
             weatherAtTime = get_time_interpolate(self._weather, time);
-            ret.append(weatherAtTime);
+            ret.extend(weatherAtTime.tolist());
             
         return ret;
             

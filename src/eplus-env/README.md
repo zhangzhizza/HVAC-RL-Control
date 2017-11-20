@@ -74,14 +74,14 @@ the south zone. The ouput from reset or step function is different for the two e
 
 * weatherForecast: 2-D python list with shape (36, 28) where row x is the weather forecast information for 
 the x time steps ahead of the curSimTime, where columns are the weather variables and the order is 
-Dry Bulb Temperature {C},Dew Point Temperature
-{C},Relative Humidity {%},Atmospheric Pressure {Pa},Extraterrestrial Horizontal Radiation
-{Wh/m2},Extraterrestrial Direct Normal Radiation {Wh/m2},Horizontal Infrared
-Radiation Intensity from Sky {Wh/m2},Global Horizontal Radiation {Wh/m2},Direct
-Normal Radiation {Wh/m2},Diffuse Horizontal Radiation {Wh/m2},Global Horizontal
-Illuminance {lux},Direct Normal Illuminance {lux},Diffuse Horizontal Illuminance
-{lux},Zenith Luminance {Cd/m2},Wind Direction {deg},Wind Speed {m/s},Total Sky
-Cover {.1},Opaque Sky Cover {.1},Visibility {km},Ceiling Height {m},Present Weather
+0 Dry Bulb Temperature {C},1 Dew Point Temperature
+{C},2 Relative Humidity {%},3 Atmospheric Pressure {Pa},4 Extraterrestrial Horizontal Radiation
+{Wh/m2},5 Extraterrestrial Direct Normal Radiation {Wh/m2},6 Horizontal Infrared
+Radiation Intensity from Sky {Wh/m2},7 Global Horizontal Radiation {Wh/m2},8 Direct
+Normal Radiation {Wh/m2},9 Diffuse Horizontal Radiation {Wh/m2},10 Global Horizontal
+Illuminance {lux},11 Direct Normal Illuminance {lux},12 Diffuse Horizontal Illuminance
+{lux},13 Zenith Luminance {Cd/m2},14 Wind Direction {deg},15 Wind Speed {m/s},16 Total Sky
+Cover {.1}, 17 Opaque Sky Cover {.1},18 Visibility {km},Ceiling Height {m},Present Weather
 Observation,Present Weather Codes,Precipitable Water {mm},Aerosol Optical Depth
 {.001},Snow Depth {cm},Days Since Last Snow,Albedo {.01},Liquid Precipitation Depth
 {mm},Liquid Precipitation Quantity {hr}.

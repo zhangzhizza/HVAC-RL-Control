@@ -2,8 +2,12 @@ from gym.envs.registration import register
 import os
 import fileinput
 
-FD = os.path.dirname(os.path.realpath(__file__));
+from eplus_env.eplus_env_statelimits import min_max_limits_dict;
 
+FD = os.path.dirname(os.path.realpath(__file__));
+MIN_MAX_LIMITS_DICT = min_max_limits_dict;
+
+"""Legacy envs
 register(
     id='Eplus-v0',
     entry_point='eplus_env.envs:EplusEnv',
@@ -216,6 +220,38 @@ register(
             'idf_path':FD + '/envs/idf/envs/iw/learning/iw_v82_learning.idf',
             'env_name': 'IW-v82',
             'act_repeat': 6});
+"""
+register(
+    id='IW-tmy3Weather-v9601',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-3-0/',
+            'weather_path':FD + '/envs/weather/pittsburgh.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/eplus_models/iw_v96/learning/cfg/tmy3Weather.cfg',
+            'idf_path':FD + '/envs/eplus_models/iw_v96/learning/idf/tmy3Weather.idf',
+            'env_name': 'IW-tmy3Weather-v9601',
+            'min_max_limits': MIN_MAX_LIMITS_DICT['IW-tmy3Weather-v9601'],
+            'incl_forecast': True,
+            'forecastSource': 'tmy3',
+            'forecastFilePath': None,
+            'forecast_hour': 12,
+            'act_repeat': 3});
+
+register(
+    id='IW-realWeather-v9601',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-3-0/',
+            'weather_path':FD + '/envs/weather/pittsburgh.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/eplus_models/iw_v96/learning/cfg/realWeather.cfg',
+            'idf_path':FD + '/envs/eplus_models/iw_v96/learning/idf/realWeather.idf',
+            'env_name': 'IW-realWeather-v9601',
+            'min_max_limits': MIN_MAX_LIMITS_DICT['IW-realWeather-v9601'],
+            'incl_forecast': True,
+            'forecastSource': FD + '/envs/eplus_models/iw_v96/weather/x.csv',
+            'forecastFilePath': None,
+            'forecast_hour': 12,
+            'act_repeat': 3});
 
 def setSchedulePath(sch_path_dict, tgtIDFPath):
     """
@@ -247,6 +283,7 @@ def setSchedulePath(sch_path_dict, tgtIDFPath):
 
 # Replace some schedule file path in 5ZoneAutoDXVAV_eval.idf with the 
 # absolute path
+"""for legacy env
 sch_path_dict = {'S1_Office_-_Private People Schedule': FD + '/envs/idf/schedules/stochastic_occup_v0.csv',
                  'S2_Office_-_Private People Schedule': FD + '/envs/idf/schedules/stochastic_occup_v0.csv',
                  'S3_Office_-_Private People Schedule': FD + '/envs/idf/schedules/stochastic_occup_v0.csv',
@@ -336,3 +373,13 @@ sch_path_dict = {'oat_2017': FD + '/envs/idf/envs/iw/learning/x.csv',
                  'solDir_2017': FD + '/envs/idf/envs/iw/learning/x.csv',
                  'solDif_2017': FD + '/envs/idf/envs/iw/learning/x.csv'};
 setSchedulePath(sch_path_dict, FD + '/envs/idf/envs/iw/learning/iw_v57_2_learning_eval.idf');
+"""
+# Replace some schedule file path in /envs/eplus_models/iw_v96/learning/idf/realWeather.idf with the absolute path
+sch_path_dict = {'oat_2017': FD + '/envs/eplus_models/iw_v96/weather/x.csv',
+                 'oah_2017': FD + '/envs/eplus_models/iw_v96/weather/x.csv',
+                 'oadwp_2017': FD + '/envs/eplus_models/iw_v96/weather/x.csv',
+                 'oawds_2017': FD + '/envs/eplus_models/iw_v96/weather/x.csv',
+                 'oawdd_2017': FD + '/envs/eplus_models/iw_v96/weather/x.csv',
+                 'solDir_2017': FD + '/envs/eplus_models/iw_v96/weather/x.csv',
+                 'solDif_2017': FD + '/envs/eplus_models/iw_v96/weather/x.csv'};
+setSchedulePath(sch_path_dict, FD + '/envs/eplus_models/iw_v96/learning/idf/realWeather.idf');
