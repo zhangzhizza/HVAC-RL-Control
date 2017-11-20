@@ -27,19 +27,26 @@ def get_time_interpolate(dataframe, time):
         return dataframe.loc[time].as_matrix().flatten();
     
     # Else, do interpolation
-    indexAfterTime = (dataframe.index >= time).argmax();
-    relevantRows = dataframe.iloc[indexAfterTime - 1:indexAfterTime + 1];
-    relevantRows_inserted = relevantRows.reindex(pd
+    dataframeCmpTime = dataframe.index >= time;
+    # If time is at the end of entry, no further future data available, return the last entry
+    ret = None;
+    if np.all(dataframeCmpTime == False):
+        ret = dataframe.iloc[dataframeCmpTime.shape[0] - 1];
+    else:
+        indexAfterTime = (dataframeCmpTime).argmax();
+        relevantRows = dataframe.iloc[indexAfterTime - 1:indexAfterTime + 1];
+        relevantRows_inserted = relevantRows.reindex(pd
                                                  .to_datetime(
                                                      list(relevantRows.index.values) + 
                                                      [pd.to_datetime(time)]
                                                      )
                                                  );
                                                  
-    relevantRows_interpolated = relevantRows_inserted.interpolate('time') \
+        relevantRows_interpolated = relevantRows_inserted.interpolate('time') \
                                                      .loc[time];
+        ret = relevantRows_interpolated;
     
-    ret = relevantRows_interpolated.as_matrix().flatten();
+    ret = ret.as_matrix().flatten();
     
     # Check if exist nan, usually occurs when interpolation out of the first
     # entry of the data
@@ -48,7 +55,7 @@ def get_time_interpolate(dataframe, time):
             ret = dataframe.iloc[indexAfterTime].as_matrix().flatten();
             break;
     
-    return ret.tolist();
+    return ret;
     
     
     
