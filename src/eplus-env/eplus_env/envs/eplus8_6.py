@@ -9,6 +9,7 @@ import logging
 import subprocess
 import threading
 import pandas as pd
+import numpy as np
 
 from shutil import copyfile
 from gym import Env, spaces
@@ -58,8 +59,8 @@ class EplusEnv(Env):
     """
 
     def __init__(self, eplus_path, weather_path, bcvtb_path, variable_path, idf_path, env_name,
-                 min_max_limits, incl_forecast = False, forecastSource = 'tmy3', forecastFilePath = None,
-                 forecast_hour = 12, act_repeat = 1):
+                 min_max_limits, incl_forecast = False, forecastRandMode = 'normal', forecastRandStd = 0.15,
+                 forecastSource = 'tmy3', forecastFilePath = None, forecast_hour = 12, act_repeat = 1):
         self._env_name = env_name;
         self._thread_name = threading.current_thread().getName();
         self.logger_main = Logger().getLogger('EPLUS_ENV_%s_%s_ROOT'%(env_name, self._thread_name), 
@@ -99,6 +100,8 @@ class EplusEnv(Env):
                                                         self._eplus_run_ed_mon,
                                                         self._eplus_run_ed_day);
         self._weatherForecastSrc = forecastSource;
+        self._forecastRandMode = 'normal';
+        self._forecastRandStd = 0.15;
         self._incl_forecast = incl_forecast;
         self._forecast_hour = forecast_hour;
         if incl_forecast:
@@ -717,8 +720,27 @@ class EplusEnv(Env):
         for time in forecastTimeList:
             weatherAtTime = get_time_interpolate(self._weather, time);
             ret.extend(weatherAtTime.tolist());
+        # Add randomness to the forecast
+        if self._forecastRandMode == 'normal':
+            ret = self._addNormalRandomToForecast(ret, self._forecastRandStd, self._min_max_limits[-len(ret):]);
             
         return ret;
+
+    def _addNormalRandomToForecast(self, rawForecast, forecastRandStd, min_max_limits):
+        """
+        Randomness is added by raw*(1 + dev), where dev is sampled from normal distribution with mean 0, std forecastRandStd.
+        """
+        # Sample from normal distribution for dev
+        randomBase = np.random.normal(0, forecastRandStd, len(min_max_limits));
+        # Caculate the randomed forecast
+        randomedForecastRaw = rawForecast * (1 + randomBase);
+        # Clip the randomed forecast by its limits
+        min_max_limits = np.array(min_max_limits);
+        randomedForecastCliped = np.clip(randomedForecastRaw, min_max_limits[:, 0], min_max_limits[:, 1]);
+
+        return randomedForecastCliped.tolist();
+
+
             
     def _get_one_epi_len(self, st_mon, st_day, ed_mon, ed_day):
         """

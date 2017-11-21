@@ -259,9 +259,13 @@ class A3CThread:
                 #self._local_logger.debug('The processed stacked state at %0.04f '
                 #                         'is %s.'%(time_this, str(ob_this_hist_prcd)));
                 # Get the action
-                dbg_rdm = np.random.uniform(); # For debug
+                #################FOR DEBUG#######################
+                dbg_rdm = np.random.uniform();
+                noForecastDim = 13;
+                forecastSingleEntryDim = 4;
                 dbg_thres = 0.0001;
                 is_show_dbg = True if dbg_rdm < dbg_thres else False;
+                #################################################
 
                 action_raw_idx = self._select_sto_action(ob_this_hist_prcd, sess,
                                                          self._e_greedy, is_show_dbg, 
@@ -281,10 +285,12 @@ class A3CThread:
                 # Get the reward
                 reward_next = reward_func(ob_next_prcd, e_weight, p_weight, *rewardArgs);
                 
+                #################FOR DEBUG#######################
                 if is_show_dbg:
                     self._local_logger.debug('TRAINING DEBUG INFO ======>>>>>>>>>>'
                                          'Environment debug: raw action idx is %d, \n'
                                          'current raw observation is %s, \n'
+                                         'current ob forecast is %s, \n'
                                          'actual action is %s, \n'
                                          'sim time this is %0.04f, \n' 
                                          'sim time next is %0.04f, \n'
@@ -292,9 +298,12 @@ class A3CThread:
                                          'processed observation next is %s, \n'
                                          'reward next is %0.04f. \n'
                                          '============================================='
-                                         %(action_raw_idx, ob_this_raw,
+                                         %(action_raw_idx, ob_this_raw[0: noForecastDim],
+                                           np.insert(np.array(ob_this_raw[noForecastDim:]).astype('str'),
+                                            range(0, (len(ob_this_raw) - noForecastDim), forecastSingleEntryDim), 'Next Hour'),
                                            str(action_stpt_prcd), time_this, time_next, 
-                                           ob_next_raw, ob_next_prcd, reward_next));
+                                           ob_next_raw[0: noForecastDim], ob_next_prcd, reward_next));
+                #################################################
 
                 # Get the history stacked state
                 ob_next_hist_prcd = self._histProcessor.\
@@ -372,10 +381,11 @@ class A3CThread:
             _, loss_res, value_pred = sess.run([self._train_op, self._loss, 
                                                 self._value_pred], 
                                    feed_dict = training_feed_dict);
-            dbg_rdm = np.random.uniform();
-            if dbg_rdm < 0.001:
+            #################FOR DEBUG#######################
+            if is_show_dbg:
                 self._local_logger.debug('Value prediction is %s, R is %s.'
                                      %(str(value_pred), str(q_true_list)));
+            #################################################
             # Display and record the loss for this thread
             printStatusFreq = 100;
             if (t/t_max) % printStatusFreq == 0:
