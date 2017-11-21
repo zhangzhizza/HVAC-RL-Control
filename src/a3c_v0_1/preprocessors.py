@@ -132,10 +132,11 @@ class HistoryPreprocessor:
 
     """
 
-    def __init__(self, history_length=1):
+    def __init__(self, history_length, forecast_dim):
         self._history_length = history_length;
         self._flag_start_net = True;
         self._stacked_return_net = None;
+        self._forecast_dim = forecast_dim;
 
     def process_state_for_network(self, state):
         """Take the current state and return a stacked state with current
@@ -148,6 +149,11 @@ class HistoryPreprocessor:
         Return: np.ndarray, dim = 1*m where m is the state_dim * history_length
             Stacked states.
         """
+        forecast_state = None;
+        if self._forecast_dim > 0:
+            ob_state = state[0: len(state) - self._forecast_dim] # Delete the forecast states
+            forecast_state = state[-self._forecast_dim: ] # Get the forecast state
+            state = ob_state;
         state = np.array(state).reshape(1, -1);
         state_dim = state.shape[-1];
         if self._flag_start_net:
@@ -159,8 +165,11 @@ class HistoryPreprocessor:
                 self._stacked_return_net[i, :] = \
                     self._stacked_return_net[i+1, :];
             self._stacked_return_net[-1, :] = state;
-            
-        return np.copy(self._stacked_return_net.flatten().reshape(1, -1));
+
+        ret = np.copy(self._stacked_return_net.flatten().reshape(1, -1));
+        if self._forecast_dim > 0:
+            ret = np.append(ret, np.array(forecast_state).reshape(1, -1), 1);
+        return ret;
 
 
     def reset(self):

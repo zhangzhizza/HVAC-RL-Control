@@ -62,7 +62,8 @@ def get_args():
     parser.add_argument('--max_interactions', default=15000000, type=int, 
     	help='The max number of interactions with the environment for A3C, default is 15000000.');
     parser.add_argument('--window_len', default=4, type=int, help='The state stacking window length, default is 4.');
-    parser.add_argument('--state_dim', default=15, type=int, help='The state dimension, default is 15.');
+    parser.add_argument('--state_dim', default=15, type=int, help='The current observation state dimension, default is 15.');
+    parser.add_argument('--forecast_dim', default=15, type=int, help='The total forecast state dimension, default is 15.');
     parser.add_argument('--gamma', default=0.99);
     parser.add_argument('--v_loss_frac', default=0.5, type=float);
     parser.add_argument('--p_loss_frac', default=1.0, type=float);
@@ -117,8 +118,10 @@ def effective_main(args, reward_func, rewardArgs, action_func, action_limits, ra
     
     # State size
     state_dim = args.state_dim # 15 for the raw state dim, 2 is the additonal time info
+    forecast_dim = args.forecast_dim;
     # Create the agent
-    a3c_agent = A3CAgent(state_dim = state_dim, window_len = args.window_len,
+    a3c_agent = A3CAgent(forecast_dim = forecast_dim, state_dim = state_dim, 
+                         window_len = args.window_len,
                          vloss_frac = args.v_loss_frac,
                          ploss_frac = args.p_loss_frac, 
                          hregu_frac = args.h_regu_frac,

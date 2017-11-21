@@ -203,7 +203,7 @@ class A3CEval_multiagent:
 
 class A3CEval:
     def __init__(self, sess, global_network, env, num_episodes, window_len, 
-                 e_weight, p_weight):
+                 forecast_len, e_weight, p_weight):
         """
         This is the class for evaluation under the single-zone control mode. 
 
@@ -233,7 +233,7 @@ class A3CEval:
         #print (sess.run(global_collection[0]));
         self._env = env;
         self._num_episodes = num_episodes;
-        self._histProcessor = HistoryPreprocessor(window_len);
+        self._histProcessor = HistoryPreprocessor(window_len, forecast_len);
         # Prepare env-related information
         self._env_st_yr = env.start_year;
         self._env_st_mn = env.start_mon;
@@ -269,8 +269,18 @@ class A3CEval:
         average_reward = 0;
         #average_max_ppd = 0;
         # Reset the env
-        time_this, ob_this_raw, is_terminal = self._env.reset();
+        forecast_this = None;
+        # Reset the env
+        env_get_this = self._env.reset();
+        if len(env_get_this) == 4:
+            time_this, ob_this_raw, forecast_this, is_terminal = env_get_this;
+        elif len(env_get_this) == 3:
+            time_this, ob_this_raw, is_terminal = env_get_this;
         ob_this_raw = raw_state_process_func(ob_this_raw);
+        # Process and normalize the raw observation
+        if forecast_this != None:
+            # Add forecast info to ob_this_raw so they can be normalized
+            ob_this_raw.extend(forecast_this);
         # Process and normalize the raw observation
         ob_this_prcd = process_raw_state_cmbd(ob_this_raw, [time_this], 
                                               self._env_st_yr, self._env_st_mn, 
@@ -288,10 +298,11 @@ class A3CEval:
             #################FOR DEBUG#######################
             is_dbg_out = False;
             noForecastDim = 13;
-            if dbg_rdm < 0.005:
+            if dbg_rdm < 0.01:
                 is_dbg_out = True;
             if is_dbg_out:
                 local_logger.debug('Observation this: %s' %(ob_this_raw[0: noForecastDim]));
+                local_logger.debug('Observation forecast: %s' %(ob_this_raw[noForecastDim:]));
             #################################################
             # Get the action
             action_raw_idx = self._select_sto_action(ob_this_hist_prcd, local_logger, is_dbg_out);
@@ -299,9 +310,17 @@ class A3CEval:
             action_stpt_prcd, action_effec = action_func(action_raw_tup, action_limits, ob_this_raw);
             action_stpt_prcd = list(action_stpt_prcd);
             # Perform the action
-            time_next, ob_next_raw, is_terminal = \
-                                                self._env.step(action_stpt_prcd);
+            forecast_next = None;
+            env_get_next = self._env.step(action_stpt_prcd);
+            if len(env_get_next) == 3:
+                time_next, ob_next_raw, is_terminal = env_get_next;
+            elif len(env_get_next) == 4:
+                time_next, ob_next_raw, forecast_next, is_terminal = env_get_next;
             ob_next_raw = raw_state_process_func(ob_next_raw);
+            # Process and normalize the raw observation
+            if forecast_next != None:
+            # Add forecast info to ob_next_raw so they can be normalized
+                ob_next_raw.extend(forecast_next);
             # Process and normalize the raw observation
             ob_next_prcd = process_raw_state_cmbd(ob_next_raw, [time_next], 
                                               self._env_st_yr, self._env_st_mn, 
