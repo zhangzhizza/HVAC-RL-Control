@@ -307,7 +307,7 @@ class EplusEnv(Env):
         # Read the weather forecast
         if self._incl_forecast:
             wea_forecast = self._get_weather_forecast(curSimTim); 
-            ret[-1].extend(wea_forecast);
+            ret.append(wea_forecast);
         
         # Check if episode terminates
         is_terminal = False;
@@ -381,7 +381,7 @@ class EplusEnv(Env):
         # Read the weather forecast
         if self._incl_forecast:
             wea_forecast = self._get_weather_forecast(curSimTim);
-            ret[-1].extend(wea_forecast);
+            ret.append(wea_forecast);
         # Add terminal status
         ret.append(is_terminal);
         # Change some attributes

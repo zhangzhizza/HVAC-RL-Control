@@ -31,8 +31,8 @@ class A3CThread:
     The thread worker of the A3C algorithm. 
     """
     
-    def __init__(self, graph, scope_name, global_name, state_dim, action_size,
-                 vloss_frac, ploss_frac, hregu_frac, shared_optimizer,
+    def __init__(self, graph, scope_name, global_name, effec_state_dim, forecast_dim, 
+                action_size, vloss_frac, ploss_frac, hregu_frac, shared_optimizer,
                  clip_norm, global_train_step, window_len, init_epsilon,
                  end_epsilon, decay_steps):
         """
@@ -80,7 +80,7 @@ class A3CThread:
         ###########################################
         ### Create the policy and value network ###
         ###########################################
-        network_state_dim = state_dim * window_len;
+        network_state_dim = effec_state_dim;
         self._a3c_network = A3C_Network(graph, scope_name, network_state_dim, 
                                         action_size);
         self._policy_pred = self._a3c_network.policy_pred;
@@ -150,9 +150,10 @@ class A3CThread:
                                                                global_name);
         
         #####################################################
+        self._forecast_dim = forecast_dim;
         self._network_state_dim = network_state_dim;
         self._window_len = window_len;
-        self._histProcessor = HistoryPreprocessor(window_len);
+        self._histProcessor = HistoryPreprocessor(window_len, forecast_dim);
         self._scope_name = scope_name;
         self._graph = graph;
         self._grad_norms = grad_norms;
@@ -228,16 +229,25 @@ class A3CThread:
         env_state_limits.insert(0, (0, 23)); # Add hour limit
         env_state_limits.insert(0, (0, 6)); # Add weekday limit
         pcd_state_limits = np.transpose(env_state_limits);
+        forecast_this = None;
         # Reset the env
-        time_this, ob_this_raw, is_terminal = env.reset();
+        env_get_this = env.reset();
+        if len(env_get_this) == 4:
+            time_this, ob_this_raw, forecast_this, is_terminal = env_get_this;
+        elif len(env_get_this) == 3:
+            time_this, ob_this_raw, is_terminal = env_get_this;
         ob_this_raw = raw_state_process_func(ob_this_raw);
         # Process and normalize the raw observation
+        if forecast_this is not None:
+            # Add forecast info to ob_this_raw so they can be normalized
+            ob_this_raw.extend(forecast_this);
         ob_this_prcd = process_raw_state_cmbd(ob_this_raw, [time_this], env_st_yr, 
                                               env_st_mn, env_st_dy, env_st_wd, 
                                               pcd_state_limits); # 1-D list
         # Get the history stacked state
         ob_this_hist_prcd = self._histProcessor.\
                             process_state_for_network(ob_this_prcd) # 2-D array
+    
         
         while not coordinator.should_stop():
             sess.run(self._local_net_update);
@@ -275,10 +285,17 @@ class A3CThread:
                 action_stpt_prcd, action_effec = action_func(action_raw_tup, action_limits, ob_this_raw);
                 action_stpt_prcd = list(action_stpt_prcd);
                 # Take the action
-                time_next, ob_next_raw, is_terminal = \
-                                                env.step(action_stpt_prcd);
+                forecast_next = None;
+                env_get_next = env.step(action_stpt_prcd);
+                if len(env_get_next) == 3:
+                    time_next, ob_next_raw, is_terminal = env_get_next;
+                elif len(env_get_next) == 4:
+                    time_next, ob_next_raw, forecast_next, is_terminal = env_get_next;
                 ob_next_raw = raw_state_process_func(ob_next_raw);
                 # Process and normalize the raw observation
+                if forecast_next != None:
+                # Add forecast info to ob_next_raw so they can be normalized
+                    ob_next_raw.extend(forecast_next);
                 ob_next_prcd = process_raw_state_cmbd(ob_next_raw, [time_next], 
                                               env_st_yr, env_st_mn, env_st_dy,
                                               env_st_wd, pcd_state_limits); # 1-D list
@@ -455,6 +472,8 @@ class A3CAgent:
     The A3C Agent class. 
 
     Args:
+        forecast_dim: int
+            The total forecast dimension.
         state_dim: int
             The state dimension.
         window_len: int
@@ -492,6 +511,7 @@ class A3CAgent:
 
     """
     def __init__(self,
+                 forecast_dim,
                  state_dim,
                  window_len,
                  vloss_frac, 
@@ -510,10 +530,11 @@ class A3CAgent:
                  action_space_name,
                  dropout_prob,
                  global_logger):
+        self._forecast_dim = forecast_dim;
         state_dim += TIME_DIM; # Add time info dimension
         self._state_dim = state_dim;
         self._window_len = window_len;
-        self._effec_state_dim = state_dim * window_len;
+        self._effec_state_dim = state_dim * window_len + forecast_dim;
         self._action_size = len(ACTION_MAP[action_space_name]);
         self._vloss_frac = vloss_frac;
         self._ploss_frac = ploss_frac;
@@ -567,7 +588,7 @@ class A3CAgent:
             global_train_step = tf.Variable(0, name='global_train_step', 
                                             trainable=False);
         # Create the thread workers list
-        workers = [A3CThread(g, 'worker_%d'%(i), 'global', self._state_dim,
+        workers = [A3CThread(g, 'worker_%d'%(i), 'global', self._effec_state_dim, self._forecast_dim,
                              self._action_size, self._vloss_frac, self._ploss_frac,
                              self._hregu_frac, shared_optimizer, self._clip_norm,
                              global_train_step, self._window_len, self._init_epsilon,
@@ -704,7 +725,7 @@ class A3CAgent:
         for env_name in env_name_list:
             env_eval = gym.make(env_name);
             global_agent_eval = A3CEval(sess, global_network, env_eval, eval_epi_num, 
-                                    self._window_len, e_weight, p_weight);
+                                    self._window_len, self._forecast_dim, e_weight, p_weight);
             global_agent_eval_list.append(global_agent_eval)
 
         global_res_list = [];
