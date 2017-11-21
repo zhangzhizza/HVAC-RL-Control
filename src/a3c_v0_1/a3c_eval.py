@@ -285,11 +285,14 @@ class A3CEval:
         #this_ep_max_ppd = 0;
         while episode_counter <= self._num_episodes:
             dbg_rdm = np.random.uniform();
+            #################FOR DEBUG#######################
             is_dbg_out = False;
+            noForecastDim = 13;
             if dbg_rdm < 0.005:
                 is_dbg_out = True;
             if is_dbg_out:
-                local_logger.debug('Observation this: %s' %(ob_this_raw));
+                local_logger.debug('Observation this: %s' %(ob_this_raw[0: noForecastDim]));
+            #################################################
             # Get the action
             action_raw_idx = self._select_sto_action(ob_this_hist_prcd, local_logger, is_dbg_out);
             action_raw_tup = action_space[action_raw_idx];
