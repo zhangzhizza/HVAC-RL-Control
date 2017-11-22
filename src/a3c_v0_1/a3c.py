@@ -20,6 +20,7 @@ from a3c_v0_1.preprocessors import HistoryPreprocessor, process_raw_state_cmbd
 from a3c_v0_1.utils import init_variables, get_hard_target_model_updates, get_uninitialized_variables
 from a3c_v0_1.state_index import *
 from a3c_v0_1.a3c_eval import A3CEval_multiagent, A3CEval
+from a3c_v0_1.env_interaction import IWEnvInteract
 
 ACTION_MAP = action_map;
 LOG_LEVEL = 'DEBUG';
@@ -229,18 +230,9 @@ class A3CThread:
         env_state_limits.insert(0, (0, 23)); # Add hour limit
         env_state_limits.insert(0, (0, 6)); # Add weekday limit
         pcd_state_limits = np.transpose(env_state_limits);
-        forecast_this = None;
+        env_interact_wrapper = IWEnvInteract(env, raw_state_process_func);
         # Reset the env
-        env_get_this = env.reset();
-        if len(env_get_this) == 4:
-            time_this, ob_this_raw, forecast_this, is_terminal = env_get_this;
-        elif len(env_get_this) == 3:
-            time_this, ob_this_raw, is_terminal = env_get_this;
-        ob_this_raw = raw_state_process_func(ob_this_raw);
-        # Process and normalize the raw observation
-        if forecast_this is not None:
-            # Add forecast info to ob_this_raw so they can be normalized
-            ob_this_raw.extend(forecast_this);
+        time_this, ob_this_raw, is_terminal = env_interact_wrapper.reset();
         ob_this_prcd = process_raw_state_cmbd(ob_this_raw, [time_this], env_st_yr, 
                                               env_st_mn, env_st_dy, env_st_wd, 
                                               pcd_state_limits); # 1-D list
@@ -273,7 +265,7 @@ class A3CThread:
                 dbg_rdm = np.random.uniform();
                 noForecastDim = 13;
                 forecastSingleEntryDim = 4;
-                dbg_thres = 0.0001;
+                dbg_thres = 0.0005;
                 is_show_dbg = True if dbg_rdm < dbg_thres else False;
                 #################################################
 
@@ -285,17 +277,7 @@ class A3CThread:
                 action_stpt_prcd, action_effec = action_func(action_raw_tup, action_limits, ob_this_raw);
                 action_stpt_prcd = list(action_stpt_prcd);
                 # Take the action
-                forecast_next = None;
-                env_get_next = env.step(action_stpt_prcd);
-                if len(env_get_next) == 3:
-                    time_next, ob_next_raw, is_terminal = env_get_next;
-                elif len(env_get_next) == 4:
-                    time_next, ob_next_raw, forecast_next, is_terminal = env_get_next;
-                ob_next_raw = raw_state_process_func(ob_next_raw);
-                # Process and normalize the raw observation
-                if forecast_next != None:
-                # Add forecast info to ob_next_raw so they can be normalized
-                    ob_next_raw.extend(forecast_next);
+                time_next, ob_next_raw, is_terminal = env_interact_wrapper.step(action_stpt_prcd);
                 ob_next_prcd = process_raw_state_cmbd(ob_next_raw, [time_next], 
                                               env_st_yr, env_st_mn, env_st_dy,
                                               env_st_wd, pcd_state_limits); # 1-D list
@@ -364,9 +346,7 @@ class A3CThread:
                     time_this = time_next;
                 else:
                     # Reset the env
-                    time_this, ob_this_raw, is_terminal_cp = env.reset();
-                    # Process and normalize the raw observation
-                    ob_this_raw = raw_state_process_func(ob_this_raw);
+                    time_this, ob_this_raw, is_terminal_cp = env_interact_wrapper.reset();
                     ob_this_prcd = process_raw_state_cmbd(ob_this_raw, [time_this], 
                                               env_st_yr, env_st_mn, env_st_dy,
                                               env_st_wd, pcd_state_limits); # 1-D list
