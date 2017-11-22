@@ -323,7 +323,7 @@ class EplusEnv(Env):
         if is_terminal:
             self._end_episode();
             
-        return tuple(ret)
+        return tuple(ret);
 
     def _step(self, action):
         """Execute the specified action.
@@ -636,7 +636,7 @@ class EplusEnv(Env):
             line_count += 1;
             
         return tuple(ret);
-            
+
     def _get_weather_info(self, eplus_run_st_mon, eplus_run_st_day, eplus_run_ed_mon, 
                         eplus_run_ed_day, eplus_run_stepsize, weatherForecastSrc):
         """
@@ -658,7 +658,7 @@ class EplusEnv(Env):
             lineColBias = 6; # The Weather data starts from column 7 in the .epw file, col 2 in the real weather file
             weatherFileStepSize = 1;
             tgt_idxs = WEATHER_FORECAST_COLS_SELECT['tmy3']
-            stHour = '01:00:00';
+            stHour = '00:00:00';
 
         else:
             lineRowBias = 1;
@@ -687,14 +687,22 @@ class EplusEnv(Env):
             this_line = weather[line_i].split('\n')[0].split(',')[lineColBias:];    
             this_line = [float(this_line[tgt_idx]) for tgt_idx in tgt_idxs];
             weather_list.append(this_line);
+        if weatherForecastSrc == 'tmy3':
+            # For tmy3 weather, insert weather for 01-01 00:00:00
+            weather_list.insert(0, weather_list[0]);
         # Create the pandas dataframe
         weather_df = pd.DataFrame(weather_list);
+        timeidx_periods = (hour_by_end - hour_by_start) * weatherFileStepSize + 1 if weatherForecastSrc == 'tmy3'\
+                            else (hour_by_end - hour_by_start) * weatherFileStepSize
         timeidx = pd.date_range('%d/%d/%d %s'%(eplus_run_st_mon, 
                                                eplus_run_st_day,
                                                YEAR, stHour),
-                                periods = (hour_by_end - hour_by_start) * weatherFileStepSize,
+                                periods = timeidx_periods,
                                 freq = '%dMin'%(60/weatherFileStepSize));
         weather_df.set_index(timeidx, inplace = True);
+        if weatherForecastSrc == 'tmy3':
+            # Interpolate the the weather info
+            weather_df = weather_df.resample('%dS'%(eplus_run_stepsize)).interpolate()
         
         return weather_df;
         
