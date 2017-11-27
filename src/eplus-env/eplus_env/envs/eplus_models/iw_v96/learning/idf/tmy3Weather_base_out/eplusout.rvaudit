@@ -1,0 +1,16 @@
+ ReadVarsESO
+ processing:.tmy3Weather_base.rvi
+ input file:tmy3Weather_base_res/eplusout.eso
+ output file:tmy3Weather_base_res/eplusout.csv
+ getting all vars from:tmy3Weather_base_res/eplusout.eso
+  number variables requested for output=          35
+ ReadVars Run Time=00hr 00min  0.91sec
+ ReadVarsESO program completed successfully.
+ ReadVarsESO
+ processing:.tmy3Weather_base.mvi
+ input file:tmy3Weather_base_res/eplusout.mtr
+ output file:tmy3Weather_base_res/eplusmtr.csv
+ getting all vars from:tmy3Weather_base_res/eplusout.mtr
+  number variables requested for output=          15
+ ReadVars Run Time=00hr 00min  0.01sec
+ ReadVarsESO program completed successfully.
