@@ -82,4 +82,6 @@ min_max_limits_dict = {'IW-tmy3Weather-v9601': iw_v9601_limits,
 					   'IW-tmy3Weather-v9602': iw_v9602_limits,
 					   'IW-realWeather-v9602': iw_v9602_limits,
 					   'IW-tmy3Weather-v9603': iw_v9601_limits,
-					   'IW-realWeather-v9603': iw_v9601_limits,};
+					   'IW-realWeather-v9603': iw_v9601_limits,
+					   'IW-tmy3Weather-v9604': iw_v9602_limits,
+					   'IW-realWeather-v9604': iw_v9602_limits};
