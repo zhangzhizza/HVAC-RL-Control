@@ -1,0 +1,1486 @@
+
+ Meters for 15,CENTRAL GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:CENTRAL [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:CENTRAL [J]
+  OnMeter=ELECTRIC EQUIPMENT#kitchen#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 76,NEOFF GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:NEOFF [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:NEOFF [J]
+  OnMeter=ELECTRIC EQUIPMENT#bas#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 107,SEOFF GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:SEOFF [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:SEOFF [J]
+  OnMeter=ELECTRIC EQUIPMENT#off-yujie#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 138,NWOFF GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:NWOFF [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:NWOFF [J]
+  OnMeter=ELECTRIC EQUIPMENT#off-volker#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 169,SWOFF GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:SWOFF [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:SWOFF [J]
+  OnMeter=ELECTRIC EQUIPMENT#off-james#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 200,LARGECONF GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:LARGECONF [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:LARGECONF [J]
+  OnMeter=ELECTRIC EQUIPMENT#largeConf1#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 231,CENTRAL EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:CENTRAL [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:CENTRAL [J]
+  OnMeter=ELECTRIC EQUIPMENT#kitchen#05:InteriorEquipment:Electricity [J]
+
+ Meters for 262,NEOFF EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:NEOFF [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:NEOFF [J]
+  OnMeter=ELECTRIC EQUIPMENT#bas#05:InteriorEquipment:Electricity [J]
+
+ Meters for 283,SEOFF COMPUTING GAIN 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:SEOFF [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:SEOFF [J]
+  OnMeter=ELECTRIC EQUIPMENT#off-yujie#05:InteriorEquipment:Electricity [J]
+
+ Meters for 304,NWOFF COMPUTING GAIN 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:NWOFF [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:NWOFF [J]
+  OnMeter=ELECTRIC EQUIPMENT#off-volker#05:InteriorEquipment:Electricity [J]
+
+ Meters for 325,SWOFF COMPUTING GAIN 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:SWOFF [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:SWOFF [J]
+  OnMeter=ELECTRIC EQUIPMENT#off-james#05:InteriorEquipment:Electricity [J]
+
+ Meters for 346,LARGECONF EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:LARGECONF [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:LARGECONF [J]
+  OnMeter=ELECTRIC EQUIPMENT#largeConf1#05:InteriorEquipment:Electricity [J]
+
+ Meters for 425,UNDERFLOOR_VOID_SPACE:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:UNDERFLOOR_VOID_SPACE [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:UNDERFLOOR_VOID_SPACE [J]
+
+ Meters for 476,UNDERFLOOR_VOID_SPACE:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:UNDERFLOOR_VOID_SPACE [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:UNDERFLOOR_VOID_SPACE [J]
+
+ Meters for 497,ROOFS1:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:ROOFS1 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:ROOFS1 [J]
+
+ Meters for 518,ROOFS1:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:ROOFS1 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:ROOFS1 [J]
+
+ Meters for 529,ROOFS2:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:ROOFS2 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:ROOFS2 [J]
+
+ Meters for 550,ROOFS2:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:ROOFS2 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:ROOFS2 [J]
+
+ Meters for 561,ROOFS3:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:ROOFS3 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:ROOFS3 [J]
+
+ Meters for 582,ROOFS3:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:ROOFS3 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:ROOFS3 [J]
+
+ Meters for 593,ROOFS0:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:ROOFS0 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:ROOFS0 [J]
+
+ Meters for 614,ROOFS0:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:ROOFS0 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:ROOFS0 [J]
+
+ Meters for 625,ROOFS4:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:ROOFS4 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:ROOFS4 [J]
+
+ Meters for 646,ROOFS4:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:ROOFS4 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:ROOFS4 [J]
+
+ Meters for 657,ROOFN0:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:ROOFN0 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:ROOFN0 [J]
+
+ Meters for 678,ROOFN0:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:ROOFN0 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:ROOFN0 [J]
+
+ Meters for 689,ROOFN3:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:ROOFN3 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:ROOFN3 [J]
+
+ Meters for 710,ROOFN3:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:ROOFN3 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:ROOFN3 [J]
+
+ Meters for 721,ROOFN1:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:ROOFN1 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:ROOFN1 [J]
+
+ Meters for 742,ROOFN1:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:ROOFN1 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:ROOFN1 [J]
+
+ Meters for 753,ROOFN2:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:ROOFN2 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:ROOFN2 [J]
+
+ Meters for 774,ROOFN2:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:ROOFN2 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:ROOFN2 [J]
+
+ Meters for 785,SWOFF:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:SWOFF [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:SWOFF [J]
+
+ Meters for 806,SWOFF:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:SWOFF [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:SWOFF [J]
+
+ Meters for 817,SEOFF:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:SEOFF [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:SEOFF [J]
+
+ Meters for 838,SEOFF:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:SEOFF [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:SEOFF [J]
+
+ Meters for 849,NWOFF:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:NWOFF [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:NWOFF [J]
+
+ Meters for 870,NWOFF:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:NWOFF [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:NWOFF [J]
+
+ Meters for 881,NEOFF:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:NEOFF [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:NEOFF [J]
+
+ Meters for 902,NEOFF:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:NEOFF [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:NEOFF [J]
+
+ Meters for 913,CENTRAL:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:CENTRAL [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:CENTRAL [J]
+
+ Meters for 934,CENTRAL:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:CENTRAL [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:CENTRAL [J]
+
+ Meters for 945,LARGECONF:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:LARGECONF [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:LARGECONF [J]
+
+ Meters for 966,LARGECONF:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:LARGECONF [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:LARGECONF [J]
+
+ Meters for 980,NEOFF MULLION:Zone Radiant HVAC Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatingCoils:EnergyTransfer [J]
+
+ Meters for 1001,NEOFF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy [J]
+  OnMeter=PlantLoopHeatingDemand:Facility [J]
+  OnMeter=PlantLoopHeatingDemand:HVAC [J]
+  OnMeter=HeatingCoils:PlantLoopHeatingDemand [J]
+
+ Meters for 1032,NEOFF MULLION:Zone Radiant HVAC Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=CoolingCoils:EnergyTransfer [J]
+
+ Meters for 1043,NEOFF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy [J]
+  OnMeter=PlantLoopCoolingDemand:Facility [J]
+  OnMeter=PlantLoopCoolingDemand:HVAC [J]
+  OnMeter=CoolingCoils:PlantLoopCoolingDemand [J]
+
+ Meters for 1074,NEOFF MULLION:Zone Radiant HVAC Pump Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+
+ Meters for 1095,NWOFF MULLION:Zone Radiant HVAC Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatingCoils:EnergyTransfer [J]
+
+ Meters for 1096,NWOFF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy [J]
+  OnMeter=PlantLoopHeatingDemand:Facility [J]
+  OnMeter=PlantLoopHeatingDemand:HVAC [J]
+  OnMeter=HeatingCoils:PlantLoopHeatingDemand [J]
+
+ Meters for 1097,NWOFF MULLION:Zone Radiant HVAC Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=CoolingCoils:EnergyTransfer [J]
+
+ Meters for 1098,NWOFF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy [J]
+  OnMeter=PlantLoopCoolingDemand:Facility [J]
+  OnMeter=PlantLoopCoolingDemand:HVAC [J]
+  OnMeter=CoolingCoils:PlantLoopCoolingDemand [J]
+
+ Meters for 1099,NWOFF MULLION:Zone Radiant HVAC Pump Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+
+ Meters for 1100,LARGECONF MULLION:Zone Radiant HVAC Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatingCoils:EnergyTransfer [J]
+
+ Meters for 1101,LARGECONF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy [J]
+  OnMeter=PlantLoopHeatingDemand:Facility [J]
+  OnMeter=PlantLoopHeatingDemand:HVAC [J]
+  OnMeter=HeatingCoils:PlantLoopHeatingDemand [J]
+
+ Meters for 1102,LARGECONF MULLION:Zone Radiant HVAC Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=CoolingCoils:EnergyTransfer [J]
+
+ Meters for 1103,LARGECONF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy [J]
+  OnMeter=PlantLoopCoolingDemand:Facility [J]
+  OnMeter=PlantLoopCoolingDemand:HVAC [J]
+  OnMeter=CoolingCoils:PlantLoopCoolingDemand [J]
+
+ Meters for 1104,LARGECONF MULLION:Zone Radiant HVAC Pump Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+
+ Meters for 1105,CENTRAL MULLION:Zone Radiant HVAC Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatingCoils:EnergyTransfer [J]
+
+ Meters for 1106,CENTRAL MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy [J]
+  OnMeter=PlantLoopHeatingDemand:Facility [J]
+  OnMeter=PlantLoopHeatingDemand:HVAC [J]
+  OnMeter=HeatingCoils:PlantLoopHeatingDemand [J]
+
+ Meters for 1107,CENTRAL MULLION:Zone Radiant HVAC Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=CoolingCoils:EnergyTransfer [J]
+
+ Meters for 1108,CENTRAL MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy [J]
+  OnMeter=PlantLoopCoolingDemand:Facility [J]
+  OnMeter=PlantLoopCoolingDemand:HVAC [J]
+  OnMeter=CoolingCoils:PlantLoopCoolingDemand [J]
+
+ Meters for 1109,CENTRAL MULLION:Zone Radiant HVAC Pump Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+
+ Meters for 1110,SEOFF MULLION:Zone Radiant HVAC Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatingCoils:EnergyTransfer [J]
+
+ Meters for 1111,SEOFF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy [J]
+  OnMeter=PlantLoopHeatingDemand:Facility [J]
+  OnMeter=PlantLoopHeatingDemand:HVAC [J]
+  OnMeter=HeatingCoils:PlantLoopHeatingDemand [J]
+
+ Meters for 1112,SEOFF MULLION:Zone Radiant HVAC Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=CoolingCoils:EnergyTransfer [J]
+
+ Meters for 1113,SEOFF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy [J]
+  OnMeter=PlantLoopCoolingDemand:Facility [J]
+  OnMeter=PlantLoopCoolingDemand:HVAC [J]
+  OnMeter=CoolingCoils:PlantLoopCoolingDemand [J]
+
+ Meters for 1114,SEOFF MULLION:Zone Radiant HVAC Pump Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+
+ Meters for 1115,SWOFF MULLION:Zone Radiant HVAC Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatingCoils:EnergyTransfer [J]
+
+ Meters for 1116,SWOFF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy [J]
+  OnMeter=PlantLoopHeatingDemand:Facility [J]
+  OnMeter=PlantLoopHeatingDemand:HVAC [J]
+  OnMeter=HeatingCoils:PlantLoopHeatingDemand [J]
+
+ Meters for 1117,SWOFF MULLION:Zone Radiant HVAC Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=CoolingCoils:EnergyTransfer [J]
+
+ Meters for 1118,SWOFF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy [J]
+  OnMeter=PlantLoopCoolingDemand:Facility [J]
+  OnMeter=PlantLoopCoolingDemand:HVAC [J]
+  OnMeter=CoolingCoils:PlantLoopCoolingDemand [J]
+
+ Meters for 1119,SWOFF MULLION:Zone Radiant HVAC Pump Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+
+ Meters for 1120,NEOFF CHILLED CEILING:Zone Radiant HVAC Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatingCoils:EnergyTransfer [J]
+
+ Meters for 1121,NEOFF CHILLED CEILING:Zone Radiant HVAC Heating Fluid Heat Transfer Energy [J]
+  OnMeter=PlantLoopHeatingDemand:Facility [J]
+  OnMeter=PlantLoopHeatingDemand:HVAC [J]
+  OnMeter=HeatingCoils:PlantLoopHeatingDemand [J]
+
+ Meters for 1122,NEOFF CHILLED CEILING:Zone Radiant HVAC Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=CoolingCoils:EnergyTransfer [J]
+
+ Meters for 1123,NEOFF CHILLED CEILING:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy [J]
+  OnMeter=PlantLoopCoolingDemand:Facility [J]
+  OnMeter=PlantLoopCoolingDemand:HVAC [J]
+  OnMeter=CoolingCoils:PlantLoopCoolingDemand [J]
+
+ Meters for 1124,NEOFF CHILLED CEILING:Zone Radiant HVAC Pump Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+
+ Meters for 1125,NWOFF CHILLED CEILING:Zone Radiant HVAC Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatingCoils:EnergyTransfer [J]
+
+ Meters for 1126,NWOFF CHILLED CEILING:Zone Radiant HVAC Heating Fluid Heat Transfer Energy [J]
+  OnMeter=PlantLoopHeatingDemand:Facility [J]
+  OnMeter=PlantLoopHeatingDemand:HVAC [J]
+  OnMeter=HeatingCoils:PlantLoopHeatingDemand [J]
+
+ Meters for 1127,NWOFF CHILLED CEILING:Zone Radiant HVAC Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=CoolingCoils:EnergyTransfer [J]
+
+ Meters for 1128,NWOFF CHILLED CEILING:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy [J]
+  OnMeter=PlantLoopCoolingDemand:Facility [J]
+  OnMeter=PlantLoopCoolingDemand:HVAC [J]
+  OnMeter=CoolingCoils:PlantLoopCoolingDemand [J]
+
+ Meters for 1129,NWOFF CHILLED CEILING:Zone Radiant HVAC Pump Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+
+ Meters for 1130,CENTRAL CHILLED CEILING:Zone Radiant HVAC Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatingCoils:EnergyTransfer [J]
+
+ Meters for 1131,CENTRAL CHILLED CEILING:Zone Radiant HVAC Heating Fluid Heat Transfer Energy [J]
+  OnMeter=PlantLoopHeatingDemand:Facility [J]
+  OnMeter=PlantLoopHeatingDemand:HVAC [J]
+  OnMeter=HeatingCoils:PlantLoopHeatingDemand [J]
+
+ Meters for 1132,CENTRAL CHILLED CEILING:Zone Radiant HVAC Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=CoolingCoils:EnergyTransfer [J]
+
+ Meters for 1133,CENTRAL CHILLED CEILING:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy [J]
+  OnMeter=PlantLoopCoolingDemand:Facility [J]
+  OnMeter=PlantLoopCoolingDemand:HVAC [J]
+  OnMeter=CoolingCoils:PlantLoopCoolingDemand [J]
+
+ Meters for 1134,CENTRAL CHILLED CEILING:Zone Radiant HVAC Pump Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+
+ Meters for 1135,SEOFF FAN COIL UNIT HEATING COIL:Heating Coil Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatingCoils:EnergyTransfer [J]
+
+ Meters for 1136,SEOFF FAN COIL UNIT HEATING COIL:Heating Coil Source Side Heat Transfer Energy [J]
+  OnMeter=PlantLoopHeatingDemand:Facility [J]
+  OnMeter=PlantLoopHeatingDemand:HVAC [J]
+  OnMeter=HeatingCoils:PlantLoopHeatingDemand [J]
+
+ Meters for 1137,SWOFF FAN COIL UNIT HEATING COIL:Heating Coil Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatingCoils:EnergyTransfer [J]
+
+ Meters for 1138,SWOFF FAN COIL UNIT HEATING COIL:Heating Coil Source Side Heat Transfer Energy [J]
+  OnMeter=PlantLoopHeatingDemand:Facility [J]
+  OnMeter=PlantLoopHeatingDemand:HVAC [J]
+  OnMeter=HeatingCoils:PlantLoopHeatingDemand [J]
+
+ Meters for 1139,SEOFF FAN COIL UNIT COOLING COIL:Cooling Coil Total Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=CoolingCoils:EnergyTransfer [J]
+
+ Meters for 1140,SEOFF FAN COIL UNIT COOLING COIL:Cooling Coil Source Side Heat Transfer Energy [J]
+  OnMeter=PlantLoopCoolingDemand:Facility [J]
+  OnMeter=PlantLoopCoolingDemand:HVAC [J]
+  OnMeter=CoolingCoils:PlantLoopCoolingDemand [J]
+
+ Meters for 1141,SWOFF FAN COIL UNIT COOLING COIL:Cooling Coil Total Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=CoolingCoils:EnergyTransfer [J]
+
+ Meters for 1142,SWOFF FAN COIL UNIT COOLING COIL:Cooling Coil Source Side Heat Transfer Energy [J]
+  OnMeter=PlantLoopCoolingDemand:Facility [J]
+  OnMeter=PlantLoopCoolingDemand:HVAC [J]
+  OnMeter=CoolingCoils:PlantLoopCoolingDemand [J]
+
+ Meters for 1143,DOAS AHU EXTRACT FAN:Fan Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=Fans:Electricity [J]
+  OnMeter=General:Fans:Electricity [J]
+
+ Meters for 1174,DOAS AHU SUPPLY FAN:Fan Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=Fans:Electricity [J]
+  OnMeter=General:Fans:Electricity [J]
+
+ Meters for 1175,DESICCANT REGEN FAN:Fan Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=Fans:Electricity [J]
+  OnMeter=General:Fans:Electricity [J]
+
+ Meters for 1176,SEOFF FAN COIL UNIT SUPPLY FAN:Fan Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=Fans:Electricity [J]
+  OnMeter=General:Fans:Electricity [J]
+
+ Meters for 1177,SWOFF FAN COIL UNIT SUPPLY FAN:Fan Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=Fans:Electricity [J]
+  OnMeter=General:Fans:Electricity [J]
+
+ Meters for 1178,LARGECONF COOLED BEAM:Zone Air Terminal Beam Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=CoolingCoils:EnergyTransfer [J]
+
+ Meters for 1179,LARGECONF COOLED BEAM:Zone Air Terminal Beam Chilled Water Energy [J]
+  OnMeter=PlantLoopCoolingDemand:Facility [J]
+  OnMeter=PlantLoopCoolingDemand:HVAC [J]
+  OnMeter=CoolingCoils:PlantLoopCoolingDemand [J]
+
+ Meters for 1180,NEOFF COOLED BEAM:Zone Air Terminal Beam Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=CoolingCoils:EnergyTransfer [J]
+
+ Meters for 1181,NEOFF COOLED BEAM:Zone Air Terminal Beam Chilled Water Energy [J]
+  OnMeter=PlantLoopCoolingDemand:Facility [J]
+  OnMeter=PlantLoopCoolingDemand:HVAC [J]
+  OnMeter=CoolingCoils:PlantLoopCoolingDemand [J]
+
+ Meters for 1182,DOAS AHU  HEAT RECOVERY DEVICE:Heat Exchanger Total Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatRecoveryForHeating:EnergyTransfer [J]
+
+ Meters for 1193,DOAS AHU  HEAT RECOVERY DEVICE:Heat Exchanger Total Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatRecoveryForCooling:EnergyTransfer [J]
+
+ Meters for 1204,DOAS AHU  HEAT RECOVERY DEVICE:Heat Exchanger Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=HeatRecovery:Electricity [J]
+
+ Meters for 1215,DESICCANT HEAT EXCHANGER 1:Heat Exchanger Total Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatRecoveryForHeating:EnergyTransfer [J]
+
+ Meters for 1216,DESICCANT HEAT EXCHANGER 1:Heat Exchanger Total Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatRecoveryForCooling:EnergyTransfer [J]
+
+ Meters for 1217,DESICCANT HEAT EXCHANGER 1:Heat Exchanger Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=HeatRecovery:Electricity [J]
+
+ Meters for 1218,DOAS AHU UNITARY COOLING COIL DX COOLING COIL:Cooling Coil Total Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=CoolingCoils:EnergyTransfer [J]
+
+ Meters for 1219,DOAS AHU UNITARY COOLING COIL DX COOLING COIL:Cooling Coil Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=Cooling:Electricity [J]
+
+ Meters for 1230,DOAS DESICCANT REGEN BURNER COIL:Heating Coil Air Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatingCoils:EnergyTransfer [J]
+
+ Meters for 1231,DOAS DESICCANT REGEN BURNER COIL:Heating Coil Gas Energy [J]
+  OnMeter=Gas:Facility [J]
+  OnMeter=Gas:HVAC [J]
+  OnMeter=Heating:Gas [J]
+
+ Meters for 1262,DOAS DESICCANT REGEN BURNER COIL:Heating Coil Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=Heating:Electricity [J]
+
+ Meters for 1273,DOAS DESICCANT REGEN BURNER COIL:Heating Coil Ancillary Gas Energy [J]
+  OnMeter=Gas:Facility [J]
+  OnMeter=Gas:HVAC [J]
+  OnMeter=Heating:Gas [J]
+
+ Meters for 1274,Whole Building:Facility Total Purchased Electric Energy [J]
+  OnMeter=ElectricityPurchased:Facility [J]
+  OnMeter=ElectricityPurchased:Plant [J]
+  OnMeter=Cogeneration:ElectricityPurchased [J]
+
+ Meters for 1305,Whole Building:Facility Total Surplus Electric Energy [J]
+  OnMeter=ElectricitySurplusSold:Facility [J]
+  OnMeter=ElectricitySurplusSold:Plant [J]
+  OnMeter=Cogeneration:ElectricitySurplusSold [J]
+
+ Meters for 1336,Whole Building:Facility Net Purchased Electric Energy [J]
+  OnMeter=ElectricityNet:Facility [J]
+  OnMeter=ElectricityNet:Plant [J]
+  OnMeter=Cogeneration:ElectricityNet [J]
+
+ Meters for 1367,CMU DISTRICTHEATING:District Heating Hot Water Energy [J]
+  OnMeter=DistrictHeating:Facility [J]
+  OnMeter=DistrictHeating:Plant [J]
+  OnMeter=Heating:DistrictHeating [J]
+
+ Meters for 1398,CMU DISTRICTCOOLING:District Cooling Chilled Water Energy [J]
+  OnMeter=DistrictCooling:Facility [J]
+  OnMeter=DistrictCooling:Plant [J]
+  OnMeter=Cooling:DistrictCooling [J]
+
+ Meters for 1429,TEMPHWLOOP SUPPLY PUMP:Pump Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+
+ Meters for 1430,TEMPCHWLOOP SUPPLY PUMP:Pump Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+
+ Meters for 1431,DOAS AHU UNITARY COOLING COIL DX COOLING COIL:Cooling Coil Crankcase Heater Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Cooling:Electricity [J]
+
+ Meters for 1468,Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass [kg]
+  OnMeter=Carbon Equivalent:Facility [kg]
+  OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
+
+ Meters for 1489,Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass [kg]
+  OnMeter=Carbon Equivalent:Facility [kg]
+  OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
+
+ Meters for 1490,Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass [kg]
+  OnMeter=Carbon Equivalent:Facility [kg]
+  OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
+
+ For Meter=Electricity:Facility [J], ResourceType=Electricity, contents are:
+  CENTRAL GENERAL LIGHTING:Lights Electric Energy
+  NEOFF GENERAL LIGHTING:Lights Electric Energy
+  SEOFF GENERAL LIGHTING:Lights Electric Energy
+  NWOFF GENERAL LIGHTING:Lights Electric Energy
+  SWOFF GENERAL LIGHTING:Lights Electric Energy
+  LARGECONF GENERAL LIGHTING:Lights Electric Energy
+  CENTRAL EQUIPMENT 1:Electric Equipment Electric Energy
+  NEOFF EQUIPMENT 1:Electric Equipment Electric Energy
+  SEOFF COMPUTING GAIN 1:Electric Equipment Electric Energy
+  NWOFF COMPUTING GAIN 1:Electric Equipment Electric Energy
+  SWOFF COMPUTING GAIN 1:Electric Equipment Electric Energy
+  LARGECONF EQUIPMENT 1:Electric Equipment Electric Energy
+  NEOFF MULLION:Zone Radiant HVAC Pump Electric Energy
+  NWOFF MULLION:Zone Radiant HVAC Pump Electric Energy
+  LARGECONF MULLION:Zone Radiant HVAC Pump Electric Energy
+  CENTRAL MULLION:Zone Radiant HVAC Pump Electric Energy
+  SEOFF MULLION:Zone Radiant HVAC Pump Electric Energy
+  SWOFF MULLION:Zone Radiant HVAC Pump Electric Energy
+  NEOFF CHILLED CEILING:Zone Radiant HVAC Pump Electric Energy
+  NWOFF CHILLED CEILING:Zone Radiant HVAC Pump Electric Energy
+  CENTRAL CHILLED CEILING:Zone Radiant HVAC Pump Electric Energy
+  DOAS AHU EXTRACT FAN:Fan Electric Energy
+  DOAS AHU SUPPLY FAN:Fan Electric Energy
+  DESICCANT REGEN FAN:Fan Electric Energy
+  SEOFF FAN COIL UNIT SUPPLY FAN:Fan Electric Energy
+  SWOFF FAN COIL UNIT SUPPLY FAN:Fan Electric Energy
+  DOAS AHU  HEAT RECOVERY DEVICE:Heat Exchanger Electric Energy
+  DESICCANT HEAT EXCHANGER 1:Heat Exchanger Electric Energy
+  DOAS AHU UNITARY COOLING COIL DX COOLING COIL:Cooling Coil Electric Energy
+  DOAS DESICCANT REGEN BURNER COIL:Heating Coil Electric Energy
+  TEMPHWLOOP SUPPLY PUMP:Pump Electric Energy
+  TEMPCHWLOOP SUPPLY PUMP:Pump Electric Energy
+  DOAS AHU UNITARY COOLING COIL DX COOLING COIL:Cooling Coil Crankcase Heater Electric Energy
+
+ For Meter=Electricity:Building [J], ResourceType=Electricity, Group=Building, contents are:
+  CENTRAL GENERAL LIGHTING:Lights Electric Energy
+  NEOFF GENERAL LIGHTING:Lights Electric Energy
+  SEOFF GENERAL LIGHTING:Lights Electric Energy
+  NWOFF GENERAL LIGHTING:Lights Electric Energy
+  SWOFF GENERAL LIGHTING:Lights Electric Energy
+  LARGECONF GENERAL LIGHTING:Lights Electric Energy
+  CENTRAL EQUIPMENT 1:Electric Equipment Electric Energy
+  NEOFF EQUIPMENT 1:Electric Equipment Electric Energy
+  SEOFF COMPUTING GAIN 1:Electric Equipment Electric Energy
+  NWOFF COMPUTING GAIN 1:Electric Equipment Electric Energy
+  SWOFF COMPUTING GAIN 1:Electric Equipment Electric Energy
+  LARGECONF EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=Electricity:Zone:CENTRAL [J], ResourceType=Electricity, Group=Zone, contents are:
+  CENTRAL GENERAL LIGHTING:Lights Electric Energy
+  CENTRAL EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  CENTRAL GENERAL LIGHTING:Lights Electric Energy
+  NEOFF GENERAL LIGHTING:Lights Electric Energy
+  SEOFF GENERAL LIGHTING:Lights Electric Energy
+  NWOFF GENERAL LIGHTING:Lights Electric Energy
+  SWOFF GENERAL LIGHTING:Lights Electric Energy
+  LARGECONF GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:CENTRAL [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  CENTRAL GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#kitchen#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  CENTRAL GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:NEOFF [J], ResourceType=Electricity, Group=Zone, contents are:
+  NEOFF GENERAL LIGHTING:Lights Electric Energy
+  NEOFF EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:NEOFF [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  NEOFF GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#bas#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  NEOFF GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:SEOFF [J], ResourceType=Electricity, Group=Zone, contents are:
+  SEOFF GENERAL LIGHTING:Lights Electric Energy
+  SEOFF COMPUTING GAIN 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:SEOFF [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  SEOFF GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#off-yujie#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  SEOFF GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:NWOFF [J], ResourceType=Electricity, Group=Zone, contents are:
+  NWOFF GENERAL LIGHTING:Lights Electric Energy
+  NWOFF COMPUTING GAIN 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:NWOFF [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  NWOFF GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#off-volker#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  NWOFF GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:SWOFF [J], ResourceType=Electricity, Group=Zone, contents are:
+  SWOFF GENERAL LIGHTING:Lights Electric Energy
+  SWOFF COMPUTING GAIN 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:SWOFF [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  SWOFF GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#off-james#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  SWOFF GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:LARGECONF [J], ResourceType=Electricity, Group=Zone, contents are:
+  LARGECONF GENERAL LIGHTING:Lights Electric Energy
+  LARGECONF EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:LARGECONF [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  LARGECONF GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#largeConf1#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  LARGECONF GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  CENTRAL EQUIPMENT 1:Electric Equipment Electric Energy
+  NEOFF EQUIPMENT 1:Electric Equipment Electric Energy
+  SEOFF COMPUTING GAIN 1:Electric Equipment Electric Energy
+  NWOFF COMPUTING GAIN 1:Electric Equipment Electric Energy
+  SWOFF COMPUTING GAIN 1:Electric Equipment Electric Energy
+  LARGECONF EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:CENTRAL [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  CENTRAL EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#kitchen#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  CENTRAL EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:NEOFF [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  NEOFF EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#bas#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  NEOFF EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:SEOFF [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  SEOFF COMPUTING GAIN 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#off-yujie#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  SEOFF COMPUTING GAIN 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:NWOFF [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  NWOFF COMPUTING GAIN 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#off-volker#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  NWOFF COMPUTING GAIN 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:SWOFF [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  SWOFF COMPUTING GAIN 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#off-james#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  SWOFF COMPUTING GAIN 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:LARGECONF [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  LARGECONF EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#largeConf1#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  LARGECONF EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=EnergyTransfer:Facility [J], ResourceType=EnergyTransfer, contents are:
+  UNDERFLOOR_VOID_SPACE:Zone Air System Sensible Heating Energy
+  UNDERFLOOR_VOID_SPACE:Zone Air System Sensible Cooling Energy
+  ROOFS1:Zone Air System Sensible Heating Energy
+  ROOFS1:Zone Air System Sensible Cooling Energy
+  ROOFS2:Zone Air System Sensible Heating Energy
+  ROOFS2:Zone Air System Sensible Cooling Energy
+  ROOFS3:Zone Air System Sensible Heating Energy
+  ROOFS3:Zone Air System Sensible Cooling Energy
+  ROOFS0:Zone Air System Sensible Heating Energy
+  ROOFS0:Zone Air System Sensible Cooling Energy
+  ROOFS4:Zone Air System Sensible Heating Energy
+  ROOFS4:Zone Air System Sensible Cooling Energy
+  ROOFN0:Zone Air System Sensible Heating Energy
+  ROOFN0:Zone Air System Sensible Cooling Energy
+  ROOFN3:Zone Air System Sensible Heating Energy
+  ROOFN3:Zone Air System Sensible Cooling Energy
+  ROOFN1:Zone Air System Sensible Heating Energy
+  ROOFN1:Zone Air System Sensible Cooling Energy
+  ROOFN2:Zone Air System Sensible Heating Energy
+  ROOFN2:Zone Air System Sensible Cooling Energy
+  SWOFF:Zone Air System Sensible Heating Energy
+  SWOFF:Zone Air System Sensible Cooling Energy
+  SEOFF:Zone Air System Sensible Heating Energy
+  SEOFF:Zone Air System Sensible Cooling Energy
+  NWOFF:Zone Air System Sensible Heating Energy
+  NWOFF:Zone Air System Sensible Cooling Energy
+  NEOFF:Zone Air System Sensible Heating Energy
+  NEOFF:Zone Air System Sensible Cooling Energy
+  CENTRAL:Zone Air System Sensible Heating Energy
+  CENTRAL:Zone Air System Sensible Cooling Energy
+  LARGECONF:Zone Air System Sensible Heating Energy
+  LARGECONF:Zone Air System Sensible Cooling Energy
+  NEOFF MULLION:Zone Radiant HVAC Heating Energy
+  NEOFF MULLION:Zone Radiant HVAC Cooling Energy
+  NWOFF MULLION:Zone Radiant HVAC Heating Energy
+  NWOFF MULLION:Zone Radiant HVAC Cooling Energy
+  LARGECONF MULLION:Zone Radiant HVAC Heating Energy
+  LARGECONF MULLION:Zone Radiant HVAC Cooling Energy
+  CENTRAL MULLION:Zone Radiant HVAC Heating Energy
+  CENTRAL MULLION:Zone Radiant HVAC Cooling Energy
+  SEOFF MULLION:Zone Radiant HVAC Heating Energy
+  SEOFF MULLION:Zone Radiant HVAC Cooling Energy
+  SWOFF MULLION:Zone Radiant HVAC Heating Energy
+  SWOFF MULLION:Zone Radiant HVAC Cooling Energy
+  NEOFF CHILLED CEILING:Zone Radiant HVAC Heating Energy
+  NEOFF CHILLED CEILING:Zone Radiant HVAC Cooling Energy
+  NWOFF CHILLED CEILING:Zone Radiant HVAC Heating Energy
+  NWOFF CHILLED CEILING:Zone Radiant HVAC Cooling Energy
+  CENTRAL CHILLED CEILING:Zone Radiant HVAC Heating Energy
+  CENTRAL CHILLED CEILING:Zone Radiant HVAC Cooling Energy
+  SEOFF FAN COIL UNIT HEATING COIL:Heating Coil Heating Energy
+  SWOFF FAN COIL UNIT HEATING COIL:Heating Coil Heating Energy
+  SEOFF FAN COIL UNIT COOLING COIL:Cooling Coil Total Cooling Energy
+  SWOFF FAN COIL UNIT COOLING COIL:Cooling Coil Total Cooling Energy
+  LARGECONF COOLED BEAM:Zone Air Terminal Beam Sensible Cooling Energy
+  NEOFF COOLED BEAM:Zone Air Terminal Beam Sensible Cooling Energy
+  DOAS AHU  HEAT RECOVERY DEVICE:Heat Exchanger Total Heating Energy
+  DOAS AHU  HEAT RECOVERY DEVICE:Heat Exchanger Total Cooling Energy
+  DESICCANT HEAT EXCHANGER 1:Heat Exchanger Total Heating Energy
+  DESICCANT HEAT EXCHANGER 1:Heat Exchanger Total Cooling Energy
+  DOAS AHU UNITARY COOLING COIL DX COOLING COIL:Cooling Coil Total Cooling Energy
+  DOAS DESICCANT REGEN BURNER COIL:Heating Coil Air Heating Energy
+
+ For Meter=EnergyTransfer:Building [J], ResourceType=EnergyTransfer, Group=Building, contents are:
+  UNDERFLOOR_VOID_SPACE:Zone Air System Sensible Heating Energy
+  UNDERFLOOR_VOID_SPACE:Zone Air System Sensible Cooling Energy
+  ROOFS1:Zone Air System Sensible Heating Energy
+  ROOFS1:Zone Air System Sensible Cooling Energy
+  ROOFS2:Zone Air System Sensible Heating Energy
+  ROOFS2:Zone Air System Sensible Cooling Energy
+  ROOFS3:Zone Air System Sensible Heating Energy
+  ROOFS3:Zone Air System Sensible Cooling Energy
+  ROOFS0:Zone Air System Sensible Heating Energy
+  ROOFS0:Zone Air System Sensible Cooling Energy
+  ROOFS4:Zone Air System Sensible Heating Energy
+  ROOFS4:Zone Air System Sensible Cooling Energy
+  ROOFN0:Zone Air System Sensible Heating Energy
+  ROOFN0:Zone Air System Sensible Cooling Energy
+  ROOFN3:Zone Air System Sensible Heating Energy
+  ROOFN3:Zone Air System Sensible Cooling Energy
+  ROOFN1:Zone Air System Sensible Heating Energy
+  ROOFN1:Zone Air System Sensible Cooling Energy
+  ROOFN2:Zone Air System Sensible Heating Energy
+  ROOFN2:Zone Air System Sensible Cooling Energy
+  SWOFF:Zone Air System Sensible Heating Energy
+  SWOFF:Zone Air System Sensible Cooling Energy
+  SEOFF:Zone Air System Sensible Heating Energy
+  SEOFF:Zone Air System Sensible Cooling Energy
+  NWOFF:Zone Air System Sensible Heating Energy
+  NWOFF:Zone Air System Sensible Cooling Energy
+  NEOFF:Zone Air System Sensible Heating Energy
+  NEOFF:Zone Air System Sensible Cooling Energy
+  CENTRAL:Zone Air System Sensible Heating Energy
+  CENTRAL:Zone Air System Sensible Cooling Energy
+  LARGECONF:Zone Air System Sensible Heating Energy
+  LARGECONF:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:UNDERFLOOR_VOID_SPACE [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  UNDERFLOOR_VOID_SPACE:Zone Air System Sensible Heating Energy
+  UNDERFLOOR_VOID_SPACE:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Heating, contents are:
+  UNDERFLOOR_VOID_SPACE:Zone Air System Sensible Heating Energy
+  ROOFS1:Zone Air System Sensible Heating Energy
+  ROOFS2:Zone Air System Sensible Heating Energy
+  ROOFS3:Zone Air System Sensible Heating Energy
+  ROOFS0:Zone Air System Sensible Heating Energy
+  ROOFS4:Zone Air System Sensible Heating Energy
+  ROOFN0:Zone Air System Sensible Heating Energy
+  ROOFN3:Zone Air System Sensible Heating Energy
+  ROOFN1:Zone Air System Sensible Heating Energy
+  ROOFN2:Zone Air System Sensible Heating Energy
+  SWOFF:Zone Air System Sensible Heating Energy
+  SEOFF:Zone Air System Sensible Heating Energy
+  NWOFF:Zone Air System Sensible Heating Energy
+  NEOFF:Zone Air System Sensible Heating Energy
+  CENTRAL:Zone Air System Sensible Heating Energy
+  LARGECONF:Zone Air System Sensible Heating Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:UNDERFLOOR_VOID_SPACE [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  UNDERFLOOR_VOID_SPACE:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Cooling, contents are:
+  UNDERFLOOR_VOID_SPACE:Zone Air System Sensible Cooling Energy
+  ROOFS1:Zone Air System Sensible Cooling Energy
+  ROOFS2:Zone Air System Sensible Cooling Energy
+  ROOFS3:Zone Air System Sensible Cooling Energy
+  ROOFS0:Zone Air System Sensible Cooling Energy
+  ROOFS4:Zone Air System Sensible Cooling Energy
+  ROOFN0:Zone Air System Sensible Cooling Energy
+  ROOFN3:Zone Air System Sensible Cooling Energy
+  ROOFN1:Zone Air System Sensible Cooling Energy
+  ROOFN2:Zone Air System Sensible Cooling Energy
+  SWOFF:Zone Air System Sensible Cooling Energy
+  SEOFF:Zone Air System Sensible Cooling Energy
+  NWOFF:Zone Air System Sensible Cooling Energy
+  NEOFF:Zone Air System Sensible Cooling Energy
+  CENTRAL:Zone Air System Sensible Cooling Energy
+  LARGECONF:Zone Air System Sensible Cooling Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:UNDERFLOOR_VOID_SPACE [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  UNDERFLOOR_VOID_SPACE:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:ROOFS1 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  ROOFS1:Zone Air System Sensible Heating Energy
+  ROOFS1:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:ROOFS1 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  ROOFS1:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:ROOFS1 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  ROOFS1:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:ROOFS2 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  ROOFS2:Zone Air System Sensible Heating Energy
+  ROOFS2:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:ROOFS2 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  ROOFS2:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:ROOFS2 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  ROOFS2:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:ROOFS3 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  ROOFS3:Zone Air System Sensible Heating Energy
+  ROOFS3:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:ROOFS3 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  ROOFS3:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:ROOFS3 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  ROOFS3:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:ROOFS0 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  ROOFS0:Zone Air System Sensible Heating Energy
+  ROOFS0:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:ROOFS0 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  ROOFS0:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:ROOFS0 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  ROOFS0:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:ROOFS4 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  ROOFS4:Zone Air System Sensible Heating Energy
+  ROOFS4:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:ROOFS4 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  ROOFS4:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:ROOFS4 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  ROOFS4:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:ROOFN0 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  ROOFN0:Zone Air System Sensible Heating Energy
+  ROOFN0:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:ROOFN0 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  ROOFN0:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:ROOFN0 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  ROOFN0:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:ROOFN3 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  ROOFN3:Zone Air System Sensible Heating Energy
+  ROOFN3:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:ROOFN3 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  ROOFN3:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:ROOFN3 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  ROOFN3:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:ROOFN1 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  ROOFN1:Zone Air System Sensible Heating Energy
+  ROOFN1:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:ROOFN1 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  ROOFN1:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:ROOFN1 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  ROOFN1:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:ROOFN2 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  ROOFN2:Zone Air System Sensible Heating Energy
+  ROOFN2:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:ROOFN2 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  ROOFN2:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:ROOFN2 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  ROOFN2:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:SWOFF [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  SWOFF:Zone Air System Sensible Heating Energy
+  SWOFF:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:SWOFF [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  SWOFF:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:SWOFF [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  SWOFF:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:SEOFF [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  SEOFF:Zone Air System Sensible Heating Energy
+  SEOFF:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:SEOFF [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  SEOFF:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:SEOFF [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  SEOFF:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:NWOFF [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  NWOFF:Zone Air System Sensible Heating Energy
+  NWOFF:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:NWOFF [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  NWOFF:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:NWOFF [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  NWOFF:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:NEOFF [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  NEOFF:Zone Air System Sensible Heating Energy
+  NEOFF:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:NEOFF [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  NEOFF:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:NEOFF [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  NEOFF:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:CENTRAL [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  CENTRAL:Zone Air System Sensible Heating Energy
+  CENTRAL:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:CENTRAL [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  CENTRAL:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:CENTRAL [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  CENTRAL:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:LARGECONF [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  LARGECONF:Zone Air System Sensible Heating Energy
+  LARGECONF:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:LARGECONF [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  LARGECONF:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:LARGECONF [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  LARGECONF:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:HVAC [J], ResourceType=EnergyTransfer, Group=HVAC, contents are:
+  NEOFF MULLION:Zone Radiant HVAC Heating Energy
+  NEOFF MULLION:Zone Radiant HVAC Cooling Energy
+  NWOFF MULLION:Zone Radiant HVAC Heating Energy
+  NWOFF MULLION:Zone Radiant HVAC Cooling Energy
+  LARGECONF MULLION:Zone Radiant HVAC Heating Energy
+  LARGECONF MULLION:Zone Radiant HVAC Cooling Energy
+  CENTRAL MULLION:Zone Radiant HVAC Heating Energy
+  CENTRAL MULLION:Zone Radiant HVAC Cooling Energy
+  SEOFF MULLION:Zone Radiant HVAC Heating Energy
+  SEOFF MULLION:Zone Radiant HVAC Cooling Energy
+  SWOFF MULLION:Zone Radiant HVAC Heating Energy
+  SWOFF MULLION:Zone Radiant HVAC Cooling Energy
+  NEOFF CHILLED CEILING:Zone Radiant HVAC Heating Energy
+  NEOFF CHILLED CEILING:Zone Radiant HVAC Cooling Energy
+  NWOFF CHILLED CEILING:Zone Radiant HVAC Heating Energy
+  NWOFF CHILLED CEILING:Zone Radiant HVAC Cooling Energy
+  CENTRAL CHILLED CEILING:Zone Radiant HVAC Heating Energy
+  CENTRAL CHILLED CEILING:Zone Radiant HVAC Cooling Energy
+  SEOFF FAN COIL UNIT HEATING COIL:Heating Coil Heating Energy
+  SWOFF FAN COIL UNIT HEATING COIL:Heating Coil Heating Energy
+  SEOFF FAN COIL UNIT COOLING COIL:Cooling Coil Total Cooling Energy
+  SWOFF FAN COIL UNIT COOLING COIL:Cooling Coil Total Cooling Energy
+  LARGECONF COOLED BEAM:Zone Air Terminal Beam Sensible Cooling Energy
+  NEOFF COOLED BEAM:Zone Air Terminal Beam Sensible Cooling Energy
+  DOAS AHU  HEAT RECOVERY DEVICE:Heat Exchanger Total Heating Energy
+  DOAS AHU  HEAT RECOVERY DEVICE:Heat Exchanger Total Cooling Energy
+  DESICCANT HEAT EXCHANGER 1:Heat Exchanger Total Heating Energy
+  DESICCANT HEAT EXCHANGER 1:Heat Exchanger Total Cooling Energy
+  DOAS AHU UNITARY COOLING COIL DX COOLING COIL:Cooling Coil Total Cooling Energy
+  DOAS DESICCANT REGEN BURNER COIL:Heating Coil Air Heating Energy
+
+ For Meter=HeatingCoils:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=HeatingCoils, contents are:
+  NEOFF MULLION:Zone Radiant HVAC Heating Energy
+  NWOFF MULLION:Zone Radiant HVAC Heating Energy
+  LARGECONF MULLION:Zone Radiant HVAC Heating Energy
+  CENTRAL MULLION:Zone Radiant HVAC Heating Energy
+  SEOFF MULLION:Zone Radiant HVAC Heating Energy
+  SWOFF MULLION:Zone Radiant HVAC Heating Energy
+  NEOFF CHILLED CEILING:Zone Radiant HVAC Heating Energy
+  NWOFF CHILLED CEILING:Zone Radiant HVAC Heating Energy
+  CENTRAL CHILLED CEILING:Zone Radiant HVAC Heating Energy
+  SEOFF FAN COIL UNIT HEATING COIL:Heating Coil Heating Energy
+  SWOFF FAN COIL UNIT HEATING COIL:Heating Coil Heating Energy
+  DOAS DESICCANT REGEN BURNER COIL:Heating Coil Air Heating Energy
+
+ For Meter=PlantLoopHeatingDemand:Facility [J], ResourceType=PlantLoopHeatingDemand, contents are:
+  NEOFF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  NWOFF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  LARGECONF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  CENTRAL MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  SEOFF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  SWOFF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  NEOFF CHILLED CEILING:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  NWOFF CHILLED CEILING:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  CENTRAL CHILLED CEILING:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  SEOFF FAN COIL UNIT HEATING COIL:Heating Coil Source Side Heat Transfer Energy
+  SWOFF FAN COIL UNIT HEATING COIL:Heating Coil Source Side Heat Transfer Energy
+
+ For Meter=PlantLoopHeatingDemand:HVAC [J], ResourceType=PlantLoopHeatingDemand, Group=HVAC, contents are:
+  NEOFF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  NWOFF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  LARGECONF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  CENTRAL MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  SEOFF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  SWOFF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  NEOFF CHILLED CEILING:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  NWOFF CHILLED CEILING:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  CENTRAL CHILLED CEILING:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  SEOFF FAN COIL UNIT HEATING COIL:Heating Coil Source Side Heat Transfer Energy
+  SWOFF FAN COIL UNIT HEATING COIL:Heating Coil Source Side Heat Transfer Energy
+
+ For Meter=HeatingCoils:PlantLoopHeatingDemand [J], ResourceType=PlantLoopHeatingDemand, EndUse=HeatingCoils, contents are:
+  NEOFF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  NWOFF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  LARGECONF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  CENTRAL MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  SEOFF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  SWOFF MULLION:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  NEOFF CHILLED CEILING:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  NWOFF CHILLED CEILING:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  CENTRAL CHILLED CEILING:Zone Radiant HVAC Heating Fluid Heat Transfer Energy
+  SEOFF FAN COIL UNIT HEATING COIL:Heating Coil Source Side Heat Transfer Energy
+  SWOFF FAN COIL UNIT HEATING COIL:Heating Coil Source Side Heat Transfer Energy
+
+ For Meter=CoolingCoils:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=CoolingCoils, contents are:
+  NEOFF MULLION:Zone Radiant HVAC Cooling Energy
+  NWOFF MULLION:Zone Radiant HVAC Cooling Energy
+  LARGECONF MULLION:Zone Radiant HVAC Cooling Energy
+  CENTRAL MULLION:Zone Radiant HVAC Cooling Energy
+  SEOFF MULLION:Zone Radiant HVAC Cooling Energy
+  SWOFF MULLION:Zone Radiant HVAC Cooling Energy
+  NEOFF CHILLED CEILING:Zone Radiant HVAC Cooling Energy
+  NWOFF CHILLED CEILING:Zone Radiant HVAC Cooling Energy
+  CENTRAL CHILLED CEILING:Zone Radiant HVAC Cooling Energy
+  SEOFF FAN COIL UNIT COOLING COIL:Cooling Coil Total Cooling Energy
+  SWOFF FAN COIL UNIT COOLING COIL:Cooling Coil Total Cooling Energy
+  LARGECONF COOLED BEAM:Zone Air Terminal Beam Sensible Cooling Energy
+  NEOFF COOLED BEAM:Zone Air Terminal Beam Sensible Cooling Energy
+  DOAS AHU UNITARY COOLING COIL DX COOLING COIL:Cooling Coil Total Cooling Energy
+
+ For Meter=PlantLoopCoolingDemand:Facility [J], ResourceType=PlantLoopCoolingDemand, contents are:
+  NEOFF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  NWOFF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  LARGECONF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  CENTRAL MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  SEOFF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  SWOFF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  NEOFF CHILLED CEILING:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  NWOFF CHILLED CEILING:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  CENTRAL CHILLED CEILING:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  SEOFF FAN COIL UNIT COOLING COIL:Cooling Coil Source Side Heat Transfer Energy
+  SWOFF FAN COIL UNIT COOLING COIL:Cooling Coil Source Side Heat Transfer Energy
+  LARGECONF COOLED BEAM:Zone Air Terminal Beam Chilled Water Energy
+  NEOFF COOLED BEAM:Zone Air Terminal Beam Chilled Water Energy
+
+ For Meter=PlantLoopCoolingDemand:HVAC [J], ResourceType=PlantLoopCoolingDemand, Group=HVAC, contents are:
+  NEOFF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  NWOFF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  LARGECONF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  CENTRAL MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  SEOFF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  SWOFF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  NEOFF CHILLED CEILING:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  NWOFF CHILLED CEILING:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  CENTRAL CHILLED CEILING:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  SEOFF FAN COIL UNIT COOLING COIL:Cooling Coil Source Side Heat Transfer Energy
+  SWOFF FAN COIL UNIT COOLING COIL:Cooling Coil Source Side Heat Transfer Energy
+  LARGECONF COOLED BEAM:Zone Air Terminal Beam Chilled Water Energy
+  NEOFF COOLED BEAM:Zone Air Terminal Beam Chilled Water Energy
+
+ For Meter=CoolingCoils:PlantLoopCoolingDemand [J], ResourceType=PlantLoopCoolingDemand, EndUse=CoolingCoils, contents are:
+  NEOFF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  NWOFF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  LARGECONF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  CENTRAL MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  SEOFF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  SWOFF MULLION:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  NEOFF CHILLED CEILING:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  NWOFF CHILLED CEILING:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  CENTRAL CHILLED CEILING:Zone Radiant HVAC Cooling Fluid Heat Transfer Energy
+  SEOFF FAN COIL UNIT COOLING COIL:Cooling Coil Source Side Heat Transfer Energy
+  SWOFF FAN COIL UNIT COOLING COIL:Cooling Coil Source Side Heat Transfer Energy
+  LARGECONF COOLED BEAM:Zone Air Terminal Beam Chilled Water Energy
+  NEOFF COOLED BEAM:Zone Air Terminal Beam Chilled Water Energy
+
+ For Meter=Electricity:Plant [J], ResourceType=Electricity, Group=Plant, contents are:
+  NEOFF MULLION:Zone Radiant HVAC Pump Electric Energy
+  NWOFF MULLION:Zone Radiant HVAC Pump Electric Energy
+  LARGECONF MULLION:Zone Radiant HVAC Pump Electric Energy
+  CENTRAL MULLION:Zone Radiant HVAC Pump Electric Energy
+  SEOFF MULLION:Zone Radiant HVAC Pump Electric Energy
+  SWOFF MULLION:Zone Radiant HVAC Pump Electric Energy
+  NEOFF CHILLED CEILING:Zone Radiant HVAC Pump Electric Energy
+  NWOFF CHILLED CEILING:Zone Radiant HVAC Pump Electric Energy
+  CENTRAL CHILLED CEILING:Zone Radiant HVAC Pump Electric Energy
+  TEMPHWLOOP SUPPLY PUMP:Pump Electric Energy
+  TEMPCHWLOOP SUPPLY PUMP:Pump Electric Energy
+  DOAS AHU UNITARY COOLING COIL DX COOLING COIL:Cooling Coil Crankcase Heater Electric Energy
+
+ For Meter=Pumps:Electricity [J], ResourceType=Electricity, EndUse=Pumps, contents are:
+  NEOFF MULLION:Zone Radiant HVAC Pump Electric Energy
+  NWOFF MULLION:Zone Radiant HVAC Pump Electric Energy
+  LARGECONF MULLION:Zone Radiant HVAC Pump Electric Energy
+  CENTRAL MULLION:Zone Radiant HVAC Pump Electric Energy
+  SEOFF MULLION:Zone Radiant HVAC Pump Electric Energy
+  SWOFF MULLION:Zone Radiant HVAC Pump Electric Energy
+  NEOFF CHILLED CEILING:Zone Radiant HVAC Pump Electric Energy
+  NWOFF CHILLED CEILING:Zone Radiant HVAC Pump Electric Energy
+  CENTRAL CHILLED CEILING:Zone Radiant HVAC Pump Electric Energy
+  TEMPHWLOOP SUPPLY PUMP:Pump Electric Energy
+  TEMPCHWLOOP SUPPLY PUMP:Pump Electric Energy
+
+ For Meter=Electricity:HVAC [J], ResourceType=Electricity, Group=HVAC, contents are:
+  DOAS AHU EXTRACT FAN:Fan Electric Energy
+  DOAS AHU SUPPLY FAN:Fan Electric Energy
+  DESICCANT REGEN FAN:Fan Electric Energy
+  SEOFF FAN COIL UNIT SUPPLY FAN:Fan Electric Energy
+  SWOFF FAN COIL UNIT SUPPLY FAN:Fan Electric Energy
+  DOAS AHU  HEAT RECOVERY DEVICE:Heat Exchanger Electric Energy
+  DESICCANT HEAT EXCHANGER 1:Heat Exchanger Electric Energy
+  DOAS AHU UNITARY COOLING COIL DX COOLING COIL:Cooling Coil Electric Energy
+  DOAS DESICCANT REGEN BURNER COIL:Heating Coil Electric Energy
+
+ For Meter=Fans:Electricity [J], ResourceType=Electricity, EndUse=Fans, contents are:
+  DOAS AHU EXTRACT FAN:Fan Electric Energy
+  DOAS AHU SUPPLY FAN:Fan Electric Energy
+  DESICCANT REGEN FAN:Fan Electric Energy
+  SEOFF FAN COIL UNIT SUPPLY FAN:Fan Electric Energy
+  SWOFF FAN COIL UNIT SUPPLY FAN:Fan Electric Energy
+
+ For Meter=General:Fans:Electricity [J], ResourceType=Electricity, EndUse=Fans, contents are:
+  DOAS AHU EXTRACT FAN:Fan Electric Energy
+  DOAS AHU SUPPLY FAN:Fan Electric Energy
+  DESICCANT REGEN FAN:Fan Electric Energy
+  SEOFF FAN COIL UNIT SUPPLY FAN:Fan Electric Energy
+  SWOFF FAN COIL UNIT SUPPLY FAN:Fan Electric Energy
+
+ For Meter=HeatRecoveryForHeating:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=HeatRecoveryForHeating, contents are:
+  DOAS AHU  HEAT RECOVERY DEVICE:Heat Exchanger Total Heating Energy
+  DESICCANT HEAT EXCHANGER 1:Heat Exchanger Total Heating Energy
+
+ For Meter=HeatRecoveryForCooling:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=HeatRecoveryForCooling, contents are:
+  DOAS AHU  HEAT RECOVERY DEVICE:Heat Exchanger Total Cooling Energy
+  DESICCANT HEAT EXCHANGER 1:Heat Exchanger Total Cooling Energy
+
+ For Meter=HeatRecovery:Electricity [J], ResourceType=Electricity, EndUse=HeatRecovery, contents are:
+  DOAS AHU  HEAT RECOVERY DEVICE:Heat Exchanger Electric Energy
+  DESICCANT HEAT EXCHANGER 1:Heat Exchanger Electric Energy
+
+ For Meter=Cooling:Electricity [J], ResourceType=Electricity, EndUse=Cooling, contents are:
+  DOAS AHU UNITARY COOLING COIL DX COOLING COIL:Cooling Coil Electric Energy
+  DOAS AHU UNITARY COOLING COIL DX COOLING COIL:Cooling Coil Crankcase Heater Electric Energy
+
+ For Meter=Gas:Facility [J], ResourceType=Gas, contents are:
+  DOAS DESICCANT REGEN BURNER COIL:Heating Coil Gas Energy
+  DOAS DESICCANT REGEN BURNER COIL:Heating Coil Ancillary Gas Energy
+
+ For Meter=Gas:HVAC [J], ResourceType=Gas, Group=HVAC, contents are:
+  DOAS DESICCANT REGEN BURNER COIL:Heating Coil Gas Energy
+  DOAS DESICCANT REGEN BURNER COIL:Heating Coil Ancillary Gas Energy
+
+ For Meter=Heating:Gas [J], ResourceType=Gas, EndUse=Heating, contents are:
+  DOAS DESICCANT REGEN BURNER COIL:Heating Coil Gas Energy
+  DOAS DESICCANT REGEN BURNER COIL:Heating Coil Ancillary Gas Energy
+
+ For Meter=Heating:Electricity [J], ResourceType=Electricity, EndUse=Heating, contents are:
+  DOAS DESICCANT REGEN BURNER COIL:Heating Coil Electric Energy
+
+ For Meter=ElectricityPurchased:Facility [J], ResourceType=ElectricityPurchased, contents are:
+  Whole Building:Facility Total Purchased Electric Energy
+
+ For Meter=ElectricityPurchased:Plant [J], ResourceType=ElectricityPurchased, Group=Plant, contents are:
+  Whole Building:Facility Total Purchased Electric Energy
+
+ For Meter=Cogeneration:ElectricityPurchased [J], ResourceType=ElectricityPurchased, EndUse=Cogeneration, contents are:
+  Whole Building:Facility Total Purchased Electric Energy
+
+ For Meter=ElectricitySurplusSold:Facility [J], ResourceType=ElectricitySurplusSold, contents are:
+  Whole Building:Facility Total Surplus Electric Energy
+
+ For Meter=ElectricitySurplusSold:Plant [J], ResourceType=ElectricitySurplusSold, Group=Plant, contents are:
+  Whole Building:Facility Total Surplus Electric Energy
+
+ For Meter=Cogeneration:ElectricitySurplusSold [J], ResourceType=ElectricitySurplusSold, EndUse=Cogeneration, contents are:
+  Whole Building:Facility Total Surplus Electric Energy
+
+ For Meter=ElectricityNet:Facility [J], ResourceType=ElectricityNet, contents are:
+  Whole Building:Facility Net Purchased Electric Energy
+
+ For Meter=ElectricityNet:Plant [J], ResourceType=ElectricityNet, Group=Plant, contents are:
+  Whole Building:Facility Net Purchased Electric Energy
+
+ For Meter=Cogeneration:ElectricityNet [J], ResourceType=ElectricityNet, EndUse=Cogeneration, contents are:
+  Whole Building:Facility Net Purchased Electric Energy
+
+ For Meter=DistrictHeating:Facility [J], ResourceType=DistrictHeating, contents are:
+  CMU DISTRICTHEATING:District Heating Hot Water Energy
+
+ For Meter=DistrictHeating:Plant [J], ResourceType=DistrictHeating, Group=Plant, contents are:
+  CMU DISTRICTHEATING:District Heating Hot Water Energy
+
+ For Meter=Heating:DistrictHeating [J], ResourceType=DistrictHeating, EndUse=Heating, contents are:
+  CMU DISTRICTHEATING:District Heating Hot Water Energy
+
+ For Meter=DistrictCooling:Facility [J], ResourceType=DistrictCooling, contents are:
+  CMU DISTRICTCOOLING:District Cooling Chilled Water Energy
+
+ For Meter=DistrictCooling:Plant [J], ResourceType=DistrictCooling, Group=Plant, contents are:
+  CMU DISTRICTCOOLING:District Cooling Chilled Water Energy
+
+ For Meter=Cooling:DistrictCooling [J], ResourceType=DistrictCooling, EndUse=Cooling, contents are:
+  CMU DISTRICTCOOLING:District Cooling Chilled Water Energy
+
+ For Meter=Carbon Equivalent:Facility [kg], ResourceType=Carbon Equivalent, contents are:
+  Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass
+
+ For Meter=CarbonEquivalentEmissions:Carbon Equivalent [kg], ResourceType=Carbon Equivalent, EndUse=CarbonEquivalentEmissions, contents are:
+  Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass
