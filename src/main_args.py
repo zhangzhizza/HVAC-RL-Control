@@ -145,7 +145,7 @@ def effective_main(args, reward_func, rewardArgs, action_func, action_limits, ra
         # Start the training
         main_logger.info ('Start the learning...')
         a3c_agent.fit(sess, coordinator, global_network, workers, 
-                      global_summary_writer, global_saver, [args.env], args.train_freq,# Debug[args.env, args.test_env]
+                      global_summary_writer, global_saver, [args.env, args.test_env], args.train_freq,
                       args.gamma, args.rwd_e_para, args.rwd_p_para, args.save_freq, args.max_interactions,
                       args.eval_epi_num, args.eval_freq, reward_func, rewardArgs, action_func, 
                       action_limits, raw_state_process_func);
