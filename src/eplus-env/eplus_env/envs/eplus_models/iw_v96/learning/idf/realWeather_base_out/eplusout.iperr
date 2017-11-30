@@ -1,0 +1,97 @@
+ ************* IDF Context for following error/warning message:
+ ************* Note -- lines truncated at 300 characters, if necessary...
+ *************  15780 EnergyManagementSystem:Program,
+ ************* indicated Name=CalcAvgNMaxPPD
+ ************* Only last 3 lines before error line shown.....
+ *************  15781     CalcAvgNMaxPPD, ! Name Calculate the average and max PPD of all zones.
+ *************  15782     !- Calculate average PPD
+ *************  15783     SET SumNumerator = seOff_ppd_sensor + swOff_ppd_sensor + neOff_ppd_sensor + nwOff_ppd_sensor + largeConf_ppd_sensor + central_ppd_sensor,
+ ** Warning ** IP: IDF line~15783 Alpha Argument length exceeds maximum, will be truncated=    SET SumNumerator = seOff_ppd_sensor + swOff_ppd_sensor + neOff_ppd_sensor + nwOff_ppd_sensor + largeConf_ppd_sensor + central_ppd_senso
+ **   ~~~   ** Will be processed as Alpha=SET SUMNUMERATOR = SEOFF_PPD_SENSOR + SWOFF_PPD_SENSOR + NEOFF_PPD_SENSOR + NWOFF_PPD_SENSOR + LARGECONF_PPD_SENSOR + CENTRAL_PPD_SENSOR
+ ************* IDF Context for following error/warning message:
+ ************* Note -- lines truncated at 300 characters, if necessary...
+ *************  16071 EnergyManagementSystem:Program,
+ ************* indicated Name=CtrlRadiantSys
+ ************* Only last 10 lines before error line shown.....
+ *************  16153             SET Heating_spw_stpt_PID = Heating_spw_stpt_PID + PID_Bias,
+ *************  16154             SET Heating_spw_stpt_PID = @MIN Heating_spw_stpt_PID PID_High,
+ *************  16155             SET Heating_spw_stpt_PID = @MAX Heating_spw_stpt_PID PID_Low,
+ *************  16156             SET stpt_high = 65,
+ *************  16157             !- calculate the OAT bias
+ *************  16158             SET day_oat_bias_stpt_high = 28.0,
+ *************  16159             SET day_oat_bias_stpt_low = 0.0,
+ *************  16160             SET day_oat_bias_oat_high = 7.2,
+ *************  16161             SET day_oat_bias_oat_low = -17.8,
+ *************  16162             SET day_oat_bias_stpt = day_oat_bias_stpt_high + (day_oat_bias_stpt_low - day_oat_bias_stpt_high)/(day_oat_bias_oat_high - day_oat_bias_oat_low) * (OAT - day_oat_bias_oat_low),
+ ** Warning ** IP: IDF line~16162 Alpha Argument length exceeds maximum, will be truncated=            SET day_oat_bias_stpt = day_oat_bias_stpt_high + (day_oat_bias_stpt_low - day_oat_bias_stpt_high)/(day_oat_bias_oat_high - day_oat_bias_oat_low) * (OAT - day_oat_bias_oat_low
+ **   ~~~   ** Will be processed as Alpha=SET DAY_OAT_BIAS_STPT = DAY_OAT_BIAS_STPT_HIGH + (DAY_OAT_BIAS_STPT_LOW - DAY_OAT_BIAS_STPT_HIGH)/(DAY_OAT_BIAS_OAT_HIGH - DAY_OAT_BIAS_OAT_LOW) * (OAT - DAY_OAT_BIAS_OAT_LOW)
+ ************* IDF Context for following error/warning message:
+ ************* Note -- lines truncated at 300 characters, if necessary...
+ *************  17347 Schedule:File,
+ ************* indicated Name=oat_2017
+ ************* Only last 3 lines before error line shown.....
+ *************  17348    oat_2017,   !- Name
+ *************  17349    Any Number,           !- ScheduleType
+ *************  17350 /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.csv, !- File Name-eval_env
+ ** Warning ** IP: IDF line~17350 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.cs
+ **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/EPLUS-ENV/EPLUS_ENV/ENVS/EPLUS_MODELS/IW_V96/WEATHER/X.CSV
+ ************* IDF Context for following error/warning message:
+ ************* Note -- lines truncated at 300 characters, if necessary...
+ *************  17358 Schedule:File,
+ ************* indicated Name=oah_2017
+ ************* Only last 3 lines before error line shown.....
+ *************  17359    oah_2017,   !- Name
+ *************  17360    Any Number,           !- ScheduleType
+ *************  17361 /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.csv, !- File Name-eval_env
+ ** Warning ** IP: IDF line~17361 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.cs
+ **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/EPLUS-ENV/EPLUS_ENV/ENVS/EPLUS_MODELS/IW_V96/WEATHER/X.CSV
+ ************* IDF Context for following error/warning message:
+ ************* Note -- lines truncated at 300 characters, if necessary...
+ *************  17369 Schedule:File,
+ ************* indicated Name=oadwp_2017
+ ************* Only last 3 lines before error line shown.....
+ *************  17370    oadwp_2017,   !- Name
+ *************  17371    Any Number,           !- ScheduleType
+ *************  17372 /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.csv, !- File Name-eval_env
+ ** Warning ** IP: IDF line~17372 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.cs
+ **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/EPLUS-ENV/EPLUS_ENV/ENVS/EPLUS_MODELS/IW_V96/WEATHER/X.CSV
+ ************* IDF Context for following error/warning message:
+ ************* Note -- lines truncated at 300 characters, if necessary...
+ *************  17380 Schedule:File,
+ ************* indicated Name=oawds_2017
+ ************* Only last 3 lines before error line shown.....
+ *************  17381    oawds_2017,   !- Name
+ *************  17382    Any Number,           !- ScheduleType
+ *************  17383 /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.csv, !- File Name-eval_env
+ ** Warning ** IP: IDF line~17383 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.cs
+ **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/EPLUS-ENV/EPLUS_ENV/ENVS/EPLUS_MODELS/IW_V96/WEATHER/X.CSV
+ ************* IDF Context for following error/warning message:
+ ************* Note -- lines truncated at 300 characters, if necessary...
+ *************  17391 Schedule:File,
+ ************* indicated Name=oawdd_2017
+ ************* Only last 3 lines before error line shown.....
+ *************  17392    oawdd_2017,   !- Name
+ *************  17393    Any Number,           !- ScheduleType
+ *************  17394 /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.csv, !- File Name-eval_env
+ ** Warning ** IP: IDF line~17394 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.cs
+ **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/EPLUS-ENV/EPLUS_ENV/ENVS/EPLUS_MODELS/IW_V96/WEATHER/X.CSV
+ ************* IDF Context for following error/warning message:
+ ************* Note -- lines truncated at 300 characters, if necessary...
+ *************  17402 Schedule:File,
+ ************* indicated Name=solDir_2017
+ ************* Only last 3 lines before error line shown.....
+ *************  17403    solDir_2017,   !- Name
+ *************  17404    Any Number,           !- ScheduleType
+ *************  17405 /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.csv, !- File Name-eval_env
+ ** Warning ** IP: IDF line~17405 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.cs
+ **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/EPLUS-ENV/EPLUS_ENV/ENVS/EPLUS_MODELS/IW_V96/WEATHER/X.CSV
+ ************* IDF Context for following error/warning message:
+ ************* Note -- lines truncated at 300 characters, if necessary...
+ *************  17413 Schedule:File,
+ ************* indicated Name=solDif_2017
+ ************* Only last 3 lines before error line shown.....
+ *************  17414    solDif_2017,   !- Name
+ *************  17415    Any Number,           !- ScheduleType
+ *************  17416 /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.csv, !- File Name-eval_env
+ ** Warning ** IP: IDF line~17416 Alpha Argument length exceeds maximum, will be truncated=/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.cs
+ **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/EPLUS-ENV/EPLUS_ENV/ENVS/EPLUS_MODELS/IW_V96/WEATHER/X.CSV
