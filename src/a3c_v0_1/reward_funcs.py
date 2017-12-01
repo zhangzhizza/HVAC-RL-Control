@@ -557,6 +557,63 @@ def ppd_energy_reward_iw_timeRelated_v5(ob_next_prcd, e_weight, p_weight, ppd_pe
     ret = e_weight * energy_rwd + p_weight * comfort_rwd;
     return ret;
 
+def ppd_energy_reward_iw_timeRelated_v6(ob_next_prcd, e_weight, p_weight, ppd_penalty_limit):
+    """
+    Get the reward from hvac energy and comfort level. If occupancy status is 0 (not 
+    occupied), then the comfort level will be determined from the difference between 
+    the setpoint; else, PPD is the comfort level metric. 
+    
+    Args:
+        ob_next_prcd:
+
+        e_weight: float
+            The weight to HVAC energy consumption.
+        p_weight: float
+            The weight to PPD. 
+        mode:
+
+        ppd_penalty_limit:
+
+    Return: float
+        The combined reward. 
+    """
+    HVACE_RAW_IDX = 12;
+    ZPPD_RAW_IDX = 7;
+    ZPCT_RAW_IDX = 11;
+    ZIAT_SSP_LG_RAW_IDX = 10;
+    ZIAT_RAW_IDX = 9;
+    HOUR_RAW_IDX = -1;
+    WEEKDAY_RAW_IDX = -2;
+    normalized_weekday = ob_next_prcd[WEEKDAY_RAW_IDX + TIMESTATE_LEN];
+    normalized_hour = ob_next_prcd[HOUR_RAW_IDX + TIMESTATE_LEN];
+    normalized_hvac_energy = ob_next_prcd[HVACE_RAW_IDX + TIMESTATE_LEN];
+    normalized_ppd = ob_next_prcd[ZPPD_RAW_IDX + TIMESTATE_LEN];
+    normalized_pct = ob_next_prcd[ZPCT_RAW_IDX + TIMESTATE_LEN];
+    normalized_iatssp_lg = ob_next_prcd[ZIAT_SSP_LG_RAW_IDX + TIMESTATE_LEN];
+    normalized_iat = ob_next_prcd[ZIAT_RAW_IDX + TIMESTATE_LEN];
+    comfort_rwd = 0;
+    # Determine the occupied period or not to determine the comfort reward
+    if normalized_pct < 0.5: # Not in occupy mode
+        if (normalized_iatssp_lg - normalized_iat) > 0: # IAT is colder than ssp by logics
+            comfort_rwd_imd = - (normalized_iatssp_lg - normalized_iat) * 10.0
+            if comfort_rwd_imd < 0.0:
+                return -1.0;
+            else:
+                comfort_rwd = 0.0;
+        else:
+            comfort_rwd = 0.0;
+    else: # In occupy mode
+        comfort_rwd_imd = normalized_ppd / ppd_penalty_limit;
+        if comfort_rwd_imd > 1.0:
+            comfort_rwd = -1.0;
+        else:
+            comfort_rwd = -comfort_rwd_imd;
+    # Energy reward
+    energy_rwd = -normalized_hvac_energy;
+    # The combined reward
+    ret = e_weight * energy_rwd + p_weight * comfort_rwd;
+    return ret;
+
 reward_func_dict = {'1': err_energy_reward_iw,
                     '2': err_energy_reward_iw_v2,
                     '3': err_energy_reward_iw_v3,
@@ -567,4 +624,5 @@ reward_func_dict = {'1': err_energy_reward_iw,
                     '8': ppd_energy_reward_iw_timeRelated_v2,
                     '9': ppd_energy_reward_iw_timeRelated_v3,
                     '10': ppd_energy_reward_iw_timeRelated_v4,
-                    '11': ppd_energy_reward_iw_timeRelated_v5}
+                    '11': ppd_energy_reward_iw_timeRelated_v5,
+                    '12': ppd_energy_reward_iw_timeRelated_v6}
