@@ -299,7 +299,7 @@ class A3CThread:
                 
                 #################FOR DEBUG#######################
                 if is_show_dbg:
-                    current_hregu = sess.run(hregu_frac_to_loss);
+                    current_hregu = sess.run(_hregu_frac_to_loss);
                     self._local_logger.debug('TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
                                          'Current H regulation is %0.04f, \n'
                                          'Environment debug: raw action idx is %d, \n'
