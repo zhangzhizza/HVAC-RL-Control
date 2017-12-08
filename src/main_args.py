@@ -125,7 +125,7 @@ def effective_main(args, reward_func, rewardArgs, action_func, action_limits, ra
                          vloss_frac = args.v_loss_frac,
                          ploss_frac = args.p_loss_frac, 
                          hregu_frac = args.h_regu_frac,
-                         hregu_decay_bouds = args.h_decay_bounds,
+                         hregu_decay_bounds = args.h_decay_bounds,
                          num_threads = args.num_threads, 
                          learning_rate = args.learning_rate, 
                          rmsprop_decay = args.rmsprop_decay,

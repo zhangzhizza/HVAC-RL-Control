@@ -109,7 +109,7 @@ class A3CThread:
                                         1, True); 
             self._pi_one_hot = pi_one_hot;
             # Add to the Graph the Ops for loss calculation.
-            self._this_thread_global_counter = tf.Variable(global_counter.Value, trainable = False, name = 'global_counter_this_thread');
+            self._this_thread_global_counter = tf.Variable(0, trainable = False, dtype = tf.int32, name = 'global_counter_this_thread');
             self._global_step_pl = tf.placeholder(tf.int32, name = 'global_step_pl');
             self._assg_global_step = tf.assign(self._this_thread_global_counter, self._global_step_pl, name = 'global_step_assign');
             if len(hregu_frac) == 1:
@@ -228,7 +228,7 @@ class A3CThread:
         self._local_logger.info('Local worker starts!')
         # Assign value to global_counter this thread
         sess.run(self._assg_global_step, 
-                 feed_dict = {self._global_step_pl: int(self._global_counter.Value)});
+                 feed_dict = {self._global_step_pl: int(self._global_counter.value)});
         # Init some variables
         t = 0;
         t_st = 0;
