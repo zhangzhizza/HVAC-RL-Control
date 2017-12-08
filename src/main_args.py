@@ -67,7 +67,8 @@ def get_args():
     parser.add_argument('--gamma', default=0.99);
     parser.add_argument('--v_loss_frac', default=0.5, type=float);
     parser.add_argument('--p_loss_frac', default=1.0, type=float);
-    parser.add_argument('--h_regu_frac', default=0.01, type=float);
+    parser.add_argument('--h_regu_frac', default=0.01, nargs='+', type=float);
+    parser.add_argument('--h_decay_bounds', default=[], nargs='+', type=int);
     parser.add_argument('--num_threads', default=8, type=int,
                         help='The number of threads to be used for the asynchronous'
                         ' training. Default is 8. If -1, then this value equals to'
@@ -108,7 +109,6 @@ def get_args():
     return parser;
 
 def effective_main(args, reward_func, rewardArgs, action_func, action_limits, raw_state_process_func):
-    
     args.output = get_output_folder(args.output, args.env)
     tf.gfile.MakeDirs(args.output + '/model_data')
     args.num_threads = multiprocessing.cpu_count() if args.num_threads < 0\
@@ -125,6 +125,7 @@ def effective_main(args, reward_func, rewardArgs, action_func, action_limits, ra
                          vloss_frac = args.v_loss_frac,
                          ploss_frac = args.p_loss_frac, 
                          hregu_frac = args.h_regu_frac,
+                         hregu_decay_bouds = args.h_decay_bounds,
                          num_threads = args.num_threads, 
                          learning_rate = args.learning_rate, 
                          rmsprop_decay = args.rmsprop_decay,

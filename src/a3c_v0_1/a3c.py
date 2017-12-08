@@ -33,9 +33,9 @@ class A3CThread:
     """
     
     def __init__(self, graph, scope_name, global_name, effec_state_dim, forecast_dim, 
-                action_size, vloss_frac, ploss_frac, hregu_frac, shared_optimizer,
+                action_size, vloss_frac, ploss_frac, hregu_frac, hregu_decay_bounds, shared_optimizer,
                  clip_norm, global_train_step, window_len, init_epsilon,
-                 end_epsilon, decay_steps):
+                 end_epsilon, decay_steps, global_counter):
         """
         Constructor.
         
@@ -109,9 +109,16 @@ class A3CThread:
                                         1, True); 
             self._pi_one_hot = pi_one_hot;
             # Add to the Graph the Ops for loss calculation.
+            self._this_thread_global_counter = tf.Variable(global_counter.Value, trainable = False, name = 'global_counter_this_thread');
+            self._global_step_pl = tf.placeholder(tf.int32, name = 'global_step_pl');
+            self._assg_global_step = tf.assign(self._this_thread_global_counter, self._global_step_pl, name = 'global_step_assign');
+            if len(hregu_frac) == 1:
+                hregu_frac_to_loss = tf.constant(hregu_frac[0], name = 'H_regu_cst');
+            else:
+                hregu_frac_to_loss = tf.train.piecewise_constant(self._this_thread_global_counter, hregu_decay_bounds, hregu_frac, name='H_regu_decay')
             loss = a3c_loss(self._q_true_placeholder, self._value_pred, 
                                   self._policy_pred, pi_one_hot, vloss_frac, 
-                                  ploss_frac, hregu_frac);
+                                  ploss_frac, hregu_frac_to_loss);
             self._loss = loss;
         
         #####################################
@@ -161,9 +168,11 @@ class A3CThread:
         self._action_size = action_size;
         self._epsilon_decay_delta = (init_epsilon - end_epsilon)/decay_steps;
         self._e_greedy = init_epsilon;
+        self._hregu_frac_to_loss = hregu_frac_to_loss;
+        self._global_counter = global_counter;
         
             
-    def train(self, sess, t_max, env_name, coordinator, global_counter, global_lock, 
+    def train(self, sess, t_max, env_name, coordinator, global_lock, 
               gamma, e_weight, p_weight, save_freq, log_dir, global_saver, 
               global_summary_writer, T_max, global_agent_eval_list, eval_freq, 
               global_res_list, action_space_name, dropout_prob, reward_func, 
@@ -217,6 +226,10 @@ class A3CThread:
                                     %(threading.current_thread().getName()),
                                               LOG_LEVEL, LOG_FMT, log_dir + '/main.log');
         self._local_logger.info('Local worker starts!')
+        # Assign value to global_counter this thread
+        sess.run(self._assg_global_step, 
+                 feed_dict = {self._global_step_pl: int(self._global_counter.Value)});
+        # Init some variables
         t = 0;
         t_st = 0;
         # Create the thread specific environment
@@ -286,7 +299,9 @@ class A3CThread:
                 
                 #################FOR DEBUG#######################
                 if is_show_dbg:
-                    self._local_logger.debug('TRAINING DEBUG INFO ======>>>>>>>>>>'
+                    current_hregu = sess.run(hregu_frac_to_loss);
+                    self._local_logger.debug('TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+                                         'Current H regulation is %0.04f, \n'
                                          'Environment debug: raw action idx is %d, \n'
                                          'current raw observation is %s, \n'
                                          'current ob forecast is %s, \n'
@@ -297,7 +312,7 @@ class A3CThread:
                                          'processed observation next is %s, \n'
                                          'reward next is %0.04f. \n'
                                          '============================================='
-                                         %(action_raw_idx, ob_this_raw[0: noForecastDim],
+                                         %(current_hregu, action_raw_idx, ob_this_raw[0: noForecastDim],
                                            np.insert(np.array(ob_this_raw[noForecastDim:]).astype('str'),
                                             range(0, (len(ob_this_raw) - noForecastDim), forecastSingleEntryDim), 'Next Hour'),
                                            str(action_stpt_prcd), time_this, time_next, 
@@ -316,9 +331,9 @@ class A3CThread:
                 self._update_e_greedy(); # Update the epsilon value
                 with global_lock:
                     # Do the evaluation
-                    if global_counter.value % eval_freq == 0: 
+                    if self._global_counter.value % eval_freq == 0: 
                         self._local_logger.info('Evaluating...');
-                        global_res_list.append([global_counter.value]);
+                        global_res_list.append([self._global_counter.value]);
                         for global_agent_eval in global_agent_eval_list:
                             eval_res = global_agent_eval.evaluate(self._local_logger,
                                                     action_space_name, reward_func, rewardArgs, 
@@ -328,14 +343,14 @@ class A3CThread:
                                    np.array(global_res_list), delimiter = ',');
                         self._local_logger.info ('Global step: %d, '
                                            'evaluation results %s'
-                                           %(global_counter.value, str(global_res_list[-1])));
+                                           %(self._global_counter.value, str(global_res_list[-1])));
                     # Global counter increment
-                    global_counter.value += 1;
+                    self._global_counter.value += 1;
                 # Save the global network variable
-                if global_counter.value % save_freq == 0: 
+                if self._global_counter.value % save_freq == 0: 
                     checkpoint_file = os.path.join(log_dir, 'model_data/model.ckpt');
                     global_saver.save(sess, checkpoint_file, 
-                               global_step=int(global_counter.value));
+                               global_step=int(self._global_counter.value));
                
 
                 # ...
@@ -387,7 +402,7 @@ class A3CThread:
             printStatusFreq = 100;
             if (t/t_max) % printStatusFreq == 0:
                 self._local_logger.info ('Local step %d, global step %d: loss ' 
-                                       '%0.04f'%(t, global_counter.value, loss_res));
+                                       '%0.04f'%(t, self._global_counter.value, loss_res));
                 # Update the events file.
                 #summary_str = sess.run(self._loss_summary, 
                 #                             feed_dict=training_feed_dict)
@@ -400,7 +415,7 @@ class A3CThread:
             if is_terminal:
                 is_terminal = is_terminal_cp;
             # Check whether training should stop
-            if global_counter.value > T_max:
+            if self._global_counter.value > T_max:
                 coordinator.request_stop()
         # Safely close the environment
         env.end_env();
@@ -497,6 +512,7 @@ class A3CAgent:
                  vloss_frac, 
                  ploss_frac, 
                  hregu_frac,
+                 hregu_decay_bounds,
                  num_threads,
                  learning_rate,
                  rmsprop_decay,
@@ -519,6 +535,7 @@ class A3CAgent:
         self._vloss_frac = vloss_frac;
         self._ploss_frac = ploss_frac;
         self._hregu_frac = hregu_frac;
+        self._hregu_decay_bounds = hregu_decay_bounds;
         self._num_threads = num_threads;
         self._learning_rate = learning_rate;
         self._rmsprop_decay = rmsprop_decay;
@@ -568,11 +585,12 @@ class A3CAgent:
             global_train_step = tf.Variable(0, name='global_train_step', 
                                             trainable=False);
         # Create the thread workers list
+        global_counter = Value('d', 0.0);
         workers = [A3CThread(g, 'worker_%d'%(i), 'global', self._effec_state_dim, self._forecast_dim,
                              self._action_size, self._vloss_frac, self._ploss_frac,
-                             self._hregu_frac, shared_optimizer, self._clip_norm,
+                             self._hregu_frac, self._hregu_decay_bounds, shared_optimizer, self._clip_norm,
                              global_train_step, self._window_len, self._init_epsilon,
-                             self._end_epsilon, self._decay_steps)
+                             self._end_epsilon, self._decay_steps, global_counter)
                   for i in range(self._num_threads)];
         # Init global network variables or warm start
         with g.as_default():
@@ -697,7 +715,6 @@ class A3CAgent:
         
         """
         threads = [];
-        global_counter = Value('d', 0.0);
         global_lock = Lock();
         # Create the env for training evaluation
         global_agent_eval_list = [];
@@ -713,7 +730,7 @@ class A3CAgent:
         for worker in workers:
             self._global_logger.info('Prepare the local workers ...');
             worker_train = lambda: worker.train(sess, t_max, 
-                                                env_name_list[0], coordinator, global_counter, 
+                                                env_name_list[0], coordinator, 
                                                 global_lock, gamma, e_weight, p_weight, save_freq,
                                                 self._log_dir, global_saver, global_summary_writer,
                                                 T_max, global_agent_eval_list, eval_freq, global_res_list,

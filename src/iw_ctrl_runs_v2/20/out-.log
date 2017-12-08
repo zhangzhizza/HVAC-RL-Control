@@ -1,0 +1,10 @@
+Using TensorFlow backend.
+[0.1]
+Traceback (most recent call last):
+  File "../../a3c_eplus_iw_v0.1.py", line 58, in <module>
+    main()
+  File "../../a3c_eplus_iw_v0.1.py", line 54, in main
+    effective_main(args, reward_func, rewardArgs, action_func, action_limits, raw_state_process_func);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/main_args.py", line 113, in effective_main
+    print (rere)
+NameError: name 'rere' is not defined
