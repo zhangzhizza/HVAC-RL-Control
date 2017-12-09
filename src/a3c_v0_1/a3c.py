@@ -299,7 +299,7 @@ class A3CThread:
                 
                 #################FOR DEBUG#######################
                 if is_show_dbg:
-                    current_hregu = sess.run(_hregu_frac_to_loss);
+                    current_hregu = sess.run(self._hregu_frac_to_loss);
                     self._local_logger.debug('TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
                                          'Current H regulation is %0.04f, \n'
                                          'Environment debug: raw action idx is %d, \n'
@@ -346,6 +346,9 @@ class A3CThread:
                                            %(self._global_counter.value, str(global_res_list[-1])));
                     # Global counter increment
                     self._global_counter.value += 1;
+                # Update the local global counter tensor
+                sess.run(self._assg_global_step, 
+                             feed_dict = {self._global_step_pl: int(self._global_counter.value)});
                 # Save the global network variable
                 if self._global_counter.value % save_freq == 0: 
                     checkpoint_file = os.path.join(log_dir, 'model_data/model.ckpt');
