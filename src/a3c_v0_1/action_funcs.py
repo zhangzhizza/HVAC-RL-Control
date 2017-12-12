@@ -1,4 +1,7 @@
 
+
+from a3c_v0_1.action_limits import * 
+
 def iat_stpt_smlRefBld(action_raw, stptLmt, ob_this_raw):
     """
     Check whether the action is legal, which is that the resulting cooling
@@ -139,7 +142,7 @@ def mull_stpt_noExpTurnOffMullOP(action_raw, stptLmt, ob_this_raw):
     return ((res_oae_ssp, res_swt_ssp),
                 (action_raw[0], res_swt_ssp - swt_ssp_cur)) 
 
-def mull_stpt_directSelect(action_raw, stptLmt, ob_this_raw):
+def stpt_directSelect(action_raw, stptLmt, ob_this_raw):
     """
     Transfer the mull op to OAE setpoint.
     Check whether the action is legal, which is swt ssp must be within the range of stptLmt.
@@ -209,3 +212,12 @@ def iw_iat_stpt_noExpHeatingOp(action_raw, stptLmt, ob_this_raw):
 
     return ((res_oae_ssp, res_iat_ssp),
                 (action_raw[0], res_iat_ssp)) 
+
+
+act_func_dict = {'1':[mull_stpt_iw, act_limits_iw_1],
+                '2':[mull_stpt_oaeTrans_iw, act_limits_iw_2],
+                '3':[mull_stpt_noExpTurnOffMullOP, act_limits_iw_2],
+                '4':[stpt_directSelect, act_limits_iw_2],
+                '5':[iw_iat_stpt_noExpHeatingOp, act_limits_iw_3],
+                '6':[iw_iat_stpt_noExpHeatingOp, act_limits_iw_4],
+                '7':[stpt_directSelect, act_limits_iw_4]}
