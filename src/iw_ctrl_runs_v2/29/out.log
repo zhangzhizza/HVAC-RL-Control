@@ -1,0 +1,139 @@
+Using TensorFlow backend.
+[2017-12-12 10:26:04,084] A3C_AGENT_MAIN INFO:Namespace(act_func='6', action_space='iw_af5_1', agent_num=5, clip_norm=5.0, decay_steps=1000000, dropout_prob=0.0, end_e=0.0, env='IW-tmy3Weather-v9606', err_penalty_scl=0.15, eval_epi_num=1, eval_freq=250000, forecast_dim=0, gamma=0.99, h_decay_bounds=[2000000, 4000000, 6000000], h_regu_frac=[1.0, 0.5, 0.1, 0.05], init_e=0.0, is_warm_start=False, job_mode='Train', learning_rate=0.0001, max_interactions=10000000, model_dir='None', num_threads=16, output='a3c-res-v0.1/IW-tmy3Weather-v9606-run1', p_loss_frac=1.0, reward_func='11', rmsprop_decay=0.99, rmsprop_epsil=1e-10, rmsprop_momet=0.0, rwd_e_para=0.5, rwd_p_para=0.5, save_freq=500000, save_scope='all', state_dim=13, test_env='IW-realWeather-v9606', test_mode='Multiple', train_freq=10, v_loss_frac=0.5, window_len=24)
+[2017-12-12 10:26:04,084] A3C_AGENT_MAIN INFO:Start compiling...
+2017-12-12 10:26:07.928753: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-12-12 10:26:07.928771: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-12-12 10:26:07.928786: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-12-12 10:26:07.928789: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-12-12 10:26:07.928792: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+[2017-12-12 10:26:09,527] A3C_AGENT_MAIN INFO:Start the learning...
+[2017-12-12 10:26:09,527] A3C_AGENT_MAIN INFO:Prepare the evaluation environments ['IW-tmy3Weather-v9606', 'IW-realWeather-v9606'] ...
+[2017-12-12 10:26:09,527] Making new env: IW-tmy3Weather-v9606
+[2017-12-12 10:26:09,537] Making new env: IW-realWeather-v9606
+[2017-12-12 10:26:09,541] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2017-12-12 10:26:09,541] A3C_AGENT_WORKER-Thread-2 INFO:Local worker starts!
+[2017-12-12 10:26:09,558] Making new env: IW-tmy3Weather-v9606
+[2017-12-12 10:26:09,563] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-2_ROOT INFO:Creating EnergyPlus simulation environment...
+[2017-12-12 10:26:09,564] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-2_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/iw_ctrl_runs_v2/29/Eplus-env-IW-tmy3Weather-v9606-res2/Eplus-env-sub_run1
+[2017-12-12 10:26:10,543] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2017-12-12 10:26:10,544] A3C_AGENT_WORKER-Thread-3 INFO:Local worker starts!
+[2017-12-12 10:26:10,583] Making new env: IW-tmy3Weather-v9606
+[2017-12-12 10:26:10,593] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-3_ROOT INFO:Creating EnergyPlus simulation environment...
+[2017-12-12 10:26:10,595] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-3_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/iw_ctrl_runs_v2/29/Eplus-env-IW-tmy3Weather-v9606-res3/Eplus-env-sub_run1
+[2017-12-12 10:26:11,545] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2017-12-12 10:26:11,545] A3C_AGENT_WORKER-Thread-4 INFO:Local worker starts!
+[2017-12-12 10:26:11,568] Making new env: IW-tmy3Weather-v9606
+[2017-12-12 10:26:11,574] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-4_ROOT INFO:Creating EnergyPlus simulation environment...
+[2017-12-12 10:26:11,575] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-4_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/iw_ctrl_runs_v2/29/Eplus-env-IW-tmy3Weather-v9606-res4/Eplus-env-sub_run1
+[2017-12-12 10:26:12,546] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2017-12-12 10:26:12,548] A3C_AGENT_WORKER-Thread-5 INFO:Local worker starts!
+[2017-12-12 10:26:12,587] Making new env: IW-tmy3Weather-v9606
+[2017-12-12 10:26:12,596] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-5_ROOT INFO:Creating EnergyPlus simulation environment...
+[2017-12-12 10:26:12,597] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-5_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/iw_ctrl_runs_v2/29/Eplus-env-IW-tmy3Weather-v9606-res5/Eplus-env-sub_run1
+[2017-12-12 10:26:13,548] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2017-12-12 10:26:13,549] A3C_AGENT_WORKER-Thread-6 INFO:Local worker starts!
+[2017-12-12 10:26:13,569] Making new env: IW-tmy3Weather-v9606
+[2017-12-12 10:26:13,573] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-6_ROOT INFO:Creating EnergyPlus simulation environment...
+[2017-12-12 10:26:13,574] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-6_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/iw_ctrl_runs_v2/29/Eplus-env-IW-tmy3Weather-v9606-res6/Eplus-env-sub_run1
+[2017-12-12 10:26:14,550] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2017-12-12 10:26:14,550] A3C_AGENT_WORKER-Thread-7 INFO:Local worker starts!
+[2017-12-12 10:26:14,581] Making new env: IW-tmy3Weather-v9606
+[2017-12-12 10:26:14,588] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-7_ROOT INFO:Creating EnergyPlus simulation environment...
+[2017-12-12 10:26:14,590] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-7_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/iw_ctrl_runs_v2/29/Eplus-env-IW-tmy3Weather-v9606-res7/Eplus-env-sub_run1
+[2017-12-12 10:26:15,551] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2017-12-12 10:26:15,552] A3C_AGENT_WORKER-Thread-8 INFO:Local worker starts!
+[2017-12-12 10:26:15,581] Making new env: IW-tmy3Weather-v9606
+[2017-12-12 10:26:15,590] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-8_ROOT INFO:Creating EnergyPlus simulation environment...
+[2017-12-12 10:26:15,592] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-8_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/iw_ctrl_runs_v2/29/Eplus-env-IW-tmy3Weather-v9606-res8/Eplus-env-sub_run1
+[2017-12-12 10:26:16,553] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2017-12-12 10:26:16,553] A3C_AGENT_WORKER-Thread-9 INFO:Local worker starts!
+[2017-12-12 10:26:16,585] Making new env: IW-tmy3Weather-v9606
+[2017-12-12 10:26:16,594] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-9_ROOT INFO:Creating EnergyPlus simulation environment...
+[2017-12-12 10:26:16,596] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-9_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/iw_ctrl_runs_v2/29/Eplus-env-IW-tmy3Weather-v9606-res9/Eplus-env-sub_run1
+[2017-12-12 10:26:17,127] A3C_AGENT_WORKER-Thread-2 INFO:Evaluating...
+[2017-12-12 10:26:17,127] EPLUS_ENV_IW-tmy3Weather-v9606_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2017-12-12 10:26:17,129] EPLUS_ENV_IW-tmy3Weather-v9606_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/iw_ctrl_runs_v2/29/Eplus-env-IW-tmy3Weather-v9606-res1/Eplus-env-sub_run1
+[2017-12-12 10:26:17,554] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2017-12-12 10:26:17,555] A3C_AGENT_WORKER-Thread-10 INFO:Local worker starts!
+[2017-12-12 10:26:17,587] Making new env: IW-tmy3Weather-v9606
+[2017-12-12 10:26:17,596] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-10_ROOT INFO:Creating EnergyPlus simulation environment...
+[2017-12-12 10:26:17,598] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-10_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/iw_ctrl_runs_v2/29/Eplus-env-IW-tmy3Weather-v9606-res10/Eplus-env-sub_run1
+[2017-12-12 10:26:18,556] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2017-12-12 10:26:18,557] A3C_AGENT_WORKER-Thread-11 INFO:Local worker starts!
+[2017-12-12 10:26:18,577] Making new env: IW-tmy3Weather-v9606
+[2017-12-12 10:26:18,584] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-11_ROOT INFO:Creating EnergyPlus simulation environment...
+[2017-12-12 10:26:18,586] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-11_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/iw_ctrl_runs_v2/29/Eplus-env-IW-tmy3Weather-v9606-res11/Eplus-env-sub_run1
+[2017-12-12 10:26:19,558] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2017-12-12 10:26:19,559] A3C_AGENT_WORKER-Thread-12 INFO:Local worker starts!
+[2017-12-12 10:26:19,589] Making new env: IW-tmy3Weather-v9606
+[2017-12-12 10:26:19,597] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-12_ROOT INFO:Creating EnergyPlus simulation environment...
+[2017-12-12 10:26:19,599] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-12_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/iw_ctrl_runs_v2/29/Eplus-env-IW-tmy3Weather-v9606-res12/Eplus-env-sub_run1
+[2017-12-12 10:26:20,561] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2017-12-12 10:26:20,561] A3C_AGENT_WORKER-Thread-13 INFO:Local worker starts!
+[2017-12-12 10:26:20,592] Making new env: IW-tmy3Weather-v9606
+[2017-12-12 10:26:20,600] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-13_ROOT INFO:Creating EnergyPlus simulation environment...
+[2017-12-12 10:26:20,602] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-13_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/iw_ctrl_runs_v2/29/Eplus-env-IW-tmy3Weather-v9606-res13/Eplus-env-sub_run1
+[2017-12-12 10:26:21,562] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2017-12-12 10:26:21,563] A3C_AGENT_WORKER-Thread-14 INFO:Local worker starts!
+[2017-12-12 10:26:21,596] Making new env: IW-tmy3Weather-v9606
+[2017-12-12 10:26:21,604] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-14_ROOT INFO:Creating EnergyPlus simulation environment...
+[2017-12-12 10:26:21,606] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-14_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/iw_ctrl_runs_v2/29/Eplus-env-IW-tmy3Weather-v9606-res14/Eplus-env-sub_run1
+[2017-12-12 10:26:22,564] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2017-12-12 10:26:22,565] A3C_AGENT_WORKER-Thread-15 INFO:Local worker starts!
+[2017-12-12 10:26:22,596] Making new env: IW-tmy3Weather-v9606
+[2017-12-12 10:26:22,606] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-15_ROOT INFO:Creating EnergyPlus simulation environment...
+[2017-12-12 10:26:22,608] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-15_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/iw_ctrl_runs_v2/29/Eplus-env-IW-tmy3Weather-v9606-res15/Eplus-env-sub_run1
+[2017-12-12 10:26:23,565] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2017-12-12 10:26:23,566] A3C_AGENT_WORKER-Thread-16 INFO:Local worker starts!
+[2017-12-12 10:26:23,597] Making new env: IW-tmy3Weather-v9606
+[2017-12-12 10:26:23,606] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-16_ROOT INFO:Creating EnergyPlus simulation environment...
+[2017-12-12 10:26:23,608] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-16_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/iw_ctrl_runs_v2/29/Eplus-env-IW-tmy3Weather-v9606-res16/Eplus-env-sub_run1
+[2017-12-12 10:26:24,566] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2017-12-12 10:26:24,581] A3C_AGENT_WORKER-Thread-17 INFO:Local worker starts!
+[2017-12-12 10:26:24,635] Making new env: IW-tmy3Weather-v9606
+[2017-12-12 10:26:24,644] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-17_ROOT INFO:Creating EnergyPlus simulation environment...
+[2017-12-12 10:26:24,645] EPLUS_ENV_IW-tmy3Weather-v9606_Thread-17_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/iw_ctrl_runs_v2/29/Eplus-env-IW-tmy3Weather-v9606-res17/Eplus-env-sub_run1
+[2017-12-12 10:26:31,692] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation this: [7.325, 86.0, 7.050000000000001, 267.5, 71.75, 0.0, 12.36666666666667, 7.661564225388934, 23.0, 22.60291026278785, 22.7, 1.0, 36.9583846866797]
+[2017-12-12 10:26:31,692] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation forecast: []
+[2017-12-12 10:26:31,694] A3C_AGENT_WORKER-Thread-2 INFO:Softmax [ 0.09602405  0.08283097  0.09098675  0.106038    0.13018025  0.11801878
+  0.13627347  0.13523145  0.10441623]
+[2017-12-12 10:26:33,209] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation this: [0.4, 95.5, 3.75, 275.0, 0.0, 0.0, -4.583333333333333, 9.31059649578924, 18.0, 22.02303075850301, 21.5, 0.0, 0.0]
+[2017-12-12 10:26:33,210] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation forecast: []
+[2017-12-12 10:26:33,211] A3C_AGENT_WORKER-Thread-2 INFO:Softmax [ 0.09696618  0.08669957  0.10272714  0.10586074  0.11350261  0.12724119
+  0.14555973  0.12366038  0.09778246]
+[2017-12-12 10:26:33,379] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation this: [-1.425, 91.0, 7.2, 272.5, 0.0, 0.0, 3.666666666666667, 10.22218013908306, 23.5, 21.68196954122022, 21.5, 0.0, 35.94557834290102]
+[2017-12-12 10:26:33,379] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation forecast: []
+[2017-12-12 10:26:33,380] A3C_AGENT_WORKER-Thread-2 INFO:Softmax [ 0.08886579  0.07446686  0.10364743  0.1187873   0.12535144  0.11904776
+  0.13240586  0.14114165  0.09628588]
+[2017-12-12 10:26:33,516] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation this: [-3.3, 80.33333333333334, 6.783333333333333, 268.3333333333333, 0.0, 0.0, 1.75, 11.87779432775876, 21.0, 21.31023602866389, 21.5, 0.0, 34.48088109897478]
+[2017-12-12 10:26:33,516] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation forecast: []
+[2017-12-12 10:26:33,517] A3C_AGENT_WORKER-Thread-2 INFO:Softmax [ 0.09144501  0.08364923  0.10048456  0.11897387  0.12674664  0.11191502
+  0.13896629  0.13347438  0.09434494]
+[2017-12-12 10:26:33,817] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation this: [-7.3, 68.0, 7.399999999999999, 260.0, 0.0, 0.0, -2.299999999999999, 16.13943718765668, 25.0, 20.42416425719059, 22.7, 1.0, 101.1901061783312]
+[2017-12-12 10:26:33,817] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation forecast: []
+[2017-12-12 10:26:33,819] A3C_AGENT_WORKER-Thread-2 INFO:Softmax [ 0.09018305  0.09111075  0.09975335  0.1235285   0.12717296  0.1056856
+  0.13355255  0.12788962  0.10112368]
+[2017-12-12 10:26:37,112] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation this: [-7.591666666666667, 62.75, 7.408333333333333, 264.1666666666667, 0.0, 0.0, -12.55, 12.01910874576182, 18.0, 22.12061697983545, 22.7, 1.0, 0.0]
+[2017-12-12 10:26:37,113] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation forecast: []
+[2017-12-12 10:26:37,114] A3C_AGENT_WORKER-Thread-2 INFO:Softmax [ 0.08512579  0.08780813  0.1112012   0.12100992  0.1287034   0.10395032
+  0.14345148  0.11911783  0.09963192]
+[2017-12-12 10:26:38,062] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation this: [-8.733333333333334, 73.0, 3.933333333333333, 230.0, 0.0, 0.0, -3.691666666666666, 19.99860887073564, 23.0, 20.58506129393506, 21.5, 0.0, 55.29429555937823]
+[2017-12-12 10:26:38,062] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation forecast: []
+[2017-12-12 10:26:38,063] A3C_AGENT_WORKER-Thread-2 INFO:Softmax [ 0.09057854  0.08637454  0.10573517  0.11673498  0.1240386   0.10554135
+  0.1450644   0.1276411   0.09829123]
+[2017-12-12 10:26:39,732] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation this: [-5.800000000000001, 69.66666666666667, 5.433333333333334, 193.3333333333333, 148.1666666666667, 0.0, -0.9000000000000004, 15.23017485900431, 25.0, 21.82237819359986, 22.7, 1.0, 73.38100675590844]
+[2017-12-12 10:26:39,733] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation forecast: []
+[2017-12-12 10:26:39,735] A3C_AGENT_WORKER-Thread-2 INFO:Softmax [ 0.09515367  0.09199496  0.09829536  0.11618084  0.13567504  0.10255604
+  0.13436675  0.12155749  0.10421986]
+[2017-12-12 10:26:40,357] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation this: [-3.95, 63.5, 6.9, 210.0, 149.0, 0.0, 0.9583333333333339, 12.79537252484184, 23.5, 22.19653521378407, 22.7, 1.0, 75.82758412338575]
+[2017-12-12 10:26:40,357] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation forecast: []
+[2017-12-12 10:26:40,358] A3C_AGENT_WORKER-Thread-2 INFO:Softmax [ 0.09557989  0.09842411  0.11285806  0.12442086  0.12195104  0.1036469
+  0.12411109  0.12589674  0.09311133]
+[2017-12-12 10:26:40,829] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation this: [-2.85, 59.25, 7.608333333333334, 228.3333333333333, 91.58333333333333, 0.0, 2.1, 9.806980078636371, 25.0, 22.97504837122515, 22.7, 1.0, 68.54304572102338]
+[2017-12-12 10:26:40,829] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation forecast: []
+[2017-12-12 10:26:40,831] A3C_AGENT_WORKER-Thread-2 INFO:Softmax [ 0.0949049   0.09584938  0.1077719   0.11934432  0.13364923  0.10096202
+  0.13433611  0.1204873   0.09269481]
+[2017-12-12 10:26:41,180] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation this: [-3.399999999999999, 62.24999999999999, 6.233333333333333, 229.1666666666667, 33.83333333333333, 0.0, 1.6, 9.156793539087412, 23.5, 23.08806722359083, 22.7, 1.0, 71.5550877354988]
+[2017-12-12 10:26:41,180] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation forecast: []
+[2017-12-12 10:26:41,182] A3C_AGENT_WORKER-Thread-2 INFO:Softmax [ 0.0949935   0.09847122  0.11086647  0.1199554   0.1350432   0.09995065
+  0.13559088  0.11265402  0.09247461]
