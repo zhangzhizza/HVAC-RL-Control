@@ -664,7 +664,7 @@ def ppd_energy_reward_iw_timeRelated_v7(ob_next_prcd, e_weight, p_weight, ppd_pe
     # Energy reward
     energy_rwd = -normalized_hvac_energy;
     # The combined reward
-    ret = max(min(energy_rwd + comfort_rwd, 0.0), -1.0);
+    ret = max(min(e_weight * energy_rwd + p_weight * comfort_rwd, 0.0), -1.0);
     return ret;
 
 
