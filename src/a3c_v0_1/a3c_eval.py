@@ -296,8 +296,21 @@ class A3CEval:
                 local_logger.debug('Observation forecast: %s' %(ob_this_raw[noForecastDim:]));
             #################################################
             # Get the action
-            action_raw_idx = self._select_sto_action(ob_this_hist_prcd, local_logger, is_dbg_out);
-            action_raw_tup = action_space[action_raw_idx];
+            action_raw_out = self._select_sto_action(ob_this_hist_prcd, local_logger, is_dbg_out);
+            action_raw_idx = action_raw_out if isinstance(action_raw_out, int) else action_raw_out[0]
+            if action_raw_idx is not None:
+                action_raw_tup = action_space[action_raw_idx];
+            else:
+                # Select action returns None, indicating the net work output is not valid
+                random_act_idx = np.random.choice(self._action_size)
+                action_raw_tup = action_space[random_act_idx];
+                self._local_logger.warning('!!!!!!!!!!!!!!!!!!WARNING!!!!!!!!!!!!!!!!!!\n'
+                                           'Select action function returns None, indicating the network output may not be valid!\n'
+                                           'Network output is %s.'
+                                           'A random action is taken instead, index is %s.'
+                                           '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+                                            %(action_raw_out[1], random_act_idx));
+
             action_stpt_prcd, action_effec = action_func(action_raw_tup, action_limits, ob_this_raw);
             action_stpt_prcd = list(action_stpt_prcd);
             # Perform the action
@@ -372,3 +385,4 @@ class A3CEval:
             imd_x -= softmax_a[i];
             if imd_x <= 0.0:
                 return i;
+        return (None, softmax_a); # Return if network output is not valid
