@@ -282,10 +282,22 @@ class A3CThread:
                 is_show_dbg = True if dbg_rdm < dbg_thres else False;
                 #################################################
 
-                action_raw_idx = self._select_sto_action(ob_this_hist_prcd, sess,
+                action_raw_out = self._select_sto_action(ob_this_hist_prcd, sess,
                                                          self._e_greedy, is_show_dbg, 
-                                                         dropout_prob = dropout_prob); ####DEBUG FOR DROPOUT
-                action_raw_tup = action_space[action_raw_idx];
+                                                         dropout_prob = dropout_prob);
+                action_raw_idx = action_raw_out if isinstance(action_raw_out, int) else action_raw_out[0]
+                if action_raw_idx is not None:
+                    action_raw_tup = action_space[action_raw_idx];
+                else:
+                    # Select action returns None, indicating the net work output is not valid
+                    random_act_idx = np.random.choice(self._action_size)
+                    action_raw_tup = action_space[random_act_idx];
+                    self._local_logger.warning('!!!!!!!!!!!!!!!!!!WARNING!!!!!!!!!!!!!!!!!!\n'
+                                               'Select action function returns None, indicating the network output may not be valid!\n'
+                                               'Network output is %s.'
+                                               'A random action is taken instead, index is %s.'
+                                               '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+                                               %(action_raw_out[1], random_act_idx));
                 
                 action_stpt_prcd, action_effec = action_func(action_raw_tup, action_limits, ob_this_raw);
                 action_stpt_prcd = list(action_stpt_prcd);
@@ -453,6 +465,7 @@ class A3CThread:
                              feed_dict={self._state_placeholder:state,
                                         self._keep_prob: 1.0 - dropout_prob}) ####DEBUG FOR DROPOUT
         softmax_a = softmax_a.flatten();
+
         if is_show_dbg:
             self._local_logger.debug('Policy network output: %s, sum to %0.04f'
                                  %(str(softmax_a), sum(softmax_a)));
@@ -463,6 +476,7 @@ class A3CThread:
             if imd_x <= 0.0:
                 selected_act = i;
                 return selected_act;
+        return (None, softmax_a); # Return if network output is not valid
     
 
 class A3CAgent:
