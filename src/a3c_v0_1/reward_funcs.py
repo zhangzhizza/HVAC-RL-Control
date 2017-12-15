@@ -658,7 +658,7 @@ def ppd_energy_reward_iw_timeRelated_v7(ob_next_prcd, e_weight, p_weight, ppd_pe
     else: # In occupy mode
         if normalized_ppd > 0.1:
             ppd_scale = 1.0 / (ppd_penalty_limit - 0.1);
-            comfort_rwd = -((normalized_ppd - 0.1) * ppd_scale)^2.0;
+            comfort_rwd = -((normalized_ppd - 0.1) * ppd_scale)**2.0;
         else:
             comfort_rwd = 0.0;
     # Energy reward
