@@ -266,6 +266,7 @@ class A3CEval:
             The average reward for each controlled zone. 
         """
         action_space = ACTION_MAP[action_space_name];
+        action_size = len(action_space)
         episode_counter = 1;
         average_reward = 0;
         #average_max_ppd = 0;
@@ -302,7 +303,7 @@ class A3CEval:
                 action_raw_tup = action_space[action_raw_idx];
             else:
                 # Select action returns None, indicating the net work output is not valid
-                random_act_idx = np.random.choice(self._action_size)
+                random_act_idx = np.random.choice(action_size)
                 action_raw_tup = action_space[random_act_idx];
                 self._local_logger.warning('!!!!!!!!!!!!!!!!!!WARNING!!!!!!!!!!!!!!!!!!\n'
                                            'Select action function returns None, indicating the network output may not be valid!\n'
