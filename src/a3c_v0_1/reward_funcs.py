@@ -614,7 +614,7 @@ def ppd_energy_reward_iw_timeRelated_v6(ob_next_prcd, e_weight, p_weight, ppd_pe
     ret = e_weight * energy_rwd + p_weight * comfort_rwd;
     return ret;
 
-def ppd_energy_reward_iw_timeRelated_v7(ob_next_prcd, e_weight, p_weight, ppd_penalty_limit):
+def ppd_energy_reward_iw_timeRelated_v7(ob_next_prcd, e_weight, p_weight, ppd_penalty_limit, stpt_violation_scl):
     """
     Get the reward from hvac energy and comfort level. If occupancy status is 0 (not 
     occupied), then the comfort level will be determined from the difference between 
@@ -652,7 +652,7 @@ def ppd_energy_reward_iw_timeRelated_v7(ob_next_prcd, e_weight, p_weight, ppd_pe
     # Determine the occupied period or not to determine the comfort reward
     if normalized_pct < 0.5: # Not in occupy mode
         if (normalized_iatssp_lg - normalized_iat) > 0: # IAT is colder than ssp by logics
-            comfort_rwd = - (normalized_iatssp_lg - normalized_iat) * 10.0
+            comfort_rwd = - (normalized_iatssp_lg - normalized_iat) * stpt_violation_scl
         else:
             comfort_rwd = 0.0;
     else: # In occupy mode
