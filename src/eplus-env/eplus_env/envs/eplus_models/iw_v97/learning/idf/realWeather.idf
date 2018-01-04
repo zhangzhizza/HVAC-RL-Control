@@ -15687,10 +15687,6 @@ EnergyManagementSystem:Sensor,
 !    iw_heatmode_sch,! Output:Variable or Output:Meter Index Key Name
 !    Schedule Value; ! Output:Variable or Output:Meter Name
 
-EnergyManagementSystem:Sensor,
-    IAT_EFFEC_STPT_sensor, !Name HWLoop demand inlet node temperature
-    IAT_EFFEC_STPT_sch,! Output:Variable or Output:Meter Index Key Name
-    Schedule Value; ! Output:Variable or Output:Meter Name 
 
 !-   ===========  ALL OBJECTS IN CLASS: EnergyManagementSystem:GlobalVariable ===========
 EnergyManagementSystem:GlobalVariable,
@@ -15910,7 +15906,7 @@ EnergyManagementSystem:Program,
 
 EnergyManagementSystem:Program,
     CalEffecStpt, !- Name Calculate effective indoor air temp stpt
-    SET IAT_EFFEC_STPT = IAT_EFFEC_STPT_sensor;
+    SET IAT_EFFEC_STPT = IAT_EFFEC_STPT_iw_logics;
     !IF IW_COOLMODE == 1,
     !  SET IAT_EFFEC_STPT = IAT_temp_stpt_base,
     !ELSEIF IW_HEATMODE == 1,
@@ -17356,7 +17352,7 @@ Schedule:Compact,
 Schedule:File,
    oat_2017,   !- Name
    Any Number,           !- ScheduleType
-/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.csv, !- File Name-eval_env
+/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v97/weather/x.csv, !- File Name-eval_env
    2,                    !- Column Number
    1,                    !- Rows to Skip at Top
    ,                 !- Number of Hours of Data
@@ -17367,7 +17363,7 @@ Schedule:File,
 Schedule:File,
    oah_2017,   !- Name
    Any Number,           !- ScheduleType
-/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.csv, !- File Name-eval_env
+/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v97/weather/x.csv, !- File Name-eval_env
    3,                    !- Column Number
    1,                    !- Rows to Skip at Top
    ,                 !- Number of Hours of Data
@@ -17378,7 +17374,7 @@ Schedule:File,
 Schedule:File,
    oadwp_2017,   !- Name
    Any Number,           !- ScheduleType
-/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.csv, !- File Name-eval_env
+/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v97/weather/x.csv, !- File Name-eval_env
    4,                    !- Column Number
    1,                    !- Rows to Skip at Top
    ,                 !- Number of Hours of Data
@@ -17389,7 +17385,7 @@ Schedule:File,
 Schedule:File,
    oawds_2017,   !- Name
    Any Number,           !- ScheduleType
-/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.csv, !- File Name-eval_env
+/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v97/weather/x.csv, !- File Name-eval_env
    5,                    !- Column Number
    1,                    !- Rows to Skip at Top
    ,                 !- Number of Hours of Data
@@ -17400,7 +17396,7 @@ Schedule:File,
 Schedule:File,
    oawdd_2017,   !- Name
    Any Number,           !- ScheduleType
-/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.csv, !- File Name-eval_env
+/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v97/weather/x.csv, !- File Name-eval_env
    6,                    !- Column Number
    1,                    !- Rows to Skip at Top
    ,                 !- Number of Hours of Data
@@ -17411,7 +17407,7 @@ Schedule:File,
 Schedule:File,
    solDir_2017,   !- Name
    Any Number,           !- ScheduleType
-/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.csv, !- File Name-eval_env
+/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v97/weather/x.csv, !- File Name-eval_env
    7,                    !- Column Number
    1,                    !- Rows to Skip at Top
    ,                 !- Number of Hours of Data
@@ -17422,7 +17418,7 @@ Schedule:File,
 Schedule:File,
    solDif_2017,   !- Name
    Any Number,           !- ScheduleType
-/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v96/weather/x.csv, !- File Name-eval_env
+/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/iw_v97/weather/x.csv, !- File Name-eval_env
    8,                    !- Column Number
    1,                    !- Rows to Skip at Top
    ,                 !- Number of Hours of Data

@@ -15651,10 +15651,6 @@ EnergyManagementSystem:Sensor,
 !    iw_heatmode_sch,! Output:Variable or Output:Meter Index Key Name
 !    Schedule Value; ! Output:Variable or Output:Meter Name
 
-EnergyManagementSystem:Sensor,
-    IAT_EFFEC_STPT_sensor, !Name HWLoop demand inlet node temperature
-    IAT_EFFEC_STPT_sch,! Output:Variable or Output:Meter Index Key Name
-    Schedule Value; ! Output:Variable or Output:Meter Name 
 
 !-   ===========  ALL OBJECTS IN CLASS: EnergyManagementSystem:GlobalVariable ===========
 EnergyManagementSystem:GlobalVariable,
@@ -15874,7 +15870,7 @@ EnergyManagementSystem:Program,
 
 EnergyManagementSystem:Program,
     CalEffecStpt, !- Name Calculate effective indoor air temp stpt
-    SET IAT_EFFEC_STPT = IAT_EFFEC_STPT_sensor;
+    SET IAT_EFFEC_STPT = IAT_EFFEC_STPT_iw_logics;
     !IF IW_COOLMODE == 1,
     !  SET IAT_EFFEC_STPT = IAT_temp_stpt_base,
     !ELSEIF IW_HEATMODE == 1,
