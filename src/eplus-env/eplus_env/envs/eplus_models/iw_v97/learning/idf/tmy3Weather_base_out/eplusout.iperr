@@ -1,0 +1,27 @@
+ ************* IDF Context for following error/warning message:
+ ************* Note -- lines truncated at 300 characters, if necessary...
+ *************  15744 EnergyManagementSystem:Program,
+ ************* indicated Name=CalcAvgNMaxPPD
+ ************* Only last 3 lines before error line shown.....
+ *************  15745     CalcAvgNMaxPPD, ! Name Calculate the average and max PPD of all zones.
+ *************  15746     !- Calculate average PPD
+ *************  15747     SET SumNumerator = seOff_ppd_sensor + swOff_ppd_sensor + neOff_ppd_sensor + nwOff_ppd_sensor + largeConf_ppd_sensor + central_ppd_sensor,
+ ** Warning ** IP: IDF line~15747 Alpha Argument length exceeds maximum, will be truncated=    SET SumNumerator = seOff_ppd_sensor + swOff_ppd_sensor + neOff_ppd_sensor + nwOff_ppd_sensor + largeConf_ppd_sensor + central_ppd_senso
+ **   ~~~   ** Will be processed as Alpha=SET SUMNUMERATOR = SEOFF_PPD_SENSOR + SWOFF_PPD_SENSOR + NEOFF_PPD_SENSOR + NWOFF_PPD_SENSOR + LARGECONF_PPD_SENSOR + CENTRAL_PPD_SENSOR
+ ************* IDF Context for following error/warning message:
+ ************* Note -- lines truncated at 300 characters, if necessary...
+ *************  16035 EnergyManagementSystem:Program,
+ ************* indicated Name=CtrlRadiantSys
+ ************* Only last 10 lines before error line shown.....
+ *************  16117             SET Heating_spw_stpt_PID = Heating_spw_stpt_PID + PID_Bias,
+ *************  16118             SET Heating_spw_stpt_PID = @MIN Heating_spw_stpt_PID PID_High,
+ *************  16119             SET Heating_spw_stpt_PID = @MAX Heating_spw_stpt_PID PID_Low,
+ *************  16120             SET stpt_high = 65,
+ *************  16121             !- calculate the OAT bias
+ *************  16122             SET day_oat_bias_stpt_high = 28.0,
+ *************  16123             SET day_oat_bias_stpt_low = 0.0,
+ *************  16124             SET day_oat_bias_oat_high = 7.2,
+ *************  16125             SET day_oat_bias_oat_low = -17.8,
+ *************  16126             SET day_oat_bias_stpt = day_oat_bias_stpt_high + (day_oat_bias_stpt_low - day_oat_bias_stpt_high)/(day_oat_bias_oat_high - day_oat_bias_oat_low) * (OAT - day_oat_bias_oat_low),
+ ** Warning ** IP: IDF line~16126 Alpha Argument length exceeds maximum, will be truncated=            SET day_oat_bias_stpt = day_oat_bias_stpt_high + (day_oat_bias_stpt_low - day_oat_bias_stpt_high)/(day_oat_bias_oat_high - day_oat_bias_oat_low) * (OAT - day_oat_bias_oat_low
+ **   ~~~   ** Will be processed as Alpha=SET DAY_OAT_BIAS_STPT = DAY_OAT_BIAS_STPT_HIGH + (DAY_OAT_BIAS_STPT_LOW - DAY_OAT_BIAS_STPT_HIGH)/(DAY_OAT_BIAS_OAT_HIGH - DAY_OAT_BIAS_OAT_LOW) * (OAT - DAY_OAT_BIAS_OAT_LOW)
