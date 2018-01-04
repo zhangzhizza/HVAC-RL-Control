@@ -220,4 +220,5 @@ act_func_dict = {'1':[mull_stpt_iw, act_limits_iw_1],
                 '4':[stpt_directSelect, act_limits_iw_2],
                 '5':[iw_iat_stpt_noExpHeatingOp, act_limits_iw_3],
                 '6':[iw_iat_stpt_noExpHeatingOp, act_limits_iw_4],
-                '7':[stpt_directSelect, act_limits_iw_4]}
+                '7':[stpt_directSelect, act_limits_iw_4],
+                '8':[stpt_directSelect, act_limits_iw_5]}
