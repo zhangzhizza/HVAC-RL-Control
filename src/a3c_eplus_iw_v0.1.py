@@ -40,7 +40,7 @@ def main():
     eval_action_func = act_func_dict[args.eval_act_func][0];
     eval_action_limits = act_func_dict[args.eval_act_func][1];
     raw_state_process_func = raw_state_process_iw;
-    effective_main(args, reward_func, rewardArgs, train_action_func, eval_act_func, train_action_limits, eval_action_limits, raw_state_process_func);
+    effective_main(args, reward_func, rewardArgs, train_action_func, eval_action_func, train_action_limits, eval_action_limits, raw_state_process_func);
         
 
 if __name__ == '__main__':
