@@ -1,0 +1,7 @@
+Using TensorFlow backend.
+Traceback (most recent call last):
+  File "../../a3c_eplus_iw_v0.1.py", line 42, in <module>
+    main()
+  File "../../a3c_eplus_iw_v0.1.py", line 35, in main
+    action_func = act_func_dict[args.act_func][0];
+KeyError: '9'
