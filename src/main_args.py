@@ -108,7 +108,7 @@ def get_args():
     	'Determines how many zones are controlled by the agent in the testing time.');
     return parser;
 
-def effective_main(args, reward_func, rewardArgs, action_func, action_limits, raw_state_process_func):
+def effective_main(args, reward_func, rewardArgs, train_action_func, eval_action_func, train_action_limits, eval_action_limits, raw_state_process_func):
     args.output = get_output_folder(args.output, args.env)
     tf.gfile.MakeDirs(args.output + '/model_data')
     args.num_threads = multiprocessing.cpu_count() if args.num_threads < 0\
@@ -148,8 +148,8 @@ def effective_main(args, reward_func, rewardArgs, action_func, action_limits, ra
         a3c_agent.fit(sess, coordinator, global_network, workers, 
                       global_summary_writer, global_saver, [args.env, args.test_env], args.train_freq,
                       args.gamma, args.rwd_e_para, args.rwd_p_para, args.save_freq, args.max_interactions,
-                      args.eval_epi_num, args.eval_freq, reward_func, rewardArgs, action_func, 
-                      action_limits, raw_state_process_func);
+                      args.eval_epi_num, args.eval_freq, reward_func, rewardArgs, train_action_func, eval_action_func,  
+                      train_action_limits, eval_action_limits, raw_state_process_func);
 
     if args.job_mode.lower() == 'test':
         main_logger.info ('Start the testing...')
