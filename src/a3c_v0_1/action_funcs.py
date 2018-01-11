@@ -206,7 +206,7 @@ def stpt_directSelect_withHeuristics(action_raw, stptLmt, ob_this_raw):
     iatlg_cur = ob_this_raw[IATLG_RAW_IDX]
     ocp_cur = ob_this_raw[OCP_RAW_IDX]
     # If during unoccupied hour (IAT - IATLG) < -3, if during occupied hour PPD > 0.2
-    if ((iat_cur - iatlg_cur) < 3.0 and ocp_cur == 0) or ((ppd_cur > 0.3 and ocp_cur == 1 and (iat_cur < iatlg_cur))):
+    if ((iat_cur - iatlg_cur) < -3.0 and ocp_cur == 0) or ((ppd_cur > 0.3 and ocp_cur == 1 and (iat_cur < iatlg_cur))):
         res_oae_ssp = oat_cur + 5.0;
         res_swt_ssp = stptLmt[1][1];
     else:
