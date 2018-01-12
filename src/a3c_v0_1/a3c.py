@@ -293,6 +293,7 @@ class A3CThread:
                     # Select action returns None, indicating the net work output is not valid
                     random_act_idx = np.random.choice(self._action_size)
                     action_raw_tup = action_space[random_act_idx];
+                    action_raw_idx = random_act_idx;
                     self._local_logger.warning('!!!!!!!!!!!!!!!!!!WARNING!!!!!!!!!!!!!!!!!!\n'
                                                'Select action function returns None, indicating the network output may not be valid!\n'
                                                'Network output is %s.'
@@ -300,7 +301,7 @@ class A3CThread:
                                                '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
                                                %(action_raw_out[1], random_act_idx));
                 
-                action_stpt_prcd, action_effec = train_action_func(action_raw_tup, train_action_limits, ob_this_raw);
+                action_stpt_prcd, action_effect_idx = train_action_func(action_raw_tup, action_raw_idx, train_action_limits, ob_this_raw);
                 action_stpt_prcd = list(action_stpt_prcd);
                 # Take the action
                 time_next, ob_next_raw, is_terminal = env_interact_wrapper.step(action_stpt_prcd);
@@ -325,7 +326,7 @@ class A3CThread:
                                          'processed observation next is %s, \n'
                                          'reward next is %0.04f. \n'
                                          '============================================='
-                                         %(current_hregu, action_raw_idx, ob_this_raw[0: noForecastDim],
+                                         %(current_hregu, action_effect_idx, ob_this_raw[0: noForecastDim],
                                            np.insert(np.array(ob_this_raw[noForecastDim:]).astype('str'),
                                             range(0, (len(ob_this_raw) - noForecastDim), forecastSingleEntryDim), 'Next Hour'),
                                            str(action_stpt_prcd), time_this, time_next, 
@@ -336,7 +337,7 @@ class A3CThread:
                 ob_next_hist_prcd = self._histProcessor.\
                             process_state_for_network(ob_next_prcd) # 2-D array
                 # Remember the trajectory 
-                trajectory_list.append((ob_this_hist_prcd, action_raw_idx, 
+                trajectory_list.append((ob_this_hist_prcd, action_effect_idx, 
                                         reward_next)) 
                 
                 # Update local counter and global counter, do eval
