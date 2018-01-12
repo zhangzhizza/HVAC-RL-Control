@@ -142,7 +142,7 @@ def mull_stpt_noExpTurnOffMullOP(action_raw, stptLmt, ob_this_raw):
     return ((res_oae_ssp, res_swt_ssp),
                 (action_raw[0], res_swt_ssp - swt_ssp_cur)) 
 
-def stpt_directSelect(action_raw, stptLmt, ob_this_raw):
+def stpt_directSelect(action_raw, action_raw_idx, stptLmt, ob_this_raw):
     """
     Transfer the mull op to OAE setpoint.
     Check whether the action is legal, which is swt ssp must be within the range of stptLmt.
@@ -174,9 +174,9 @@ def stpt_directSelect(action_raw, stptLmt, ob_this_raw):
     res_oae_ssp = max(min(res_oae_ssp, stptLmt[0][1]), stptLmt[0][0]);
 
     return ((res_oae_ssp, res_swt_ssp),
-                (action_raw[0], res_swt_ssp)) 
+                (action_raw_idx)) 
 
-def stpt_directSelect_withHeuristics(action_raw, stptLmt, ob_this_raw):
+def stpt_directSelect_withHeuristics(action_raw, action_raw_idx, stptLmt, ob_this_raw):
     """
     Transfer the mull op to OAE setpoint.
     Check whether the action is legal, which is swt ssp must be within the range of stptLmt.
@@ -206,9 +206,10 @@ def stpt_directSelect_withHeuristics(action_raw, stptLmt, ob_this_raw):
     iatlg_cur = ob_this_raw[IATLG_RAW_IDX]
     ocp_cur = ob_this_raw[OCP_RAW_IDX]
     # If during unoccupied hour (IAT - IATLG) < -3, if during occupied hour PPD > 0.2
-    if ((iat_cur - iatlg_cur) < 3.0 and ocp_cur == 0) or ((ppd_cur > 0.3 and ocp_cur == 1)):
+    if ((iat_cur - iatlg_cur) < -3.0 and ocp_cur == 0) or ((ppd_cur > 30 and ocp_cur == 1 and (iat_cur < iatlg_cur))):
         res_oae_ssp = oat_cur + 5.0;
         res_swt_ssp = stptLmt[1][1];
+        effectiveActIdx = 10;
     else:
         # Get the next step SWT ssp
         res_swt_ssp = action_raw[0];
@@ -217,11 +218,12 @@ def stpt_directSelect_withHeuristics(action_raw, stptLmt, ob_this_raw):
             res_oae_ssp = oat_cur - 5.0; # If res_swt_ssp < lower limit, set OAE setpoint < next step OAT, mull op is off
         else:
             res_oae_ssp = oat_cur + 5.0; # If res_swt_ssp >= lower limit, set OAE setpoint > next step OAT, mull op is on
-        # Set all action into limits
+        effectiveActIdx = action_raw_idx
+    # Set all action into limits
     res_oae_ssp = max(min(res_oae_ssp, stptLmt[0][1]), stptLmt[0][0]);
 
     return ((res_oae_ssp, res_swt_ssp),
-                (action_raw[0], res_swt_ssp)) 
+                (effectiveActIdx)) 
 
 def iw_iat_stpt_noExpHeatingOp(action_raw, stptLmt, ob_this_raw):
     """
