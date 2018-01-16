@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.01.11 23:37
+Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.01.15 21:20
 ! This file shows details about the branches, nodes, and other
 ! elements of the flow connections.
 ! This file is intended for use in "debugging" potential problems
@@ -8,7 +8,7 @@ Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.01.11 23:37
 ! schematic diagram of the HVAC system.
 ! ===============================================================
 ! #Nodes,<Number of Unique Nodes>
- #Nodes,36
+ #Nodes,37
 ! <Node>,<NodeNumber>,<Node Name>,<Node Fluid Type>,<# Times Node Referenced After Definition>
  Node,1,OUTSIDE AIR INLET NODE 1,Air,3
  Node,2,SPACE1-1 IN NODE,Air,4
@@ -16,46 +16,47 @@ Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.01.11 23:37
  Node,4,SPACE3-1 IN NODE,Air,4
  Node,5,SPACE4-1 IN NODE,Air,4
  Node,6,SPACE5-1 IN NODE,Air,4
- Node,7,VAV SYS 1 OUTLET NODE,Air,6
+ Node,7,VAV SYS 1 OUTLET NODE,Air,7
  Node,8,MIXED AIR NODE 1,Air,7
  Node,9,MAIN COOLING COIL 1 OUTLET NODE,Air,7
- Node,10,MAIN HEATING COIL 1 OUTLET NODE,Air,6
+ Node,10,MAIN HEATING COIL 2 OUTLET NODE,Air,2
  Node,11,VAV SYS 1 INLET NODE,Air,3
- Node,12,MAIN COOLING COIL 1 CONDENSER NODE,Air,1
- Node,13,SPACE1-1 NODE,Air,0
- Node,14,SPACE1-1 OUT NODE,Air,1
- Node,15,SPACE2-1 NODE,Air,0
- Node,16,SPACE2-1 OUT NODE,Air,1
- Node,17,SPACE3-1 NODE,Air,0
- Node,18,SPACE3-1 OUT NODE,Air,1
- Node,19,SPACE4-1 NODE,Air,0
- Node,20,SPACE4-1 OUT NODE,Air,1
- Node,21,SPACE5-1 NODE,Air,0
- Node,22,SPACE5-1 OUT NODE,Air,1
- Node,23,ZONE EQ IN NODE,Air,2
- Node,24,PLENUM-1 OUT NODE,Air,2
- Node,25,SPACE1-1 ATU IN NODE,Air,1
- Node,26,SPACE2-1 ATU IN NODE,Air,1
- Node,27,SPACE3-1 ATU IN NODE,Air,1
- Node,28,SPACE4-1 ATU IN NODE,Air,1
- Node,29,SPACE5-1 ATU IN NODE,Air,1
- Node,30,SPACE1-1 ZONE COIL AIR IN NODE,Air,1
- Node,31,SPACE2-1 ZONE COIL AIR IN NODE,Air,1
- Node,32,SPACE3-1 ZONE COIL AIR IN NODE,Air,1
- Node,33,SPACE4-1 ZONE COIL AIR IN NODE,Air,1
- Node,34,SPACE5-1 ZONE COIL AIR IN NODE,Air,1
- Node,35,PLENUM-1 NODE,Air,0
- Node,36,RELIEF AIR OUTLET NODE 1,Air,1
+ Node,12,MAIN HEATING COIL 1 OUTLET NODE,Air,3
+ Node,13,MAIN COOLING COIL 1 CONDENSER NODE,Air,1
+ Node,14,SPACE1-1 NODE,Air,0
+ Node,15,SPACE1-1 OUT NODE,Air,1
+ Node,16,SPACE2-1 NODE,Air,0
+ Node,17,SPACE2-1 OUT NODE,Air,1
+ Node,18,SPACE3-1 NODE,Air,0
+ Node,19,SPACE3-1 OUT NODE,Air,1
+ Node,20,SPACE4-1 NODE,Air,0
+ Node,21,SPACE4-1 OUT NODE,Air,1
+ Node,22,SPACE5-1 NODE,Air,0
+ Node,23,SPACE5-1 OUT NODE,Air,1
+ Node,24,ZONE EQ IN NODE,Air,2
+ Node,25,PLENUM-1 OUT NODE,Air,2
+ Node,26,SPACE1-1 ATU IN NODE,Air,1
+ Node,27,SPACE2-1 ATU IN NODE,Air,1
+ Node,28,SPACE3-1 ATU IN NODE,Air,1
+ Node,29,SPACE4-1 ATU IN NODE,Air,1
+ Node,30,SPACE5-1 ATU IN NODE,Air,1
+ Node,31,SPACE1-1 ZONE COIL AIR IN NODE,Air,1
+ Node,32,SPACE2-1 ZONE COIL AIR IN NODE,Air,1
+ Node,33,SPACE3-1 ZONE COIL AIR IN NODE,Air,1
+ Node,34,SPACE4-1 ZONE COIL AIR IN NODE,Air,1
+ Node,35,SPACE5-1 ZONE COIL AIR IN NODE,Air,1
+ Node,36,PLENUM-1 NODE,Air,0
+ Node,37,RELIEF AIR OUTLET NODE 1,Air,1
 ! ===============================================================
 ! Suspicious nodes have 0 references.  It is normal for some nodes, however.
 ! Listing nodes with 0 references (culled from previous list):
 ! <Suspicious Node>,<NodeNumber>,<Node Name>,<Node Fluid Type>,<# Times Node Referenced After Definition>
- Suspicious Node,13,SPACE1-1 NODE,Air,0
- Suspicious Node,15,SPACE2-1 NODE,Air,0
- Suspicious Node,17,SPACE3-1 NODE,Air,0
- Suspicious Node,19,SPACE4-1 NODE,Air,0
- Suspicious Node,21,SPACE5-1 NODE,Air,0
- Suspicious Node,35,PLENUM-1 NODE,Air,0
+ Suspicious Node,14,SPACE1-1 NODE,Air,0
+ Suspicious Node,16,SPACE2-1 NODE,Air,0
+ Suspicious Node,18,SPACE3-1 NODE,Air,0
+ Suspicious Node,20,SPACE4-1 NODE,Air,0
+ Suspicious Node,22,SPACE5-1 NODE,Air,0
+ Suspicious Node,36,PLENUM-1 NODE,Air,0
 ! ===============================================================
 ! <#Branch Lists>,<Number of Branch Lists>
  #Branch Lists,1
@@ -120,14 +121,14 @@ Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.01.11 23:37
  #Outdoor Air Nodes,2
 ! <Outdoor Air Node>,<NodeNumber>,<Node Name>
  Outdoor Air Node,1,OUTSIDE AIR INLET NODE 1
- Outdoor Air Node,12,MAIN COOLING COIL 1 CONDENSER NODE
+ Outdoor Air Node,13,MAIN COOLING COIL 1 CONDENSER NODE
 ! ===============================================================
 ! <#Component Sets>,<Number of Component Sets>
- #Component Sets,17
+ #Component Sets,16
 ! <Component Set>,<Component Set Count>,<Parent Object Type>,<Parent Object Name>,<Component Type>,<Component Name>,<Inlet Node ID>,<Outlet Node ID>,<Description>
  Component Set,1,BRANCH,VAV SYS 1 MAIN BRANCH,AIRLOOPHVAC:OUTDOORAIRSYSTEM,OA SYS 1,VAV SYS 1 INLET NODE,MIXED AIR NODE 1,Air Nodes
  Component Set,2,BRANCH,VAV SYS 1 MAIN BRANCH,COILSYSTEM:COOLING:DX,DX COOLING COIL SYSTEM 1,MIXED AIR NODE 1,MAIN COOLING COIL 1 OUTLET NODE,Air Nodes
- Component Set,3,BRANCH,VAV SYS 1 MAIN BRANCH,COILSYSTEM:HEATING:DX,DX HEATING COIL SYSTEM 1,MAIN COOLING COIL 1 OUTLET NODE,MAIN HEATING COIL 1 OUTLET NODE,Air Nodes
+ Component Set,3,BRANCH,VAV SYS 1 MAIN BRANCH,COIL:HEATING:GAS,MAIN HEATING COIL GAS,MAIN COOLING COIL 1 OUTLET NODE,MAIN HEATING COIL 1 OUTLET NODE,Air Nodes
  Component Set,4,BRANCH,VAV SYS 1 MAIN BRANCH,FAN:VARIABLEVOLUME,SUPPLY FAN 1,MAIN HEATING COIL 1 OUTLET NODE,VAV SYS 1 OUTLET NODE,Air Nodes
  Component Set,5,ZONEHVAC:AIRDISTRIBUTIONUNIT,SPACE1-1 ATU,AIRTERMINAL:SINGLEDUCT:VAV:REHEAT,SPACE1-1 VAV REHEAT,SPACE1-1 ATU IN NODE,SPACE1-1 IN NODE,Air Nodes
  Component Set,6,ZONEHVAC:AIRDISTRIBUTIONUNIT,SPACE2-1 ATU,AIRTERMINAL:SINGLEDUCT:VAV:REHEAT,SPACE2-1 VAV REHEAT,SPACE2-1 ATU IN NODE,SPACE2-1 IN NODE,Air Nodes
@@ -140,8 +141,7 @@ Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.01.11 23:37
  Component Set,13,AIRTERMINAL:SINGLEDUCT:VAV:REHEAT,SPACE4-1 VAV REHEAT,COIL:HEATING:ELECTRIC,SPACE4-1 ZONE COIL,SPACE4-1 ZONE COIL AIR IN NODE,SPACE4-1 IN NODE,Air Nodes
  Component Set,14,AIRTERMINAL:SINGLEDUCT:VAV:REHEAT,SPACE5-1 VAV REHEAT,COIL:HEATING:ELECTRIC,SPACE5-1 ZONE COIL,SPACE5-1 ZONE COIL AIR IN NODE,SPACE5-1 IN NODE,Air Nodes
  Component Set,15,AIRLOOPHVAC:OUTDOORAIRSYSTEM,OA SYS 1,OUTDOORAIR:MIXER,OA MIXING BOX 1,OUTSIDE AIR INLET NODE 1,MIXED AIR NODE 1,Air Nodes
- Component Set,16,COILSYSTEM:HEATING:DX,DX HEATING COIL SYSTEM 1,COIL:HEATING:DX:SINGLESPEED,MAIN HEATING COIL 1,MAIN COOLING COIL 1 OUTLET NODE,MAIN HEATING COIL 1 OUTLET NODE,Air Nodes
- Component Set,17,COILSYSTEM:COOLING:DX,DX COOLING COIL SYSTEM 1,COIL:COOLING:DX:TWOSPEED,MAIN COOLING COIL 1,MIXED AIR NODE 1,MAIN COOLING COIL 1 OUTLET NODE,Air Nodes
+ Component Set,16,COILSYSTEM:COOLING:DX,DX COOLING COIL SYSTEM 1,COIL:COOLING:DX:TWOSPEED,MAIN COOLING COIL 1,MIXED AIR NODE 1,MAIN COOLING COIL 1 OUTLET NODE,Air Nodes
 ! ===============================================================
 ! <# Plant Loops>,<Number of Plant Loops>
  #Plant Loops,0
@@ -204,8 +204,8 @@ Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.01.11 23:37
 ! <AirLoopHVAC Connector Branches>,<Connector Node Count>,<Connector Type>,<Connector Name>,<Inlet Branch>,<Outlet Branch>,<Loop Name>,<Loop Type>
 ! <AirLoopHVAC Connector Nodes>,<Connector Node Count>,<Connector Type>,<Connector Name>,<Inlet Node>,<Outlet Node>,<Loop Name>,<Loop Type>
  AirLoopHVAC,VAV SYS 1,1,1,5,0,Yes
-   AirLoop Return Connections,1,VAV SYS 1,24,PLENUM-1 OUT NODE,11,VAV SYS 1 INLET NODE
-   AirLoop Supply Connections,1,VAV SYS 1,23,ZONE EQ IN NODE,7,VAV SYS 1 OUTLET NODE
+   AirLoop Return Connections,1,VAV SYS 1,25,PLENUM-1 OUT NODE,11,VAV SYS 1 INLET NODE
+   AirLoop Supply Connections,1,VAV SYS 1,24,ZONE EQ IN NODE,7,VAV SYS 1 OUTLET NODE
    Cooled Zone Info,1,SPACE1-1,2,SPACE1-1 IN NODE,VAV SYS 1
    Cooled Zone Info,2,SPACE2-1,3,SPACE2-1 IN NODE,VAV SYS 1
    Cooled Zone Info,3,SPACE3-1,4,SPACE3-1 IN NODE,VAV SYS 1
@@ -242,15 +242,15 @@ Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.01.11 23:37
  Parent Node Connection,MAIN COOLING COIL 1 OUTLET NODE,COILSYSTEM:COOLING:DX,DX COOLING COIL SYSTEM 1,Sensor,1
 ! ===============================================================
 ! <#Non-Parent Node Connections>,<Number of Non-Parent Node Connections>
- #Non-Parent Node Connections,71
+ #Non-Parent Node Connections,72
 ! <Non-Parent Node Connection>,<Node Name>,<Node ObjectType>,<Node ObjectName>,<Node ConnectionType>,<Node FluidStream>
  Non-Parent Node Connection,OUTSIDE AIR INLET NODE 1,OUTDOORAIR:NODELIST,OutdoorAir:NodeList,OutdoorAir,1
  Non-Parent Node Connection,MAIN COOLING COIL 1 CONDENSER NODE,OUTDOORAIR:NODE,OutdoorAir:Node,OutdoorAir,2
  Non-Parent Node Connection,VAV SYS 1 OUTLET NODE,SETPOINTMANAGER:MIXEDAIR,MIXED AIR AND COIL EXIT TEMP MANAGER 1,Sensor,1
- Non-Parent Node Connection,MAIN HEATING COIL 1 OUTLET NODE,SETPOINTMANAGER:MIXEDAIR,MIXED AIR AND COIL EXIT TEMP MANAGER 1,Sensor,1
+ Non-Parent Node Connection,MAIN HEATING COIL 2 OUTLET NODE,SETPOINTMANAGER:MIXEDAIR,MIXED AIR AND COIL EXIT TEMP MANAGER 1,Sensor,1
  Non-Parent Node Connection,MIXED AIR NODE 1,SETPOINTMANAGER:MIXEDAIR,MIXED AIR AND COIL EXIT TEMP MANAGER 1,Setpoint,1
  Non-Parent Node Connection,MAIN COOLING COIL 1 OUTLET NODE,SETPOINTMANAGER:MIXEDAIR,MIXED AIR AND COIL EXIT TEMP MANAGER 1,Setpoint,1
- Non-Parent Node Connection,MAIN HEATING COIL 1 OUTLET NODE,SETPOINTMANAGER:MIXEDAIR,MIXED AIR AND COIL EXIT TEMP MANAGER 1,Setpoint,1
+ Non-Parent Node Connection,MAIN HEATING COIL 2 OUTLET NODE,SETPOINTMANAGER:MIXEDAIR,MIXED AIR AND COIL EXIT TEMP MANAGER 1,Setpoint,1
  Non-Parent Node Connection,VAV SYS 1 OUTLET NODE,SETPOINTMANAGER:WARMEST,SUPPLY AIR TEMP MANAGER 1,Setpoint,1
  Non-Parent Node Connection,SPACE1-1 NODE,ZONEHVAC:EQUIPMENTCONNECTIONS,SPACE1-1,ZoneNode,1
  Non-Parent Node Connection,SPACE1-1 OUT NODE,ZONEHVAC:EQUIPMENTCONNECTIONS,SPACE1-1,ZoneReturn,1
@@ -293,6 +293,9 @@ Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.01.11 23:37
  Non-Parent Node Connection,SPACE4-1 IN NODE,COIL:HEATING:ELECTRIC,SPACE4-1 ZONE COIL,Outlet,1
  Non-Parent Node Connection,SPACE5-1 ZONE COIL AIR IN NODE,COIL:HEATING:ELECTRIC,SPACE5-1 ZONE COIL,Inlet,1
  Non-Parent Node Connection,SPACE5-1 IN NODE,COIL:HEATING:ELECTRIC,SPACE5-1 ZONE COIL,Outlet,1
+ Non-Parent Node Connection,MAIN COOLING COIL 1 OUTLET NODE,COIL:HEATING:GAS,MAIN HEATING COIL GAS,Inlet,1
+ Non-Parent Node Connection,MAIN HEATING COIL 1 OUTLET NODE,COIL:HEATING:GAS,MAIN HEATING COIL GAS,Outlet,1
+ Non-Parent Node Connection,VAV SYS 1 OUTLET NODE,COIL:HEATING:GAS,MAIN HEATING COIL GAS,Sensor,1
  Non-Parent Node Connection,PLENUM-1 NODE,AIRLOOPHVAC:RETURNPLENUM,RETURN-PLENUM-1,ZoneNode,1
  Non-Parent Node Connection,PLENUM-1 OUT NODE,AIRLOOPHVAC:RETURNPLENUM,RETURN-PLENUM-1,Outlet,1
  Non-Parent Node Connection,SPACE1-1 OUT NODE,AIRLOOPHVAC:RETURNPLENUM,RETURN-PLENUM-1,Inlet,1
@@ -310,8 +313,6 @@ Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.01.11 23:37
  Non-Parent Node Connection,OUTSIDE AIR INLET NODE 1,CONTROLLER:OUTDOORAIR,OA CONTROLLER 1,Actuator,1
  Non-Parent Node Connection,RELIEF AIR OUTLET NODE 1,CONTROLLER:OUTDOORAIR,OA CONTROLLER 1,Actuator,1
  Non-Parent Node Connection,VAV SYS 1 INLET NODE,CONTROLLER:OUTDOORAIR,OA CONTROLLER 1,Sensor,1
- Non-Parent Node Connection,MAIN COOLING COIL 1 OUTLET NODE,COIL:HEATING:DX:SINGLESPEED,MAIN HEATING COIL 1,Inlet,1
- Non-Parent Node Connection,MAIN HEATING COIL 1 OUTLET NODE,COIL:HEATING:DX:SINGLESPEED,MAIN HEATING COIL 1,Outlet,1
  Non-Parent Node Connection,MIXED AIR NODE 1,COIL:COOLING:DX:TWOSPEED,MAIN COOLING COIL 1,Inlet,1
  Non-Parent Node Connection,MAIN COOLING COIL 1 OUTLET NODE,COIL:COOLING:DX:TWOSPEED,MAIN COOLING COIL 1,Outlet,1
  Non-Parent Node Connection,MAIN COOLING COIL 1 CONDENSER NODE,COIL:COOLING:DX:TWOSPEED,MAIN COOLING COIL 1,OutsideAirReference,1

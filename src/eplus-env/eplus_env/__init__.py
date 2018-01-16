@@ -445,7 +445,7 @@ register(
             'bcvtb_path':FD + '/envs/bcvtb/',
             'variable_path':FD + '/envs/eplus_models/iw_v97/learning/cfg/tmy3Weather.cfg',
             'idf_path':FD + '/envs/eplus_models/iw_v97/learning/idf/tmy3Weather.idf',
-            'env_name': 'IW-tmy3Weather-v9601',
+            'env_name': 'IW-tmy3Weather-v9701',
             'min_max_limits': MIN_MAX_LIMITS_DICT['IW-tmy3Weather-v9701'],
             'incl_forecast': False,
             'forecastRandMode': 'normal',
@@ -472,6 +472,24 @@ register(
             'forecastFilePath': None,
             'forecast_hour': 12,
             'act_repeat': 3});
+
+register(
+    id='5z-tmy3Weather-v1',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-3-0/',
+            'weather_path':FD + '/envs/weather/pittsburgh.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/eplus_models/5z_v1/learning/cfg/5ZoneAutoDXVAV_v1.cfg',
+            'idf_path':FD + '/envs/eplus_models/5z_v1/learning/idf/5ZoneAutoDXVAV_v1.idf',
+            'env_name': '5z-tmy3Weather-v1',
+            'min_max_limits': MIN_MAX_LIMITS_DICT['5z-tmy3Weather-v1'],
+            'incl_forecast': False,
+            'forecastRandMode': 'tmy3',
+            'forecastRandStd': 0.15,
+            'forecastSource': None,
+            'forecastFilePath': None,
+            'forecast_hour': 12,
+            'act_repeat': 1});
 
 
 def setSchedulePath(sch_path_dict, tgtIDFPath):
