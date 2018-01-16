@@ -409,7 +409,7 @@ register(
             'bcvtb_path':FD + '/envs/bcvtb/',
             'variable_path':FD + '/envs/eplus_models/iw_v97/learning/cfg/tmy3Weather.cfg',
             'idf_path':FD + '/envs/eplus_models/iw_v97/learning/idf/tmy3Weather.idf',
-            'env_name': 'IW-tmy3Weather-v9606',
+            'env_name': 'IW-tmy3Weather-v9706',
             'min_max_limits': MIN_MAX_LIMITS_DICT['IW-tmy3Weather-v9706'],
             'incl_forecast': False,
             'forecastRandMode': 'normal',
