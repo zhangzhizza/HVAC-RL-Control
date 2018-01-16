@@ -11,11 +11,11 @@
   Processing Input Data File -- Complete
   Maximum number of Alpha IDF Args=          29
   Maximum number of Numeric IDF Args=          26
-  Number of IDF "Lines"=         293
-  Number of Defaulted Fields=          39
-  Number of Fields with Defaults=         674
-  Number of Autosized Fields=          26
-  Number of Autosizable Fields =          36
+  Number of IDF "Lines"=         292
+  Number of Defaulted Fields=          38
+  Number of Fields with Defaults=         666
+  Number of Autosized Fields=          25
+  Number of Autosizable Fields =          34
   Number of Autocalculated Fields=           6
   Number of Autocalculatable Fields =         121
  Getting object=VERSION
@@ -83,6 +83,7 @@
  Getting object=ZONEHVAC:AIRDISTRIBUTIONUNIT
  Getting object=AIRTERMINAL:SINGLEDUCT:VAV:REHEAT
  Getting object=COIL:HEATING:ELECTRIC
+ Getting object=COIL:HEATING:GAS
  Getting object=AIRLOOPHVAC:RETURNPLENUM
  Getting object=AIRLOOPHVAC
  Getting object=AIRLOOPHVAC:CONTROLLERLIST
@@ -94,9 +95,7 @@
  Getting object=FAN:VARIABLEVOLUME
  Getting object=CONTROLLER:OUTDOORAIR
  Getting object=COILSYSTEM:COOLING:DX
- Getting object=COIL:HEATING:DX:SINGLESPEED
  Getting object=COIL:COOLING:DX:TWOSPEED
- Getting object=COILSYSTEM:HEATING:DX
  Getting object=OUTPUTCONTROL:TABLE:STYLE
  MonthlyInputCount=           0
  sizeMonthlyInput=           0
@@ -111,11 +110,11 @@
  sizeColumnTag=         800
  numColumnTag=         406
  sizeTableEntry=        1600
- numTableEntry=        1505
+ numTableEntry=        1515
  sizeCompSizeTableEntry=         100
- numCompSizeTableEntry=          26
- NumOfRVariable=        4864
- NumOfRVariable(Total)=        4864
+ numCompSizeTableEntry=          23
+ NumOfRVariable=        4882
+ NumOfRVariable(Total)=        4882
  NumOfRVariable(Actual)=          81
  NumOfRVariable(Summed)=          49
  NumOfRVariable(Meter)=          49
@@ -125,7 +124,7 @@
  NumOfIVariable(Summed)=           0
  MaxRVariable=        1000
  MaxIVariable=          10
- NumEnergyMeters=          68
+ NumEnergyMeters=          71
  NumVarMeterArrays=          49
  maxUniqueKeyCount=        1500
  maxNumberOfFigures=           3
@@ -138,10 +137,10 @@
  NumConsideredOutputVariables=          34
  MaxConsideredOutputVariables=          34
  numActuatorsUsed=           0
- numEMSActuatorsAvailable=         676
+ numEMSActuatorsAvailable=         685
  maxEMSActuatorsAvailable=        1000
  numInternalVariablesUsed=           0
  numEMSInternalVarsAvailable=         153
  maxEMSInternalVarsAvailable=        1000
- NumOfNodeConnections=          95
+ NumOfNodeConnections=          96
  MaxNumOfNodeConnections=        1000

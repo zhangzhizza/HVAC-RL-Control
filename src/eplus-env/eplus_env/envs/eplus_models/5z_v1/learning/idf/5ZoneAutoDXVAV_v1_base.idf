@@ -2,7 +2,7 @@
 !-Option OriginalOrderTop UseSpecialFormat
 !-NOTE: All comments with '!-' are ignored by the IDFEditor and are generated automatically.
 !-      Use '!' comments if they need to be retained when using the IDFEditor.
-! 5ZoneAutoDXVAV.idf
+! FZoneAutoDXVAV.idf
 ! Basic file description:  1 story building divided into 4 exterior and one interior conditioned zones and return plenum.
 !
 ! Highlights:              packaged VAV system with variable speed compressor
@@ -2737,8 +2737,8 @@ SizingPeriod:DesignDay,
     Mixed Air Node 1,        !- Component 2 Inlet Node Name
     Main Cooling Coil 1 Outlet Node,  !- Component 2 Outlet Node Name
     ,                  !- Comp1 Branch Control Type
-    CoilSystem:Heating:DX,       !- Component 3 Object Type
-    DX Heating Coil System 1,     !- Component 3 Name
+    Coil:Heating:Gas,       !- Component 3 Object Type
+    Main Heating Coil Gas,     !- Component 3 Name
     Main Cooling Coil 1 Outlet Node,  !- Component 3 Inlet Node Name
     Main Heating Coil 1 Outlet Node,  !- Component 3 Outlet Node Name
     ,                  !- Comp1 Branch Control Type
@@ -2815,40 +2815,19 @@ SizingPeriod:DesignDay,
     2,                       !- Basin Heater Setpoint Temperature {C}
     BasinHeaterSched;        !- Basin Heater Operating Schedule Name
 
-CoilSystem:Heating:DX,
-    DX Heating Coil System 1, !- Name
-    HeatingCoilAvailSched , !- Availability Schedule Name !Add
-    Coil:Heating:DX:SingleSpeed,  !- Heating Coil Object Type
-    Main Heating Coil 1;  !- Heating Coil Name
-
-Coil:Heating:DX:SingleSpeed,
-  Main Heating Coil 1,   ! Name of heating coil
-  HeatingCoilAvailSched,          ! Heating coil schedule
-  autosize,                         ! Gross Rated Heating Capacity
-  2.75,                          ! Gross Rated Heating COP
-  autosize,                           !rated air flow rate (m3/s)
-  ,                            !rated evaporator fan power per volume flow rate (m3/s)
-  Main Cooling Coil 1 Outlet Node,   !heating coil air side inlet node
-  Main Heating Coil 1 Outlet Node, !Heating coil air side outlet node
-  HPACHeatCapFT,   ! heating cap modifier curve (temperature, C)
-  HPACHeatCapFFF,  ! heating cap modifier curve (flow fraction)
-  HPACHeatEIRFT,   ! energy input ratio modifier curve (temperature, C)
-  HPACHeatEIRFFF,  ! energy input ratio modifier curve (flow fraction)
-  HPACCOOLPLFFPLR, ! part load fraction modifier curve (function of part load ratio)
-  ,         ! defrost EIR modifier curve (temp, C) not required for resistive defrost
-  -5.0,            ! minimum OAT for compressor operation  (C)
-  ,                ! outdoor dry-bulb temperature to turn on compressor  (C)
-  5.0,             ! maximum outdoor dry-bulb temp for defrost operation (C)
-  200.0,           ! Crankcase heater capacity (W)
-  10.0,            ! Maximum outdoor temp for crankcase heater operation (C)
-  Resistive,       ! Defrost strategy (resistive or reverse-cycle)
-  Timed,           ! Defrost control (timed or on-demand)
-  0.166667,       ! Defrost time period fraction (used for timed defrost control only)
-  20000;! Resistive defrost heater capacity (used for resistive defrost strategy only)
 
   OutdoorAir:Node,
     Main Cooling Coil 1 Condenser Node,  !- Name
     -1.0;                    !- Height Above Ground {m}
+
+Coil:Heating:Gas,
+    Main Heating Coil Gas,            !- Name
+    HeatingCoilAvailSched,    !- Availability Schedule Name
+    0.8,                     !- Gas Burner Efficiency
+    autosize,                   !- Nominal Capacity {W}
+    Main Cooling Coil 1 Outlet Node,   !heating coil air side inlet node
+  Main Heating Coil 1 Outlet Node, !Heating coil air side outlet node
+    VAV Sys 1 Outlet Node;  !- Temperature Setpoint Node Name
 
   !Coil:Heating:Electric,
   !  Main heating Coil 1,     !- Name
@@ -2906,17 +2885,24 @@ Coil:Heating:DX:SingleSpeed,
     MaximumTemperature,      !- Strategy
     Supply Air Temp Nodes 1; !- Setpoint Node or NodeList Name
 
+
   !SetpointManager:Scheduled,
   !  Supply Air Temp Manager 1,  !- Name
   !  Temperature,                !- Control Variable
   !  vavSupplyAirTempStpt,  !- Schedule Name
   !  Supply Air Temp Nodes 1;      !- Setpoint Node or NodeList Name
 
+  !SetpointManager:Scheduled,
+  !  Supply Air Temp Manager 2,  !- Name
+  !  Temperature,                !- Control Variable
+  !  vavSupplyAirTempStpt,  !- Schedule Name
+  !  Main Heating Coil 1 Outlet Node;      !- Setpoint Node or NodeList Name
+
   SetpointManager:MixedAir,
     Mixed Air and Coil Exit Temp Manager 1,  !- Name
     Temperature,             !- Control Variable
     VAV Sys 1 Outlet Node,   !- Reference Setpoint Node Name
-    Main Heating Coil 1 Outlet Node,  !- Fan Inlet Node Name
+    Main Heating Coil 2 Outlet Node,  !- Fan Inlet Node Name
     VAV Sys 1 Outlet Node,   !- Fan Outlet Node Name
     Supply Fan Upstream Nodes;  !- Setpoint Node or NodeList Name
 
@@ -2928,7 +2914,7 @@ Coil:Heating:DX:SingleSpeed,
     Supply Fan Upstream Nodes,  !- Name
     Mixed Air Node 1,        !- Node 1 Name
     Main Cooling Coil 1 Outlet Node,  !- Node 2 Name
-    Main Heating Coil 1 Outlet Node;  !- Node 3 Name
+    Main Heating Coil 2 Outlet Node;  !- Node 3 Name
     
 
 !-   ===========  ALL OBJECTS IN CLASS: EnergyManagementSystem:Sensor ===========
