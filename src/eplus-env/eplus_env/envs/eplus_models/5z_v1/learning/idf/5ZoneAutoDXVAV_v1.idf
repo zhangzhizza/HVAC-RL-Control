@@ -2,7 +2,7 @@
 !-Option OriginalOrderTop UseSpecialFormat
 !-NOTE: All comments with '!-' are ignored by the IDFEditor and are generated automatically.
 !-      Use '!' comments if they need to be retained when using the IDFEditor.
-! 5ZoneAutoDXVAV.idf
+! FZoneAutoDXVAV.idf
 ! Basic file description:  1 story building divided into 4 exterior and one interior conditioned zones and return plenum.
 !
 ! Highlights:              packaged VAV system with variable speed compressor
@@ -1810,7 +1810,7 @@ SizingPeriod:DesignDay,
     16.,                     !- Zone Cooling Design Supply Air Temperature {C}
     ,                        !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
-    35.,                     !- Zone Heating Design Supply Air Temperature {C}
+    55.,                     !- Zone Heating Design Supply Air Temperature {C}
     ,                        !- Zone Heating Design Supply Air Temperature Difference {deltaC}
     0.009,                   !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
     0.004,                   !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
@@ -1841,7 +1841,7 @@ SizingPeriod:DesignDay,
     16.,                     !- Zone Cooling Design Supply Air Temperature {C}
     ,                        !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
-    35.,                     !- Zone Heating Design Supply Air Temperature {C}
+    55.,                     !- Zone Heating Design Supply Air Temperature {C}
     ,                        !- Zone Heating Design Supply Air Temperature Difference {deltaC}
     0.009,                   !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
     0.004,                   !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
@@ -1872,7 +1872,7 @@ SizingPeriod:DesignDay,
     16.,                     !- Zone Cooling Design Supply Air Temperature {C}
     ,                        !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
-    35.,                     !- Zone Heating Design Supply Air Temperature {C}
+    55.,                     !- Zone Heating Design Supply Air Temperature {C}
     ,                        !- Zone Heating Design Supply Air Temperature Difference {deltaC}
     0.009,                   !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
     0.004,                   !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
@@ -1903,7 +1903,7 @@ SizingPeriod:DesignDay,
     16.,                     !- Zone Cooling Design Supply Air Temperature {C}
     ,                        !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
-    35.,                     !- Zone Heating Design Supply Air Temperature {C}
+    55.,                     !- Zone Heating Design Supply Air Temperature {C}
     ,                        !- Zone Heating Design Supply Air Temperature Difference {deltaC}
     0.009,                   !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
     0.004,                   !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
@@ -1934,7 +1934,7 @@ SizingPeriod:DesignDay,
     16.,                     !- Zone Cooling Design Supply Air Temperature {C}
     ,                        !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
-    35.,                     !- Zone Heating Design Supply Air Temperature {C}
+    55.,                     !- Zone Heating Design Supply Air Temperature {C}
     ,                        !- Zone Heating Design Supply Air Temperature Difference {deltaC}
     0.009,                   !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
     0.004,                   !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
@@ -1969,7 +1969,7 @@ SizingPeriod:DesignDay,
     30.0,                    !- Precool Design Temperature {C}
     0.008,                   !- Precool Design Humidity Ratio {kgWater/kgDryAir}
     12.,                     !- Central Cooling Design Supply Air Temperature {C}
-    18.,                     !- Central Heating Design Supply Air Temperature {C}
+    35.,                     !- Central Heating Design Supply Air Temperature {C}
     noncoincident,           !- Type of Zone Sum to Use
     no,                      !- 100% Outdoor Air in Cooling
     no,                      !- 100% Outdoor Air in Heating
@@ -2077,6 +2077,13 @@ SizingPeriod:DesignDay,
 
   Schedule:Compact,
     CoolingCoilAvailSched,   !- Name
+    Fraction,                !- Schedule Type Limits Name
+    Through: 12/31,           !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,1.0;        !- Field 3
+
+  Schedule:Compact,
+    HeatingCoilAvailSched,   !- Name
     Fraction,                !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
     For: AllDays,            !- Field 2
@@ -2718,23 +2725,28 @@ SizingPeriod:DesignDay,
 
   Branch,
     VAV Sys 1 Main Branch,   !- Name
+    autosize,                    !- Maximum Branch Flow Rate {m3/s}
     ,                        !- Pressure Drop Curve Name
     AirLoopHVAC:OutdoorAirSystem,  !- Component 1 Object Type
     OA Sys 1,                !- Component 1 Name
     VAV Sys 1 Inlet Node,    !- Component 1 Inlet Node Name
     Mixed Air Node 1,        !- Component 1 Outlet Node Name
+    ,                  !- Comp1 Branch Control Type
     CoilSystem:Cooling:DX,   !- Component 2 Object Type
     DX Cooling Coil System 1,!- Component 2 Name
     Mixed Air Node 1,        !- Component 2 Inlet Node Name
     Main Cooling Coil 1 Outlet Node,  !- Component 2 Outlet Node Name
+    ,                  !- Comp1 Branch Control Type
     CoilSystem:Heating:DX,       !- Component 3 Object Type
-    Main Heating Coil 1,     !- Component 3 Name
+    DX Heating Coil System 1,     !- Component 3 Name
     Main Cooling Coil 1 Outlet Node,  !- Component 3 Inlet Node Name
     Main Heating Coil 1 Outlet Node,  !- Component 3 Outlet Node Name
+    ,                  !- Comp1 Branch Control Type
     Fan:VariableVolume,      !- Component 4 Object Type
     Supply Fan 1,            !- Component 4 Name
     Main Heating Coil 1 Outlet Node,  !- Component 4 Inlet Node Name
-    VAV Sys 1 Outlet Node;   !- Component 4 Outlet Node Name
+    VAV Sys 1 Outlet Node,   !- Component 4 Outlet Node Name
+    ;                  !- Comp1 Branch Control Type
 
   AirLoopHVAC:OutdoorAirSystem,
     OA Sys 1,                !- Name
@@ -2807,7 +2819,7 @@ CoilSystem:Heating:DX,
     DX Heating Coil System 1, !- Name
     HeatingCoilAvailSched , !- Availability Schedule Name !Add
     Coil:Heating:DX:SingleSpeed,  !- Heating Coil Object Type
-    Heat Pump DX Heating Coil 1;  !- Heating Coil Name
+    Main Heating Coil 1;  !- Heating Coil Name
 
 Coil:Heating:DX:SingleSpeed,
   Main Heating Coil 1,   ! Name of heating coil
@@ -2890,7 +2902,7 @@ Coil:Heating:DX:SingleSpeed,
   !  Temperature,             !- Control Variable
   !  VAV Sys 1,               !- HVAC Air Loop Name
   !  12,                      !- Minimum setpoint temperature
-  !  18,                      !- Maximum setpoint temperature
+  !  35,                      !- Maximum setpoint temperature
   !  MaximumTemperature,      !- Strategy
   !  Supply Air Temp Nodes 1; !- Setpoint Node or NodeList Name
 
@@ -2980,14 +2992,19 @@ EnergyManagementSystem:Sensor,
     Clg-SetP-Sch,! Output:Variable or Output:Meter Index Key Name
     Schedule Value; ! Output:Variable or Output:Meter Name
 
+EnergyManagementSystem:Sensor,
+    VAV_SetP, !Name The IW history heat mode
+    vavSupplyAirTempStpt,! Output:Variable or Output:Meter Index Key Name
+    Schedule Value; ! Output:Variable or Output:Meter Name
+
 
 !-   ===========  ALL OBJECTS IN CLASS: EnergyManagementSystem:GlobalVariable ===========
 EnergyManagementSystem:GlobalVariable,
-    5Z_temp_ave;  !- 5 Zone average temperature
+    FZ_temp_ave;  !- 5 Zone average temperature
 
 
 EnergyManagementSystem:GlobalVariable,
-    5Z_rh_ave;  !- 5 Zone average temperature
+    FZ_rh_ave;  !- 5 Zone average temperature
 
 EnergyManagementSystem:GlobalVariable,
     is_HtgSetP_notmet;  !- Is heating setpoint not met ?
@@ -2998,31 +3015,31 @@ EnergyManagementSystem:GlobalVariable,
 !-   ===========  ALL OBJECTS IN CLASS: EnergyManagementSystem:Program ===========
 EnergyManagementSystem:Program, 
     InitVar, ! Name init all global variables at the start of simulation. 
-    SET 5Z_temp_ave = 23,
-    SET 5Z_rh_ave = 60,
+    SET FZ_temp_ave = 23,
+    SET FZ_rh_ave = 60,
     SET is_HtgSetP_notmet = 0,
     SET is_ClgSetP_notmet = 0;
 
 EnergyManagementSystem:Program,
-    Calc5ZoneTemp, ! Name Calculate the average temp of north zones.
+    CalcFZoneTemp, ! Name Calculate the average temp of north zones.
     SET SumNumerator = Zn1_temp + Zn2_temp + Zn3_temp + Zn4_temp + Zn5_temp,
     SET SumDenominator = 5,
-    SET 5Z_temp_ave = SumNumerator / SumDenominator;
+    SET FZ_temp_ave = SumNumerator / SumDenominator;
 
 EnergyManagementSystem:Program,
-    Calc5ZoneRH, ! Name Calculate the average RH of north zones.
+    CalcFZoneRH, ! Name Calculate the average RH of north zones.
     SET SumNumerator = Zn1_RH + Zn2_RH + Zn3_RH + Zn4_RH + Zn5_RH,
     SET SumDenominator = 5,
-    SET 5Z_rh_ave = SumNumerator / SumDenominator;
+    SET FZ_rh_ave = SumNumerator / SumDenominator;
 
 EnergyManagementSystem:Program,
     CalSeptNotmet, ! Name Calculate whether heating or cooling setpoint is not met
-    IF 5Z_temp_ave < Zn_htgSetP - 1.0,
+    IF FZ_temp_ave < Zn_htgSetP - 1.0,
       SET is_HtgSetP_notmet = 1,
     ELSE,
       SET is_HtgSetP_notmet = 0,
     ENDIF,
-    IF 5Z_temp_ave > Zn_clgSetP + 1.0,
+    IF FZ_temp_ave > Zn_clgSetP + 1.0,
       SET is_ClgSetP_notmet = 1,
     ELSE,
       SET is_ClgSetP_notmet = 0,
@@ -3038,13 +3055,13 @@ EnergyManagementSystem:ProgramCallingManager,
 EnergyManagementSystem:ProgramCallingManager,
     sensor_info_calls, ! Name the programs here set some variables based on the last timestep eplus sensor data
     EndOfZoneTimestepAfterZoneReporting, ! EnergyPlus Model Calling Point
-    Calc5ZoneTemp, ! Program Name 1
+    CalcFZoneTemp, ! Program Name 1
     CalSeptNotmet; !- Program Name 4
 
 !-   ===========  ALL OBJECTS IN CLASS: EnergyManagementSystem:OutputVariable ===========
 EnergyManagementSystem:OutputVariable,
     5 Zone Average Temperature, ! Name
-    5Z_temp_ave, ! EMS Variable Name
+    FZ_temp_ave, ! EMS Variable Name
     Averaged, ! Type of Data in Variable
     ZoneTimeStep, ! Update Frequency
     ,      ! EMS Program or Subroutine Name
@@ -3052,11 +3069,19 @@ EnergyManagementSystem:OutputVariable,
 
 EnergyManagementSystem:OutputVariable,
     5 Zone Average RH, ! Name
-    5Z_rh_ave, ! EMS Variable Name
+    FZ_rh_ave, ! EMS Variable Name
     Averaged, ! Type of Data in Variable
     ZoneTimeStep, ! Update Frequency
     ,      ! EMS Program or Subroutine Name
     %;
+
+EnergyManagementSystem:OutputVariable,
+    VAV Supply Air Temperature Setpoint, ! Name
+    VAV_SetP, ! EMS Variable Name
+    Averaged, ! Type of Data in Variable
+    ZoneTimeStep, ! Update Frequency
+    ,      ! EMS Program or Subroutine Name
+    C;
 
 
   !-External Interface
