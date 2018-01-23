@@ -1,0 +1,332 @@
+Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.01.23 10:49,IDD_Version 8.3.0
+   ** Warning ** ProcessScheduleInput: Schedule:File="OAT_2017" 6 records had errors - these values are set to 0.
+   **   ~~~   ** Use Output:Diagnostics,DisplayExtraWarnings; to see individual records in error.
+   ** Warning ** ProcessScheduleInput: Schedule:File="OAH_2017" 5 records had errors - these values are set to 0.
+   **   ~~~   ** Use Output:Diagnostics,DisplayExtraWarnings; to see individual records in error.
+   ** Warning ** ProcessScheduleInput: Schedule:File="OADWP_2017" 6 records had errors - these values are set to 0.
+   **   ~~~   ** Use Output:Diagnostics,DisplayExtraWarnings; to see individual records in error.
+   ** Warning ** ProcessScheduleInput: Schedule:File="OAWDS_2017" 5 records had errors - these values are set to 0.
+   **   ~~~   ** Use Output:Diagnostics,DisplayExtraWarnings; to see individual records in error.
+   ** Warning ** ProcessScheduleInput: Schedule:File="OAWDD_2017" 2 records had errors - these values are set to 0.
+   **   ~~~   ** Use Output:Diagnostics,DisplayExtraWarnings; to see individual records in error.
+   ** Warning ** ProcessScheduleInput: Schedule:File="IW_HW_SSP_2017" 44853 records had errors - these values are set to 0.
+   **   ~~~   ** Use Output:Diagnostics,DisplayExtraWarnings; to see individual records in error.
+   ** Warning ** GetSurfaceData: WindowProperty:ShadingControl: "EXTERNAL_BLIND_CONTROL_1006" is not referenced by any window.
+   ** Warning ** CalcSurfaceCentroid: 38 Surfaces have the Z coordinate < 0.
+   **   ~~~   ** ...in any calculations, Wind Speed will be 0.0 for these surfaces.
+   **   ~~~   ** ...in any calculations, Outside temperatures will be the outside temperature + 9.750E-003 for these surfaces.
+   **   ~~~   ** ...that is, these surfaces will have conditions as though at ground level.
+   ** Warning ** CheckUsedConstructions: There are 7 nominally unused constructions in input.
+   **   ~~~   ** Each Unused construction is shown.
+   ************* Construction=GLASSASVIRTUALPARTITION
+   ************* Construction=LINEARBRIDGINGCONSTRUCTION
+   ************* Construction=FLOOR_SLAB_2
+   ************* Construction=SINGLE_LAYER_GLAZING_11
+   ************* Construction=SINGLE_LAYER_GLAZING_12
+   ************* Construction=SINGLE_LAYER_GLAZING_9
+   ************* Construction=WINDOW_FRAME_UIP0P49_MULL_17
+   ** Severe  ** InitConductionTransferFunctions: Found Material that is too thin and/or too highly conductive, material name = ALUMINIUM_2MM
+   **   ~~~   ** High conductivity Material layers are not well supported for internal source constructions, material conductivity = 230.000 [W/m-K]
+   **   ~~~   ** Material thermal diffusivity = 9.680E-005 [m2/s]
+   **   ~~~   ** Material with this thermal diffusivity should have thickness > 0.29516 [m]
+   ** Severe  ** InitConductionTransferFunctions: Found Material that is too thin and/or too highly conductive, material name = COPPER_2MM
+   **   ~~~   ** High conductivity Material layers are not well supported for internal source constructions, material conductivity = 200.000 [W/m-K]
+   **   ~~~   ** Material thermal diffusivity = 6.211E-005 [m2/s]
+   **   ~~~   ** Material with this thermal diffusivity should have thickness > 0.23643 [m]
+   ** Severe  ** InitConductionTransferFunctions: Found Material that is too thin and/or too highly conductive, material name = STEEL_5MM
+   **   ~~~   ** High conductivity Material layers are not well supported for internal source constructions, material conductivity = 45.000 [W/m-K]
+   **   ~~~   ** Material thermal diffusivity = 1.202E-005 [m2/s]
+   **   ~~~   ** Material with this thermal diffusivity should have thickness > 0.10401 [m]
+   ** Warning ** FixViewFactors: View factors not complete. Check for bad surface descriptions or unenclosed zone="ROOFS2".
+   ** Warning ** FixViewFactors: View factors not complete. Check for bad surface descriptions or unenclosed zone="ROOFS3".
+   ** Warning ** FixViewFactors: View factors not complete. Check for bad surface descriptions or unenclosed zone="ROOFS0".
+   ** Warning ** FixViewFactors: View factors not complete. Check for bad surface descriptions or unenclosed zone="ROOFS4".
+   ** Warning ** FixViewFactors: View factors not complete. Check for bad surface descriptions or unenclosed zone="ROOFN0".
+   ** Warning ** FixViewFactors: View factors not complete. Check for bad surface descriptions or unenclosed zone="ROOFN3".
+   ** Warning ** FixViewFactors: View factors not complete. Check for bad surface descriptions or unenclosed zone="ROOFN1".
+   ** Warning ** FixViewFactors: View factors not complete. Check for bad surface descriptions or unenclosed zone="ROOFN2".
+   ** Warning ** FixViewFactors: View factors not complete. Check for bad surface descriptions or unenclosed zone="SWOFF".
+   **   ~~~   ** Enforced reciprocity has tolerance (ideal is 0)=[5.162884E-003], Row Sum (ideal is 25)=[0.00].
+   **   ~~~   ** If zone is unusual, or tolerance is on the order of 0.001, view factors are probably OK.
+   ** Warning ** FixViewFactors: View factors not complete. Check for bad surface descriptions or unenclosed zone="LARGECONF".
+   **   ~~~   ** Enforced reciprocity has tolerance (ideal is 0)=[9.778904E-003], Row Sum (ideal is 21)=[0.00].
+   **   ~~~   ** If zone is unusual, or tolerance is on the order of 0.001, view factors are probably OK.
+   ** Severe  ** Check input.  Calc Pump Efficiency=260.00% which is bigger than 100%, for pump in radiant system NEOFF MULLION
+   ** Severe  ** Check input.  Calc Pump Efficiency=115.56% which is bigger than 100%, for pump in radiant system LARGECONF MULLION
+   ** Warning ** Check input. Calc Pump Efficiency=33.33% which is less than 50%, for pump in radiant system CENTRAL MULLION
+   ** Severe  ** Check input.  Calc Pump Efficiency=260.00% which is bigger than 100%, for pump in radiant system SEOFF MULLION
+   ** Severe  ** Check input.  Calc Pump Efficiency=260.00% which is bigger than 100%, for pump in radiant system SWOFF MULLION
+   ** Warning ** Check input. Calc Pump Efficiency=10.83% which is less than 50%, for pump in radiant system NEOFF CHILLED CEILING
+   ** Warning ** Check input. Calc Pump Efficiency=21.67% which is less than 50%, for pump in radiant system NWOFF CHILLED CEILING
+   ** Warning ** Check input. Calc Pump Efficiency=10.83% which is less than 50%, for pump in radiant system CENTRAL CHILLED CEILING
+   ** Warning ** In calculating the design coil UA for Coil:Cooling:Water SWOFF FAN COIL UNIT COOLING COIL
+   **   ~~~   ** no apparatus dew-point can be found for the initial entering and leaving conditions;
+   **   ~~~   ** the apparatus dew-point is below the coil design inlet water temperature;
+   **   ~~~   ** the coil outlet design conditions will be changed to correct the problem.
+   **   ~~~   ** The initial design conditions are: Tair,in = 23.9000
+   **   ~~~   **                                    Wair,in = 1.118000E-002
+   **   ~~~   **                                    Twater,in = 12.8000
+   **   ~~~   **                                    Tair,out = 18.0000
+   **   ~~~   **                                    Wair,out = 8.830000E-003
+   **   ~~~   ** The revised design conditions are: Tair,out = 15.0229
+   **   ~~~   **                                    Wair,out = 1.003225E-002
+   ** Warning ** In calculating the design coil UA for Coil:Cooling:Water SEOFF FAN COIL UNIT COOLING COIL
+   **   ~~~   ** no apparatus dew-point can be found for the initial entering and leaving conditions;
+   **   ~~~   ** the apparatus dew-point is below the coil design inlet water temperature;
+   **   ~~~   ** the coil outlet design conditions will be changed to correct the problem.
+   **   ~~~   ** The initial design conditions are: Tair,in = 23.9000
+   **   ~~~   **                                    Wair,in = 1.118000E-002
+   **   ~~~   **                                    Twater,in = 12.8000
+   **   ~~~   **                                    Tair,out = 18.0000
+   **   ~~~   **                                    Wair,out = 8.830000E-003
+   **   ~~~   ** The revised design conditions are: Tair,out = 15.0229
+   **   ~~~   **                                    Wair,out = 1.003225E-002
+   ************* SizeDistrictHeating: Potential issue with equipment sizing for CMU DISTRICTHEATING
+   **   ~~~   ** User-Specified Nominal Capacity of 400000.00 [W]
+   **   ~~~   ** differs from Design Size Nominal Capacity of 83508.73 [W]
+   **   ~~~   ** This may, or may not, indicate mismatched component sizes.
+   **   ~~~   ** Verify that the value entered is intended and is consistent with other components.
+   ************* SizeDistrictCooling: Potential issue with equipment sizing for CMU DISTRICTCOOLING
+   **   ~~~   ** User-Specified Nominal Capacity of 100000.00 [W]
+   **   ~~~   ** differs from Design Size Nominal Capacity of 42788.61 [W]
+   **   ~~~   ** This may, or may not, indicate mismatched component sizes.
+   **   ~~~   ** Verify that the value entered is intended and is consistent with other components.
+   ** Warning ** RoomAirManager: Inconsistent ceiling heights in Zone: ROOFS1
+   **   ~~~   ** Lowest height=[4.120].
+   **   ~~~   ** Highest height=[5.420].
+   **   ~~~   ** Ceiling height=[0.706].
+   ** Warning ** RoomAirManager: Inconsistent ceiling heights in Zone: ROOFS2
+   **   ~~~   ** Lowest height=[4.120].
+   **   ~~~   ** Highest height=[5.420].
+   **   ~~~   ** Ceiling height=[0.706].
+   ** Warning ** RoomAirManager: Inconsistent ceiling heights in Zone: ROOFS3
+   **   ~~~   ** Lowest height=[4.120].
+   **   ~~~   ** Highest height=[5.420].
+   **   ~~~   ** Ceiling height=[0.706].
+   ** Warning ** RoomAirManager: Inconsistent ceiling heights in Zone: ROOFS0
+   **   ~~~   ** Lowest height=[4.120].
+   **   ~~~   ** Highest height=[5.420].
+   **   ~~~   ** Ceiling height=[0.707].
+   ** Warning ** RoomAirManager: Inconsistent ceiling heights in Zone: ROOFS4
+   **   ~~~   ** Lowest height=[4.120].
+   **   ~~~   ** Highest height=[5.420].
+   **   ~~~   ** Ceiling height=[0.705].
+   ** Warning ** RoomAirManager: Inconsistent ceiling heights in Zone: ROOFN0
+   **   ~~~   ** Lowest height=[4.120].
+   **   ~~~   ** Highest height=[5.420].
+   **   ~~~   ** Ceiling height=[0.744].
+   ** Warning ** RoomAirManager: Inconsistent ceiling heights in Zone: ROOFN3
+   **   ~~~   ** Lowest height=[4.120].
+   **   ~~~   ** Highest height=[5.420].
+   **   ~~~   ** Ceiling height=[0.723].
+   ** Warning ** RoomAirManager: Inconsistent ceiling heights in Zone: ROOFN1
+   **   ~~~   ** Lowest height=[4.120].
+   **   ~~~   ** Highest height=[5.420].
+   **   ~~~   ** Ceiling height=[0.734].
+   ** Warning ** RoomAirManager: Inconsistent ceiling heights in Zone: ROOFN2
+   **   ~~~   ** Lowest height=[4.120].
+   **   ~~~   ** Highest height=[5.420].
+   **   ~~~   ** Ceiling height=[0.734].
+   ** Warning ** GetCurrentScheduleValue: Schedule="OAT_2017" is a Schedule:File
+   **   ~~~   ** ...Use of Schedule:File when DaylightSavingTime is in effect is not recommended.
+   **   ~~~   ** ...1) Remove RunperiodControl:DaylightSavingTime object or remove DST period from Weather File.
+   **   ~~~   ** ...2) Configure other schedules and Schedule:File to account for occupant behavior during DST.
+   **   ~~~   ** ...   If you have already done this, you can ignore this message.
+   **   ~~~   ** ...When active, DaylightSavingTime will shift all scheduled items by one hour, retaining the same day type as the original.
+   ************* Testing Individual Branch Integrity
+   ************* All Branches passed integrity testing
+   ************* Testing Individual Supply Air Path Integrity
+   ************* All Supply Air Paths passed integrity testing
+   ************* Testing Individual Return Air Path Integrity
+   ************* All Return Air Paths passed integrity testing
+   ************* No node connection errors were found.
+   ************* Beginning Simulation
+   ** Warning ** Inside surface heat balance did not converge with Max Temp Difference [C] =2.960E-003 vs Max Allowed Temp Diff [C] =2.000E-003
+   **   ~~~   **  Environment=WHOLEYEAR, at Simulation time=01/01 08:00 - 08:05
+   ** Warning ** Inside surface heat balance did not converge with Max Temp Difference [C] =3.036E-003 vs Max Allowed Temp Diff [C] =2.000E-003
+   **   ~~~   **  Environment=WHOLEYEAR, at Simulation time=01/01 08:00 - 08:05
+   ** Warning ** Inside surface heat balance did not converge with Max Temp Difference [C] =2.734E-003 vs Max Allowed Temp Diff [C] =2.000E-003
+   **   ~~~   **  Environment=WHOLEYEAR, at Simulation time=01/01 08:00 - 08:05
+   ** Warning ** Inside surface heat balance did not converge with Max Temp Difference [C] =3.368E-003 vs Max Allowed Temp Diff [C] =2.000E-003
+   **   ~~~   **  Environment=WHOLEYEAR, at Simulation time=01/01 08:05 - 08:10
+   ** Warning ** Inside surface heat balance did not converge with Max Temp Difference [C] =3.422E-003 vs Max Allowed Temp Diff [C] =2.000E-003
+   **   ~~~   **  Environment=WHOLEYEAR, at Simulation time=01/01 08:05 - 08:10
+   ** Warning ** Inside surface heat balance did not converge with Max Temp Difference [C] =3.234E-003 vs Max Allowed Temp Diff [C] =2.000E-003
+   **   ~~~   **  Environment=WHOLEYEAR, at Simulation time=01/01 08:05 - 08:10
+   ** Warning ** Inside surface heat balance did not converge with Max Temp Difference [C] =3.386E-003 vs Max Allowed Temp Diff [C] =2.000E-003
+   **   ~~~   **  Environment=WHOLEYEAR, at Simulation time=01/01 08:10 - 08:15
+   ** Warning ** Inside surface heat balance did not converge with Max Temp Difference [C] =3.408E-003 vs Max Allowed Temp Diff [C] =2.000E-003
+   **   ~~~   **  Environment=WHOLEYEAR, at Simulation time=01/01 08:10 - 08:15
+   ** Warning ** Inside surface heat balance did not converge with Max Temp Difference [C] =3.333E-003 vs Max Allowed Temp Diff [C] =2.000E-003
+   **   ~~~   **  Environment=WHOLEYEAR, at Simulation time=01/01 08:10 - 08:15
+   ** Warning ** Inside surface heat balance did not converge with Max Temp Difference [C] =3.236E-003 vs Max Allowed Temp Diff [C] =2.000E-003
+   **   ~~~   **  Environment=WHOLEYEAR, at Simulation time=01/01 08:15 - 08:20
+   ** Warning ** Inside surface heat balance did not converge with Max Temp Difference [C] =3.173E-003 vs Max Allowed Temp Diff [C] =2.000E-003
+   **   ~~~   **  Environment=WHOLEYEAR, at Simulation time=01/01 08:15 - 08:20
+   ** Warning ** Inside surface heat balance did not converge with Max Temp Difference [C] =3.132E-003 vs Max Allowed Temp Diff [C] =2.000E-003
+   **   ~~~   **  Environment=WHOLEYEAR, at Simulation time=01/01 08:15 - 08:20
+   ** Warning ** Inside surface heat balance did not converge with Max Temp Difference [C] =3.071E-003 vs Max Allowed Temp Diff [C] =2.000E-003
+   **   ~~~   **  Environment=WHOLEYEAR, at Simulation time=01/01 08:20 - 08:25
+   ** Warning ** Inside surface heat balance did not converge with Max Temp Difference [C] =3.034E-003 vs Max Allowed Temp Diff [C] =2.000E-003
+   **   ~~~   **  Environment=WHOLEYEAR, at Simulation time=01/01 08:20 - 08:25
+   ** Warning ** Inside surface heat balance did not converge with Max Temp Difference [C] =2.972E-003 vs Max Allowed Temp Diff [C] =2.000E-003
+   **   ~~~   **  Environment=WHOLEYEAR, at Simulation time=01/01 08:20 - 08:25
+   ** Warning ** CalcDoe2DXCoil: Coil:Cooling:DX:SingleSpeed "DOAS AHU UNITARY COOLING COIL DX COOLING COIL" - Full load outlet air dry-bulb temperature < 2C. This indicates the possibility of coil frost/freeze. Outlet temperature = 1.80 C.
+   **   ~~~   **  ...Occurrence info = WHOLEYEAR, 01/16 11:40 - 11:41
+   **   ~~~   ** ... Possible reasons for low outlet air dry-bulb temperatures are: This DX coil
+   **   ~~~   **    1) may have a low inlet air dry-bulb temperature. Inlet air temperature = 18.393 C.
+   **   ~~~   **    2) may have a low air flow rate per watt of cooling capacity. Check inputs.
+   **   ~~~   **    3) is used as part of a HX assisted cooling coil which uses a high sensible effectiveness. Check inputs.
+   ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Regeneration inlet air temperature used in regen outlet air temperature equation is outside model boundaries at 13.45.
+   **   ~~~   ** ...Valid range = 46.11 to 46.11. Occurrence info = WHOLEYEAR, 01/17 10:50 - 10:51
+   **   ~~~   ** ...Regeneration outlet air temperature equation: regeneration inlet air temperature passed to the model = 46.111110
+   **   ~~~   ** ...Using regeneration inlet air temperatures that are outside the regeneration outlet air temperature equation model boundaries may adversely affect desiccant model performance.
+   ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Process and regen inlet air face velocity used in regen outlet air temperature equation is outside model boundaries at 1.953396.
+   **   ~~~   ** ...Valid range = 2.286000 to 4.826000. Occurrence info = WHOLEYEAR, 01/17 10:50 - 10:51
+   **   ~~~   ** ...Regeneration outlet air temperature equation: process and regen face velocity passed to the model = 2.286000
+   **   ~~~   ** ...Using process and regeneration face velocities that are outside the regeneration outlet air temperature equation model boundaries may adversely affect desiccant model performance.
+   ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Regeneration outlet air temperature is greater than inlet temperature at 41.11.
+   **   ~~~   ** ...Regen inlet air temperature = 13.45. Occurrence info = WHOLEYEAR, 01/17, 10:50 - 10:51
+   **   ~~~   ** ...Regeneration outlet air temperature should always be less than or equal to regen inlet air temperature. Verify correct model coefficients.
+   ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Regeneration inlet air temperature used in regen outlet air humidity ratio equation is outside model boundaries at 13.45.
+   **   ~~~   ** ...Valid range = 46.11 to 46.11. Occurrence info = WHOLEYEAR, 01/17 , 10:50 - 10:51
+   **   ~~~   ** ...Regeneration outlet air humidity ratio equation: regeneration inlet air temperature passed to the model = 46.11
+   **   ~~~   ** ...Using regeneration inlet air temperatures that are outside the regeneration inlet air temperature equation model boundaries may adversely affect desiccant model performance.
+   ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Process and regen inlet air face velocity used in regen outlet air humidity ratio equation is outside model boundaries at 1.953396.
+   **   ~~~   ** ...Valid range = 2.286000 to 4.826000. Occurrence info = WHOLEYEAR, 01/17, 10:50 - 10:51
+   **   ~~~   ** ...Regeneration outlet air humidity ratio equation: process and regeneration face velocity passed to the model = 2.286000
+   **   ~~~   ** ...Using process and regeneration face velocities that are outside the regeneration outlet air humidity ratio equation model boundaries may adversely affect desiccant model performance.
+   ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Regeneration inlet air relative humidity related to regen outlet air temperature equation is outside model boundaries at 94.3.
+   **   ~~~   ** ...Model limit on regeneration inlet air relative humidity is 5.0 to 45.0.
+   **   ~~~   ** ...Occurrence info = WHOLEYEAR, 01/17, 10:50 - 10:51
+   **   ~~~   ** ...Using regeneration inlet air relative humidities that are outside the regeneration outlet temperature equation model boundaries may adversely affect desiccant model performance. Verify correct model coefficients.
+   ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Regeneration inlet air relative humidity related to regen outlet air humidity ratio equation is outside model boundaries at 94.3.
+   **   ~~~   ** ...Model limit on regeneration inlet air relative humidity is 5.0 to 45.0.
+   **   ~~~   ** ...Occurrence info = WHOLEYEAR, 01/17, 10:50 - 10:51
+   **   ~~~   ** ...Using regeneration inlet air relative humidities that are outside the regeneration outlet humidity ratio equation model boundaries may adversely affect desiccant model performance. Verify correct model coefficients.
+   ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Process inlet air relative humidity related to regen outlet air temperature equation is outside model boundaries at 75.3.
+   **   ~~~   ** ...Model limit on process inlet air relative humidity is 80.0 to 100.0.
+   **   ~~~   ** ...Occurrence info = WHOLEYEAR, 01/17, 13:45 - 13:46
+   **   ~~~   ** ...Using process inlet air relative humidities that are outside the regeneration outlet temperature equation model boundaries may adversely affect desiccant model performance. Verify correct model coefficients.
+   ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Process inlet air relative humidity related to regen outlet air humidity ratio equation is outside model boundaries at 75.3.
+   **   ~~~   ** ...Model limit on process inlet air relative humidity is 80.0 to 100.0.
+   **   ~~~   ** ...Occurrence info = WHOLEYEAR, 01/17, 13:45 - 13:46
+   **   ~~~   ** ...Using process inlet air relative humidities that are outside the regeneration outlet humidity ratio equation model boundaries may adversely affect desiccant model performance. Verify correct model coefficients.
+   ** Warning ** CalcDoe2DXCoil: Coil:Cooling:DX:SingleSpeed "DOAS AHU UNITARY COOLING COIL DX COOLING COIL" - Air-cooled condenser inlet dry-bulb temperature below 0 C. Outdoor dry-bulb temperature = -1.21
+   **   ~~~   **  ... Occurrence info = WHOLEYEAR, 01/27 11:15 - 11:16
+   **   ~~~   ** ... Operation at low ambient temperatures may require special performance curves.
+   ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Process inlet air temperature used in regen outlet air temperature equation is outside model boundaries at 22.59.
+   **   ~~~   ** ...Valid range = 4.58 to 21.83. Occurrence info = WHOLEYEAR,02/24 11:10 - 11:11
+   **   ~~~   ** ...Regeneration outlet air temperature equation: process inlet air temperature passed to the model = 21.833330
+   **   ~~~   ** ...Using process inlet air temperatures that are outside the regeneration outlet air temperature equation model boundaries may adversely affect desiccant model performance.
+   ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Process inlet air temperature used in regen outlet air humidity ratio equation is outside model boundaries at 22.59.
+   **   ~~~   ** ...Valid range = 4.58 to 21.83. Occurrence info = WHOLEYEAR, 02/24 11:10 - 11:11
+   **   ~~~   ** ...Regeneration outlet air humidity ratio equation: process inlet air temperature passed to the model = 21.833330
+   **   ~~~   ** ...Using process inlet air temperatures that are outside the regeneration outlet air humidity ratio equation model may adversely affect desiccant model performance.
+   ************* Simulation Error Summary *************
+   ************* There are 21 unused schedules in input.
+   ************* Use Output:Diagnostics,DisplayUnusedSchedules; to see them.
+   *************
+   ************* ===== Recurring Error Summary =====
+   ************* The following recurring error messages occurred.
+   *************
+   *************  ** Warning ** Inside surface heat balance convergence problem continues
+   *************  **   ~~~   **   This error occurred 8872 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=8.910080E-003 [C]  Min=1.993751E-003 [C]
+   *************
+   *************  ** Warning ** CalcDoe2DXCoil: Coil:Cooling:DX:SingleSpeed="DOAS AHU UNITARY COOLING COIL DX COOLING COIL" - Full load outlet temperature indicates a possibility of frost/freeze error continues. Outlet air temperature statistics follow:
+   *************  **   ~~~   **   This error occurred 772 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=1.998918  Min=-3.010818
+   *************
+   *************  ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Regeneration inlet air temp used in regen outlet air temperature equation is out of range error continues...
+   *************  **   ~~~   **   This error occurred 402 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=24.8  Min=12.
+   *************
+   *************  ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Process and regen inlet air face velocity used in regen outlet temperature equation is out of range error continues...
+   *************  **   ~~~   **   This error occurred 402 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=1.953396  Min=1.953396
+   *************
+   *************  ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Regeneration outlet air temperature above regen inlet air temperature error continues...
+   *************  **   ~~~   **   This error occurred 402 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=41.295643  Min=40.74413
+   *************
+   *************  ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Regeneration inlet air temperature used in regen outlet air humidity ratio equation is out of range error continues...
+   *************  **   ~~~   **   This error occurred 402 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=24.8  Min=12.
+   *************
+   *************  ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Process and regen face velocity used in regen outlet air humidity ratio equation is out of range error continues...
+   *************  **   ~~~   **   This error occurred 402 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=1.953396  Min=1.953396
+   *************
+   *************  ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Regeneration inlet air relative humidity related to regen outlet air temperature equation is outside model boundaries error continues...
+   *************  **   ~~~   **   This error occurred 402 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=98.8  Min=46.2
+   *************
+   *************  ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Regeneration inlet air relative humidity related to regen outlet air humidity ratio equation is outside model boundaries error continues...
+   *************  **   ~~~   **   This error occurred 402 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=98.8  Min=46.2
+   *************
+   *************  ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Process inlet air relative humidity related to regen outlet air temperature equation is outside model boundaries error continues...
+   *************  **   ~~~   **   This error occurred 262 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=79.931594  Min=46.124002
+   *************
+   *************  ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Process inlet air relative humidity related to regen outlet air humidity ratio equation is outside model boundaries error continues...
+   *************  **   ~~~   **   This error occurred 262 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=79.931594  Min=46.124002
+   *************
+   *************  ** Warning ** CalcDoe2DXCoil: Coil:Cooling:DX:SingleSpeed="DOAS AHU UNITARY COOLING COIL DX COOLING COIL" - Low condenser dry-bulb temperature error continues...
+   *************  **   ~~~   **   This error occurred 400 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=-5.555556E-003 [C]  Min=-6.166667 [C]
+   *************
+   *************  ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Process inlet air temperature used in regen outlet temperature equation is out of range error continues...
+   *************  **   ~~~   **   This error occurred 33 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=24.834244  Min=22.528032
+   *************
+   *************  ** Warning ** HeatExchanger:Desiccant:BalancedFlow:PerformanceDataType1 "HXDESPERF1" - Process inlet air temperature used in regen outlet air humidity ratio equation is out of range error continues...
+   *************  **   ~~~   **   This error occurred 33 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=24.834244  Min=22.528032
+   *************
+   *************
+   ************* ===== Final Error Summary =====
+   ************* The following error categories occurred.  Consider correcting or noting.
+   ************* Incomplete View factors
+   ************* ..Incomplete view factors can result from incorrect floor specifications (such as tilting 0
+   ************* ..instead of 180) or not enough surfaces in a zone to make an enclosure.  The error message
+   ************* ..also shows an enforced repciprocity value.  You can decide if you need to make geometry
+   ************* ..changes based on that value.
+   ************* Nominally Unused Constructions
+   ************* ..The nominally unused constructions warning is provided to alert you to potential conditions that can cause
+   ************* ..extra time during simulation. Each construction is calculated by the algorithm indicated in the HeatBalanceAlgorithm
+   ************* ..object. You may remove the constructions indicated (when you use the DisplayExtraWarnings option).
+   *************
+   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 6 Warning; 0 Severe Errors.
+   ************* EnergyPlus Completed Successfully-- 13520 Warning; 7 Severe Errors; Elapsed Time=00hr 02min 51.46sec

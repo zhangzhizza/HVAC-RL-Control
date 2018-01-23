@@ -438,6 +438,42 @@ register(
             'act_repeat': 1});
 
 register(
+    id='IW-tmy3Weather-fore-v9706',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-3-0/',
+            'weather_path':FD + '/envs/weather/pittsburgh.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/eplus_models/iw_v97/learning/cfg/tmy3Weather.cfg',
+            'idf_path':FD + '/envs/eplus_models/iw_v97/learning/idf/tmy3Weather.idf',
+            'env_name': 'IW-tmy3Weather-fore-v9706',
+            'min_max_limits': MIN_MAX_LIMITS_DICT['IW-tmy3Weather-fore-v9706'],
+            'incl_forecast': True,
+            'forecastRandMode': 'normal',
+            'forecastRandStd': 0.15,
+            'forecastSource': 'tmy3',
+            'forecastFilePath': None,
+            'forecast_hour': 6,
+            'act_repeat': 1});
+
+register(
+    id='IW-realWeather-fore-v9706',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-3-0/',
+            'weather_path':FD + '/envs/weather/pittsburgh.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/eplus_models/iw_v97/learning/cfg/realWeather.cfg',
+            'idf_path':FD + '/envs/eplus_models/iw_v97/learning/idf/realWeather.idf',
+            'env_name': 'IW-realWeather-fore-v9706',
+            'min_max_limits': MIN_MAX_LIMITS_DICT['IW-realWeather-fore-v9706'],
+            'incl_forecast': True,
+            'forecastRandMode': 'normal',
+            'forecastRandStd': 0.15,
+            'forecastSource': FD + '/envs/eplus_models/iw_v97/weather/x.csv',
+            'forecastFilePath': None,
+            'forecast_hour': 6,
+            'act_repeat': 1});
+
+register(
     id='IW-tmy3Weather-v9701',
     entry_point='eplus_env.envs:EplusEnv',
     kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-3-0/',

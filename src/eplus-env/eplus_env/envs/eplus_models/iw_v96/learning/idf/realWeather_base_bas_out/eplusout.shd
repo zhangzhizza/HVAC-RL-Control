@@ -1,0 +1,3643 @@
+Shadowing Combinations
+..Solar Distribution=FullExterior
+..In the following, only the first 10 reference surfaces will be shown.
+..But all surfaces are used in the calculations.
+==================================
+Surface=IW - EASTSHADING1 - SURFACE 1 (1) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - EASTSHADING1 - SURFACE 1 (1) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=26
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=ROOFS1_ROOF_3_0_0
+..Surface=ROOFS1_ROOF_4_0_0
+..Surface=ROOFS2_ROOF_3_0_0
+..Surface=ROOFS2_ROOF_4_0_0
+..Surface=ROOFS3_ROOF_3_0_0
+..Surface=ROOFS3_ROOF_4_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - EASTSHADING0 - SURFACE 1 (2) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - EASTSHADING0 - SURFACE 1 (2) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=21
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=ROOFS1_ROOF_1_0_0
+..Surface=ROOFS1_ROOF_3_0_0
+..Surface=ROOFS1_ROOF_4_0_0
+..Surface=ROOFS2_ROOF_1_0_0
+..Surface=ROOFS2_ROOF_3_0_0
+..Surface=ROOFS2_ROOF_4_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - SOUTHSHADING0 - SURFACE 1 (3) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - SOUTHSHADING0 - SURFACE 1 (3) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=17
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=ROOFS1_ROOF_3_0_0
+..Surface=ROOFS1_ROOF_4_0_0
+..Surface=ROOFS2_ROOF_3_0_0
+..Surface=ROOFS2_ROOF_4_0_0
+..Surface=ROOFS3_ROOF_3_0_0
+..Surface=ROOFS3_ROOF_4_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - WESTSHADING0 - SURFACE 1 (4) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - WESTSHADING0 - SURFACE 1 (4) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=30
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=ROOFS1_ROOF_1_0_0
+..Surface=ROOFS1_ROOF_2_0_0
+..Surface=ROOFS1_ROOF_4_0_0
+..Surface=ROOFS2_ROOF_1_0_0
+..Surface=ROOFS2_ROOF_2_0_0
+..Surface=ROOFS2_ROOF_4_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - WESTWALKWAY0 - SURFACE 1 (5) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=10
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=IW - IWCONNECTION - SURFACE 6 (64)
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_3_0_0
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_6_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - WESTWALKWAY0 - SURFACE 1 (5) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=65
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 11 (19)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - EASTWALKWAY0 - SURFACE 1 (6) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=10
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=IW - IWCONNECTION - SURFACE 6 (64)
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_2_0_0
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_3_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - EASTWALKWAY0 - SURFACE 1 (6) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=58
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=IW - NORTHBALCONY - SURFACE 11 (19)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=10
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=IW - IWCONNECTION - SURFACE 6 (64)
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_2_0_0
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_3_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - SOUTHWALKWAY0 - SURFACE 1 (7) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=56
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=IW - NORTHBALCONY - SURFACE 11 (19)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - EASTWALKWAY1 - SURFACE 1 (8) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=11
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=IW - IWCONNECTION - SURFACE 6 (64)
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_2_0_0
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_3_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - EASTWALKWAY1 - SURFACE 1 (8) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=63
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=IW - NORTHBALCONY - SURFACE 11 (19)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 1 (9) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=10
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=IW - IWCONNECTION - SURFACE 6 (64)
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_2_0_0
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_5_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 1 (9) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=53
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=IW - NORTHBALCONY - SURFACE 11 (19)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 2 (10) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=11
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=IW - IWCONNECTION - SURFACE 6 (64)
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 2 (10) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=53
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 11 (19)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 3 (11) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=10
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=IW - IWCONNECTION - SURFACE 6 (64)
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_2_0_0
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_5_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 3 (11) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=52
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 11 (19)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 4 (12) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=11
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=IW - IWCONNECTION - SURFACE 6 (64)
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 4 (12) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=54
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 11 (19)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 5 (13) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=11
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=IW - IWCONNECTION - SURFACE 6 (64)
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 5 (13) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=56
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 11 (19)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 6 (14) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=30
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=8
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=IW - IWCONNECTION - SURFACE 6 (64)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 7 (15) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=30
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=8
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=IW - IWCONNECTION - SURFACE 6 (64)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 8 (16) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=34
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=9
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=IW - IWCONNECTION - SURFACE 6 (64)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 9 (17) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=34
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=9
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=IW - IWCONNECTION - SURFACE 6 (64)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 10 (18) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=35
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=9
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=IW - IWCONNECTION - SURFACE 6 (64)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 11 (19) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=17
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=IW - NORTHBALCONY - SURFACE 12 (20)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 13 (21)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 14 (22)
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_5_0_0
+..Surface=ROOFN0_ROOF_4_0_0
+..Surface=ROOFN1_ROOF_4_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 11 (19) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=44
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 14 (22)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 15 (23)
+..Surface=IW - NORTHBALCONY - SURFACE 16 (24)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 12 (20) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=46
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=IW - NORTHBALCONY - SURFACE 11 (19)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 17 (25)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 18 (26)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 12 (20) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 13 (21)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 14 (22)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 15 (23)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 13 (21) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=12
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_5_0_0
+..Surface=ROOFN0_ROOF_4_0_0
+..Surface=ROOFN1_ROOF_4_0_0
+..Surface=ROOFN2_ROOF_4_0_0
+..Surface=NEOFF_WALL_NORTH_MID
+..Surface=NEOFF_WALL_NORTH_TOP_MULL
+..Surface=NEOFF_WALL_NORTH_BOT_MULL
+..Surface=LARGECONF_WALL_NORTH_MID
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 13 (21) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=47
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=IW - NORTHBALCONY - SURFACE 11 (19)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 12 (20)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 14 (22) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 14 (22) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=57
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=IW - NORTHBALCONY - SURFACE 11 (19)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 15 (23) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=24
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 15 (23) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=39
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 11 (19)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 12 (20)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 16 (24) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=41
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 11 (19)
+..Surface=IW - NORTHBALCONY - SURFACE 17 (25)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 18 (26)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 16 (24) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 13 (21)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 14 (22)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 15 (23)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 17 (25) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=28
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 14 (22)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 15 (23)
+..Surface=IW - NORTHBALCONY - SURFACE 16 (24)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 17 (25) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=36
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 11 (19)
+..Surface=IW - NORTHBALCONY - SURFACE 12 (20)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 13 (21)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 18 (26) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=35
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=IW - NORTHBALCONY - SURFACE 19 (27)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 20 (28)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 21 (29)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 18 (26) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=11
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 11 (19)
+..Surface=IW - NORTHBALCONY - SURFACE 12 (20)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 13 (21)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 14 (22)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 15 (23)
+..Surface=IW - NORTHBALCONY - SURFACE 16 (24)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 19 (27) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=31
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 14 (22)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 15 (23)
+..Surface=IW - NORTHBALCONY - SURFACE 16 (24)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 17 (25)
+..Surface=IW - NORTHBALCONY - SURFACE 18 (26)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 19 (27) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=33
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 11 (19)
+..Surface=IW - NORTHBALCONY - SURFACE 12 (20)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 13 (21)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 14 (22)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 20 (28) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=29
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 20 (28) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=18
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 11 (19)
+..Surface=IW - NORTHBALCONY - SURFACE 12 (20)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 13 (21)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 21 (29) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=20
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 11 (19)
+..Surface=IW - NORTHBALCONY - SURFACE 12 (20)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 13 (21)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 14 (22)
+..Surface=IW - NORTHBALCONY - SURFACE 22 (30)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 21 (29) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=42
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 14 (22)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 15 (23)
+..Surface=IW - NORTHBALCONY - SURFACE 16 (24)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHBALCONY - SURFACE 22 (30) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=39
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 19 (27)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 20 (28)
+..Surface=IW - NORTHBALCONY - SURFACE 21 (29)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHBALCONY - SURFACE 22 (30) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=11
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 11 (19)
+..Surface=IW - NORTHBALCONY - SURFACE 12 (20)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 13 (21)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 14 (22)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 15 (23)
+..Surface=IW - NORTHBALCONY - SURFACE 16 (24)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHWALKWAY1 - SURFACE 1 (31) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=12
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=IW - IWCONNECTION - SURFACE 6 (64)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHWALKWAY1 - SURFACE 1 (31) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=62
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 11 (19)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - NORTHWALKWAY0 - SURFACE 2 (32) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=11
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=IW - IWCONNECTION - SURFACE 6 (64)
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_2_0_0
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_4_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - NORTHWALKWAY0 - SURFACE 2 (32) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=64
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=IW - NORTHBALCONY - SURFACE 11 (19)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHROOF - SURFACE 1 (33) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=92
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHROOF - SURFACE 1 (33) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHROOF - SURFACE 2 (34) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=40
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+..Surface=IW - NORTHBALCONY - SURFACE 3 (11)
+..Surface=IW - NORTHBALCONY - SURFACE 4 (12)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHROOF - SURFACE 2 (34) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=57
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+..Surface=IW - NORTHBALCONY - SURFACE 4 (12)
+..Surface=IW - NORTHBALCONY - SURFACE 5 (13)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHROOF - SURFACE 3 (35) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHROOF - SURFACE 3 (35) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=98
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHROOF - SURFACE 4 (36) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=Mir-IW - MMCHLOWER - SURFACE 9 (49)
+..Surface=IW - MMCHLOWER - SURFACE 16 (56)
+..Surface=Mir-IW - MMCHLOWER - SURFACE 17 (57)
+..Surface=Mir-IW - MMCHLOWER - SURFACE 18 (58)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHROOF - SURFACE 4 (36) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=90
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHROOF - SURFACE 5 (37) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=41
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHROOF - SURFACE 5 (37) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=8
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHROOF - SURFACE 6 (38) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=18
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=ROOFS1_ROOF_1_0_0
+..Surface=ROOFS2_ROOF_1_0_0
+..Surface=ROOFS3_ROOF_1_0_0
+..Surface=ROOFS0_ROOF_1_0_0
+..Surface=ROOFS4_ROOF_2_0_0
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHROOF - SURFACE 6 (38) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=39
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=Mir-IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=IW - IWCONNECTION - SURFACE 5 (63)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHROOF - SURFACE 7 (39) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=25
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 6 (64)
+..Surface=ROOFS1_ROOF_1_0_0
+..Surface=ROOFS2_ROOF_1_0_0
+..Surface=ROOFS3_ROOF_1_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHROOF - SURFACE 7 (39) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=26
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 6 (64)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHROOF - SURFACE 8 (40) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHROOF - SURFACE 8 (40) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=99
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHLOWER - SURFACE 1 (41) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=28
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+..Surface=IW - NORTHBALCONY - SURFACE 3 (11)
+..Surface=IW - NORTHBALCONY - SURFACE 4 (12)
+..Surface=IW - NORTHBALCONY - SURFACE 5 (13)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHLOWER - SURFACE 1 (41) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=60
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHLOWER - SURFACE 2 (42) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHLOWER - SURFACE 2 (42) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=70
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHLOWER - SURFACE 3 (43) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHLOWER - SURFACE 3 (43) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=100
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHLOWER - SURFACE 4 (44) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHLOWER - SURFACE 4 (44) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=98
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHLOWER - SURFACE 5 (45) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHLOWER - SURFACE 5 (45) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=97
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHLOWER - SURFACE 6 (46) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=15
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHWALKWAY0 - SURFACE 2 (32)
+..Surface=IW - MMCHLOWER - SURFACE 1 (41)
+..Surface=Mir-IW - MMCHLOWER - SURFACE 7 (47)
+..Surface=Mir-IW - MMCHLOWER - SURFACE 11 (51)
+..Surface=Mir-IW - MMCHLOWER - SURFACE 12 (52)
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_5_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHLOWER - SURFACE 6 (46) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=76
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+..Surface=IW - NORTHBALCONY - SURFACE 3 (11)
+..Surface=IW - NORTHBALCONY - SURFACE 4 (12)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHLOWER - SURFACE 7 (47) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=67
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHLOWER - SURFACE 7 (47) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHLOWER - SURFACE 8 (48) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=90
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHLOWER - SURFACE 8 (48) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHLOWER - SURFACE 9 (49) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=73
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHLOWER - SURFACE 9 (49) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHLOWER - SURFACE 10 (50) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=89
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHLOWER - SURFACE 10 (50) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=5
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHLOWER - SURFACE 11 (51) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=3
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHWALKWAY0 - SURFACE 2 (32)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHLOWER - SURFACE 11 (51) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=83
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+..Surface=IW - NORTHBALCONY - SURFACE 3 (11)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHLOWER - SURFACE 12 (52) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=36
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHLOWER - SURFACE 12 (52) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=44
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+..Surface=IW - NORTHBALCONY - SURFACE 3 (11)
+..Surface=IW - NORTHBALCONY - SURFACE 4 (12)
+..Surface=IW - NORTHBALCONY - SURFACE 5 (13)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHLOWER - SURFACE 13 (53) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=40
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+..Surface=IW - NORTHBALCONY - SURFACE 3 (11)
+..Surface=IW - NORTHBALCONY - SURFACE 4 (12)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHLOWER - SURFACE 13 (53) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=62
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+..Surface=IW - NORTHBALCONY - SURFACE 4 (12)
+..Surface=IW - NORTHBALCONY - SURFACE 5 (13)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHLOWER - SURFACE 14 (54) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHLOWER - SURFACE 14 (54) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=91
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHLOWER - SURFACE 15 (55) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=Mir-IW - MMCHLOWER - SURFACE 9 (49)
+..Surface=IW - MMCHLOWER - SURFACE 16 (56)
+..Surface=Mir-IW - MMCHLOWER - SURFACE 17 (57)
+..Surface=Mir-IW - MMCHLOWER - SURFACE 18 (58)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHLOWER - SURFACE 15 (55) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=99
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHLOWER - SURFACE 16 (56) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=47
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHLOWER - SURFACE 16 (56) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=40
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+..Surface=IW - NORTHBALCONY - SURFACE 3 (11)
+..Surface=IW - NORTHBALCONY - SURFACE 4 (12)
+..Surface=IW - NORTHBALCONY - SURFACE 5 (13)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHLOWER - SURFACE 17 (57) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHLOWER - SURFACE 17 (57) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=88
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - MMCHLOWER - SURFACE 18 (58) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=19
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 3 (11)
+..Surface=IW - NORTHBALCONY - SURFACE 4 (12)
+..Surface=IW - NORTHBALCONY - SURFACE 5 (13)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=IW - NORTHBALCONY - SURFACE 11 (19)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 11 (19)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - MMCHLOWER - SURFACE 18 (58) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=90
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+..Surface=IW - NORTHBALCONY - SURFACE 3 (11)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - IWCONNECTION - SURFACE 1 (59) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - IWCONNECTION - SURFACE 1 (59) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=70
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - IWCONNECTION - SURFACE 2 (60) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=14
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=ROOFS1_ROOF_1_0_0
+..Surface=ROOFS2_ROOF_1_0_0
+..Surface=ROOFS3_ROOF_1_0_0
+..Surface=ROOFS0_ROOF_1_0_0
+..Surface=ROOFS4_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=5
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - IWCONNECTION - SURFACE 3 (61) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=58
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+..Surface=IW - NORTHBALCONY - SURFACE 3 (11)
+..Surface=IW - NORTHBALCONY - SURFACE 4 (12)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - IWCONNECTION - SURFACE 3 (61) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=29
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - NORTHWALKWAY1 - SURFACE 1 (31)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - IWCONNECTION - SURFACE 4 (62) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=8
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=62
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - IWCONNECTION - SURFACE 5 (63) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=23
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - NORTHWALKWAY1 - SURFACE 1 (31)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - SOUTHPLATFORM1 - SURFACE 1 (66)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=62
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+..Surface=IW - NORTHBALCONY - SURFACE 3 (11)
+..Surface=IW - NORTHBALCONY - SURFACE 4 (12)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - IWCONNECTION - SURFACE 6 (64) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=47
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - IWCONNECTION - SURFACE 6 (64) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=14
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 3 (61)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - SOUTHPLATFORM0 - SURFACE 2 (65) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=11
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 6 (64)
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_3_0_0
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_7_1_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - SOUTHPLATFORM0 - SURFACE 2 (65) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=60
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 11 (19)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=IW - SOUTHPLATFORM1 - SURFACE 1 (66) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=12
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=IW - IWCONNECTION - SURFACE 5 (63)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 6 (64)
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_3_0_0
+..Surface=UNDERFLOOR_VOID_SPACE_WALL_6_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-IW - SOUTHPLATFORM1 - SURFACE 1 (66) is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=67
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 9 (17)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 10 (18)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 11 (19)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_WALL_2_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=33
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+..Surface=IW - NORTHBALCONY - SURFACE 3 (11)
+..Surface=IW - NORTHBALCONY - SURFACE 4 (12)
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=UNDERFLOOR_VOID_SPACE_WALL_2_0_0_0_0_0_SUBSURFACE
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_WALL_2_0_0_0_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_WALL_3_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=35
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - EASTWALKWAY0 - SURFACE 1 (6)
+..Surface=IW - SOUTHWALKWAY0 - SURFACE 1 (7)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=UNDERFLOOR_VOID_SPACE_WALL_3_0_0_0_0_0_SUBSURFACE
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_WALL_3_0_0_0_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_WALL_4_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=3
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTWALKWAY1 - SURFACE 1 (8)
+..Surface=IW - NORTHWALKWAY0 - SURFACE 2 (32)
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=UNDERFLOOR_VOID_SPACE_WALL_4_0_0_0_0_0_SUBSURFACE
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_WALL_4_0_0_0_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_WALL_5_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=32
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - NORTHBALCONY - SURFACE 1 (9)
+..Surface=IW - NORTHBALCONY - SURFACE 2 (10)
+..Surface=IW - NORTHBALCONY - SURFACE 3 (11)
+..Surface=IW - NORTHBALCONY - SURFACE 4 (12)
+..Surface=IW - NORTHBALCONY - SURFACE 5 (13)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 6 (14)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 7 (15)
+..Surface=Mir-IW - NORTHBALCONY - SURFACE 8 (16)
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=UNDERFLOOR_VOID_SPACE_WALL_5_0_0_0_0_0_SUBSURFACE
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_WALL_5_0_0_0_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_WALL_6_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=9
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - WESTWALKWAY0 - SURFACE 1 (5)
+..Surface=IW - NORTHWALKWAY1 - SURFACE 1 (31)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - SOUTHPLATFORM1 - SURFACE 1 (66)
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=UNDERFLOOR_VOID_SPACE_WALL_6_0_0_0_0_0_SUBSURFACE
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_WALL_6_0_0_0_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_PARTITION_7_0_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_WALL_7_1_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=13
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_WALL_7_1_1 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=13
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_FLOOR_0_0_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_FLOOR_0_0_1 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_CEILING_CENTRAL is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_CEILING_NEOFF is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_CEILING_SEOFF is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_CEILING_NWOFF is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_CEILING_SWOFF is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=UNDERFLOOR_VOID_SPACE_CEILING_LARGECONF is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS1_FLOOR_0_1_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS1_FLOOR_0_1_0_0_0_1_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS1_FLOOR_0_2_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS1_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=7
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=ROOFS0_ROOF_4_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS1_ROOF_2_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS1_ROOF_3_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS1_ROOF_4_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=9
+..Surface=ROOFS2_ROOF_1_0_0
+..Surface=ROOFS3_ROOF_1_0_0
+..Surface=ROOFS4_ROOF_2_0_0
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+..Surface=NEOFF_WALL_SOUTH_TOP_MULL
+..Surface=CENTRAL_WALL_SOUTH_TOP_MULL
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS1_ROOF_5_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS2_FLOOR_0_1_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS2_FLOOR_0_1_0_0_0_1_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS2_FLOOR_0_2_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS2_FLOOR_0_2_0_0_0_2_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS2_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=8
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=ROOFS1_ROOF_4_0_0
+..Surface=ROOFS0_ROOF_4_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS2_ROOF_2_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS2_ROOF_3_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS2_ROOF_4_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=8
+..Surface=ROOFS3_ROOF_1_0_0
+..Surface=ROOFS4_ROOF_2_0_0
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+..Surface=NEOFF_WALL_SOUTH_TOP_MULL
+..Surface=CENTRAL_WALL_SOUTH_TOP_MULL
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS2_ROOF_5_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS3_FLOOR_0_1_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS3_FLOOR_0_1_0_0_0_1_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS3_FLOOR_0_2_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS3_FLOOR_0_2_0_0_0_2_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS3_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=15
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=IW - IWCONNECTION - SURFACE 5 (63)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS3_ROOF_2_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS3_ROOF_3_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS3_ROOF_4_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=5
+..Surface=ROOFS4_ROOF_2_0_0
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS3_ROOF_5_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS0_FLOOR_0_1_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS0_FLOOR_0_1_0_0_0_1_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS0_FLOOR_0_2_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS0_FLOOR_0_2_0_0_0_2_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS0_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=11
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=IW - IWCONNECTION - SURFACE 5 (63)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS0_ROOF_2_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS0_ROOF_3_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS0_ROOF_4_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=8
+..Surface=ROOFS1_ROOF_1_0_0
+..Surface=ROOFS2_ROOF_1_0_0
+..Surface=ROOFS3_ROOF_1_0_0
+..Surface=ROOFS4_ROOF_2_0_0
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS0_ROOF_5_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS4_FLOOR_0_1_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS4_FLOOR_0_1_0_0_0_1_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS4_FLOOR_0_2_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS4_FLOOR_0_2_0_0_0_2_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS4_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS4_ROOF_2_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=10
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=ROOFS1_ROOF_4_0_0
+..Surface=ROOFS2_ROOF_4_0_0
+..Surface=ROOFS3_ROOF_4_0_0
+..Surface=ROOFS0_ROOF_4_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS4_ROOF_3_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS4_ROOF_4_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFS4_ROOF_5_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_FLOOR_0_1_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_FLOOR_0_1_0_0_0_1_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_FLOOR_0_2_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_FLOOR_0_2_0_0_0_2_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_FLOOR_0_3_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_FLOOR_0_3_0_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_ROOF_2_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=21
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=ROOFS1_ROOF_2_0_0
+..Surface=ROOFS1_ROOF_3_0_0
+..Surface=ROOFS1_ROOF_4_0_0
+..Surface=ROOFS2_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=5
+....Surface=ROOFN0_ROOF_2_0_0_0_0_0_WIN
+....Surface=ROOFN0_ROOF_2_0_0_1_0_1_WIN
+....Surface=ROOFN0_ROOF_2_0_0_2_0_2_WIN
+....Surface=ROOFN0_ROOF_2_0_0_3_0_3_WIN
+....Surface=ROOFN0_ROOF_2_0_0_4_0_4_WIN
+==================================
+Surface=ROOFN0_ROOF_2_0_0_0_0_0_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_ROOF_2_0_0_1_0_1_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_ROOF_2_0_0_2_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_ROOF_2_0_0_3_0_3_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_ROOF_2_0_0_4_0_4_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_ROOF_3_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_ROOF_4_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=3
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=5
+....Surface=ROOFN0_ROOF_4_0_0_0_0_0_WIN
+....Surface=ROOFN0_ROOF_4_0_0_1_0_1_WIN
+....Surface=ROOFN0_ROOF_4_0_0_2_0_2_WIN
+....Surface=ROOFN0_ROOF_4_0_0_3_0_3_WIN
+....Surface=ROOFN0_ROOF_4_0_0_4_0_4_WIN
+==================================
+Surface=ROOFN0_ROOF_4_0_0_0_0_0_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_ROOF_4_0_0_1_0_1_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_ROOF_4_0_0_2_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_ROOF_4_0_0_3_0_3_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_ROOF_4_0_0_4_0_4_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN0_ROOF_5_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN3_FLOOR_0_0_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN3_FLOOR_0_0_0_0_0_0_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN3_FLOOR_0_1_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN3_FLOOR_0_1_0_0_0_1_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN3_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN3_ROOF_2_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=24
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=ROOFS1_ROOF_2_0_0
+..Surface=ROOFS1_ROOF_3_0_0
+..Surface=ROOFS1_ROOF_4_0_0
+..Surface=ROOFS2_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN3_ROOF_3_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN3_ROOF_4_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN3_ROOF_5_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN1_FLOOR_0_1_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN1_FLOOR_0_1_0_0_0_1_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN1_FLOOR_0_2_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN1_FLOOR_0_2_0_0_0_2_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN1_FLOOR_0_3_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN1_FLOOR_0_3_0_0_0_3_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN1_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN1_ROOF_2_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=29
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=IW - IWCONNECTION - SURFACE 5 (63)
+Number of back surfaces=0
+Number of receiving sub surfaces=3
+....Surface=ROOFN1_ROOF_2_0_0_0_0_0_WIN
+....Surface=ROOFN1_ROOF_2_0_0_1_0_1_WIN
+....Surface=ROOFN1_ROOF_2_0_0_2_0_2_WIN
+==================================
+Surface=ROOFN1_ROOF_2_0_0_0_0_0_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN1_ROOF_2_0_0_1_0_1_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN1_ROOF_2_0_0_2_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN1_ROOF_3_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN1_ROOF_4_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=2
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=3
+....Surface=ROOFN1_ROOF_4_0_0_0_0_0_WIN
+....Surface=ROOFN1_ROOF_4_0_0_1_0_1_WIN
+....Surface=ROOFN1_ROOF_4_0_0_2_0_2_WIN
+==================================
+Surface=ROOFN1_ROOF_4_0_0_0_0_0_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN1_ROOF_4_0_0_1_0_1_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN1_ROOF_4_0_0_2_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN1_ROOF_5_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN2_FLOOR_0_0_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN2_FLOOR_0_0_0_0_0_0_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN2_FLOOR_0_1_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN2_FLOOR_0_1_0_0_0_1_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN2_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN2_ROOF_2_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=30
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=IW - IWCONNECTION - SURFACE 5 (63)
+Number of back surfaces=0
+Number of receiving sub surfaces=3
+....Surface=ROOFN2_ROOF_2_0_0_0_0_0_WIN
+....Surface=ROOFN2_ROOF_2_0_0_1_0_1_WIN
+....Surface=ROOFN2_ROOF_2_0_0_2_0_2_WIN
+==================================
+Surface=ROOFN2_ROOF_2_0_0_0_0_0_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN2_ROOF_2_0_0_1_0_1_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN2_ROOF_2_0_0_2_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN2_ROOF_3_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN2_ROOF_4_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=ROOFN3_ROOF_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=3
+....Surface=ROOFN2_ROOF_4_0_0_0_0_0_WIN
+....Surface=ROOFN2_ROOF_4_0_0_1_0_1_WIN
+....Surface=ROOFN2_ROOF_4_0_0_2_0_2_WIN
+==================================
+Surface=ROOFN2_ROOF_4_0_0_0_0_0_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN2_ROOF_4_0_0_1_0_1_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN2_ROOF_4_0_0_2_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=ROOFN2_ROOF_5_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SWOFF_PARTITION_EAST is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SWOFF_PARTITION_EAST_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SWOFF_PARTITION_NORTH is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SWOFF_PARTITION_NORTH_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SWOFF_WALL_WEST_TOP_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SWOFF_WALL_WEST_BOT_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SWOFF_WALL_WEST_MID is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=5
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=2
+....Surface=SWOFF_WALL_WEST_WIN_TOP
+....Surface=SWOFF_WALL_WEST_WIN_BOT
+==================================
+Surface=SWOFF_WALL_WEST_WIN_TOP is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SWOFF_WALL_WEST_WIN_BOT is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SWOFF_WALL_SOUTH_MID is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=9
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=IW - IWCONNECTION - SURFACE 5 (63)
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=SWOFF_WALL_SOUTH_WIN
+==================================
+Surface=SWOFF_WALL_SOUTH_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SWOFF_WALL_SOUTH_TOP_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=9
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=IW - IWCONNECTION - SURFACE 5 (63)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SWOFF_WALL_SOUTH_BOT_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=11
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SWOFF_DOOR is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SWOFF_FLOOR is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-OMER_CEILING_1_0_10028 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SWOFF_CEILING_1_0_10033 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SWOFF_CEILING_1_0_0_0_0_0_HOLE_10035 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-VIVIAN_CEILING_1_0_10039 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-VIVIAN_CEILING_1_0_0_0_0_0_HOLE_10041 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SMALLCONF_CEILING_1_0_10045 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SMALLCONF_CEILING_1_0_0_0_0_0_HOLE_10047 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-JAMES_CEILING_1_0_10051 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-JAMES_CEILING_1_0_0_0_0_0_HOLE_10053 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SWOFF_INTMASS is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SEOFF_PARTITION_WEST is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SEOFF_PARTITION_WEST_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SEOFF_PARTITION_NORTH is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SEOFF_PARTITION_NORTH_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SEOFF_WALL_EAST_MID is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=11
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+..Surface=NEOFF_WALL_SOUTH_MID
+..Surface=NEOFF_WALL_SOUTH_TOP_MULL
+..Surface=CENTRAL_WALL_SOUTH_TOP_MULL
+Number of back surfaces=0
+Number of receiving sub surfaces=2
+....Surface=SEOFF_WALL_EAST_WIN_BOT
+....Surface=SEOFF_WALL_EAST_WIN_TOP
+==================================
+Surface=SEOFF_WALL_EAST_WIN_BOT is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SEOFF_WALL_EAST_WIN_TOP is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SEOFF_WALL_EAST_TOP_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=9
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+..Surface=NEOFF_WALL_SOUTH_TOP_MULL
+..Surface=CENTRAL_WALL_SOUTH_TOP_MULL
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SEOFF_WALL_EAST_BOT_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=13
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=ROOFN0_ROOF_2_0_0
+..Surface=ROOFN3_ROOF_2_0_0
+..Surface=ROOFN1_ROOF_2_0_0
+..Surface=ROOFN2_ROOF_2_0_0
+..Surface=NEOFF_WALL_SOUTH_MID
+..Surface=NEOFF_WALL_SOUTH_TOP_MULL
+..Surface=NEOFF_WALL_SOUTH_BOT_MULL
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SEOFF_WALL_SOUTH_MID is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=9
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=SEOFF_WALL_SOUTH_WIN
+==================================
+Surface=SEOFF_WALL_SOUTH_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SEOFF_WALL_SOUTH_TOP_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=9
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 4 (62)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 5 (63)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SEOFF_WALL_SOUTH_BOT_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=12
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SEOFF_DOOR is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SEOFF_FLOOR is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-ZHIANG_CEILING_1_0_10026 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-ZHIANG_CEILING_1_0_0_0_0_0_HOLE_10028 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-WEILI_CEILING_1_0_10031 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-WEILI_CEILING_1_0_0_0_0_0_HOLE_10033 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-BAPP_CEILING_1_0_10037 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-BAPP_CEILING_1_0_0_0_0_0_HOLE_10039 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-NINA_CEILING_1_0_10043 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-NINA_CEILING_1_0_0_0_0_0_HOLE_10045 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-YUJIE_CEILING_1_0_10049 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-YUJIE_CEILING_1_0_0_0_0_0_HOLE_10051 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SEOFF_INTMASS is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NWOFF_PARTITION_SOUTH is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NWOFF_PARTITION_SOUTH_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NWOFF_PARTITION_EAST is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NWOFF_PARTITION_EAST_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NWOFF_PARTITION_NORTH is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NWOFF_PARTITION_NORTH_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NWOFF_WALL_MID is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=5
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=2
+....Surface=NWOFF_WALL_MID_WIN_TOP
+....Surface=NWOFF_WALL_MID_WIN_BOT
+==================================
+Surface=NWOFF_WALL_MID_WIN_TOP is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NWOFF_WALL_MID_WIN_BOT is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NWOFF_WALL_TOP_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NWOFF_WALL_BOT_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NWOFF_FLOOR is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NWOFF_SOUTH_CEILING_1_0_10057 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-ERICA_CEILING_1_0_0_0_0_0_HOLE_10059 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-VOLKER_CEILING_1_0_10069 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-VOLKER_CEILING_1_0_0_0_0_0_HOLE_10071 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NWOFF_INTMASS is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_PARTITION_WEST_NORTH is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_PARTITION_WEST_NORTH_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_PARTITION_WEST_SOUTH is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_PARTITION_WEST_SOUTH_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_WALL_EAST_BOT_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_WALL_EAST_MID is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+Number of back surfaces=0
+Number of receiving sub surfaces=2
+....Surface=NEOFF_WALL_EAST_WIN_TOP
+....Surface=NEOFF_WALL_EAST_WIN_BOT
+==================================
+Surface=NEOFF_WALL_EAST_WIN_TOP is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_WALL_EAST_WIN_BOT is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_WALL_EAST_TOP_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_WALL_NORTH_MID is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=NEOFF_WALL_NORTH_WIN
+==================================
+Surface=NEOFF_WALL_NORTH_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_WALL_NORTH_TOP_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_WALL_NORTH_BOT_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_WALL_SOUTH_MID is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=24
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+Number of back surfaces=0
+Number of receiving sub surfaces=2
+....Surface=NEOFF_WALL_SOUTH_WIN_BOT
+....Surface=NEOFF_WALL_SOUTH_WIN_TOP
+==================================
+Surface=NEOFF_WALL_SOUTH_WIN_BOT is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_WALL_SOUTH_WIN_TOP is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_WALL_SOUTH_TOP_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=23
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_WALL_SOUTH_BOT_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=27
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_FLOOR is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_SOUTH_CEILING_1_0_10055 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_SOUTH_CEILING_1_0_10055_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_NORTH_CEILING_1_0_10061 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-ANNIE_CEILING_1_0_0_0_0_0_HOLE_10063 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=BAS_CEILING_1_0_10067 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=BAS_CEILING_1_0_0_0_0_0_HOLE_10069 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-SUREKHA_CEILING_1_0_10073 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OFF-SUREKHA_CEILING_1_0_0_0_0_0_HOLE_10075 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=NEOFF_INTMASS is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CENTRAL_PARTITION_WEST is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CENTRAL_PARTITION_WEST_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CENTRAL_PARTITION_SOUTH is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CENTRAL_PARTITION_SOUTH_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CENTRAL_PARTITION_NORTH is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CENTRAL_PARTITION_NORTH_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CENTRAL_PARTITION_EAST is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CENTRAL_PARTITION_EAST_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CENTRAL_WALL_SOUTH_BOT_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=23
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=IW - MMCHROOF - SURFACE 2 (34)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CENTRAL_WALL_SOUTH_TOP_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=23
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CENTRAL_WALL_SOUTH_MID is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=24
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - EASTSHADING0 - SURFACE 1 (2)
+..Surface=IW - SOUTHSHADING0 - SURFACE 1 (3)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=IW - MMCHROOF - SURFACE 7 (39)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+..Surface=Mir-IW - IWCONNECTION - SURFACE 2 (60)
+..Surface=IW - IWCONNECTION - SURFACE 3 (61)
+Number of back surfaces=0
+Number of receiving sub surfaces=2
+....Surface=CENTRAL_WALL_SOUTH_WIN_TOP
+....Surface=CENTRAL_WALL_SOUTH_WIN_BOT
+==================================
+Surface=CENTRAL_WALL_SOUTH_WIN_TOP is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CENTRAL_WALL_SOUTH_WIN_BOT is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CENTRAL_FLOOR is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CENTRAL_SOUTH_CEILING_1_0_10055 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=STAIRNCOM_CEILING_1_0_0_0_0_0_HOLE_10057 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CENTRAL_NORTH_CEILING_1_0_10065 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=KITCHEN_CEILING_1_0_0_0_0_0_HOLE_10067 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CENTRAL_INTMASS is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF_PARTITION_SOUTH_WEST is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF_PARTITION_SOUTH_WEST_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF_PARTITION_EAST is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF_PARTITION_EAST_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF_PARTITION_SOUTH_EAST is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF_PARTITION_SOUTH_EAST_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF_WALL_NORTH_MID is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=2
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=LARGECONF_WALL_NORTH_WIN
+==================================
+Surface=LARGECONF_WALL_NORTH_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF_WALL_NORTH_TOP_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=2
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF_WALL_NORTH_BOT_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=2
+..Surface=IW - EASTSHADING1 - SURFACE 1 (1)
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF_WALL_WEST_MID is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=5
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=2
+....Surface=LARGECONF_WALL_WEST_WIN_BOT
+....Surface=LARGECONF_WALL_WEST_WIN_TOP
+==================================
+Surface=LARGECONF_WALL_WEST_WIN_BOT is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF_WALL_WEST_WIN_TOP is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF_WALL_WEST_TOP_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF_WALL_WEST_BOT_MULL is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=IW - WESTSHADING0 - SURFACE 1 (4)
+..Surface=IW - MMCHROOF - SURFACE 1 (33)
+..Surface=Mir-IW - MMCHROOF - SURFACE 4 (36)
+..Surface=IW - MMCHROOF - SURFACE 5 (37)
+..Surface=Mir-IW - MMCHROOF - SURFACE 6 (38)
+..Surface=Mir-IW - MMCHROOF - SURFACE 8 (40)
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF_FLOOR is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF_NORTH_CEILING_1_0_10059 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF1_CEILING_1_0_0_0_0_0_HOLE_10061 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF_SOUTH_CEILING_1_0_10071 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF0_CEILING_1_0_0_0_0_0_HOLE_10073 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LARGECONF_INTMASS is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
