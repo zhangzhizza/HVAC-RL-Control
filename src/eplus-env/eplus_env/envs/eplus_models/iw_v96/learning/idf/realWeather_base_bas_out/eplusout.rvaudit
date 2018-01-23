@@ -1,0 +1,16 @@
+ ReadVarsESO
+ processing:.realWeather_base_bas.rvi
+ input file:realWeather_base_bas_out/eplusout.eso
+ output file:realWeather_base_bas_out/eplusout.csv
+ getting all vars from:realWeather_base_bas_out/eplusout.eso
+  number variables requested for output=          35
+ ReadVars Run Time=00hr 00min  0.99sec
+ ReadVarsESO program completed successfully.
+ ReadVarsESO
+ processing:.realWeather_base_bas.mvi
+ input file:realWeather_base_bas_out/eplusout.mtr
+ output file:realWeather_base_bas_out/eplusmtr.csv
+ getting all vars from:realWeather_base_bas_out/eplusout.mtr
+  number variables requested for output=          15
+ ReadVars Run Time=00hr 00min  0.02sec
+ ReadVarsESO program completed successfully.

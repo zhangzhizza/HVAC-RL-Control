@@ -4,4 +4,6 @@ numpy
 tensorflow
 scipy
 matplotlib
+jupyter
+pandas
 
