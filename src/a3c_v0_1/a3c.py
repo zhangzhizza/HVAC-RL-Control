@@ -176,7 +176,8 @@ class A3CThread:
               gamma, e_weight, p_weight, save_freq, log_dir, global_saver, 
               global_summary_writer, T_max, global_agent_eval_list, eval_freq, 
               global_res_list, action_space_name, dropout_prob, reward_func, 
-              rewardArgs, action_func, action_limits, raw_state_process_func):
+              rewardArgs, train_action_func, eval_action_func, train_action_limits, 
+              eval_action_limits, raw_state_process_func):
         """
         The function that the thread worker works to train the networks.
         
@@ -292,6 +293,7 @@ class A3CThread:
                     # Select action returns None, indicating the net work output is not valid
                     random_act_idx = np.random.choice(self._action_size)
                     action_raw_tup = action_space[random_act_idx];
+                    action_raw_idx = random_act_idx;
                     self._local_logger.warning('!!!!!!!!!!!!!!!!!!WARNING!!!!!!!!!!!!!!!!!!\n'
                                                'Select action function returns None, indicating the network output may not be valid!\n'
                                                'Network output is %s.'
@@ -299,7 +301,7 @@ class A3CThread:
                                                '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
                                                %(action_raw_out[1], random_act_idx));
                 
-                action_stpt_prcd, action_effec = action_func(action_raw_tup, action_limits, ob_this_raw);
+                action_stpt_prcd, action_effect_idx = train_action_func(action_raw_tup, action_raw_idx, train_action_limits, ob_this_raw);
                 action_stpt_prcd = list(action_stpt_prcd);
                 # Take the action
                 time_next, ob_next_raw, is_terminal = env_interact_wrapper.step(action_stpt_prcd);
@@ -324,7 +326,7 @@ class A3CThread:
                                          'processed observation next is %s, \n'
                                          'reward next is %0.04f. \n'
                                          '============================================='
-                                         %(current_hregu, action_raw_idx, ob_this_raw[0: noForecastDim],
+                                         %(current_hregu, action_effect_idx, ob_this_raw[0: noForecastDim],
                                            np.insert(np.array(ob_this_raw[noForecastDim:]).astype('str'),
                                             range(0, (len(ob_this_raw) - noForecastDim), forecastSingleEntryDim), 'Next Hour'),
                                            str(action_stpt_prcd), time_this, time_next, 
@@ -335,7 +337,7 @@ class A3CThread:
                 ob_next_hist_prcd = self._histProcessor.\
                             process_state_for_network(ob_next_prcd) # 2-D array
                 # Remember the trajectory 
-                trajectory_list.append((ob_this_hist_prcd, action_raw_idx, 
+                trajectory_list.append((ob_this_hist_prcd, action_effect_idx, 
                                         reward_next)) 
                 
                 # Update local counter and global counter, do eval
@@ -349,7 +351,7 @@ class A3CThread:
                         for global_agent_eval in global_agent_eval_list:
                             eval_res = global_agent_eval.evaluate(self._local_logger,
                                                     action_space_name, reward_func, rewardArgs, 
-                                                    action_func, action_limits, raw_state_process_func);
+                                                    eval_action_func, eval_action_limits, raw_state_process_func);
                             global_res_list[-1].extend([eval_res]);
                         np.savetxt(log_dir + '/eval_res_hist.csv', 
                                    np.array(global_res_list), delimiter = ',');
@@ -687,7 +689,7 @@ class A3CAgent:
 
     def fit(self, sess, coordinator, global_network, workers, global_summary_writer, global_saver,
             env_name_list, t_max, gamma, e_weight, p_weight, save_freq, T_max, eval_epi_num, eval_freq,
-            reward_func, rewardArgs, action_func, action_limits, raw_state_process_func):
+            reward_func, rewardArgs, train_action_func, eval_action_func, train_action_limits, eval_action_limits, raw_state_process_func):
         """
         This method is used to train the neural network. 
         
@@ -752,7 +754,8 @@ class A3CAgent:
                                                 self._log_dir, global_saver, global_summary_writer,
                                                 T_max, global_agent_eval_list, eval_freq, global_res_list,
                                                 self._action_space_name, self._dropout_prob, reward_func, 
-                                                rewardArgs, action_func, action_limits, raw_state_process_func);
+                                                rewardArgs, train_action_func, eval_action_func, 
+                                                train_action_limits, eval_action_limits, raw_state_process_func);
 
             thread = threading.Thread(target = (worker_train));
             thread.start();

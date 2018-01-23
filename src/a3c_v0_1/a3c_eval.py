@@ -304,15 +304,16 @@ class A3CEval:
             else:
                 # Select action returns None, indicating the net work output is not valid
                 random_act_idx = np.random.choice(action_size)
+                action_raw_idx = random_act_idx;
                 action_raw_tup = action_space[random_act_idx];
-                self._local_logger.warning('!!!!!!!!!!!!!!!!!!WARNING!!!!!!!!!!!!!!!!!!\n'
+                local_logger.warning('!!!!!!!!!!!!!!!!!!WARNING!!!!!!!!!!!!!!!!!!\n'
                                            'Select action function returns None, indicating the network output may not be valid!\n'
                                            'Network output is %s.'
                                            'A random action is taken instead, index is %s.'
                                            '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
                                             %(action_raw_out[1], random_act_idx));
 
-            action_stpt_prcd, action_effec = action_func(action_raw_tup, action_limits, ob_this_raw);
+            action_stpt_prcd, action_effect_idx = action_func(action_raw_tup, action_raw_idx, action_limits, ob_this_raw);
             action_stpt_prcd = list(action_stpt_prcd);
             # Perform the action
             time_next, ob_next_raw, is_terminal = env_interact_wrapper.step(action_stpt_prcd);

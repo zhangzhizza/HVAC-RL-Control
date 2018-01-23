@@ -1,0 +1,76 @@
+Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.01.15 21:20,IDD_Version 8.3.0
+   ** Warning ** Version: in IDF="8.6" not the same as expected="8.3"
+   ************* Beginning Zone Sizing Calculations
+   ** Warning ** CheckUsedConstructions: There are 5 nominally unused constructions in input.
+   **   ~~~   ** For explicit details on each unused construction, use Output:Diagnostics,DisplayExtraWarnings;
+   ************* Beginning System Sizing Calculations
+   ************* Testing Individual Branch Integrity
+   ************* All Branches passed integrity testing
+   ************* Testing Individual Supply Air Path Integrity
+   ************* All Supply Air Paths passed integrity testing
+   ************* Testing Individual Return Air Path Integrity
+   ************* All Return Air Paths passed integrity testing
+   ** Severe  ** Node Connection Error, Node="MAIN HEATING COIL 2 OUTLET NODE", Setpoint node did not find a matching node of type Inlet or Outlet.
+   **   ~~~   ** It appears this node is not part of the HVAC system.
+   **   ~~~   ** Reference Object=SETPOINTMANAGER:MIXEDAIR, Name=MIXED AIR AND COIL EXIT TEMP MANAGER 1
+   ************* There was 1 node connection error noted.
+   ************* Beginning Simulation
+   ** Warning ** SimHVAC: Maximum iterations (20) exceeded for all HVAC loops, at Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205, 01/01 14:35 - 14:40
+   **   ~~~   ** The solution for one or more of the Air Loop HVAC systems did not appear to converge
+   **   ~~~   ** ...use Output:Diagnostics,DisplayExtraWarnings; to show more details on each max iteration exceeded.
+   ** Warning ** SimHVAC: Maximum iterations (20) exceeded for all HVAC loops, at Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205, 01/12 13:45 - 13:50
+   **   ~~~   ** The solution for one or more of the Air Loop HVAC systems did not appear to converge
+   ** Warning ** SimHVAC: Maximum iterations (20) exceeded for all HVAC loops, at Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205, 01/31 14:40 - 14:45
+   **   ~~~   ** The solution for one or more of the Air Loop HVAC systems did not appear to converge
+   ** Warning ** SimHVAC: Maximum iterations (20) exceeded for all HVAC loops, at Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205, 02/02 13:10 - 13:15
+   **   ~~~   ** The solution for one or more of the Air Loop HVAC systems did not appear to converge
+   ** Warning ** SimHVAC: Maximum iterations (20) exceeded for all HVAC loops, at Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205, 02/02 13:25 - 13:30
+   **   ~~~   ** The solution for one or more of the Air Loop HVAC systems did not appear to converge
+   ** Warning ** Calculated Relative Humidity out of range (PsyRhFnTdbWPb) 
+   **   ~~~   **  Routine=CalcMultiSpeedDXCoil:lowspeedoutlet, Environment=Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205, at Simulation time=03/01 08:05 - 08:10
+   **   ~~~   **  Dry-Bulb= -28.43 Humidity Ratio= 2.906E-004 Calculated Relative Humidity [%]= 101.05
+   **   ~~~   ** Relative Humidity being reset to 100.0%
+   ** Warning ** SimHVAC: Maximum iterations (20) exceeded for all HVAC loops, at Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205, 03/01 11:00 - 11:05
+   **   ~~~   ** The solution for one or more of the Air Loop HVAC systems did not appear to converge
+   ** Warning ** SimHVAC: Maximum iterations (20) exceeded for all HVAC loops, at Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205, 03/12 14:25 - 14:30
+   **   ~~~   ** The solution for one or more of the Air Loop HVAC systems did not appear to converge
+   ** Warning ** SimHVAC: Maximum iterations (20) exceeded for all HVAC loops, at Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205, 03/16 09:35 - 09:40
+   **   ~~~   ** The solution for one or more of the Air Loop HVAC systems did not appear to converge
+   ** Warning ** SimHVAC: Maximum iterations (20) exceeded for all HVAC loops, at Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205, 03/20 10:25 - 10:30
+   **   ~~~   ** The solution for one or more of the Air Loop HVAC systems did not appear to converge
+   ** Warning ** SimHVAC: Maximum iterations (20) exceeded for all HVAC loops, at Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205, 03/21 11:25 - 11:30
+   **   ~~~   ** The solution for one or more of the Air Loop HVAC systems did not appear to converge
+   ** Warning ** SimHVAC: Maximum iterations (20) exceeded for all HVAC loops, at Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205, 03/21 13:35 - 13:40
+   **   ~~~   ** The solution for one or more of the Air Loop HVAC systems did not appear to converge
+   ** Warning ** SimHVAC: Maximum iterations (20) exceeded for all HVAC loops, at Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205, 03/24 14:25 - 14:30
+   **   ~~~   ** The solution for one or more of the Air Loop HVAC systems did not appear to converge
+   ** Warning ** SimHVAC: Maximum iterations (20) exceeded for all HVAC loops, at Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205, 03/27 13:05 - 13:10
+   **   ~~~   ** The solution for one or more of the Air Loop HVAC systems did not appear to converge
+   ************* Simulation Error Summary *************
+   ************* There are 3 unused schedules in input.
+   ************* Use Output:Diagnostics,DisplayUnusedSchedules; to see them.
+   *************
+   ************* ===== Recurring Error Summary =====
+   ************* The following recurring error messages occurred.
+   *************
+   *************  ** Warning ** Calculated Relative Humidity out of range (PsyRhFnTdbWPb)
+   *************  **   ~~~   **   This error occurred 20 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=101.054691 %  Min=101.029116 %
+   *************
+   *************
+   ************* ===== Final Error Summary =====
+   ************* The following error categories occurred.  Consider correcting or noting.
+   ************* Node Connection Errors
+   ************* ..Node connection errors are often caused by spelling mistakes in a node name field.
+   ************* ..To track down the problem, search the idf file for each node name listed to see if it
+   ************* ..occurs in the expected input fields.
+   ************* Nominally Unused Constructions
+   ************* ..The nominally unused constructions warning is provided to alert you to potential conditions that can cause
+   ************* ..extra time during simulation. Each construction is calculated by the algorithm indicated in the HeatBalanceAlgorithm
+   ************* ..object. You may remove the constructions indicated (when you use the DisplayExtraWarnings option).
+   *************
+   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 1 Warning; 0 Severe Errors.
+   ************* EnergyPlus Completed Successfully-- 35 Warning; 1 Severe Errors; Elapsed Time=00hr 00min  6.69sec

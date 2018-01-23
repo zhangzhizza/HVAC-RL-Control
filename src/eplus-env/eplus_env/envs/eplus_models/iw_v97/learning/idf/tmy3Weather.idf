@@ -17327,4 +17327,4 @@ ExternalInterface:Schedule,
 ExternalInterface:Schedule,
     hw_sp_stpt,                 !- Name
     Temperature,             !- ScheduleType
-    20;                      !- Initial value, used during warm-up
+    65;                      !- Initial value, used during warm-up
