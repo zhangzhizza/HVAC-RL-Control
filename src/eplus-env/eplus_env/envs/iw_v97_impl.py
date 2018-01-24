@@ -2,6 +2,7 @@
 import socket              
 import os
 import time
+import ast
 import copy
 import signal
 import _thread
@@ -58,7 +59,7 @@ class EplusEnv(Env):
     ----------
     """
 
-    def __init__(self, site_server_ip, rd_port, wt_port, env_name,
+    def __init__(self, site_server_ip, rd_port, wt_port, env_name, defaultObValues,
                  min_max_limits, incl_forecast = False, forecastRandMode = 'normal', forecastRandStd = 0.15,
                  forecastSource = 'tmy3', forecastFilePath = None, forecast_hour = 12, act_repeat = 1):
         self._env_name = env_name;
@@ -84,6 +85,7 @@ class EplusEnv(Env):
         self._host = host;
         self._port = port;
         self._socket = s;
+        self._defaultObValues = defaultObValues;
         self._eplus_path = eplus_path
         self._weather_path = weather_path
         self._variable_path = variable_path
@@ -239,12 +241,18 @@ class EplusEnv(Env):
         # Establish connection with site BAS data collection server
         rd_s = socket.socket(); # Read sensor data socket
         rd_s.connect((self._site_server_ip, self._rd_port));
-        self.logger_main.info('Built connection with the BAS SDC server.')
+        self.logger_main.info('Built connection with the BAS SDC read server.')
         rd_s.sendall(b'get') # Send get request to the site read server
         # Start the first data exchange with the site read server
         rcv_from_bas_server = rd_s.recv(2048).decode(encoding = 'utf-8')
-        self.logger_main.debug('Got the first message successfully from the BAS SDC server: ' + rcv_from_bas_server);
-        flag, nDb, envTime, Dblist = self._disassembleMsg(rcv_from_bas_server);
+        self.logger_main.debug('Got the first message successfully from the BAS SDC read server: ' + rcv_from_bas_server);
+        flag, retMsg, nDb, readData = self._disassembleRSMsg(rcv_from_bas_server);
+        if flag == 0:
+            self.logger_main.warning('Read from BACnet server error with message: %s, use default observations instead'%(retMsg));
+            readData = self._defaultObValues;
+        else:
+            # Process the None values because of float conversion error
+            
         ret.append(curSimTim);
         ret.append(Dblist);
         # Remember the message header, useful when send data back to EnergyPlus
@@ -502,19 +510,23 @@ class EplusEnv(Env):
         
         return ret;
     
-    def _disassembleMsg(self, rcv):
-        rcv = rcv.split(' ');
-        version = int(rcv[0]);
-        flag = int(rcv[1]);
-        nDb = int(rcv[2]);
-        nIn = int(rcv[3]);
-        nBl = int(rcv[4]);
-        curSimTim = float(rcv[5]);
-        Dblist = [];
-        for i in range(6, len(rcv) - 1):
-            Dblist.append(float(rcv[i]));
-        
-        return (version, flag, nDb, nIn, nBl, curSimTim, Dblist);
+    def _disassembleRSMsg(self, rcv):
+        """
+        Disassemble the read server back message
+        """
+        rcv = ast.literal_eval(recv);
+        flag = rcv[0];
+        retMsg = rcv[1];
+        count = rcv[2];
+        readData = [];
+        if flag == 1:
+            for i in range(3, 3 + count):
+                try:
+                    readData.append(float(rcv[i]));
+                except ValueError as err:
+                    self.logger_main.warning('Encountered error %s for [%s], this record is changed to None'%(rcv[i]));
+                    readData.append(None);
+        return (flag, retMsg, count, readData);
     
     def _get_eplus_run_info(self, idf_path):
         """
