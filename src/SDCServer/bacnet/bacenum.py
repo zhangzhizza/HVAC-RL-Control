@@ -4,4 +4,5 @@ bacenumMap = \
  'Analog_Input' :'0',
  'Binary_Value' :'5',
  'Enumerated'   :'9',
+ 'Real'         :'4',
  'Present_Value':'85'}

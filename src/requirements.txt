@@ -6,4 +6,4 @@ scipy
 matplotlib
 jupyter
 pandas
-
+pysolar

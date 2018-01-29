@@ -5,12 +5,12 @@ import threading
 
 # Write server config
 port_wt = 61222;
-writeConfig = 'SDCServer/bacnet/testWriteConfig.cfg'
+writeConfig = 'SDCServer/bacnet/IW9701_WriteConfig.cfg'
 bacwpPath = './SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp'
 
 # Read server config
 port_rd = 61221;
-readConfig = 'SDCServer/bacnet/testReadConfig.cfg'
+readConfig = 'SDCServer/bacnet/IW9701_ReadConfig.cfg'
 bacrpmPath = './SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacrpm'
 
 # Run

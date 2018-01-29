@@ -54,3 +54,7 @@ def get_delta_seconds(st_year, st_mon, st_day, ed_mon, ed_day):
     delta_sec = (endTime - startTime).total_seconds();
     
     return delta_sec;
+
+def getSecondFromStartOfYear(nowDateTime):
+    startDateTime = nowDateTime.replace(month = 1, day = 1, hour = 0, minute = 0, second = 0, microsecond = 0);
+    return int((nowDateTime - startDateTime).total_seconds());
