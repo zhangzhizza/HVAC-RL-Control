@@ -185,7 +185,7 @@ def stpt_directSelect_sspOnly(action_raw, action_raw_idx, stptLmt, ob_this_raw):
     # Get the next step SWT ssp
     res_swt_ssp = action_raw[0];
 
-    return ((res_swt_ssp),
+    return (([res_swt_ssp]),
                 (action_raw_idx))  
 
 def stpt_directSelect_withHeuristics(action_raw, action_raw_idx, stptLmt, ob_this_raw):
