@@ -19120,3 +19120,1795 @@ analog-value #21
 }
 
 [2018-01-31 14:11:58,109] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:12:08,121] SDC_ReadServer INFO:Got connection from 127.0.0.1:51588
+[2018-01-31 14:12:08,121] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51588
+[2018-01-31 14:12:08,223] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:12:08,223] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:12:08,224] SDC_ReadServer INFO:Got connection from 127.0.0.1:51590
+[2018-01-31 14:12:08,224] SDC_ReadServer INFO:Recieved GETENERGY request from 127.0.0.1:51590
+[2018-01-31 14:12:08,328] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #22
+{
+    present-value: 3.604069
+}
+
+[2018-01-31 14:12:08,329] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:12:18,340] SDC_ReadServer INFO:Got connection from 127.0.0.1:51592
+[2018-01-31 14:12:18,340] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51592
+[2018-01-31 14:12:18,462] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:12:18,463] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:12:18,464] SDC_ReadServer INFO:Got connection from 127.0.0.1:51594
+[2018-01-31 14:12:18,464] SDC_ReadServer INFO:Recieved GETENERGY request from 127.0.0.1:51594
+[2018-01-31 14:12:18,618] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #22
+{
+    present-value: 3.604069
+}
+
+[2018-01-31 14:12:18,619] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:12:28,629] SDC_ReadServer INFO:Got connection from 127.0.0.1:51596
+[2018-01-31 14:12:28,629] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51596
+[2018-01-31 14:12:28,733] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:12:28,733] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:12:28,734] SDC_ReadServer INFO:Got connection from 127.0.0.1:51598
+[2018-01-31 14:12:28,735] SDC_ReadServer INFO:Recieved GETENERGY request from 127.0.0.1:51598
+[2018-01-31 14:12:28,833] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #22
+{
+    present-value: 3.604069
+}
+
+[2018-01-31 14:12:28,833] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:12:38,841] SDC_ReadServer INFO:Got connection from 127.0.0.1:51600
+[2018-01-31 14:12:38,841] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51600
+[2018-01-31 14:12:38,982] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:12:38,983] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:12:38,984] SDC_ReadServer INFO:Got connection from 127.0.0.1:51602
+[2018-01-31 14:12:38,984] SDC_ReadServer INFO:Recieved GETENERGY request from 127.0.0.1:51602
+[2018-01-31 14:12:39,138] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #22
+{
+    present-value: 3.604069
+}
+
+[2018-01-31 14:12:39,138] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:12:49,149] SDC_ReadServer INFO:Got connection from 127.0.0.1:51606
+[2018-01-31 14:12:49,149] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51606
+[2018-01-31 14:12:49,257] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:12:49,257] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:12:49,259] SDC_ReadServer INFO:Got connection from 127.0.0.1:51608
+[2018-01-31 14:12:49,259] SDC_ReadServer INFO:Recieved GETENERGY request from 127.0.0.1:51608
+[2018-01-31 14:12:49,357] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #22
+{
+    present-value: 3.638181
+}
+
+[2018-01-31 14:12:49,358] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:12:59,369] SDC_ReadServer INFO:Got connection from 127.0.0.1:51612
+[2018-01-31 14:12:59,370] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51612
+[2018-01-31 14:12:59,532] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:12:59,532] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:12:59,534] SDC_ReadServer INFO:Got connection from 127.0.0.1:51614
+[2018-01-31 14:12:59,534] SDC_ReadServer INFO:Recieved GETENERGY request from 127.0.0.1:51614
+[2018-01-31 14:12:59,773] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #22
+{
+    present-value: 3.616387
+}
+
+[2018-01-31 14:12:59,773] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:13:09,781] SDC_ReadServer INFO:Got connection from 127.0.0.1:51618
+[2018-01-31 14:13:09,781] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51618
+[2018-01-31 14:13:09,886] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:13:09,887] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:13:09,888] SDC_ReadServer INFO:Got connection from 127.0.0.1:51620
+[2018-01-31 14:13:09,888] SDC_ReadServer INFO:Recieved GETENERGY request from 127.0.0.1:51620
+[2018-01-31 14:13:09,992] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #22
+{
+    present-value: 3.624442
+}
+
+[2018-01-31 14:13:09,993] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:13:20,004] SDC_ReadServer INFO:Got connection from 127.0.0.1:51622
+[2018-01-31 14:13:20,005] SDC_ReadServer INFO:Recived GETALL request from 127.0.0.1:51622
+[2018-01-31 14:13:20,101] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #110
+{
+    present-value: 35.830002
+}
+analog-value #112
+{
+    present-value: 51.099998
+}
+analog-value #113
+{
+    present-value: 3.900000
+}
+analog-value #114
+{
+    present-value: 168.000000
+}
+analog-value #2
+{
+    present-value: 50.000000
+}
+
+[2018-01-31 14:13:20,205] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #4
+{
+    present-value: 63.500000
+}
+
+[2018-01-31 14:13:20,303] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #48
+{
+    present-value: 72.111191
+}
+analog-value #31
+{
+    present-value: 72.000000
+}
+
+[2018-01-31 14:13:20,402] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #22
+{
+    present-value: 3.644814
+}
+
+[2018-01-31 14:13:20,567] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:13:20,567] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:13:20,713] SDC_ReadServer INFO:Got connection from 127.0.0.1:51626
+[2018-01-31 14:13:20,714] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51626
+[2018-01-31 14:13:20,816] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:13:20,817] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:13:20,845] SDC_ReadServer INFO:Got connection from 127.0.0.1:51630
+[2018-01-31 14:13:20,845] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51630
+[2018-01-31 14:13:20,951] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:13:20,952] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:13:30,961] SDC_ReadServer INFO:Got connection from 127.0.0.1:51632
+[2018-01-31 14:13:30,961] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51632
+[2018-01-31 14:13:31,126] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:13:31,127] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:13:41,138] SDC_ReadServer INFO:Got connection from 127.0.0.1:51634
+[2018-01-31 14:13:41,138] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51634
+[2018-01-31 14:13:41,241] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:13:41,242] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:13:51,254] SDC_ReadServer INFO:Got connection from 127.0.0.1:51636
+[2018-01-31 14:13:51,254] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51636
+[2018-01-31 14:13:51,386] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:13:51,386] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:14:01,398] SDC_ReadServer INFO:Got connection from 127.0.0.1:51638
+[2018-01-31 14:14:01,398] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51638
+[2018-01-31 14:14:01,506] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:14:01,506] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:14:11,509] SDC_ReadServer INFO:Got connection from 127.0.0.1:51640
+[2018-01-31 14:14:11,509] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51640
+[2018-01-31 14:14:11,610] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:14:11,611] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:14:21,622] SDC_ReadServer INFO:Got connection from 127.0.0.1:51644
+[2018-01-31 14:14:21,622] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51644
+[2018-01-31 14:14:21,775] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:14:21,776] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:14:31,785] SDC_ReadServer INFO:Got connection from 127.0.0.1:51650
+[2018-01-31 14:14:31,785] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51650
+[2018-01-31 14:14:31,890] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:14:31,891] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:14:41,901] SDC_ReadServer INFO:Got connection from 127.0.0.1:51654
+[2018-01-31 14:14:41,901] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51654
+[2018-01-31 14:14:42,005] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:14:42,005] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:14:52,017] SDC_ReadServer INFO:Got connection from 127.0.0.1:51656
+[2018-01-31 14:14:52,017] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51656
+[2018-01-31 14:14:52,135] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:14:52,136] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:15:02,137] SDC_ReadServer INFO:Got connection from 127.0.0.1:51660
+[2018-01-31 14:15:02,137] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51660
+[2018-01-31 14:15:02,285] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:15:02,285] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:15:12,288] SDC_ReadServer INFO:Got connection from 127.0.0.1:51664
+[2018-01-31 14:15:12,288] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51664
+[2018-01-31 14:15:12,429] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:15:12,430] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:15:22,438] SDC_ReadServer INFO:Got connection from 127.0.0.1:51666
+[2018-01-31 14:15:22,438] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51666
+[2018-01-31 14:15:22,589] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:15:22,590] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:15:32,601] SDC_ReadServer INFO:Got connection from 127.0.0.1:51668
+[2018-01-31 14:15:32,601] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51668
+[2018-01-31 14:15:32,789] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:15:32,789] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:15:32,790] SDC_ReadServer INFO:Got connection from 127.0.0.1:51670
+[2018-01-31 14:15:32,790] SDC_ReadServer INFO:Recieved GETENERGY request from 127.0.0.1:51670
+[2018-01-31 14:15:32,945] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #22
+{
+    present-value: 3.623977
+}
+
+[2018-01-31 14:15:32,945] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:15:42,956] SDC_ReadServer INFO:Got connection from 127.0.0.1:51672
+[2018-01-31 14:15:42,957] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51672
+[2018-01-31 14:15:43,059] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:15:43,059] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:15:43,060] SDC_ReadServer INFO:Got connection from 127.0.0.1:51674
+[2018-01-31 14:15:43,060] SDC_ReadServer INFO:Recieved GETENERGY request from 127.0.0.1:51674
+[2018-01-31 14:15:43,159] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #22
+{
+    present-value: 3.624452
+}
+
+[2018-01-31 14:15:43,160] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:15:53,171] SDC_ReadServer INFO:Got connection from 127.0.0.1:51676
+[2018-01-31 14:15:53,171] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51676
+[2018-01-31 14:15:53,274] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:15:53,274] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:15:53,275] SDC_ReadServer INFO:Got connection from 127.0.0.1:51678
+[2018-01-31 14:15:53,275] SDC_ReadServer INFO:Recieved GETENERGY request from 127.0.0.1:51678
+[2018-01-31 14:15:53,374] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #22
+{
+    present-value: 3.600289
+}
+
+[2018-01-31 14:15:53,375] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:16:03,386] SDC_ReadServer INFO:Got connection from 127.0.0.1:51680
+[2018-01-31 14:16:03,387] SDC_ReadServer INFO:Recived GETAMV request from 127.0.0.1:51680
+[2018-01-31 14:16:03,592] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #7
+{
+    present-value: 2.000000
+}
+analog-value #8
+{
+    present-value: 2.000000
+}
+analog-value #9
+{
+    present-value: 2.000000
+}
+analog-value #10
+{
+    present-value: 2.000000
+}
+analog-value #11
+{
+    present-value: 2.000000
+}
+analog-value #12
+{
+    present-value: 2.000000
+}
+analog-value #13
+{
+    present-value: 2.000000
+}
+analog-value #14
+{
+    present-value: 2.000000
+}
+analog-value #15
+{
+    present-value: 2.000000
+}
+analog-value #16
+{
+    present-value: 2.000000
+}
+analog-value #17
+{
+    present-value: 2.000000
+}
+analog-value #18
+{
+    present-value: 2.000000
+}
+analog-value #19
+{
+    present-value: 2.000000
+}
+analog-value #20
+{
+    present-value: 2.000000
+}
+analog-value #21
+{
+    present-value: 2.000000
+}
+
+[2018-01-31 14:16:03,592] SDC_ReadServer INFO:Read success!
+[2018-01-31 14:16:03,594] SDC_ReadServer INFO:Got connection from 127.0.0.1:51682
+[2018-01-31 14:16:03,594] SDC_ReadServer INFO:Recieved GETENERGY request from 127.0.0.1:51682
+[2018-01-31 14:16:03,749] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #22
+{
+    present-value: 3.623030
+}
+
+[2018-01-31 14:16:03,750] SDC_ReadServer INFO:Read success!
