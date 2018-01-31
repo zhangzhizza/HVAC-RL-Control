@@ -13,6 +13,7 @@ import pandas as pd
 import numpy as np
 import requests
 import json
+import csv
 
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.poolmanager import PoolManager
@@ -111,12 +112,12 @@ class IW_IMP_V97(Env):
             index 4 is the boolean indicating whether episode terminal.
         """
         ret = []; 
-        nowDatetime = datetime.now()                    
-            
+        nowDatetime = datetime.now()                 
+        # Read from BAS
         readData = self._readFromBASHelper('getAll');
         # readData: OAT-F, OAH-%, WS-MHP, WD, HWOEN-F, MULSSP-F, IAT-F, IATSSP-F, HTDMD-KW, 15 Values for AMV
         (readDataUnitChanged, solDif, solDir, ppdCal, occpMode) = self._processRawReadDataAndQueryPi(readData, nowDatetime);
-        
+        # Set a lower bound for thermal comfort based on the indoor air temperature (IAT must be > 20 C) in case no body report AMV 
         # State ob: OAT-TOC, OAH, WS-TOMS, WD, SOLDIF-CAL, SOLDIR-CAL, HWOEN-TOC, PPD-CAL, MULSSP-TOC, IAT-TOC, IATSSP-TOC, OCCP-CAL, HTDMD-TOKWH
         prcdStateOb = [readDataUnitChanged[0], readDataUnitChanged[1], readDataUnitChanged[2], readDataUnitChanged[3], solDif, solDir,\
                        readDataUnitChanged[4], ppdCal, readDataUnitChanged[5], readDataUnitChanged[6], readDataUnitChanged[7], occpMode, readDataUnitChanged[8]];
@@ -125,7 +126,6 @@ class IW_IMP_V97(Env):
         self.logger_main.info('Current time in second since the start of the year is: %d'%(curObTim));
         ret.append(curObTim);
         ret.append(prcdStateOb);
-   
         # Read the weather forecast
         if self._incl_forecast:
             pass;    
@@ -135,7 +135,62 @@ class IW_IMP_V97(Env):
         # Process for episode terminal
         if is_terminal:
             self._end_episode();
+        # Setup log file
+        self._env_working_dir = self._get_working_folder(CWD, '-%s-res'%(self._env_name));
+        os.makedirs(self._env_working_dir);
+        self._logfilename = os.path.join(self._env_working_dir, 'ob_log.csv');  
+        toWriteLog = self._getToWriteLog(nowDatetime, prcdStateOb, readData[-15:]);
+        logheaders=['time','OAT C','OAH %', 'WS M/S', 'WD', 'SOLDIF W/M2', 'SOLDIR W/M2', 'HWOEN C', 'PPD(PRCD) %', 'MULSSP C', \
+                    'IAT C', 'IATSSP C', 'OCCP', 'HTDMD KW']
+        for i in range(15):
+            # 15 amv values
+            logheaders.append('AMVRAW_%s'%(i));
+        with open(self._logfilename, 'w') as f:
+            writer = csv.writer(f)
+            writer.writerow(logheaders)
+            writer.writerow(toWriteLog);
+
         return tuple(ret);
+
+    def _getToWriteLog(self, nowDatetime, prcdStateOb, rawAMVs):
+        ret = [];
+        ret.append(str(nowDatetime));
+        ret.extend(prcdStateOb);
+        ret.extend(rawAMVs);
+        return ret;
+
+    def _get_working_folder(self, parent_dir, dir_sig = '-run'):
+        """Return working folder path string
+
+        Assumes folders in the parent_dir have suffix -run{run
+        number}. Finds the highest run number and sets the output folder
+        to that number + 1. 
+
+        Parameters
+        ----------
+        parent_dir: str
+        dir_sig: str, working directory suffix name
+
+        Returns
+        -------
+        parent_dir/run_dir
+        """
+        os.makedirs(parent_dir, exist_ok=True)
+        experiment_id = 0
+        for folder_name in os.listdir(parent_dir):
+            if not os.path.isdir(os.path.join(parent_dir, folder_name)):
+                continue
+            try:
+                folder_name = int(folder_name.split(dir_sig)[-1])
+                if folder_name > experiment_id:
+                    experiment_id = folder_name
+            except:
+                pass
+        experiment_id += 1
+
+        parent_dir = os.path.join(parent_dir, 'env')
+        parent_dir = parent_dir + '%s%d'%(dir_sig, experiment_id)
+        return parent_dir
 
     def _readFromBASHelper(self, readCode, isShowInfoLog = True):
         # Establish connection with site BAS data collection server
@@ -174,8 +229,13 @@ class IW_IMP_V97(Env):
     def _processRawReadDataAndQueryPi(self, readData, nowDatetime):
         # Change unit of the readData
         readDataUnitChanged = self._getPrcdUnitChangedReadData(readData);
+        iat = readDataUnitChanged[6];
         # Get PPD
         ppdCal = self._getOnePPDFromAllAMV(readDataUnitChanged[9:]);
+        iat_thres = 20 # C;
+        if iat < iat_thres:
+            self.logger_main.warning('Indoor air temperature is lower than %s, so PPD is changed to 100 (was %s)'%(iat_thres, ppdCal))
+            ppdCal = 100;
         # Get occp mode 
         self.logger_main.debug('Now is %s'%(nowDatetime));
         occpMode = self._getCurrentOccpMode(nowDatetime)
@@ -237,7 +297,12 @@ class IW_IMP_V97(Env):
         controlStepLenS = self._ctrl_step_size_s * self._act_repeat;
         baseTime = time.time();
         self.logger_main.info('Wait for %d seconds to finish this control step'%(controlStepLenS));
+        loopCount = 0
+        queryFreq = 10 #Seconds
+        energyQueryFreq = 10 #Seconds
+        energyQueryWait = 120 #Seconds
         while (time.time() - baseTime) < controlStepLenS:
+            # Check ppd
             amvFromBAS = self._readFromBASHelper('getAMV', False);
             ppdCal_now = self._getOnePPDFromAllAMV(amvFromBAS);
             if ppdCal_now > ppdCal_base:
@@ -245,17 +310,26 @@ class IW_IMP_V97(Env):
                 self.logger_main.info('IW AMV profile changed to: %s, now PPD is %s (old PPD is %s), jump out of the step loop'
                                       %(amvFromBAS, ppdCal_now, ppdCal_base));
                 break;
+            # Check energy frequently because we want the average energy demand of the last control step
+            # But check until after 2 min to let energy demand stable
+            if loopCount != 0 and loopCount%(energyQueryFreq/queryFreq) == 0 and loopCount > energyQueryWait/queryFreq:
+                energyFromBAS = self._readFromBASHelper('getenergy', True)
+                energy_now = energyFromBAS[0]; # in kW
+                integral_energy_list.append(energy_now);
+                self.logger_main.info('Energy demand is: %s'%(energy_now));
             self.logger_main.debug('Remaining time to finish this step: %ds'%(controlStepLenS - (time.time() - baseTime)))
-            time.sleep(5) # Check PPD every 5 seconds
+            time.sleep(queryFreq) # Check PPD every 5 seconds
+            loopCount += 1;
         # Do the reading from BAS
         nowDatetime = datetime.now()
         readData = self._readFromBASHelper('getAll');
         # readData: OAT-F, OAH-%, WS-MHP, WD, HWOEN-F, MULSSP-F, IAT-F, IATSSP-F, HTDMD-KW, 15 Values for AMV
         (readDataUnitChanged, solDif, solDir, ppdCal, occpMode) = self._processRawReadDataAndQueryPi(readData, nowDatetime);
-        
+        integral_energy_list.append(readDataUnitChanged[8]);
         # State ob: OAT-TOC, OAH, WS-TOMS, WD, SOLDIF-CAL, SOLDIR-CAL, HWOEN-TOC, PPD-CAL, MULSSP-TOC, IAT-TOC, IATSSP-TOC, OCCP-CAL, HTDMD-TOKWH
         prcdStateOb = [readDataUnitChanged[0], readDataUnitChanged[1], readDataUnitChanged[2], readDataUnitChanged[3], solDif, solDir,\
-                       readDataUnitChanged[4], ppdCal, readDataUnitChanged[5], readDataUnitChanged[6], readDataUnitChanged[7], occpMode, readDataUnitChanged[8]];
+                       readDataUnitChanged[4], ppdCal, readDataUnitChanged[5], readDataUnitChanged[6], readDataUnitChanged[7], occpMode, \
+                       sum(integral_energy_list)/len(integral_energy_list)];
         self.logger_main.info('State observation is: %s'%(prcdStateOb));
         curObTim = getSecondFromStartOfYear(nowDatetime);
         self.logger_main.info('Current time in second since the start of the year is: %d'%(curObTim));
@@ -266,6 +340,11 @@ class IW_IMP_V97(Env):
             pass;
         # Add terminal status
         ret.append(is_terminal);
+        # Log observations to file
+        toWriteLog = self._getToWriteLog(nowDatetime, prcdStateOb, readData[-15:]);
+        with open(self._logfilename, 'a') as f:
+            writer = csv.writer(f)
+            writer.writerow(toWriteLog);
         return ret;
         
 
@@ -295,6 +374,10 @@ class IW_IMP_V97(Env):
         return occpMode;
 
     def _getOnePPDFromAllAMV(self, allAMV):
+        """
+            ret: float
+                0-100
+        """
         # 15 AMV in total, 0 to 4 scale, 0 is cold, 4 is hot, 2 is neutral
         allAMVScaleAbs = [abs(amv - 2.0) for amv in allAMV];
         onePPD = 100 * sum(allAMVScaleAbs) / (2.0 * len(allAMV));

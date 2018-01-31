@@ -545,7 +545,7 @@ register(
             'forecastSource': None,
             'forecastFilePath': None,
             'forecast_hour': 12,
-            'act_repeat': 1});
+            'act_repeat': 3});
 
 
 def setSchedulePath(sch_path_dict, tgtIDFPath):

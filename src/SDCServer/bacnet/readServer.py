@@ -34,59 +34,48 @@ class ReadServer(object):
 			addr = (':'.join(str(e) for e in addr));   
 			logger_main.info('Got connection from ' + addr);
 			recv = c.recv(1024).decode(encoding = 'utf-8')
+			bacrpmRes = [];
+			bacnetStackRawRet = [];
+			flag = 1;
+			retMsg = 'Read success!';
+			toReadCmds = [];
+			readCount = 0;
 			if recv.lower() == 'getall':
 				logger_main.info('Recived GETALL request from ' + addr)
-				# Perform Bacrp
-				bacrpmRes = [];
-				bacnetStackRawRet = [];
-				flag = 1;
-				retMsg = 'Read success!';
-				for rpCmd in rpCmds:
-					rawResult = subprocess.run(rpCmd, stdout=subprocess.PIPE).stdout.decode();
-					bacnetStackRawRet.append(rawResult);
-					logger_main.debug('Raw return from BACnet stack is ' + rawResult);
-					prcdResult = self.processRawBacrpmRet(rawResult);
-					bacrpmRes.extend(prcdResult);
-				if len(bacrpmRes) != readCountAll:
-					retMsg = 'Should read %d values, but gets %d values, the raw output from the BACnet stack is: %s'%(readCountAll, len(bacrpmRes), bacnetStackRawRet);
-					logger_main.warning(retMsg);
-					logger_main.warning('The BACnet stack raw return is: %s'%bacnetStackRawRet);
-					flag = 0;	
-				else:
-					logger_main.info(retMsg);
-				bacrpmRes.insert(0, len(bacrpmRes));
-				bacrpmRes.insert(0, retMsg);
-				bacrpmRes.insert(0, flag);
-				c.sendall(bytearray(str(bacrpmRes), encoding = 'utf-8'));
+				toReadCmds = rpCmds;
+				readCount = readCountAll;	
 			elif recv.lower() == 'getamv':
 				logger_main.info('Recived GETAMV request from ' + addr)
-				# Perform Bacrp
-				bacrpmRes = [];
-				bacnetStackRawRet = [];
-				flag = 1;
-				retMsg = 'Read success!';
-				rpCmd = rpCmds[-1];
-				readCountAMV = (len(rpCmd) - 2)/3;
+				toReadCmds = [rpCmds[-1]];
+				readCount = (len(toReadCmds[0]) - 2)/3;
+			elif recv.lower() == 'getenergy':
+				logger_main.info('Recieved GETENERGY request from ' + addr)
+				toReadCmds = [rpCmds[3]]
+				readCount = 1;
+			else:
+				logger_main.warning('Recieved unrecognized request from %s: %s'%(addr, recv.lower()));
+				toReadCmds = []
+				readCount = 0;
+				retMsg = 'Unrecognized request'
+				flag = 0;
+			# Perform read
+			for rpCmd in toReadCmds:
 				rawResult = subprocess.run(rpCmd, stdout=subprocess.PIPE).stdout.decode();
 				bacnetStackRawRet.append(rawResult);
 				logger_main.debug('Raw return from BACnet stack is ' + rawResult);
 				prcdResult = self.processRawBacrpmRet(rawResult);
 				bacrpmRes.extend(prcdResult);
-				if len(bacrpmRes) != readCountAMV:
-					retMsg = 'Should read %d values, but gets %d values, the raw output from the BACnet stack is: %s'%(readCountAMV, len(bacrpmRes));
-					logger_main.warning(retMsg);
-					logger_main.warning('The BACnet stack raw return is: %s'%bacnetStackRawRet);
-					flag = 0;	
-				else:
-					logger_main.info(retMsg);
-				bacrpmRes.insert(0, len(bacrpmRes));
-				bacrpmRes.insert(0, retMsg);
-				bacrpmRes.insert(0, flag);
-				c.sendall(bytearray(str(bacrpmRes), encoding = 'utf-8'));
-
+			if len(bacrpmRes) != readCount:
+				retMsg = 'Should read %d values, but gets %d values, the raw output from the BACnet stack is: %s'%(readCount, len(bacrpmRes), bacnetStackRawRet);
+				logger_main.warning(retMsg);
+				logger_main.warning('The BACnet stack raw return is: %s'%bacnetStackRawRet);
+				flag = 0;	
 			else:
-				logger_main.warning('Recieved unrecognized request from %s: %s'%(addr, recv.lower()));	
-				c.sendall(bytearray(str([0, 0]), encoding = 'utf-8'))
+				logger_main.info(retMsg);
+			bacrpmRes.insert(0, len(bacrpmRes));
+			bacrpmRes.insert(0, retMsg);
+			bacrpmRes.insert(0, flag);
+			c.sendall(bytearray(str(bacrpmRes), encoding = 'utf-8'));
 
 	def readXmlConfg(self, readConfig):
 		deviceInstanceList = [];

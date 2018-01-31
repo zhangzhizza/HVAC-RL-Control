@@ -1,0 +1,30 @@
+[2018-01-31 13:22:36,930] SDC_WriteServer DEBUG:wpCmds:[['./SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4']]
+[2018-01-31 13:22:36,932] SDC_WriteServer INFO:Server starts at 0.0.0.0:61222
+[2018-01-31 13:23:45,955] SDC_WriteServer INFO:Got connection from 127.0.0.1:49934
+[2018-01-31 13:23:45,955] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:49934, number of data to write is 1, data to write are [77.0]
+[2018-01-31 13:23:45,956] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['./SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '77.0']
+[2018-01-31 13:23:45,977] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-01-31 13:23:45,977] SDC_WriteServer INFO:Write success!
+[2018-01-31 13:28:11,546] SDC_WriteServer INFO:Got connection from 127.0.0.1:49960
+[2018-01-31 13:28:11,546] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:49960, number of data to write is 1, data to write are [113.0]
+[2018-01-31 13:28:11,547] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['./SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '113.0']
+[2018-01-31 13:28:11,568] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-01-31 13:28:11,568] SDC_WriteServer INFO:Write success!
+[2018-01-31 13:43:14,330] SDC_WriteServer INFO:Got connection from 127.0.0.1:50354
+[2018-01-31 13:43:14,330] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:50354, number of data to write is 1, data to write are [63.5]
+[2018-01-31 13:43:14,330] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['./SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-01-31 13:43:14,429] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-01-31 13:43:14,430] SDC_WriteServer INFO:Write success!
+[2018-01-31 13:58:16,944] SDC_WriteServer INFO:Got connection from 127.0.0.1:50730
+[2018-01-31 13:58:16,944] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:50730, number of data to write is 1, data to write are [63.5]
+[2018-01-31 13:58:16,945] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['./SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-01-31 13:58:17,008] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-01-31 13:58:17,008] SDC_WriteServer INFO:Write success!
