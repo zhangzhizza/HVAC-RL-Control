@@ -174,7 +174,19 @@ def stpt_directSelect(action_raw, action_raw_idx, stptLmt, ob_this_raw):
     res_oae_ssp = max(min(res_oae_ssp, stptLmt[0][1]), stptLmt[0][0]);
 
     return ((res_oae_ssp, res_swt_ssp),
-                (action_raw_idx)) 
+                (action_raw_idx))
+
+def stpt_directSelect_sspOnly(action_raw, action_raw_idx, stptLmt, ob_this_raw):
+    """ 
+    Return: ((float), (float))
+       
+    """
+
+    # Get the next step SWT ssp
+    res_swt_ssp = action_raw[0];
+
+    return (([res_swt_ssp]),
+                (action_raw_idx))  
 
 def stpt_directSelect_withHeuristics(action_raw, action_raw_idx, stptLmt, ob_this_raw):
     """
@@ -271,4 +283,5 @@ act_func_dict = {'1':[mull_stpt_iw, act_limits_iw_1],
                 '6':[iw_iat_stpt_noExpHeatingOp, act_limits_iw_4],
                 '7':[stpt_directSelect, act_limits_iw_4],
                 '8':[stpt_directSelect, act_limits_iw_5],
-                '9':[stpt_directSelect_withHeuristics, act_limits_iw_5]}
+                '9':[stpt_directSelect_withHeuristics, act_limits_iw_5],
+                '10':[stpt_directSelect_sspOnly, act_limits_iw_6],}

@@ -85,6 +85,7 @@ def get_args():
                         help='Reward wegith on PPD, default is 0.6.');
     parser.add_argument('--action_space', default='default', type=str, help='The action space name, default is default.');
     parser.add_argument('--save_freq', default=50000, type=int);
+    parser.add_argument('--save_max_to_keep', default=5, type=int);
     parser.add_argument('--save_scope', default='all', 
                         help='The tensorflow graph save scope, default is global '
                         'which only saves the global network. Choice is all which '
@@ -106,6 +107,7 @@ def get_args():
     	'multiple zones.');
     parser.add_argument('--agent_num', default=5, type=int, help='Used when test_mode is Multiple. Default is 5. This value '
     	'Determines how many zones are controlled by the agent in the testing time.');
+    parser.add_argument('--debug_log_prob', default=0.0001, type=float);
     return parser;
 
 def effective_main(args, reward_func, rewardArgs, train_action_func, eval_action_func, train_action_limits, eval_action_limits, raw_state_process_func):
@@ -141,7 +143,7 @@ def effective_main(args, reward_func, rewardArgs, train_action_func, eval_action
     main_logger.info ('Start compiling...')
     (g, sess, coordinator, global_network, workers, global_summary_writer, 
      global_saver) = a3c_agent.compile(args.is_warm_start, args.model_dir, 
-                                       args.save_scope);
+                                       args.save_scope, args.save_max_to_keep);
     if args.job_mode.lower() == "train":
         # Start the training
         main_logger.info ('Start the learning...')
@@ -149,7 +151,7 @@ def effective_main(args, reward_func, rewardArgs, train_action_func, eval_action
                       global_summary_writer, global_saver, [args.env, args.test_env], args.train_freq,
                       args.gamma, args.rwd_e_para, args.rwd_p_para, args.save_freq, args.max_interactions,
                       args.eval_epi_num, args.eval_freq, reward_func, rewardArgs, train_action_func, eval_action_func,  
-                      train_action_limits, eval_action_limits, raw_state_process_func);
+                      train_action_limits, eval_action_limits, raw_state_process_func, args.debug_log_prob);
 
     if args.job_mode.lower() == 'test':
         main_logger.info ('Start the testing...')

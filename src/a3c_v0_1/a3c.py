@@ -177,7 +177,7 @@ class A3CThread:
               global_summary_writer, T_max, global_agent_eval_list, eval_freq, 
               global_res_list, action_space_name, dropout_prob, reward_func, 
               rewardArgs, train_action_func, eval_action_func, train_action_limits, 
-              eval_action_limits, raw_state_process_func):
+              eval_action_limits, raw_state_process_func, debug_log_prob):
         """
         The function that the thread worker works to train the networks.
         
@@ -279,7 +279,7 @@ class A3CThread:
                 dbg_rdm = np.random.uniform();
                 noForecastDim = 13;
                 forecastSingleEntryDim = 4;
-                dbg_thres = 0.0005;
+                dbg_thres = debug_log_prob;
                 is_show_dbg = True if dbg_rdm < dbg_thres else False;
                 #################################################
 
@@ -345,7 +345,7 @@ class A3CThread:
                 self._update_e_greedy(); # Update the epsilon value
                 with global_lock:
                     # Do the evaluation
-                    if self._global_counter.value % eval_freq == 0: 
+                    if eval_freq != 0 and self._global_counter.value % eval_freq == 0: 
                         self._local_logger.info('Evaluating...');
                         global_res_list.append([self._global_counter.value]);
                         for global_agent_eval in global_agent_eval_list:
@@ -569,7 +569,7 @@ class A3CAgent:
         self._dropout_prob = dropout_prob;
         self._global_logger = global_logger;
         
-    def compile(self, is_warm_start, model_dir, save_scope = 'global'):
+    def compile(self, is_warm_start, model_dir, save_scope = 'global', save_max_to_keep = 5):
         """
         This method sets up the required TF graph and operations.
         
@@ -623,7 +623,7 @@ class A3CAgent:
                                              scope=save_scope)
             if save_scope == 'all':
                 save_var_list = None;
-            saver = tf.train.Saver(var_list = save_var_list);
+            saver = tf.train.Saver(var_list = save_var_list, max_to_keep = save_max_to_keep);
             # Init ops
             init_global_all_op = tf.global_variables_initializer();
             if not is_warm_start:
@@ -689,7 +689,8 @@ class A3CAgent:
 
     def fit(self, sess, coordinator, global_network, workers, global_summary_writer, global_saver,
             env_name_list, t_max, gamma, e_weight, p_weight, save_freq, T_max, eval_epi_num, eval_freq,
-            reward_func, rewardArgs, train_action_func, eval_action_func, train_action_limits, eval_action_limits, raw_state_process_func):
+            reward_func, rewardArgs, train_action_func, eval_action_func, train_action_limits, eval_action_limits, 
+            raw_state_process_func, debug_log_prob):
         """
         This method is used to train the neural network. 
         
@@ -755,7 +756,8 @@ class A3CAgent:
                                                 T_max, global_agent_eval_list, eval_freq, global_res_list,
                                                 self._action_space_name, self._dropout_prob, reward_func, 
                                                 rewardArgs, train_action_func, eval_action_func, 
-                                                train_action_limits, eval_action_limits, raw_state_process_func);
+                                                train_action_limits, eval_action_limits, raw_state_process_func,
+                                                debug_log_prob);
 
             thread = threading.Thread(target = (worker_train));
             thread.start();
