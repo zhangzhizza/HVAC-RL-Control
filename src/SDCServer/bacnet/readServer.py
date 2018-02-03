@@ -6,7 +6,7 @@ import os
 import xml.etree.ElementTree as ET
 
 from util.logger import Logger
-from SDCServer.bacnet.bacenum import bacenumMap
+from SDCServer.bacnet.bacenum import bacenumMap, bacenumMap_inv
 
 FD = os.path.dirname(os.path.realpath(__file__));
 LOG_LEVEL = 'DEBUG';
@@ -42,15 +42,19 @@ class ReadServer(object):
 			readCount = 0;
 			if recv.lower() == 'getall':
 				logger_main.info('Recived GETALL request from ' + addr)
-				toReadCmds = rpCmds;
+				toReadCmds = rpCmds[0:-1];
 				readCount = readCountAll;	
 			elif recv.lower() == 'getamv':
 				logger_main.info('Recived GETAMV request from ' + addr)
-				toReadCmds = [rpCmds[-1]];
+				toReadCmds = [rpCmds[-2]];
 				readCount = (len(toReadCmds[0]) - 2)/3;
 			elif recv.lower() == 'getenergy':
 				logger_main.info('Recieved GETENERGY request from ' + addr)
 				toReadCmds = [rpCmds[3]]
+				readCount = 1;
+			elif recv.lower() == 'getiarh':
+				logger_main.info('Recieved GETIARH request from ' + addr)
+				toReadCmds = [rpCmds[-1]]
 				readCount = 1;
 			else:
 				logger_main.warning('Recieved unrecognized request from %s: %s'%(addr, recv.lower()));
@@ -63,7 +67,7 @@ class ReadServer(object):
 				rawResult = subprocess.run(rpCmd, stdout=subprocess.PIPE).stdout.decode();
 				bacnetStackRawRet.append(rawResult);
 				logger_main.debug('Raw return from BACnet stack is ' + rawResult);
-				prcdResult = self.processRawBacrpmRet(rawResult);
+				prcdResult = self.processRawBacrpmRet(rawResult, rpCmd);
 				bacrpmRes.extend(prcdResult);
 			if len(bacrpmRes) != readCount:
 				retMsg = 'Should read %d values, but gets %d values, the raw output from the BACnet stack is: %s'%(readCount, len(bacrpmRes), bacnetStackRawRet);
@@ -97,16 +101,23 @@ class ReadServer(object):
 			deviceInstanceList.append(thisDeviceList);
 		return (deviceInstanceList, readCount);
 
-	def processRawBacrpmRet(self, rawResult):
+	def processRawBacrpmRet(self, rawResult, rpCmd):
+		"""
+			rpCmd: python list of str, ['./bacrpm', 'device id', 'object type', 'instance id', 'property', 'device id', ....]
+		"""
 		prcdRes = []
 		rawResult = rawResult.replace('\n', '').replace('\r', '').replace(' ','');
 		colonIdx = rawResult.find(':');
 		rightBraceIdx = rawResult.find('}');
-		while colonIdx != -1:
-			prcdRes.append(rawResult[colonIdx + 1:rightBraceIdx]);
-			colonIdx = rawResult.find(':', colonIdx + 1);
-			rightBraceIdx = rawResult.find('}', rightBraceIdx + 1);
-
+		rpCmd_idx = 4 # The first property ID
+		curSearch_idx = 0;
+		while rpCmd_idx < len(rpCmd):
+			propertyName = bacenumMap_inv[rpCmd[rpCmd_idx]].lower();
+			propertyNameIdx = rawResult.find(propertyName, curSearch_idx);
+			rightBraceIdx = rawResult.find('}', propertyNameIdx);
+			prcdRes.append(rawResult[propertyNameIdx + len(propertyName) + 1: rightBraceIdx]);
+			rpCmd_idx += 3;
+			curSearch_idx = rightBraceIdx;
 		return prcdRes;
 
 
