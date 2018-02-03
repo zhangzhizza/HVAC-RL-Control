@@ -209,6 +209,12 @@ class IW_IMP_V97(Env):
                 readData = self._defaultObValues;
             elif readCode.lower() == 'getamv':
                 readData = self._defaultObValues[9:];
+            elif readCode.lower() == 'getenergy':
+                readData = [self._defaultObValues[8]];
+            elif readCode.lower() == 'getiarh':
+                readData = [50]
+            else:
+                pass
         else:
             # Process the None values because of float conversion error
             defaultObValuesShiftIdx = 0;
@@ -216,10 +222,20 @@ class IW_IMP_V97(Env):
                 defaultObValuesShiftIdx = 0;
             elif readCode.lower() == 'getamv':
                 defaultObValuesShiftIdx = 9;
+            elif readCode.lower() == 'getenergy':
+                defaultObValuesShiftIdx = 8;
+            elif readCode.lower() == 'getiarh':
+                defaultObValuesShiftIdx = -1 # Not in the default values
+            else:
+                pass;
             if None in readData:
-                for i in range(len(readData)):
-                    if readData[i] == None:
-                        readData[i] = self._defaultObValues[i + defaultObValuesShiftIdx];
+                if defaultObValuesShiftIdx > 0:
+                    for i in range(len(readData)):
+                        if readData[i] == None:
+                            readData[i] = self._defaultObValues[i + defaultObValuesShiftIdx];
+                else:
+                    if readCode.lower() == 'getiarh':
+                        readData[0] = 50;
                 self.logger_main.warning('Data read from BACnet server contains None values, raw data is: %s, '\
                                          'processed data using the default values is: %s'%(rcv_from_bas_server, readData));
         if isShowInfoLog:
@@ -230,15 +246,20 @@ class IW_IMP_V97(Env):
         # Change unit of the readData
         readDataUnitChanged = self._getPrcdUnitChangedReadData(readData);
         iat = readDataUnitChanged[6];
-        # Get PPD
-        ppdCal = self._getOnePPDFromAllAMV(readDataUnitChanged[9:]);
-        iat_thres = 20 # C;
-        if iat < iat_thres:
-            self.logger_main.warning('Indoor air temperature is lower than %s, so PPD is changed to 100 (was %s)'%(iat_thres, ppdCal))
-            ppdCal = 100;
+        met = 1.2 #met
+        airVel = 0.1 #m/s
+        clo = 1.0 #clo
         # Get occp mode 
         self.logger_main.debug('Now is %s'%(nowDatetime));
         occpMode = self._getCurrentOccpMode(nowDatetime)
+        # Get PPD
+        ppdCal = self._getOnePPDFromAllAMV(readDataUnitChanged[9:]);
+        if ppdCal == 0: # Indicating no one votes or every one is comfortable
+            # IARH is needed for fanger PPD
+            iarhFromBAS = self._readFromBASHelper('getIARH', False);
+            pmvFanger, ppdFanger = fangerPMV(iat, iat, iarhFromBAS, airVel, met, clo);
+            self.logger_main.warning('Collected PPD is 0.0, so Fanger-PPD: %s is used'%(ppdFanger))
+            ppdCal = ppdFanger;
         # Get soldif and soldir
         solTotal, solTotalMsgBack = self._getSolTotalNow();
         self.logger_main.debug('Global solar radiation from PI is: %s'%(solTotal));
@@ -324,7 +345,7 @@ class IW_IMP_V97(Env):
         nowDatetime = datetime.now()
         readData = self._readFromBASHelper('getAll');
         # readData: OAT-F, OAH-%, WS-MHP, WD, HWOEN-F, MULSSP-F, IAT-F, IATSSP-F, HTDMD-KW, 15 Values for AMV
-        (readDataUnitChanged, solDif, solDir, ppdCal, occpMode) = self._processRawReadDataAndQueryPi(readData, nowDatetime);
+        (readDataUnitChanged, solDif, solDir, ppdCal, occpMode) = self._processRawReadDataAndQueryPi(readData, nowDatetime, self._iat_thres);
         integral_energy_list.append(readDataUnitChanged[8]);
         # State ob: OAT-TOC, OAH, WS-TOMS, WD, SOLDIF-CAL, SOLDIR-CAL, HWOEN-TOC, PPD-CAL, MULSSP-TOC, IAT-TOC, IATSSP-TOC, OCCP-CAL, HTDMD-TOKWH
         prcdStateOb = [readDataUnitChanged[0], readDataUnitChanged[1], readDataUnitChanged[2], readDataUnitChanged[3], solDif, solDir,\
@@ -438,7 +459,8 @@ class IW_IMP_V97(Env):
                 try:
                     readData.append(float(rcv[i]));
                 except ValueError as err:
-                    self.logger_main.warning('Encountered error %s for [%s], this record is changed to None'%(rcv[i]));
+                    self.logger_main.warning('Encountered error [%s] during disassembling the SDC read server return msg (msg: [%s]),'
+                                            ' this record is changed to None'%(err, rcv[i]));
                     readData.append(None);
         return (flag, retMsg, count, readData);
 

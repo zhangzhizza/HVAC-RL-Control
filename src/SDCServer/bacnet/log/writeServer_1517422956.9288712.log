@@ -588,3 +588,10 @@ WriteProperty Acknowledged!
 WriteProperty Acknowledged!
 
 [2018-02-01 09:16:03,318] SDC_WriteServer INFO:Write success!
+[2018-02-01 13:36:03,783] SDC_WriteServer INFO:Got connection from 127.0.0.1:53606
+[2018-02-01 13:36:03,783] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:53606, number of data to write is 1, data to write are [104.0]
+[2018-02-01 13:36:03,783] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['./SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '104.0']
+[2018-02-01 13:36:03,836] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-01 13:36:03,837] SDC_WriteServer INFO:Write success!
