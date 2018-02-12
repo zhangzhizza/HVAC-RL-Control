@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.02.12 15:44,IDD_Version 8.3.0
+Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.02.12 16:22,IDD_Version 8.3.0
    ** Warning ** GetFluidPropertiesData: FluidProperties:Superheated Name=R22
    **   ~~~   ** Fluid Property Type="SPECIFICHEAT" is not valid.
    **   ~~~   ** Valid choices are "ENTHALPY", "DENSITY".
@@ -665,6 +665,311 @@ Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.02.12 15:44,IDD_V
    **   ~~~   ** ...conflicting setpoint manager = SetpointManager:FollowGroundTemperature:"CHILLED WATER CONDENSER LOOP"
    **   ~~~   ** ...conflicting node name = CONDENSER SUPPLY OUTLET NODE
    **   ~~~   ** ...control type variable = Temperature
+   ** Warning ** DXFOut: Could not triangulate surface="Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 4 - SURFACE 19 (20)", type="Detached Shading:Building", check surface vertex order(entry)
+   *************  surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 4 - SURFACE 19 (20) class=Detached Shading:Building
+   *************  side=1 (-6.7,-5.2,10.2)
+   *************  side=2 (-6.7,-5.2,11.5)
+   *************  side=3 (-6.9,-5.1,11.5)
+   *************  side=4 (-6.9,-5.1,12.2)
+   *************  side=5 (-6.7,-5.2,12.2)
+   *************  side=6 (-6.7,-5.2,9.6)
+   *************  side=7 (-6.9,-5.1,9.6)
+   *************  side=8 (-6.9,-5.1,10.2)
+   *************  number of triangles found=           4
+   *************  r angle=1 vert=5 deg=270.0
+   *************  r angle=2 vert=6 deg=270.0
+   *************  r angle=3 vert=7 deg=270.0
+   *************  r angle=4 vert=4 deg=270.0
+   ** Warning ** DXFOut: Could not triangulate surface="Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 4 - SURFACE 21 (22)", type="Detached Shading:Building", check surface vertex order(entry)
+   *************  surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 4 - SURFACE 21 (22) class=Detached Shading:Building
+   *************  side=1 (-7.1,-4.9,12.2)
+   *************  side=2 (-7.1,-4.9,11.5)
+   *************  side=3 (-7.1,-4.9,11.5)
+   *************  side=4 (-7.1,-4.9,10.2)
+   *************  side=5 (-7.1,-4.9,10.2)
+   *************  side=6 (-7.1,-4.9,9.6)
+   *************  side=7 (-7.2,-4.7,9.6)
+   *************  side=8 (-7.2,-4.7,12.2)
+   *************  number of triangles found=           3
+   *************  r angle=1 vert=3 deg=182.2
+   *************  r angle=2 vert=4 deg=182.6
+   ** Warning ** DXFOut: Could not triangulate surface="Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 24 - SURFACE 5 (118)", type="Detached Shading:Building", check surface vertex order(entry)
+   *************  surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 24 - SURFACE 5 (118) class=Detached Shading:Building
+   *************  side=1 (-19.9,1.2,6.7)
+   *************  side=2 (-19.9,1.2,6.6)
+   *************  side=3 (-19.9,2.5,6.6)
+   *************  side=4 (-19.9,2.5,6.7)
+   *************  side=5 (-19.9,4.2,6.7)
+   *************  side=6 (-19.9,4.2,6.6)
+   *************  side=7 (-19.9,0.7,6.6)
+   *************  side=8 (-19.9,0.7,6.7)
+   *************  number of triangles found=           1
+   *************  r angle=1 vert=4 deg=270.0
+   *************  r angle=2 vert=5 deg=270.0
+   *************  r angle=3 vert=6 deg=270.0
+   *************  r angle=4 vert=7 deg=270.0
+   *************  r angle=5 vert=8 deg=270.0
+   *************  r angle=6 vert=1 deg=184.8
+   ** Warning ** DXFOut: Could not triangulate surface="Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 24 - SURFACE 7 (120)", type="Detached Shading:Building", check surface vertex order(entry)
+   *************  surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 24 - SURFACE 7 (120) class=Detached Shading:Building
+   *************  side=1 (-20.0,2.5,6.7)
+   *************  side=2 (-19.9,2.5,6.7)
+   *************  side=3 (-19.9,2.5,6.6)
+   *************  side=4 (-16.3,2.5,9.0)
+   *************  side=5 (-16.4,2.5,9.1)
+   *************  number of triangles found=           1
+   *************  r angle=1 vert=3 deg=260.5
+   *************  r angle=2 vert=4 deg=270.0
+   *************  r angle=3 vert=5 deg=270.0
+   *************  r angle=4 vert=1 deg=279.5
+   ** Warning ** DXFOut: Could not triangulate surface="Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 25 - SURFACE 3 (127)", type="Detached Shading:Building", check surface vertex order(entry)
+   *************  surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 25 - SURFACE 3 (127) class=Detached Shading:Building
+   *************  side=1 (-16.4,4.2,4.9)
+   *************  side=2 (-16.4,4.2,4.9)
+   *************  side=3 (-19.8,4.2,6.7)
+   *************  side=4 (-19.9,4.2,6.6)
+   *************  side=5 (-16.4,4.2,4.7)
+   *************  side=6 (-16.4,4.2,4.8)
+   *************  side=7 (-13.6,4.2,4.8)
+   *************  side=8 (-13.6,4.2,4.9)
+   *************  number of triangles found=           3
+   *************  r angle=1 vert=4 deg=270.0
+   *************  r angle=2 vert=5 deg=209.0
+   *************  r angle=3 vert=7 deg=269.0
+   *************  r angle=4 vert=8 deg=254.0
+   *************  r angle=5 vert=3 deg=258.0
+   ** Warning ** DXFOut: Could not triangulate surface="Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 25 - SURFACE 4 (128)", type="Detached Shading:Building", check surface vertex order(entry)
+   *************  surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 25 - SURFACE 4 (128) class=Detached Shading:Building
+   *************  side=1 (-16.4,2.9,4.9)
+   *************  side=2 (-16.4,2.9,4.8)
+   *************  side=3 (-16.4,2.9,4.8)
+   *************  side=4 (-16.4,2.9,4.7)
+   *************  side=5 (-19.9,2.9,6.6)
+   *************  side=6 (-19.8,2.9,6.7)
+   *************  number of triangles found=           1
+   *************  r angle=1 vert=3 deg=213.9
+   *************  r angle=2 vert=4 deg=270.0
+   *************  r angle=3 vert=5 deg=270.0
+   *************  r angle=4 vert=6 deg=270.0
+   *************  r angle=5 vert=1 deg=236.1
+   ** Warning ** DXFOut: Could not triangulate surface="Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 26 - SURFACE 9 (146)", type="Detached Shading:Building", check surface vertex order(entry)
+   *************  surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 26 - SURFACE 9 (146) class=Detached Shading:Building
+   *************  side=1 (-19.6,1.1,3.1)
+   *************  side=2 (-19.6,1.1,3.1)
+   *************  side=3 (-19.6,2.5,3.1)
+   *************  side=4 (-19.6,2.5,3.1)
+   *************  side=5 (-19.6,3.9,3.1)
+   *************  side=6 (-19.6,3.9,3.0)
+   *************  side=7 (-19.6,0.5,3.0)
+   *************  side=8 (-19.6,0.5,3.1)
+   *************  number of triangles found=           1
+   *************  r angle=1 vert=4 deg=270.0
+   *************  r angle=2 vert=5 deg=270.0
+   *************  r angle=3 vert=6 deg=270.0
+   *************  r angle=4 vert=7 deg=270.0
+   *************  r angle=5 vert=8 deg=270.0
+   *************  r angle=6 vert=1 deg=182.3
+   ** Warning ** DXFOut: Could not triangulate surface="Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 22 - SURFACE 9 (160)", type="Detached Shading:Building", check surface vertex order(entry)
+   *************  surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 22 - SURFACE 9 (160) class=Detached Shading:Building
+   *************  side=1 (-20.9,0.5,10.0)
+   *************  side=2 (-20.9,0.5,10.1)
+   *************  side=3 (-20.9,0.7,10.1)
+   *************  side=4 (-20.9,0.7,10.6)
+   *************  side=5 (-20.9,-6.2,10.6)
+   *************  side=6 (-20.9,-6.2,9.1)
+   *************  side=7 (-20.9,0.7,9.1)
+   *************  side=8 (-20.9,0.7,10.0)
+   *************  number of triangles found=           4
+   *************  r angle=1 vert=5 deg=270.0
+   *************  r angle=2 vert=6 deg=270.0
+   *************  r angle=3 vert=7 deg=270.0
+   *************  r angle=4 vert=4 deg=270.0
+   ** Warning ** DXFOut: Could not triangulate surface="Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 36 - SURFACE 7 (180)", type="Detached Shading:Building", check surface vertex order(entry)
+   *************  surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 36 - SURFACE 7 (180) class=Detached Shading:Building
+   *************  side=1 (1.5,9.7,3.0)
+   *************  side=2 (1.5,9.7,2.9)
+   *************  side=3 (1.1,9.7,3.0)
+   *************  side=4 (-4.3,9.7,2.9)
+   *************  side=5 (-4.3,9.7,0.8)
+   *************  side=6 (-31.4,9.7,0.8)
+   *************  side=7 (-31.4,9.7,3.0)
+   *************  number of triangles found=           3
+   *************  r angle=1 vert=4 deg=184.3
+   ** Warning ** DXFOut: Could not triangulate surface="Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 36 - SURFACE 9 (182)", type="Detached Shading:Building", check surface vertex order(entry)
+   *************  surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 36 - SURFACE 9 (182) class=Detached Shading:Building
+   *************  side=1 (-31.4,18.5,9.1)
+   *************  side=2 (-31.4,18.5,7.4)
+   *************  side=3 (-31.4,16.8,7.4)
+   *************  side=4 (-31.4,16.8,6.1)
+   *************  side=5 (-31.4,14.6,6.1)
+   *************  side=6 (-31.4,14.6,3.0)
+   *************  side=7 (-31.4,9.7,3.0)
+   *************  side=8 (-31.4,9.7,0.8)
+   *************  side=9 (-31.4,6.0,0.8)
+   *************  side=10 (-31.4,6.0,0.0)
+   *************  side=11 (-31.4,29.3,-1.5E-009)
+   *************  side=12 (-31.4,29.3,9.1)
+   *************  number of triangles found=           7
+   *************  r angle=1 vert=9 deg=236.2
+   *************  r angle=2 vert=10 deg=270.0
+   *************  r angle=3 vert=11 deg=270.0
+   *************  r angle=4 vert=12 deg=270.0
+   *************  r angle=5 vert=1 deg=213.8
+   ** Warning ** DXFOut: Could not triangulate surface="Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 36 - SURFACE 25 (198)", type="Detached Shading:Building", check surface vertex order(entry)
+   *************  surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 36 - SURFACE 25 (198) class=Detached Shading:Building
+   *************  side=1 (35.1,5.6,4.7)
+   *************  side=2 (35.1,12.3,4.7)
+   *************  side=3 (35.1,16.7,6.9)
+   *************  side=4 (35.1,16.7,9.1)
+   *************  side=5 (35.1,29.3,9.1)
+   *************  side=6 (35.1,29.3,2.6E-009)
+   *************  side=7 (35.1,2.5,1.2E-009)
+   *************  side=8 (35.1,2.5,1.8)
+   *************  number of triangles found=           2
+   *************  r angle=1 vert=4 deg=201.7
+   *************  r angle=2 vert=5 deg=270.0
+   *************  r angle=3 vert=6 deg=270.0
+   *************  r angle=4 vert=7 deg=270.0
+   *************  r angle=5 vert=8 deg=226.6
+   *************  r angle=6 vert=1 deg=201.6
+   ** Warning ** DXFOut: Could not triangulate surface="Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 36 - SURFACE 27 (200)", type="Detached Shading:Building", check surface vertex order(entry)
+   *************  surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 36 - SURFACE 27 (200) class=Detached Shading:Building
+   *************  side=1 (30.1,5.6,4.7)
+   *************  side=2 (30.1,5.6,1.8)
+   *************  side=3 (30.1,5.6,1.4E-009)
+   *************  side=4 (27.9,5.6,1.4E-009)
+   *************  side=5 (27.9,5.6,4.7)
+   *************  number of triangles found=           1
+   *************  r angle=1 vert=3 deg=270.0
+   *************  r angle=2 vert=4 deg=270.0
+   *************  r angle=3 vert=5 deg=270.0
+   *************  r angle=4 vert=1 deg=270.0
+   ** Warning ** DXFOut: Could not triangulate surface="Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 36 - SURFACE 28 (201)", type="Detached Shading:Building", check surface vertex order(entry)
+   *************  surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 36 - SURFACE 28 (201) class=Detached Shading:Building
+   *************  side=1 (21.5,16.7,9.1)
+   *************  side=2 (21.5,16.7,6.9)
+   *************  side=3 (24.1,12.3,4.7)
+   *************  side=4 (27.9,5.6,4.7)
+   *************  side=5 (27.9,5.6,1.4E-009)
+   *************  side=6 (19.6,20.1,2.1E-009)
+   *************  side=7 (19.6,20.1,9.1)
+   *************  number of triangles found=           2
+   *************  r angle=1 vert=4 deg=251.0
+   *************  r angle=2 vert=5 deg=270.0
+   *************  r angle=3 vert=6 deg=270.0
+   *************  r angle=4 vert=7 deg=270.0
+   *************  r angle=5 vert=1 deg=199.0
+   ** Warning ** DXFOut: Could not triangulate surface="1ST%FLOOR:1ST%LOBBY_WALL_19_1_0", type="Wall", check surface vertex order(entry)
+   *************  surface=1ST%FLOOR:1ST%LOBBY_WALL_19_1_0 class=Wall
+   *************  side=1 (4.0,6.2,4.4)
+   *************  side=2 (4.0,6.2,0.5)
+   *************  side=3 (4.0,6.1,0.5)
+   *************  side=4 (4.0,6.1,0.8)
+   *************  side=5 (4.0,-0.4,0.8)
+   *************  side=6 (4.0,-0.4,0.5)
+   *************  side=7 (4.0,-0.5,0.5)
+   *************  side=8 (4.0,-0.5,4.4)
+   *************  number of triangles found=           4
+   *************  r angle=1 vert=5 deg=226.9
+   ** Warning ** DXFOut: Could not triangulate surface="1ST%FLOOR:1ST%LOBBY_CEILING_1_0_0", type="Roof", check surface vertex order(entry)
+   *************  surface=1ST%FLOOR:1ST%LOBBY_CEILING_1_0_0 class=Roof
+   *************  side=1 (6.6,-0.5,4.4)
+   *************  side=2 (6.6,-3.3,4.4)
+   *************  side=3 (20.3,-3.3,4.4)
+   *************  side=4 (20.3,-4.5,4.4)
+   *************  side=5 (22.7,-4.5,4.4)
+   *************  side=6 (22.7,-3.3,4.4)
+   *************  side=7 (24.6,-3.3,4.4)
+   *************  side=8 (24.6,-4.1,4.4)
+   *************  side=9 (27.4,-4.1,4.4)
+   *************  side=10 (27.4,0.1,4.4)
+   *************  side=11 (24.3,0.1,4.4)
+   *************  side=12 (24.3,-0.8,4.4)
+   *************  side=13 (9.1,-0.8,4.4)
+   *************  side=14 (9.1,-0.5,4.4)
+   *************  number of triangles found=           7
+   *************  r angle=1 vert=6 deg=270.0
+   *************  r angle=2 vert=7 deg=196.6
+   *************  r angle=3 vert=3 deg=193.7
+   ** Warning ** DXFOut: Could not triangulate surface="1ST%FLOOR:1ST%RESTROOM_CEILING_1_0_0", type="Roof", check surface vertex order(entry)
+   *************  surface=1ST%FLOOR:1ST%RESTROOM_CEILING_1_0_0 class=Roof
+   *************  side=1 (12.1,15.4,4.4)
+   *************  side=2 (15.1,10.3,4.4)
+   *************  side=3 (15.6,9.4,4.4)
+   *************  side=4 (17.1,10.3,4.4)
+   *************  side=5 (16.3,11.7,4.4)
+   *************  side=6 (17.7,12.5,4.4)
+   *************  side=7 (18.2,11.5,4.4)
+   *************  side=8 (19.5,12.3,4.4)
+   *************  side=9 (18.9,13.2,4.4)
+   *************  side=10 (20.5,14.1,4.4)
+   *************  side=11 (21.2,12.7,4.4)
+   *************  side=12 (21.4,12.8,4.4)
+   *************  side=13 (22.9,13.6,4.4)
+   *************  side=14 (19.4,19.6,4.4)
+   *************  number of triangles found=          10
+   *************  r angle=1 vert=10 deg=180.7
+   ** Warning ** DXFOut: Could not triangulate surface="2ND%FLOOR%NORTH:2ND%LOBBY_ROOF_1_2_0", type="Roof", check surface vertex order(entry)
+   *************  surface=2ND%FLOOR%NORTH:2ND%LOBBY_ROOF_1_2_0 class=Roof
+   *************  side=1 (22.1,11.1,9.1)
+   *************  side=2 (14.2,6.5,9.1)
+   *************  side=3 (14.3,6.5,9.1)
+   *************  side=4 (21.5,10.7,9.1)
+   *************  side=5 (22.8,8.5,9.1)
+   *************  side=6 (25.1,9.8,9.1)
+   *************  side=7 (27.7,5.2,9.1)
+   *************  side=8 (29.7,5.2,9.1)
+   *************  side=9 (29.7,2.9,9.1)
+   *************  side=10 (27.4,2.9,9.1)
+   *************  side=11 (27.4,0.9,9.1)
+   *************  side=12 (27.4,0.9,9.1)
+   *************  side=13 (27.4,2.9,9.1)
+   *************  side=14 (29.7,2.9,9.1)
+   *************  side=15 (29.7,5.3,9.1)
+   *************  side=16 (27.7,5.3,9.1)
+   *************  side=17 (23.0,13.5,9.1)
+   *************  side=18 (21.3,12.5,9.1)
+   *************  number of triangles found=           8
+   *************  r angle=1 vert=6 deg=216.3
+   *************  r angle=2 vert=8 deg=270.0
+   *************  r angle=3 vert=9 deg=270.0
+   *************  r angle=4 vert=16 deg=240.0
+   ** Warning ** DXFOut: Could not triangulate surface="2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0", type="Roof", check surface vertex order(entry)
+   *************  surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0 class=Roof
+   *************  side=1 (12.1,15.4,9.1)
+   *************  side=2 (15.7,9.3,9.1)
+   *************  side=3 (17.2,10.2,9.1)
+   *************  side=4 (16.3,11.7,9.1)
+   *************  side=5 (17.7,12.5,9.1)
+   *************  side=6 (18.2,11.5,9.1)
+   *************  side=7 (19.5,12.3,9.1)
+   *************  side=8 (18.9,13.2,9.1)
+   *************  side=9 (20.5,14.1,9.1)
+   *************  side=10 (21.3,12.5,9.1)
+   *************  side=11 (23.0,13.5,9.1)
+   *************  side=12 (19.4,19.6,9.1)
+   *************  number of triangles found=           8
+   *************  r angle=1 vert=9 deg=183.6
+   ** Warning ** DXFOut: Could not triangulate surface="2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0", type="Roof", check surface vertex order(entry)
+   *************  surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0 class=Roof
+   *************  side=1 (7.6,8.3,9.1)
+   *************  side=2 (7.6,6.5,9.1)
+   *************  side=3 (9.9,6.5,9.1)
+   *************  side=4 (9.9,6.5,9.1)
+   *************  side=5 (14.2,6.5,9.1)
+   *************  side=6 (22.1,11.1,9.1)
+   *************  side=7 (21.3,12.5,9.1)
+   *************  side=8 (20.5,14.1,9.1)
+   *************  side=9 (18.9,13.2,9.1)
+   *************  side=10 (19.5,12.3,9.1)
+   *************  side=11 (18.2,11.5,9.1)
+   *************  side=12 (17.7,12.5,9.1)
+   *************  side=13 (16.3,11.7,9.1)
+   *************  side=14 (17.2,10.2,9.1)
+   *************  side=15 (13.9,8.3,9.1)
+   *************  number of triangles found=           9
+   *************  r angle=1 vert=14 deg=202.8
+   *************  r angle=2 vert=15 deg=210.1
    ************* Testing Individual Branch Integrity
    ************* All Branches passed integrity testing
    ************* Testing Individual Supply Air Path Integrity
@@ -846,4 +1151,4 @@ Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.02.12 15:44,IDD_V
    *************
    ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
    ************* EnergyPlus Sizing Error Summary. During Sizing: 174 Warning; 20 Severe Errors.
-   ************* EnergyPlus Completed Successfully-- 2317290 Warning; 1028676 Severe Errors; Elapsed Time=00hr 03min 10.29sec
+   ************* EnergyPlus Completed Successfully-- 2317309 Warning; 1028676 Severe Errors; Elapsed Time=00hr 02min 52.92sec

@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.02.12 15:44,IDD_Version 8.3.0
+Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.02.12 16:22,IDD_Version 8.3.0
 Var Type (reported time step),Var Report Type,Variable Name [Units]
 Zone,Meter,Baseboard:EnergyTransfer [J]
 Zone,Meter,Baseboard:PlantLoopHeatingDemand [J]

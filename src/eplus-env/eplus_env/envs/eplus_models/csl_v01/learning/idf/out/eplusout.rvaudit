@@ -3,8 +3,8 @@
  input file:out/eplusout.eso
  output file:out/eplusout.csv
  getting all vars from:out/eplusout.eso
-  number variables requested for output=         582
- ReadVars Run Time=00hr 00min 12.86sec
+  number variables requested for output=          96
+ ReadVars Run Time=00hr 00min  2.32sec
  ReadVarsESO program completed successfully.
  ReadVarsESO
  processing:.MEPC04_model_v8.3.mvi
@@ -12,5 +12,5 @@
  output file:out/eplusmtr.csv
  getting all vars from:out/eplusout.mtr
   number variables requested for output=          10
- ReadVars Run Time=00hr 00min  0.38sec
+ ReadVars Run Time=00hr 00min  0.30sec
  ReadVarsESO program completed successfully.
