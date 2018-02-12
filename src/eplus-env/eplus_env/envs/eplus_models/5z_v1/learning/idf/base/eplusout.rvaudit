@@ -3,8 +3,8 @@
  input file:base/eplusout.eso
  output file:base/eplusout.csv
  getting all vars from:base/eplusout.eso
-  number variables requested for output=          20
- ReadVars Run Time=00hr 00min  0.84sec
+  number variables requested for output=          22
+ ReadVars Run Time=00hr 00min  0.98sec
  ReadVarsESO program completed successfully.
  ReadVarsESO
  processing:.5ZoneAutoDXVAV_v1_base.mvi

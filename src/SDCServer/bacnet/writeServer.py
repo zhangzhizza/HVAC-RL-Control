@@ -15,7 +15,7 @@ LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 
 class WriteServer(object):
 
-	def runWriteServer(self, port, writeConfig, bacwpPath):
+	def runWriteServer(self, port, writeConfig, bacwpPath='%s/bacnet-stack-0.8.5/bin/bacwp'%FD):
 		# Set the logger
 		logger_main = Logger().getLogger('SDC_WriteServer', LOG_LEVEL, LOG_FMT, log_file_path = '%s/log/writeServer_%s.log'%(FD, time.time()));
 		# Read config file

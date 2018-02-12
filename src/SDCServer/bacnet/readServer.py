@@ -14,7 +14,7 @@ LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 
 class ReadServer(object):
 
-	def runReadServer(self, port, readConfig, bacrpmPath):
+	def runReadServer(self, port, readConfig, bacrpmPath = '%s/bacnet-stack-0.8.5/bin/bacrpm'%FD):
 		# Set the logger
 		logger_main = Logger().getLogger('SDC_ReadServer', LOG_LEVEL, LOG_FMT, log_file_path = '%s/log/readServer_%s.log'%(FD, time.time()));
 		# Read config file
@@ -40,13 +40,13 @@ class ReadServer(object):
 			retMsg = 'Read success!';
 			toReadCmds = [];
 			readCount = 0;
-			if recv.lower() == 'getall':
+			if recv.lower() == 'getall': # Not read iarh
 				logger_main.info('Recived GETALL request from ' + addr)
-				toReadCmds = rpCmds[0:-1];
-				readCount = readCountAll;	
+				toReadCmds = rpCmds[0:5];
+				readCount = readCountAll - 2;	
 			elif recv.lower() == 'getamv':
 				logger_main.info('Recived GETAMV request from ' + addr)
-				toReadCmds = [rpCmds[-2]];
+				toReadCmds = [rpCmds[4]];
 				readCount = (len(toReadCmds[0]) - 2)/3;
 			elif recv.lower() == 'getenergy':
 				logger_main.info('Recieved GETENERGY request from ' + addr)
@@ -54,8 +54,13 @@ class ReadServer(object):
 				readCount = 1;
 			elif recv.lower() == 'getiarh':
 				logger_main.info('Recieved GETIARH request from ' + addr)
-				toReadCmds = [rpCmds[-1]]
+				toReadCmds = [rpCmds[5]]
 				readCount = 1;
+			elif recv.lower() == 'getiat':
+				logger_main.info('Recieved GETIAT request from ' + addr)
+				toReadCmds = [rpCmds[6]]
+				readCount = 1;
+
 			else:
 				logger_main.warning('Recieved unrecognized request from %s: %s'%(addr, recv.lower()));
 				toReadCmds = []
@@ -107,17 +112,18 @@ class ReadServer(object):
 		"""
 		prcdRes = []
 		rawResult = rawResult.replace('\n', '').replace('\r', '').replace(' ','');
-		colonIdx = rawResult.find(':');
-		rightBraceIdx = rawResult.find('}');
 		rpCmd_idx = 4 # The first property ID
 		curSearch_idx = 0;
 		while rpCmd_idx < len(rpCmd):
 			propertyName = bacenumMap_inv[rpCmd[rpCmd_idx]].lower();
 			propertyNameIdx = rawResult.find(propertyName, curSearch_idx);
 			rightBraceIdx = rawResult.find('}', propertyNameIdx);
-			prcdRes.append(rawResult[propertyNameIdx + len(propertyName) + 1: rightBraceIdx]);
 			rpCmd_idx += 3;
-			curSearch_idx = rightBraceIdx;
+			if propertyNameIdx == -1 or rightBraceIdx == -1:
+				continue;
+			else:
+				prcdRes.append(rawResult[propertyNameIdx + len(propertyName) + 1: rightBraceIdx]);
+				curSearch_idx = rightBraceIdx;
 		return prcdRes;
 
 

@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.01.15 21:20,IDD_Version 8.3.0
+Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.02.12 16:21,IDD_Version 8.3.0
 Var Type (reported time step),Var Report Type,Variable Name [Units]
 Zone,Average,Site Outdoor Air Drybulb Temperature [C]
 Zone,Average,Site Outdoor Air Dewpoint Temperature [C]
@@ -304,6 +304,7 @@ HVAC,Average,Zone Mass Balance Infiltration Air Mass Flow Rate [kg/s]
 Zone,Average,5 Zone Average Temperature [C]
 Zone,Average,5 Zone Average RH [%]
 Zone,Average,VAV Supply Air Temperature Setpoint [C]
+Zone,Average,HVAC Total Energy Demand [W]
 HVAC,Sum,Zone Air System Sensible Heating Energy [J]
 HVAC,Sum,Zone Air System Sensible Cooling Energy [J]
 HVAC,Average,Zone Air System Sensible Heating Rate [W]

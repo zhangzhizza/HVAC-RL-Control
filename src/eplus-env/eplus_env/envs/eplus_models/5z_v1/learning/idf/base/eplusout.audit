@@ -11,9 +11,9 @@
   Processing Input Data File -- Complete
   Maximum number of Alpha IDF Args=          29
   Maximum number of Numeric IDF Args=          26
-  Number of IDF "Lines"=         292
+  Number of IDF "Lines"=         300
   Number of Defaulted Fields=          38
-  Number of Fields with Defaults=         666
+  Number of Fields with Defaults=         670
   Number of Autosized Fields=          25
   Number of Autosizable Fields =          34
   Number of Autocalculated Fields=           6
@@ -113,9 +113,9 @@
  numTableEntry=        1515
  sizeCompSizeTableEntry=         100
  numCompSizeTableEntry=          23
- NumOfRVariable=        4882
- NumOfRVariable(Total)=        4882
- NumOfRVariable(Actual)=          81
+ NumOfRVariable=        4883
+ NumOfRVariable(Total)=        4883
+ NumOfRVariable(Actual)=          83
  NumOfRVariable(Summed)=          49
  NumOfRVariable(Meter)=          49
  NumOfIVariable=         253
@@ -134,8 +134,8 @@
  InstMeterCacheSize=        1000
  ClippingAlgorithm=SutherlandHodgman
  MonthlyFieldSetInputCount=           0
- NumConsideredOutputVariables=          34
- MaxConsideredOutputVariables=          34
+ NumConsideredOutputVariables=          39
+ MaxConsideredOutputVariables=          39
  numActuatorsUsed=           0
  numEMSActuatorsAvailable=         685
  maxEMSActuatorsAvailable=        1000

@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.01.15 21:20
+Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.02.12 16:21
 ! <Version>, Version ID
  Version, 8.6
 ! <Timesteps per Hour>, #TimeSteps, Minutes per TimeStep {minutes}
@@ -172,12 +172,12 @@ Environment,Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205,WeatherFileRunPer
 Environment:Daylight Saving,No,
 Environment:WarmupDays,  6
 ! <Warmup Convergence Information>,Zone Name,Environment Type/Name,Average Warmup Temperature Difference {deltaC},Std Dev Warmup Temperature Difference {deltaC},Max Temperature Pass/Fail Convergence,Min Temperature Pass/Fail Convergence,Average Warmup Load Difference {W},Std Dev Warmup Load Difference {W},Heating Load Pass/Fail Convergence,Cooling Load Pass/Fail Convergence
- Warmup Convergence Information,PLENUM-1,RunPeriod: Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205,3.6635513510E-002,5.0150543237E-002,Pass,Pass,2.0598058393E-002,7.9487460866E-002,Pass,Pass
- Warmup Convergence Information,SPACE1-1,RunPeriod: Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205,3.3836577190E-002,8.3148249054E-002,Pass,Pass,0.2468154226,1.7654711267,Pass,Pass
- Warmup Convergence Information,SPACE2-1,RunPeriod: Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205,2.8582660911E-002,6.5408002763E-002,Pass,Pass,1.0898657030,17.5058593356,Pass,Pass
- Warmup Convergence Information,SPACE3-1,RunPeriod: Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205,3.2645050082E-002,8.0574285741E-002,Pass,Pass,0.3366475852,2.7766677095,Pass,Pass
- Warmup Convergence Information,SPACE4-1,RunPeriod: Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205,2.8644428140E-002,6.6148246111E-002,Pass,Pass,0.6847408102,10.6640086257,Pass,Pass
- Warmup Convergence Information,SPACE5-1,RunPeriod: Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205,2.2028523809E-002,5.8000333984E-002,Pass,Pass,2.9881756081E-002,0.1216841808,Pass,Pass
+ Warmup Convergence Information,PLENUM-1,RunPeriod: Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205,3.6641066978E-002,4.9789634699E-002,Pass,Pass,2.7049937618E-002,9.8249046382E-002,Pass,Pass
+ Warmup Convergence Information,SPACE1-1,RunPeriod: Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205,3.3841593571E-002,8.7449078766E-002,Pass,Pass,0.1990247799,1.3365117247,Pass,Pass
+ Warmup Convergence Information,SPACE2-1,RunPeriod: Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205,2.8706860446E-002,6.5466437669E-002,Pass,Pass,0.2941236251,3.1618600390,Pass,Pass
+ Warmup Convergence Information,SPACE3-1,RunPeriod: Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205,3.2756419358E-002,0.1051121208,Pass,Pass,0.2779016014,2.3157107375,Pass,Pass
+ Warmup Convergence Information,SPACE4-1,RunPeriod: Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205,2.8770336077E-002,6.6205955603E-002,Pass,Pass,0.2576029006,3.1824337528,Pass,Pass
+ Warmup Convergence Information,SPACE5-1,RunPeriod: Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205,2.2377031474E-002,6.9599494172E-002,Pass,Pass,3.4038365246E-002,0.1451473472,Pass,Pass
 ! <Program Control Information:Threads/Parallel Sims>, Threading Supported,Maximum Number of Threads, Env Set Threads (OMP_NUM_THREADS), EP Env Set Threads (EP_OMP_NUM_THREADS), IDF Set Threads, Number of Threads Used (Interior Radiant Exchange), Number Nominal Surfaces, Number Parallel Sims
 Program Control:Threads/Parallel Sims, No,1, N/A, N/A, N/A, N/A, N/A, N/A
 End of Data

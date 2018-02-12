@@ -1,0 +1,918 @@
+Using TensorFlow backend.
+[2018-02-07 15:16:24,115] A3C_AGENT_MAIN INFO:Namespace(action_space='iw_af4_3', agent_num=5, clip_norm=5.0, debug_log_prob=1.0, decay_steps=1000000, dropout_prob=0.0, end_e=0.0, env='IW-imp-v9704', err_penalty_scl=0.2, eval_act_func='10', eval_epi_num=1, eval_freq=0, forecast_dim=0, gamma=0.99, h_decay_bounds=[2000000], h_regu_frac=[0.05, 0.05], init_e=0.0, is_warm_start=True, job_mode='Train', learning_rate=0.0001, max_interactions=10000000, model_dir='v93_model_data/model.ckpt-6500000', num_threads=1, output='a3c-res-v0.1/IW-imp-v9704-run1', p_loss_frac=1.0, reward_func='13', rmsprop_decay=0.9, rmsprop_epsil=1e-10, rmsprop_momet=0.0, rwd_e_para=2.5, rwd_p_para=1.0, save_freq=500000, save_max_to_keep=5, save_scope='all', state_dim=13, test_env='IW-imp-v9704', test_mode='Multiple', train_act_func='10', train_freq=5, v_loss_frac=0.5, violation_penalty_scl=5.0, window_len=3)
+[2018-02-07 15:16:24,115] A3C_AGENT_MAIN INFO:Start compiling...
+2018-02-07 15:16:24.428651: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+[2018-02-07 15:16:24,627] A3C_AGENT_MAIN INFO:Start the learning...
+[2018-02-07 15:16:24,627] A3C_AGENT_MAIN INFO:Prepare the evaluation environments ['IW-imp-v9704', 'IW-imp-v9704'] ...
+[2018-02-07 15:16:24,627] Making new env: IW-imp-v9704
+[2018-02-07 15:16:24,642] Making new env: IW-imp-v9704
+[2018-02-07 15:16:24,642] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2018-02-07 15:16:24,643] A3C_AGENT_WORKER-Thread-2 INFO:Local worker starts!
+[2018-02-07 15:16:24,652] Making new env: IW-imp-v9704
+[2018-02-07 15:16:24,653] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getAll
+[2018-02-07 15:16:25,257] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 26, '27.959999', '95.699997', '0.000000', '310.000000', '50.000000', '63.500000', '68.892784', '72.000000', '44.782619', '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:16:25,258] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [27.959999, 95.699997, 0.0, 310.0, 50.0, 63.5, 68.892784, 72.0, 44.782619, 0.0, 0.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0]
+[2018-02-07 15:16:25,258] ENV_IW-imp-v9704_Thread-2 DEBUG:Now is 2018-02-07 15:16:24.653354
+[2018-02-07 15:16:25,359] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '25.189995']
+[2018-02-07 15:16:25,463] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '68.892784']
+[2018-02-07 15:16:25,464] ENV_IW-imp-v9704_Thread-2 WARNING:Collected AMV for idx: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] is 0.0, so Fanger-PMV: -0.7457939580815263 is used, resulting PPD is: 33.69982229651547
+[2018-02-07 15:16:25,510] ENV_IW-imp-v9704_Thread-2 DEBUG:Global solar radiation from PI is: 138.25
+/home/zhiangz/Documents/HVAC-RL-Control/src/virt_env/lib/python3.5/site-packages/pysolar/time.py:105: UserWarning: I don't know about leap seconds after 2015
+  (leap_seconds_base_year + len(leap_seconds_adjustments) - 1)
+[2018-02-07 15:16:25,512] ENV_IW-imp-v9704_Thread-2 DEBUG:Direct solar rad is: 20.08291041236229, diffuse solar rad is: 118.16708958763772, solar altitude is: 22.913312499687073
+[2018-02-07 15:16:25,512] ENV_IW-imp-v9704_Thread-2 INFO:RESET State observation in reset is: [-2.2444450000000002, 95.699997, 0.0, 310.0, 118.16708958763772, 20.08291041236229, 10.0, 33.69982229651547, 17.5, 20.495991111111113, 22.22222222222222, 1, 44.782619], current time in seconds since start of the year is: 3251784
+[2018-02-07 15:16:25,540] A3C_AGENT_WORKER-Thread-2 DEBUG:Policy network output: [1.4446583e-04 0.0000000e+00 1.6555903e-02 0.0000000e+00 1.1550519e-03
+ 1.1628644e-02 7.3466380e-03 3.1585929e-03 1.3286814e-02 9.4672388e-01
+ 0.0000000e+00], sum to 1.0000
+[2018-02-07 15:16:25,541] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getAMV
+[2018-02-07 15:16:25,671] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:16:25,672] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [0.0, 0.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0]
+[2018-02-07 15:16:25,672] ENV_IW-imp-v9704_Thread-2 INFO:STEP base AMV-PPD before step is: 11.764705882352942, action sent to BAS is: [77.0]
+[2018-02-07 15:16:25,741] ENV_IW-imp-v9704_Thread-2 INFO:STEP Write to BAS success!
+[2018-02-07 15:16:25,741] ENV_IW-imp-v9704_Thread-2 INFO:STEP Wait for 900 seconds to finish this control step
+[2018-02-07 15:16:25,912] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:16:25,913] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 899s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:16:36,092] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:16:36,093] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 889s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:16:46,247] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:16:46,248] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 879s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:16:56,417] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:16:56,417] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 869s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:17:06,537] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:17:06,538] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 859s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:17:16,671] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:17:16,672] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 849s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:17:26,846] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:17:26,847] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 838s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:17:37,046] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:17:37,047] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 828s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:17:47,166] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:17:47,166] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 818s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:17:57,296] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:17:57,296] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 808s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:18:07,415] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:18:07,416] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 798s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:18:17,570] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:18:17,571] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 788s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:18:27,735] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:18:27,736] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 778s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:18:37,855] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:18:37,855] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:18:37,954] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '0.101005']
+[2018-02-07 15:18:37,954] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [0.101005]
+[2018-02-07 15:18:37,955] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 767s, PPD-AMV now is: 11.764705882352942, energy demand is: 0.101005
+[2018-02-07 15:18:48,129] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:18:48,130] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:18:48,289] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '0.000000']
+[2018-02-07 15:18:48,289] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [0.0]
+[2018-02-07 15:18:48,290] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 757s, PPD-AMV now is: 11.764705882352942, energy demand is: 0.0
+[2018-02-07 15:18:58,424] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:18:58,425] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:18:58,584] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '0.000000']
+[2018-02-07 15:18:58,584] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [0.0]
+[2018-02-07 15:18:58,585] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 747s, PPD-AMV now is: 11.764705882352942, energy demand is: 0.0
+[2018-02-07 15:19:08,709] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:19:08,710] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:19:08,813] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '0.000000']
+[2018-02-07 15:19:08,814] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [0.0]
+[2018-02-07 15:19:08,814] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 736s, PPD-AMV now is: 11.764705882352942, energy demand is: 0.0
+[2018-02-07 15:19:18,959] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:19:18,960] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:19:19,118] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '0.000000']
+[2018-02-07 15:19:19,119] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [0.0]
+[2018-02-07 15:19:19,119] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 726s, PPD-AMV now is: 11.764705882352942, energy demand is: 0.0
+[2018-02-07 15:19:29,239] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:19:29,239] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:19:29,398] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '0.000000']
+[2018-02-07 15:19:29,399] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [0.0]
+[2018-02-07 15:19:29,399] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 716s, PPD-AMV now is: 11.764705882352942, energy demand is: 0.0
+[2018-02-07 15:19:39,558] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:19:39,559] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:19:39,663] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '1.219669']
+[2018-02-07 15:19:39,663] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [1.219669]
+[2018-02-07 15:19:39,663] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 706s, PPD-AMV now is: 11.764705882352942, energy demand is: 1.219669
+[2018-02-07 15:19:49,803] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:19:49,804] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:19:49,968] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '1.211141']
+[2018-02-07 15:19:49,968] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [1.211141]
+[2018-02-07 15:19:49,969] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 695s, PPD-AMV now is: 11.764705882352942, energy demand is: 1.211141
+[2018-02-07 15:20:00,178] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:20:00,179] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:20:00,343] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '1.209088']
+[2018-02-07 15:20:00,343] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [1.209088]
+[2018-02-07 15:20:00,344] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 685s, PPD-AMV now is: 11.764705882352942, energy demand is: 1.209088
+[2018-02-07 15:20:10,464] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:20:10,464] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:20:10,567] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '1.216195']
+[2018-02-07 15:20:10,567] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [1.216195]
+[2018-02-07 15:20:10,568] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 675s, PPD-AMV now is: 11.764705882352942, energy demand is: 1.216195
+[2018-02-07 15:20:20,733] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:20:20,734] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:20:20,918] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '1.216511']
+[2018-02-07 15:20:20,918] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [1.216511]
+[2018-02-07 15:20:20,918] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 664s, PPD-AMV now is: 11.764705882352942, energy demand is: 1.216511
+[2018-02-07 15:20:31,083] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:20:31,084] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:20:31,242] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '1.222986']
+[2018-02-07 15:20:31,242] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [1.222986]
+[2018-02-07 15:20:31,242] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 654s, PPD-AMV now is: 11.764705882352942, energy demand is: 1.222986
+[2018-02-07 15:20:41,447] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:20:41,448] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:20:41,607] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '1.215721']
+[2018-02-07 15:20:41,607] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [1.215721]
+[2018-02-07 15:20:41,607] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 644s, PPD-AMV now is: 11.764705882352942, energy demand is: 1.215721
+[2018-02-07 15:20:51,772] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:20:51,773] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:20:51,871] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '1.215721']
+[2018-02-07 15:20:51,872] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [1.215721]
+[2018-02-07 15:20:51,872] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 633s, PPD-AMV now is: 11.764705882352942, energy demand is: 1.215721
+[2018-02-07 15:21:02,017] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:21:02,018] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:21:02,177] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '1.206088']
+[2018-02-07 15:21:02,177] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [1.206088]
+[2018-02-07 15:21:02,178] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 623s, PPD-AMV now is: 11.764705882352942, energy demand is: 1.206088
+[2018-02-07 15:21:12,306] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:21:12,307] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:21:12,406] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '1.213037']
+[2018-02-07 15:21:12,406] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [1.213037]
+[2018-02-07 15:21:12,407] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 613s, PPD-AMV now is: 11.764705882352942, energy demand is: 1.213037
+[2018-02-07 15:21:22,582] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:21:22,582] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:21:22,741] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '1.213037']
+[2018-02-07 15:21:22,741] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [1.213037]
+[2018-02-07 15:21:22,742] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 602s, PPD-AMV now is: 11.764705882352942, energy demand is: 1.213037
+[2018-02-07 15:21:32,861] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:21:32,862] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:21:33,046] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '1.220143']
+[2018-02-07 15:21:33,046] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [1.220143]
+[2018-02-07 15:21:33,047] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 592s, PPD-AMV now is: 11.764705882352942, energy demand is: 1.220143
+[2018-02-07 15:21:43,174] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:21:43,174] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:21:43,276] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '1.212563']
+[2018-02-07 15:21:43,276] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [1.212563]
+[2018-02-07 15:21:43,276] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 582s, PPD-AMV now is: 11.764705882352942, energy demand is: 1.212563
+[2018-02-07 15:21:53,386] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:21:53,387] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:21:53,495] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '1.219669']
+[2018-02-07 15:21:53,496] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [1.219669]
+[2018-02-07 15:21:53,496] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 572s, PPD-AMV now is: 11.764705882352942, energy demand is: 1.219669
+[2018-02-07 15:22:03,616] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:22:03,617] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:22:03,715] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '1.221091']
+[2018-02-07 15:22:03,715] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [1.221091]
+[2018-02-07 15:22:03,716] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 562s, PPD-AMV now is: 11.764705882352942, energy demand is: 1.221091
+[2018-02-07 15:22:13,836] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:22:13,836] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:22:13,935] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '1.214142']
+[2018-02-07 15:22:13,935] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [1.214142]
+[2018-02-07 15:22:13,935] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 551s, PPD-AMV now is: 11.764705882352942, energy demand is: 1.214142
+[2018-02-07 15:22:24,055] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:22:24,056] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:22:24,155] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '5.791228']
+[2018-02-07 15:22:24,155] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [5.791228]
+[2018-02-07 15:22:24,155] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 541s, PPD-AMV now is: 11.764705882352942, energy demand is: 5.791228
+[2018-02-07 15:22:34,281] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:22:34,282] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:22:34,385] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '5.761221']
+[2018-02-07 15:22:34,385] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [5.761221]
+[2018-02-07 15:22:34,385] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 531s, PPD-AMV now is: 11.764705882352942, energy demand is: 5.761221
+[2018-02-07 15:22:44,565] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:22:44,566] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:22:44,670] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '8.743293']
+[2018-02-07 15:22:44,670] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [8.743293]
+[2018-02-07 15:22:44,670] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 521s, PPD-AMV now is: 11.764705882352942, energy demand is: 8.743293
+[2018-02-07 15:22:54,795] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:22:54,795] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:22:54,955] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '8.743293']
+[2018-02-07 15:22:54,955] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [8.743293]
+[2018-02-07 15:22:54,956] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 510s, PPD-AMV now is: 11.764705882352942, energy demand is: 8.743293
+[2018-02-07 15:23:05,075] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:23:05,075] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:23:05,175] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '11.603479']
+[2018-02-07 15:23:05,175] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [11.603479]
+[2018-02-07 15:23:05,175] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 500s, PPD-AMV now is: 11.764705882352942, energy demand is: 11.603479
+[2018-02-07 15:23:15,310] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:23:15,311] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:23:15,469] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '11.603479']
+[2018-02-07 15:23:15,469] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [11.603479]
+[2018-02-07 15:23:15,469] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 490s, PPD-AMV now is: 11.764705882352942, energy demand is: 11.603479
+[2018-02-07 15:23:25,629] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:23:25,630] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:23:25,789] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '14.425413']
+[2018-02-07 15:23:25,789] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [14.425413]
+[2018-02-07 15:23:25,789] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 479s, PPD-AMV now is: 11.764705882352942, energy demand is: 14.425413
+[2018-02-07 15:23:35,899] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:23:35,900] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:23:36,003] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '14.425413']
+[2018-02-07 15:23:36,004] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [14.425413]
+[2018-02-07 15:23:36,004] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 469s, PPD-AMV now is: 11.764705882352942, energy demand is: 14.425413
+[2018-02-07 15:23:46,154] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:23:46,155] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:23:46,314] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '14.425413']
+[2018-02-07 15:23:46,314] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [14.425413]
+[2018-02-07 15:23:46,314] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 459s, PPD-AMV now is: 11.764705882352942, energy demand is: 14.425413
+[2018-02-07 15:23:56,429] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:23:56,429] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:23:56,588] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '14.937228']
+[2018-02-07 15:23:56,588] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [14.937228]
+[2018-02-07 15:23:56,588] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 449s, PPD-AMV now is: 11.764705882352942, energy demand is: 14.937228
+[2018-02-07 15:24:06,703] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:24:06,704] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:24:06,803] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '14.846300']
+[2018-02-07 15:24:06,803] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [14.8463]
+[2018-02-07 15:24:06,804] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 438s, PPD-AMV now is: 11.764705882352942, energy demand is: 14.8463
+[2018-02-07 15:24:16,923] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:24:16,924] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:24:17,083] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '14.343200']
+[2018-02-07 15:24:17,083] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [14.3432]
+[2018-02-07 15:24:17,083] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 428s, PPD-AMV now is: 11.764705882352942, energy demand is: 14.3432
+[2018-02-07 15:24:27,294] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:24:27,295] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:24:27,453] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '14.421690']
+[2018-02-07 15:24:27,453] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [14.42169]
+[2018-02-07 15:24:27,453] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 418s, PPD-AMV now is: 11.764705882352942, energy demand is: 14.42169
+[2018-02-07 15:24:37,563] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:24:37,564] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:24:37,668] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '11.433944']
+[2018-02-07 15:24:37,668] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [11.433944]
+[2018-02-07 15:24:37,669] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 408s, PPD-AMV now is: 11.764705882352942, energy demand is: 11.433944
+[2018-02-07 15:24:47,828] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:24:47,829] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:24:47,987] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '11.576473']
+[2018-02-07 15:24:47,987] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [11.576473]
+[2018-02-07 15:24:47,988] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 397s, PPD-AMV now is: 11.764705882352942, energy demand is: 11.576473
+[2018-02-07 15:24:58,162] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:24:58,163] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:24:58,322] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '8.733126']
+[2018-02-07 15:24:58,322] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [8.733126]
+[2018-02-07 15:24:58,322] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 387s, PPD-AMV now is: 11.764705882352942, energy demand is: 8.733126
+[2018-02-07 15:25:08,492] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:25:08,493] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:25:08,597] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '8.733126']
+[2018-02-07 15:25:08,597] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [8.733126]
+[2018-02-07 15:25:08,597] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 377s, PPD-AMV now is: 11.764705882352942, energy demand is: 8.733126
+[2018-02-07 15:25:18,722] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:25:18,723] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:25:18,882] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '8.640317']
+[2018-02-07 15:25:18,882] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [8.640317]
+[2018-02-07 15:25:18,882] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 366s, PPD-AMV now is: 11.764705882352942, energy demand is: 8.640317
+[2018-02-07 15:25:29,027] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:25:29,028] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:25:29,126] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '8.751235']
+[2018-02-07 15:25:29,126] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [8.751235]
+[2018-02-07 15:25:29,127] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 356s, PPD-AMV now is: 11.764705882352942, energy demand is: 8.751235
+[2018-02-07 15:25:39,282] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:25:39,283] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:25:39,391] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '8.747839']
+[2018-02-07 15:25:39,392] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [8.747839]
+[2018-02-07 15:25:39,392] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 346s, PPD-AMV now is: 11.764705882352942, energy demand is: 8.747839
+[2018-02-07 15:25:49,607] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:25:49,608] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:25:49,766] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '5.857718']
+[2018-02-07 15:25:49,766] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [5.857718]
+[2018-02-07 15:25:49,767] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 335s, PPD-AMV now is: 11.764705882352942, energy demand is: 5.857718
+[2018-02-07 15:25:59,887] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:25:59,887] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:25:59,991] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '5.889014']
+[2018-02-07 15:25:59,991] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [5.889014]
+[2018-02-07 15:25:59,991] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 325s, PPD-AMV now is: 11.764705882352942, energy demand is: 5.889014
+[2018-02-07 15:26:10,111] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:26:10,112] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:26:10,216] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '5.846268']
+[2018-02-07 15:26:10,216] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [5.846268]
+[2018-02-07 15:26:10,216] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 315s, PPD-AMV now is: 11.764705882352942, energy demand is: 5.846268
+[2018-02-07 15:26:20,337] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:26:20,338] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:26:20,441] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '5.887488']
+[2018-02-07 15:26:20,441] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [5.887488]
+[2018-02-07 15:26:20,441] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 305s, PPD-AMV now is: 11.764705882352942, energy demand is: 5.887488
+[2018-02-07 15:26:30,561] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:26:30,562] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:26:30,667] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.027892']
+[2018-02-07 15:26:30,668] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.027892]
+[2018-02-07 15:26:30,668] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 295s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.027892
+[2018-02-07 15:26:40,791] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:26:40,792] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:26:40,895] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.046449']
+[2018-02-07 15:26:40,896] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.046449]
+[2018-02-07 15:26:40,896] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 284s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.046449
+[2018-02-07 15:26:51,016] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:26:51,017] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:26:51,120] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.046449']
+[2018-02-07 15:26:51,120] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.046449]
+[2018-02-07 15:26:51,121] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 274s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.046449
+[2018-02-07 15:27:01,241] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:27:01,242] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:27:01,345] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.045659']
+[2018-02-07 15:27:01,346] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.045659]
+[2018-02-07 15:27:01,346] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 264s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.045659
+[2018-02-07 15:27:11,460] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:27:11,461] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:27:11,619] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.045659']
+[2018-02-07 15:27:11,620] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.045659]
+[2018-02-07 15:27:11,620] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 254s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.045659
+[2018-02-07 15:27:21,740] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:27:21,741] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:27:21,843] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.042895']
+[2018-02-07 15:27:21,843] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.042895]
+[2018-02-07 15:27:21,844] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 243s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.042895
+[2018-02-07 15:27:31,960] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:27:31,960] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:27:32,059] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.063821']
+[2018-02-07 15:27:32,059] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.063821]
+[2018-02-07 15:27:32,059] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 233s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.063821
+[2018-02-07 15:27:42,180] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:27:42,180] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:27:42,284] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.041711']
+[2018-02-07 15:27:42,284] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.041711]
+[2018-02-07 15:27:42,284] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 223s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.041711
+[2018-02-07 15:27:52,399] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:27:52,400] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:27:52,584] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.058293']
+[2018-02-07 15:27:52,584] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.058293]
+[2018-02-07 15:27:52,584] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 213s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.058293
+[2018-02-07 15:28:02,705] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:28:02,706] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:28:02,808] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.040921']
+[2018-02-07 15:28:02,809] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.040921]
+[2018-02-07 15:28:02,809] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 202s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.040921
+[2018-02-07 15:28:12,964] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:28:12,965] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:28:13,123] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.040921']
+[2018-02-07 15:28:13,124] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.040921]
+[2018-02-07 15:28:13,124] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 192s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.040921
+[2018-02-07 15:28:23,284] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:28:23,284] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:28:23,443] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.040921']
+[2018-02-07 15:28:23,443] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.040921]
+[2018-02-07 15:28:23,444] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 182s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.040921
+[2018-02-07 15:28:33,564] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:28:33,565] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:28:33,668] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.031841']
+[2018-02-07 15:28:33,668] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.031841]
+[2018-02-07 15:28:33,669] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 172s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.031841
+[2018-02-07 15:28:43,878] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:28:43,879] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:28:44,038] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.031051']
+[2018-02-07 15:28:44,038] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.031051]
+[2018-02-07 15:28:44,038] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 161s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.031051
+[2018-02-07 15:28:54,153] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:28:54,154] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:28:54,313] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '2.925796']
+[2018-02-07 15:28:54,313] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [2.925796]
+[2018-02-07 15:28:54,314] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 151s, PPD-AMV now is: 11.764705882352942, energy demand is: 2.925796
+[2018-02-07 15:29:04,433] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:29:04,434] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:29:04,597] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '2.944879']
+[2018-02-07 15:29:04,598] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [2.944879]
+[2018-02-07 15:29:04,598] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 141s, PPD-AMV now is: 11.764705882352942, energy demand is: 2.944879
+[2018-02-07 15:29:14,738] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:29:14,739] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:29:14,897] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '2.944879']
+[2018-02-07 15:29:14,898] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [2.944879]
+[2018-02-07 15:29:14,898] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 130s, PPD-AMV now is: 11.764705882352942, energy demand is: 2.944879
+[2018-02-07 15:29:25,068] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:29:25,069] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:29:25,227] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '2.960527']
+[2018-02-07 15:29:25,227] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [2.960527]
+[2018-02-07 15:29:25,228] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 120s, PPD-AMV now is: 11.764705882352942, energy demand is: 2.960527
+[2018-02-07 15:29:35,348] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:29:35,348] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:29:35,452] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.038947']
+[2018-02-07 15:29:35,452] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.038947]
+[2018-02-07 15:29:35,452] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 110s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.038947
+[2018-02-07 15:29:45,597] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:29:45,598] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:29:45,757] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.038947']
+[2018-02-07 15:29:45,757] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.038947]
+[2018-02-07 15:29:45,757] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 99s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.038947
+[2018-02-07 15:29:55,872] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:29:55,873] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:29:56,032] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.057109']
+[2018-02-07 15:29:56,032] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.057109]
+[2018-02-07 15:29:56,033] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 89s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.057109
+[2018-02-07 15:30:06,162] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:30:06,163] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:30:06,321] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.051581']
+[2018-02-07 15:30:06,322] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.051581]
+[2018-02-07 15:30:06,322] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 79s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.051581
+[2018-02-07 15:30:16,476] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:30:16,477] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:30:16,637] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.051581']
+[2018-02-07 15:30:16,637] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.051581]
+[2018-02-07 15:30:16,637] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 69s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.051581
+[2018-02-07 15:30:26,757] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:30:26,757] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:30:26,861] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.032630']
+[2018-02-07 15:30:26,861] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.03263]
+[2018-02-07 15:30:26,861] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 58s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.03263
+[2018-02-07 15:30:36,982] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:30:36,982] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:30:37,085] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.013284']
+[2018-02-07 15:30:37,086] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.013284]
+[2018-02-07 15:30:37,086] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 48s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.013284
+[2018-02-07 15:30:47,206] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:30:47,207] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:30:47,306] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '2.999070']
+[2018-02-07 15:30:47,306] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [2.99907]
+[2018-02-07 15:30:47,306] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 38s, PPD-AMV now is: 11.764705882352942, energy demand is: 2.99907
+[2018-02-07 15:30:57,481] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:30:57,482] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:30:57,640] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '3.040132']
+[2018-02-07 15:30:57,641] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [3.040132]
+[2018-02-07 15:30:57,641] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 28s, PPD-AMV now is: 11.764705882352942, energy demand is: 3.040132
+[2018-02-07 15:31:07,755] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:31:07,756] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:31:07,855] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '6.010740']
+[2018-02-07 15:31:07,855] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [6.01074]
+[2018-02-07 15:31:07,855] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 17s, PPD-AMV now is: 11.764705882352942, energy demand is: 6.01074
+[2018-02-07 15:31:17,976] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:31:17,977] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:31:18,080] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '5.977352']
+[2018-02-07 15:31:18,081] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [5.977352]
+[2018-02-07 15:31:18,081] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 7s, PPD-AMV now is: 11.764705882352942, energy demand is: 5.977352
+[2018-02-07 15:31:28,084] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getAll
+[2018-02-07 15:31:28,796] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 26, '28.480000', '93.500000', '0.000000', '292.000000', '50.000000', '77.000000', '69.202393', '72.000000', '5.932315', '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:31:28,796] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [28.48, 93.5, 0.0, 292.0, 50.0, 77.0, 69.202393, 72.0, 5.932315, 0.0, 0.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0]
+[2018-02-07 15:31:28,796] ENV_IW-imp-v9704_Thread-2 DEBUG:Now is 2018-02-07 15:31:28.083816
+[2018-02-07 15:31:28,900] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '24.839996']
+[2018-02-07 15:31:29,000] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '69.202393']
+[2018-02-07 15:31:29,000] ENV_IW-imp-v9704_Thread-2 WARNING:Collected AMV for idx: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] is 0.0, so Fanger-PMV: -0.7081429720645905 is used, resulting PPD is: 32.59244035484091
+[2018-02-07 15:31:29,139] ENV_IW-imp-v9704_Thread-2 DEBUG:Global solar radiation from PI is: 116.84
+[2018-02-07 15:31:29,141] ENV_IW-imp-v9704_Thread-2 DEBUG:Direct solar rad is: 15.158336359450507, diffuse solar rad is: 101.68166364054949, solar altitude is: 20.908263944163306
+[2018-02-07 15:31:29,141] ENV_IW-imp-v9704_Thread-2 INFO:STEP State observation is: [-1.9555555555555553, 93.5, 0.0, 292.0, 101.68166364054949, 15.158336359450507, 10.0, 32.59244035484091, 25.0, 20.667996111111112, 22.22222222222222, 1, 4.780779697368423], current time in sceonds since the start of the year is: 3252688
+[2018-02-07 15:31:29,159] A3C_AGENT_WORKER-Thread-2 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0500, 
+Environment debug: raw action idx is 2, 
+current raw observation is [-2.2444450000000002, 95.699997, 0.0, 310.0, 118.16708958763772, 20.08291041236229, 10.0, 33.69982229651547, 17.5, 20.495991111111113, 22.22222222222222, 1, 44.782619], 
+current ob forecast is [], 
+actual action is [25.0], 
+sim time this is 3251784.0000, 
+sim time next is 3252688.0000, 
+raw observation next is [-1.9555555555555553, 93.5, 0.0, 292.0, 101.68166364054949, 15.158336359450507, 10.0, 32.59244035484091, 25.0, 20.667996111111112, 22.22222222222222, 1, 4.780779697368423], 
+processed observation next is [0.6666666666666666, 0.6521739130434783, 0.2831908831908832, 0.935, 0.0, 0.8111111111111111, 0.26899911016018385, 0.015158336359450507, 0.6666666666666666, 0.3259244035484091, 0.1111111111111111, 0.3811423015873017, 0.603174603174603, 1.0, 0.0562444670278638], 
+reward next is -1.0000. 
+=============================================
+[2018-02-07 15:31:29,162] A3C_AGENT_WORKER-Thread-2 DEBUG:Policy network output: [5.43428587e-06 0.00000000e+00 7.45342186e-05 0.00000000e+00
+ 1.32156265e-05 6.40958388e-05 1.09203851e-04 4.38003626e-05
+ 1.49888836e-03 9.98190820e-01 0.00000000e+00], sum to 1.0000
+[2018-02-07 15:31:29,162] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getAMV
+[2018-02-07 15:31:29,270] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:31:29,271] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [0.0, 0.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0]
+[2018-02-07 15:31:29,271] ENV_IW-imp-v9704_Thread-2 INFO:STEP base AMV-PPD before step is: 11.764705882352942, action sent to BAS is: [140.0]
+[2018-02-07 15:31:29,306] ENV_IW-imp-v9704_Thread-2 INFO:STEP Write to BAS success!
+[2018-02-07 15:31:29,306] ENV_IW-imp-v9704_Thread-2 INFO:STEP Wait for 900 seconds to finish this control step
+[2018-02-07 15:31:29,436] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:31:29,436] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 899s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:31:39,680] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:31:39,681] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 889s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:31:49,805] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:31:49,806] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 879s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:31:59,920] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:31:59,921] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 869s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:32:10,095] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:32:10,095] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 859s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:32:20,224] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:32:20,225] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 849s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:32:30,339] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:32:30,340] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 838s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:32:40,484] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:32:40,485] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 828s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:32:50,604] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:32:50,604] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 818s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:33:00,723] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:33:00,724] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 808s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:33:10,843] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:33:10,844] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 798s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:33:20,972] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:33:20,973] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 788s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:33:31,093] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:33:31,094] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 778s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:33:41,233] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:33:41,234] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:33:41,392] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '198.972366']
+[2018-02-07 15:33:41,392] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [198.972366]
+[2018-02-07 15:33:41,393] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 767s, PPD-AMV now is: 11.764705882352942, energy demand is: 198.972366
+[2018-02-07 15:33:51,523] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:33:51,524] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:33:51,682] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '209.040237']
+[2018-02-07 15:33:51,683] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [209.040237]
+[2018-02-07 15:33:51,683] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 757s, PPD-AMV now is: 11.764705882352942, energy demand is: 209.040237
+[2018-02-07 15:34:01,793] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:34:01,793] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:34:01,952] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '212.048386']
+[2018-02-07 15:34:01,952] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [212.048386]
+[2018-02-07 15:34:01,952] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 747s, PPD-AMV now is: 11.764705882352942, energy demand is: 212.048386
+[2018-02-07 15:34:12,092] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:34:12,093] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:34:12,197] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '205.751144']
+[2018-02-07 15:34:12,197] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [205.751144]
+[2018-02-07 15:34:12,197] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 737s, PPD-AMV now is: 11.764705882352942, energy demand is: 205.751144
+[2018-02-07 15:34:22,355] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:34:22,356] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:34:22,671] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '198.961075']
+[2018-02-07 15:34:22,672] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [198.961075]
+[2018-02-07 15:34:22,672] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 726s, PPD-AMV now is: 11.764705882352942, energy demand is: 198.961075
+[2018-02-07 15:34:32,811] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:34:32,812] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:34:32,916] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '186.011658']
+[2018-02-07 15:34:32,916] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [186.011658]
+[2018-02-07 15:34:32,917] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 716s, PPD-AMV now is: 11.764705882352942, energy demand is: 186.011658
+[2018-02-07 15:34:43,032] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:34:43,033] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:34:43,136] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '172.585449']
+[2018-02-07 15:34:43,136] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [172.585449]
+[2018-02-07 15:34:43,136] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 706s, PPD-AMV now is: 11.764705882352942, energy demand is: 172.585449
+[2018-02-07 15:34:53,256] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:34:53,257] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:34:53,416] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '149.681320']
+[2018-02-07 15:34:53,416] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [149.68132]
+[2018-02-07 15:34:53,416] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 695s, PPD-AMV now is: 11.764705882352942, energy demand is: 149.68132
+[2018-02-07 15:35:03,591] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:35:03,592] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:35:03,751] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '119.993942']
+[2018-02-07 15:35:03,751] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [119.993942]
+[2018-02-07 15:35:03,752] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 685s, PPD-AMV now is: 11.764705882352942, energy demand is: 119.993942
+[2018-02-07 15:35:13,952] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:35:13,952] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:35:14,055] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '91.956032']
+[2018-02-07 15:35:14,056] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [91.956032]
+[2018-02-07 15:35:14,056] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 675s, PPD-AMV now is: 11.764705882352942, energy demand is: 91.956032
+[2018-02-07 15:35:24,176] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:35:24,177] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:35:24,348] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '70.505829']
+[2018-02-07 15:35:24,349] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [70.505829]
+[2018-02-07 15:35:24,349] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 664s, PPD-AMV now is: 11.764705882352942, energy demand is: 70.505829
+[2018-02-07 15:35:34,486] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:35:34,486] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:35:34,655] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '54.478954']
+[2018-02-07 15:35:34,656] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [54.478954]
+[2018-02-07 15:35:34,656] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 654s, PPD-AMV now is: 11.764705882352942, energy demand is: 54.478954
+[2018-02-07 15:35:44,781] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:35:44,781] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:35:44,885] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '44.966148']
+[2018-02-07 15:35:44,885] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [44.966148]
+[2018-02-07 15:35:44,885] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 644s, PPD-AMV now is: 11.764705882352942, energy demand is: 44.966148
+[2018-02-07 15:35:55,030] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:35:55,031] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:35:55,270] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '38.896523']
+[2018-02-07 15:35:55,270] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [38.896523]
+[2018-02-07 15:35:55,270] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 634s, PPD-AMV now is: 11.764705882352942, energy demand is: 38.896523
+[2018-02-07 15:36:05,390] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:36:05,391] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:36:05,494] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '39.181591']
+[2018-02-07 15:36:05,495] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [39.181591]
+[2018-02-07 15:36:05,495] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 623s, PPD-AMV now is: 11.764705882352942, energy demand is: 39.181591
+[2018-02-07 15:36:15,670] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:36:15,671] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:36:15,829] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '56.269501']
+[2018-02-07 15:36:15,830] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [56.269501]
+[2018-02-07 15:36:15,830] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 613s, PPD-AMV now is: 11.764705882352942, energy demand is: 56.269501
+[2018-02-07 15:36:26,002] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:36:26,002] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:36:26,160] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '84.709587']
+[2018-02-07 15:36:26,160] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [84.709587]
+[2018-02-07 15:36:26,160] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 603s, PPD-AMV now is: 11.764705882352942, energy demand is: 84.709587
+[2018-02-07 15:36:36,300] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:36:36,300] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:36:36,404] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '114.032127']
+[2018-02-07 15:36:36,404] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [114.032127]
+[2018-02-07 15:36:36,404] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 592s, PPD-AMV now is: 11.764705882352942, energy demand is: 114.032127
+[2018-02-07 15:36:46,550] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:36:46,551] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:36:46,654] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '131.168823']
+[2018-02-07 15:36:46,654] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [131.168823]
+[2018-02-07 15:36:46,655] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 582s, PPD-AMV now is: 11.764705882352942, energy demand is: 131.168823
+[2018-02-07 15:36:56,810] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:36:56,810] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:36:56,969] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '140.498352']
+[2018-02-07 15:36:56,969] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [140.498352]
+[2018-02-07 15:36:56,970] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 572s, PPD-AMV now is: 11.764705882352942, energy demand is: 140.498352
+[2018-02-07 15:37:07,174] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:37:07,175] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:37:07,333] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '150.504929']
+[2018-02-07 15:37:07,334] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [150.504929]
+[2018-02-07 15:37:07,334] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 561s, PPD-AMV now is: 11.764705882352942, energy demand is: 150.504929
+[2018-02-07 15:37:17,454] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:37:17,455] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:37:17,558] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '154.068344']
+[2018-02-07 15:37:17,559] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [154.068344]
+[2018-02-07 15:37:17,559] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 551s, PPD-AMV now is: 11.764705882352942, energy demand is: 154.068344
+[2018-02-07 15:37:27,678] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:37:27,679] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:37:27,838] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '154.589035']
+[2018-02-07 15:37:27,839] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [154.589035]
+[2018-02-07 15:37:27,839] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 541s, PPD-AMV now is: 11.764705882352942, energy demand is: 154.589035
+[2018-02-07 15:37:37,968] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:37:37,969] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:37:38,128] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '153.380310']
+[2018-02-07 15:37:38,128] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [153.38031]
+[2018-02-07 15:37:38,129] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 531s, PPD-AMV now is: 11.764705882352942, energy demand is: 153.38031
+[2018-02-07 15:37:48,260] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:37:48,260] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:37:48,368] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '148.154419']
+[2018-02-07 15:37:48,368] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [148.154419]
+[2018-02-07 15:37:48,368] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 520s, PPD-AMV now is: 11.764705882352942, energy demand is: 148.154419
+[2018-02-07 15:37:58,539] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:37:58,539] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:37:58,697] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '138.582535']
+[2018-02-07 15:37:58,698] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [138.582535]
+[2018-02-07 15:37:58,698] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 510s, PPD-AMV now is: 11.764705882352942, energy demand is: 138.582535
+[2018-02-07 15:38:08,853] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:38:08,854] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:38:09,012] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '133.019547']
+[2018-02-07 15:38:09,013] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [133.019547]
+[2018-02-07 15:38:09,013] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 500s, PPD-AMV now is: 11.764705882352942, energy demand is: 133.019547
+[2018-02-07 15:38:19,133] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:38:19,133] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:38:19,232] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '123.074585']
+[2018-02-07 15:38:19,232] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [123.074585]
+[2018-02-07 15:38:19,233] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 490s, PPD-AMV now is: 11.764705882352942, energy demand is: 123.074585
+[2018-02-07 15:38:29,348] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:38:29,349] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:38:29,457] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '117.493233']
+[2018-02-07 15:38:29,457] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [117.493233]
+[2018-02-07 15:38:29,457] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 479s, PPD-AMV now is: 11.764705882352942, energy demand is: 117.493233
+[2018-02-07 15:38:39,742] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:38:39,743] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:38:39,902] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '105.050217']
+[2018-02-07 15:38:39,902] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [105.050217]
+[2018-02-07 15:38:39,902] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 469s, PPD-AMV now is: 11.764705882352942, energy demand is: 105.050217
+[2018-02-07 15:38:50,032] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:38:50,033] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:38:50,192] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '95.889565']
+[2018-02-07 15:38:50,192] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [95.889565]
+[2018-02-07 15:38:50,192] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 459s, PPD-AMV now is: 11.764705882352942, energy demand is: 95.889565
+[2018-02-07 15:39:00,316] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:39:00,317] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:39:00,421] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '88.371239']
+[2018-02-07 15:39:00,422] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [88.371239]
+[2018-02-07 15:39:00,422] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 448s, PPD-AMV now is: 11.764705882352942, energy demand is: 88.371239
+[2018-02-07 15:39:10,562] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:39:10,563] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:39:10,721] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '76.088661']
+[2018-02-07 15:39:10,721] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [76.088661]
+[2018-02-07 15:39:10,722] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 438s, PPD-AMV now is: 11.764705882352942, energy demand is: 76.088661
+[2018-02-07 15:39:20,922] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:39:20,923] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:39:21,081] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '70.329910']
+[2018-02-07 15:39:21,082] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [70.32991]
+[2018-02-07 15:39:21,082] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 428s, PPD-AMV now is: 11.764705882352942, energy demand is: 70.32991
+[2018-02-07 15:39:31,192] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:39:31,193] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:39:31,296] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '59.969906']
+[2018-02-07 15:39:31,296] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [59.969906]
+[2018-02-07 15:39:31,296] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 418s, PPD-AMV now is: 11.764705882352942, energy demand is: 59.969906
+[2018-02-07 15:39:41,416] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:39:41,417] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:39:41,520] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '51.382690']
+[2018-02-07 15:39:41,521] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [51.38269]
+[2018-02-07 15:39:41,521] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 407s, PPD-AMV now is: 11.764705882352942, energy demand is: 51.38269
+[2018-02-07 15:39:51,636] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:39:51,636] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:39:51,735] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '45.602364']
+[2018-02-07 15:39:51,736] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [45.602364]
+[2018-02-07 15:39:51,736] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 397s, PPD-AMV now is: 11.764705882352942, energy demand is: 45.602364
+[2018-02-07 15:40:01,856] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:40:01,856] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:40:02,015] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '39.887741']
+[2018-02-07 15:40:02,015] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [39.887741]
+[2018-02-07 15:40:02,016] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 387s, PPD-AMV now is: 11.764705882352942, energy demand is: 39.887741
+[2018-02-07 15:40:12,136] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:40:12,136] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:40:12,240] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '37.985512']
+[2018-02-07 15:40:12,240] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [37.985512]
+[2018-02-07 15:40:12,241] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 377s, PPD-AMV now is: 11.764705882352942, energy demand is: 37.985512
+[2018-02-07 15:40:22,465] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:40:22,466] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:40:22,625] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '40.109024']
+[2018-02-07 15:40:22,625] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [40.109024]
+[2018-02-07 15:40:22,625] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 366s, PPD-AMV now is: 11.764705882352942, energy demand is: 40.109024
+[2018-02-07 15:40:32,775] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:40:32,776] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:40:32,875] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '41.179840']
+[2018-02-07 15:40:32,875] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [41.17984]
+[2018-02-07 15:40:32,875] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 356s, PPD-AMV now is: 11.764705882352942, energy demand is: 41.17984
+[2018-02-07 15:40:42,985] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:40:42,986] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:40:43,085] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '45.857960']
+[2018-02-07 15:40:43,085] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [45.85796]
+[2018-02-07 15:40:43,085] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 346s, PPD-AMV now is: 11.764705882352942, energy demand is: 45.85796
+[2018-02-07 15:40:53,255] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:40:53,256] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:40:53,360] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '50.531288']
+[2018-02-07 15:40:53,360] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [50.531288]
+[2018-02-07 15:40:53,360] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 335s, PPD-AMV now is: 11.764705882352942, energy demand is: 50.531288
+[2018-02-07 15:41:03,485] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:41:03,486] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:41:03,589] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '58.492863']
+[2018-02-07 15:41:03,589] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [58.492863]
+[2018-02-07 15:41:03,590] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 325s, PPD-AMV now is: 11.764705882352942, energy demand is: 58.492863
+[2018-02-07 15:41:13,719] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:41:13,720] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:41:13,879] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '61.935390']
+[2018-02-07 15:41:13,880] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [61.93539]
+[2018-02-07 15:41:13,880] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 315s, PPD-AMV now is: 11.764705882352942, energy demand is: 61.93539
+[2018-02-07 15:41:23,999] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:41:24,000] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:41:24,104] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '66.980530']
+[2018-02-07 15:41:24,104] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [66.98053]
+[2018-02-07 15:41:24,104] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 305s, PPD-AMV now is: 11.764705882352942, energy demand is: 66.98053
+[2018-02-07 15:41:34,224] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:41:34,225] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:41:34,384] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '71.261147']
+[2018-02-07 15:41:34,384] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [71.261147]
+[2018-02-07 15:41:34,384] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 294s, PPD-AMV now is: 11.764705882352942, energy demand is: 71.261147
+[2018-02-07 15:41:44,529] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:41:44,530] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:41:44,694] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '71.338379']
+[2018-02-07 15:41:44,694] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [71.338379]
+[2018-02-07 15:41:44,694] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 284s, PPD-AMV now is: 11.764705882352942, energy demand is: 71.338379
+[2018-02-07 15:41:54,804] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:41:54,804] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:41:54,908] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '74.838058']
+[2018-02-07 15:41:54,908] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [74.838058]
+[2018-02-07 15:41:54,908] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 274s, PPD-AMV now is: 11.764705882352942, energy demand is: 74.838058
+[2018-02-07 15:42:05,029] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:42:05,030] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:42:05,133] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '71.434944']
+[2018-02-07 15:42:05,133] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [71.434944]
+[2018-02-07 15:42:05,134] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 264s, PPD-AMV now is: 11.764705882352942, energy demand is: 71.434944
+[2018-02-07 15:42:15,254] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:42:15,255] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:42:15,357] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '75.382393']
+[2018-02-07 15:42:15,358] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [75.382393]
+[2018-02-07 15:42:15,358] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 253s, PPD-AMV now is: 11.764705882352942, energy demand is: 75.382393
+[2018-02-07 15:42:25,463] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:42:25,463] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:42:25,562] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '71.647285']
+[2018-02-07 15:42:25,562] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [71.647285]
+[2018-02-07 15:42:25,563] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 243s, PPD-AMV now is: 11.764705882352942, energy demand is: 71.647285
+[2018-02-07 15:42:35,683] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:42:35,684] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:42:35,787] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '70.319069']
+[2018-02-07 15:42:35,788] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [70.319069]
+[2018-02-07 15:42:35,788] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 233s, PPD-AMV now is: 11.764705882352942, energy demand is: 70.319069
+[2018-02-07 15:42:45,903] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:42:45,903] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:42:46,023] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '70.691582']
+[2018-02-07 15:42:46,023] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [70.691582]
+[2018-02-07 15:42:46,023] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 223s, PPD-AMV now is: 11.764705882352942, energy demand is: 70.691582
+[2018-02-07 15:42:56,143] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:42:56,144] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:42:56,302] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '67.222710']
+[2018-02-07 15:42:56,302] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [67.22271]
+[2018-02-07 15:42:56,302] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 213s, PPD-AMV now is: 11.764705882352942, energy demand is: 67.22271
+[2018-02-07 15:43:06,417] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:43:06,418] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:43:06,527] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '66.920029']
+[2018-02-07 15:43:06,528] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [66.920029]
+[2018-02-07 15:43:06,528] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 202s, PPD-AMV now is: 11.764705882352942, energy demand is: 66.920029
+[2018-02-07 15:43:16,647] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:43:16,648] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:43:16,752] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '66.490196']
+[2018-02-07 15:43:16,752] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [66.490196]
+[2018-02-07 15:43:16,752] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 192s, PPD-AMV now is: 11.764705882352942, energy demand is: 66.490196
+[2018-02-07 15:43:26,882] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:43:26,883] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:43:26,986] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '67.004776']
+[2018-02-07 15:43:26,986] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [67.004776]
+[2018-02-07 15:43:26,987] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 182s, PPD-AMV now is: 11.764705882352942, energy demand is: 67.004776
+[2018-02-07 15:43:37,107] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:43:37,108] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:43:37,211] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '66.962395']
+[2018-02-07 15:43:37,211] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [66.962395]
+[2018-02-07 15:43:37,211] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 172s, PPD-AMV now is: 11.764705882352942, energy demand is: 66.962395
+[2018-02-07 15:43:47,327] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:43:47,328] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:43:47,436] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '65.708603']
+[2018-02-07 15:43:47,437] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [65.708603]
+[2018-02-07 15:43:47,437] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 161s, PPD-AMV now is: 11.764705882352942, energy demand is: 65.708603
+[2018-02-07 15:43:57,546] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:43:57,547] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:43:57,651] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '65.904915']
+[2018-02-07 15:43:57,651] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [65.904915]
+[2018-02-07 15:43:57,651] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 151s, PPD-AMV now is: 11.764705882352942, energy demand is: 65.904915
+[2018-02-07 15:44:07,783] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:44:07,784] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:44:07,885] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '65.655083']
+[2018-02-07 15:44:07,886] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [65.655083]
+[2018-02-07 15:44:07,886] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 141s, PPD-AMV now is: 11.764705882352942, energy demand is: 65.655083
+[2018-02-07 15:44:18,006] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:44:18,007] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:44:18,110] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '65.690758']
+[2018-02-07 15:44:18,111] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [65.690758]
+[2018-02-07 15:44:18,111] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 131s, PPD-AMV now is: 11.764705882352942, energy demand is: 65.690758
+[2018-02-07 15:44:28,311] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:44:28,312] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:44:28,415] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '65.904915']
+[2018-02-07 15:44:28,415] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [65.904915]
+[2018-02-07 15:44:28,416] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 120s, PPD-AMV now is: 11.764705882352942, energy demand is: 65.904915
+[2018-02-07 15:44:38,531] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:44:38,532] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:44:38,635] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '65.845428']
+[2018-02-07 15:44:38,635] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [65.845428]
+[2018-02-07 15:44:38,636] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 110s, PPD-AMV now is: 11.764705882352942, energy demand is: 65.845428
+[2018-02-07 15:44:48,800] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:44:48,801] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:44:48,905] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '70.266251']
+[2018-02-07 15:44:48,905] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [70.266251]
+[2018-02-07 15:44:48,906] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 100s, PPD-AMV now is: 11.764705882352942, energy demand is: 70.266251
+[2018-02-07 15:44:59,020] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:44:59,021] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:44:59,125] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '70.032021']
+[2018-02-07 15:44:59,125] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [70.032021]
+[2018-02-07 15:44:59,125] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 90s, PPD-AMV now is: 11.764705882352942, energy demand is: 70.032021
+[2018-02-07 15:45:09,245] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:45:09,246] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:45:09,434] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '69.759827']
+[2018-02-07 15:45:09,435] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [69.759827]
+[2018-02-07 15:45:09,435] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 79s, PPD-AMV now is: 11.764705882352942, energy demand is: 69.759827
+[2018-02-07 15:45:19,605] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:45:19,606] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:45:19,764] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '69.880096']
+[2018-02-07 15:45:19,765] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [69.880096]
+[2018-02-07 15:45:19,765] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 69s, PPD-AMV now is: 11.764705882352942, energy demand is: 69.880096
+[2018-02-07 15:45:29,885] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:45:29,886] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:45:30,044] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '73.787170']
+[2018-02-07 15:45:30,044] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [73.78717]
+[2018-02-07 15:45:30,045] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 59s, PPD-AMV now is: 11.764705882352942, energy demand is: 73.78717
+[2018-02-07 15:45:40,165] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:45:40,165] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:45:40,404] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '74.517349']
+[2018-02-07 15:45:40,404] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [74.517349]
+[2018-02-07 15:45:40,404] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 48s, PPD-AMV now is: 11.764705882352942, energy demand is: 74.517349
+[2018-02-07 15:45:50,524] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:45:50,525] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:45:50,624] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '74.296288']
+[2018-02-07 15:45:50,624] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [74.296288]
+[2018-02-07 15:45:50,624] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 38s, PPD-AMV now is: 11.764705882352942, energy demand is: 74.296288
+[2018-02-07 15:46:00,764] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:46:00,765] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:46:00,933] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '73.961342']
+[2018-02-07 15:46:00,933] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [73.961342]
+[2018-02-07 15:46:00,933] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 28s, PPD-AMV now is: 11.764705882352942, energy demand is: 73.961342
+[2018-02-07 15:46:11,090] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:46:11,090] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:46:11,194] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '73.659904']
+[2018-02-07 15:46:11,194] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [73.659904]
+[2018-02-07 15:46:11,194] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 18s, PPD-AMV now is: 11.764705882352942, energy demand is: 73.659904
+[2018-02-07 15:46:21,314] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:46:21,314] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getenergy
+[2018-02-07 15:46:21,423] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '74.483849']
+[2018-02-07 15:46:21,423] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [74.483849]
+[2018-02-07 15:46:21,424] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 7s, PPD-AMV now is: 11.764705882352942, energy demand is: 74.483849
+[2018-02-07 15:46:31,434] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getAll
+[2018-02-07 15:46:31,938] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 26, '28.480000', '93.500000', '0.000000', '292.000000', '50.000000', '140.000000', '69.461586', '72.000000', '73.646500', '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:46:31,939] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [28.48, 93.5, 0.0, 292.0, 50.0, 140.0, 69.461586, 72.0, 73.6465, 0.0, 0.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0]
+[2018-02-07 15:46:31,939] ENV_IW-imp-v9704_Thread-2 DEBUG:Now is 2018-02-07 15:46:31.434372
+[2018-02-07 15:46:32,040] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '24.889996']
+[2018-02-07 15:46:32,139] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 1, '69.461586']
+[2018-02-07 15:46:32,140] ENV_IW-imp-v9704_Thread-2 WARNING:Collected AMV for idx: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] is 0.0, so Fanger-PMV: -0.6728934151636337 is used, resulting PPD is: 31.55568868128334
+[2018-02-07 15:46:32,289] ENV_IW-imp-v9704_Thread-2 DEBUG:Global solar radiation from PI is: 74.14
+[2018-02-07 15:46:32,290] ENV_IW-imp-v9704_Thread-2 DEBUG:Direct solar rad is: 5.244100200128701, diffuse solar rad is: 68.89589979987132, solar altitude is: 18.79371314060088
+[2018-02-07 15:46:32,291] ENV_IW-imp-v9704_Thread-2 INFO:STEP State observation is: [-1.9555555555555553, 93.5, 0.0, 292.0, 68.89589979987132, 5.244100200128701, 10.0, 31.55568868128334, 60.0, 20.81199222222222, 22.22222222222222, 1, 91.22018346052629], current time in sceonds since the start of the year is: 3253591
+[2018-02-07 15:46:32,292] A3C_AGENT_WORKER-Thread-2 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0500, 
+Environment debug: raw action idx is 9, 
+current raw observation is [-1.9555555555555553, 93.5, 0.0, 292.0, 101.68166364054949, 15.158336359450507, 10.0, 32.59244035484091, 25.0, 20.667996111111112, 22.22222222222222, 1, 4.780779697368423], 
+current ob forecast is [], 
+actual action is [60.0], 
+sim time this is 3252688.0000, 
+sim time next is 3253591.0000, 
+raw observation next is [-1.9555555555555553, 93.5, 0.0, 292.0, 68.89589979987132, 5.244100200128701, 10.0, 31.55568868128334, 60.0, 20.81199222222222, 22.22222222222222, 1, 91.22018346052629], 
+processed observation next is [0.6666666666666666, 0.6521739130434783, 0.2831908831908832, 0.935, 0.0, 0.8111111111111111, 0.18226428518484475, 0.005244100200128701, 0.6666666666666666, 0.3155568868128334, 0.8888888888888888, 0.4017131746031742, 0.603174603174603, 1.0, 1.0731786289473682], 
+reward next is -1.0000. 
+=============================================
+[2018-02-07 15:46:32,294] A3C_AGENT_WORKER-Thread-2 DEBUG:Policy network output: [1.5199318e-05 0.0000000e+00 3.7080685e-05 0.0000000e+00 5.4234542e-06
+ 3.3101242e-05 6.6817396e-05 2.2304657e-05 5.7398208e-04 9.9924612e-01
+ 0.0000000e+00], sum to 1.0000
+[2018-02-07 15:46:32,295] ENV_IW-imp-v9704_Thread-2 INFO:Read from SDC server with readCode: getAMV
+[2018-02-07 15:46:32,404] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:46:32,404] ENV_IW-imp-v9704_Thread-2 INFO:Data read from BAS SDC read server: [0.0, 0.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0]
+[2018-02-07 15:46:32,405] ENV_IW-imp-v9704_Thread-2 INFO:STEP base AMV-PPD before step is: 11.764705882352942, action sent to BAS is: [140.0]
+[2018-02-07 15:46:32,552] ENV_IW-imp-v9704_Thread-2 INFO:STEP Write to BAS success!
+[2018-02-07 15:46:32,552] ENV_IW-imp-v9704_Thread-2 INFO:STEP Wait for 900 seconds to finish this control step
+[2018-02-07 15:46:32,690] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:46:32,691] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 899s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:46:42,809] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:46:42,809] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 889s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:46:52,983] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:46:52,984] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 879s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:47:03,133] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:47:03,133] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 869s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:47:13,248] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:47:13,248] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 859s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:47:23,398] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:47:23,398] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 849s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:47:33,518] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:47:33,518] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 839s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:47:43,678] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:47:43,678] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 828s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:47:53,797] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:47:53,798] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 818s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:48:03,912] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:48:03,913] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 808s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:48:14,027] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:48:14,028] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 798s, PPD-AMV now is: 11.764705882352942, energy demand is: None
+[2018-02-07 15:48:24,156] ENV_IW-imp-v9704_Thread-2 DEBUG:Got the message successfully from the BAS SDC read server: [1, 'Read success!', 17, '0.000000', '0.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000', '3.000000']
+[2018-02-07 15:48:24,156] ENV_IW-imp-v9704_Thread-2 INFO:STEP Remaining time to finish this step: 788s, PPD-AMV now is: 11.764705882352942, energy demand is: None

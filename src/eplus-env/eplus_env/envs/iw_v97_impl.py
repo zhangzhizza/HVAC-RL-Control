@@ -30,6 +30,7 @@ from ..util.time import (get_hours_to_now, get_time_string, get_delta_seconds,
                          WEEKDAY_ENCODING, getSecondFromStartOfYear)
 from ..util.time_interpolate import get_time_interpolate
 from ..util.solarCalculator import getSolarBreakDown
+from ..util.pmvCalculator import fangerPMV
 
 
 WEATHER_FORECAST_COLS_SELECT = {'tmy3': [0, 2, 8, 9],
@@ -70,7 +71,8 @@ class IW_IMP_V97(Env):
 
     def __init__(self, site_server_ip, rd_port, wt_port, env_name, defaultObValues, localLat, localLong, ctrl_step_size_s, 
                  min_max_limits, incl_forecast = False, forecastRandMode = 'normal', forecastRandStd = 0.15,
-                 forecastSource = 'tmy3', forecastFilePath = None, forecast_hour = 12, act_repeat = 1):
+                 forecastSource = 'tmy3', forecastFilePath = None, forecast_hour = 12, act_repeat = 1, isPPDBk = True,
+                 clo = 1.0, met = 1.2, airVel = 0.1, isMullSspLowerLimit =  False):
         self._env_name = env_name;
         self._thread_name = threading.current_thread().getName();
         self.logger_main = Logger().getLogger('ENV_%s_%s'%(env_name, self._thread_name), 
@@ -96,6 +98,12 @@ class IW_IMP_V97(Env):
             pass;
         self._act_repeat = act_repeat;
         self._min_max_limits = min_max_limits;
+        self._isPPDBk = isPPDBk;
+        self._clo = clo;
+        self._met = met;
+        self._airVel = airVel;
+        self._oat = None;
+        self._isMullSspLowerLimit = isMullSspLowerLimit;
 
  
     def _reset(self):
@@ -115,15 +123,17 @@ class IW_IMP_V97(Env):
         nowDatetime = datetime.now()                 
         # Read from BAS
         readData = self._readFromBASHelper('getAll');
-        # readData: OAT-F, OAH-%, WS-MHP, WD, HWOEN-F, MULSSP-F, IAT-F, IATSSP-F, HTDMD-KW, 15 Values for AMV
-        (readDataUnitChanged, solDif, solDir, ppdCal, occpMode) = self._processRawReadDataAndQueryPi(readData, nowDatetime);
+        # readData: OAT-F, OAH-%, WS-MHP, WD, HWOEN-F, MULSSP-F, IAT-F, IATSSP-F, HTDMD-KW, 17 Values for AMV
+        (readDataUnitChanged, solDif, solDir, ppdCal, occpMode) = self._processRawReadDataAndQueryPi(readData, nowDatetime, self._isPPDBk);
         # Set a lower bound for thermal comfort based on the indoor air temperature (IAT must be > 20 C) in case no body report AMV 
         # State ob: OAT-TOC, OAH, WS-TOMS, WD, SOLDIF-CAL, SOLDIR-CAL, HWOEN-TOC, PPD-CAL, MULSSP-TOC, IAT-TOC, IATSSP-TOC, OCCP-CAL, HTDMD-TOKWH
         prcdStateOb = [readDataUnitChanged[0], readDataUnitChanged[1], readDataUnitChanged[2], readDataUnitChanged[3], solDif, solDir,\
                        readDataUnitChanged[4], ppdCal, readDataUnitChanged[5], readDataUnitChanged[6], readDataUnitChanged[7], occpMode, readDataUnitChanged[8]];
-        self.logger_main.info('State observation is: %s'%(prcdStateOb));
+        self._oat = readDataUnitChanged[0];
+        self._iat = readDataUnitChanged[6];
+        self._ocp = occpMode;
         curObTim = getSecondFromStartOfYear(nowDatetime);
-        self.logger_main.info('Current time in second since the start of the year is: %d'%(curObTim));
+        self.logger_main.info('RESET State observation in reset is: %s, current time in seconds since start of the year is: %s'%(prcdStateOb, curObTim));
         ret.append(curObTim);
         ret.append(prcdStateOb);
         # Read the weather forecast
@@ -139,11 +149,11 @@ class IW_IMP_V97(Env):
         self._env_working_dir = self._get_working_folder(CWD, '-%s-res'%(self._env_name));
         os.makedirs(self._env_working_dir);
         self._logfilename = os.path.join(self._env_working_dir, 'ob_log.csv');  
-        toWriteLog = self._getToWriteLog(nowDatetime, prcdStateOb, readData[-15:]);
+        toWriteLog = self._getToWriteLog(nowDatetime, prcdStateOb, readData[9:]);
         logheaders=['time','OAT C','OAH %', 'WS M/S', 'WD', 'SOLDIF W/M2', 'SOLDIR W/M2', 'HWOEN C', 'PPD(PRCD) %', 'MULSSP C', \
                     'IAT C', 'IATSSP C', 'OCCP', 'HTDMD KW']
-        for i in range(15):
-            # 15 amv values
+        for i in range(len(readData[9:])):
+            # 17 amv values
             logheaders.append('AMVRAW_%s'%(i));
         with open(self._logfilename, 'w') as f:
             writer = csv.writer(f)
@@ -197,10 +207,10 @@ class IW_IMP_V97(Env):
         rd_s = socket.socket(); # Read sensor data socket
         rd_s.connect((self._site_server_ip, self._rd_port));
         if isShowInfoLog:
-            self.logger_main.info('Built connection with the BAS SDC read server.')
+            self.logger_main.info('Read from SDC server with readCode: %s'%readCode)
         rd_s.sendall(bytearray(readCode, encoding = 'utf-8')) # Send get request to the site read server
         # Start the data exchange with the site read server
-        rcv_from_bas_server = rd_s.recv(2048).decode(encoding = 'utf-8')
+        rcv_from_bas_server = rd_s.recv(4096).decode(encoding = 'utf-8')
         self.logger_main.debug('Got the message successfully from the BAS SDC read server: ' + rcv_from_bas_server);
         flag, retMsg, nDb, readData = self._disassembleRSMsg(rcv_from_bas_server);
         if flag == 0:
@@ -211,6 +221,8 @@ class IW_IMP_V97(Env):
                 readData = self._defaultObValues[9:];
             elif readCode.lower() == 'getenergy':
                 readData = [self._defaultObValues[8]];
+            elif readCode.lower() == 'getiat':
+                readData = [self._defaultObValues[6]]
             elif readCode.lower() == 'getiarh':
                 readData = [50]
             else:
@@ -224,6 +236,8 @@ class IW_IMP_V97(Env):
                 defaultObValuesShiftIdx = 9;
             elif readCode.lower() == 'getenergy':
                 defaultObValuesShiftIdx = 8;
+            elif readCode.lower() == 'getiat':
+                defaultObValuesShiftIdx = 6;
             elif readCode.lower() == 'getiarh':
                 defaultObValuesShiftIdx = -1 # Not in the default values
             else:
@@ -242,24 +256,17 @@ class IW_IMP_V97(Env):
             self.logger_main.info('Data read from BAS SDC read server: %s'%(readData));
         return readData;
 
-    def _processRawReadDataAndQueryPi(self, readData, nowDatetime):
+    def _processRawReadDataAndQueryPi(self, readData, nowDatetime, isPPDBk):
         # Change unit of the readData
         readDataUnitChanged = self._getPrcdUnitChangedReadData(readData);
-        iat = readDataUnitChanged[6];
-        met = 1.2 #met
-        airVel = 0.1 #m/s
-        clo = 1.0 #clo
         # Get occp mode 
         self.logger_main.debug('Now is %s'%(nowDatetime));
         occpMode = self._getCurrentOccpMode(nowDatetime)
         # Get PPD
-        ppdCal = self._getOnePPDFromAllAMV(readDataUnitChanged[9:]);
-        if ppdCal == 0: # Indicating no one votes or every one is comfortable
-            # IARH is needed for fanger PPD
-            iarhFromBAS = self._readFromBASHelper('getIARH', False);
-            pmvFanger, ppdFanger = fangerPMV(iat, iat, iarhFromBAS, airVel, met, clo);
-            self.logger_main.warning('Collected PPD is 0.0, so Fanger-PPD: %s is used'%(ppdFanger))
-            ppdCal = ppdFanger;
+        if isPPDBk:
+            ppdCal = self._getPPDFangerBK(readDataUnitChanged[9:], occpMode);
+        else:
+            ppdCal = self._getPPDAMV(readDataUnitChanged[9:]);
         # Get soldif and soldir
         solTotal, solTotalMsgBack = self._getSolTotalNow();
         self.logger_main.debug('Global solar radiation from PI is: %s'%(solTotal));
@@ -271,7 +278,36 @@ class IW_IMP_V97(Env):
         self.logger_main.debug('Direct solar rad is: %s, diffuse solar rad is: %s, solar altitude is: %s'%(solDir, solDif, nowSolAlt));
         return (readDataUnitChanged, solDif, solDir, ppdCal, occpMode)
 
+    def _processActions(self, rawAction, oat, iat, ocp):
+        """
+            Keep the raw action if one the following conditions is met:
+                1, OAT > oatThres1
+                2, IAT > iatThres1
+                3, OCP == 0
+        """
+        oatThres1 = 5; # C
+        oatThres2 = 0; # C
+        iatThres1 = 22.5; # C
+        if oat >= oatThres1:
+            return rawAction;
+        elif ocp == 0:
+            return rawAction;
+        else:
+            if iat >= iatThres1:
+                return rawAction;
+            else: 
+                if oat >= oatThres2:
+                    minMullSsp = 30;
+                    self.logger_main.info('STEP Ourdoor is between %sC and %sC, IAT is below %s and occupancy flag is %s, '
+                                          'so minimum MullSSP is: %s'%(oatThres2, oatThres1, iatThres1, ocp, minMullSsp));
+                else:
+                    minMullSsp = 35;
+                    self.logger_main.info('STEP Ourdoor is below %sC, IAT is below %s and occupancy flag is %s, '
+                                          'so minimum MullSSP is: %s'%(oatThres2, iatThres1, ocp, minMullSsp));
+                rawAction[0] = max(rawAction[0], minMullSsp);
+            return rawAction;
 
+                
 
     def _step(self, action):
         """Execute the specified action.
@@ -294,41 +330,42 @@ class IW_IMP_V97(Env):
         ret = [];
         # Before send, check IW AMV
         amvFromBAS = self._readFromBASHelper('getAMV');
-        ppdCal_base = self._getOnePPDFromAllAMV(amvFromBAS);
-        self.logger_main.info('Base PPD before step is: %s'%(ppdCal_base))
+        ppdCal_base = self._getPPDAMV(amvFromBAS);
         # Send to BAS
+        if self._isMullSspLowerLimit:
+            action = self._processActions(action, self._oat, self._iat, self._ocp);
         actionUnitChanged = self._getPrcdUnitChangedActions(action);
         is_terminal = False;
         integral_energy_list = [];
         wt_s = socket.socket(); # Write action socket
         wt_s.connect((self._site_server_ip, self._wt_port));
-        self.logger_main.info('Built connection with the BAS SDC write server.')
         toSend = ['write', len(actionUnitChanged)];
         toSend.extend(actionUnitChanged);
         wt_s.sendall(bytearray(str(toSend), encoding = 'utf-8')) # Send to write server [codeString, #ofData, data1, data2, ...]
-        self.logger_main.info('Sent action %s to the BAS'%(toSend[2:]))
-        wt_s_recv = wt_s.recv(2048).decode(encoding = 'utf-8'); # Receive is [flag, msg]
+        self.logger_main.info('STEP base AMV-PPD before step is: %s, action sent to BAS is: %s'%(ppdCal_base, toSend[2:]))
+        wt_s_recv = wt_s.recv(4096).decode(encoding = 'utf-8'); # Receive is [flag, msg]
         wt_s_recv = ast.literal_eval(wt_s_recv);
         if wt_s_recv[0] == 0:
             self.logger_main.warning('Write to BAS has error: %s'%wt_s_recv[1]);
         else:
-            self.logger_main.info('Write to BAS success!');
+            self.logger_main.info('STEP Write to BAS success!');
         # Read from BAS
         # Wait for control step finishes, except if IW PPD increases
         controlStepLenS = self._ctrl_step_size_s * self._act_repeat;
         baseTime = time.time();
-        self.logger_main.info('Wait for %d seconds to finish this control step'%(controlStepLenS));
+        self.logger_main.info('STEP Wait for %d seconds to finish this control step'%(controlStepLenS));
         loopCount = 0
         queryFreq = 10 #Seconds
         energyQueryFreq = 10 #Seconds
         energyQueryWait = 120 #Seconds
+        energy_now = None;
         while (time.time() - baseTime) < controlStepLenS:
             # Check ppd
             amvFromBAS = self._readFromBASHelper('getAMV', False);
-            ppdCal_now = self._getOnePPDFromAllAMV(amvFromBAS);
+            ppdCal_now = self._getPPDAMV(amvFromBAS);
             if ppdCal_now > ppdCal_base:
                 # Jump out of the while and finish this step
-                self.logger_main.info('IW AMV profile changed to: %s, now PPD is %s (old PPD is %s), jump out of the step loop'
+                self.logger_main.info('STEP IW AMV profile changed to: %s, now PPD-AMV is %s (old PPD-AMV is %s), jump out of the step loop'
                                       %(amvFromBAS, ppdCal_now, ppdCal_base));
                 break;
             # Check energy frequently because we want the average energy demand of the last control step
@@ -337,23 +374,26 @@ class IW_IMP_V97(Env):
                 energyFromBAS = self._readFromBASHelper('getenergy', True)
                 energy_now = energyFromBAS[0]; # in kW
                 integral_energy_list.append(energy_now);
-                self.logger_main.info('Energy demand is: %s'%(energy_now));
-            self.logger_main.debug('Remaining time to finish this step: %ds'%(controlStepLenS - (time.time() - baseTime)))
+            self.logger_main.info('STEP Remaining time to finish this step: %ds, PPD-AMV now is: %s, energy demand is: %s'
+                                    %(controlStepLenS - (time.time() - baseTime), ppdCal_now, energy_now))
             time.sleep(queryFreq) # Check PPD every 5 seconds
             loopCount += 1;
         # Do the reading from BAS
         nowDatetime = datetime.now()
         readData = self._readFromBASHelper('getAll');
-        # readData: OAT-F, OAH-%, WS-MHP, WD, HWOEN-F, MULSSP-F, IAT-F, IATSSP-F, HTDMD-KW, 15 Values for AMV
-        (readDataUnitChanged, solDif, solDir, ppdCal, occpMode) = self._processRawReadDataAndQueryPi(readData, nowDatetime, self._iat_thres);
+        # readData: OAT-F, OAH-%, WS-MHP, WD, HWOEN-F, MULSSP-F, IAT-F, IATSSP-F, HTDMD-KW, 17 Values for AMV
+        (readDataUnitChanged, solDif, solDir, ppdCal, occpMode) = self._processRawReadDataAndQueryPi(readData, nowDatetime, self._isPPDBk);
         integral_energy_list.append(readDataUnitChanged[8]);
         # State ob: OAT-TOC, OAH, WS-TOMS, WD, SOLDIF-CAL, SOLDIR-CAL, HWOEN-TOC, PPD-CAL, MULSSP-TOC, IAT-TOC, IATSSP-TOC, OCCP-CAL, HTDMD-TOKWH
         prcdStateOb = [readDataUnitChanged[0], readDataUnitChanged[1], readDataUnitChanged[2], readDataUnitChanged[3], solDif, solDir,\
                        readDataUnitChanged[4], ppdCal, readDataUnitChanged[5], readDataUnitChanged[6], readDataUnitChanged[7], occpMode, \
                        sum(integral_energy_list)/len(integral_energy_list)];
-        self.logger_main.info('State observation is: %s'%(prcdStateOb));
+        # Remember last step oa
+        self._oat = readDataUnitChanged[0];
+        self._iat = readDataUnitChanged[6];
+        self._ocp = occpMode;
         curObTim = getSecondFromStartOfYear(nowDatetime);
-        self.logger_main.info('Current time in second since the start of the year is: %d'%(curObTim));
+        self.logger_main.info('STEP State observation is: %s, current time in sceonds since the start of the year is: %s'%(prcdStateOb, curObTim));
         ret.append(curObTim);
         ret.append(prcdStateOb);
         # Read the weather forecast
@@ -362,7 +402,7 @@ class IW_IMP_V97(Env):
         # Add terminal status
         ret.append(is_terminal);
         # Log observations to file
-        toWriteLog = self._getToWriteLog(nowDatetime, prcdStateOb, readData[-15:]);
+        toWriteLog = self._getToWriteLog(nowDatetime, prcdStateOb, readData[9:]);
         with open(self._logfilename, 'a') as f:
             writer = csv.writer(f)
             writer.writerow(toWriteLog);
@@ -394,14 +434,50 @@ class IW_IMP_V97(Env):
                 occpMode = 0;
         return occpMode;
 
-    def _getOnePPDFromAllAMV(self, allAMV):
+    def _getPPDFangerBK(self, allAMV, occp):
         """
             ret: float
                 0-100
         """
-        # 15 AMV in total, 0 to 4 scale, 0 is cold, 4 is hot, 2 is neutral
-        allAMVScaleAbs = [abs(amv - 2.0) for amv in allAMV];
-        onePPD = 100 * sum(allAMVScaleAbs) / (2.0 * len(allAMV));
+        amvScale = 7;
+        amvBase = 7//2
+        # 17 AMV in total, 0 to 6 scale, 0 is cold, 6 is hot, 3 is neutral
+        allAMVScale = [(amv - amvBase) for amv in allAMV];
+        # Fill the fanger PMV for those AMV 0 
+        # IARH and IAT is needed for fanger PPD
+        met = self._met #met
+        airVel = self._airVel #m/s
+        clo = self._clo #clo
+        mrtAdj = 1.0 #C
+        if occp == 0:
+            met = 1.2;
+            clo = 1.0;
+            airVel = 0.1;
+            mrtAdj = 0.0; #C
+        iarhFromBAS = self._readFromBASHelper('getIARH', False)[0]; 
+        iatFromBAS = self._readFromBASHelper('getIAT', False)[0];# F
+        iatFromBAS = (iatFromBAS - 32)/1.8
+        pmvFanger, ppdFanger = fangerPMV(iatFromBAS, iatFromBAS - mrtAdj, iarhFromBAS, airVel, met, clo);
+        changedAmvIdxList = [];
+        for i in range(len(allAMVScale)):
+            if allAMVScale[i] == 0: 
+                allAMVScale[i] = pmvFanger;
+                changedAmvIdxList.append(i);
+        onePPD = 100 * sum(map(abs, allAMVScale))/(amvBase * len(allAMVScale))
+        if len(changedAmvIdxList)>0:
+            self.logger_main.warning('Collected AMV for idx: %s is 0.0, so Fanger-PMV: %s is used, resulting PPD is: %s'%(changedAmvIdxList, pmvFanger, onePPD))
+        return onePPD;
+
+    def _getPPDAMV(self, allAMV):
+        """
+            ret: float
+                0-100
+        """
+        amvScale = 7;
+        amvBase = 7//2
+        # 17 AMV in total, 0 to 6 scale, 0 is cold, 6 is hot, 3 is neutral
+        allAMVScale = [(amv - amvBase) for amv in allAMV];
+        onePPD = 100 * sum(map(abs, allAMVScale))/(amvBase * len(allAMVScale))
         return onePPD;
 
     def _getSolTotalNow(self):
@@ -465,7 +541,7 @@ class IW_IMP_V97(Env):
         return (flag, retMsg, count, readData);
 
     def _getPrcdUnitChangedReadData(self, rawData):
-        # rawData: OAT-F, OAH-%, WS-MHP, WD, HWOEN-F, MULSSP-F, IAT-F, IATSSP-F, HTDMD-KW, 15 Values for AMV
+        # rawData: OAT-F, OAH-%, WS-MHP, WD, HWOEN-F, MULSSP-F, IAT-F, IATSSP-F, HTDMD-KW, 17 Values for AMV
         prcdData = [];
         prcdData.append(self._fToC(rawData[0]))
         prcdData.append(rawData[1])
@@ -476,7 +552,7 @@ class IW_IMP_V97(Env):
         prcdData.append(self._fToC(rawData[6]))
         prcdData.append(self._fToC(rawData[7]))
         prcdData.append(rawData[8])
-        for i in range(15):
+        for i in range(len(rawData[9:])):
             prcdData.append(rawData[9 + i]);
 
         return prcdData;
