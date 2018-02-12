@@ -18,3 +18,7 @@ src/core/eplus-env/eplus_env/envs/v1-*
 *.pyc
 *.py~
 .DS_Store
+
+*eplusout*.eso
+*eplusout*.csv
+

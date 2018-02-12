@@ -4382,3 +4382,10 @@ WriteProperty Acknowledged!
 WriteProperty Acknowledged!
 
 [2018-02-12 16:23:47,014] SDC_WriteServer INFO:Write success!
+[2018-02-12 16:38:50,224] SDC_WriteServer INFO:Got connection from 127.0.0.1:50442
+[2018-02-12 16:38:50,224] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:50442, number of data to write is 1, data to write are [86.0]
+[2018-02-12 16:38:50,224] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '86.0']
+[2018-02-12 16:38:50,255] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-12 16:38:50,255] SDC_WriteServer INFO:Write success!
