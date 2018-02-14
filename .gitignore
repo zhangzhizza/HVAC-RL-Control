@@ -13,6 +13,7 @@ src/*case*
 src/core/eplus-env/eplus_env/envs/v1-*
 **/*Res*/
 **/*res*/
+src/SDCServer/bacnet/log
 
 *.swp
 *.pyc
