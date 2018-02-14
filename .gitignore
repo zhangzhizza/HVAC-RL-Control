@@ -19,6 +19,4 @@ src/core/eplus-env/eplus_env/envs/v1-*
 *.py~
 .DS_Store
 
-*.eso
-
 

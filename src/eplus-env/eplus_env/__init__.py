@@ -666,6 +666,33 @@ register(
             'airVel': 0.1,
             'isMullSspLowerLimit': True});
 
+register(
+    id='IW-imp-v9707',
+    entry_point='eplus_env.envs:IW_IMP_V97',
+    kwargs={'site_server_ip': 'localhost',
+            'rd_port': 61221,
+            'wt_port': 61222,
+            'env_name': 'IW-imp-v9707',
+            'defaultObValues': [50, 50, 0, 0, 50, 72, 72, 72, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+            'localLat': 40.4406,
+            'localLong': -79.9959,
+            'ctrl_step_size_s': 300,
+            'min_max_limits': MIN_MAX_LIMITS_DICT['IW-imp-v9701'],
+            'incl_forecast': False,
+            'forecastRandMode': 'tmy3',
+            'forecastRandStd': 0.15,
+            'forecastSource': None,
+            'forecastFilePath': None,
+            'forecast_hour': 12,
+            'act_repeat': 3,
+            'isPPDBk': True,
+            'clo': 0.8,
+            'met': 1.2, 
+            'airVel': 0.1,
+            'isMullSspLowerLimit': True,
+            'useCSLWeather': True});
+
+
 
 
 def setSchedulePath(sch_path_dict, tgtIDFPath):

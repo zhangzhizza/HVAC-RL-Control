@@ -495,19 +495,19 @@
   OnMeter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J]
   OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SME1#05:InteriorEquipment:Electricity [J]
 
- Meters for 1740,1ST%PLENUM:1ST%PLENUM:Zone Air System Sensible Heating Energy [J]
+ Meters for 1740,1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Heating Energy [J]
   OnMeter=EnergyTransfer:Facility [J]
   OnMeter=EnergyTransfer:Building [J]
-  OnMeter=EnergyTransfer:Zone:1ST%PLENUM:1ST%PLENUM [J]
+  OnMeter=EnergyTransfer:Zone:1ST%PLENVM:1ST%PLENVM [J]
   OnMeter=Heating:EnergyTransfer [J]
-  OnMeter=Heating:EnergyTransfer:Zone:1ST%PLENUM:1ST%PLENUM [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%PLENVM:1ST%PLENVM [J]
 
- Meters for 1791,1ST%PLENUM:1ST%PLENUM:Zone Air System Sensible Cooling Energy [J]
+ Meters for 1791,1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Cooling Energy [J]
   OnMeter=EnergyTransfer:Facility [J]
   OnMeter=EnergyTransfer:Building [J]
-  OnMeter=EnergyTransfer:Zone:1ST%PLENUM:1ST%PLENUM [J]
+  OnMeter=EnergyTransfer:Zone:1ST%PLENVM:1ST%PLENVM [J]
   OnMeter=Cooling:EnergyTransfer [J]
-  OnMeter=Cooling:EnergyTransfer:Zone:1ST%PLENUM:1ST%PLENUM [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%PLENVM:1ST%PLENVM [J]
 
  Meters for 1812,1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Heating Energy [J]
   OnMeter=EnergyTransfer:Facility [J]
@@ -789,33 +789,33 @@
   OnMeter=Cooling:EnergyTransfer [J]
   OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%ELEVATOR%MACHINE [J]
 
- Meters for 2464,2ND%PLENUM:2ND%PLENUM%FALSE:Zone Air System Sensible Heating Energy [J]
+ Meters for 2464,2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Heating Energy [J]
   OnMeter=EnergyTransfer:Facility [J]
   OnMeter=EnergyTransfer:Building [J]
-  OnMeter=EnergyTransfer:Zone:2ND%PLENUM:2ND%PLENUM%FALSE [J]
+  OnMeter=EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%FALSE [J]
   OnMeter=Heating:EnergyTransfer [J]
-  OnMeter=Heating:EnergyTransfer:Zone:2ND%PLENUM:2ND%PLENUM%FALSE [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%FALSE [J]
 
- Meters for 2485,2ND%PLENUM:2ND%PLENUM%FALSE:Zone Air System Sensible Cooling Energy [J]
+ Meters for 2485,2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Cooling Energy [J]
   OnMeter=EnergyTransfer:Facility [J]
   OnMeter=EnergyTransfer:Building [J]
-  OnMeter=EnergyTransfer:Zone:2ND%PLENUM:2ND%PLENUM%FALSE [J]
+  OnMeter=EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%FALSE [J]
   OnMeter=Cooling:EnergyTransfer [J]
-  OnMeter=Cooling:EnergyTransfer:Zone:2ND%PLENUM:2ND%PLENUM%FALSE [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%FALSE [J]
 
- Meters for 2496,2ND%PLENUM:2ND%PLENUM%NORTH:Zone Air System Sensible Heating Energy [J]
+ Meters for 2496,2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Heating Energy [J]
   OnMeter=EnergyTransfer:Facility [J]
   OnMeter=EnergyTransfer:Building [J]
-  OnMeter=EnergyTransfer:Zone:2ND%PLENUM:2ND%PLENUM%NORTH [J]
+  OnMeter=EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%NORTH [J]
   OnMeter=Heating:EnergyTransfer [J]
-  OnMeter=Heating:EnergyTransfer:Zone:2ND%PLENUM:2ND%PLENUM%NORTH [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%NORTH [J]
 
- Meters for 2517,2ND%PLENUM:2ND%PLENUM%NORTH:Zone Air System Sensible Cooling Energy [J]
+ Meters for 2517,2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Cooling Energy [J]
   OnMeter=EnergyTransfer:Facility [J]
   OnMeter=EnergyTransfer:Building [J]
-  OnMeter=EnergyTransfer:Zone:2ND%PLENUM:2ND%PLENUM%NORTH [J]
+  OnMeter=EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%NORTH [J]
   OnMeter=Cooling:EnergyTransfer [J]
-  OnMeter=Cooling:EnergyTransfer:Zone:2ND%PLENUM:2ND%PLENUM%NORTH [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%NORTH [J]
 
  Meters for 2528,2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Heating Energy [J]
   OnMeter=EnergyTransfer:Facility [J]
@@ -1948,8 +1948,8 @@
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 EQUIPMENT 1:Electric Equipment Electric Energy
 
  For Meter=EnergyTransfer:Facility [J], ResourceType=EnergyTransfer, contents are:
-  1ST%PLENUM:1ST%PLENUM:Zone Air System Sensible Heating Energy
-  1ST%PLENUM:1ST%PLENUM:Zone Air System Sensible Cooling Energy
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Heating Energy
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Cooling Energy
   1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Heating Energy
   1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Cooling Energy
   1ST%FLOOR:1ST%RESEARCH%OPEN%NE:Zone Air System Sensible Heating Energy
@@ -1990,10 +1990,10 @@
   1ST%FLOOR:1ST%EDCTN%STRG:Zone Air System Sensible Cooling Energy
   1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Heating Energy
   1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Cooling Energy
-  2ND%PLENUM:2ND%PLENUM%FALSE:Zone Air System Sensible Heating Energy
-  2ND%PLENUM:2ND%PLENUM%FALSE:Zone Air System Sensible Cooling Energy
-  2ND%PLENUM:2ND%PLENUM%NORTH:Zone Air System Sensible Heating Energy
-  2ND%PLENUM:2ND%PLENUM%NORTH:Zone Air System Sensible Cooling Energy
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Heating Energy
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Cooling Energy
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Heating Energy
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Cooling Energy
   2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Heating Energy
   2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:Zone Air System Sensible Heating Energy
@@ -2042,8 +2042,8 @@
   OA HEAT RECOVERY 1:Heat Exchanger Total Cooling Energy
 
  For Meter=EnergyTransfer:Building [J], ResourceType=EnergyTransfer, Group=Building, contents are:
-  1ST%PLENUM:1ST%PLENUM:Zone Air System Sensible Heating Energy
-  1ST%PLENUM:1ST%PLENUM:Zone Air System Sensible Cooling Energy
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Heating Energy
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Cooling Energy
   1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Heating Energy
   1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Cooling Energy
   1ST%FLOOR:1ST%RESEARCH%OPEN%NE:Zone Air System Sensible Heating Energy
@@ -2084,10 +2084,10 @@
   1ST%FLOOR:1ST%EDCTN%STRG:Zone Air System Sensible Cooling Energy
   1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Heating Energy
   1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Cooling Energy
-  2ND%PLENUM:2ND%PLENUM%FALSE:Zone Air System Sensible Heating Energy
-  2ND%PLENUM:2ND%PLENUM%FALSE:Zone Air System Sensible Cooling Energy
-  2ND%PLENUM:2ND%PLENUM%NORTH:Zone Air System Sensible Heating Energy
-  2ND%PLENUM:2ND%PLENUM%NORTH:Zone Air System Sensible Cooling Energy
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Heating Energy
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Cooling Energy
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Heating Energy
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Cooling Energy
   2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Heating Energy
   2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:Zone Air System Sensible Heating Energy
@@ -2129,12 +2129,12 @@
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Heating Energy
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Cooling Energy
 
- For Meter=EnergyTransfer:Zone:1ST%PLENUM:1ST%PLENUM [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
-  1ST%PLENUM:1ST%PLENUM:Zone Air System Sensible Heating Energy
-  1ST%PLENUM:1ST%PLENUM:Zone Air System Sensible Cooling Energy
+ For Meter=EnergyTransfer:Zone:1ST%PLENVM:1ST%PLENVM [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Heating Energy
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Cooling Energy
 
  For Meter=Heating:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Heating, contents are:
-  1ST%PLENUM:1ST%PLENUM:Zone Air System Sensible Heating Energy
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Heating Energy
   1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Heating Energy
   1ST%FLOOR:1ST%RESEARCH%OPEN%NE:Zone Air System Sensible Heating Energy
   1ST%FLOOR:1ST%LOBBY:Zone Air System Sensible Heating Energy
@@ -2155,8 +2155,8 @@
   1ST%FLOOR:1ST%CORRIDOR:Zone Air System Sensible Heating Energy
   1ST%FLOOR:1ST%EDCTN%STRG:Zone Air System Sensible Heating Energy
   1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Heating Energy
-  2ND%PLENUM:2ND%PLENUM%FALSE:Zone Air System Sensible Heating Energy
-  2ND%PLENUM:2ND%PLENUM%NORTH:Zone Air System Sensible Heating Energy
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Heating Energy
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Heating Energy
   2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Heating Energy
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:Zone Air System Sensible Heating Energy
   2ND%FLOOR%SOUTH:2ND%CONFERENCE%02:Zone Air System Sensible Heating Energy
@@ -2178,11 +2178,11 @@
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Heating Energy
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Heating Energy
 
- For Meter=Heating:EnergyTransfer:Zone:1ST%PLENUM:1ST%PLENUM [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
-  1ST%PLENUM:1ST%PLENUM:Zone Air System Sensible Heating Energy
+ For Meter=Heating:EnergyTransfer:Zone:1ST%PLENVM:1ST%PLENVM [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Heating Energy
 
  For Meter=Cooling:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Cooling, contents are:
-  1ST%PLENUM:1ST%PLENUM:Zone Air System Sensible Cooling Energy
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Cooling Energy
   1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Cooling Energy
   1ST%FLOOR:1ST%RESEARCH%OPEN%NE:Zone Air System Sensible Cooling Energy
   1ST%FLOOR:1ST%LOBBY:Zone Air System Sensible Cooling Energy
@@ -2203,8 +2203,8 @@
   1ST%FLOOR:1ST%CORRIDOR:Zone Air System Sensible Cooling Energy
   1ST%FLOOR:1ST%EDCTN%STRG:Zone Air System Sensible Cooling Energy
   1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Cooling Energy
-  2ND%PLENUM:2ND%PLENUM%FALSE:Zone Air System Sensible Cooling Energy
-  2ND%PLENUM:2ND%PLENUM%NORTH:Zone Air System Sensible Cooling Energy
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Cooling Energy
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Cooling Energy
   2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:Zone Air System Sensible Cooling Energy
   2ND%FLOOR%SOUTH:2ND%CONFERENCE%02:Zone Air System Sensible Cooling Energy
@@ -2226,8 +2226,8 @@
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Cooling Energy
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Cooling Energy
 
- For Meter=Cooling:EnergyTransfer:Zone:1ST%PLENUM:1ST%PLENUM [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
-  1ST%PLENUM:1ST%PLENUM:Zone Air System Sensible Cooling Energy
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%PLENVM:1ST%PLENVM [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Cooling Energy
 
  For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%CONFERENCE [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
   1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Heating Energy
@@ -2429,25 +2429,25 @@
  For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%ELEVATOR%MACHINE [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
   1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Cooling Energy
 
- For Meter=EnergyTransfer:Zone:2ND%PLENUM:2ND%PLENUM%FALSE [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
-  2ND%PLENUM:2ND%PLENUM%FALSE:Zone Air System Sensible Heating Energy
-  2ND%PLENUM:2ND%PLENUM%FALSE:Zone Air System Sensible Cooling Energy
+ For Meter=EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%FALSE [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Heating Energy
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Cooling Energy
 
- For Meter=Heating:EnergyTransfer:Zone:2ND%PLENUM:2ND%PLENUM%FALSE [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
-  2ND%PLENUM:2ND%PLENUM%FALSE:Zone Air System Sensible Heating Energy
+ For Meter=Heating:EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%FALSE [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Heating Energy
 
- For Meter=Cooling:EnergyTransfer:Zone:2ND%PLENUM:2ND%PLENUM%FALSE [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
-  2ND%PLENUM:2ND%PLENUM%FALSE:Zone Air System Sensible Cooling Energy
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%FALSE [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Cooling Energy
 
- For Meter=EnergyTransfer:Zone:2ND%PLENUM:2ND%PLENUM%NORTH [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
-  2ND%PLENUM:2ND%PLENUM%NORTH:Zone Air System Sensible Heating Energy
-  2ND%PLENUM:2ND%PLENUM%NORTH:Zone Air System Sensible Cooling Energy
+ For Meter=EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%NORTH [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Heating Energy
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Cooling Energy
 
- For Meter=Heating:EnergyTransfer:Zone:2ND%PLENUM:2ND%PLENUM%NORTH [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
-  2ND%PLENUM:2ND%PLENUM%NORTH:Zone Air System Sensible Heating Energy
+ For Meter=Heating:EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%NORTH [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Heating Energy
 
- For Meter=Cooling:EnergyTransfer:Zone:2ND%PLENUM:2ND%PLENUM%NORTH [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
-  2ND%PLENUM:2ND%PLENUM%NORTH:Zone Air System Sensible Cooling Energy
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%NORTH [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Cooling Energy
 
  For Meter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
   2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Heating Energy

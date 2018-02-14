@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.02.12 16:22,IDD_Version 8.3.0
+Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.02.13 16:08,IDD_Version 8.3.0
 Var Type (reported time step),Var Report Type,Variable Name [Units]
 HVAC,Sum,Air System Chilled Water Energy [J]
 HVAC,Sum,Air System Component Model Simulation Calls []

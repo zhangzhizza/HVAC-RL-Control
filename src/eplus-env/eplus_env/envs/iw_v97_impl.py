@@ -72,7 +72,7 @@ class IW_IMP_V97(Env):
     def __init__(self, site_server_ip, rd_port, wt_port, env_name, defaultObValues, localLat, localLong, ctrl_step_size_s, 
                  min_max_limits, incl_forecast = False, forecastRandMode = 'normal', forecastRandStd = 0.15,
                  forecastSource = 'tmy3', forecastFilePath = None, forecast_hour = 12, act_repeat = 1, isPPDBk = True,
-                 clo = 1.0, met = 1.2, airVel = 0.1, isMullSspLowerLimit =  False):
+                 clo = 1.0, met = 1.2, airVel = 0.1, isMullSspLowerLimit =  False, useCSLWeather = False):
         self._env_name = env_name;
         self._thread_name = threading.current_thread().getName();
         self.logger_main = Logger().getLogger('ENV_%s_%s'%(env_name, self._thread_name), 
@@ -104,6 +104,7 @@ class IW_IMP_V97(Env):
         self._airVel = airVel;
         self._oat = None;
         self._isMullSspLowerLimit = isMullSspLowerLimit;
+        self._useCSLWeather = useCSLWeather;
 
  
     def _reset(self):
@@ -257,7 +258,19 @@ class IW_IMP_V97(Env):
         return readData;
 
     def _processRawReadDataAndQueryPi(self, readData, nowDatetime, isPPDBk):
-        # Change unit of the readData
+        # Change weather info source
+        if self._useCSLWeather:
+            self.logger_main.debug("Use CSL source weather data")
+            cslValues, cslPiMsgBack = self._getWeatherFromCSL();
+            if None in cslValues:
+                self.logger_main.warning('Query from PI for CSL weather data failed, use BACnet values instead, raw return from PI is: %s'%(cslPiMsgBack));
+            else:
+                oatcsl, oahcsl, wscsl, wdcsl = cslValues;
+                readData[0] = oatcsl;
+                readData[1] = oahcsl;
+                readData[2] = wscsl;
+                readData[3] = wdcsl;
+        # Change unit of the readData, readData: OAT-F, OAH-%, WS-MHP, WD, HWOEN-F, MULSSP-F, IAT-F, IATSSP-F, HTDMD-KW, 17 Values for AMV
         readDataUnitChanged = self._getPrcdUnitChangedReadData(readData);
         # Get occp mode 
         self.logger_main.debug('Now is %s'%(nowDatetime));
@@ -267,6 +280,7 @@ class IW_IMP_V97(Env):
             ppdCal = self._getPPDFangerBK(readDataUnitChanged[9:], occpMode);
         else:
             ppdCal = self._getPPDAMV(readDataUnitChanged[9:]);
+        
         # Get soldif and soldir
         solTotal, solTotalMsgBack = self._getSolTotalNow();
         self.logger_main.debug('Global solar radiation from PI is: %s'%(solTotal));
@@ -499,6 +513,36 @@ class IW_IMP_V97(Env):
             msgBack = r;
             value = None;
         return [value, msgBack];
+
+
+    def _getWeatherFromCSL(self):
+        class HostNameIgnoringAdapter(HTTPAdapter):
+            def init_poolmanager(self, connections, maxsize, block=False):
+                self.poolmanager = PoolManager(num_pools=connections,
+                                       maxsize=maxsize,
+                                       block=block,
+                                       assert_hostname=False)
+        piIds = ['P0-MYhSMORGkyGTe9bdohw0AWysAAAV0lOLTYyTlBVMkJWTDIwXFBISVBQU19XRUFUSEVSX09BVC5QUkVTRU5UX1ZBTFVF',
+                 'P0-MYhSMORGkyGTe9bdohw0AXCsAAAV0lOLTYyTlBVMkJWTDIwXFBISVBQU19XRUFUSEVSX09BSC5QUkVTRU5UX1ZBTFVF',
+                 'P0-MYhSMORGkyGTe9bdohw0AVysAAAV0lOLTYyTlBVMkJWTDIwXFBISVBQU19XRUFUSEVSX1dJTkRfU1BFRURfQVYuUFJFU0VOVF9WQUxVRQ',
+                 'P0-MYhSMORGkyGTe9bdohw0AUysAAAV0lOLTYyTlBVMkJWTDIwXFBISVBQU19XRUFUSEVSX1dJTkRfRElSRUNUSU9OX0FWLlBSRVNFTlRfVkFMVUU']
+        ret = [];
+        msgBacks = [];
+        for piid in piIds:
+            s = requests.Session() 
+            s.mount('https://', HostNameIgnoringAdapter())
+            piUrl = 'https://128.2.109.159/piwebapi/streams/%s/value'%piid 
+            r = s.get(piUrl, auth=('CMU_Students', 'WorkHard!ChangeWorld'));
+            r = json.loads(r.text);
+            if r['Good']:
+                msgBack = 'Query success!'
+                value = r['Value']
+            else:
+                msgBack = r;
+                value = None;
+            ret.append(value);
+            msgBacks.append(msgBack)
+        return (ret, msgBacks)
 
     
     def _get_file_name(self, file_path):
