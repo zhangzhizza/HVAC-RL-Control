@@ -5726,3 +5726,1207 @@ WriteProperty Acknowledged!
 WriteProperty Acknowledged!
 
 [2018-02-14 16:21:47,061] SDC_WriteServer INFO:Write success!
+[2018-02-14 16:55:04,741] SDC_WriteServer INFO:Got connection from 127.0.0.1:40036
+[2018-02-14 16:55:04,741] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:40036, number of data to write is 1, data to write are [95.0]
+[2018-02-14 16:55:04,741] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '95.0']
+[2018-02-14 16:55:04,767] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 16:55:04,767] SDC_WriteServer INFO:Write success!
+[2018-02-14 17:10:09,476] SDC_WriteServer INFO:Got connection from 127.0.0.1:40446
+[2018-02-14 17:10:09,476] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:40446, number of data to write is 1, data to write are [63.5]
+[2018-02-14 17:10:09,477] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 17:10:09,532] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 17:10:09,532] SDC_WriteServer INFO:Write success!
+[2018-02-14 17:25:13,194] SDC_WriteServer INFO:Got connection from 127.0.0.1:40840
+[2018-02-14 17:25:13,195] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:40840, number of data to write is 1, data to write are [63.5]
+[2018-02-14 17:25:13,195] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 17:25:13,217] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 17:25:13,217] SDC_WriteServer INFO:Write success!
+[2018-02-14 17:40:18,217] SDC_WriteServer INFO:Got connection from 127.0.0.1:41242
+[2018-02-14 17:40:18,218] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:41242, number of data to write is 1, data to write are [63.5]
+[2018-02-14 17:40:18,218] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 17:40:18,239] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 17:40:18,239] SDC_WriteServer INFO:Write success!
+[2018-02-14 17:55:21,480] SDC_WriteServer INFO:Got connection from 127.0.0.1:41630
+[2018-02-14 17:55:21,480] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:41630, number of data to write is 1, data to write are [63.5]
+[2018-02-14 17:55:21,480] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 17:55:21,501] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 17:55:21,501] SDC_WriteServer INFO:Write success!
+[2018-02-14 18:10:24,883] SDC_WriteServer INFO:Got connection from 127.0.0.1:42026
+[2018-02-14 18:10:24,883] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:42026, number of data to write is 1, data to write are [63.5]
+[2018-02-14 18:10:24,883] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 18:10:24,931] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 18:10:24,931] SDC_WriteServer INFO:Write success!
+[2018-02-14 18:25:28,755] SDC_WriteServer INFO:Got connection from 127.0.0.1:42420
+[2018-02-14 18:25:28,755] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:42420, number of data to write is 1, data to write are [63.5]
+[2018-02-14 18:25:28,755] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 18:25:28,777] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 18:25:28,778] SDC_WriteServer INFO:Write success!
+[2018-02-14 18:40:32,596] SDC_WriteServer INFO:Got connection from 127.0.0.1:42818
+[2018-02-14 18:40:32,596] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:42818, number of data to write is 1, data to write are [63.5]
+[2018-02-14 18:40:32,596] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 18:40:32,617] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 18:40:32,618] SDC_WriteServer INFO:Write success!
+[2018-02-14 18:55:36,684] SDC_WriteServer INFO:Got connection from 127.0.0.1:43222
+[2018-02-14 18:55:36,684] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:43222, number of data to write is 1, data to write are [63.5]
+[2018-02-14 18:55:36,684] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 18:55:36,813] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 18:55:36,813] SDC_WriteServer INFO:Write success!
+[2018-02-14 19:10:40,900] SDC_WriteServer INFO:Got connection from 127.0.0.1:43616
+[2018-02-14 19:10:40,901] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:43616, number of data to write is 1, data to write are [63.5]
+[2018-02-14 19:10:40,901] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 19:10:41,005] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 19:10:41,005] SDC_WriteServer INFO:Write success!
+[2018-02-14 19:25:43,887] SDC_WriteServer INFO:Got connection from 127.0.0.1:44004
+[2018-02-14 19:25:43,887] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:44004, number of data to write is 1, data to write are [63.5]
+[2018-02-14 19:25:43,887] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 19:25:43,909] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 19:25:43,909] SDC_WriteServer INFO:Write success!
+[2018-02-14 19:40:48,914] SDC_WriteServer INFO:Got connection from 127.0.0.1:44402
+[2018-02-14 19:40:48,915] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:44402, number of data to write is 1, data to write are [63.5]
+[2018-02-14 19:40:48,915] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 19:40:48,936] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 19:40:48,937] SDC_WriteServer INFO:Write success!
+[2018-02-14 19:55:51,586] SDC_WriteServer INFO:Got connection from 127.0.0.1:44804
+[2018-02-14 19:55:51,586] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:44804, number of data to write is 1, data to write are [63.5]
+[2018-02-14 19:55:51,587] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 19:55:51,608] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 19:55:51,609] SDC_WriteServer INFO:Write success!
+[2018-02-14 20:10:54,428] SDC_WriteServer INFO:Got connection from 127.0.0.1:45196
+[2018-02-14 20:10:54,429] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:45196, number of data to write is 1, data to write are [63.5]
+[2018-02-14 20:10:54,429] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 20:10:54,450] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 20:10:54,451] SDC_WriteServer INFO:Write success!
+[2018-02-14 20:25:58,196] SDC_WriteServer INFO:Got connection from 127.0.0.1:45590
+[2018-02-14 20:25:58,196] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:45590, number of data to write is 1, data to write are [63.5]
+[2018-02-14 20:25:58,196] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 20:25:58,217] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 20:25:58,218] SDC_WriteServer INFO:Write success!
+[2018-02-14 20:41:01,399] SDC_WriteServer INFO:Got connection from 127.0.0.1:45994
+[2018-02-14 20:41:01,399] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:45994, number of data to write is 1, data to write are [63.5]
+[2018-02-14 20:41:01,399] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 20:41:01,421] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 20:41:01,421] SDC_WriteServer INFO:Write success!
+[2018-02-14 20:56:04,871] SDC_WriteServer INFO:Got connection from 127.0.0.1:46384
+[2018-02-14 20:56:04,872] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:46384, number of data to write is 1, data to write are [63.5]
+[2018-02-14 20:56:04,872] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 20:56:05,010] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 20:56:05,010] SDC_WriteServer INFO:Write success!
+[2018-02-14 21:11:09,378] SDC_WriteServer INFO:Got connection from 127.0.0.1:46786
+[2018-02-14 21:11:09,378] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:46786, number of data to write is 1, data to write are [63.5]
+[2018-02-14 21:11:09,379] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 21:11:09,457] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 21:11:09,457] SDC_WriteServer INFO:Write success!
+[2018-02-14 21:26:12,415] SDC_WriteServer INFO:Got connection from 127.0.0.1:47180
+[2018-02-14 21:26:12,415] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:47180, number of data to write is 1, data to write are [63.5]
+[2018-02-14 21:26:12,415] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 21:26:12,436] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 21:26:12,437] SDC_WriteServer INFO:Write success!
+[2018-02-14 21:41:15,488] SDC_WriteServer INFO:Got connection from 127.0.0.1:47576
+[2018-02-14 21:41:15,488] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:47576, number of data to write is 1, data to write are [63.5]
+[2018-02-14 21:41:15,489] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 21:41:15,528] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 21:41:15,528] SDC_WriteServer INFO:Write success!
+[2018-02-14 21:56:19,105] SDC_WriteServer INFO:Got connection from 127.0.0.1:47974
+[2018-02-14 21:56:19,105] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:47974, number of data to write is 1, data to write are [63.5]
+[2018-02-14 21:56:19,105] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 21:56:19,175] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 21:56:19,175] SDC_WriteServer INFO:Write success!
+[2018-02-14 22:11:23,176] SDC_WriteServer INFO:Got connection from 127.0.0.1:48372
+[2018-02-14 22:11:23,176] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:48372, number of data to write is 1, data to write are [63.5]
+[2018-02-14 22:11:23,177] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 22:11:23,199] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 22:11:23,199] SDC_WriteServer INFO:Write success!
+[2018-02-14 22:26:27,203] SDC_WriteServer INFO:Got connection from 127.0.0.1:48762
+[2018-02-14 22:26:27,204] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:48762, number of data to write is 1, data to write are [63.5]
+[2018-02-14 22:26:27,204] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 22:26:27,228] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 22:26:27,228] SDC_WriteServer INFO:Write success!
+[2018-02-14 22:41:30,867] SDC_WriteServer INFO:Got connection from 127.0.0.1:49168
+[2018-02-14 22:41:30,867] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:49168, number of data to write is 1, data to write are [63.5]
+[2018-02-14 22:41:30,867] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 22:41:30,889] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 22:41:30,889] SDC_WriteServer INFO:Write success!
+[2018-02-14 22:56:34,660] SDC_WriteServer INFO:Got connection from 127.0.0.1:49558
+[2018-02-14 22:56:34,660] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:49558, number of data to write is 1, data to write are [63.5]
+[2018-02-14 22:56:34,661] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 22:56:34,729] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 22:56:34,729] SDC_WriteServer INFO:Write success!
+[2018-02-14 23:11:37,383] SDC_WriteServer INFO:Got connection from 127.0.0.1:49956
+[2018-02-14 23:11:37,384] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:49956, number of data to write is 1, data to write are [63.5]
+[2018-02-14 23:11:37,384] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 23:11:37,405] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 23:11:37,406] SDC_WriteServer INFO:Write success!
+[2018-02-14 23:26:42,277] SDC_WriteServer INFO:Got connection from 127.0.0.1:50348
+[2018-02-14 23:26:42,277] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:50348, number of data to write is 1, data to write are [63.5]
+[2018-02-14 23:26:42,277] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 23:26:42,299] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 23:26:42,299] SDC_WriteServer INFO:Write success!
+[2018-02-14 23:41:45,353] SDC_WriteServer INFO:Got connection from 127.0.0.1:50754
+[2018-02-14 23:41:45,354] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:50754, number of data to write is 1, data to write are [63.5]
+[2018-02-14 23:41:45,354] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 23:41:45,447] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 23:41:45,447] SDC_WriteServer INFO:Write success!
+[2018-02-14 23:56:48,146] SDC_WriteServer INFO:Got connection from 127.0.0.1:51154
+[2018-02-14 23:56:48,146] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:51154, number of data to write is 1, data to write are [63.5]
+[2018-02-14 23:56:48,146] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-14 23:56:48,167] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-14 23:56:48,168] SDC_WriteServer INFO:Write success!
+[2018-02-15 00:11:52,299] SDC_WriteServer INFO:Got connection from 127.0.0.1:51556
+[2018-02-15 00:11:52,299] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:51556, number of data to write is 1, data to write are [63.5]
+[2018-02-15 00:11:52,299] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 00:11:52,338] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 00:11:52,339] SDC_WriteServer INFO:Write success!
+[2018-02-15 00:26:55,411] SDC_WriteServer INFO:Got connection from 127.0.0.1:51944
+[2018-02-15 00:26:55,411] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:51944, number of data to write is 1, data to write are [63.5]
+[2018-02-15 00:26:55,411] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 00:26:55,437] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 00:26:55,437] SDC_WriteServer INFO:Write success!
+[2018-02-15 00:41:58,824] SDC_WriteServer INFO:Got connection from 127.0.0.1:52342
+[2018-02-15 00:41:58,824] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:52342, number of data to write is 1, data to write are [63.5]
+[2018-02-15 00:41:58,825] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 00:41:58,863] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 00:41:58,863] SDC_WriteServer INFO:Write success!
+[2018-02-15 00:57:02,637] SDC_WriteServer INFO:Got connection from 127.0.0.1:52740
+[2018-02-15 00:57:02,637] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:52740, number of data to write is 1, data to write are [63.5]
+[2018-02-15 00:57:02,637] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 00:57:02,659] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 00:57:02,659] SDC_WriteServer INFO:Write success!
+[2018-02-15 01:12:06,495] SDC_WriteServer INFO:Got connection from 127.0.0.1:53134
+[2018-02-15 01:12:06,496] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:53134, number of data to write is 1, data to write are [63.5]
+[2018-02-15 01:12:06,496] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 01:12:06,571] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 01:12:06,571] SDC_WriteServer INFO:Write success!
+[2018-02-15 01:27:08,823] SDC_WriteServer INFO:Got connection from 127.0.0.1:53530
+[2018-02-15 01:27:08,823] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:53530, number of data to write is 1, data to write are [63.5]
+[2018-02-15 01:27:08,824] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 01:27:08,874] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 01:27:08,874] SDC_WriteServer INFO:Write success!
+[2018-02-15 01:42:13,376] SDC_WriteServer INFO:Got connection from 127.0.0.1:53930
+[2018-02-15 01:42:13,376] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:53930, number of data to write is 1, data to write are [63.5]
+[2018-02-15 01:42:13,376] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 01:42:13,399] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 01:42:13,399] SDC_WriteServer INFO:Write success!
+[2018-02-15 01:57:17,638] SDC_WriteServer INFO:Got connection from 127.0.0.1:54318
+[2018-02-15 01:57:17,639] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:54318, number of data to write is 1, data to write are [63.5]
+[2018-02-15 01:57:17,639] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 01:57:17,661] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 01:57:17,662] SDC_WriteServer INFO:Write success!
+[2018-02-15 02:12:20,767] SDC_WriteServer INFO:Got connection from 127.0.0.1:54718
+[2018-02-15 02:12:20,767] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:54718, number of data to write is 1, data to write are [63.5]
+[2018-02-15 02:12:20,768] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 02:12:20,790] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 02:12:20,790] SDC_WriteServer INFO:Write success!
+[2018-02-15 02:27:24,329] SDC_WriteServer INFO:Got connection from 127.0.0.1:55114
+[2018-02-15 02:27:24,329] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:55114, number of data to write is 1, data to write are [63.5]
+[2018-02-15 02:27:24,329] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 02:27:24,351] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 02:27:24,351] SDC_WriteServer INFO:Write success!
+[2018-02-15 02:42:28,401] SDC_WriteServer INFO:Got connection from 127.0.0.1:55508
+[2018-02-15 02:42:28,401] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:55508, number of data to write is 1, data to write are [63.5]
+[2018-02-15 02:42:28,402] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 02:42:28,427] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 02:42:28,427] SDC_WriteServer INFO:Write success!
+[2018-02-15 02:57:32,599] SDC_WriteServer INFO:Got connection from 127.0.0.1:55902
+[2018-02-15 02:57:32,600] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:55902, number of data to write is 1, data to write are [63.5]
+[2018-02-15 02:57:32,600] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 02:57:32,621] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 02:57:32,621] SDC_WriteServer INFO:Write success!
+[2018-02-15 03:12:36,613] SDC_WriteServer INFO:Got connection from 127.0.0.1:56298
+[2018-02-15 03:12:36,614] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:56298, number of data to write is 1, data to write are [63.5]
+[2018-02-15 03:12:36,614] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 03:12:36,636] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 03:12:36,636] SDC_WriteServer INFO:Write success!
+[2018-02-15 03:27:40,105] SDC_WriteServer INFO:Got connection from 127.0.0.1:56702
+[2018-02-15 03:27:40,105] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:56702, number of data to write is 1, data to write are [63.5]
+[2018-02-15 03:27:40,106] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 03:27:40,127] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 03:27:40,127] SDC_WriteServer INFO:Write success!
+[2018-02-15 03:42:43,668] SDC_WriteServer INFO:Got connection from 127.0.0.1:57094
+[2018-02-15 03:42:43,669] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:57094, number of data to write is 1, data to write are [63.5]
+[2018-02-15 03:42:43,669] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 03:42:43,691] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 03:42:43,691] SDC_WriteServer INFO:Write success!
+[2018-02-15 03:57:47,341] SDC_WriteServer INFO:Got connection from 127.0.0.1:57488
+[2018-02-15 03:57:47,341] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:57488, number of data to write is 1, data to write are [63.5]
+[2018-02-15 03:57:47,342] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 03:57:47,363] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 03:57:47,363] SDC_WriteServer INFO:Write success!
+[2018-02-15 04:12:51,363] SDC_WriteServer INFO:Got connection from 127.0.0.1:57892
+[2018-02-15 04:12:51,364] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:57892, number of data to write is 1, data to write are [63.5]
+[2018-02-15 04:12:51,364] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 04:12:51,385] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 04:12:51,386] SDC_WriteServer INFO:Write success!
+[2018-02-15 04:27:55,357] SDC_WriteServer INFO:Got connection from 127.0.0.1:58290
+[2018-02-15 04:27:55,357] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:58290, number of data to write is 1, data to write are [63.5]
+[2018-02-15 04:27:55,357] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 04:27:55,451] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 04:27:55,451] SDC_WriteServer INFO:Write success!
+[2018-02-15 04:42:58,518] SDC_WriteServer INFO:Got connection from 127.0.0.1:58698
+[2018-02-15 04:42:58,519] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:58698, number of data to write is 1, data to write are [63.5]
+[2018-02-15 04:42:58,519] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 04:42:58,541] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 04:42:58,541] SDC_WriteServer INFO:Write success!
+[2018-02-15 04:58:01,303] SDC_WriteServer INFO:Got connection from 127.0.0.1:59088
+[2018-02-15 04:58:01,304] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:59088, number of data to write is 1, data to write are [63.5]
+[2018-02-15 04:58:01,304] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 04:58:01,325] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 04:58:01,326] SDC_WriteServer INFO:Write success!
+[2018-02-15 05:13:04,251] SDC_WriteServer INFO:Got connection from 127.0.0.1:59486
+[2018-02-15 05:13:04,251] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:59486, number of data to write is 1, data to write are [63.5]
+[2018-02-15 05:13:04,252] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 05:13:04,273] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 05:13:04,273] SDC_WriteServer INFO:Write success!
+[2018-02-15 05:28:06,460] SDC_WriteServer INFO:Got connection from 127.0.0.1:59884
+[2018-02-15 05:28:06,460] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:59884, number of data to write is 1, data to write are [63.5]
+[2018-02-15 05:28:06,460] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 05:28:06,482] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 05:28:06,483] SDC_WriteServer INFO:Write success!
+[2018-02-15 05:43:09,928] SDC_WriteServer INFO:Got connection from 127.0.0.1:60282
+[2018-02-15 05:43:09,928] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:60282, number of data to write is 1, data to write are [63.5]
+[2018-02-15 05:43:09,928] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 05:43:09,950] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 05:43:09,951] SDC_WriteServer INFO:Write success!
+[2018-02-15 05:58:13,511] SDC_WriteServer INFO:Got connection from 127.0.0.1:60666
+[2018-02-15 05:58:13,512] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:60666, number of data to write is 1, data to write are [63.5]
+[2018-02-15 05:58:13,512] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 05:58:13,534] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 05:58:13,534] SDC_WriteServer INFO:Write success!
+[2018-02-15 06:13:16,758] SDC_WriteServer INFO:Got connection from 127.0.0.1:32834
+[2018-02-15 06:13:16,758] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:32834, number of data to write is 1, data to write are [63.5]
+[2018-02-15 06:13:16,759] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 06:13:16,879] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 06:13:16,880] SDC_WriteServer INFO:Write success!
+[2018-02-15 06:28:20,956] SDC_WriteServer INFO:Got connection from 127.0.0.1:33240
+[2018-02-15 06:28:20,956] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:33240, number of data to write is 1, data to write are [63.5]
+[2018-02-15 06:28:20,956] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 06:28:20,978] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 06:28:20,978] SDC_WriteServer INFO:Write success!
+[2018-02-15 06:43:24,592] SDC_WriteServer INFO:Got connection from 127.0.0.1:33644
+[2018-02-15 06:43:24,593] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:33644, number of data to write is 1, data to write are [63.5]
+[2018-02-15 06:43:24,593] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 06:43:24,614] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 06:43:24,615] SDC_WriteServer INFO:Write success!
+[2018-02-15 06:58:29,070] SDC_WriteServer INFO:Got connection from 127.0.0.1:34040
+[2018-02-15 06:58:29,070] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:34040, number of data to write is 1, data to write are [63.5]
+[2018-02-15 06:58:29,071] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 06:58:29,093] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 06:58:29,093] SDC_WriteServer INFO:Write success!
+[2018-02-15 07:13:32,563] SDC_WriteServer INFO:Got connection from 127.0.0.1:34430
+[2018-02-15 07:13:32,564] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:34430, number of data to write is 1, data to write are [63.5]
+[2018-02-15 07:13:32,564] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 07:13:32,585] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 07:13:32,585] SDC_WriteServer INFO:Write success!
+[2018-02-15 07:28:36,221] SDC_WriteServer INFO:Got connection from 127.0.0.1:34818
+[2018-02-15 07:28:36,222] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:34818, number of data to write is 1, data to write are [140.0]
+[2018-02-15 07:28:36,222] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '140.0']
+[2018-02-15 07:28:36,244] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 07:28:36,244] SDC_WriteServer INFO:Write success!
+[2018-02-15 07:43:41,305] SDC_WriteServer INFO:Got connection from 127.0.0.1:35226
+[2018-02-15 07:43:41,305] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:35226, number of data to write is 1, data to write are [63.5]
+[2018-02-15 07:43:41,306] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 07:43:41,328] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 07:43:41,328] SDC_WriteServer INFO:Write success!
+[2018-02-15 07:58:44,808] SDC_WriteServer INFO:Got connection from 127.0.0.1:35620
+[2018-02-15 07:58:44,808] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:35620, number of data to write is 1, data to write are [63.5]
+[2018-02-15 07:58:44,808] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 07:58:44,830] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 07:58:44,830] SDC_WriteServer INFO:Write success!
+[2018-02-15 08:13:48,440] SDC_WriteServer INFO:Got connection from 127.0.0.1:36024
+[2018-02-15 08:13:48,440] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:36024, number of data to write is 1, data to write are [63.5]
+[2018-02-15 08:13:48,441] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 08:13:48,462] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 08:13:48,462] SDC_WriteServer INFO:Write success!
+[2018-02-15 08:28:53,143] SDC_WriteServer INFO:Got connection from 127.0.0.1:36414
+[2018-02-15 08:28:53,143] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:36414, number of data to write is 1, data to write are [63.5]
+[2018-02-15 08:28:53,144] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 08:28:53,166] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 08:28:53,166] SDC_WriteServer INFO:Write success!
+[2018-02-15 08:43:57,126] SDC_WriteServer INFO:Got connection from 127.0.0.1:36820
+[2018-02-15 08:43:57,126] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:36820, number of data to write is 1, data to write are [63.5]
+[2018-02-15 08:43:57,126] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 08:43:57,148] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 08:43:57,148] SDC_WriteServer INFO:Write success!
+[2018-02-15 08:59:01,829] SDC_WriteServer INFO:Got connection from 127.0.0.1:37214
+[2018-02-15 08:59:01,829] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:37214, number of data to write is 1, data to write are [63.5]
+[2018-02-15 08:59:01,829] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 08:59:01,851] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 08:59:01,851] SDC_WriteServer INFO:Write success!
+[2018-02-15 09:14:05,372] SDC_WriteServer INFO:Got connection from 127.0.0.1:37606
+[2018-02-15 09:14:05,372] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:37606, number of data to write is 1, data to write are [63.5]
+[2018-02-15 09:14:05,373] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 09:14:05,403] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 09:14:05,403] SDC_WriteServer INFO:Write success!
+[2018-02-15 09:29:08,465] SDC_WriteServer INFO:Got connection from 127.0.0.1:38000
+[2018-02-15 09:29:08,466] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:38000, number of data to write is 1, data to write are [63.5]
+[2018-02-15 09:29:08,466] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 09:29:08,491] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 09:29:08,492] SDC_WriteServer INFO:Write success!
+[2018-02-15 09:44:12,319] SDC_WriteServer INFO:Got connection from 127.0.0.1:38402
+[2018-02-15 09:44:12,319] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:38402, number of data to write is 1, data to write are [63.5]
+[2018-02-15 09:44:12,319] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 09:44:12,341] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 09:44:12,342] SDC_WriteServer INFO:Write success!
+[2018-02-15 09:59:16,832] SDC_WriteServer INFO:Got connection from 127.0.0.1:38804
+[2018-02-15 09:59:16,832] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:38804, number of data to write is 1, data to write are [63.5]
+[2018-02-15 09:59:16,832] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 09:59:16,862] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 09:59:16,862] SDC_WriteServer INFO:Write success!
+[2018-02-15 10:14:20,670] SDC_WriteServer INFO:Got connection from 127.0.0.1:39196
+[2018-02-15 10:14:20,670] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:39196, number of data to write is 1, data to write are [63.5]
+[2018-02-15 10:14:20,670] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 10:14:20,692] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 10:14:20,692] SDC_WriteServer INFO:Write success!
+[2018-02-15 10:29:24,283] SDC_WriteServer INFO:Got connection from 127.0.0.1:39586
+[2018-02-15 10:29:24,283] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:39586, number of data to write is 1, data to write are [63.5]
+[2018-02-15 10:29:24,283] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 10:29:24,305] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 10:29:24,305] SDC_WriteServer INFO:Write success!
+[2018-02-15 10:44:27,851] SDC_WriteServer INFO:Got connection from 127.0.0.1:40012
+[2018-02-15 10:44:27,851] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:40012, number of data to write is 1, data to write are [63.5]
+[2018-02-15 10:44:27,852] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 10:44:27,873] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 10:44:27,874] SDC_WriteServer INFO:Write success!
+[2018-02-15 10:59:30,854] SDC_WriteServer INFO:Got connection from 127.0.0.1:40408
+[2018-02-15 10:59:30,854] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:40408, number of data to write is 1, data to write are [63.5]
+[2018-02-15 10:59:30,855] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 10:59:30,876] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 10:59:30,876] SDC_WriteServer INFO:Write success!
+[2018-02-15 11:14:34,901] SDC_WriteServer INFO:Got connection from 127.0.0.1:40814
+[2018-02-15 11:14:34,901] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:40814, number of data to write is 1, data to write are [63.5]
+[2018-02-15 11:14:34,902] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 11:14:34,942] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 11:14:34,943] SDC_WriteServer INFO:Write success!
+[2018-02-15 11:29:39,184] SDC_WriteServer INFO:Got connection from 127.0.0.1:41202
+[2018-02-15 11:29:39,185] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:41202, number of data to write is 1, data to write are [63.5]
+[2018-02-15 11:29:39,185] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 11:29:39,209] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 11:29:39,209] SDC_WriteServer INFO:Write success!
+[2018-02-15 11:44:42,187] SDC_WriteServer INFO:Got connection from 127.0.0.1:41596
+[2018-02-15 11:44:42,188] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:41596, number of data to write is 1, data to write are [63.5]
+[2018-02-15 11:44:42,188] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 11:44:42,316] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 11:44:42,317] SDC_WriteServer INFO:Write success!
+[2018-02-15 11:59:45,475] SDC_WriteServer INFO:Got connection from 127.0.0.1:41986
+[2018-02-15 11:59:45,476] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:41986, number of data to write is 1, data to write are [63.5]
+[2018-02-15 11:59:45,476] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 11:59:45,498] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 11:59:45,498] SDC_WriteServer INFO:Write success!
+[2018-02-15 12:14:49,988] SDC_WriteServer INFO:Got connection from 127.0.0.1:42396
+[2018-02-15 12:14:49,988] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:42396, number of data to write is 1, data to write are [63.5]
+[2018-02-15 12:14:49,989] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 12:14:50,010] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 12:14:50,010] SDC_WriteServer INFO:Write success!
+[2018-02-15 12:29:53,416] SDC_WriteServer INFO:Got connection from 127.0.0.1:42794
+[2018-02-15 12:29:53,417] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:42794, number of data to write is 1, data to write are [63.5]
+[2018-02-15 12:29:53,417] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 12:29:53,439] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 12:29:53,439] SDC_WriteServer INFO:Write success!
+[2018-02-15 12:44:57,249] SDC_WriteServer INFO:Got connection from 127.0.0.1:43190
+[2018-02-15 12:44:57,249] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:43190, number of data to write is 1, data to write are [63.5]
+[2018-02-15 12:44:57,250] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 12:44:57,315] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 12:44:57,316] SDC_WriteServer INFO:Write success!
+[2018-02-15 13:00:00,067] SDC_WriteServer INFO:Got connection from 127.0.0.1:43580
+[2018-02-15 13:00:00,068] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:43580, number of data to write is 1, data to write are [63.5]
+[2018-02-15 13:00:00,068] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 13:00:00,090] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 13:00:00,090] SDC_WriteServer INFO:Write success!
+[2018-02-15 13:15:03,750] SDC_WriteServer INFO:Got connection from 127.0.0.1:43972
+[2018-02-15 13:15:03,751] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:43972, number of data to write is 1, data to write are [63.5]
+[2018-02-15 13:15:03,751] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 13:15:03,773] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 13:15:03,774] SDC_WriteServer INFO:Write success!
+[2018-02-15 13:30:07,157] SDC_WriteServer INFO:Got connection from 127.0.0.1:44378
+[2018-02-15 13:30:07,158] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:44378, number of data to write is 1, data to write are [63.5]
+[2018-02-15 13:30:07,158] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 13:30:07,179] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 13:30:07,179] SDC_WriteServer INFO:Write success!
+[2018-02-15 13:45:11,190] SDC_WriteServer INFO:Got connection from 127.0.0.1:44770
+[2018-02-15 13:45:11,190] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:44770, number of data to write is 1, data to write are [63.5]
+[2018-02-15 13:45:11,190] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 13:45:11,212] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 13:45:11,212] SDC_WriteServer INFO:Write success!
+[2018-02-15 14:00:14,416] SDC_WriteServer INFO:Got connection from 127.0.0.1:45158
+[2018-02-15 14:00:14,417] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:45158, number of data to write is 1, data to write are [63.5]
+[2018-02-15 14:00:14,417] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 14:00:14,447] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 14:00:14,447] SDC_WriteServer INFO:Write success!
+[2018-02-15 14:15:17,759] SDC_WriteServer INFO:Got connection from 127.0.0.1:45556
+[2018-02-15 14:15:17,759] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:45556, number of data to write is 1, data to write are [63.5]
+[2018-02-15 14:15:17,760] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 14:15:17,781] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 14:15:17,782] SDC_WriteServer INFO:Write success!
+[2018-02-15 14:30:21,570] SDC_WriteServer INFO:Got connection from 127.0.0.1:45956
+[2018-02-15 14:30:21,571] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:45956, number of data to write is 1, data to write are [63.5]
+[2018-02-15 14:30:21,571] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 14:30:21,592] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 14:30:21,592] SDC_WriteServer INFO:Write success!
+[2018-02-15 14:45:24,903] SDC_WriteServer INFO:Got connection from 127.0.0.1:46352
+[2018-02-15 14:45:24,903] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:46352, number of data to write is 1, data to write are [63.5]
+[2018-02-15 14:45:24,904] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 14:45:24,925] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 14:45:24,925] SDC_WriteServer INFO:Write success!
+[2018-02-15 15:00:28,157] SDC_WriteServer INFO:Got connection from 127.0.0.1:46742
+[2018-02-15 15:00:28,157] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:46742, number of data to write is 1, data to write are [63.5]
+[2018-02-15 15:00:28,157] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 15:00:28,202] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 15:00:28,202] SDC_WriteServer INFO:Write success!
+[2018-02-15 15:15:31,614] SDC_WriteServer INFO:Got connection from 127.0.0.1:47138
+[2018-02-15 15:15:31,614] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:47138, number of data to write is 1, data to write are [63.5]
+[2018-02-15 15:15:31,615] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 15:15:31,636] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 15:15:31,637] SDC_WriteServer INFO:Write success!
+[2018-02-15 15:30:34,701] SDC_WriteServer INFO:Got connection from 127.0.0.1:47538
+[2018-02-15 15:30:34,701] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:47538, number of data to write is 1, data to write are [63.5]
+[2018-02-15 15:30:34,701] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 15:30:34,727] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 15:30:34,728] SDC_WriteServer INFO:Write success!
+[2018-02-15 15:45:37,269] SDC_WriteServer INFO:Got connection from 127.0.0.1:47946
+[2018-02-15 15:45:37,269] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:47946, number of data to write is 1, data to write are [63.5]
+[2018-02-15 15:45:37,269] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 15:45:37,330] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 15:45:37,330] SDC_WriteServer INFO:Write success!
+[2018-02-15 16:00:41,886] SDC_WriteServer INFO:Got connection from 127.0.0.1:48346
+[2018-02-15 16:00:41,887] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:48346, number of data to write is 1, data to write are [63.5]
+[2018-02-15 16:00:41,887] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 16:00:42,007] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 16:00:42,007] SDC_WriteServer INFO:Write success!
+[2018-02-15 16:15:45,403] SDC_WriteServer INFO:Got connection from 127.0.0.1:48738
+[2018-02-15 16:15:45,404] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:48738, number of data to write is 1, data to write are [63.5]
+[2018-02-15 16:15:45,404] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 16:15:45,432] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 16:15:45,432] SDC_WriteServer INFO:Write success!
+[2018-02-15 16:30:48,495] SDC_WriteServer INFO:Got connection from 127.0.0.1:49128
+[2018-02-15 16:30:48,495] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:49128, number of data to write is 1, data to write are [63.5]
+[2018-02-15 16:30:48,496] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 16:30:48,517] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 16:30:48,517] SDC_WriteServer INFO:Write success!
+[2018-02-15 16:45:52,393] SDC_WriteServer INFO:Got connection from 127.0.0.1:49530
+[2018-02-15 16:45:52,393] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:49530, number of data to write is 1, data to write are [63.5]
+[2018-02-15 16:45:52,393] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 16:45:52,415] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 16:45:52,415] SDC_WriteServer INFO:Write success!
+[2018-02-15 17:00:54,843] SDC_WriteServer INFO:Got connection from 127.0.0.1:49922
+[2018-02-15 17:00:54,843] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:49922, number of data to write is 1, data to write are [63.5]
+[2018-02-15 17:00:54,843] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 17:00:54,870] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 17:00:54,870] SDC_WriteServer INFO:Write success!
+[2018-02-15 17:15:58,568] SDC_WriteServer INFO:Got connection from 127.0.0.1:50316
+[2018-02-15 17:15:58,568] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:50316, number of data to write is 1, data to write are [63.5]
+[2018-02-15 17:15:58,569] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 17:15:58,590] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 17:15:58,591] SDC_WriteServer INFO:Write success!
+[2018-02-15 17:31:02,160] SDC_WriteServer INFO:Got connection from 127.0.0.1:50710
+[2018-02-15 17:31:02,161] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:50710, number of data to write is 1, data to write are [63.5]
+[2018-02-15 17:31:02,161] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 17:31:02,197] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 17:31:02,197] SDC_WriteServer INFO:Write success!
+[2018-02-15 17:46:05,903] SDC_WriteServer INFO:Got connection from 127.0.0.1:51116
+[2018-02-15 17:46:05,903] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:51116, number of data to write is 1, data to write are [63.5]
+[2018-02-15 17:46:05,904] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 17:46:05,925] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 17:46:05,926] SDC_WriteServer INFO:Write success!
+[2018-02-15 18:01:09,405] SDC_WriteServer INFO:Got connection from 127.0.0.1:51514
+[2018-02-15 18:01:09,406] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:51514, number of data to write is 1, data to write are [63.5]
+[2018-02-15 18:01:09,406] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 18:01:09,427] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 18:01:09,428] SDC_WriteServer INFO:Write success!
+[2018-02-15 18:16:12,792] SDC_WriteServer INFO:Got connection from 127.0.0.1:51904
+[2018-02-15 18:16:12,793] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:51904, number of data to write is 1, data to write are [63.5]
+[2018-02-15 18:16:12,793] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 18:16:12,843] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 18:16:12,843] SDC_WriteServer INFO:Write success!
+[2018-02-15 18:31:17,370] SDC_WriteServer INFO:Got connection from 127.0.0.1:52298
+[2018-02-15 18:31:17,370] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:52298, number of data to write is 1, data to write are [63.5]
+[2018-02-15 18:31:17,370] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 18:31:17,391] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 18:31:17,392] SDC_WriteServer INFO:Write success!
+[2018-02-15 18:46:20,322] SDC_WriteServer INFO:Got connection from 127.0.0.1:52702
+[2018-02-15 18:46:20,323] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:52702, number of data to write is 1, data to write are [63.5]
+[2018-02-15 18:46:20,323] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 18:46:20,397] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 18:46:20,397] SDC_WriteServer INFO:Write success!
+[2018-02-15 19:01:23,524] SDC_WriteServer INFO:Got connection from 127.0.0.1:53094
+[2018-02-15 19:01:23,525] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:53094, number of data to write is 1, data to write are [63.5]
+[2018-02-15 19:01:23,525] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 19:01:23,547] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 19:01:23,547] SDC_WriteServer INFO:Write success!
+[2018-02-15 19:16:26,402] SDC_WriteServer INFO:Got connection from 127.0.0.1:53498
+[2018-02-15 19:16:26,403] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:53498, number of data to write is 1, data to write are [63.5]
+[2018-02-15 19:16:26,403] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 19:16:26,433] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 19:16:26,434] SDC_WriteServer INFO:Write success!
+[2018-02-15 19:31:29,370] SDC_WriteServer INFO:Got connection from 127.0.0.1:53884
+[2018-02-15 19:31:29,370] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:53884, number of data to write is 1, data to write are [63.5]
+[2018-02-15 19:31:29,370] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 19:31:29,391] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 19:31:29,392] SDC_WriteServer INFO:Write success!
+[2018-02-15 19:46:32,507] SDC_WriteServer INFO:Got connection from 127.0.0.1:54290
+[2018-02-15 19:46:32,507] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:54290, number of data to write is 1, data to write are [63.5]
+[2018-02-15 19:46:32,508] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 19:46:32,529] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 19:46:32,530] SDC_WriteServer INFO:Write success!
+[2018-02-15 20:01:36,155] SDC_WriteServer INFO:Got connection from 127.0.0.1:54690
+[2018-02-15 20:01:36,155] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:54690, number of data to write is 1, data to write are [63.5]
+[2018-02-15 20:01:36,155] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 20:01:36,244] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 20:01:36,245] SDC_WriteServer INFO:Write success!
+[2018-02-15 20:16:39,797] SDC_WriteServer INFO:Got connection from 127.0.0.1:55078
+[2018-02-15 20:16:39,797] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:55078, number of data to write is 1, data to write are [63.5]
+[2018-02-15 20:16:39,798] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 20:16:39,824] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 20:16:39,825] SDC_WriteServer INFO:Write success!
+[2018-02-15 20:31:42,780] SDC_WriteServer INFO:Got connection from 127.0.0.1:55472
+[2018-02-15 20:31:42,780] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:55472, number of data to write is 1, data to write are [63.5]
+[2018-02-15 20:31:42,781] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 20:31:42,802] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 20:31:42,803] SDC_WriteServer INFO:Write success!
+[2018-02-15 20:46:47,058] SDC_WriteServer INFO:Got connection from 127.0.0.1:55878
+[2018-02-15 20:46:47,059] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:55878, number of data to write is 1, data to write are [63.5]
+[2018-02-15 20:46:47,059] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 20:46:47,082] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 20:46:47,082] SDC_WriteServer INFO:Write success!
+[2018-02-15 21:01:51,546] SDC_WriteServer INFO:Got connection from 127.0.0.1:56276
+[2018-02-15 21:01:51,547] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:56276, number of data to write is 1, data to write are [63.5]
+[2018-02-15 21:01:51,547] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 21:01:51,568] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 21:01:51,568] SDC_WriteServer INFO:Write success!
+[2018-02-15 21:16:55,284] SDC_WriteServer INFO:Got connection from 127.0.0.1:56664
+[2018-02-15 21:16:55,284] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:56664, number of data to write is 1, data to write are [63.5]
+[2018-02-15 21:16:55,285] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 21:16:55,306] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 21:16:55,306] SDC_WriteServer INFO:Write success!
+[2018-02-15 21:31:59,621] SDC_WriteServer INFO:Got connection from 127.0.0.1:57068
+[2018-02-15 21:31:59,621] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:57068, number of data to write is 1, data to write are [63.5]
+[2018-02-15 21:31:59,621] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 21:31:59,643] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 21:31:59,643] SDC_WriteServer INFO:Write success!
+[2018-02-15 21:47:03,380] SDC_WriteServer INFO:Got connection from 127.0.0.1:57470
+[2018-02-15 21:47:03,380] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:57470, number of data to write is 1, data to write are [63.5]
+[2018-02-15 21:47:03,380] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 21:47:03,402] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 21:47:03,402] SDC_WriteServer INFO:Write success!
+[2018-02-15 22:02:06,452] SDC_WriteServer INFO:Got connection from 127.0.0.1:57862
+[2018-02-15 22:02:06,452] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:57862, number of data to write is 1, data to write are [63.5]
+[2018-02-15 22:02:06,452] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 22:02:06,476] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 22:02:06,476] SDC_WriteServer INFO:Write success!
+[2018-02-15 22:17:10,325] SDC_WriteServer INFO:Got connection from 127.0.0.1:58258
+[2018-02-15 22:17:10,325] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:58258, number of data to write is 1, data to write are [63.5]
+[2018-02-15 22:17:10,325] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 22:17:10,347] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 22:17:10,347] SDC_WriteServer INFO:Write success!
+[2018-02-15 22:32:13,218] SDC_WriteServer INFO:Got connection from 127.0.0.1:58648
+[2018-02-15 22:32:13,218] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:58648, number of data to write is 1, data to write are [63.5]
+[2018-02-15 22:32:13,218] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 22:32:13,245] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 22:32:13,246] SDC_WriteServer INFO:Write success!
+[2018-02-15 22:47:16,342] SDC_WriteServer INFO:Got connection from 127.0.0.1:59048
+[2018-02-15 22:47:16,342] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:59048, number of data to write is 1, data to write are [63.5]
+[2018-02-15 22:47:16,343] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 22:47:16,364] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 22:47:16,365] SDC_WriteServer INFO:Write success!
+[2018-02-15 23:02:20,315] SDC_WriteServer INFO:Got connection from 127.0.0.1:59430
+[2018-02-15 23:02:20,315] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:59430, number of data to write is 1, data to write are [63.5]
+[2018-02-15 23:02:20,315] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 23:02:20,337] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 23:02:20,337] SDC_WriteServer INFO:Write success!
+[2018-02-15 23:17:22,987] SDC_WriteServer INFO:Got connection from 127.0.0.1:59832
+[2018-02-15 23:17:22,988] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:59832, number of data to write is 1, data to write are [63.5]
+[2018-02-15 23:17:22,988] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 23:17:23,009] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 23:17:23,010] SDC_WriteServer INFO:Write success!
+[2018-02-15 23:32:25,436] SDC_WriteServer INFO:Got connection from 127.0.0.1:60222
+[2018-02-15 23:32:25,437] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:60222, number of data to write is 1, data to write are [63.5]
+[2018-02-15 23:32:25,437] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 23:32:25,538] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 23:32:25,538] SDC_WriteServer INFO:Write success!
+[2018-02-15 23:47:29,949] SDC_WriteServer INFO:Got connection from 127.0.0.1:60622
+[2018-02-15 23:47:29,949] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:60622, number of data to write is 1, data to write are [63.5]
+[2018-02-15 23:47:29,949] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-15 23:47:30,014] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-15 23:47:30,014] SDC_WriteServer INFO:Write success!
+[2018-02-16 00:02:32,912] SDC_WriteServer INFO:Got connection from 127.0.0.1:32782
+[2018-02-16 00:02:32,912] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:32782, number of data to write is 1, data to write are [63.5]
+[2018-02-16 00:02:32,912] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 00:02:32,934] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 00:02:32,934] SDC_WriteServer INFO:Write success!
+[2018-02-16 00:17:37,085] SDC_WriteServer INFO:Got connection from 127.0.0.1:33174
+[2018-02-16 00:17:37,085] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:33174, number of data to write is 1, data to write are [63.5]
+[2018-02-16 00:17:37,085] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 00:17:37,107] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 00:17:37,107] SDC_WriteServer INFO:Write success!
+[2018-02-16 00:32:40,167] SDC_WriteServer INFO:Got connection from 127.0.0.1:33570
+[2018-02-16 00:32:40,167] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:33570, number of data to write is 1, data to write are [63.5]
+[2018-02-16 00:32:40,168] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 00:32:40,189] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 00:32:40,190] SDC_WriteServer INFO:Write success!
+[2018-02-16 00:47:43,551] SDC_WriteServer INFO:Got connection from 127.0.0.1:33982
+[2018-02-16 00:47:43,551] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:33982, number of data to write is 1, data to write are [63.5]
+[2018-02-16 00:47:43,551] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 00:47:43,618] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 00:47:43,619] SDC_WriteServer INFO:Write success!
+[2018-02-16 01:02:46,918] SDC_WriteServer INFO:Got connection from 127.0.0.1:34370
+[2018-02-16 01:02:46,919] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:34370, number of data to write is 1, data to write are [63.5]
+[2018-02-16 01:02:46,919] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 01:02:46,981] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 01:02:46,981] SDC_WriteServer INFO:Write success!
+[2018-02-16 01:17:50,556] SDC_WriteServer INFO:Got connection from 127.0.0.1:34762
+[2018-02-16 01:17:50,556] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:34762, number of data to write is 1, data to write are [63.5]
+[2018-02-16 01:17:50,556] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 01:17:50,600] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 01:17:50,601] SDC_WriteServer INFO:Write success!
+[2018-02-16 01:32:54,159] SDC_WriteServer INFO:Got connection from 127.0.0.1:35148
+[2018-02-16 01:32:54,159] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:35148, number of data to write is 1, data to write are [63.5]
+[2018-02-16 01:32:54,160] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 01:32:54,182] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 01:32:54,182] SDC_WriteServer INFO:Write success!
+[2018-02-16 01:47:57,692] SDC_WriteServer INFO:Got connection from 127.0.0.1:35554
+[2018-02-16 01:47:57,692] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:35554, number of data to write is 1, data to write are [63.5]
+[2018-02-16 01:47:57,693] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 01:47:57,715] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 01:47:57,715] SDC_WriteServer INFO:Write success!
+[2018-02-16 02:03:02,709] SDC_WriteServer INFO:Got connection from 127.0.0.1:35944
+[2018-02-16 02:03:02,709] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:35944, number of data to write is 1, data to write are [63.5]
+[2018-02-16 02:03:02,710] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 02:03:02,771] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 02:03:02,771] SDC_WriteServer INFO:Write success!
+[2018-02-16 02:18:06,087] SDC_WriteServer INFO:Got connection from 127.0.0.1:36342
+[2018-02-16 02:18:06,088] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:36342, number of data to write is 1, data to write are [63.5]
+[2018-02-16 02:18:06,088] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 02:18:06,109] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 02:18:06,110] SDC_WriteServer INFO:Write success!
+[2018-02-16 02:33:09,735] SDC_WriteServer INFO:Got connection from 127.0.0.1:36726
+[2018-02-16 02:33:09,736] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:36726, number of data to write is 1, data to write are [63.5]
+[2018-02-16 02:33:09,736] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 02:33:09,856] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 02:33:09,856] SDC_WriteServer INFO:Write success!
+[2018-02-16 02:48:13,633] SDC_WriteServer INFO:Got connection from 127.0.0.1:37124
+[2018-02-16 02:48:13,634] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:37124, number of data to write is 1, data to write are [63.5]
+[2018-02-16 02:48:13,634] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 02:48:13,657] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 02:48:13,657] SDC_WriteServer INFO:Write success!
+[2018-02-16 03:03:16,451] SDC_WriteServer INFO:Got connection from 127.0.0.1:37522
+[2018-02-16 03:03:16,451] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:37522, number of data to write is 1, data to write are [63.5]
+[2018-02-16 03:03:16,452] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 03:03:16,492] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 03:03:16,492] SDC_WriteServer INFO:Write success!
+[2018-02-16 03:18:19,540] SDC_WriteServer INFO:Got connection from 127.0.0.1:37918
+[2018-02-16 03:18:19,540] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:37918, number of data to write is 1, data to write are [63.5]
+[2018-02-16 03:18:19,540] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 03:18:19,562] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 03:18:19,562] SDC_WriteServer INFO:Write success!
+[2018-02-16 03:33:23,328] SDC_WriteServer INFO:Got connection from 127.0.0.1:38310
+[2018-02-16 03:33:23,329] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:38310, number of data to write is 1, data to write are [63.5]
+[2018-02-16 03:33:23,329] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 03:33:23,356] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 03:33:23,357] SDC_WriteServer INFO:Write success!
+[2018-02-16 03:48:26,421] SDC_WriteServer INFO:Got connection from 127.0.0.1:38702
+[2018-02-16 03:48:26,421] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:38702, number of data to write is 1, data to write are [63.5]
+[2018-02-16 03:48:26,422] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 03:48:26,443] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 03:48:26,444] SDC_WriteServer INFO:Write success!
+[2018-02-16 04:03:30,114] SDC_WriteServer INFO:Got connection from 127.0.0.1:39094
+[2018-02-16 04:03:30,114] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:39094, number of data to write is 1, data to write are [63.5]
+[2018-02-16 04:03:30,114] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 04:03:30,136] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 04:03:30,137] SDC_WriteServer INFO:Write success!
+[2018-02-16 04:18:34,440] SDC_WriteServer INFO:Got connection from 127.0.0.1:39490
+[2018-02-16 04:18:34,440] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:39490, number of data to write is 1, data to write are [63.5]
+[2018-02-16 04:18:34,440] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 04:18:34,461] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 04:18:34,461] SDC_WriteServer INFO:Write success!
+[2018-02-16 04:33:38,237] SDC_WriteServer INFO:Got connection from 127.0.0.1:39894
+[2018-02-16 04:33:38,237] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:39894, number of data to write is 1, data to write are [63.5]
+[2018-02-16 04:33:38,238] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 04:33:38,259] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 04:33:38,259] SDC_WriteServer INFO:Write success!
+[2018-02-16 04:48:42,055] SDC_WriteServer INFO:Got connection from 127.0.0.1:40288
+[2018-02-16 04:48:42,055] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:40288, number of data to write is 1, data to write are [63.5]
+[2018-02-16 04:48:42,056] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 04:48:42,077] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 04:48:42,077] SDC_WriteServer INFO:Write success!
+[2018-02-16 05:03:45,528] SDC_WriteServer INFO:Got connection from 127.0.0.1:40684
+[2018-02-16 05:03:45,528] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:40684, number of data to write is 1, data to write are [63.5]
+[2018-02-16 05:03:45,528] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 05:03:45,550] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 05:03:45,551] SDC_WriteServer INFO:Write success!
+[2018-02-16 05:18:49,426] SDC_WriteServer INFO:Got connection from 127.0.0.1:41082
+[2018-02-16 05:18:49,426] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:41082, number of data to write is 1, data to write are [63.5]
+[2018-02-16 05:18:49,427] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 05:18:49,485] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 05:18:49,485] SDC_WriteServer INFO:Write success!
+[2018-02-16 05:33:53,315] SDC_WriteServer INFO:Got connection from 127.0.0.1:41482
+[2018-02-16 05:33:53,316] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:41482, number of data to write is 1, data to write are [63.5]
+[2018-02-16 05:33:53,316] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 05:33:53,337] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 05:33:53,337] SDC_WriteServer INFO:Write success!
+[2018-02-16 05:48:55,988] SDC_WriteServer INFO:Got connection from 127.0.0.1:41878
+[2018-02-16 05:48:55,989] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:41878, number of data to write is 1, data to write are [63.5]
+[2018-02-16 05:48:55,989] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 05:48:56,011] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 05:48:56,011] SDC_WriteServer INFO:Write success!
+[2018-02-16 06:03:59,771] SDC_WriteServer INFO:Got connection from 127.0.0.1:42270
+[2018-02-16 06:03:59,771] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:42270, number of data to write is 1, data to write are [63.5]
+[2018-02-16 06:03:59,771] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 06:03:59,793] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 06:03:59,793] SDC_WriteServer INFO:Write success!
+[2018-02-16 06:19:02,484] SDC_WriteServer INFO:Got connection from 127.0.0.1:42690
+[2018-02-16 06:19:02,485] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:42690, number of data to write is 1, data to write are [63.5]
+[2018-02-16 06:19:02,485] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 06:19:02,507] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 06:19:02,507] SDC_WriteServer INFO:Write success!
+[2018-02-16 06:34:06,682] SDC_WriteServer INFO:Got connection from 127.0.0.1:43078
+[2018-02-16 06:34:06,683] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:43078, number of data to write is 1, data to write are [63.5]
+[2018-02-16 06:34:06,683] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 06:34:06,834] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 06:34:06,835] SDC_WriteServer INFO:Write success!
+[2018-02-16 06:49:09,799] SDC_WriteServer INFO:Got connection from 127.0.0.1:43478
+[2018-02-16 06:49:09,800] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:43478, number of data to write is 1, data to write are [63.5]
+[2018-02-16 06:49:09,800] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 06:49:09,821] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 06:49:09,822] SDC_WriteServer INFO:Write success!
+[2018-02-16 07:04:13,252] SDC_WriteServer INFO:Got connection from 127.0.0.1:43864
+[2018-02-16 07:04:13,252] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:43864, number of data to write is 1, data to write are [63.5]
+[2018-02-16 07:04:13,253] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 07:04:13,274] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 07:04:13,274] SDC_WriteServer INFO:Write success!
+[2018-02-16 07:19:16,765] SDC_WriteServer INFO:Got connection from 127.0.0.1:44270
+[2018-02-16 07:19:16,766] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:44270, number of data to write is 1, data to write are [63.5]
+[2018-02-16 07:19:16,766] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 07:19:16,806] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 07:19:16,807] SDC_WriteServer INFO:Write success!
+[2018-02-16 07:34:20,078] SDC_WriteServer INFO:Got connection from 127.0.0.1:44654
+[2018-02-16 07:34:20,078] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:44654, number of data to write is 1, data to write are [63.5]
+[2018-02-16 07:34:20,078] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 07:34:20,100] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 07:34:20,100] SDC_WriteServer INFO:Write success!
+[2018-02-16 07:49:24,536] SDC_WriteServer INFO:Got connection from 127.0.0.1:45060
+[2018-02-16 07:49:24,537] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:45060, number of data to write is 1, data to write are [63.5]
+[2018-02-16 07:49:24,537] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 07:49:24,559] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 07:49:24,559] SDC_WriteServer INFO:Write success!
+[2018-02-16 08:04:28,051] SDC_WriteServer INFO:Got connection from 127.0.0.1:45448
+[2018-02-16 08:04:28,051] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:45448, number of data to write is 1, data to write are [63.5]
+[2018-02-16 08:04:28,052] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 08:04:28,074] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 08:04:28,074] SDC_WriteServer INFO:Write success!
+[2018-02-16 08:19:30,992] SDC_WriteServer INFO:Got connection from 127.0.0.1:45848
+[2018-02-16 08:19:30,992] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:45848, number of data to write is 1, data to write are [63.5]
+[2018-02-16 08:19:30,993] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 08:19:31,089] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 08:19:31,089] SDC_WriteServer INFO:Write success!
+[2018-02-16 08:34:35,249] SDC_WriteServer INFO:Got connection from 127.0.0.1:46232
+[2018-02-16 08:34:35,250] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:46232, number of data to write is 1, data to write are [63.5]
+[2018-02-16 08:34:35,250] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 08:34:35,271] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 08:34:35,271] SDC_WriteServer INFO:Write success!
+[2018-02-16 08:49:38,907] SDC_WriteServer INFO:Got connection from 127.0.0.1:46636
+[2018-02-16 08:49:38,907] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:46636, number of data to write is 1, data to write are [63.5]
+[2018-02-16 08:49:38,907] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 08:49:38,929] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 08:49:38,929] SDC_WriteServer INFO:Write success!
+[2018-02-16 09:04:42,023] SDC_WriteServer INFO:Got connection from 127.0.0.1:47020
+[2018-02-16 09:04:42,024] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:47020, number of data to write is 1, data to write are [63.5]
+[2018-02-16 09:04:42,024] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 09:04:42,057] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 09:04:42,058] SDC_WriteServer INFO:Write success!
+[2018-02-16 09:19:44,958] SDC_WriteServer INFO:Got connection from 127.0.0.1:47426
+[2018-02-16 09:19:44,958] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:47426, number of data to write is 1, data to write are [63.5]
+[2018-02-16 09:19:44,959] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 09:19:44,980] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 09:19:44,980] SDC_WriteServer INFO:Write success!
+[2018-02-16 09:34:47,911] SDC_WriteServer INFO:Got connection from 127.0.0.1:47858
+[2018-02-16 09:34:47,911] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:47858, number of data to write is 1, data to write are [63.5]
+[2018-02-16 09:34:47,911] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 09:34:47,943] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 09:34:47,943] SDC_WriteServer INFO:Write success!
+[2018-02-16 09:49:50,488] SDC_WriteServer INFO:Got connection from 127.0.0.1:48274
+[2018-02-16 09:49:50,489] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:48274, number of data to write is 1, data to write are [63.5]
+[2018-02-16 09:49:50,489] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 09:49:50,511] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 09:49:50,511] SDC_WriteServer INFO:Write success!
+[2018-02-16 10:04:53,995] SDC_WriteServer INFO:Got connection from 127.0.0.1:48664
+[2018-02-16 10:04:53,996] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:48664, number of data to write is 1, data to write are [63.5]
+[2018-02-16 10:04:53,996] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 10:04:54,095] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 10:04:54,095] SDC_WriteServer INFO:Write success!
+[2018-02-16 10:20:03,940] SDC_WriteServer INFO:Got connection from 127.0.0.1:49066
+[2018-02-16 10:20:03,940] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:49066, number of data to write is 1, data to write are [63.5]
+[2018-02-16 10:20:03,940] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 10:20:03,962] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 10:20:03,962] SDC_WriteServer INFO:Write success!
+[2018-02-16 10:35:13,805] SDC_WriteServer INFO:Got connection from 127.0.0.1:49464
+[2018-02-16 10:35:13,805] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:49464, number of data to write is 1, data to write are [63.5]
+[2018-02-16 10:35:13,806] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 10:35:13,828] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 10:35:13,828] SDC_WriteServer INFO:Write success!
+[2018-02-16 10:49:33,371] SDC_WriteServer INFO:Got connection from 127.0.0.1:49928
+[2018-02-16 10:49:33,372] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:49928, number of data to write is 1, data to write are [140.0]
+[2018-02-16 10:49:33,372] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '140.0']
+[2018-02-16 10:49:33,393] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 10:49:33,393] SDC_WriteServer INFO:Write success!
+[2018-02-16 11:04:38,325] SDC_WriteServer INFO:Got connection from 127.0.0.1:50322
+[2018-02-16 11:04:38,326] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:50322, number of data to write is 1, data to write are [77.0]
+[2018-02-16 11:04:38,326] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '77.0']
+[2018-02-16 11:04:38,348] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 11:04:38,348] SDC_WriteServer INFO:Write success!
+[2018-02-16 11:19:43,423] SDC_WriteServer INFO:Got connection from 127.0.0.1:50730
+[2018-02-16 11:19:43,423] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:50730, number of data to write is 1, data to write are [63.5]
+[2018-02-16 11:19:43,423] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 11:19:43,445] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 11:19:43,445] SDC_WriteServer INFO:Write success!
+[2018-02-16 11:34:46,936] SDC_WriteServer INFO:Got connection from 127.0.0.1:51128
+[2018-02-16 11:34:46,936] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:51128, number of data to write is 1, data to write are [63.5]
+[2018-02-16 11:34:46,936] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '63.5']
+[2018-02-16 11:34:46,957] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 11:34:46,958] SDC_WriteServer INFO:Write success!
+[2018-02-16 11:49:50,563] SDC_WriteServer INFO:Got connection from 127.0.0.1:51570
+[2018-02-16 11:49:50,564] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:51570, number of data to write is 1, data to write are [140.0]
+[2018-02-16 11:49:50,564] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['/home/zhiangz/Documents/HVAC-RL-Control/src/SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '140.0']
+[2018-02-16 11:49:50,649] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
+WriteProperty Acknowledged!
+
+[2018-02-16 11:49:50,649] SDC_WriteServer INFO:Write success!

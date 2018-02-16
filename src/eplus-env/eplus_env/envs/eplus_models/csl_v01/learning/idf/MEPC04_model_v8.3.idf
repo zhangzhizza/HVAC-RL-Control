@@ -399,7 +399,7 @@ Schedule:Week:Daily,
 
 ! Schedule: Chilled water flow set point temperature: Always 10.0 C
 Schedule:Compact,
-    40,                      !- Name
+    chw_stpt,                      !- Name
     Temperature,             !- Schedule Type Limits Name
     Through: 12/31,          !- Field 1
     For: AllDays,            !- Field 2
@@ -408,7 +408,7 @@ Schedule:Compact,
 
 ! Schedule: Hot Water flow set point temperature: Always 80.0 C
 Schedule:Compact,
-    41,                      !- Name
+    hw_stpt,                      !- Name
     Temperature,             !- Schedule Type Limits Name
     Through: 12/31,          !- Field 1
     For: AllDays,            !- Field 2
@@ -1985,6 +1985,17 @@ Schedule:Compact,
     1.0,                     !- Field 6
     Until: 24:00,            !- Field 7
     1;                       !- Field 8
+
+Schedule:Compact,
+    OAFrac Schedule,    !- Name
+    Fraction,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    0.5;                       !- Field 8
+
+
+
 
 
 !-   ===========  ALL OBJECTS IN CLASS: SCHEDULE:FILE ===========
@@ -26591,219 +26602,281 @@ Exterior:FuelEquipment,
 DesignSpecification:OutdoorAir,
     SZ DSOA 1ST%FLOOR:1st%Conference,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.0025,                  !- Outdoor Air Flow per Person {m3/s-person}
-    0.0003,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                  !- Outdoor Air Flow per Person {m3/s-person}
+    ,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 1ST%FLOOR:1st%Classroom,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.005,                   !- Outdoor Air Flow per Person {m3/s-person}
-    0.0006,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                   !- Outdoor Air Flow per Person {m3/s-person}
+    ,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 1ST%FLOOR:1st%Vestibule,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.0025,                  !- Outdoor Air Flow per Person {m3/s-person}
-    0.0003,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                  !- Outdoor Air Flow per Person {m3/s-person}
+    ,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 1ST%FLOOR:1st%Restroom,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.0025,                  !- Outdoor Air Flow per Person {m3/s-person}
-    0.0003,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                  !- Outdoor Air Flow per Person {m3/s-person}
+    ,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 1ST%FLOOR:1st%Break%Room,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.0025,                  !- Outdoor Air Flow per Person {m3/s-person}
-    0.0003,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                  !- Outdoor Air Flow per Person {m3/s-person}
+    ,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 1ST%FLOOR:1st%Volunteer%Area,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.0025,                  !- Outdoor Air Flow per Person {m3/s-person}
-    0.0003,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                  !- Outdoor Air Flow per Person {m3/s-person}
+    ,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 1ST%FLOOR:1st%Corridor,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0,                       !- Outdoor Air Flow per Person {m3/s-person}
-    0.0003,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                       !- Outdoor Air Flow per Person {m3/s-person}
+    ,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 1ST%FLOOR:1st%Edctn%Strg,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0,                       !- Outdoor Air Flow per Person {m3/s-person}
-    0.0006,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                       !- Outdoor Air Flow per Person {m3/s-person}
+    ,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 2ND%FLOOR%SOUTH:2nd%Conference%02,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.0025,                  !- Outdoor Air Flow per Person {m3/s-person}
-    0.0003,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                  !- Outdoor Air Flow per Person {m3/s-person}
+    ,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 2ND%FLOOR%SOUTH:2nd%Conference%01,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.0025,                  !- Outdoor Air Flow per Person {m3/s-person}
-    0.0003,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                  !- Outdoor Air Flow per Person {m3/s-person}
+    ,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 2ND%FLOOR%NORTH:2nd%Restrooms,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.0025,                  !- Outdoor Air Flow per Person {m3/s-person}
-    0.0003,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                  !- Outdoor Air Flow per Person {m3/s-person}
+    ,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 2ND%FLOOR%NORTH:2nd%Corridor,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0,                       !- Outdoor Air Flow per Person {m3/s-person}
-    0.0003,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                       !- Outdoor Air Flow per Person {m3/s-person}
+    ,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 2ND%FLOOR%NORTH:2nd%Secure%Files,  !- Name
-    Flow/Area,               !- Outdoor Air Method
-    0,                       !- Outdoor Air Flow per Person {m3/s-person}
-    0.0006,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    AirChanges/Hour,               !- Outdoor Air Method
+    ,                       !- Outdoor Air Flow per Person {m3/s-person}
+    ,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 2ND%FLOOR%NORTH:2nd%Conference%03,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.0025,                  !- Outdoor Air Flow per Person {m3/s-person}
-    0.0003,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                  !- Outdoor Air Flow per Person {m3/s-person}
+    ,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 2ND%FLOOR%NORTH:2nd%Work%Room,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.0025,                  !- Outdoor Air Flow per Person {m3/s-person}
-    0.0003,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                  !- Outdoor Air Flow per Person {m3/s-person}
+    ,                  !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 1ST%FLOOR:1st%Research%Open%NE,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.01,                    !- Outdoor Air Flow per Person {m3/s-person}
-    0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                    !- Outdoor Air Flow per Person {m3/s-person}
+    ,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 1ST%FLOOR:1st%Research%Open%NW,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.01,                    !- Outdoor Air Flow per Person {m3/s-person}
-    0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                    !- Outdoor Air Flow per Person {m3/s-person}
+    ,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 1ST%FLOOR:1st%Research%Open%NM,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.01,                    !- Outdoor Air Flow per Person {m3/s-person}
-    0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                    !- Outdoor Air Flow per Person {m3/s-person}
+    ,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 1ST%FLOOR:1st%Research%Open%SW,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.01,                    !- Outdoor Air Flow per Person {m3/s-person}
-    0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                    !- Outdoor Air Flow per Person {m3/s-person}
+    ,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 1ST%FLOOR:1st%Research%Open%SM,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.01,                    !- Outdoor Air Flow per Person {m3/s-person}
-    0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                    !- Outdoor Air Flow per Person {m3/s-person}
+    ,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 1ST%FLOOR:1st%Research%Open%SE,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.01,                    !- Outdoor Air Flow per Person {m3/s-person}
-    0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                    !- Outdoor Air Flow per Person {m3/s-person}
+    ,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.01,                    !- Outdoor Air Flow per Person {m3/s-person}
-    0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                    !- Outdoor Air Flow per Person {m3/s-person}
+    ,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 2ND%FLOOR%SOUTH:2nd%Open%Office%SW,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.01,                    !- Outdoor Air Flow per Person {m3/s-person}
-    0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                    !- Outdoor Air Flow per Person {m3/s-person}
+    ,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 2ND%FLOOR%SOUTH:2nd%Open%Office%SMW,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.01,                    !- Outdoor Air Flow per Person {m3/s-person}
-    0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                    !- Outdoor Air Flow per Person {m3/s-person}
+    ,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 2ND%FLOOR%SOUTH:2nd%Open%Office%SM,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.01,                    !- Outdoor Air Flow per Person {m3/s-person}
-    0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                    !- Outdoor Air Flow per Person {m3/s-person}
+    ,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 2ND%FLOOR%SOUTH:2nd%Open%Office%SE,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.01,                    !- Outdoor Air Flow per Person {m3/s-person}
-    0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                    !- Outdoor Air Flow per Person {m3/s-person}
+    ,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 2ND%FLOOR%SOUTH:2nd%Open%Office%SME,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.01,                    !- Outdoor Air Flow per Person {m3/s-person}
-    0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                    !- Outdoor Air Flow per Person {m3/s-person}
+    ,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 2ND%FLOOR%SOUTH:2nd%Open%Office%NMW,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.01,                    !- Outdoor Air Flow per Person {m3/s-person}
-    0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                    !- Outdoor Air Flow per Person {m3/s-person}
+    ,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 2ND%FLOOR%SOUTH:2nd%Open%Office%NME,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.01,                    !- Outdoor Air Flow per Person {m3/s-person}
-    0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                    !- Outdoor Air Flow per Person {m3/s-person}
+    ,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 2ND%FLOOR%SOUTH:2nd%Open%Office%NW,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.01,                    !- Outdoor Air Flow per Person {m3/s-person}
-    0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                    !- Outdoor Air Flow per Person {m3/s-person}
+    ,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA 2ND%FLOOR%SOUTH:2nd%Open%Office%SME1,  !- Name
     AirChanges/Hour,                     !- Outdoor Air Method
-    0.01,                    !- Outdoor Air Flow per Person {m3/s-person}
-    0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
+    ,                    !- Outdoor Air Flow per Person {m3/s-person}
+    ,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+    ,                      !- Outdoor Air Flow per Zone {m3/s}
+    1.0,                      !- Outdoor Air Flow Air Changes per Hour
+    OAFrac Schedule;  !- Outdoor Air Flow Rate Fraction Schedule Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: DESIGNSPECIFICATION:ZONEAIRDISTRIBUTION ===========
@@ -29699,16 +29772,16 @@ Controller:OutdoorAir,
     Air Loop AHU Return Air Outlet Node,  !- Return Air Node Name
     Mixed Air Node,          !- Mixed Air Node Name
     Outside Air Inlet Node,  !- Actuator Node Name
-    autosize,                !- Minimum Outdoor Air Flow Rate {m3/s}
-    autosize,                !- Maximum Outdoor Air Flow Rate {m3/s}
-    FixedDryBulb,            !- Economizer Control Type
-    ModulateFlow,            !- Economizer Control Action Type
-    19,                      !- Economizer Maximum Limit Dry-Bulb Temperature {C}
+    0,                !- Minimum Outdoor Air Flow Rate {m3/s}
+    5.85,                !- Maximum Outdoor Air Flow Rate {m3/s}
+    ,            !- Economizer Control Type
+    ,            !- Economizer Control Action Type
+    ,                      !- Economizer Maximum Limit Dry-Bulb Temperature {C}
     ,                        !- Economizer Maximum Limit Enthalpy {J/kg}
     ,                        !- Economizer Maximum Limit Dewpoint Temperature {C}
-    ElectronicEnthalpyCurve, !- Electronic Enthalpy Limit Curve Name
-    4,                       !- Economizer Minimum Limit Dry-Bulb Temperature {C}
-    NoLockout,               !- Lockout Type
+    , !- Electronic Enthalpy Limit Curve Name
+    ,                       !- Economizer Minimum Limit Dry-Bulb Temperature {C}
+    ,               !- Lockout Type
     FixedMinimum,            !- Minimum Limit Type
     ,                        !- Minimum Outdoor Air Schedule Name
     ,                        !- Minimum Fraction of Outdoor Air Schedule Name
@@ -29716,10 +29789,10 @@ Controller:OutdoorAir,
     ,                        !- Mechanical Ventilation Controller Name
     ,                        !- Time of Day Economizer Control Schedule Name
     No,                      !- High Humidity Control
-    1ST%FLOOR:1st%Research%Open%SM,  !- Humidistat Control Zone Name
-    1,                       !- High Humidity Outdoor Air Flow Ratio
-    No,                      !- Control High Indoor Humidity Based on Outdoor Humidity Ratio
-    BypassWhenWithinEconomizerLimits;  !- Heat Recovery Bypass Control Type
+    ,  !- Humidistat Control Zone Name
+    ,                       !- High Humidity Outdoor Air Flow Ratio
+    ,                      !- Control High Indoor Humidity Based on Outdoor Humidity Ratio
+    ;  !- Heat Recovery Bypass Control Type
 
 
 !-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:CONTROLLERLIST ===========
@@ -29761,9 +29834,9 @@ AirLoopHVAC,
     Air Loop,                !- Name
     Air Loop Controllers,    !- Controller List Name
     Air Loop Availability Managers,  !- Availability Manager List Name
-    autosize,                !- Design Supply Air Flow Rate {m3/s}
+    4.25,                !- Design Supply Air Flow Rate {m3/s} 80% speed lock
     Air Loop Branches,       !- Branch List Name
-    Return Air Bypass Connectors,  !- Connector List Name
+    , !-Return Air Bypass Connectors,  !- Connector List Name
     Air Loop Supply Side Inlet,  !- Supply Side Inlet Node Name
     Air Loop Demand Side Outlet,  !- Demand Side Outlet Node Name
     Air Loop Demand Side Inlet List,  !- Demand Side Inlet Node Names
@@ -30053,15 +30126,15 @@ Branch,
 ! - Component 1 inlet node name
 ! - Component 1 outlet node name
 ! - Component 1 branch control type
-Branch,
-    Air Loop AHU Bypass Branch,  !- Name
-    autosize,                !- Maximum Flow Rate {m3/s}
-    ,                        !- Pressure Drop Curve Name
-    Duct,                    !- Component 1 Object Type
-    VAV BYPASS DUCT,         !- Component 1 Name
-    VAV BYPASS DUCT INLET,   !- Component 1 Inlet Node Name
-    VAV BYPASS DUCT OUTLET,  !- Component 1 Outlet Node Name
-    Bypass;                  !- Component 1 Branch Control Type
+!Branch,
+!    Air Loop AHU Bypass Branch,  !- Name
+!    autosize,                !- Maximum Flow Rate {m3/s}
+!    ,                        !- Pressure Drop Curve Name
+!    Duct,                    !- Component 1 Object Type
+!    VAV BYPASS DUCT,         !- Component 1 Name
+!    VAV BYPASS DUCT INLET,   !- Component 1 Inlet Node Name
+!    VAV BYPASS DUCT OUTLET,  !- Component 1 Outlet Node Name
+!    Bypass;                  !- Component 1 Branch Control Type
 
 ! - Branch name
 ! - Maximum flow rate (m3/s)
@@ -30469,7 +30542,7 @@ Branch,
 BranchList,
     Air Loop Branches,       !- Name
     VAV Inlet Branch,        !- Branch 1 Name
-    Air Loop AHU Bypass Branch,  !- Branch 2 Name
+    !Air Loop AHU Bypass Branch,  !- Branch 2 Name
     Air Loop AHU Main Branch,!- Branch 3 Name
     Air Loop AHU Supply Branch;  !- Branch 4 Name
 
@@ -30624,11 +30697,11 @@ Connector:Splitter,
     HW Loop Supply Side Bypass Branch,  !- Outlet Branch 1 Name
     Heating Gshp Branch;     !- Outlet Branch 2 Name
 
-Connector:Splitter,
-    Return Air Bypass Splitter,  !- Name
-    VAV Inlet Branch,        !- Inlet Branch Name
-    Air Loop AHU Main Branch,!- Outlet Branch 1 Name
-    Air Loop AHU Bypass Branch;  !- Outlet Branch 2 Name
+!Connector:Splitter,
+!    Return Air Bypass Splitter,  !- Name
+!    VAV Inlet Branch,        !- Inlet Branch Name
+!    Air Loop AHU Main Branch,!- Outlet Branch 1 Name
+!    Air Loop AHU Bypass Branch;  !- Outlet Branch 2 Name
 
 Connector:Splitter,
     Condenser Demand Splitter,  !- Name
@@ -30709,11 +30782,11 @@ Connector:Mixer,
     Heating Gshp Branch,     !- Inlet Branch 1 Name
     HW Loop Supply Side Bypass Branch;  !- Inlet Branch 2 Name
 
-Connector:Mixer,
-    Return Air Bypass Mixer, !- Name
-    Air Loop AHU Supply Branch,  !- Outlet Branch Name
-    Air Loop AHU Main Branch,!- Inlet Branch 1 Name
-    Air Loop AHU Bypass Branch;  !- Inlet Branch 2 Name
+!Connector:Mixer,
+!    Return Air Bypass Mixer, !- Name
+!    Air Loop AHU Supply Branch,  !- Outlet Branch Name
+!    Air Loop AHU Main Branch,!- Inlet Branch 1 Name
+!    Air Loop AHU Bypass Branch;  !- Inlet Branch 2 Name
 
 Connector:Mixer,
     Condenser Supply Mixer,  !- Name
@@ -30779,12 +30852,12 @@ ConnectorList,
     Connector:Mixer,         !- Connector 2 Object Type
     HW Loop Supply Side Mixer;  !- Connector 2 Name
 
-ConnectorList,
-    Return Air Bypass Connectors,  !- Name
-    Connector:Splitter,      !- Connector 1 Object Type
-    Return Air Bypass Splitter,  !- Connector 1 Name
-    Connector:Mixer,         !- Connector 2 Object Type
-    Return Air Bypass Mixer; !- Connector 2 Name
+!ConnectorList,
+!    Return Air Bypass Connectors,  !- Name
+!    Connector:Splitter,      !- Connector 1 Object Type
+!    Return Air Bypass Splitter,  !- Connector 1 Name
+!    Connector:Mixer,         !- Connector 2 Object Type
+!    Return Air Bypass Mixer; !- Connector 2 Name
 
 ConnectorList,
     Condenser Supply Side Connectors,  !- Name
@@ -31450,13 +31523,13 @@ PlantEquipmentOperationSchemes,
     HW Loop Operation,       !- Name
     PlantEquipmentOperation:HeatingLoad,  !- Control Scheme 1 Object Type
     HW Loop Scheme,          !- Control Scheme 1 Name
-    2;                       !- Control Scheme 1 Schedule Name
+    On;                       !- Control Scheme 1 Schedule Name
 
 PlantEquipmentOperationSchemes,
     CW Loop Operation,       !- Name
     PlantEquipmentOperation:CoolingLoad,  !- Control Scheme 1 Object Type
     Whole Year Cooling Operation,  !- Control Scheme 1 Name
-    2;                       !- Control Scheme 1 Schedule Name
+    On;                       !- Control Scheme 1 Schedule Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: CONDENSEREQUIPMENTOPERATIONSCHEMES ===========
@@ -31465,7 +31538,7 @@ CondenserEquipmentOperationSchemes,
     Tower Loop Operation,    !- Name
     PlantEquipmentOperation:Uncontrolled,  !- Control Scheme 1 Object Type
     Year Round Tower Operation,  !- Control Scheme 1 Name
-    2;                       !- Control Scheme 1 Schedule Name
+    On;                       !- Control Scheme 1 Schedule Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: EXTERNALINTERFACE ===========
@@ -31814,48 +31887,33 @@ AvailabilityManager:Scheduled,
 
 AvailabilityManager:Scheduled,
     Reheat System 1 Availability,  !- Name
-    2;                       !- Schedule Name
+    On;                       !- Schedule Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: AVAILABILITYMANAGER:HYBRIDVENTILATION ===========
 
-AvailabilityManager:HybridVentilation,
-    Hybrid ventilation controller,  !- Name
-    Air Loop,                !- HVAC Air Loop Name
-    1ST%FLOOR:1st%Research%Open%SM,  !- Controlled Zone Name
-    Hybrid Control Mode Schedule,  !- Ventilation Control Mode Schedule Name
-    Yes,                     !- Use Weather File Rain Indicators
-    10,                      !- Maximum Wind Speed {m/s}
-    15,                      !- Minimum Outdoor Temperature {C}
-    25,                      !- Maximum Outdoor Temperature {C}
-    20000.0,                 !- Minimum Outdoor Enthalpy {J/kg}
-    30000.0,                 !- Maximum Outdoor Enthalpy {J/kg}
-    15.0,                    !- Minimum Outdoor Dewpoint {C}
-    25,                      !- Maximum Outdoor Dewpoint {C}
-    Outdoor air Schedule,    !- Minimum Outdoor Ventilation Air Schedule Name
-    WindFactorCurve,         !- Opening Factor Function of Wind Speed Curve Name
-    ,                        !- AirflowNetwork Control Type Schedule Name
-    SimpleControlTypeSch,    !- Simple Airflow Control Type Schedule Name
-    1st Open Office Ventilation;  !- ZoneVentilation Object Name
+!AvailabilityManager:HybridVentilation,
+!    Hybrid ventilation controller,  !- Name
+!    Air Loop,                !- HVAC Air Loop Name
+!    1ST%FLOOR:1st%Research%Open%SM,  !- Controlled Zone Name
+!    Hybrid Control Mode Schedule,  !- Ventilation Control Mode Schedule Name
+!    Yes,                     !- Use Weather File Rain Indicators
+!    10,                      !- Maximum Wind Speed {m/s}
+!    15,                      !- Minimum Outdoor Temperature {C}
+!    25,                      !- Maximum Outdoor Temperature {C}
+!    20000.0,                 !- Minimum Outdoor Enthalpy {J/kg}
+!    30000.0,                 !- Maximum Outdoor Enthalpy {J/kg}
+!    15.0,                    !- Minimum Outdoor Dewpoint {C}
+!    25,                      !- Maximum Outdoor Dewpoint {C}
+!    Outdoor air Schedule,    !- Minimum Outdoor Ventilation Air Schedule Name
+!    WindFactorCurve,         !- Opening Factor Function of Wind Speed Curve Name
+!    ,                        !- AirflowNetwork Control Type Schedule Name
+!    SimpleControlTypeSch,    !- Simple Airflow Control Type Schedule Name
+!    1st Open Office Ventilation;  !- ZoneVentilation Object Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: AVAILABILITYMANAGERASSIGNMENTLIST ===========
 
-! - Availability manager list name
-! - Plant/condenser loop availability manager type
-! - Plant/condenser loop availability manager name
-AvailabilityManagerAssignmentList,
-    CHW Loop AvailabilityManager List,  !- Name
-    AvailabilityManager:Scheduled,  !- Availability Manager 1 Object Type
-    CHW Loop Availability;   !- Availability Manager 1 Name
-
-! - Availability manager list name
-! - Plant/condenser loop availability manager type
-! - Plant/condenser loop availability manager name
-AvailabilityManagerAssignmentList,
-    HW Loop AvailabilityManager List,  !- Name
-    AvailabilityManager:Scheduled,  !- Availability Manager 1 Object Type
-    HW Loop Availability;    !- Availability Manager 1 Name
 
 ! - Availability manager list name
 ! - Air loop availability manager type
@@ -31864,19 +31922,6 @@ AvailabilityManagerAssignmentList,
     Air Loop Availability Managers,  !- Name
     AvailabilityManager:Scheduled,  !- Availability Manager 1 Object Type
     Air Loop Availability;   !- Availability Manager 1 Name
-
-! - Availability manager list name
-! - Plant/condenser loop availability manager type
-! - Plant/condenser loop availability manager name
-AvailabilityManagerAssignmentList,
-    Condenser Loop AvailabilityManager List,  !- Name
-    AvailabilityManager:Scheduled,  !- Availability Manager 1 Object Type
-    Condenser Loop Availability;  !- Availability Manager 1 Name
-
-AvailabilityManagerAssignmentList,
-    ERV SA outlet temperature availability manager,  !- Name
-    AvailabilityManager:Scheduled,  !- Availability Manager 1 Object Type
-    ERV SA outlet temperature availability;  !- Availability Manager 1 Name
 
 AvailabilityManagerAssignmentList,
     Reheat System 1 Avail List,  !- Name
@@ -31893,7 +31938,7 @@ AvailabilityManagerAssignmentList,
 SetpointManager:Scheduled,
     CHW Loop Setpoint Manager,  !- Name
     Temperature,             !- Control Variable
-    40,                      !- Schedule Name
+    chw_stpt,                      !- Schedule Name
     CHW Loop Supply Side Outlet;  !- Setpoint Node or NodeList Name
 
 ! - Component name
@@ -31903,7 +31948,7 @@ SetpointManager:Scheduled,
 SetpointManager:Scheduled,
     HW Loop Setpoint Manager,!- Name
     Temperature,             !- Control Variable
-    41,                      !- Schedule Name
+    hw_stpt,                      !- Schedule Name
     HW Loop Supply Side Outlet;  !- Setpoint Node or NodeList Name
 
 ! - Component name
