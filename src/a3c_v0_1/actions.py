@@ -163,7 +163,6 @@ iw_actFunc4_4 = [[20.0],
         [55.0],
         [60.0],
         [65.0]];
-
 action_map = {'default': actions_htcl_cmd, 'exp1': actions_htcl_cmd_exp1, 
               'exp2':actions_htcl_cmd_exp2, 'exp3': actions_htcl_cmd_exp3, 
               'exp4': actions_htcl_cmd_exp4,

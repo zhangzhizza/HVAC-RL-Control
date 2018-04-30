@@ -1,0 +1,13 @@
+[2018-01-24 16:25:10,574] SDC_ReadServer DEBUG:rpCmds:[['./SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacrpm', '701104', '2', '48', '85', '0', '31', '85']]
+[2018-01-24 16:25:10,574] SDC_ReadServer INFO:Server starts at 0.0.0.0:61221
+[2018-01-24 16:31:50,010] SDC_ReadServer INFO:Got connection from 127.0.0.1:43068
+[2018-01-24 16:32:05,377] SDC_ReadServer INFO:Recived GET request from 127.0.0.1:43068
+[2018-01-24 16:32:05,563] SDC_ReadServer DEBUG:Raw return from BACnet stack is analog-value #48
+{
+    present-value: 72.427986
+}
+analog-input #31
+{
+    present-value: 24.479996
+}
+

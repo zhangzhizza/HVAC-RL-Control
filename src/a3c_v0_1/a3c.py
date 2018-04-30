@@ -444,6 +444,7 @@ class A3CThread:
         self._e_greedy -= self._epsilon_decay_delta;
         
     def _select_sto_action(self, state, sess, e_greedy, is_show_dbg, dropout_prob, is_greedy = False):
+
         """
         Given a state, run stochastic policy network to give an action.
         
@@ -486,6 +487,7 @@ class A3CThread:
                 if imd_x <= 0.0:
                     selected_act = i;
                     return selected_act;
+
         return (None, softmax_a); # Return if network output is not valid
     
 

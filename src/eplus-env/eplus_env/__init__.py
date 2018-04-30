@@ -569,6 +569,7 @@ register(
             'act_repeat': 3,
             'iat_thres': 22});
 
+
 register(
     id='IW-imp-v9703',
     entry_point='eplus_env.envs:IW_IMP_V97',
@@ -691,8 +692,6 @@ register(
             'airVel': 0.1,
             'isMullSspLowerLimit': True,
             'useCSLWeather': True});
-
-
 
 
 def setSchedulePath(sch_path_dict, tgtIDFPath):

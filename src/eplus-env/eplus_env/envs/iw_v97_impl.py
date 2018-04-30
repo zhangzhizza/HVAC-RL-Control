@@ -32,7 +32,6 @@ from ..util.time_interpolate import get_time_interpolate
 from ..util.solarCalculator import getSolarBreakDown
 from ..util.pmvCalculator import fangerPMV
 
-
 WEATHER_FORECAST_COLS_SELECT = {'tmy3': [0, 2, 8, 9],
                                 'actW': [0, 1, 5, 6]}
 YEAR = 2017 # Non leap year
@@ -105,7 +104,6 @@ class IW_IMP_V97(Env):
         self._oat = None;
         self._isMullSspLowerLimit = isMullSspLowerLimit;
         self._useCSLWeather = useCSLWeather;
-
  
     def _reset(self):
         """Reset the environment.
@@ -280,7 +278,6 @@ class IW_IMP_V97(Env):
             ppdCal = self._getPPDFangerBK(readDataUnitChanged[9:], occpMode, nowDatetime);
         else:
             ppdCal = self._getPPDAMV(readDataUnitChanged[9:]);
-        
         # Get soldif and soldir
         solTotal, solTotalMsgBack = self._getSolTotalNow();
         self.logger_main.debug('Global solar radiation from PI is: %s'%(solTotal));
@@ -321,7 +318,6 @@ class IW_IMP_V97(Env):
                 rawAction[0] = max(rawAction[0], minMullSsp);
             return rawAction;
 
-                
 
     def _step(self, action):
         """Execute the specified action.
@@ -447,7 +443,6 @@ class IW_IMP_V97(Env):
             else:
                 occpMode = 0;
         return occpMode;
-
     def _getPPDFangerBK(self, allAMV, occp, nowDatetime):
         """
             ret: float
@@ -543,7 +538,6 @@ class IW_IMP_V97(Env):
             ret.append(value);
             msgBacks.append(msgBack)
         return (ret, msgBacks)
-
     
     def _get_file_name(self, file_path):
         path_list = file_path.split('/');

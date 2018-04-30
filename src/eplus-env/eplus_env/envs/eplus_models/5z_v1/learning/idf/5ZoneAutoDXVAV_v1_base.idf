@@ -2556,7 +2556,7 @@ SizingPeriod:DesignDay,
     Reverse,       !- Damper Heating Action
     ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     ,                        !- Maximum Flow Fraction During Reheat
-    40,                        !- Maximum Reheat Air Temperature {C}
+    ,                        !- Maximum Reheat Air Temperature {C}
     ;   !- Design Specification Outdoor Air Object Name
 
   AirTerminal:SingleDuct:VAV:Reheat,
@@ -2578,7 +2578,7 @@ SizingPeriod:DesignDay,
     Reverse,       !- Damper Heating Action
     ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     ,                        !- Maximum Flow Fraction During Reheat
-    40,                        !- Maximum Reheat Air Temperature {C}
+    ,                        !- Maximum Reheat Air Temperature {C}
     ;   !- Design Specification Outdoor Air Object Name
 
   AirTerminal:SingleDuct:VAV:Reheat,
@@ -2600,7 +2600,7 @@ SizingPeriod:DesignDay,
     Reverse,       !- Damper Heating Action
     ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     ,                        !- Maximum Flow Fraction During Reheat
-    40,                        !- Maximum Reheat Air Temperature {C}
+    ,                        !- Maximum Reheat Air Temperature {C}
     ;   !- Design Specification Outdoor Air Object Name
 
   AirTerminal:SingleDuct:VAV:Reheat,
@@ -2622,7 +2622,7 @@ SizingPeriod:DesignDay,
     Reverse,       !- Damper Heating Action
     ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     ,                        !- Maximum Flow Fraction During Reheat
-    40,                        !- Maximum Reheat Air Temperature {C}
+    ,                        !- Maximum Reheat Air Temperature {C}
     ;   !- Design Specification Outdoor Air Object Name
 
   Coil:Heating:Electric,
@@ -3065,7 +3065,6 @@ EnergyManagementSystem:ProgramCallingManager,
     reporting_calls, ! Name the programs here set some variables based on the last timestep eplus sensor data
     EndOfZoneTimestepBeforeZoneReporting, ! EnergyPlus Model Calling Point
     CalcHVACTotal; ! Program Name 1
-    
 
 !-   ===========  ALL OBJECTS IN CLASS: EnergyManagementSystem:OutputVariable ===========
 EnergyManagementSystem:OutputVariable,
@@ -3099,7 +3098,6 @@ EnergyManagementSystem:OutputVariable,
     ZoneTimeStep, ! Update Frequency
     ,      ! EMS Program or Subroutine Name
     W;
-
     
 
   !ExternalInterface:Schedule ,

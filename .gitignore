@@ -19,5 +19,3 @@ src/SDCServer/bacnet/log
 *.pyc
 *.py~
 .DS_Store
-
-

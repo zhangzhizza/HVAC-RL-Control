@@ -2986,7 +2986,6 @@ EnergyManagementSystem:Sensor,
     MAIN HEATING COIL GAS,! Output:Variable or Output:Meter Index Key Name
     Heating Coil Gas Rate; ! Output:Variable or Output:Meter Name
 
-
 !-   ===========  ALL OBJECTS IN CLASS: EnergyManagementSystem:GlobalVariable ===========
 EnergyManagementSystem:GlobalVariable,
     FZ_temp_ave;  !- 5 Zone average temperature
@@ -3059,7 +3058,6 @@ EnergyManagementSystem:ProgramCallingManager,
     reporting_calls, ! Name the programs here set some variables based on the last timestep eplus sensor data
     EndOfZoneTimestepBeforeZoneReporting, ! EnergyPlus Model Calling Point
     CalcHVACTotal; ! Program Name 1
-
 !-   ===========  ALL OBJECTS IN CLASS: EnergyManagementSystem:OutputVariable ===========
 EnergyManagementSystem:OutputVariable,
     5 Zone Average Temperature, ! Name
@@ -3084,7 +3082,6 @@ EnergyManagementSystem:OutputVariable,
     ZoneTimeStep, ! Update Frequency
     ,      ! EMS Program or Subroutine Name
     C;
-
 EnergyManagementSystem:OutputVariable,
     HVAC Total Energy Demand, ! Name
     HVAC_total, ! EMS Variable Name
@@ -3092,7 +3089,6 @@ EnergyManagementSystem:OutputVariable,
     ZoneTimeStep, ! Update Frequency
     ,      ! EMS Program or Subroutine Name
     W;
-
 
   !-External Interface
   ExternalInterface, !- Object to activate the external interface
@@ -3142,6 +3138,7 @@ EnergyManagementSystem:OutputVariable,
   Output:Variable,SPACE1-1,Zone Air Relative Humidity,timestep;
   Output:Variable,SPACE1-1,Zone People Occupant Count, timestep;
   Output:Variable,SPACE1-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PPD,timestep;
+
 
   Output:VariableDictionary,Regular;
   Output:Surfaces:Drawing,dxf;

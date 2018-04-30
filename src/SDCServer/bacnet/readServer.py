@@ -60,7 +60,6 @@ class ReadServer(object):
 				logger_main.info('Recieved GETIAT request from ' + addr)
 				toReadCmds = [rpCmds[6]]
 				readCount = 1;
-
 			else:
 				logger_main.warning('Recieved unrecognized request from %s: %s'%(addr, recv.lower()));
 				toReadCmds = []
