@@ -108,6 +108,7 @@ def get_args():
     parser.add_argument('--agent_num', default=5, type=int, help='Used when test_mode is Multiple. Default is 5. This value '
     	'Determines how many zones are controlled by the agent in the testing time.');
     parser.add_argument('--debug_log_prob', default=0.0001, type=float);
+    parser.add_argument('--is_greedy_policy', default=False, type=bool)
     return parser;
 
 def effective_main(args, reward_func, rewardArgs, train_action_func, eval_action_func, train_action_limits, eval_action_limits, raw_state_process_func):
@@ -151,7 +152,7 @@ def effective_main(args, reward_func, rewardArgs, train_action_func, eval_action
                       global_summary_writer, global_saver, [args.env, args.test_env], args.train_freq,
                       args.gamma, args.rwd_e_para, args.rwd_p_para, args.save_freq, args.max_interactions,
                       args.eval_epi_num, args.eval_freq, reward_func, rewardArgs, train_action_func, eval_action_func,  
-                      train_action_limits, eval_action_limits, raw_state_process_func, args.debug_log_prob);
+                      train_action_limits, eval_action_limits, raw_state_process_func, args.debug_log_prob, args.is_greedy_policy);
 
     if args.job_mode.lower() == 'test':
         main_logger.info ('Start the testing...')

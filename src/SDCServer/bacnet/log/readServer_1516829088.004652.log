@@ -1,2 +1,0 @@
-[2018-01-24 16:24:48,005] SDC_ReadServer DEBUG:rpCmds:[['./SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacrpm', '701104', '2', '48', '85', '0', '31', '85']]
-[2018-01-24 16:24:48,005] SDC_ReadServer INFO:Server starts at 0.0.0.0:61221

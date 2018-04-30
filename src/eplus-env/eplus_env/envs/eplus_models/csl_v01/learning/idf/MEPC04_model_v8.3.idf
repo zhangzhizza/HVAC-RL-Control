@@ -404,7 +404,7 @@ Schedule:Compact,
     Through: 12/31,          !- Field 1
     For: AllDays,            !- Field 2
     Until: 24:00,            !- Field 3
-    7.22;                    !- Field 4
+    1.22;                    !- Field 4
 
 ! Schedule: Hot Water flow set point temperature: Always 80.0 C
 Schedule:Compact,
@@ -413,7 +413,7 @@ Schedule:Compact,
     Through: 12/31,          !- Field 1
     For: AllDays,            !- Field 2
     Until: 24:00,            !- Field 3
-    82;                      !- Field 4
+    99;                      !- Field 4
 
 ! Schedule: Condenser flow set point temperature: Always 29.0 C
 Schedule:Compact,
@@ -496,467 +496,6 @@ Schedule:Compact,
     Until: 24:00,            !- Field 3
     0.3;                     !- Field 4
 
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 1,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 2,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 4,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 6,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 7,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 8,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 9,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 14,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 15,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 16,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 17,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 18,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 21,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 23,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 24,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 25,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 26,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 27,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 22,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 36,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - B&G_south_building,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - B&G_north_building,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 3,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 29,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 10,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 11,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 12,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 13,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 19,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 20,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 28,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 5,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 31,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
 
 ! Name
 ! Schedule Type Limits Name
@@ -994,20 +533,6 @@ Schedule:Compact,
 ! Field 4
 Schedule:Compact,
     Transmittance schedule for Phipps_CSL Building - Component block 37,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 38,  !- Name
     Any Number,              !- Schedule Type Limits Name
     Through: 12/31,          !- Field 1
     For: AllDays,            !- Field 2
@@ -1084,20 +609,6 @@ Schedule:Compact,
     Until: 24:00,            !- Field 3
     0;                       !- Field 4
 
-! Name
-! Schedule Type Limits Name
-! Field 1
-! Field 2
-! Field 3
-! Field 4
-Schedule:Compact,
-    Transmittance schedule for Phipps_CSL Building - Component block 30,  !- Name
-    Any Number,              !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    0;                       !- Field 4
-
 
 Schedule:Compact,
     Single heating control type schedule,  !- Name
@@ -1160,6 +671,15 @@ Schedule:Compact,
     For: AllDays,            !- Field 2
     Until: 24:00,            !- Field 3
     1;                       !- Field 4
+
+Schedule:Compact,
+    alwaysOn,                       !- Name
+    Any Number,              !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 3
+    1;                       !- Field 4
+
 
 Schedule:Compact,
     alwaysZero,                       !- Name
@@ -1955,7 +1475,7 @@ Schedule:Compact,
     Through: 12/31,          !- Field 1
     For: AllDays,            !- Field 2
     Until: 24:00,            !- Field 7
-    1.2;                     !- Field 8
+    126;                     !- Field 8
 
 Schedule:Compact,
     Clothing SCHEDULE,    !- Name
@@ -1994,8 +1514,375 @@ Schedule:Compact,
     Until: 24:00,            !- Field 7
     0.5;                       !- Field 8
 
+Schedule:Compact,
+    ZoneHeatingSetpoint_1stConf,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_1stConf,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_1stNE,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_1stNE,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_1stClass,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_1stClass,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
 
 
+Schedule:Compact,
+    ZoneHeatingSetpoint_1stNW,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_1stNW,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_1stNM,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_1stNM,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_1stBreak,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_1stBreak,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_1stVol,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_1stVol,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpointSW_1stSW,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpointSW_1stSW,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_1stSM,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_1stSM,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_1stSE,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_1stSE,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_2ndNE,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_2ndNE,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_2ndConf02,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_2ndConf02,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_2ndSW,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_2ndSW,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_2ndSMW,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_2ndSMW,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_2ndSM,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_2ndSM,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_2ndSE,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_2ndSE,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_2ndSME,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_2ndSME,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_2ndConf01,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_2ndConf01,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_2ndNMW,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_2ndNMW,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_2ndNME,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_2ndNME,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_2ndNW,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_2ndNW,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_2ndConf03,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_2ndConf03,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
+
+Schedule:Compact,
+    ZoneHeatingSetpoint_2ndSME1,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    21.1;                       !- Field 8
+
+Schedule:Compact,
+    ZoneCoolingSetpoint_2ndSME1,    !- Name
+    Temperature,                  !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 7
+    24.4;                       !- Field 8
 
 
 !-   ===========  ALL OBJECTS IN CLASS: SCHEDULE:FILE ===========
@@ -29583,7 +29470,7 @@ Fan:VariableVolume,
     0.9506,                  !- Fan Power Coefficient 3
     -.0998,                  !- Fan Power Coefficient 4
     0.0000000000,            !- Fan Power Coefficient 5
-    Air Loop AHU Supply Fan Inlet Node,  !- Air Inlet Node Name
+    Air Loop AHU Heating Coil Air Outlet Node, !Air Loop AHU Supply Fan Inlet Node,  !- Air Inlet Node Name
     Air Loop Supply Side Outlet 1,  !- Air Outlet Node Name
     VAV Supply Fan Energy;   !- End-Use Subcategory
 
@@ -30084,6 +29971,11 @@ Branch,
     Air Loop AHU Main Branch,!- Name
     autosize,                !- Maximum Flow Rate {m3/s}
     ,                        !- Pressure Drop Curve Name
+    Duct,                    !- Component 1 Object Type
+    VAV INLET DUCT,          !- Component 1 Name
+    Air Loop Supply Side Inlet,  !- Component 1 Inlet Node Name
+    Air Loop AHU Return Air Outlet Node,  !- Component 1 Outlet Node Name
+    Passive,                 !- Component 1 Branch Control Type
     AirLoopHVAC:OutdoorAirSystem,  !- Component 1 Object Type
     Air Loop AHU Outside air system,  !- Component 1 Name
     Air Loop AHU Return Air Outlet Node,  !- Component 1 Inlet Node Name
@@ -30098,7 +29990,13 @@ Branch,
     Air Loop AHU Heating Coil,  !- Component 3 Name
     Air Loop AHU Cooling Coil Air Outlet Node,  !- Component 3 Inlet Node Name
     Air Loop AHU Heating Coil Air Outlet Node,  !- Component 3 Outlet Node Name
-    Passive;                 !- Component 3 Branch Control Type
+    Passive,                 !- Component 3 Branch Control Type
+    Fan:VariableVolume,      !- Component 1 Object Type
+    Air Loop AHU Supply Fan, !- Component 1 Name
+    Air Loop AHU Heating Coil Air Outlet Node,  !- Component 1 Inlet Node Name
+    Air Loop Supply Side Outlet 1,  !- Component 1 Outlet Node Name
+    Active;                  !- Component 1 Branch Control Type
+
 
 ! - Branch name
 ! - Maximum flow rate (m3/s)
@@ -30108,15 +30006,15 @@ Branch,
 ! - Component 1 inlet node name
 ! - Component 1 outlet node name
 ! - Component 1 branch control type
-Branch,
-    VAV Inlet Branch,        !- Name
-    autosize,                !- Maximum Flow Rate {m3/s}
-    ,                        !- Pressure Drop Curve Name
-    Duct,                    !- Component 1 Object Type
-    VAV INLET DUCT,          !- Component 1 Name
-    Air Loop Supply Side Inlet,  !- Component 1 Inlet Node Name
-    VAV INLET DUCT Outlet Node,  !- Component 1 Outlet Node Name
-    Passive;                 !- Component 1 Branch Control Type
+!Branch,
+!    VAV Inlet Branch,        !- Name
+!    autosize,                !- Maximum Flow Rate {m3/s}
+!    ,                        !- Pressure Drop Curve Name
+!    Duct,                    !- Component 1 Object Type
+!    VAV INLET DUCT,          !- Component 1 Name
+!    Air Loop Supply Side Inlet,  !- Component 1 Inlet Node Name
+!    VAV INLET DUCT Outlet Node,  !- Component 1 Outlet Node Name
+!    Passive;                 !- Component 1 Branch Control Type
 
 ! - Branch name
 ! - Maximum flow rate (m3/s)
@@ -30144,25 +30042,25 @@ Branch,
 ! - Component 1 inlet node name
 ! - Component 1 outlet node name
 ! - Component 1 branch control type
-Branch,
-    Air Loop AHU Supply Branch,  !- Name
-    autosize,                !- Maximum Flow Rate {m3/s}
-    ,                        !- Pressure Drop Curve Name
-    Fan:VariableVolume,      !- Component 1 Object Type
-    Air Loop AHU Supply Fan, !- Component 1 Name
-    Air Loop AHU Supply Fan Inlet Node,  !- Component 1 Inlet Node Name
-    Air Loop Supply Side Outlet 1,  !- Component 1 Outlet Node Name
-    Active;                  !- Component 1 Branch Control Type
+!Branch,
+!    Air Loop AHU Supply Branch,  !- Name
+!    autosize,                !- Maximum Flow Rate {m3/s}
+!    ,                        !- Pressure Drop Curve Name
+!    Fan:VariableVolume,      !- Component 1 Object Type
+!    Air Loop AHU Supply Fan, !- Component 1 Name
+!    Air Loop AHU Supply Fan Inlet Node,  !- Component 1 Inlet Node Name
+!    Air Loop Supply Side Outlet 1,  !- Component 1 Outlet Node Name
+!    Active;                  !- Component 1 Branch Control Type
 
-Branch,
-    CHW Loop Demand Side Inlet Branch,  !- Name
-    autosize,                !- Maximum Flow Rate {m3/s}
-    ,                        !- Pressure Drop Curve Name
-    Pipe:Adiabatic,          !- Component 1 Object Type
-    CHW Loop Demand Side Inlet Branch Pipe,  !- Component 1 Name
-    CHW Loop Demand Side Inlet,  !- Component 1 Inlet Node Name
-    CHW Loop Demand Side Inlet Branch Pipe Outlet,  !- Component 1 Outlet Node Name
-    Passive;                 !- Component 1 Branch Control Type
+!Branch,
+!    CHW Loop Demand Side Inlet Branch,  !- Name
+!    autosize,                !- Maximum Flow Rate {m3/s}
+!    ,                        !- Pressure Drop Curve Name
+!    Pipe:Adiabatic,          !- Component 1 Object Type
+!    CHW Loop Demand Side Inlet Branch Pipe,  !- Component 1 Name
+!    CHW Loop Demand Side Inlet,  !- Component 1 Inlet Node Name
+!    CHW Loop Demand Side Inlet Branch Pipe Outlet,  !- Component 1 Outlet Node Name
+!    Passive;                 !- Component 1 Branch Control Type
 
 ! - Branch name
 ! - Maximum flow rate (m3/s)
@@ -30172,15 +30070,15 @@ Branch,
 ! - Component 1 inlet node name
 ! - Component 1 outlet node name
 ! - Component 1 branch control type
-Branch,
-    CHW Loop Demand Side Bypass Branch,  !- Name
-    autosize,                !- Maximum Flow Rate {m3/s}
-    ,                        !- Pressure Drop Curve Name
-    Pipe:Adiabatic,          !- Component 1 Object Type
-    CHW Loop Demand Side Bypass Pipe,  !- Component 1 Name
-    CHW Loop Demand Side Bypass Pipe Inlet Node,  !- Component 1 Inlet Node Name
-    CHW Loop Demand Side Bypass Pipe Outlet Node,  !- Component 1 Outlet Node Name
-    Bypass;                  !- Component 1 Branch Control Type
+!Branch,
+!    CHW Loop Demand Side Bypass Branch,  !- Name
+!    autosize,                !- Maximum Flow Rate {m3/s}
+!    ,                        !- Pressure Drop Curve Name
+!    Pipe:Adiabatic,          !- Component 1 Object Type
+!    CHW Loop Demand Side Bypass Pipe,  !- Component 1 Name
+!    CHW Loop Demand Side Bypass Pipe Inlet Node,  !- Component 1 Inlet Node Name
+!    CHW Loop Demand Side Bypass Pipe Outlet Node,  !- Component 1 Outlet Node Name
+!    Bypass;                  !- Component 1 Branch Control Type
 
 ! - Branch name
 ! - Maximum flow rate (m3/s)
@@ -30194,47 +30092,22 @@ Branch,
     Air Loop AHU Cooling Coil CHW Plant Loop Branch,  !- Name
     autosize,                !- Maximum Flow Rate {m3/s}
     ,                        !- Pressure Drop Curve Name
+    Pipe:Adiabatic,          !- Component 1 Object Type
+    CHW Loop Demand Side Inlet Branch Pipe,  !- Component 1 Name
+    CHW Loop Demand Side Inlet,  !- Component 1 Inlet Node Name
+    Air Loop AHU Cooling Coil Water Inlet Node,  !- Component 1 Outlet Node Name
+    Passive,                 !- Component 1 Branch Control Type
     Coil:Cooling:Water,      !- Component 1 Object Type
     Air Loop AHU Cooling Coil,  !- Component 1 Name
     Air Loop AHU Cooling Coil Water Inlet Node,  !- Component 1 Inlet Node Name
     Air Loop AHU Cooling Coil Water Outlet Node,  !- Component 1 Outlet Node Name
-    Active;                  !- Component 1 Branch Control Type
-
-! - Branch name
-! - Maximum flow rate (m3/s)
-! - Pressure drop curve name
-! - Component 1 object type
-! - Component 1 name
-! - Component 1 inlet node name
-! - Component 1 outlet node name
-! - Component 1 branch control type
-Branch,
-    CHW Loop Demand Side Outlet Branch,  !- Name
-    autosize,                !- Maximum Flow Rate {m3/s}
-    ,                        !- Pressure Drop Curve Name
+    Active,                  !- Component 1 Branch Control Type
     Pipe:Adiabatic,          !- Component 1 Object Type
     CHW Loop Demand Side Outlet Branch Pipe,  !- Component 1 Name
-    CHW Loop Demand Side Outlet Branch Pipe Inlet,  !- Component 1 Inlet Node Name
+    Air Loop AHU Cooling Coil Water Outlet Node,  !- Component 1 Inlet Node Name
     CHW Loop Demand Side Outlet,  !- Component 1 Outlet Node Name
     Passive;                 !- Component 1 Branch Control Type
 
-! - Branch name
-! - Maximum flow rate (m3/s)
-! - Pressure drop curve name
-! - Component 1 object type
-! - Component 1 name
-! - Component 1 inlet node name
-! - Component 1 outlet node name
-! - Component 1 branch control type
-Branch,
-    CHW Loop Supply Side Inlet Branch,  !- Name
-    autosize,                !- Maximum Flow Rate {m3/s}
-    ,                        !- Pressure Drop Curve Name
-    Pump:ConstantSpeed,      !- Component 1 Object Type
-    CHW Loop Pump,           !- Component 1 Name
-    CHW Loop Supply Side Inlet,  !- Component 1 Inlet Node Name
-    CHW Loop Pump Outlet Node,  !- Component 1 Outlet Node Name
-    Active;                  !- Component 1 Branch Control Type
 
 ! - Branch name
 ! - Maximum flow rate (m3/s)
@@ -30244,15 +30117,51 @@ Branch,
 ! - Component 1 inlet node name
 ! - Component 1 outlet node name
 ! - Component 1 branch control type
-Branch,
-    CHW Loop Supply Side Bypass Branch,  !- Name
-    autosize,                !- Maximum Flow Rate {m3/s}
-    ,                        !- Pressure Drop Curve Name
-    Pipe:Adiabatic,          !- Component 1 Object Type
-    CHW Loop Supply Side Bypass Pipe,  !- Component 1 Name
-    CHW Loop Supply Side Bypass Pipe Inlet Node,  !- Component 1 Inlet Node Name
-    CHW Loop Supply Side Bypass Pipe Outlet Node,  !- Component 1 Outlet Node Name
-    Bypass;                  !- Component 1 Branch Control Type
+!Branch,
+!    CHW Loop Demand Side Outlet Branch,  !- Name
+!    autosize,                !- Maximum Flow Rate {m3/s}
+!    ,                        !- Pressure Drop Curve Name
+!    Pipe:Adiabatic,          !- Component 1 Object Type
+!    CHW Loop Demand Side Outlet Branch Pipe,  !- Component 1 Name
+!    CHW Loop Demand Side Outlet Branch Pipe Inlet,  !- Component 1 Inlet Node Name
+!    CHW Loop Demand Side Outlet,  !- Component 1 Outlet Node Name
+!    Passive;                 !- Component 1 Branch Control Type
+
+! - Branch name
+! - Maximum flow rate (m3/s)
+! - Pressure drop curve name
+! - Component 1 object type
+! - Component 1 name
+! - Component 1 inlet node name
+! - Component 1 outlet node name
+! - Component 1 branch control type
+!Branch,
+!    CHW Loop Supply Side Inlet Branch,  !- Name
+!    autosize,                !- Maximum Flow Rate {m3/s}
+!    ,                        !- Pressure Drop Curve Name
+!    Pump:ConstantSpeed,      !- Component 1 Object Type
+!    CHW Loop Pump,           !- Component 1 Name
+!    CHW Loop Supply Side Inlet,  !- Component 1 Inlet Node Name
+!    CHW Loop Pump Outlet Node,  !- Component 1 Outlet Node Name
+!    Active;                  !- Component 1 Branch Control Type
+
+! - Branch name
+! - Maximum flow rate (m3/s)
+! - Pressure drop curve name
+! - Component 1 object type
+! - Component 1 name
+! - Component 1 inlet node name
+! - Component 1 outlet node name
+! - Component 1 branch control type
+!Branch,
+!    CHW Loop Supply Side Bypass Branch,  !- Name
+!    autosize,                !- Maximum Flow Rate {m3/s}
+!    ,                        !- Pressure Drop Curve Name
+!    Pipe:Adiabatic,          !- Component 1 Object Type
+!    CHW Loop Supply Side Bypass Pipe,  !- Component 1 Name
+!    CHW Loop Supply Side Bypass Pipe Inlet Node,  !- Component 1 Inlet Node Name
+!    CHW Loop Supply Side Bypass Pipe Outlet Node,  !- Component 1 Outlet Node Name
+!    Bypass;                  !- Component 1 Branch Control Type
 
 ! - Branch name
 ! - Maximum flow rate (m3/s)
@@ -30266,11 +30175,21 @@ Branch,
     GshpCLG Chiller Branch,  !- Name
     autosize,                !- Maximum Flow Rate {m3/s}
     ,                        !- Pressure Drop Curve Name
+    Pump:ConstantSpeed,      !- Component 1 Object Type
+    CHW Loop Pump,           !- Component 1 Name
+    CHW Loop Supply Side Inlet,  !- Component 1 Inlet Node Name
+    GshpCLG LoadSide Inlet Node,  !- Component 1 Outlet Node Name
+    Active,                  !- Component 1 Branch Control Type
     HeatPump:WaterToWater:EquationFit:Cooling,  !- Component 1 Object Type
     GshpCLG,                 !- Component 1 Name
     GshpCLG LoadSide Inlet Node,  !- Component 1 Inlet Node Name
     GshpCLG LoadSide Outlet Node,  !- Component 1 Outlet Node Name
-    Active;                  !- Component 1 Branch Control Type
+    Active,                  !- Component 1 Branch Control Type
+    Pipe:Adiabatic,          !- Component 1 Object Type
+    CHW Loop Supply Side Outlet Branch Pipe,  !- Component 1 Name
+    GshpCLG LoadSide Outlet Node,  !- Component 1 Inlet Node Name
+    CHW Loop Supply Side Outlet,  !- Component 1 Outlet Node Name
+    Passive;                 !- Component 1 Branch Control Type
 
 ! - Branch name
 ! - Maximum flow rate (m3/s)
@@ -30280,15 +30199,15 @@ Branch,
 ! - Component 1 inlet node name
 ! - Component 1 outlet node name
 ! - Component 1 branch control type
-Branch,
-    CHW Loop Supply Side Outlet Branch,  !- Name
-    autosize,                !- Maximum Flow Rate {m3/s}
-    ,                        !- Pressure Drop Curve Name
-    Pipe:Adiabatic,          !- Component 1 Object Type
-    CHW Loop Supply Side Outlet Branch Pipe,  !- Component 1 Name
-    CHW Loop Supply Side Outlet Branch Pipe Inlet,  !- Component 1 Inlet Node Name
-    CHW Loop Supply Side Outlet,  !- Component 1 Outlet Node Name
-    Passive;                 !- Component 1 Branch Control Type
+!Branch,
+!    CHW Loop Supply Side Outlet Branch,  !- Name
+!    autosize,                !- Maximum Flow Rate {m3/s}
+!    ,                        !- Pressure Drop Curve Name
+!    Pipe:Adiabatic,          !- Component 1 Object Type
+!    CHW Loop Supply Side Outlet Branch Pipe,  !- Component 1 Name
+!    CHW Loop Supply Side Outlet Branch Pipe Inlet,  !- Component 1 Inlet Node Name
+!    CHW Loop Supply Side Outlet,  !- Component 1 Outlet Node Name
+!    Passive;                 !- Component 1 Branch Control Type
 
 ! - Branch name
 ! - Maximum flow rate (m3/s)
@@ -30316,15 +30235,15 @@ Branch,
 ! - Component 1 inlet node name
 ! - Component 1 outlet node name
 ! - Component 1 branch control type
-Branch,
-    HW Loop Demand Side Bypass Branch,  !- Name
-    autosize,                !- Maximum Flow Rate {m3/s}
-    ,                        !- Pressure Drop Curve Name
-    Pipe:Adiabatic,          !- Component 1 Object Type
-    HW Loop Demand Side Bypass Pipe,  !- Component 1 Name
-    HW Loop Demand Side Bypass Pipe Inlet Node,  !- Component 1 Inlet Node Name
-    HW Loop Demand Side Bypass Pipe Outlet Node,  !- Component 1 Outlet Node Name
-    Bypass;                  !- Component 1 Branch Control Type
+!Branch,
+!    HW Loop Demand Side Bypass Branch,  !- Name
+!    autosize,                !- Maximum Flow Rate {m3/s}
+!    ,                        !- Pressure Drop Curve Name
+!    Pipe:Adiabatic,          !- Component 1 Object Type
+!    HW Loop Demand Side Bypass Pipe,  !- Component 1 Name
+!    HW Loop Demand Side Bypass Pipe Inlet Node,  !- Component 1 Inlet Node Name
+!    HW Loop Demand Side Bypass Pipe Outlet Node,  !- Component 1 Outlet Node Name
+!    Bypass;                  !- Component 1 Branch Control Type
 
 ! - Branch name
 ! - Maximum flow rate (m3/s)
@@ -30388,15 +30307,15 @@ Branch,
 ! - Component 1 inlet node name
 ! - Component 1 outlet node name
 ! - Component 1 branch control type
-Branch,
-    HW Loop Supply Side Inlet Branch,  !- Name
-    autosize,                !- Maximum Flow Rate {m3/s}
-    ,                        !- Pressure Drop Curve Name
-    Pump:ConstantSpeed,      !- Component 1 Object Type
-    HW Loop Pump,            !- Component 1 Name
-    HW Loop Supply Side Inlet,  !- Component 1 Inlet Node Name
-    HW Loop Pump Outlet Node,!- Component 1 Outlet Node Name
-    Active;                  !- Component 1 Branch Control Type
+!Branch,
+!    HW Loop Supply Side Inlet Branch,  !- Name
+!    autosize,                !- Maximum Flow Rate {m3/s}
+!    ,                        !- Pressure Drop Curve Name
+!    Pump:ConstantSpeed,      !- Component 1 Object Type
+!    HW Loop Pump,            !- Component 1 Name
+!    HW Loop Supply Side Inlet,  !- Component 1 Inlet Node Name
+!    HW Loop Pump Outlet Node,!- Component 1 Outlet Node Name
+!    Active;                  !- Component 1 Branch Control Type
 
 ! - Branch name
 ! - Maximum flow rate (m3/s)
@@ -30406,15 +30325,15 @@ Branch,
 ! - Component 1 inlet node name
 ! - Component 1 outlet node name
 ! - Component 1 branch control type
-Branch,
-    HW Loop Supply Side Bypass Branch,  !- Name
-    autosize,                !- Maximum Flow Rate {m3/s}
-    ,                        !- Pressure Drop Curve Name
-    Pipe:Adiabatic,          !- Component 1 Object Type
-    HW Loop Supply Side Bypass Pipe,  !- Component 1 Name
-    HW Loop Supply Side Bypass Pipe Inlet Node,  !- Component 1 Inlet Node Name
-    HW Loop Supply Side Bypass Pipe Outlet Node,  !- Component 1 Outlet Node Name
-    Bypass;                  !- Component 1 Branch Control Type
+!Branch,
+!    HW Loop Supply Side Bypass Branch,  !- Name
+!    autosize,                !- Maximum Flow Rate {m3/s}
+!    ,                        !- Pressure Drop Curve Name
+!    Pipe:Adiabatic,          !- Component 1 Object Type
+!    HW Loop Supply Side Bypass Pipe,  !- Component 1 Name
+!    HW Loop Supply Side Bypass Pipe Inlet Node,  !- Component 1 Inlet Node Name
+!    HW Loop Supply Side Bypass Pipe Outlet Node,  !- Component 1 Outlet Node Name
+!    Bypass;                  !- Component 1 Branch Control Type
 
 ! - Branch name
 ! - Maximum flow rate (m3/s)
@@ -30424,29 +30343,39 @@ Branch,
 ! - Component 1 inlet node name
 ! - Component 1 outlet node name
 ! - Component 1 branch control type
-Branch,
-    HW Loop Supply Side Outlet Branch,  !- Name
-    autosize,                !- Maximum Flow Rate {m3/s}
-    ,                        !- Pressure Drop Curve Name
-    Pipe:Adiabatic,          !- Component 1 Object Type
-    HW Loop Supply Side Outlet Branch Pipe,  !- Component 1 Name
-    HW Loop Supply Side Outlet Branch Pipe Inlet,  !- Component 1 Inlet Node Name
-    HW Loop Supply Side Outlet,  !- Component 1 Outlet Node Name
-    Passive;                 !- Component 1 Branch Control Type
+!Branch,
+!    HW Loop Supply Side Outlet Branch,  !- Name
+!    autosize,                !- Maximum Flow Rate {m3/s}
+!    ,                        !- Pressure Drop Curve Name
+!    Pipe:Adiabatic,          !- Component 1 Object Type
+!    HW Loop Supply Side Outlet Branch Pipe,  !- Component 1 Name
+!    HW Loop Supply Side Outlet Branch Pipe Inlet,  !- Component 1 Inlet Node Name
+!    HW Loop Supply Side Outlet,  !- Component 1 Outlet Node Name
+!    Passive;                 !- Component 1 Branch Control Type
 
 Branch,
     Heating Gshp Branch,     !- Name
     autosize,                !- Maximum Flow Rate {m3/s}
     ,                        !- Pressure Drop Curve Name
+    Pump:ConstantSpeed,      !- Component 1 Object Type
+    HW Loop Pump,            !- Component 1 Name
+    HW Loop Supply Side Inlet,  !- Component 1 Inlet Node Name
+    GshpHeating LoadSide Inlet Node,!- Component 1 Outlet Node Name
+    Active,                  !- Component 1 Branch Control Type
     HeatPump:WaterToWater:EquationFit:Heating,  !- Component 1 Object Type
     GshpHeating,             !- Component 1 Name
     GshpHeating LoadSide Inlet Node,  !- Component 1 Inlet Node Name
     GshpHeating LoadSide Outlet Node,  !- Component 1 Outlet Node Name
-    Active;                  !- Component 1 Branch Control Type
+    Active,                  !- Component 1 Branch Control Type
+    Pipe:Adiabatic,          !- Component 1 Object Type
+    HW Loop Supply Side Outlet Branch Pipe,  !- Component 1 Name
+    GshpHeating LoadSide Outlet Node,  !- Component 1 Inlet Node Name
+    HW Loop Supply Side Outlet,  !- Component 1 Outlet Node Name
+    Passive;                 !- Component 1 Branch Control Type
 
 Branch,
     Condenser Supply Inlet Branch,  !- Name
-    0,                       !- Maximum Flow Rate {m3/s}
+    ,                       !- Maximum Flow Rate {m3/s}
     ,                        !- Pressure Drop Curve Name
     Pump:ConstantSpeed,      !- Component 1 Object Type
     Cond Circ Pump,          !- Component 1 Name
@@ -30456,27 +30385,28 @@ Branch,
 
 Branch,
     Condenser Supply GHE Branch,  !- Name
-    0,                       !- Maximum Flow Rate {m3/s}
+    ,                       !- Maximum Flow Rate {m3/s}
     ,                        !- Pressure Drop Curve Name
     GroundHeatExchanger:Vertical,  !- Component 1 Object Type
-    Vertical Ground Heat Exchanger,  !- Component 1 Name
-    GHE Inlet Node,          !- Component 1 Inlet Node Name
-    GHE Outlet Node,         !- Component 1 Outlet Node Name
+    Vertical Ground Heat Exchanger_1,  !- Component 1 Name
+    GHE Inlet Node_1,          !- Component 1 Inlet Node Name
+    GHE Outlet Node_1,         !- Component 1 Outlet Node Name
     ACTIVE;                  !- Component 1 Branch Control Type
+
 
 Branch,
     Condenser Supply Bypass Branch,  !- Name
-    0,                       !- Maximum Flow Rate {m3/s}
+    ,                       !- Maximum Flow Rate {m3/s}
     ,                        !- Pressure Drop Curve Name
     Pipe:Adiabatic,          !- Component 1 Object Type
     Condenser Supply Side Bypass,  !- Component 1 Name
-    Cond Supply Bypass Inlet Node,  !- Component 1 Inlet Node Name
-    Cond Supply Bypass Outlet Node,  !- Component 1 Outlet Node Name
-    BYPASS;                  !- Component 1 Branch Control Type
+    Cond Supply Bypass Inlet Node,  !- Inlet Node Name
+    Cond Supply Bypass Outlet Node;  !- Outlet Node Name
+    ACTIVE;                  !- Component 1 Branch Control Type
 
 Branch,
     Condenser Supply Outlet Branch,  !- Name
-    0,                       !- Maximum Flow Rate {m3/s}
+    ,                       !- Maximum Flow Rate {m3/s}
     ,                        !- Pressure Drop Curve Name
     Pipe:Adiabatic,          !- Component 1 Object Type
     Condenser Supply Outlet, !- Component 1 Name
@@ -30486,7 +30416,7 @@ Branch,
 
 Branch,
     Condenser Demand Inlet Branch,  !- Name
-    0,                       !- Maximum Flow Rate {m3/s}
+    ,                       !- Maximum Flow Rate {m3/s}
     ,                        !- Pressure Drop Curve Name
     Pipe:Adiabatic,          !- Component 1 Object Type
     Condenser Demand Inlet Pipe,  !- Component 1 Name
@@ -30496,7 +30426,7 @@ Branch,
 
 Branch,
     GshpCLG Condenser Branch,!- Name
-    0,                       !- Maximum Flow Rate {m3/s}
+    ,                       !- Maximum Flow Rate {m3/s}
     ,                        !- Pressure Drop Curve Name
     HeatPump:WaterToWater:EquationFit:Cooling,  !- Component 1 Object Type
     GshpCLG,                 !- Component 1 Name
@@ -30506,7 +30436,7 @@ Branch,
 
 Branch,
     Gshp Heating Condenser Branch,  !- Name
-    0,                       !- Maximum Flow Rate {m3/s}
+    ,                       !- Maximum Flow Rate {m3/s}
     ,                        !- Pressure Drop Curve Name
     HeatPump:WaterToWater:EquationFit:Heating,  !- Component 1 Object Type
     GshpHeating,             !- Component 1 Name
@@ -30514,19 +30444,19 @@ Branch,
     GshpHeating SourceSide Outlet Node,  !- Component 1 Outlet Node Name
     ACTIVE;                  !- Component 1 Branch Control Type
 
-Branch,
-    Condenser Demand Bypass Branch,  !- Name
-    0,                       !- Maximum Flow Rate {m3/s}
-    ,                        !- Pressure Drop Curve Name
-    Pipe:Adiabatic,          !- Component 1 Object Type
-    Condenser Demand Side Bypass,  !- Component 1 Name
-    Cond Demand Bypass Inlet Node,  !- Component 1 Inlet Node Name
-    Cond Demand Bypass Outlet Node,  !- Component 1 Outlet Node Name
-    BYPASS;                  !- Component 1 Branch Control Type
+!Branch,
+!    Condenser Demand Bypass Branch,  !- Name
+!    0,                       !- Maximum Flow Rate {m3/s}
+!    ,                        !- Pressure Drop Curve Name
+!    Pipe:Adiabatic,          !- Component 1 Object Type
+!    Condenser Demand Side Bypass,  !- Component 1 Name
+!    Cond Demand Bypass Inlet Node,  !- Component 1 Inlet Node Name
+!    Cond Demand Bypass Outlet Node,  !- Component 1 Outlet Node Name
+!    BYPASS;                  !- Component 1 Branch Control Type
 
 Branch,
     Condenser Demand Outlet Branch,  !- Name
-    0,                       !- Maximum Flow Rate {m3/s}
+    ,                       !- Maximum Flow Rate {m3/s}
     ,                        !- Pressure Drop Curve Name
     Pipe:Adiabatic,          !- Component 1 Object Type
     Condenser Demand Outlet Pipe,  !- Component 1 Name
@@ -30540,11 +30470,9 @@ Branch,
 ! - Name of branch list
 ! - Name of branch 1
 BranchList,
-    Air Loop Branches,       !- Name
-    VAV Inlet Branch,        !- Branch 1 Name
-    !Air Loop AHU Bypass Branch,  !- Branch 2 Name
-    Air Loop AHU Main Branch,!- Branch 3 Name
-    Air Loop AHU Supply Branch;  !- Branch 4 Name
+    Air Loop Branches,       !- Name !VAV Inlet Branch,        !- Branch 1 Name !Air Loop AHU Bypass Branch,  !- Branch 2 Name
+    Air Loop AHU Main Branch;!- Branch 3 Name
+    !Air Loop AHU Supply Branch;  !- Branch 4 Name
 
 ! - Name of branch list
 ! - Name of branch 1
@@ -30553,10 +30481,10 @@ BranchList,
 ! - Name of branch 4
 BranchList,
     CHW Loop Demand Side Branches,  !- Name
-    CHW Loop Demand Side Inlet Branch,  !- Branch 1 Name
-    CHW Loop Demand Side Bypass Branch,  !- Branch 2 Name
-    Air Loop AHU Cooling Coil CHW Plant Loop Branch,  !- Branch 3 Name
-    CHW Loop Demand Side Outlet Branch;  !- Branch 4 Name
+    !CHW Loop Demand Side Inlet Branch,  !- Branch 1 Name
+    !CHW Loop Demand Side Bypass Branch,  !- Branch 2 Name
+    Air Loop AHU Cooling Coil CHW Plant Loop Branch;  !- Branch 3 Name
+    !CHW Loop Demand Side Outlet Branch;  !- Branch 4 Name
 
 ! - Name of branch list
 ! - Name of branch 1
@@ -30565,10 +30493,10 @@ BranchList,
 ! - Name of branch 4
 BranchList,
     CHW Loop Supply Side Branches,  !- Name
-    CHW Loop Supply Side Inlet Branch,  !- Branch 1 Name
-    CHW Loop Supply Side Bypass Branch,  !- Branch 2 Name
-    GshpCLG Chiller Branch,  !- Branch 3 Name
-    CHW Loop Supply Side Outlet Branch;  !- Branch 4 Name
+    !CHW Loop Supply Side Inlet Branch,  !- Branch 1 Name
+    !CHW Loop Supply Side Bypass Branch,  !- Branch 2 Name
+    GshpCLG Chiller Branch;  !- Branch 3 Name
+    !CHW Loop Supply Side Outlet Branch;  !- Branch 4 Name
 
 ! - Name of branch list
 ! - Name of branch 1
@@ -30599,7 +30527,7 @@ BranchList,
 BranchList,
     HW Loop Demand Side Branches,  !- Name
     HW Loop Demand Side Inlet Branch,  !- Branch 1 Name
-    HW Loop Demand Side Bypass Branch,  !- Branch 2 Name
+    !HW Loop Demand Side Bypass Branch,  !- Branch 2 Name
     Air Loop AHU Heating Coil HW Plant Loop Branch,  !- Branch 3 Name
     1ST%FLOOR:1st%Vestibule Water Convector 1 HW Plant Loop Branch,  !- Branch 4 Name
     HW Loop Demand Side Outlet Branch;  !- Branch 5 Name
@@ -30611,10 +30539,10 @@ BranchList,
 ! - Name of branch 4
 BranchList,
     HW Loop Supply Side Branches,  !- Name
-    HW Loop Supply Side Inlet Branch,  !- Branch 1 Name
-    HW Loop Supply Side Bypass Branch,  !- Branch 2 Name
-    Heating Gshp Branch,     !- Branch 3 Name
-    HW Loop Supply Side Outlet Branch;  !- Branch 4 Name
+    !HW Loop Supply Side Inlet Branch,  !- Branch 1 Name
+    !HW Loop Supply Side Bypass Branch,  !- Branch 2 Name
+    Heating Gshp Branch;     !- Branch 3 Name
+    !HW Loop Supply Side Outlet Branch;  !- Branch 4 Name
 
 BranchList,
     Condenser Supply Side Branches,  !- Name
@@ -30628,7 +30556,7 @@ BranchList,
     Condenser Demand Inlet Branch,  !- Branch 1 Name
     GshpCLG Condenser Branch,!- Branch 2 Name
     Gshp Heating Condenser Branch,  !- Branch 3 Name
-    Condenser Demand Bypass Branch,  !- Branch 4 Name
+    !Condenser Demand Bypass Branch,  !- Branch 4 Name
     Condenser Demand Outlet Branch;  !- Branch 5 Name
 
 
@@ -30638,21 +30566,21 @@ BranchList,
 ! - Inlet branch name
 ! - Branch 1
 ! - Branch 2
-Connector:Splitter,
-    CHW Loop Demand Side Splitter,  !- Name
-    CHW Loop Demand Side Inlet Branch,  !- Inlet Branch Name
-    CHW Loop Demand Side Bypass Branch,  !- Outlet Branch 1 Name
-    Air Loop AHU Cooling Coil CHW Plant Loop Branch;  !- Outlet Branch 2 Name
+!Connector:Splitter,
+!    CHW Loop Demand Side Splitter,  !- Name
+!    CHW Loop Demand Side Inlet Branch,  !- Inlet Branch Name
+!    CHW Loop Demand Side Bypass Branch,  !- Outlet Branch 1 Name
+!    Air Loop AHU Cooling Coil CHW Plant Loop Branch;  !- Outlet Branch 2 Name
 
 ! - Splitter name
 ! - Inlet branch name
 ! - Branch 1
 ! - Branch 2
-Connector:Splitter,
-    CHW Loop Supply Side Splitter,  !- Name
-    CHW Loop Supply Side Inlet Branch,  !- Inlet Branch Name
-    CHW Loop Supply Side Bypass Branch,  !- Outlet Branch 1 Name
-    GshpCLG Chiller Branch;  !- Outlet Branch 2 Name
+!Connector:Splitter,
+!    CHW Loop Supply Side Splitter,  !- Name
+!    CHW Loop Supply Side Inlet Branch,  !- Inlet Branch Name
+!    CHW Loop Supply Side Bypass Branch,  !- Outlet Branch 1 Name
+!    GshpCLG Chiller Branch;  !- Outlet Branch 2 Name
 
 ! - Splitter name
 ! - Inlet branch name
@@ -30683,7 +30611,7 @@ Connector:Splitter,
 Connector:Splitter,
     HW Loop Demand Side Splitter,  !- Name
     HW Loop Demand Side Inlet Branch,  !- Inlet Branch Name
-    HW Loop Demand Side Bypass Branch,  !- Outlet Branch 1 Name
+    !HW Loop Demand Side Bypass Branch,  !- Outlet Branch 1 Name
     Air Loop AHU Heating Coil HW Plant Loop Branch,  !- Outlet Branch 2 Name
     1ST%FLOOR:1st%Vestibule Water Convector 1 HW Plant Loop Branch;  !- Outlet Branch 3 Name
 
@@ -30691,11 +30619,11 @@ Connector:Splitter,
 ! - Inlet branch name
 ! - Branch 1
 ! - Branch 2
-Connector:Splitter,
-    HW Loop Supply Side Splitter,  !- Name
-    HW Loop Supply Side Inlet Branch,  !- Inlet Branch Name
-    HW Loop Supply Side Bypass Branch,  !- Outlet Branch 1 Name
-    Heating Gshp Branch;     !- Outlet Branch 2 Name
+!Connector:Splitter,
+!    HW Loop Supply Side Splitter,  !- Name
+!    HW Loop Supply Side Inlet Branch,  !- Inlet Branch Name
+!    HW Loop Supply Side Bypass Branch,  !- Outlet Branch 1 Name
+!    Heating Gshp Branch;     !- Outlet Branch 2 Name
 
 !Connector:Splitter,
 !    Return Air Bypass Splitter,  !- Name
@@ -30707,8 +30635,8 @@ Connector:Splitter,
     Condenser Demand Splitter,  !- Name
     Condenser Demand Inlet Branch,  !- Inlet Branch Name
     GshpCLG Condenser Branch,!- Outlet Branch 1 Name
-    Gshp Heating Condenser Branch,  !- Outlet Branch 2 Name
-    Condenser Demand Bypass Branch;  !- Outlet Branch 3 Name
+    Gshp Heating Condenser Branch;  !- Outlet Branch 2 Name
+    !Condenser Demand Bypass Branch;  !- Outlet Branch 3 Name
 
 Connector:Splitter,
     Condenser Supply Splitter,  !- Name
@@ -30723,21 +30651,21 @@ Connector:Splitter,
 ! - Outlet branch name
 ! - Branch 1
 ! - Branch 2
-Connector:Mixer,
-    CHW Loop Demand Side Mixer,  !- Name
-    CHW Loop Demand Side Outlet Branch,  !- Outlet Branch Name
-    Air Loop AHU Cooling Coil CHW Plant Loop Branch,  !- Inlet Branch 1 Name
-    CHW Loop Demand Side Bypass Branch;  !- Inlet Branch 2 Name
+!Connector:Mixer,
+!    CHW Loop Demand Side Mixer,  !- Name
+!    CHW Loop Demand Side Outlet Branch,  !- Outlet Branch Name
+!    Air Loop AHU Cooling Coil CHW Plant Loop Branch,  !- Inlet Branch 1 Name
+!    CHW Loop Demand Side Bypass Branch;  !- Inlet Branch 2 Name
 
 ! - Mixer name
 ! - Outlet branch name
 ! - Branch 1
 ! - Branch 2
-Connector:Mixer,
-    CHW Loop Supply Side Mixer,  !- Name
-    CHW Loop Supply Side Outlet Branch,  !- Outlet Branch Name
-    GshpCLG Chiller Branch,  !- Inlet Branch 1 Name
-    CHW Loop Supply Side Bypass Branch;  !- Inlet Branch 2 Name
+!Connector:Mixer,
+!    CHW Loop Supply Side Mixer,  !- Name
+!    CHW Loop Supply Side Outlet Branch,  !- Outlet Branch Name
+!    GshpCLG Chiller Branch,  !- Inlet Branch 1 Name
+!    CHW Loop Supply Side Bypass Branch;  !- Inlet Branch 2 Name
 
 ! - Mixer name
 ! - Outlet branch name
@@ -30769,18 +30697,18 @@ Connector:Mixer,
     HW Loop Demand Side Mixer,  !- Name
     HW Loop Demand Side Outlet Branch,  !- Outlet Branch Name
     Air Loop AHU Heating Coil HW Plant Loop Branch,  !- Inlet Branch 1 Name
-    HW Loop Demand Side Bypass Branch,  !- Inlet Branch 2 Name
+    !HW Loop Demand Side Bypass Branch,  !- Inlet Branch 2 Name
     1ST%FLOOR:1st%Vestibule Water Convector 1 HW Plant Loop Branch;  !- Inlet Branch 3 Name
 
 ! - Mixer name
 ! - Outlet branch name
 ! - Branch 1
 ! - Branch 2
-Connector:Mixer,
-    HW Loop Supply Side Mixer,  !- Name
-    HW Loop Supply Side Outlet Branch,  !- Outlet Branch Name
-    Heating Gshp Branch,     !- Inlet Branch 1 Name
-    HW Loop Supply Side Bypass Branch;  !- Inlet Branch 2 Name
+!Connector:Mixer,
+!    HW Loop Supply Side Mixer,  !- Name
+!    HW Loop Supply Side Outlet Branch,  !- Outlet Branch Name
+!    Heating Gshp Branch,     !- Inlet Branch 1 Name
+!    HW Loop Supply Side Bypass Branch;  !- Inlet Branch 2 Name
 
 !Connector:Mixer,
 !    Return Air Bypass Mixer, !- Name
@@ -30798,8 +30726,8 @@ Connector:Mixer,
     Condenser Demand Mixer,  !- Name
     Condenser Demand Outlet Branch,  !- Outlet Branch Name
     GshpCLG Condenser Branch,!- Inlet Branch 1 Name
-    Gshp Heating Condenser Branch,  !- Inlet Branch 2 Name
-    Condenser Demand Bypass Branch;  !- Inlet Branch 3 Name
+    Gshp Heating Condenser Branch;  !- Inlet Branch 2 Name
+    !Condenser Demand Bypass Branch;  !- Inlet Branch 3 Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: CONNECTORLIST ===========
@@ -30809,24 +30737,24 @@ Connector:Mixer,
 ! - Connector 1 object name
 ! - Connector 2 object type
 ! - Connector 2 object name
-ConnectorList,
-    CHW Loop Demand Side Connectors,  !- Name
-    Connector:Splitter,      !- Connector 1 Object Type
-    CHW Loop Demand Side Splitter,  !- Connector 1 Name
-    Connector:Mixer,         !- Connector 2 Object Type
-    CHW Loop Demand Side Mixer;  !- Connector 2 Name
+!ConnectorList,
+!    CHW Loop Demand Side Connectors,  !- Name
+!    Connector:Splitter,      !- Connector 1 Object Type
+!    CHW Loop Demand Side Splitter,  !- Connector 1 Name
+!    Connector:Mixer,         !- Connector 2 Object Type
+!    CHW Loop Demand Side Mixer;  !- Connector 2 Name
 
 ! - Connector list name
 ! - Connector 1 object type
 ! - Connector 1 object name
 ! - Connector 2 object type
 ! - Connector 2 object name
-ConnectorList,
-    CHW Loop Supply Side Connectors,  !- Name
-    Connector:Splitter,      !- Connector 1 Object Type
-    CHW Loop Supply Side Splitter,  !- Connector 1 Name
-    Connector:Mixer,         !- Connector 2 Object Type
-    CHW Loop Supply Side Mixer;  !- Connector 2 Name
+!ConnectorList,
+!    CHW Loop Supply Side Connectors,  !- Name
+!    Connector:Splitter,      !- Connector 1 Object Type
+!    CHW Loop Supply Side Splitter,  !- Connector 1 Name
+!    Connector:Mixer,         !- Connector 2 Object Type
+!    CHW Loop Supply Side Mixer;  !- Connector 2 Name
 
 ! - Connector list name
 ! - Connector 1 object type
@@ -30845,12 +30773,12 @@ ConnectorList,
 ! - Connector 1 object name
 ! - Connector 2 object type
 ! - Connector 2 object name
-ConnectorList,
-    HW Loop Supply Side Connectors,  !- Name
-    Connector:Splitter,      !- Connector 1 Object Type
-    HW Loop Supply Side Splitter,  !- Connector 1 Name
-    Connector:Mixer,         !- Connector 2 Object Type
-    HW Loop Supply Side Mixer;  !- Connector 2 Name
+!ConnectorList,
+!    HW Loop Supply Side Connectors,  !- Name
+!    Connector:Splitter,      !- Connector 1 Object Type
+!    HW Loop Supply Side Splitter,  !- Connector 1 Name
+!    Connector:Mixer,         !- Connector 2 Object Type
+!    HW Loop Supply Side Mixer;  !- Connector 2 Name
 
 !ConnectorList,
 !    Return Air Bypass Connectors,  !- Name
@@ -31057,38 +30985,38 @@ OutdoorAir:NodeList,
 Pipe:Adiabatic,
     CHW Loop Demand Side Inlet Branch Pipe,  !- Name
     CHW Loop Demand Side Inlet,  !- Inlet Node Name
-    CHW Loop Demand Side Inlet Branch Pipe Outlet;  !- Outlet Node Name
+    Air Loop AHU Cooling Coil Water Inlet Node;  !- Outlet Node Name
 
 ! - Name of pipe
 ! - Inlet node name
 ! - Outlet node name
-Pipe:Adiabatic,
-    CHW Loop Demand Side Bypass Pipe,  !- Name
-    CHW Loop Demand Side Bypass Pipe Inlet Node,  !- Inlet Node Name
-    CHW Loop Demand Side Bypass Pipe Outlet Node;  !- Outlet Node Name
+!Pipe:Adiabatic,
+!    CHW Loop Demand Side Bypass Pipe,  !- Name
+!    CHW Loop Demand Side Bypass Pipe Inlet Node,  !- Inlet Node Name
+!    CHW Loop Demand Side Bypass Pipe Outlet Node;  !- Outlet Node Name
 
 ! - Name of pipe
 ! - Inlet node name
 ! - Outlet node name
 Pipe:Adiabatic,
     CHW Loop Demand Side Outlet Branch Pipe,  !- Name
-    CHW Loop Demand Side Outlet Branch Pipe Inlet,  !- Inlet Node Name
+    Air Loop AHU Cooling Coil Water Outlet Node,  !- Inlet Node Name
     CHW Loop Demand Side Outlet;  !- Outlet Node Name
 
 ! - Name of pipe
 ! - Inlet node name
 ! - Outlet node name
-Pipe:Adiabatic,
-    CHW Loop Supply Side Bypass Pipe,  !- Name
-    CHW Loop Supply Side Bypass Pipe Inlet Node,  !- Inlet Node Name
-    CHW Loop Supply Side Bypass Pipe Outlet Node;  !- Outlet Node Name
+!Pipe:Adiabatic,
+!    CHW Loop Supply Side Bypass Pipe,  !- Name
+!    CHW Loop Supply Side Bypass Pipe Inlet Node,  !- Inlet Node Name
+!    CHW Loop Supply Side Bypass Pipe Outlet Node;  !- Outlet Node Name
 
 ! - Name of pipe
 ! - Inlet node name
 ! - Outlet node name
 Pipe:Adiabatic,
     CHW Loop Supply Side Outlet Branch Pipe,  !- Name
-    CHW Loop Supply Side Outlet Branch Pipe Inlet,  !- Inlet Node Name
+    GshpCLG LoadSide Outlet Node,  !- Inlet Node Name
     CHW Loop Supply Side Outlet;  !- Outlet Node Name
 
 ! - Name of pipe
@@ -31102,10 +31030,10 @@ Pipe:Adiabatic,
 ! - Name of pipe
 ! - Inlet node name
 ! - Outlet node name
-Pipe:Adiabatic,
-    HW Loop Demand Side Bypass Pipe,  !- Name
-    HW Loop Demand Side Bypass Pipe Inlet Node,  !- Inlet Node Name
-    HW Loop Demand Side Bypass Pipe Outlet Node;  !- Outlet Node Name
+!Pipe:Adiabatic,
+!    HW Loop Demand Side Bypass Pipe,  !- Name
+!    HW Loop Demand Side Bypass Pipe Inlet Node,  !- Inlet Node Name
+!    HW Loop Demand Side Bypass Pipe Outlet Node;  !- Outlet Node Name
 
 ! - Name of pipe
 ! - Inlet node name
@@ -31118,17 +31046,17 @@ Pipe:Adiabatic,
 ! - Name of pipe
 ! - Inlet node name
 ! - Outlet node name
-Pipe:Adiabatic,
-    HW Loop Supply Side Bypass Pipe,  !- Name
-    HW Loop Supply Side Bypass Pipe Inlet Node,  !- Inlet Node Name
-    HW Loop Supply Side Bypass Pipe Outlet Node;  !- Outlet Node Name
+!Pipe:Adiabatic,
+!    HW Loop Supply Side Bypass Pipe,  !- Name
+!    HW Loop Supply Side Bypass Pipe Inlet Node,  !- Inlet Node Name
+!    HW Loop Supply Side Bypass Pipe Outlet Node;  !- Outlet Node Name
 
 ! - Name of pipe
 ! - Inlet node name
 ! - Outlet node name
 Pipe:Adiabatic,
     HW Loop Supply Side Outlet Branch Pipe,  !- Name
-    HW Loop Supply Side Outlet Branch Pipe Inlet,  !- Inlet Node Name
+    GshpHeating LoadSide Outlet Node,  !- Inlet Node Name
     HW Loop Supply Side Outlet;  !- Outlet Node Name
 
 Pipe:Adiabatic,
@@ -31146,10 +31074,10 @@ Pipe:Adiabatic,
     Condenser Demand Inlet Node,  !- Inlet Node Name
     Condenser Demand Entrance Pipe Outlet Node;  !- Outlet Node Name
 
-Pipe:Adiabatic,
-    Condenser Demand Side Bypass,  !- Name
-    Cond Demand Bypass Inlet Node,  !- Inlet Node Name
-    Cond Demand Bypass Outlet Node;  !- Outlet Node Name
+!Pipe:Adiabatic,
+!    Condenser Demand Side Bypass,  !- Name
+!    Cond Demand Bypass Inlet Node,  !- Inlet Node Name
+!    Cond Demand Bypass Outlet Node;  !- Outlet Node Name
 
 Pipe:Adiabatic,
     Condenser Demand Outlet Pipe,  !- Name
@@ -31162,12 +31090,12 @@ Pipe:Adiabatic,
 Duct,
     VAV INLET DUCT,          !- Name
     Air Loop Supply Side Inlet,  !- Inlet Node Name
-    VAV INLET DUCT Outlet Node;  !- Outlet Node Name
+    Air Loop AHU Return Air Outlet Node;!VAV INLET DUCT Outlet Node;  !- Outlet Node Name
 
-Duct,
-    VAV BYPASS DUCT,         !- Name
-    VAV BYPASS DUCT INLET,   !- Inlet Node Name
-    VAV BYPASS DUCT OUTLET;  !- Outlet Node Name
+!Duct,
+!    VAV BYPASS DUCT,         !- Name
+!    VAV BYPASS DUCT INLET,   !- Inlet Node Name
+!    VAV BYPASS DUCT OUTLET;  !- Outlet Node Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: PUMP:CONSTANTSPEED ===========
@@ -31186,7 +31114,7 @@ Pump:ConstantSpeed,
 Pump:ConstantSpeed,
     CHW Loop Pump,           !- Name
     CHW Loop Supply Side Inlet,  !- Inlet Node Name
-    CHW Loop Pump Outlet Node,  !- Outlet Node Name
+    GshpCLG LoadSide Inlet Node,  !- Outlet Node Name
     0.0028,                  !- Rated Flow Rate {m3/s}
     50000,                   !- Rated Pump Head {Pa}
     300,                     !- Rated Power Consumption {W}
@@ -31197,7 +31125,7 @@ Pump:ConstantSpeed,
 Pump:ConstantSpeed,
     HW Loop Pump,            !- Name
     HW Loop Supply Side Inlet,  !- Inlet Node Name
-    HW Loop Pump Outlet Node,!- Outlet Node Name
+    GshpHeating LoadSide Inlet Node,!- Outlet Node Name
     0.0028,                  !- Rated Flow Rate {m3/s}
     50000,                   !- Rated Pump Head {Pa}
     300,                     !- Rated Power Consumption {W}
@@ -31257,9 +31185,9 @@ HeatPump:WaterToWater:EquationFit:Cooling,
 !-   ===========  ALL OBJECTS IN CLASS: GROUNDHEATEXCHANGER:VERTICAL ===========
 
 GroundHeatExchanger:Vertical,
-    Vertical Ground Heat Exchanger,  !- Name
-    GHE Inlet Node,          !- Inlet Node Name
-    GHE Outlet Node,         !- Outlet Node Name
+    Vertical Ground Heat Exchanger_1,  !- Name
+    GHE Inlet Node_1,          !- Inlet Node Name
+    GHE Outlet Node_1,         !- Outlet Node Name
     0.0028,                  !- Design Flow Rate {m3/s}
     14,                      !- Number of Bore Holes
     155.45,                  !- Bore Hole Length {m}
@@ -31347,6 +31275,7 @@ GroundHeatExchanger:Vertical,
     72.511;                  !- G-Function G Value 35
 
 
+
 !-   ===========  ALL OBJECTS IN CLASS: PLANTLOOP ===========
 
 ! - Name of loop
@@ -31385,11 +31314,11 @@ PlantLoop,
     CHW Loop Supply Side Inlet,  !- Plant Side Inlet Node Name
     CHW Loop Supply Side Outlet,  !- Plant Side Outlet Node Name
     CHW Loop Supply Side Branches,  !- Plant Side Branch List Name
-    CHW Loop Supply Side Connectors,  !- Plant Side Connector List Name
+    ,  !- Plant Side Connector List Name
     CHW Loop Demand Side Inlet,  !- Demand Side Inlet Node Name
     CHW Loop Demand Side Outlet,  !- Demand Side Outlet Node Name
     CHW Loop Demand Side Branches,  !- Demand Side Branch List Name
-    CHW Loop Demand Side Connectors,  !- Demand Side Connector List Name
+    ,  !- Demand Side Connector List Name
     Optimal;                 !- Load Distribution Scheme
 
 ! - Name of loop
@@ -31428,7 +31357,7 @@ PlantLoop,
     HW Loop Supply Side Inlet,  !- Plant Side Inlet Node Name
     HW Loop Supply Side Outlet,  !- Plant Side Outlet Node Name
     HW Loop Supply Side Branches,  !- Plant Side Branch List Name
-    HW Loop Supply Side Connectors,  !- Plant Side Connector List Name
+    ,  !- Plant Side Connector List Name
     HW Loop Demand Side Inlet,  !- Demand Side Inlet Node Name
     HW Loop Demand Side Outlet,  !- Demand Side Outlet Node Name
     HW Loop Demand Side Branches,  !- Demand Side Branch List Name
@@ -31481,7 +31410,7 @@ PlantEquipmentList,
 CondenserEquipmentList,
     All Towers,              !- Name
     GroundHeatExchanger:Vertical,  !- Equipment 1 Object Type
-    Vertical Ground Heat Exchanger;  !- Equipment 1 Name
+    Vertical Ground Heat Exchanger_1;  !- Equipment 1 Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: PLANTEQUIPMENTOPERATION:UNCONTROLLED ===========
@@ -31955,11 +31884,11 @@ SetpointManager:Scheduled,
 ! - Control variable
 ! - Setpoint schedule
 ! - Setpoint node
-SetpointManager:Scheduled,
-    Condenser Loop Setpoint Manager,  !- Name
-    Temperature,             !- Control Variable
-    42,                      !- Schedule Name
-    Condenser Supply Outlet Node;  !- Setpoint Node or NodeList Name
+!SetpointManager:Scheduled,
+!    Condenser Loop Setpoint Manager,  !- Name
+!    Temperature,             !- Control Variable
+!    42,                      !- Schedule Name
+!    Condenser Supply Outlet Node;  !- Setpoint Node or NodeList Name
 
 SetpointManager:Scheduled,
     Air Loop Supply Side Outlet Setpoint Manager,  !- Name
@@ -32014,11 +31943,11 @@ SetpointManager:OutdoorAirPretreat,
 
 !-   ===========  ALL OBJECTS IN CLASS: SETPOINTMANAGER:RETURNAIRBYPASSFLOW ===========
 
-SetpointManager:ReturnAirBypassFlow,
-    RAB Manager 1,           !- Name
-    Flow,                    !- Control Variable
-    Air Loop,                !- HVAC Air Loop Name
-    Seasonal Reset Supply Air Temp Sch;  !- Temperature Setpoint Schedule Name
+!SetpointManager:ReturnAirBypassFlow,
+!    RAB Manager 1,           !- Name
+!    Flow,                    !- Control Variable
+!    Air Loop,                !- HVAC Air Loop Name
+!    Seasonal Reset Supply Air Temp Sch;  !- Temperature Setpoint Schedule Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: SETPOINTMANAGER:FOLLOWGROUNDTEMPERATURE ===========
@@ -48780,6 +48709,36 @@ Output:Variable,
 Output:Variable,
     1ST%FLOOR:1ST%RESEARCH%OPEN%NW SINGLE DUCT VAV VSF SUPPLY INLET,  !- Key Value
     System Node Mass Flow Rate,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    CHW Loop Supply Side Outlet,  !- Key Value
+    System Node Mass Flow Rate,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    CHW Loop Supply Side Outlet,  !- Key Value
+    System Node Temperature,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Condenser Pump Outlet Node,  !- Key Value
+    System Node Mass Flow Rate,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Condenser Pump Outlet Node,  !- Key Value
+    System Node Temperature,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Condenser Supply Outlet Node,  !- Key Value
+    System Node Mass Flow Rate,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Condenser Supply Outlet Node,  !- Key Value
+    System Node Temperature,  !- Variable Name
     Timestep;                !- Reporting Frequency
 
 Output:Variable,

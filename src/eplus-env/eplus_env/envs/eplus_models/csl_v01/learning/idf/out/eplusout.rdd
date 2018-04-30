@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.02.13 16:08,IDD_Version 8.3.0
+Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.04.26 10:12,IDD_Version 8.3.0
 Var Type (reported time step),Var Report Type,Variable Name [Units]
 HVAC,Sum,Air System Chilled Water Energy [J]
 HVAC,Sum,Air System Component Model Simulation Calls []
@@ -44,8 +44,6 @@ HVAC,Sum,Air System Total Heating Energy [J]
 HVAC,Sum,Air System User Defined Air Terminal Total Cooling Energy [J]
 HVAC,Sum,Air System User Defined Air Terminal Total Heating Energy [J]
 HVAC,Sum,Air System Water Volume [m3]
-HVAC,Average,Availability Manager Hybrid Ventilation Control Mode []
-HVAC,Average,Availability Manager Hybrid Ventilation Control Status []
 HVAC,Average,Availability Manager Scheduled Control Status []
 HVAC,Average,Baseboard Air Inlet Temperature [C]
 HVAC,Average,Baseboard Air Mass Flow Rate [kg/s]

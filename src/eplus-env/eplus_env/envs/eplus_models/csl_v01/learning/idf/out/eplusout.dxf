@@ -5,7 +5,7 @@ ENTITIES
 999
 DXF created from EnergyPlus
 999
-Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.02.13 16:08
+Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.04.26 10:12
 999
 Polygon Action,ThickPolyline
 999
@@ -347,9 +347,17 @@ Zone=40:2ND%FLOOR%NORTH_2ND%CONFERENCE%03
 999
 Zone=41:2ND%FLOOR%NORTH_2ND%WORK%ROOM
 999
-Zone=42:2ND%FLOOR%SOUTH_2ND%OPEN%OFFICE%SME1
+Zone=42:3RD%FLOOR%SHAFT_3RD%HVAC%SHAFT
 999
-Zone=43:2ND%FLOOR%SOUTH_2ND%OPEN%OFFICE%SME
+Zone=43:3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+999
+Zone=44:3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+999
+Zone=45:3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+999
+Zone=46:2ND%FLOOR%SOUTH_2ND%OPEN%OFFICE%SME1
+999
+Zone=47:2ND%FLOOR%SOUTH_2ND%OPEN%OFFICE%SME
 999
 Building Shading:PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
   0
@@ -1244,6 +1252,310 @@ Building Shading
        24.41697
  23
       -12.25856
+ 33
+        0.51120
+999
+1ST%PLENVM:1ST%PLENVM:1ST%PLENVM:1ST%PLENVM_GROUNDFLOOR_0_0_0
+  0
+3DFACE
+  8
+1ST%PLENVM_1ST%PLENVM
+ 62
+  8
+ 10
+       24.41697
+ 20
+       -3.71235
+ 30
+        0.00000
+ 11
+       24.41697
+ 21
+      -12.25856
+ 31
+        0.00000
+ 12
+      -20.21845
+ 22
+      -12.25856
+ 32
+        0.00000
+ 13
+      -20.21845
+ 23
+      -12.25856
+ 33
+        0.00000
+  0
+3DFACE
+  8
+1ST%PLENVM_1ST%PLENVM
+ 62
+  8
+ 10
+      -20.21845
+ 20
+      -12.25856
+ 30
+        0.00000
+ 11
+      -20.23637
+ 21
+        0.10718
+ 31
+        0.00000
+ 12
+      -16.71040
+ 22
+        0.10718
+ 32
+        0.00000
+ 13
+      -16.71040
+ 23
+        0.10718
+ 33
+        0.00000
+  0
+3DFACE
+  8
+1ST%PLENVM_1ST%PLENVM
+ 62
+  8
+ 10
+      -16.71040
+ 20
+       -0.77706
+ 30
+        0.00000
+ 11
+        3.52446
+ 21
+       -0.77706
+ 31
+        0.00000
+ 12
+        3.52446
+ 22
+       -3.71235
+ 32
+        0.00000
+ 13
+        3.52446
+ 23
+       -3.71235
+ 33
+        0.00000
+  0
+3DFACE
+  8
+1ST%PLENVM_1ST%PLENVM
+ 62
+  8
+ 10
+        3.52446
+ 20
+       -3.71235
+ 30
+        0.00000
+ 11
+       24.41697
+ 21
+       -3.71235
+ 31
+        0.00000
+ 12
+      -20.21845
+ 22
+      -12.25856
+ 32
+        0.00000
+ 13
+      -20.21845
+ 23
+      -12.25856
+ 33
+        0.00000
+  0
+3DFACE
+  8
+1ST%PLENVM_1ST%PLENVM
+ 62
+  8
+ 10
+      -16.71040
+ 20
+       -0.77706
+ 30
+        0.00000
+ 11
+        3.52446
+ 21
+       -3.71235
+ 31
+        0.00000
+ 12
+      -20.21845
+ 22
+      -12.25856
+ 32
+        0.00000
+ 13
+      -20.21845
+ 23
+      -12.25856
+ 33
+        0.00000
+  0
+3DFACE
+  8
+1ST%PLENVM_1ST%PLENVM
+ 62
+  8
+ 10
+      -20.21845
+ 20
+      -12.25856
+ 30
+        0.00000
+ 11
+      -16.71040
+ 21
+        0.10718
+ 31
+        0.00000
+ 12
+      -16.71040
+ 22
+       -0.77706
+ 32
+        0.00000
+ 13
+      -16.71040
+ 23
+       -0.77706
+ 33
+        0.00000
+999
+1ST%PLENVM:1ST%PLENVM:1ST%PLENVM:1ST%PLENVM_CEILING_1_0_0
+  0
+3DFACE
+  8
+1ST%PLENVM_1ST%PLENVM
+ 62
+ 15
+ 10
+      -20.23519
+ 20
+       -0.71208
+ 30
+        0.51120
+ 11
+      -20.22737
+ 21
+       -6.10189
+ 31
+        0.51120
+ 12
+      -16.35991
+ 22
+       -6.10189
+ 32
+        0.51120
+ 13
+      -16.35991
+ 23
+       -6.10189
+ 33
+        0.51120
+  0
+3DFACE
+  8
+1ST%PLENVM_1ST%PLENVM
+ 62
+ 15
+ 10
+      -16.35991
+ 20
+       -6.10189
+ 30
+        0.51120
+ 11
+      -16.35991
+ 21
+       -0.77706
+ 31
+        0.51120
+ 12
+      -16.71040
+ 22
+       -0.77706
+ 32
+        0.51120
+ 13
+      -16.71040
+ 23
+       -0.77706
+ 33
+        0.51120
+  0
+3DFACE
+  8
+1ST%PLENVM_1ST%PLENVM
+ 62
+ 15
+ 10
+      -20.23519
+ 20
+       -0.71208
+ 30
+        0.51120
+ 11
+      -16.35991
+ 21
+       -6.10189
+ 31
+        0.51120
+ 12
+      -16.71040
+ 22
+       -0.77706
+ 32
+        0.51120
+ 13
+      -16.71040
+ 23
+       -0.77706
+ 33
+        0.51120
+  0
+3DFACE
+  8
+1ST%PLENVM_1ST%PLENVM
+ 62
+ 15
+ 10
+      -20.23519
+ 20
+       -0.71208
+ 30
+        0.51120
+ 11
+      -16.71040
+ 21
+       -0.77706
+ 31
+        0.51120
+ 12
+      -16.71040
+ 22
+       -0.71208
+ 32
+        0.51120
+ 13
+      -16.71040
+ 23
+       -0.71208
  33
         0.51120
 999
@@ -2916,6 +3228,128 @@ Building Shading
        -0.77706
  33
         4.42220
+999
+1ST%FLOOR:1ST%CONFERENCE:1ST%FLOOR:1ST%CONFERENCE_FLOOR_0_0_10000
+  0
+3DFACE
+  8
+1ST%FLOOR_1ST%CONFERENCE
+ 62
+  8
+ 10
+      -16.35991
+ 20
+       -0.77706
+ 30
+        0.51120
+ 11
+      -16.35991
+ 21
+       -6.10189
+ 31
+        0.51120
+ 12
+      -20.22737
+ 22
+       -6.10189
+ 32
+        0.51120
+ 13
+      -20.22737
+ 23
+       -6.10189
+ 33
+        0.51120
+  0
+3DFACE
+  8
+1ST%FLOOR_1ST%CONFERENCE
+ 62
+  8
+ 10
+      -20.22737
+ 20
+       -6.10189
+ 30
+        0.51120
+ 11
+      -20.23519
+ 21
+       -0.71208
+ 31
+        0.51120
+ 12
+      -16.71040
+ 22
+       -0.71208
+ 32
+        0.51120
+ 13
+      -16.71040
+ 23
+       -0.71208
+ 33
+        0.51120
+  0
+3DFACE
+  8
+1ST%FLOOR_1ST%CONFERENCE
+ 62
+  8
+ 10
+      -16.71040
+ 20
+       -0.77706
+ 30
+        0.51120
+ 11
+      -16.35991
+ 21
+       -0.77706
+ 31
+        0.51120
+ 12
+      -20.22737
+ 22
+       -6.10189
+ 32
+        0.51120
+ 13
+      -20.22737
+ 23
+       -6.10189
+ 33
+        0.51120
+  0
+3DFACE
+  8
+1ST%FLOOR_1ST%CONFERENCE
+ 62
+  8
+ 10
+      -20.22737
+ 20
+       -6.10189
+ 30
+        0.51120
+ 11
+      -16.71040
+ 21
+       -0.71208
+ 31
+        0.51120
+ 12
+      -16.71040
+ 22
+       -0.77706
+ 32
+        0.51120
+ 13
+      -16.71040
+ 23
+       -0.77706
+ 33
+        0.51120
 999
 1ST%FLOOR:1ST%CONFERENCE:1ST%FLOOR:1ST%CONFERENCE_CEILING_1_0_0
   0
@@ -27049,7 +27483,7 @@ Building Shading
  20
        -0.79294
  30
-        9.13000
+        9.13869
  11
         9.07846
  21
@@ -27067,7 +27501,7 @@ Building Shading
  23
        -0.01166
  33
-        9.13000
+        9.13869
 999
 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_4_0_0
   0
@@ -27855,13 +28289,13 @@ Building Shading
  21
        -0.79294
  31
-        4.79000
+        4.78491
  12
         9.07846
  22
        -0.79294
  32
-        4.79000
+        4.78491
  13
         9.07846
  23
@@ -27881,9 +28315,9 @@ Building Shading
  20
        -0.79294
  30
-        4.79000
+        4.78491
  11
-       23.52721
+        9.07846
  21
        -0.79294
  31
@@ -27893,13 +28327,13 @@ Building Shading
  22
        -0.79294
  32
-        4.77780
+        4.78491
  13
         9.07846
  23
        -0.79294
  33
-        4.79000
+        4.78491
 999
 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_14_0_2
   0
@@ -27945,7 +28379,7 @@ Building Shading
  20
        -0.79294
  30
-        9.13000
+        9.13869
  11
        23.98632
  21
@@ -27963,7 +28397,7 @@ Building Shading
  23
        -0.79294
  33
-        9.13000
+        9.13869
 999
 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_14_0_4
   0
@@ -27979,17 +28413,17 @@ Building Shading
  30
         9.14580
  11
-       23.98632
+        9.85974
  21
        -0.79294
  31
-        9.13000
+        9.13869
  12
         9.85974
  22
        -0.79294
  32
-        9.13000
+        9.14580
  13
         9.85974
  23
@@ -28997,262 +29431,6 @@ Building Shading
  33
         9.14580
 999
-2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_0_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%SOUTH_2ND%OPEN%OFFICE%NE
- 62
- 45
- 10
-        7.56342
- 20
-        5.74221
- 30
-        9.14580
- 11
-        9.02942
- 21
-       -0.79078
- 31
-        9.14580
- 12
-        9.02942
- 22
-        5.74221
- 32
-        9.14580
- 13
-        9.02942
- 23
-        5.74221
- 33
-        9.14580
-999
-2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_1_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%SOUTH_2ND%OPEN%OFFICE%NE
- 62
- 45
- 10
-       20.17942
- 20
-       -0.79494
- 30
-        9.14580
- 11
-        9.07837
- 21
-       -0.79494
- 31
-        9.14580
- 12
-       20.17942
- 22
-       -1.39379
- 32
-        9.14580
- 13
-       20.17942
- 23
-       -1.39379
- 33
-        9.14580
-999
-2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_2_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%SOUTH_2ND%OPEN%OFFICE%NE
- 62
- 45
- 10
-        9.07837
- 20
-       -0.79494
- 30
-        9.14580
- 11
-        7.56342
- 21
-       -1.39379
- 31
-        9.14580
- 12
-       20.17942
- 22
-       -1.39379
- 32
-        9.14580
- 13
-       20.17942
- 23
-       -1.39379
- 33
-        9.14580
-999
-2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_4_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%SOUTH_2ND%OPEN%OFFICE%NE
- 62
- 45
- 10
-        7.56342
- 20
-        5.74221
- 30
-        9.14580
- 11
-        7.56342
- 21
-       -1.39379
- 31
-        9.14580
- 12
-        9.02942
- 22
-       -0.79078
- 32
-        9.14580
- 13
-        9.02942
- 23
-       -0.79078
- 33
-        9.14580
-999
-2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_5_0_1_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%SOUTH_2ND%OPEN%OFFICE%NE
- 62
- 45
- 10
-        4.59566
- 20
-        5.74221
- 30
-        9.14580
- 11
-        5.65166
- 21
-       -1.83799
- 31
-        9.14580
- 12
-        5.65166
- 22
-        5.74221
- 32
-        9.14580
- 13
-        5.65166
- 23
-        5.74221
- 33
-        9.14580
-999
-2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_6_0_1_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%SOUTH_2ND%OPEN%OFFICE%NE
- 62
- 45
- 10
-        4.59566
- 20
-        5.74221
- 30
-        9.14580
- 11
-        4.59566
- 21
-       -2.19300
- 31
-        9.14580
- 12
-        5.65166
- 22
-       -1.83799
- 32
-        9.14580
- 13
-        5.65166
- 23
-       -1.83799
- 33
-        9.14580
-999
-2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_7_0_2_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%SOUTH_2ND%OPEN%OFFICE%NE
- 62
- 45
- 10
-       20.18342
- 20
-       -2.94779
- 30
-        9.14580
- 11
-       20.18342
- 21
-       -6.67494
- 31
-        9.14580
- 12
-       23.98432
- 22
-       -6.67494
- 32
-        9.14580
- 13
-       23.98432
- 23
-       -2.94779
- 33
-        9.14580
-999
-2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_8_0_3_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%SOUTH_2ND%OPEN%OFFICE%NE
- 62
- 45
- 10
-       20.18342
- 20
-       -0.79494
- 30
-        9.14580
- 11
-       20.18342
- 21
-       -1.39379
- 31
-        9.14580
- 12
-       23.98432
- 22
-       -1.39379
- 32
-        9.14580
- 13
-       23.98432
- 23
-       -0.79494
- 33
-        9.14580
-999
 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_CEILING_17_0_0
   0
 3DFACE
@@ -29617,7 +29795,7 @@ Building Shading
  20
         0.11988
  30
-        9.13000
+        9.13869
  11
        28.68697
  21
@@ -29635,7 +29813,7 @@ Building Shading
  23
         0.11988
  33
-        9.13000
+        9.13869
 999
 2ND%FLOOR%SOUTH:2ND%CONFERENCE%02:2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_4_0_0
   0
@@ -29655,13 +29833,13 @@ Building Shading
  21
        -0.01183
  31
-        4.79000
+        4.78491
  12
        24.30832
  22
        -0.79294
  32
-        4.79000
+        4.78491
  13
        24.30832
  23
@@ -32990,70 +33168,6 @@ Building Shading
        26.41287
  23
        -6.67694
- 33
-        9.14580
-999
-2ND%FLOOR%SOUTH:2ND%CONFERENCE%01:2ND%FLOOR%SOUTH:2ND%CONFERENCE%01_ROOF_1_0_0_0_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%SOUTH_2ND%CONFERENCE%01
- 62
- 45
- 10
-       23.99994
- 20
-       -6.67894
- 30
-        9.14580
- 11
-       19.40394
- 21
-       -6.67894
- 31
-        9.14580
- 12
-       23.99994
- 22
-       -9.57493
- 32
-        9.14580
- 13
-       23.99994
- 23
-       -9.57493
- 33
-        9.14580
-999
-2ND%FLOOR%SOUTH:2ND%CONFERENCE%01:2ND%FLOOR%SOUTH:2ND%CONFERENCE%01_ROOF_1_0_0_1_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%SOUTH_2ND%CONFERENCE%01
- 62
- 45
- 10
-       19.40394
- 20
-       -6.67894
- 30
-        9.14580
- 11
-       19.40394
- 21
-       -9.57138
- 31
-        9.14580
- 12
-       23.99994
- 22
-       -9.57493
- 32
-        9.14580
- 13
-       23.99994
- 23
-       -9.57493
  33
         9.14580
 999
@@ -40835,326 +40949,6 @@ Building Shading
  33
         9.14580
 999
-2ND%FLOOR%NORTH:2ND%RESTROOMS:2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_0_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%RESTROOMS
- 62
- 45
- 10
-       18.38383
- 20
-       15.30103
- 30
-        9.14580
- 11
-       18.93842
- 21
-       13.19275
- 31
-        9.14580
- 12
-       19.42709
- 22
-       13.47237
- 32
-        9.14580
- 13
-       19.42709
- 23
-       13.47237
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%RESTROOMS:2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_1_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%RESTROOMS
- 62
- 45
- 10
-       18.93842
- 20
-       13.19275
- 30
-        9.14580
- 11
-       18.24495
- 21
-       11.54876
- 31
-        9.14580
- 12
-       19.48736
- 22
-       12.27454
- 32
-        9.14580
- 13
-       19.48736
- 23
-       12.27454
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%RESTROOMS:2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_2_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%RESTROOMS
- 62
- 45
- 10
-       18.38383
- 20
-       15.30103
- 30
-        9.14580
- 11
-       18.24495
- 21
-       11.54876
- 31
-        9.14580
- 12
-       18.93842
- 22
-       13.19275
- 32
-        9.14580
- 13
-       18.93842
- 23
-       13.19275
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%RESTROOMS:2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_3_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%RESTROOMS
- 62
- 45
- 10
-       17.71366
- 20
-       12.46644
- 30
-        9.14580
- 11
-       18.24495
- 21
-       11.54876
- 31
-        9.14580
- 12
-       18.38383
- 22
-       15.30103
- 32
-        9.14580
- 13
-       18.38383
- 23
-       15.30103
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%RESTROOMS:2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_4_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%RESTROOMS
- 62
- 45
- 10
-       18.38383
- 20
-       15.30103
- 30
-        9.14580
- 11
-       13.74105
- 21
-       12.62317
- 31
-        9.14580
- 12
-       17.71366
- 22
-       12.46644
- 32
-        9.14580
- 13
-       17.71366
- 23
-       12.46644
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%RESTROOMS:2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_5_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%RESTROOMS
- 62
- 45
- 10
-       17.71366
- 20
-       12.46644
- 30
-        9.14580
- 11
-       13.74105
- 21
-       12.62317
- 31
-        9.14580
- 12
-       16.33938
- 22
-       11.67742
- 32
-        9.14580
- 13
-       16.33938
- 23
-       11.67742
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%RESTROOMS:2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_6_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%RESTROOMS
- 62
- 45
- 10
-       13.74105
- 20
-       12.62317
- 30
-        9.14580
- 11
-       15.66712
- 21
-        9.28565
- 31
-        9.14580
- 12
-       16.33938
- 22
-       11.67742
- 32
-        9.14580
- 13
-       16.33938
- 23
-       11.67742
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%RESTROOMS:2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_7_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%RESTROOMS
- 62
- 45
- 10
-       16.33938
- 20
-       11.67742
- 30
-        9.14580
- 11
-       15.66712
- 21
-        9.28565
- 31
-        9.14580
- 12
-       17.20526
- 22
-       10.17755
- 32
-        9.14580
- 13
-       17.20526
- 23
-       10.17755
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%RESTROOMS:2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_8_0_1_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%RESTROOMS
- 62
- 45
- 10
-       17.09257
- 20
-       17.56441
- 30
-        9.14580
- 11
-       12.96725
- 21
-       13.96403
- 31
-        9.14580
- 12
-       17.61597
- 22
-       16.64698
- 32
-        9.14580
- 13
-       17.61597
- 23
-       16.64698
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%RESTROOMS:2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_9_0_1_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%RESTROOMS
- 62
- 45
- 10
-       12.44026
- 20
-       14.87721
- 30
-        9.14580
- 11
-       12.96725
- 21
-       13.96403
- 31
-        9.14580
- 12
-       17.09257
- 22
-       17.56441
- 32
-        9.14580
- 13
-       17.09257
- 23
-       17.56441
- 33
-        9.14580
-999
 2ND%FLOOR%NORTH:2ND%CORRIDOR:2ND%FLOOR%NORTH:2ND%CORRIDOR_PARTITION_20_0_10162
   0
 3DFACE
@@ -43525,454 +43319,6 @@ Building Shading
  33
         9.14580
 999
-2ND%FLOOR%NORTH:2ND%CORRIDOR:2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_0_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CORRIDOR
- 62
- 45
- 10
-       21.31367
- 20
-       12.53205
- 30
-        9.14580
- 11
-       21.69561
- 21
-       11.22830
- 31
-        9.14580
- 12
-       21.99267
- 22
-       11.35050
- 32
-        9.14580
- 13
-       21.99267
- 23
-       11.35050
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%CORRIDOR:2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_1_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CORRIDOR
- 62
- 45
- 10
-       21.31367
- 20
-       12.53205
- 30
-        9.14580
- 11
-       14.17888
- 21
-        6.88852
- 31
-        9.14580
- 12
-       21.69561
- 22
-       11.22830
- 32
-        9.14580
- 13
-       21.69561
- 23
-       11.22830
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%CORRIDOR:2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_2_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CORRIDOR
- 62
- 45
- 10
-       17.20899
- 20
-       10.17508
- 30
-        9.14580
- 11
-       14.17888
- 21
-        6.88852
- 31
-        9.14580
- 12
-       21.31367
- 22
-       12.53205
- 32
-        9.14580
- 13
-       21.31367
- 23
-       12.53205
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%CORRIDOR:2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_3_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CORRIDOR
- 62
- 45
- 10
-       13.89373
- 20
-        8.25273
- 30
-        9.14580
- 11
-       14.17888
- 21
-        6.88852
- 31
-        9.14580
- 12
-       17.20899
- 22
-       10.17508
- 32
-        9.14580
- 13
-       17.20899
- 23
-       10.17508
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%CORRIDOR:2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_4_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CORRIDOR
- 62
- 45
- 10
-       13.89373
- 20
-        8.25273
- 30
-        9.14580
- 11
-        7.56918
- 21
-        6.88852
- 31
-        9.14580
- 12
-       14.17888
- 22
-        6.88852
- 32
-        9.14580
- 13
-       14.17888
- 23
-        6.88852
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%CORRIDOR:2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_5_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CORRIDOR
- 62
- 45
- 10
-        7.56918
- 20
-        8.25273
- 30
-        9.14580
- 11
-        7.56918
- 21
-        6.88852
- 31
-        9.14580
- 12
-       13.89373
- 22
-        8.25273
- 32
-        9.14580
- 13
-       13.89373
- 23
-        8.25273
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%CORRIDOR:2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_6_0_1_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CORRIDOR
- 62
- 45
- 10
-       20.45417
- 20
-       14.05546
- 30
-        9.14580
- 11
-       20.28309
- 21
-       11.94489
- 31
-        9.14580
- 12
-       21.31169
- 22
-       12.53553
- 32
-        9.14580
- 13
-       21.31169
- 23
-       12.53553
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%CORRIDOR:2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_7_0_1_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CORRIDOR
- 62
- 45
- 10
-       19.43344
- 20
-       13.47140
- 30
-        9.14580
- 11
-       20.28309
- 21
-       11.94489
- 31
-        9.14580
- 12
-       20.45417
- 22
-       14.05546
- 32
-        9.14580
- 13
-       20.45417
- 23
-       14.05546
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%CORRIDOR:2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_8_0_2_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CORRIDOR
- 62
- 45
- 10
-       19.42997
- 20
-       13.46941
- 30
-        9.14580
- 11
-       19.49287
- 21
-       12.27313
- 31
-        9.14580
- 12
-       20.27962
- 22
-       11.94290
- 32
-        9.14580
- 13
-       20.27962
- 23
-       11.94290
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%CORRIDOR:2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_9_0_2_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CORRIDOR
- 62
- 45
- 10
-       18.94394
- 20
-       13.19130
- 30
-        9.14580
- 11
-       19.49287
- 21
-       12.27313
- 31
-        9.14580
- 12
-       19.42997
- 22
-       13.46941
- 32
-        9.14580
- 13
-       19.42997
- 23
-       13.46941
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%CORRIDOR:2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_10_0_2_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CORRIDOR
- 62
- 45
- 10
-       19.49287
- 20
-       12.27313
- 30
-        9.14580
- 11
-       17.20873
- 21
-       10.17955
- 31
-        9.14580
- 12
-       20.27962
- 22
-       11.94290
- 32
-        9.14580
- 13
-       20.27962
- 23
-       11.94290
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%CORRIDOR:2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_11_0_2_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CORRIDOR
- 62
- 45
- 10
-       18.24350
- 20
-       11.54328
- 30
-        9.14580
- 11
-       17.20873
- 21
-       10.17955
- 31
-        9.14580
- 12
-       19.49287
- 22
-       12.27313
- 32
-        9.14580
- 13
-       19.49287
- 23
-       12.27313
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%CORRIDOR:2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_12_0_2_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CORRIDOR
- 62
- 45
- 10
-       17.71220
- 20
-       12.46099
- 30
-        9.14580
- 11
-       17.20873
- 21
-       10.17955
- 31
-        9.14580
- 12
-       18.24350
- 22
-       11.54328
- 32
-        9.14580
- 13
-       18.24350
- 23
-       11.54328
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%CORRIDOR:2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_13_0_2_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CORRIDOR
- 62
- 45
- 10
-       16.34485
- 20
-       11.67595
- 30
-        9.14580
- 11
-       17.20873
- 21
-       10.17955
- 31
-        9.14580
- 12
-       17.71220
- 22
-       12.46099
- 32
-        9.14580
- 13
-       17.71220
- 23
-       12.46099
- 33
-        9.14580
-999
 2ND%FLOOR%NORTH:2ND%CORRIDOR:2ND%FLOOR%NORTH:2ND%CORRIDOR_CEILING_21_0_0
   0
 3DFACE
@@ -44780,198 +44126,6 @@ Building Shading
        10.21480
  23
        14.28607
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%SECURE%FILES:2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0_0_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%SECURE%FILES
- 62
- 45
- 10
-       12.43740
- 20
-       14.87417
- 30
-        9.14580
- 11
-       11.04770
- 21
-       12.84897
- 31
-        9.14580
- 12
-       12.96675
- 22
-       13.95690
- 32
-        9.14580
- 13
-       12.96675
- 23
-       13.95690
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%SECURE%FILES:2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0_1_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%SECURE%FILES
- 62
- 45
- 10
-       10.51665
- 20
-       13.76781
- 30
-        9.14580
- 11
-       11.04770
- 21
-       12.84897
- 31
-        9.14580
- 12
-       12.43740
- 22
-       14.87417
- 32
-        9.14580
- 13
-       12.43740
- 23
-       14.87417
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%SECURE%FILES:2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0_2_0_1_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%SECURE%FILES
- 62
- 45
- 10
-       11.82268
- 20
-       11.50807
- 30
-        9.14580
- 11
-       12.68328
- 21
-       10.01905
- 31
-        9.14580
- 12
-       13.74422
- 22
-       12.60969
- 32
-        9.14580
- 13
-       13.74422
- 23
-       12.60969
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%SECURE%FILES:2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0_3_0_1_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%SECURE%FILES
- 62
- 45
- 10
-       13.74422
- 20
-       12.60969
- 30
-        9.14580
- 11
-       13.89265
- 21
-        8.25673
- 31
-        9.14580
- 12
-       15.66365
- 22
-        9.28365
- 32
-        9.14580
- 13
-       15.66365
- 23
-        9.28365
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%SECURE%FILES:2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0_4_0_1_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%SECURE%FILES
- 62
- 45
- 10
-       13.74422
- 20
-       12.60969
- 30
-        9.14580
- 11
-       12.68328
- 21
-        8.25673
- 31
-        9.14580
- 12
-       13.89265
- 22
-        8.25673
- 32
-        9.14580
- 13
-       13.89265
- 23
-        8.25673
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%SECURE%FILES:2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0_5_0_1_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%SECURE%FILES
- 62
- 45
- 10
-       12.68328
- 20
-       10.01905
- 30
-        9.14580
- 11
-       12.68328
- 21
-        8.25673
- 31
-        9.14580
- 12
-       13.74422
- 22
-       12.60969
- 32
-        9.14580
- 13
-       13.74422
- 23
-       12.60969
  33
         9.14580
 999
@@ -45863,198 +45017,6 @@ Building Shading
  33
         9.14580
 999
-2ND%FLOOR%NORTH:2ND%CONFERENCE%03:2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0_0_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CONFERENCE%03
- 62
- 45
- 10
-        6.73084
- 20
-       11.57953
- 30
-        9.14580
- 11
-        3.42044
- 21
-        8.44534
- 31
-        9.14580
- 12
-        7.27286
- 22
-       10.66791
- 32
-        9.14580
- 13
-        7.27286
- 23
-       10.66791
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%CONFERENCE%03:2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0_1_0_0_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CONFERENCE%03
- 62
- 45
- 10
-        2.88531
- 20
-        9.35865
- 30
-        9.14580
- 11
-        3.42044
- 21
-        8.44534
- 31
-        9.14580
- 12
-        6.73084
- 22
-       11.57953
- 32
-        9.14580
- 13
-        6.73084
- 23
-       11.57953
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%CONFERENCE%03:2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0_2_0_1_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CONFERENCE%03
- 62
- 45
- 10
-        5.54239
- 20
-        7.88082
- 30
-        9.14580
- 11
-        4.54842
- 21
-        6.52021
- 31
-        9.14580
- 12
-        6.28699
- 22
-        6.52021
- 32
-        9.14580
- 13
-        6.28699
- 23
-        6.52021
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%CONFERENCE%03:2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0_3_0_1_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CONFERENCE%03
- 62
- 45
- 10
-        4.20604
- 20
-        7.10455
- 30
-        9.14580
- 11
-        4.54842
- 21
-        6.52021
- 31
-        9.14580
- 12
-        5.54239
- 22
-        7.88082
- 32
-        9.14580
- 13
-        5.54239
- 23
-        7.88082
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%CONFERENCE%03:2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0_4_0_2_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CONFERENCE%03
- 62
- 45
- 10
-        4.74871
- 20
-        9.20934
- 30
-        9.14580
- 11
-        4.20330
- 21
-        7.10527
- 31
-        9.14580
- 12
-        5.54316
- 22
-        7.88358
- 32
-        9.14580
- 13
-        5.54316
- 23
-        7.88358
- 33
-        9.14580
-999
-2ND%FLOOR%NORTH:2ND%CONFERENCE%03:2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0_5_0_2_SUBSURFACE
-  0
-3DFACE
-  8
-2ND%FLOOR%NORTH_2ND%CONFERENCE%03
- 62
- 45
- 10
-        3.41972
- 20
-        8.44261
- 30
-        9.14580
- 11
-        4.20330
- 21
-        7.10527
- 31
-        9.14580
- 12
-        4.74871
- 22
-        9.20934
- 32
-        9.14580
- 13
-        4.74871
- 23
-        9.20934
- 33
-        9.14580
-999
 2ND%FLOOR%NORTH:2ND%CONFERENCE%03:2ND%FLOOR%NORTH:2ND%CONFERENCE%03_CEILING_10_0_0
   0
 3DFACE
@@ -46895,165 +45857,6179 @@ Building Shading
  33
         9.14580
 999
-2ND%FLOOR%NORTH:2ND%WORK%ROOM:2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0_0_0_0_SUBSURFACE
+3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
   0
 3DFACE
   8
-2ND%FLOOR%NORTH_2ND%WORK%ROOM
+3RD%FLOOR%SHAFT_3RD%HVAC%SHAFT
  62
- 45
+ 43
  10
-       10.51431
+      -16.79540
  20
-       13.76387
+       -0.58783
  30
-        9.14580
+       10.55580
  11
-        7.27447
+      -16.79540
  21
-       10.67304
+       -0.58783
  31
         9.14580
  12
-       11.04177
+      -16.79540
  22
-       12.85124
+        0.02218
  32
         9.14580
  13
-       11.04177
+      -16.79540
  23
-       12.85124
+        0.02218
+ 33
+       10.55580
+999
+3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%SHAFT_3RD%HVAC%SHAFT
+ 62
+ 43
+ 10
+      -16.79540
+ 20
+        0.02218
+ 30
+       10.55580
+ 11
+      -16.79540
+ 21
+        0.02218
+ 31
+        9.14580
+ 12
+      -20.15193
+ 22
+        0.02218
+ 32
+        9.14580
+ 13
+      -20.15193
+ 23
+        0.02218
+ 33
+       10.55580
+999
+3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_4_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%SHAFT_3RD%HVAC%SHAFT
+ 62
+ 43
+ 10
+      -20.15193
+ 20
+        0.02218
+ 30
+       10.55580
+ 11
+      -20.15193
+ 21
+        0.02218
+ 31
+        9.14580
+ 12
+      -20.15193
+ 22
+       -0.58782
+ 32
+        9.14580
+ 13
+      -20.15193
+ 23
+       -0.58782
+ 33
+       10.55580
+999
+3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_5_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%SHAFT_3RD%HVAC%SHAFT
+ 62
+ 43
+ 10
+      -20.15193
+ 20
+       -0.58782
+ 30
+       10.55580
+ 11
+      -20.15193
+ 21
+       -0.58782
+ 31
+        9.14580
+ 12
+      -16.79540
+ 22
+       -0.58783
+ 32
+        9.14580
+ 13
+      -16.79540
+ 23
+       -0.58783
+ 33
+       10.55580
+999
+3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_FLOOR_0_0_10165
+  0
+3DFACE
+  8
+3RD%FLOOR%SHAFT_3RD%HVAC%SHAFT
+ 62
+  8
+ 10
+      -16.79540
+ 20
+        0.02218
+ 30
+        9.14580
+ 11
+      -16.79540
+ 21
+       -0.58783
+ 31
+        9.14580
+ 12
+      -20.15193
+ 22
+       -0.58782
+ 32
+        9.14580
+ 13
+      -20.15193
+ 23
+        0.02218
  33
         9.14580
 999
-2ND%FLOOR%NORTH:2ND%WORK%ROOM:2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0_1_0_0_SUBSURFACE
+3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_FLOOR_0_0_0_0_0_0_HOLE_10167
   0
 3DFACE
   8
-2ND%FLOOR%NORTH_2ND%WORK%ROOM
+3RD%FLOOR%SHAFT_3RD%HVAC%SHAFT
  62
  45
  10
-        6.73245
+      -16.79740
  20
-       11.58466
+        0.02018
  30
         9.14580
  11
-        7.27447
+      -16.79740
  21
-       10.67304
+       -0.58583
  31
         9.14580
  12
-       10.51431
+      -20.14993
  22
-       13.76387
+       -0.58582
  32
         9.14580
  13
-       10.51431
+      -20.14993
  23
-       13.76387
+        0.02018
  33
         9.14580
 999
-2ND%FLOOR%NORTH:2ND%WORK%ROOM:2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0_2_0_1_SUBSURFACE
+3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_ROOF_1_0_0
   0
 3DFACE
   8
-2ND%FLOOR%NORTH_2ND%WORK%ROOM
+3RD%FLOOR%SHAFT_3RD%HVAC%SHAFT
  62
- 45
+ 15
  10
-       11.81900
+      -20.15193
  20
-       11.50645
+        0.02218
  30
-        9.14580
+       10.55580
  11
-       12.67928
+      -20.15193
  21
-        8.25673
+       -0.58782
+ 31
+       10.55580
+ 12
+      -16.79540
+ 22
+       -0.58783
+ 32
+       10.55580
+ 13
+      -16.79540
+ 23
+        0.02218
+ 33
+       10.55580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_2_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 43
+ 10
+       27.70693
+ 20
+        5.23118
+ 30
+       12.80580
+ 11
+       27.70693
+ 21
+        5.23118
  31
         9.14580
  12
-       12.67928
+       26.83996
  22
-       10.01797
+        6.73281
  32
         9.14580
  13
-       12.67928
+       26.83996
  23
-       10.01797
+        6.73281
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_2_0_0_1_0_1_SUBSURFACE
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       27.58861
+ 20
+        5.43611
+ 30
+       12.80380
+ 11
+       27.58861
+ 21
+        5.43611
+ 31
+       12.38780
+ 12
+       26.84096
+ 22
+        6.73108
+ 32
+       12.38780
+ 13
+       26.84096
+ 23
+        6.73108
+ 33
+       12.80380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_2_0_0_0_0_0_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       27.56861
+ 20
+        5.47075
+ 30
+       12.34380
+ 11
+       27.56861
+ 21
+        5.47075
+ 31
+       10.24780
+ 12
+       26.86096
+ 22
+        6.69644
+ 32
+       10.24780
+ 13
+       26.86096
+ 23
+        6.69644
+ 33
+       12.34380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_PARTITION_3_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 43
+ 10
+       26.83996
+ 20
+        6.73281
+ 30
+       12.80580
+ 11
+       26.83996
+ 21
+        6.73281
+ 31
+        9.14580
+ 12
+       24.67786
+ 22
+        5.49235
+ 32
+        9.14580
+ 13
+       24.67786
+ 23
+        5.49235
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_PARTITION_3_0_0_1_0_1_SUBSURFACE
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       26.83808
+ 20
+        6.73173
+ 30
+       12.80380
+ 11
+       26.83808
+ 21
+        6.73173
+ 31
+       12.38780
+ 12
+       24.74062
+ 22
+        5.52836
+ 32
+       12.38780
+ 13
+       24.74062
+ 23
+        5.52836
+ 33
+       12.80380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_PARTITION_3_0_0_0_0_0_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       26.80352
+ 20
+        6.71191
+ 30
+       11.83380
+ 11
+       26.80352
+ 21
+        6.71191
+ 31
+        9.48780
+ 12
+       25.15886
+ 22
+        5.76831
+ 32
+        9.48780
+ 13
+       25.15886
+ 23
+        5.76831
+ 33
+       11.83380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_PARTITION_3_0_0_2_0_2_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       25.08600
+ 20
+        5.72651
+ 30
+       11.91780
+ 11
+       24.77532
+ 21
+        5.54827
+ 31
+        9.48780
+ 12
+       24.77532
+ 22
+        5.54827
+ 32
+       12.34380
+ 13
+       24.77532
+ 23
+        5.54827
+ 33
+       12.34380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_PARTITION_3_0_0_3_0_2_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       24.77532
+ 20
+        5.54827
+ 30
+       12.34380
+ 11
+       26.80340
+ 21
+        6.71184
+ 31
+       12.34380
+ 12
+       25.08600
+ 22
+        5.72651
+ 32
+       11.91780
+ 13
+       25.08600
+ 23
+        5.72651
+ 33
+       11.91780
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_PARTITION_3_0_0_4_0_2_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       26.80340
+ 20
+        6.71184
+ 30
+       12.34380
+ 11
+       26.80351
+ 21
+        6.71190
+ 31
+       11.91780
+ 12
+       25.08600
+ 22
+        5.72651
+ 32
+       11.91780
+ 13
+       25.08600
+ 23
+        5.72651
+ 33
+       11.91780
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_PARTITION_3_0_0_5_0_2_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       25.08600
+ 20
+        5.72651
+ 30
+       11.91780
+ 11
+       25.08600
+ 21
+        5.72651
+ 31
+        9.48780
+ 12
+       24.77532
+ 22
+        5.54827
+ 32
+        9.48780
+ 13
+       24.77532
+ 23
+        5.54827
+ 33
+        9.48780
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_PARTITION_4_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 43
+ 10
+       24.67786
+ 20
+        5.49235
+ 30
+       12.80580
+ 11
+       24.67786
+ 21
+        5.49235
+ 31
+        9.14580
+ 12
+       22.90202
+ 22
+        8.57339
+ 32
+        9.14580
+ 13
+       22.90202
+ 23
+        8.57339
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_PARTITION_4_0_0_0_0_0_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       24.62175
+ 20
+        5.58970
+ 30
+       12.64914
+ 11
+       24.62175
+ 21
+        5.58970
+ 31
+       10.55314
+ 12
+       22.92308
+ 22
+        8.53686
+ 32
+       10.55314
+ 13
+       22.92308
+ 23
+        8.53686
+ 33
+       12.64914
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 43
+ 10
+       22.90202
+ 20
+        8.57339
+ 30
+       12.80580
+ 11
+       22.90202
+ 21
+        8.57339
+ 31
+        9.14580
+ 12
+       22.79378
+ 22
+        8.51049
+ 32
+        9.14580
+ 13
+       22.79378
+ 23
+        8.51049
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_6_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 43
+ 10
+       22.79378
+ 20
+        8.51049
+ 30
+       12.80580
+ 11
+       22.79378
+ 21
+        8.51049
+ 31
+        9.14580
+ 12
+       21.54709
+ 22
+       10.66866
+ 32
+        9.14580
+ 13
+       21.54709
+ 23
+       10.66866
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_6_0_0_0_0_0_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       22.56896
+ 20
+        8.89968
+ 30
+       12.76380
+ 11
+       22.56896
+ 21
+        8.89968
+ 31
+       10.24780
+ 12
+       22.01108
+ 22
+        9.86545
+ 32
+       10.24780
+ 13
+       22.01108
+ 23
+        9.86545
+ 33
+       12.76380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_6_0_0_1_0_1_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       21.96906
+ 20
+        9.93818
+ 30
+       12.76380
+ 11
+       21.96906
+ 21
+        9.93818
+ 31
+       10.24780
+ 12
+       21.56810
+ 22
+       10.63230
+ 32
+       10.24780
+ 13
+       21.56810
+ 23
+       10.63230
+ 33
+       12.76380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 43
+ 10
+       21.54709
+ 20
+       10.66866
+ 30
+       12.80580
+ 11
+       21.54709
+ 21
+       10.66866
+ 31
+        9.14580
+ 12
+       14.28885
+ 22
+        6.47812
+ 32
+        9.14580
+ 13
+       14.28885
+ 23
+        6.47812
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_0_0_0_SUBSURFACE
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       16.82362
+ 20
+        7.94156
+ 30
+       12.80380
+ 11
+       16.82362
+ 21
+        7.94156
+ 31
+       12.38780
+ 12
+       14.38489
+ 22
+        6.53356
+ 32
+       12.38780
+ 13
+       14.38489
+ 23
+        6.53356
+ 33
+       12.80380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_1_0_1_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       15.49124
+ 20
+        7.17231
+ 30
+       12.34580
+ 11
+       15.49124
+ 21
+        7.17231
+ 31
+       11.75280
+ 12
+       14.41780
+ 22
+        6.55256
+ 32
+       11.75280
+ 13
+       14.41780
+ 23
+        6.55256
+ 33
+       12.34580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_2_0_2_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       15.49124
+ 20
+        7.17231
+ 30
+       11.67280
+ 11
+       15.49124
+ 21
+        7.17231
+ 31
+       10.24580
+ 12
+       14.41780
+ 22
+        6.55256
+ 32
+       10.24580
+ 13
+       14.41780
+ 23
+        6.55256
+ 33
+       11.67280
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_5_0_5_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       21.51072
+ 20
+       10.64766
+ 30
+       12.76380
+ 11
+       21.51072
+ 21
+       10.64766
+ 31
+       10.24780
+ 12
+       20.55722
+ 22
+       10.09716
+ 32
+       10.24780
+ 13
+       20.55722
+ 23
+       10.09716
+ 33
+       12.76380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_6_0_6_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       20.48448
+ 20
+       10.05516
+ 30
+       12.76380
+ 11
+       20.48448
+ 21
+       10.05516
+ 31
+       10.24780
+ 12
+       19.32227
+ 22
+        9.38416
+ 32
+       10.24780
+ 13
+       19.32227
+ 23
+        9.38416
+ 33
+       12.76380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_8_0_8_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       18.01457
+ 20
+        8.62916
+ 30
+       12.76380
+ 11
+       18.01457
+ 21
+        8.62916
+ 31
+       10.24780
+ 12
+       16.86172
+ 22
+        7.96356
+ 32
+       10.24780
+ 13
+       16.86172
+ 23
+        7.96356
+ 33
+       12.76380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 43
+ 10
+       14.28885
+ 20
+        6.47812
+ 30
+       12.80580
+ 11
+       14.28885
+ 21
+        6.47812
+ 31
+        9.14580
+ 12
+        9.43982
+ 22
+        6.47812
+ 32
+        9.14580
+ 13
+        9.43982
+ 23
+        6.47812
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0_0_0_0_SUBSURFACE
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       14.17796
+ 20
+        6.47812
+ 30
+       12.80380
+ 11
+       14.17796
+ 21
+        6.47812
+ 31
+       12.38780
+ 12
+        9.44182
+ 22
+        6.47812
+ 32
+       12.38780
+ 13
+        9.44182
+ 23
+        6.47812
+ 33
+       12.80380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0_1_0_1_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       10.97782
+ 20
+        6.47812
+ 30
+       12.34380
+ 11
+       10.97782
+ 21
+        6.47812
+ 31
+       11.75480
+ 12
+        9.48182
+ 22
+        6.47812
+ 32
+       11.75480
+ 13
+        9.48182
+ 23
+        6.47812
+ 33
+       12.34380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0_2_0_2_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       12.55982
+ 20
+        6.47812
+ 30
+       12.34580
+ 11
+       12.55982
+ 21
+        6.47812
+ 31
+       11.75280
+ 12
+       11.05982
+ 22
+        6.47812
+ 32
+       11.75280
+ 13
+       11.05982
+ 23
+        6.47812
+ 33
+       12.34580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0_4_0_4_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       10.97782
+ 20
+        6.47812
+ 30
+       11.67080
+ 11
+       10.97782
+ 21
+        6.47812
+ 31
+       10.24780
+ 12
+        9.48182
+ 22
+        6.47812
+ 32
+       10.24780
+ 13
+        9.48182
+ 23
+        6.47812
+ 33
+       11.67080
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0_5_0_5_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       12.55982
+ 20
+        6.47812
+ 30
+       11.67280
+ 11
+       12.55982
+ 21
+        6.47812
+ 31
+       10.24580
+ 12
+       11.05982
+ 22
+        6.47812
+ 32
+       10.24580
+ 13
+       11.05982
+ 23
+        6.47812
+ 33
+       11.67280
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 43
+ 10
+        9.43982
+ 20
+        6.47812
+ 30
+       12.80580
+ 11
+        9.43982
+ 21
+        6.47812
+ 31
+        9.14580
+ 12
+        9.43982
+ 22
+       -0.38054
+ 32
+        9.14580
+ 13
+        9.43982
+ 23
+       -0.38054
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0_0_0_0_SUBSURFACE
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+        9.43982
+ 20
+        6.47612
+ 30
+       12.80380
+ 11
+        9.43982
+ 21
+        6.47612
+ 31
+       12.38780
+ 12
+        9.43982
+ 22
+       -0.37854
+ 32
+       12.38780
+ 13
+        9.43982
+ 23
+       -0.37854
+ 33
+       12.80380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0_1_0_1_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+        9.43982
+ 20
+        6.43612
+ 30
+       12.34380
+ 11
+        9.43982
+ 21
+        6.43612
+ 31
+       11.75480
+ 12
+        9.43982
+ 22
+        4.80957
+ 32
+       11.75480
+ 13
+        9.43982
+ 23
+        4.80957
+ 33
+       12.34380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0_2_0_2_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+        9.43982
+ 20
+        6.43612
+ 30
+       11.67080
+ 11
+        9.43982
+ 21
+        6.43612
+ 31
+       10.24780
+ 12
+        9.43982
+ 22
+        4.80957
+ 32
+       10.24780
+ 13
+        9.43982
+ 23
+        4.80957
+ 33
+       11.67080
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0_3_0_3_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+        9.43982
+ 20
+        4.72757
+ 30
+       12.34580
+ 11
+        9.43982
+ 21
+        4.72757
+ 31
+       11.75280
+ 12
+        9.43982
+ 22
+        3.09701
+ 32
+       11.75280
+ 13
+        9.43982
+ 23
+        3.09701
+ 33
+       12.34580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0_6_0_6_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+        9.43982
+ 20
+        4.72757
+ 30
+       11.67280
+ 11
+        9.43982
+ 21
+        4.72757
+ 31
+       10.24580
+ 12
+        9.43982
+ 22
+        3.09701
+ 32
+       10.24580
+ 13
+        9.43982
+ 23
+        3.09701
+ 33
+       11.67280
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 43
+ 10
+        9.43982
+ 20
+       -0.38054
+ 30
+       12.80580
+ 11
+        9.43982
+ 21
+       -0.38054
+ 31
+        9.14580
+ 12
+       27.35410
+ 22
+       -0.38054
+ 32
+        9.14580
+ 13
+       27.35410
+ 23
+       -0.38054
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_3_0_3_SUBSURFACE
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+        9.44182
+ 20
+       -0.38054
+ 30
+       12.80380
+ 11
+        9.44182
+ 21
+       -0.38054
+ 31
+       12.38780
+ 12
+       27.35210
+ 22
+       -0.38054
+ 32
+       12.38780
+ 13
+       27.35210
+ 23
+       -0.38054
+ 33
+       12.80380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_0_0_0_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       24.61610
+ 20
+       -0.38054
+ 30
+       11.53380
+ 11
+       24.61610
+ 21
+       -0.38054
+ 31
+        9.18780
+ 12
+       26.51210
+ 22
+       -0.38054
+ 32
+        9.18780
+ 13
+       26.51210
+ 23
+       -0.38054
+ 33
+       11.53380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_1_0_1_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       26.59610
+ 20
+       -0.38054
+ 30
+       12.34380
+ 11
+       26.59610
+ 21
+       -0.38054
+ 31
+       10.24780
+ 12
+       27.31210
+ 22
+       -0.38054
+ 32
+       10.24780
+ 13
+       27.31210
+ 23
+       -0.38054
+ 33
+       12.34380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_2_0_2_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       24.61410
+ 20
+       -0.38054
+ 30
+       12.34580
+ 11
+       24.61410
+ 21
+       -0.38054
+ 31
+       11.61580
+ 12
+       26.51410
+ 22
+       -0.38054
+ 32
+       11.61580
+ 13
+       26.51410
+ 23
+       -0.38054
+ 33
+       12.34580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_4_0_4_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       23.79210
+ 20
+       -0.38054
+ 30
+       12.34580
+ 11
+       23.79210
+ 21
+       -0.38054
+ 31
+       11.75270
+ 12
+       24.53410
+ 22
+       -0.38054
+ 32
+       11.75270
+ 13
+       24.53410
+ 23
+       -0.38054
+ 33
+       12.34580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_5_0_5_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+        9.48182
+ 20
+       -0.38054
+ 30
+       12.34380
+ 11
+        9.48182
+ 21
+       -0.38054
+ 31
+       11.75470
+ 12
+       10.98782
+ 22
+       -0.38054
+ 32
+       11.75470
+ 13
+       10.98782
+ 23
+       -0.38054
+ 33
+       12.34380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_6_0_6_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+        9.48182
+ 20
+       -0.38054
+ 30
+       11.67070
+ 11
+        9.48182
+ 21
+       -0.38054
+ 31
+       10.24780
+ 12
+       10.98782
+ 22
+       -0.38054
+ 32
+       10.24780
+ 13
+       10.98782
+ 23
+       -0.38054
+ 33
+       11.67070
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_7_0_7_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       11.06982
+ 20
+       -0.38054
+ 30
+       12.34580
+ 11
+       11.06982
+ 21
+       -0.38054
+ 31
+       11.75270
+ 12
+       12.57982
+ 22
+       -0.38054
+ 32
+       11.75270
+ 13
+       12.57982
+ 23
+       -0.38054
+ 33
+       12.34580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_15_0_15_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       11.06982
+ 20
+       -0.38054
+ 30
+       11.67270
+ 11
+       11.06982
+ 21
+       -0.38054
+ 31
+       10.24580
+ 12
+       12.57982
+ 22
+       -0.38054
+ 32
+       10.24580
+ 13
+       12.57982
+ 23
+       -0.38054
+ 33
+       11.67270
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_23_0_23_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       23.79210
+ 20
+       -0.38054
+ 30
+       11.67270
+ 11
+       23.79210
+ 21
+       -0.38054
+ 31
+       10.24580
+ 12
+       24.53410
+ 22
+       -0.38054
+ 32
+       10.24580
+ 13
+       24.53410
+ 23
+       -0.38054
+ 33
+       11.67270
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_11_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 43
+ 10
+       27.35410
+ 20
+       -0.38054
+ 30
+       12.80580
+ 11
+       27.35410
+ 21
+       -0.38054
+ 31
+        9.14580
+ 12
+       27.35410
+ 22
+        2.89438
+ 32
+        9.14580
+ 13
+       27.35410
+ 23
+        2.89438
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_11_0_0_0_0_0_SUBSURFACE
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       27.35410
+ 20
+       -0.37854
+ 30
+       12.80380
+ 11
+       27.35410
+ 21
+       -0.37854
+ 31
+       12.38780
+ 12
+       27.35410
+ 22
+        2.48598
+ 32
+       12.38780
+ 13
+       27.35410
+ 23
+        2.48598
+ 33
+       12.80380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_11_0_0_1_0_1_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       27.35410
+ 20
+       -0.33854
+ 30
+       12.34380
+ 11
+       27.35410
+ 21
+       -0.33854
+ 31
+        9.18780
+ 12
+       27.35410
+ 22
+        0.46598
+ 32
+        9.18780
+ 13
+       27.35410
+ 23
+        0.46598
+ 33
+       12.34380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_11_0_0_2_0_2_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+143
+ 10
+       27.35410
+ 20
+        0.54998
+ 30
+       12.34380
+ 11
+       27.35410
+ 21
+        0.54998
+ 31
+        9.18780
+ 12
+       27.35410
+ 22
+        1.45598
+ 32
+        9.18780
+ 13
+       27.35410
+ 23
+        1.45598
+ 33
+       12.34380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 43
+ 10
+       27.35410
+ 20
+        2.89438
+ 30
+       12.80580
+ 11
+       27.35410
+ 21
+        2.89438
+ 31
+        9.14580
+ 12
+       29.67544
+ 22
+        2.89438
+ 32
+        9.14580
+ 13
+       29.67544
+ 23
+        2.89438
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_13_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 43
+ 10
+       29.67544
+ 20
+        2.89438
+ 30
+       12.80580
+ 11
+       29.67544
+ 21
+        2.89438
+ 31
+        9.14580
+ 12
+       29.67544
+ 22
+        5.23118
+ 32
+        9.14580
+ 13
+       29.67544
+ 23
+        5.23118
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_14_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 43
+ 10
+       29.67544
+ 20
+        5.23118
+ 30
+       12.80580
+ 11
+       29.67544
+ 21
+        5.23118
+ 31
+        9.14580
+ 12
+       27.70693
+ 22
+        5.23118
+ 32
+        9.14580
+ 13
+       27.70693
+ 23
+        5.23118
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_10177
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+        9.46688
+ 20
+        5.73902
+ 30
+        9.14069
+ 11
+        9.46563
+ 21
+       -0.01374
+ 31
+        9.14069
+ 12
+        9.43982
+ 22
+       -0.01374
+ 32
+        9.14069
+ 13
+        9.43982
+ 23
+        5.73902
+ 33
+        9.14069
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_10183
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       27.35410
+ 20
+        0.11988
+ 30
+        9.14580
+ 11
+       27.35410
+ 21
+       -0.38054
+ 31
+        9.14580
+ 12
+       24.30832
+ 22
+       -0.38054
+ 32
+        9.14580
+ 13
+       24.30832
+ 23
+        0.11988
  33
         9.14580
 999
-2ND%FLOOR%NORTH:2ND%WORK%ROOM:2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0_3_0_1_SUBSURFACE
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_10188
   0
 3DFACE
   8
-2ND%FLOOR%NORTH_2ND%WORK%ROOM
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
  62
- 45
+  8
  10
-       11.81900
+       27.35410
  20
-       11.50645
+        0.50688
+ 30
+        9.14069
+ 11
+       27.35410
+ 21
+        0.11988
+ 31
+        9.14069
+ 12
+       24.31343
+ 22
+        0.11988
+ 32
+        9.14069
+ 13
+       24.31343
+ 23
+        0.50688
+ 33
+        9.14069
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_10193
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       27.35410
+ 20
+        2.89438
  30
         9.14580
  11
-        7.56918
+       27.35410
  21
-        8.25673
+        0.89388
  31
         9.14580
  12
-       12.67928
+       23.53432
  22
-        8.25673
+        0.89388
  32
         9.14580
  13
-       12.67928
+       23.53432
  23
-        8.25673
+        0.89388
+ 33
+        9.14580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       23.53432
+ 20
+        0.89388
+ 30
+        9.14580
+ 11
+       23.53432
+ 21
+       -0.01894
+ 31
+        9.14580
+ 12
+        9.85263
+ 22
+       -0.01894
+ 32
+        9.14580
+ 13
+        9.85263
+ 23
+       -0.01894
+ 33
+        9.14580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       27.35410
+ 20
+        2.89438
+ 30
+        9.14580
+ 11
+       23.53432
+ 21
+        0.89388
+ 31
+        9.14580
+ 12
+        9.85263
+ 22
+       -0.01894
+ 32
+        9.14580
+ 13
+        9.85263
+ 23
+       -0.01894
+ 33
+        9.14580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       27.35410
+ 20
+        2.89438
+ 30
+        9.14580
+ 11
+        9.85263
+ 21
+       -0.01894
+ 31
+        9.14580
+ 12
+        9.85403
+ 22
+        6.42639
+ 32
+        9.14580
+ 13
+        9.85403
+ 23
+        6.42639
+ 33
+        9.14580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       27.35410
+ 20
+        2.89438
+ 30
+        9.14580
+ 11
+        9.85403
+ 21
+        6.42639
+ 31
+        9.14580
+ 12
+       14.07784
+ 22
+        6.42639
+ 32
+        9.14580
+ 13
+       14.07784
+ 23
+        6.42639
+ 33
+        9.14580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       27.35410
+ 20
+        2.89438
+ 30
+        9.14580
+ 11
+       14.07784
+ 21
+        6.42639
+ 31
+        9.14580
+ 12
+       14.16683
+ 22
+        6.47812
+ 32
+        9.14580
+ 13
+       14.16683
+ 23
+        6.47812
+ 33
+        9.14580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       27.35410
+ 20
+        2.89438
+ 30
+        9.14580
+ 11
+       14.16683
+ 21
+        6.47812
+ 31
+        9.14580
+ 12
+       14.28885
+ 22
+        6.47812
+ 32
+        9.14580
+ 13
+       14.28885
+ 23
+        6.47812
+ 33
+        9.14580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       14.28885
+ 20
+        6.47812
+ 30
+        9.14580
+ 11
+       21.54709
+ 21
+       10.66866
+ 31
+        9.14580
+ 12
+       22.79378
+ 22
+        8.51049
+ 32
+        9.14580
+ 13
+       22.79378
+ 23
+        8.51049
+ 33
+        9.14580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       22.79378
+ 20
+        8.51049
+ 30
+        9.14580
+ 11
+       22.90202
+ 21
+        8.57339
+ 31
+        9.14580
+ 12
+       24.67786
+ 22
+        5.49235
+ 32
+        9.14580
+ 13
+       24.67786
+ 23
+        5.49235
+ 33
+        9.14580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       24.67786
+ 20
+        5.49235
+ 30
+        9.14580
+ 11
+       26.83996
+ 21
+        6.73281
+ 31
+        9.14580
+ 12
+       27.70693
+ 22
+        5.23118
+ 32
+        9.14580
+ 13
+       27.70693
+ 23
+        5.23118
+ 33
+        9.14580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       27.70693
+ 20
+        5.23118
+ 30
+        9.14580
+ 11
+       29.67544
+ 21
+        5.23118
+ 31
+        9.14580
+ 12
+       29.67544
+ 22
+        2.89438
+ 32
+        9.14580
+ 13
+       29.67544
+ 23
+        2.89438
+ 33
+        9.14580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       24.67786
+ 20
+        5.49235
+ 30
+        9.14580
+ 11
+       27.70693
+ 21
+        5.23118
+ 31
+        9.14580
+ 12
+       29.67544
+ 22
+        2.89438
+ 32
+        9.14580
+ 13
+       29.67544
+ 23
+        2.89438
+ 33
+        9.14580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       24.67786
+ 20
+        5.49235
+ 30
+        9.14580
+ 11
+       29.67544
+ 21
+        2.89438
+ 31
+        9.14580
+ 12
+       27.35410
+ 22
+        2.89438
+ 32
+        9.14580
+ 13
+       27.35410
+ 23
+        2.89438
+ 33
+        9.14580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       24.67786
+ 20
+        5.49235
+ 30
+        9.14580
+ 11
+       27.35410
+ 21
+        2.89438
+ 31
+        9.14580
+ 12
+       14.28885
+ 22
+        6.47812
+ 32
+        9.14580
+ 13
+       14.28885
+ 23
+        6.47812
+ 33
+        9.14580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       14.28885
+ 20
+        6.47812
+ 30
+        9.14580
+ 11
+       22.79378
+ 21
+        8.51049
+ 31
+        9.14580
+ 12
+       24.67786
+ 22
+        5.49235
+ 32
+        9.14580
+ 13
+       24.67786
+ 23
+        5.49235
  33
         9.14580
 999
-2ND%FLOOR%NORTH:2ND%WORK%ROOM:2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0_4_0_1_SUBSURFACE
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10195
   0
 3DFACE
   8
-2ND%FLOOR%NORTH_2ND%WORK%ROOM
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
  62
  45
  10
-        7.56918
+       22.90129
  20
-        8.99833
+        8.57065
  30
         9.14580
  11
-        7.56918
+       24.42116
  21
-        8.25673
+        5.93371
  31
         9.14580
  12
-       11.81900
+       20.73028
  22
-       11.50645
+        3.84857
  32
         9.14580
  13
-       11.81900
+       20.73028
  23
-       11.50645
+        3.84857
  33
         9.14580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10196
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       22.90129
+ 20
+        8.57065
+ 30
+        9.14580
+ 11
+       20.73028
+ 21
+        3.84857
+ 31
+        9.14580
+ 12
+       22.79305
+ 22
+        8.50775
+ 32
+        9.14580
+ 13
+       22.79305
+ 23
+        8.50775
+ 33
+        9.14580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10197
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       22.79305
+ 20
+        8.50775
+ 30
+        9.14580
+ 11
+       20.73028
+ 21
+        3.84857
+ 31
+        9.14580
+ 12
+       21.54636
+ 22
+       10.66593
+ 32
+        9.14580
+ 13
+       21.54636
+ 23
+       10.66593
+ 33
+        9.14580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10198
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       21.54636
+ 20
+       10.66593
+ 30
+        9.14580
+ 11
+       20.73028
+ 21
+        3.84857
+ 31
+        9.14580
+ 12
+       14.28939
+ 22
+        6.47612
+ 32
+        9.14580
+ 13
+       14.28939
+ 23
+        6.47612
+ 33
+        9.14580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10199
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       20.73028
+ 20
+        3.84857
+ 30
+        9.14580
+ 11
+       20.73028
+ 21
+        2.62540
+ 31
+        9.14580
+ 12
+       14.28939
+ 22
+        6.47612
+ 32
+        9.14580
+ 13
+       14.28939
+ 23
+        6.47612
+ 33
+        9.14580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10200
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       21.08028
+ 20
+        2.62540
+ 30
+        9.14580
+ 11
+       21.08028
+ 21
+       -0.01683
+ 31
+        9.14580
+ 12
+       20.73028
+ 22
+        2.62540
+ 32
+        9.14580
+ 13
+       20.73028
+ 23
+        2.62540
+ 33
+        9.14580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10201
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       20.73028
+ 20
+        2.62540
+ 30
+        9.14580
+ 11
+       21.08028
+ 21
+       -0.01683
+ 31
+        9.14580
+ 12
+        9.85481
+ 22
+       -0.01674
+ 32
+        9.14580
+ 13
+        9.85481
+ 23
+       -0.01674
+ 33
+        9.14580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10202
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       14.28939
+ 20
+        6.47612
+ 30
+        9.14580
+ 11
+       20.73028
+ 21
+        2.62540
+ 31
+        9.14580
+ 12
+        9.85481
+ 22
+       -0.01674
+ 32
+        9.14580
+ 13
+        9.85481
+ 23
+       -0.01674
+ 33
+        9.14580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10203
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       14.28939
+ 20
+        6.47612
+ 30
+        9.14580
+ 11
+        9.85481
+ 21
+       -0.01674
+ 31
+        9.14580
+ 12
+       14.16737
+ 22
+        6.47612
+ 32
+        9.14580
+ 13
+       14.16737
+ 23
+        6.47612
+ 33
+        9.14580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10204
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       14.16737
+ 20
+        6.47612
+ 30
+        9.14580
+ 11
+        9.85481
+ 21
+       -0.01674
+ 31
+        9.14580
+ 12
+       14.07838
+ 22
+        6.42439
+ 32
+        9.14580
+ 13
+       14.07838
+ 23
+        6.42439
+ 33
+        9.14580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10205
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       14.07838
+ 20
+        6.42439
+ 30
+        9.14580
+ 11
+        9.85481
+ 21
+       -0.01674
+ 31
+        9.14580
+ 12
+        9.85603
+ 22
+        6.42439
+ 32
+        9.14580
+ 13
+        9.85603
+ 23
+        6.42439
+ 33
+        9.14580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_10213
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       23.92132
+ 20
+        0.11977
+ 30
+        9.14569
+ 11
+       23.92132
+ 21
+       -0.01883
+ 31
+        9.14569
+ 12
+       23.53432
+ 22
+       -0.01883
+ 32
+        9.14569
+ 13
+       23.53432
+ 23
+        0.11977
+ 33
+        9.14569
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_10216
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       27.35410
+ 20
+        0.89388
+ 30
+        9.14569
+ 11
+       27.35410
+ 21
+        0.50688
+ 31
+        9.14569
+ 12
+       24.30843
+ 22
+        0.50688
+ 32
+        9.14569
+ 13
+       24.30843
+ 23
+        0.89388
+ 33
+        9.14569
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_10219
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+        9.85388
+ 20
+        5.74393
+ 30
+        9.14569
+ 11
+        9.85263
+ 21
+       -0.01883
+ 31
+        9.14569
+ 12
+        9.46563
+ 22
+       -0.01874
+ 32
+        9.14569
+ 13
+        9.46688
+ 23
+        5.74402
+ 33
+        9.14569
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_10222
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+       23.53421
+ 20
+       -0.01894
+ 30
+        9.14569
+ 11
+       23.53421
+ 21
+       -0.38054
+ 31
+        9.14569
+ 12
+        9.85274
+ 22
+       -0.38054
+ 32
+        9.14569
+ 13
+        9.85274
+ 23
+       -0.01894
+ 33
+        9.14569
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_10235
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+  8
+ 10
+        9.85404
+ 20
+        6.47812
+ 30
+        9.14580
+ 11
+       14.16683
+ 21
+        6.47812
+ 31
+        9.14580
+ 12
+       14.07784
+ 22
+        6.42639
+ 32
+        9.14580
+ 13
+        9.85403
+ 23
+        6.42639
+ 33
+        9.14580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_CEILING_1_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 15
+ 10
+       16.81490
+ 20
+        7.93653
+ 30
+       12.80580
+ 11
+       19.57651
+ 21
+        3.21878
+ 31
+       12.80580
+ 12
+       24.38742
+ 22
+        5.99625
+ 32
+       12.80580
+ 13
+       24.38742
+ 23
+        5.99625
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 15
+ 10
+       24.38742
+ 20
+        5.99625
+ 30
+       12.80580
+ 11
+       22.90202
+ 21
+        8.57339
+ 31
+       12.80580
+ 12
+       22.79378
+ 22
+        8.51049
+ 32
+       12.80580
+ 13
+       22.79378
+ 23
+        8.51049
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 15
+ 10
+       22.79378
+ 20
+        8.51049
+ 30
+       12.80580
+ 11
+       21.54709
+ 21
+       10.66866
+ 31
+       12.80580
+ 12
+       16.81490
+ 22
+        7.93653
+ 32
+       12.80580
+ 13
+       16.81490
+ 23
+        7.93653
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 15
+ 10
+       16.81490
+ 20
+        7.93653
+ 30
+       12.80580
+ 11
+       24.38742
+ 21
+        5.99625
+ 31
+       12.80580
+ 12
+       22.79378
+ 22
+        8.51049
+ 32
+       12.80580
+ 13
+       22.79378
+ 23
+        8.51049
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_CEILING_1_0_0_0_0_0_HOLE
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       22.90129
+ 20
+        8.57065
+ 30
+       12.80580
+ 11
+       19.57723
+ 21
+        3.22151
+ 31
+       12.80580
+ 12
+       24.38469
+ 22
+        5.99698
+ 32
+       12.80580
+ 13
+       24.38469
+ 23
+        5.99698
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_CEILING_1_0_0_1_0_0_HOLE
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       22.79305
+ 20
+        8.50775
+ 30
+       12.80580
+ 11
+       19.57723
+ 21
+        3.22151
+ 31
+       12.80580
+ 12
+       22.90129
+ 22
+        8.57065
+ 32
+       12.80580
+ 13
+       22.90129
+ 23
+        8.57065
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_CEILING_1_0_0_2_0_0_HOLE
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       21.54636
+ 20
+       10.66593
+ 30
+       12.80580
+ 11
+       19.57723
+ 21
+        3.22151
+ 31
+       12.80580
+ 12
+       22.79305
+ 22
+        8.50775
+ 32
+       12.80580
+ 13
+       22.79305
+ 23
+        8.50775
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_CEILING_1_0_0_3_0_0_HOLE
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 45
+ 10
+       16.81765
+ 20
+        7.93581
+ 30
+       12.80580
+ 11
+       19.57723
+ 21
+        3.22151
+ 31
+       12.80580
+ 12
+       21.54636
+ 22
+       10.66593
+ 32
+       12.80580
+ 13
+       21.54636
+ 23
+       10.66593
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_ROOF_1_1_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 15
+ 10
+        9.43982
+ 20
+        6.47812
+ 30
+       12.80580
+ 11
+        9.43982
+ 21
+       -0.38054
+ 31
+       12.80580
+ 12
+       27.35410
+ 22
+       -0.38054
+ 32
+       12.80580
+ 13
+       27.35410
+ 23
+       -0.38054
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 15
+ 10
+       27.35410
+ 20
+        2.89438
+ 30
+       12.80580
+ 11
+       29.67544
+ 21
+        2.89438
+ 31
+       12.80580
+ 12
+       29.67544
+ 22
+        5.23118
+ 32
+       12.80580
+ 13
+       29.67544
+ 23
+        5.23118
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 15
+ 10
+       27.35410
+ 20
+        2.89438
+ 30
+       12.80580
+ 11
+       29.67544
+ 21
+        5.23118
+ 31
+       12.80580
+ 12
+       27.70693
+ 22
+        5.23118
+ 32
+       12.80580
+ 13
+       27.70693
+ 23
+        5.23118
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 15
+ 10
+       27.35410
+ 20
+        2.89438
+ 30
+       12.80580
+ 11
+       27.70693
+ 21
+        5.23118
+ 31
+       12.80580
+ 12
+       26.83996
+ 22
+        6.73281
+ 32
+       12.80580
+ 13
+       26.83996
+ 23
+        6.73281
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 15
+ 10
+       27.35410
+ 20
+       -0.38054
+ 30
+       12.80580
+ 11
+       27.35410
+ 21
+        2.89438
+ 31
+       12.80580
+ 12
+       26.83996
+ 22
+        6.73281
+ 32
+       12.80580
+ 13
+       26.83996
+ 23
+        6.73281
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 15
+ 10
+       27.35410
+ 20
+       -0.38054
+ 30
+       12.80580
+ 11
+       26.83996
+ 21
+        6.73281
+ 31
+       12.80580
+ 12
+       24.67786
+ 22
+        5.49235
+ 32
+       12.80580
+ 13
+       24.67786
+ 23
+        5.49235
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 15
+ 10
+       27.35410
+ 20
+       -0.38054
+ 30
+       12.80580
+ 11
+       24.67786
+ 21
+        5.49235
+ 31
+       12.80580
+ 12
+       24.38742
+ 22
+        5.99625
+ 32
+       12.80580
+ 13
+       24.38742
+ 23
+        5.99625
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 15
+ 10
+       27.35410
+ 20
+       -0.38054
+ 30
+       12.80580
+ 11
+       24.38742
+ 21
+        5.99625
+ 31
+       12.80580
+ 12
+       19.57651
+ 22
+        3.21878
+ 32
+       12.80580
+ 13
+       19.57651
+ 23
+        3.21878
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 15
+ 10
+        9.43982
+ 20
+        6.47812
+ 30
+       12.80580
+ 11
+       27.35410
+ 21
+       -0.38054
+ 31
+       12.80580
+ 12
+       19.57651
+ 22
+        3.21878
+ 32
+       12.80580
+ 13
+       19.57651
+ 23
+        3.21878
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 15
+ 10
+       19.57651
+ 20
+        3.21878
+ 30
+       12.80580
+ 11
+       16.81490
+ 21
+        7.93653
+ 31
+       12.80580
+ 12
+       14.28885
+ 22
+        6.47812
+ 32
+       12.80580
+ 13
+       14.28885
+ 23
+        6.47812
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%LOBBY
+ 62
+ 15
+ 10
+        9.43982
+ 20
+        6.47812
+ 30
+       12.80580
+ 11
+       19.57651
+ 21
+        3.21878
+ 31
+       12.80580
+ 12
+       14.28885
+ 22
+        6.47812
+ 32
+       12.80580
+ 13
+       14.28885
+ 23
+        6.47812
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_PARTITION_5_0_10258
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+ 43
+ 10
+       24.67786
+ 20
+        5.49235
+ 30
+       12.80580
+ 11
+       24.67786
+ 21
+        5.49235
+ 31
+        9.14580
+ 12
+       26.83996
+ 22
+        6.73281
+ 32
+        9.14580
+ 13
+       26.83996
+ 23
+        6.73281
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_PARTITION_5_0_0_1_0_1_SUBSURFACE_10260
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+ 45
+ 10
+       24.74062
+ 20
+        5.52836
+ 30
+       12.80380
+ 11
+       24.74062
+ 21
+        5.52836
+ 31
+       12.38780
+ 12
+       26.83808
+ 22
+        6.73173
+ 32
+       12.38780
+ 13
+       26.83808
+ 23
+        6.73173
+ 33
+       12.80380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_PARTITION_5_0_0_0_0_0_WIN_10261
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+143
+ 10
+       25.15886
+ 20
+        5.76831
+ 30
+       11.83380
+ 11
+       25.15886
+ 21
+        5.76831
+ 31
+        9.48780
+ 12
+       26.80352
+ 22
+        6.71191
+ 32
+        9.48780
+ 13
+       26.80352
+ 23
+        6.71191
+ 33
+       11.83380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_PARTITION_5_0_0_2_0_2_WIN_10262
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+143
+ 10
+       24.77532
+ 20
+        5.54827
+ 30
+       12.34380
+ 11
+       24.77532
+ 21
+        5.54827
+ 31
+        9.48780
+ 12
+       25.08600
+ 22
+        5.72651
+ 32
+       11.91780
+ 13
+       25.08600
+ 23
+        5.72651
+ 33
+       11.91780
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_PARTITION_5_0_0_2_0_2_WIN_10263
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+143
+ 10
+       24.77532
+ 20
+        5.54827
+ 30
+       12.34380
+ 11
+       25.08600
+ 21
+        5.72651
+ 31
+       11.91780
+ 12
+       26.80340
+ 22
+        6.71184
+ 32
+       12.34380
+ 13
+       26.80340
+ 23
+        6.71184
+ 33
+       12.34380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_PARTITION_5_0_0_2_0_2_WIN_10264
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+143
+ 10
+       26.80340
+ 20
+        6.71184
+ 30
+       12.34380
+ 11
+       25.08600
+ 21
+        5.72651
+ 31
+       11.91780
+ 12
+       26.80351
+ 22
+        6.71190
+ 32
+       11.91780
+ 13
+       26.80351
+ 23
+        6.71190
+ 33
+       11.91780
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_PARTITION_5_0_0_2_0_2_WIN_10265
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+143
+ 10
+       25.08600
+ 20
+        5.72651
+ 30
+       11.91780
+ 11
+       24.77532
+ 21
+        5.54827
+ 31
+        9.48780
+ 12
+       25.08600
+ 22
+        5.72651
+ 32
+        9.48780
+ 13
+       25.08600
+ 23
+        5.72651
+ 33
+        9.48780
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_PARTITION_4_0_10265
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+ 43
+ 10
+       22.90202
+ 20
+        8.57339
+ 30
+       12.80580
+ 11
+       22.90202
+ 21
+        8.57339
+ 31
+        9.14580
+ 12
+       24.67786
+ 22
+        5.49235
+ 32
+        9.14580
+ 13
+       24.67786
+ 23
+        5.49235
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_PARTITION_4_0_0_0_0_0_WIN_10267
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+143
+ 10
+       22.92308
+ 20
+        8.53686
+ 30
+       12.64914
+ 11
+       22.92308
+ 21
+        8.53686
+ 31
+       10.55314
+ 12
+       24.62175
+ 22
+        5.58970
+ 32
+       10.55314
+ 13
+       24.62175
+ 23
+        5.58970
+ 33
+       12.64914
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_2_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+ 43
+ 10
+       26.83996
+ 20
+        6.73281
+ 30
+       12.80580
+ 11
+       26.83996
+ 21
+        6.73281
+ 31
+        9.14580
+ 12
+       25.05496
+ 22
+        9.82452
+ 32
+        9.14580
+ 13
+       25.05496
+ 23
+        9.82452
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_2_0_0_1_0_1_SUBSURFACE
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+ 45
+ 10
+       26.83896
+ 20
+        6.73455
+ 30
+       12.80380
+ 11
+       26.83896
+ 21
+        6.73455
+ 31
+       12.38780
+ 12
+       25.05596
+ 22
+        9.82279
+ 32
+       12.38780
+ 13
+       25.05596
+ 23
+        9.82279
+ 33
+       12.80380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_2_0_0_0_0_0_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+143
+ 10
+       26.81896
+ 20
+        6.76919
+ 30
+       12.34380
+ 11
+       26.81896
+ 21
+        6.76919
+ 31
+       10.24780
+ 12
+       25.07596
+ 22
+        9.78815
+ 32
+       10.24780
+ 13
+       25.07596
+ 23
+        9.78815
+ 33
+       12.34380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+ 43
+ 10
+       25.05496
+ 20
+        9.82452
+ 30
+       12.80580
+ 11
+       25.05496
+ 21
+        9.82452
+ 31
+        9.14580
+ 12
+       22.90202
+ 22
+        8.57339
+ 32
+        9.14580
+ 13
+       22.90202
+ 23
+        8.57339
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_0_0_0_SUBSURFACE
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+ 45
+ 10
+       25.05323
+ 20
+        9.82352
+ 30
+       12.80380
+ 11
+       25.05323
+ 21
+        9.82352
+ 31
+       12.38780
+ 12
+       23.14780
+ 22
+        8.71622
+ 32
+       12.38780
+ 13
+       23.14780
+ 23
+        8.71622
+ 33
+       12.80380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_1_0_1_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+143
+ 10
+       24.90893
+ 20
+        9.73966
+ 30
+       11.53380
+ 11
+       24.90893
+ 21
+        9.73966
+ 31
+        9.18780
+ 12
+       23.29211
+ 22
+        8.80008
+ 32
+        9.18780
+ 13
+       23.29211
+ 23
+        8.80008
+ 33
+       11.53380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_2_0_2_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+143
+ 10
+       23.21948
+ 20
+        8.75788
+ 30
+       11.61780
+ 11
+       23.18239
+ 21
+        8.73632
+ 31
+        9.18780
+ 12
+       23.18239
+ 22
+        8.73632
+ 32
+       12.34380
+ 13
+       23.18239
+ 23
+        8.73632
+ 33
+       12.34380
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_3_0_2_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+143
+ 10
+       23.18239
+ 20
+        8.73632
+ 30
+       12.34380
+ 11
+       25.01865
+ 21
+        9.80342
+ 31
+       12.34380
+ 12
+       23.21948
+ 22
+        8.75788
+ 32
+       11.61780
+ 13
+       23.21948
+ 23
+        8.75788
+ 33
+       11.61780
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_4_0_2_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+143
+ 10
+       23.21948
+ 20
+        8.75788
+ 30
+       11.61780
+ 11
+       23.21948
+ 21
+        8.75788
+ 31
+        9.18780
+ 12
+       23.18239
+ 22
+        8.73632
+ 32
+        9.18780
+ 13
+       23.18239
+ 23
+        8.73632
+ 33
+        9.18780
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_5_0_2_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+143
+ 10
+       25.01865
+ 20
+        9.80342
+ 30
+       12.34380
+ 11
+       24.98155
+ 21
+        9.78186
+ 31
+       11.61780
+ 12
+       23.21948
+ 22
+        8.75788
+ 32
+       11.61780
+ 13
+       23.21948
+ 23
+        8.75788
+ 33
+       11.61780
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_FLOOR_0_0_10205
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+  8
+ 10
+       25.05496
+ 20
+        9.82452
+ 30
+        9.14580
+ 11
+       26.83996
+ 21
+        6.73281
+ 31
+        9.14580
+ 12
+       24.67786
+ 22
+        5.49235
+ 32
+        9.14580
+ 13
+       22.90202
+ 23
+        8.57339
+ 33
+        9.14580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_CEILING_1_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+ 15
+ 10
+       22.90202
+ 20
+        8.57339
+ 30
+       12.80580
+ 11
+       24.38742
+ 21
+        5.99625
+ 31
+       12.80580
+ 12
+       24.48882
+ 22
+        6.05479
+ 32
+       12.80580
+ 13
+       23.00077
+ 23
+        8.63078
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_ROOF_1_1_0
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+ 15
+ 10
+       23.75934
+ 20
+        7.31361
+ 30
+       12.80580
+ 11
+       24.48609
+ 21
+        6.05552
+ 31
+       12.80580
+ 12
+       26.54479
+ 22
+        7.24407
+ 32
+       12.80580
+ 13
+       26.50464
+ 23
+        7.31361
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_ROOF_1_1_1
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+ 15
+ 10
+       24.38816
+ 20
+        5.99898
+ 30
+       12.80580
+ 11
+       24.67959
+ 21
+        5.49335
+ 31
+       12.80580
+ 12
+       26.83996
+ 22
+        6.73281
+ 32
+       12.80580
+ 13
+       26.54479
+ 23
+        7.24407
+ 33
+       12.80580
+999
+3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_ROOF_1_1_5
+  0
+3DFACE
+  8
+3RD%FLOOR%LOWER_3RD%LOWER%VESTIBULE
+ 62
+ 15
+ 10
+       22.99904
+ 20
+        8.62977
+ 30
+       12.80580
+ 11
+       23.75934
+ 21
+        7.31361
+ 31
+       12.80580
+ 12
+       26.50464
+ 22
+        7.31361
+ 32
+       12.80580
+ 13
+       25.05496
+ 23
+        9.82452
+ 33
+       12.80580
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+ 43
+ 10
+       24.48882
+ 20
+        6.05479
+ 30
+       16.02213
+ 11
+       24.48882
+ 21
+        6.05479
+ 31
+       12.80580
+ 12
+       21.63467
+ 22
+       10.99566
+ 32
+       12.80580
+ 13
+       21.63467
+ 23
+       10.99566
+ 33
+       14.33111
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_0_0_0_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       23.95085
+ 20
+        6.98608
+ 30
+       15.63508
+ 11
+       24.45606
+ 21
+        6.11151
+ 31
+       13.26130
+ 12
+       23.95085
+ 22
+        6.98608
+ 32
+       13.26130
+ 13
+       23.95085
+ 23
+        6.98608
+ 33
+       13.26130
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_1_0_0_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       24.45606
+ 20
+        6.11151
+ 30
+       15.93440
+ 11
+       24.45606
+ 21
+        6.11151
+ 31
+       13.26130
+ 12
+       23.95085
+ 22
+        6.98608
+ 32
+       15.63508
+ 13
+       23.95085
+ 23
+        6.98608
+ 33
+       15.63508
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_2_0_1_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       23.38012
+ 20
+        7.97408
+ 30
+       15.29694
+ 11
+       23.88533
+ 21
+        7.09951
+ 31
+       13.26130
+ 12
+       23.38012
+ 22
+        7.97408
+ 32
+       13.26130
+ 13
+       23.38012
+ 23
+        7.97408
+ 33
+       13.26130
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_3_0_1_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       23.88533
+ 20
+        7.09951
+ 30
+       15.59626
+ 11
+       23.88533
+ 21
+        7.09951
+ 31
+       13.26130
+ 12
+       23.38012
+ 22
+        7.97408
+ 32
+       15.29694
+ 13
+       23.38012
+ 23
+        7.97408
+ 33
+       15.29694
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_4_0_2_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       22.80939
+ 20
+        8.96208
+ 30
+       14.95879
+ 11
+       23.31460
+ 21
+        8.08751
+ 31
+       13.26130
+ 12
+       22.80939
+ 22
+        8.96208
+ 32
+       13.26130
+ 13
+       22.80939
+ 23
+        8.96208
+ 33
+       13.26130
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_5_0_2_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       23.31460
+ 20
+        8.08751
+ 30
+       15.25811
+ 11
+       23.31460
+ 21
+        8.08751
+ 31
+       13.26130
+ 12
+       22.80939
+ 22
+        8.96208
+ 32
+       14.95879
+ 13
+       22.80939
+ 23
+        8.96208
+ 33
+       14.95879
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_6_0_3_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       22.74386
+ 20
+        9.07551
+ 30
+       14.91997
+ 11
+       22.23866
+ 21
+        9.95008
+ 31
+       12.87130
+ 12
+       22.23866
+ 22
+        9.95008
+ 32
+       14.62065
+ 13
+       22.23866
+ 23
+        9.95008
+ 33
+       14.62065
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_7_0_3_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       22.74386
+ 20
+        9.07551
+ 30
+       14.91997
+ 11
+       22.74386
+ 21
+        9.07551
+ 31
+       12.87130
+ 12
+       22.23866
+ 22
+        9.95008
+ 32
+       12.87130
+ 13
+       22.23866
+ 23
+        9.95008
+ 33
+       12.87130
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_8_0_4_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       21.66743
+ 20
+       10.93894
+ 30
+       14.28221
+ 11
+       22.17313
+ 21
+       10.06351
+ 31
+       12.87130
+ 12
+       21.66743
+ 22
+       10.93894
+ 32
+       12.87130
+ 13
+       21.66743
+ 23
+       10.93894
+ 33
+       12.87130
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_9_0_4_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       22.17313
+ 20
+       10.06351
+ 30
+       14.58182
+ 11
+       22.17313
+ 21
+       10.06351
+ 31
+       12.87130
+ 12
+       21.66743
+ 22
+       10.93894
+ 32
+       14.28221
+ 13
+       21.66743
+ 23
+       10.93894
+ 33
+       14.28221
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+ 43
+ 10
+       21.63467
+ 20
+       10.99566
+ 30
+       14.33111
+ 11
+       21.63467
+ 21
+       10.99566
+ 31
+       12.80580
+ 12
+       16.69396
+ 22
+        8.14314
+ 32
+       12.80580
+ 13
+       16.69396
+ 23
+        8.14314
+ 33
+       14.33114
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0_0_0_0_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       21.59829
+ 20
+       10.97466
+ 30
+       14.28912
+ 11
+       21.59829
+ 21
+       10.97466
+ 31
+       12.84780
+ 12
+       20.43609
+ 22
+       10.30366
+ 32
+       12.84780
+ 13
+       20.43609
+ 23
+       10.30366
+ 33
+       14.28912
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+ 43
+ 10
+       16.69396
+ 20
+        8.14314
+ 30
+       14.33114
+ 11
+       16.69396
+ 21
+        8.14314
+ 31
+       12.80580
+ 12
+       19.57651
+ 22
+        3.21878
+ 32
+       12.80580
+ 13
+       19.57651
+ 23
+        3.21878
+ 33
+       16.02213
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_0_0_0_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       16.72705
+ 20
+        8.08662
+ 30
+       14.28224
+ 11
+       17.23677
+ 21
+        7.21583
+ 31
+       13.26130
+ 12
+       17.23677
+ 22
+        7.21583
+ 32
+       14.58126
+ 13
+       17.23677
+ 23
+        7.21583
+ 33
+       14.58126
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_1_0_0_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       16.72705
+ 20
+        8.08662
+ 30
+       14.28224
+ 11
+       16.72705
+ 21
+        8.08662
+ 31
+       13.26130
+ 12
+       17.23677
+ 22
+        7.21583
+ 32
+       13.26130
+ 13
+       17.23677
+ 23
+        7.21583
+ 33
+       13.26130
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_2_0_1_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       17.30295
+ 20
+        7.10278
+ 30
+       14.62008
+ 11
+       17.81268
+ 21
+        6.23200
+ 31
+       13.26130
+ 12
+       17.81268
+ 22
+        6.23200
+ 32
+       14.91910
+ 13
+       17.81268
+ 23
+        6.23200
+ 33
+       14.91910
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_3_0_1_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       17.30295
+ 20
+        7.10278
+ 30
+       14.62008
+ 11
+       17.30295
+ 21
+        7.10278
+ 31
+       13.26130
+ 12
+       17.81268
+ 22
+        6.23200
+ 32
+       13.26130
+ 13
+       17.81268
+ 23
+        6.23200
+ 33
+       13.26130
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_4_0_2_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       18.38858
+ 20
+        5.24816
+ 30
+       15.25694
+ 11
+       17.87886
+ 21
+        6.11894
+ 31
+       13.26130
+ 12
+       18.38858
+ 22
+        5.24816
+ 32
+       13.26130
+ 13
+       18.38858
+ 23
+        5.24816
+ 33
+       13.26130
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_5_0_2_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       17.87886
+ 20
+        6.11894
+ 30
+       14.95792
+ 11
+       17.87886
+ 21
+        6.11894
+ 31
+       13.26130
+ 12
+       18.38858
+ 22
+        5.24816
+ 32
+       15.25694
+ 13
+       18.38858
+ 23
+        5.24816
+ 33
+       15.25694
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_6_0_3_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       18.45476
+ 20
+        5.13510
+ 30
+       15.29576
+ 11
+       18.96448
+ 21
+        4.26432
+ 31
+       13.26130
+ 12
+       18.96448
+ 22
+        4.26432
+ 32
+       15.59478
+ 13
+       18.96448
+ 23
+        4.26432
+ 33
+       15.59478
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_7_0_3_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       18.45476
+ 20
+        5.13510
+ 30
+       15.29576
+ 11
+       18.45476
+ 21
+        5.13510
+ 31
+       13.26130
+ 12
+       18.96448
+ 22
+        4.26432
+ 32
+       13.26130
+ 13
+       18.96448
+ 23
+        4.26432
+ 33
+       13.26130
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_8_0_4_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       19.03066
+ 20
+        4.15127
+ 30
+       15.63360
+ 11
+       19.54342
+ 21
+        3.27531
+ 31
+       13.26130
+ 12
+       19.54342
+ 22
+        3.27531
+ 32
+       15.93440
+ 13
+       19.54342
+ 23
+        3.27531
+ 33
+       15.93440
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_9_0_4_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       19.03066
+ 20
+        4.15127
+ 30
+       15.63360
+ 11
+       19.03066
+ 21
+        4.15127
+ 31
+       13.26130
+ 12
+       19.54342
+ 22
+        3.27531
+ 32
+       13.26130
+ 13
+       19.54342
+ 23
+        3.27531
+ 33
+       13.26130
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+ 43
+ 10
+       19.57651
+ 20
+        3.21878
+ 30
+       16.02213
+ 11
+       19.57651
+ 21
+        3.21878
+ 31
+       12.80580
+ 12
+       24.48882
+ 22
+        6.05479
+ 32
+       12.80580
+ 13
+       24.48882
+ 23
+        6.05479
+ 33
+       16.02213
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0_0_0_0_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       19.61288
+ 20
+        3.23978
+ 30
+       15.98013
+ 11
+       19.61288
+ 21
+        3.23978
+ 31
+       13.23780
+ 12
+       20.76817
+ 22
+        3.90676
+ 32
+       13.23780
+ 13
+       20.76817
+ 23
+        3.90676
+ 33
+       15.98013
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0_3_0_3_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       23.29699
+ 20
+        5.36672
+ 30
+       15.98013
+ 11
+       23.29699
+ 21
+        5.36672
+ 31
+       13.23780
+ 12
+       24.45245
+ 22
+        6.03379
+ 32
+       13.23780
+ 13
+       24.45245
+ 23
+        6.03379
+ 33
+       15.98013
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_FLOOR_0_0_10253
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+  8
+ 10
+       22.90202
+ 20
+        8.57339
+ 30
+       12.80580
+ 11
+       24.38742
+ 21
+        5.99625
+ 31
+       12.80580
+ 12
+       19.57651
+ 22
+        3.21878
+ 32
+       12.80580
+ 13
+       19.57651
+ 23
+        3.21878
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+  8
+ 10
+       19.57651
+ 20
+        3.21878
+ 30
+       12.80580
+ 11
+       16.81490
+ 21
+        7.93653
+ 31
+       12.80580
+ 12
+       21.54709
+ 22
+       10.66866
+ 32
+       12.80580
+ 13
+       21.54709
+ 23
+       10.66866
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+  8
+ 10
+       19.57651
+ 20
+        3.21878
+ 30
+       12.80580
+ 11
+       21.54709
+ 21
+       10.66866
+ 31
+       12.80580
+ 12
+       22.79378
+ 22
+        8.51049
+ 32
+       12.80580
+ 13
+       22.79378
+ 23
+        8.51049
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+  8
+ 10
+       22.90202
+ 20
+        8.57339
+ 30
+       12.80580
+ 11
+       19.57651
+ 21
+        3.21878
+ 31
+       12.80580
+ 12
+       22.79378
+ 22
+        8.51049
+ 32
+       12.80580
+ 13
+       22.79378
+ 23
+        8.51049
+ 33
+       12.80580
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10255
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+ 45
+ 10
+       22.90129
+ 20
+        8.57065
+ 30
+       12.80580
+ 11
+       24.38469
+ 21
+        5.99698
+ 31
+       12.80580
+ 12
+       19.57723
+ 22
+        3.22151
+ 32
+       12.80580
+ 13
+       19.57723
+ 23
+        3.22151
+ 33
+       12.80580
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10256
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+ 45
+ 10
+       22.90129
+ 20
+        8.57065
+ 30
+       12.80580
+ 11
+       19.57723
+ 21
+        3.22151
+ 31
+       12.80580
+ 12
+       22.79305
+ 22
+        8.50775
+ 32
+       12.80580
+ 13
+       22.79305
+ 23
+        8.50775
+ 33
+       12.80580
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10257
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+ 45
+ 10
+       22.79305
+ 20
+        8.50775
+ 30
+       12.80580
+ 11
+       19.57723
+ 21
+        3.22151
+ 31
+       12.80580
+ 12
+       21.54636
+ 22
+       10.66593
+ 32
+       12.80580
+ 13
+       21.54636
+ 23
+       10.66593
+ 33
+       12.80580
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10258
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+ 45
+ 10
+       21.54636
+ 20
+       10.66593
+ 30
+       12.80580
+ 11
+       19.57723
+ 21
+        3.22151
+ 31
+       12.80580
+ 12
+       16.81765
+ 22
+        7.93581
+ 32
+       12.80580
+ 13
+       16.81765
+ 23
+        7.93581
+ 33
+       12.80580
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_FLOOR_0_0_10267
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+  8
+ 10
+       23.00077
+ 20
+        8.63078
+ 30
+       12.80580
+ 11
+       24.48882
+ 21
+        6.05479
+ 31
+       12.80580
+ 12
+       24.38742
+ 22
+        5.99625
+ 32
+       12.80580
+ 13
+       22.90202
+ 23
+        8.57339
+ 33
+       12.80580
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+  8
+ 10
+       23.00077
+ 20
+        8.63078
+ 30
+       12.80580
+ 11
+       22.79378
+ 21
+        8.51049
+ 31
+       12.80580
+ 12
+       21.54709
+ 22
+       10.66866
+ 32
+       12.80580
+ 13
+       21.54709
+ 23
+       10.66866
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+  8
+ 10
+       21.54709
+ 20
+       10.66866
+ 30
+       12.80580
+ 11
+       16.81490
+ 21
+        7.93653
+ 31
+       12.80580
+ 12
+       16.69396
+ 22
+        8.14314
+ 32
+       12.80580
+ 13
+       16.69396
+ 23
+        8.14314
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+  8
+ 10
+       21.54709
+ 20
+       10.66866
+ 30
+       12.80580
+ 11
+       16.69396
+ 21
+        8.14314
+ 31
+       12.80580
+ 12
+       21.63467
+ 22
+       10.99566
+ 32
+       12.80580
+ 13
+       21.63467
+ 23
+       10.99566
+ 33
+       12.80580
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+  8
+ 10
+       23.00077
+ 20
+        8.63078
+ 30
+       12.80580
+ 11
+       21.54709
+ 21
+       10.66866
+ 31
+       12.80580
+ 12
+       21.63467
+ 22
+       10.99566
+ 32
+       12.80580
+ 13
+       21.63467
+ 23
+       10.99566
+ 33
+       12.80580
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+ 15
+ 10
+       24.48882
+ 20
+        6.05479
+ 30
+       16.02213
+ 11
+       21.63467
+ 21
+       10.99566
+ 31
+       14.33111
+ 12
+       16.69396
+ 22
+        8.14314
+ 32
+       14.33114
+ 13
+       19.57651
+ 23
+        3.21878
+ 33
+       16.02213
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_2_0_2_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       21.97266
+ 20
+        4.64864
+ 30
+       16.01019
+ 11
+       21.44247
+ 21
+        5.56698
+ 31
+       15.69594
+ 12
+       20.26874
+ 22
+        4.88935
+ 32
+       15.69594
+ 13
+       20.79892
+ 23
+        3.97101
+ 33
+       16.01019
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_3_0_3_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       20.72617
+ 20
+        3.92901
+ 30
+       16.01019
+ 11
+       20.19599
+ 21
+        4.84735
+ 31
+       15.69594
+ 12
+       19.06256
+ 22
+        4.19299
+ 32
+       15.69594
+ 13
+       19.59275
+ 23
+        3.27466
+ 33
+       16.01019
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_4_0_4_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       23.86137
+ 20
+        7.05646
+ 30
+       15.67207
+ 11
+       23.33119
+ 21
+        7.97480
+ 31
+       15.35781
+ 12
+       22.16822
+ 22
+        7.30339
+ 32
+       15.35781
+ 13
+       22.69840
+ 23
+        6.38505
+ 33
+       15.67207
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_5_0_5_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       22.62835
+ 20
+        6.34239
+ 30
+       15.67264
+ 11
+       22.09625
+ 21
+        7.26405
+ 31
+       15.35725
+ 12
+       20.94208
+ 22
+        6.59772
+ 32
+       15.35725
+ 13
+       21.47418
+ 23
+        5.67606
+ 33
+       15.67264
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_6_0_6_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       21.40202
+ 20
+        5.63440
+ 30
+       15.67264
+ 11
+       20.86992
+ 21
+        6.55606
+ 31
+       15.35725
+ 12
+       19.69560
+ 22
+        5.87810
+ 32
+       15.35725
+ 13
+       20.22770
+ 23
+        4.95644
+ 33
+       15.67264
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_7_0_7_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       20.15573
+ 20
+        4.91710
+ 30
+       15.67207
+ 11
+       19.62555
+ 21
+        5.83544
+ 31
+       15.35781
+ 12
+       18.48618
+ 22
+        5.17765
+ 32
+       15.35781
+ 13
+       19.01636
+ 23
+        4.25932
+ 33
+       15.67207
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_8_0_8_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       23.29067
+ 20
+        8.04441
+ 30
+       15.33395
+ 11
+       22.76049
+ 21
+        8.96274
+ 31
+       15.01969
+ 12
+       21.59777
+ 22
+        8.29148
+ 32
+       15.01969
+ 13
+       22.12795
+ 23
+        7.37314
+ 33
+       15.33395
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_9_0_9_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       22.05790
+ 20
+        7.33048
+ 30
+       15.33451
+ 11
+       21.52580
+ 21
+        8.25214
+ 31
+       15.01912
+ 12
+       20.36876
+ 22
+        7.58415
+ 32
+       15.01912
+ 13
+       20.90085
+ 23
+        6.66249
+ 33
+       15.33451
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_10_0_10_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       20.82867
+ 20
+        6.62082
+ 30
+       15.33451
+ 11
+       20.29658
+ 21
+        7.54248
+ 31
+       15.01912
+ 12
+       19.12515
+ 22
+        6.86618
+ 32
+       15.01912
+ 13
+       19.65725
+ 23
+        5.94452
+ 33
+       15.33451
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_11_0_11_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       19.58528
+ 20
+        5.90519
+ 30
+       15.33395
+ 11
+       19.05510
+ 21
+        6.82352
+ 31
+       15.01969
+ 12
+       17.90980
+ 22
+        6.16231
+ 32
+       15.01969
+ 13
+       18.43998
+ 23
+        5.24397
+ 33
+       15.33395
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_12_0_12_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       22.71997
+ 20
+        9.03235
+ 30
+       14.99582
+ 11
+       22.18979
+ 21
+        9.95069
+ 31
+       14.68157
+ 12
+       21.02733
+ 22
+        9.27956
+ 32
+       14.68157
+ 13
+       21.55751
+ 23
+        8.36123
+ 33
+       14.99582
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_13_0_13_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       21.48745
+ 20
+        8.31857
+ 30
+       14.99639
+ 11
+       20.95535
+ 21
+        9.24023
+ 31
+       14.68100
+ 12
+       19.79541
+ 22
+        8.57056
+ 32
+       14.68100
+ 13
+       20.32751
+ 23
+        7.64890
+ 33
+       14.99639
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_14_0_14_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       20.25513
+ 20
+        7.60712
+ 30
+       14.99639
+ 11
+       19.72303
+ 21
+        8.52878
+ 31
+       14.68100
+ 12
+       18.55471
+ 22
+        7.85427
+ 32
+       14.68100
+ 13
+       19.08680
+ 23
+        6.93261
+ 33
+       14.99639
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_15_0_15_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       19.01483
+ 20
+        6.89327
+ 30
+       14.99582
+ 11
+       18.48465
+ 21
+        7.81161
+ 31
+       14.68157
+ 12
+       17.33341
+ 22
+        7.14697
+ 32
+       14.68157
+ 13
+       17.86359
+ 23
+        6.22863
+ 33
+       14.99582
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_16_0_16_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       22.14928
+ 20
+       10.02029
+ 30
+       14.65770
+ 11
+       21.61843
+ 21
+       10.93979
+ 31
+       14.34305
+ 12
+       20.45621
+ 22
+       10.26881
+ 32
+       14.34305
+ 13
+       20.98706
+ 23
+        9.34931
+ 33
+       14.65770
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_17_0_17_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       20.91431
+ 20
+        9.30731
+ 30
+       14.65770
+ 11
+       20.38346
+ 21
+       10.22681
+ 31
+       14.34305
+ 12
+       19.22389
+ 22
+        9.55736
+ 32
+       14.34305
+ 13
+       19.75474
+ 23
+        8.63786
+ 33
+       14.65770
+999
+3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_19_0_19_WIN
+  0
+3DFACE
+  8
+3RD%FLOOR%UPPER_3RD%UPPER%LOBBY
+ 62
+143
+ 10
+       18.44438
+ 20
+        7.88136
+ 30
+       14.65770
+ 11
+       17.91353
+ 21
+        8.80086
+ 31
+       14.34305
+ 12
+       16.75636
+ 22
+        8.13279
+ 32
+       14.34305
+ 13
+       17.28721
+ 23
+        7.21329
+ 33
+       14.65770
 999
 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1_WALL_2_0_0
   0

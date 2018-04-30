@@ -249,7 +249,7 @@ class A3CEval:
         
 
     def evaluate(self, local_logger, action_space_name, reward_func, rewardArgs, 
-                action_func, action_limits, raw_state_process_func):
+                action_func, action_limits, raw_state_process_func, debug_log_prob):
         """
         This method do the evaluation for the trained agent. 
 
@@ -290,7 +290,7 @@ class A3CEval:
             #################FOR DEBUG#######################
             is_dbg_out = False;
             noForecastDim = 13;
-            if dbg_rdm < 0.01:
+            if dbg_rdm < debug_log_prob:
                 is_dbg_out = True;
             if is_dbg_out:
                 local_logger.debug('Observation this: %s' %(ob_this_raw[0: noForecastDim]));
@@ -379,9 +379,9 @@ class A3CEval:
                                    self._global_network.keep_prob: 1.0})\
                         .flatten();
         ### DEBUG
-        if is_dbg_out:
-            local_logger.info('Softmax %s'%softmax_a)
         uni_rdm = np.random.uniform();
+        if is_dbg_out:
+            local_logger.info('Softmax %s, sampled %s'%(softmax_a, uni_rdm))
         imd_x = uni_rdm;
         for i in range(softmax_a.shape[-1]):
             imd_x -= softmax_a[i];

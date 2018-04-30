@@ -19,7 +19,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285) is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=21
+Number of general casting surfaces=31
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_2_0_3
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_18_0_0
@@ -49,7 +49,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286) is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=30
+Number of general casting surfaces=41
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_4_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_4_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_5_0_0
@@ -79,7 +79,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287) is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=27
+Number of general casting surfaces=38
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_4_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_4_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_5_0_0
@@ -106,7 +106,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 39 - SURFACE 5 (289) is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=65
+Number of general casting surfaces=76
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -136,7 +136,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 40 - SURFACE 6 (290) is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=97
+Number of general casting surfaces=110
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -166,7 +166,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 41 - SURFACE 4 (291) is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=75
+Number of general casting surfaces=86
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -196,7 +196,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292) is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=42
+Number of general casting surfaces=56
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_4_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_2_0_3
@@ -226,7 +226,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=Mir-PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293) is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=28
+Number of general casting surfaces=37
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_2_0_3
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_18_0_0
@@ -256,7 +256,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%PLENVM:1ST%PLENVM_WALL_4_1_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=57
+Number of general casting surfaces=62
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 40 - SURFACE 6 (290)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -281,7 +281,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%PLENVM:1ST%PLENVM_WALL_6_1_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=83
+Number of general casting surfaces=92
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 40 - SURFACE 6 (290)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -330,6 +330,16 @@ Number of general casting surfaces=6
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_EXTFLOOR_0_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=1ST%PLENVM:1ST%PLENVM_GROUNDFLOOR_0_0_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=1ST%PLENVM:1ST%PLENVM_CEILING_1_0_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -399,7 +409,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%FLOOR:1ST%CONFERENCE_WALL_2_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=72
+Number of general casting surfaces=81
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 40 - SURFACE 6 (290)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -475,7 +485,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%FLOOR:1ST%CONFERENCE_WALL_8_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=57
+Number of general casting surfaces=68
 ..Surface=1ST%FLOOR:1ST%CONFERENCE_WALL_2_0_0
 ..Surface=1ST%FLOOR:1ST%RESEARCH%OPEN%NE_WALL_4_0_0
 ..Surface=1ST%FLOOR:1ST%LOBBY_WALL_3_0_0
@@ -486,6 +496,11 @@ Number of general casting surfaces=57
 ..Surface=1ST%FLOOR:1ST%EDCTN%STRG_WALL_6_1_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_2_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_8_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=1ST%FLOOR:1ST%CONFERENCE_FLOOR_0_0_10000 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -510,7 +525,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%FLOOR:1ST%RESEARCH%OPEN%NE_WALL_4_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=24
+Number of general casting surfaces=26
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 39 - SURFACE 5 (289)
@@ -530,7 +545,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%FLOOR:1ST%RESEARCH%OPEN%NE_WALL_5_1_0 is used as Receiving Surface in calculations and is non-convex.
-Number of general casting surfaces=51
+Number of general casting surfaces=62
 ..Surface=1ST%FLOOR:1ST%CONFERENCE_WALL_2_0_0
 ..Surface=1ST%FLOOR:1ST%RESEARCH%OPEN%NE_WALL_4_0_0
 ..Surface=1ST%FLOOR:1ST%LOBBY_WALL_3_0_0
@@ -637,7 +652,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%FLOOR:1ST%LOBBY_WALL_2_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=10
+Number of general casting surfaces=11
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -706,7 +721,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%FLOOR:1ST%LOBBY_WALL_3_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=68
+Number of general casting surfaces=71
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -755,7 +770,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%FLOOR:1ST%LOBBY_WALL_5_1_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=13
+Number of general casting surfaces=19
 ..Surface=1ST%FLOOR:1ST%LOBBY_WALL_6_1_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%NORTH_WALL_15_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_24_0_0
@@ -775,9 +790,10 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%FLOOR:1ST%LOBBY_WALL_6_1_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=2
+Number of general casting surfaces=3
 ..Surface=1ST%FLOOR:1ST%LOBBY_WALL_5_1_0
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_7_1_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_14_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -867,7 +883,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%FLOOR:1ST%LOBBY_WALL_19_1_0 is used as Receiving Surface in calculations and is non-convex.
-Number of general casting surfaces=27
+Number of general casting surfaces=29
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 39 - SURFACE 5 (289)
@@ -1137,7 +1153,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%FLOOR:1ST%HVAC%SHAFT_WALL_2_1_0 is used as Receiving Surface in calculations and is non-convex.
-Number of general casting surfaces=77
+Number of general casting surfaces=86
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 40 - SURFACE 6 (290)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -1163,7 +1179,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%FLOOR:1ST%HVAC%SHAFT_WALL_3_1_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=35
+Number of general casting surfaces=43
 ..Surface=1ST%FLOOR:1ST%LOBBY_WALL_3_0_0
 ..Surface=1ST%FLOOR:1ST%LOBBY_WALL_19_1_0
 ..Surface=1ST%FLOOR:1ST%MCHNCL%RM%01_WALL_6_1_0
@@ -1257,7 +1273,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%FLOOR:1ST%CLASSROOM_WALL_2_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=9
+Number of general casting surfaces=12
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 40 - SURFACE 6 (290)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -1267,6 +1283,7 @@ Number of general casting surfaces=9
 ..Surface=1ST%FLOOR:1ST%VESTIBULE_WALL_5_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_EXTFLOOR_0_0_0
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=2
 ....Surface=1ST%FLOOR:1ST%CLASSROOM_WALL_2_0_0_0_0_0_WIN
@@ -1476,13 +1493,14 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%FLOOR:1ST%VESTIBULE_WALL_2_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=6
+Number of general casting surfaces=7
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
 ..Surface=1ST%FLOOR:1ST%LOBBY_WALL_3_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_EXTFLOOR_0_0_0
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=2
 ....Surface=1ST%FLOOR:1ST%VESTIBULE_WALL_2_0_0_0_0_0_WIN
@@ -1693,7 +1711,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%FLOOR:1ST%RESEARCH%OPEN%NW_WALL_3_1_0 is used as Receiving Surface in calculations and is non-convex.
-Number of general casting surfaces=57
+Number of general casting surfaces=68
 ..Surface=1ST%FLOOR:1ST%CONFERENCE_WALL_2_0_0
 ..Surface=1ST%FLOOR:1ST%RESEARCH%OPEN%NE_WALL_4_0_0
 ..Surface=1ST%FLOOR:1ST%LOBBY_WALL_3_0_0
@@ -1768,7 +1786,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%FLOOR:1ST%RESEARCH%OPEN%NM_WALL_3_1_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=51
+Number of general casting surfaces=62
 ..Surface=1ST%FLOOR:1ST%CONFERENCE_WALL_2_0_0
 ..Surface=1ST%FLOOR:1ST%RESEARCH%OPEN%NE_WALL_4_0_0
 ..Surface=1ST%FLOOR:1ST%LOBBY_WALL_3_0_0
@@ -2408,7 +2426,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%FLOOR:1ST%MCHNCL%RM%01_WALL_6_1_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=14
+Number of general casting surfaces=16
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=1ST%FLOOR:1ST%CONFERENCE_WALL_2_0_0
 ..Surface=1ST%FLOOR:1ST%CONFERENCE_WALL_8_0_0
@@ -2434,7 +2452,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%FLOOR:1ST%MCHNCL%RM%01_WALL_7_1_0 is used as Receiving Surface in calculations and is non-convex.
-Number of general casting surfaces=32
+Number of general casting surfaces=34
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 39 - SURFACE 5 (289)
@@ -2641,7 +2659,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=1ST%FLOOR:1ST%EDCTN%STRG_WALL_6_1_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=14
+Number of general casting surfaces=16
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=1ST%FLOOR:1ST%CONFERENCE_WALL_2_0_0
 ..Surface=1ST%FLOOR:1ST%CONFERENCE_WALL_8_0_0
@@ -2717,7 +2735,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_2_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=73
+Number of general casting surfaces=82
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -2732,7 +2750,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_3_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=29
+Number of general casting surfaces=37
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_19_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%NORTH_WALL_4_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%NORTH_WALL_17_0_0
@@ -2763,16 +2781,17 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_6_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=4
+Number of general casting surfaces=5
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_7_0_2 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=25
+Number of general casting surfaces=31
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_2_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_17_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%NORTH_WALL_15_0_0
@@ -2787,7 +2806,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_7_0_3 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=22
+Number of general casting surfaces=28
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_2_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_17_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%NORTH_WALL_15_0_0
@@ -2802,7 +2821,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_8_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=55
+Number of general casting surfaces=60
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -2817,7 +2836,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_8_0_5 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=49
+Number of general casting surfaces=54
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -2832,7 +2851,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_9_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=45
+Number of general casting surfaces=52
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_2_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_8_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_8_0_5
@@ -2847,7 +2866,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_9_0_2 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=45
+Number of general casting surfaces=51
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_2_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_8_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_8_0_5
@@ -2862,7 +2881,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_9_0_3 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=40
+Number of general casting surfaces=46
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_2_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_8_0_5
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_10_0_0
@@ -2877,7 +2896,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_9_0_5 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=40
+Number of general casting surfaces=47
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_2_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_8_0_5
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_10_0_0
@@ -2892,7 +2911,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_10_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=46
+Number of general casting surfaces=51
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -2912,7 +2931,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_13_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=48
+Number of general casting surfaces=58
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_2_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_8_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_8_0_5
@@ -2932,7 +2951,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_17_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=8
+Number of general casting surfaces=9
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -2941,11 +2960,12 @@ Number of general casting surfaces=8
 ..Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_3_0_2
 ..Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_3_0_3
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_19_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=53
+Number of general casting surfaces=57
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -2960,7 +2980,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_23_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=24
+Number of general casting surfaces=27
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_2_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_19_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%NORTH_WALL_15_0_0
@@ -2975,7 +2995,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_25_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=36
+Number of general casting surfaces=37
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -2995,7 +3015,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_29_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=25
+Number of general casting surfaces=28
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -3010,7 +3030,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_31_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=34
+Number of general casting surfaces=37
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -3215,7 +3235,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%NORTH_WALL_2_0_2 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=46
+Number of general casting surfaces=51
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -3230,7 +3250,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%NORTH_WALL_2_0_3 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=40
+Number of general casting surfaces=45
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -3245,7 +3265,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%NORTH_WALL_4_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=15
+Number of general casting surfaces=17
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -3270,7 +3290,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%NORTH_WALL_9_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=36
+Number of general casting surfaces=38
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -3285,7 +3305,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%NORTH_WALL_11_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=14
+Number of general casting surfaces=21
 ..Surface=2ND%PLENVM:2ND%PLENVM%NORTH_WALL_15_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_24_0_0
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_13_0_2
@@ -3310,7 +3330,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%NORTH_WALL_15_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=47
+Number of general casting surfaces=55
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -3325,7 +3345,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%PLENVM:2ND%PLENVM%NORTH_WALL_17_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=15
+Number of general casting surfaces=17
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -3375,7 +3395,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=48
+Number of general casting surfaces=57
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -3390,7 +3410,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_3_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=21
+Number of general casting surfaces=29
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_4_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_26_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_15_0_0
@@ -3423,7 +3443,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_7_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=31
+Number of general casting surfaces=41
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_4_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_5_0_0
@@ -3468,37 +3488,96 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_ROOF_1_1_1 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=10
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_ROOF_1_1_2 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=11
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_ROOF_1_1_3 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=11
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_4_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_ROOF_1_1_4 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=9
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_4_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_ROOF_1_1_5 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=10
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_4_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_ROOF_1_1_6 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=10
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_2_0_2 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=29
+Number of general casting surfaces=34
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -3513,7 +3592,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_2_0_3 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=21
+Number of general casting surfaces=26
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -3528,7 +3607,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_4_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=12
+Number of general casting surfaces=14
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -3591,7 +3670,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_5_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=11
+Number of general casting surfaces=12
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -3606,7 +3685,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_6_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=27
+Number of general casting surfaces=37
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_4_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_5_0_0
@@ -3693,7 +3772,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_14_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=25
+Number of general casting surfaces=32
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_2_0_2
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_2_0_3
@@ -3708,7 +3787,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_14_0_1 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=26
+Number of general casting surfaces=34
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_2_0_2
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_2_0_3
@@ -3723,7 +3802,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_14_0_2 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=26
+Number of general casting surfaces=32
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_2_0_2
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_2_0_3
@@ -3738,7 +3817,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_14_0_3 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=18
+Number of general casting surfaces=24
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_2_0_3
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_18_0_0
@@ -3753,7 +3832,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_14_0_4 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=17
+Number of general casting surfaces=24
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_18_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_24_0_0
@@ -3768,7 +3847,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_14_0_5 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=19
+Number of general casting surfaces=26
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_2_0_3
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_18_0_0
@@ -3793,7 +3872,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_18_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=23
+Number of general casting surfaces=25
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -3808,7 +3887,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_20_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=9
+Number of general casting surfaces=16
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_24_0_0
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_13_0_6
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_13_0_7
@@ -3818,6 +3897,7 @@ Number of general casting surfaces=9
 ..Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_WALL_30_0_0
 ..Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_WALL_7_0_6
 ..Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_WALL_7_0_7
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -3837,7 +3917,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_24_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=28
+Number of general casting surfaces=36
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -3852,7 +3932,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_26_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=12
+Number of general casting surfaces=14
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -3877,7 +3957,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_30_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=16
+Number of general casting surfaces=19
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -3892,7 +3972,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_32_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=21
+Number of general casting surfaces=24
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -3932,55 +4012,17 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0 is used as Receiving Surface in calculations and is non-convex.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=8
-....Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_0_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_1_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_2_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_4_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_5_0_1_SUBSURFACE
-....Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_6_0_1_SUBSURFACE
-....Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_7_0_2_SUBSURFACE
-....Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_8_0_3_SUBSURFACE
-==================================
-Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_0_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_1_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_2_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_4_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_5_0_1_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_6_0_1_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_7_0_2_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0_8_0_3_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
+Number of general casting surfaces=14
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_14_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -3990,7 +4032,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_17_1_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=21
+Number of general casting surfaces=32
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_3_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_7_0_0
@@ -4005,7 +4047,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_23_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=20
+Number of general casting surfaces=30
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_3_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_7_0_0
@@ -4020,7 +4062,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_29_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=17
+Number of general casting surfaces=24
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_7_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_6_0_0
@@ -4050,11 +4092,12 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_2_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=4
+Number of general casting surfaces=5
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=3
 ....Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_2_0_0_0_0_0_WIN
@@ -4077,7 +4120,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_3_0_2 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=17
+Number of general casting surfaces=23
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_24_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_13_0_0
@@ -4092,7 +4135,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_3_0_3 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=11
+Number of general casting surfaces=17
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_24_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_13_0_0
@@ -4107,7 +4150,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_4_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=32
+Number of general casting surfaces=37
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -4122,7 +4165,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_4_0_5 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=25
+Number of general casting surfaces=30
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -4137,7 +4180,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_5_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=26
+Number of general casting surfaces=32
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_2_0_2
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_2_0_3
@@ -4172,18 +4215,19 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_13_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=6
+Number of general casting surfaces=7
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
 ..Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_3_0_2
 ..Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_3_0_3
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_15_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=32
+Number of general casting surfaces=36
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -4203,7 +4247,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_19_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=14
+Number of general casting surfaces=17
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_24_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_15_0_0
@@ -4218,7 +4262,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_21_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=23
+Number of general casting surfaces=24
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -4248,7 +4292,17 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_ROOF_1_1_0 is used as Receiving Surface in calculations and is non-convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=11
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_6_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_11_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -4321,7 +4375,17 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=12
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_4_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -4393,7 +4457,17 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=11
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -4465,7 +4539,17 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=11
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -4537,7 +4621,15 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=8
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -4635,11 +4727,12 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%01_WALL_3_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=4
+Number of general casting surfaces=5
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=3
 ....Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%01_WALL_3_0_0_0_0_0_WIN
@@ -4677,19 +4770,15 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%01_ROOF_1_0_0 is used as Receiving Surface in calculations and is non-convex.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=2
-....Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%01_ROOF_1_0_0_0_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%01_ROOF_1_0_0_1_0_0_SUBSURFACE
-==================================
-Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%01_ROOF_1_0_0_0_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%01_ROOF_1_0_0_1_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
+Number of general casting surfaces=8
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_11_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -4729,7 +4818,14 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=7
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -4739,7 +4835,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW_WALL_3_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=31
+Number of general casting surfaces=41
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_4_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_5_0_0
@@ -4789,12 +4885,22 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=11
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME_WALL_3_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=27
+Number of general casting surfaces=37
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_4_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_5_0_0
@@ -4856,7 +4962,17 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=11
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -4897,7 +5013,17 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=12
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_4_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -4952,7 +5078,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_2_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=29
+Number of general casting surfaces=31
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -4967,7 +5093,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_2_0_3 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=18
+Number of general casting surfaces=20
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -4982,7 +5108,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_2_0_5 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=25
+Number of general casting surfaces=27
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -4997,7 +5123,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_2_0_9 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=14
+Number of general casting surfaces=16
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -5012,7 +5138,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_3_0_2 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=54
+Number of general casting surfaces=56
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -5027,7 +5153,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_3_0_6 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=48
+Number of general casting surfaces=50
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -5042,7 +5168,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_3_0_7 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=25
+Number of general casting surfaces=27
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -5057,7 +5183,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_4_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=8
+Number of general casting surfaces=9
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -5066,6 +5192,7 @@ Number of general casting surfaces=8
 ..Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_3_0_2
 ..Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_3_0_3
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=2
 ....Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_4_0_0_0_0_0_WIN
@@ -5082,7 +5209,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_5_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=54
+Number of general casting surfaces=57
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -5109,7 +5236,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_7_1_0 is used as Receiving Surface in calculations and is non-convex.
-Number of general casting surfaces=12
+Number of general casting surfaces=18
 ..Surface=2ND%PLENVM:2ND%PLENVM%NORTH_WALL_15_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_24_0_0
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_8_1_0
@@ -5129,8 +5256,9 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_8_1_0 is used as Receiving Surface in calculations and is non-convex.
-Number of general casting surfaces=1
+Number of general casting surfaces=2
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_7_1_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_14_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=7
 ....Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_8_1_0_2_0_2_SUBSURFACE
@@ -5207,7 +5335,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_13_0_2 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=36
+Number of general casting surfaces=38
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -5222,7 +5350,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_13_0_6 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=33
+Number of general casting surfaces=35
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -5237,7 +5365,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_13_0_7 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=17
+Number of general casting surfaces=19
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -5252,7 +5380,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_18_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=36
+Number of general casting surfaces=37
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -5267,7 +5395,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_20_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=24
+Number of general casting surfaces=27
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_2_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_19_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%NORTH_WALL_15_0_0
@@ -5282,7 +5410,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_24_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=23
+Number of general casting surfaces=24
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -5297,7 +5425,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_26_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=16
+Number of general casting surfaces=19
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_24_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_15_0_0
@@ -5312,7 +5440,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_30_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=53
+Number of general casting surfaces=57
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -5327,7 +5455,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_32_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=8
+Number of general casting surfaces=9
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -5336,11 +5464,12 @@ Number of general casting surfaces=8
 ..Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_3_0_2
 ..Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_3_0_3
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_36_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=34
+Number of general casting surfaces=38
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -5355,18 +5484,19 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_38_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=6
+Number of general casting surfaces=7
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
 ..Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_3_0_2
 ..Surface=2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_WALL_3_0_3
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_42_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=14
+Number of general casting surfaces=20
 ..Surface=2ND%PLENVM:2ND%PLENVM%NORTH_WALL_15_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_24_0_0
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_13_0_2
@@ -5381,7 +5511,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_44_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=36
+Number of general casting surfaces=37
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -5396,7 +5526,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_48_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=10
+Number of general casting surfaces=16
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_24_0_0
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_13_0_6
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_13_0_7
@@ -5411,7 +5541,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_50_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=23
+Number of general casting surfaces=24
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -5426,7 +5556,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_54_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=34
+Number of general casting surfaces=36
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -5441,7 +5571,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_56_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=25
+Number of general casting surfaces=28
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -5456,7 +5586,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_60_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=22
+Number of general casting surfaces=24
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -5471,7 +5601,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_62_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=16
+Number of general casting surfaces=19
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -5671,7 +5801,17 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_ROOF_1_2_0 is used as Receiving Surface in calculations and is non-convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=18
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_6_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_11_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_13_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -5731,7 +5871,13 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%LOBBY_ROOF_59_1_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=6
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -5751,8 +5897,9 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_WALL_2_1_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=1
+Number of general casting surfaces=2
 ..Surface=2ND%FLOOR%NORTH:2ND%LOBBY_WALL_7_1_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_14_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=2
 ....Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_WALL_2_1_0_0_0_0_SUBSURFACE
@@ -5774,12 +5921,14 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_WALL_3_1_0 is used as Receiving Surface in calculations and is non-convex.
-Number of general casting surfaces=5
+Number of general casting surfaces=7
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_3_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_7_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW_WALL_3_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=4
 ....Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_WALL_3_1_0_0_0_0_SUBSURFACE
@@ -5878,67 +6027,17 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0 is used as Receiving Surface in calculations and is non-convex.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=10
-....Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_0_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_1_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_2_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_3_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_4_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_5_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_6_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_7_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_8_0_1_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_9_0_1_SUBSURFACE
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_0_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_1_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_2_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_3_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_4_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_5_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_6_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_7_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_8_0_1_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0_9_0_1_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
+Number of general casting surfaces=14
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_6_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_14_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_2_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -6068,7 +6167,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_WALL_15_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=63
+Number of general casting surfaces=70
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -6083,7 +6182,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_WALL_15_0_3 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=38
+Number of general casting surfaces=45
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -6098,7 +6197,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_WALL_15_0_5 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=57
+Number of general casting surfaces=64
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -6113,7 +6212,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_WALL_15_0_9 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=31
+Number of general casting surfaces=38
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -6128,7 +6227,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_WALL_16_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=36
+Number of general casting surfaces=39
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -6148,7 +6247,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_WALL_24_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=47
+Number of general casting surfaces=56
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -6168,7 +6267,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_WALL_30_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=29
+Number of general casting surfaces=38
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 32 - SURFACE 6 (293)
@@ -6233,87 +6332,17 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0 is used as Receiving Surface in calculations and is non-convex.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=14
-....Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_0_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_1_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_2_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_3_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_4_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_5_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_6_0_1_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_7_0_1_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_8_0_2_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_9_0_2_SUBSURFACE
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_0_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_1_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_2_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_3_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_4_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_5_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_6_0_1_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_7_0_1_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_8_0_2_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_9_0_2_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_10_0_2_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_11_0_2_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_12_0_2_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0_13_0_2_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
+Number of general casting surfaces=13
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_6_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_14_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -6323,7 +6352,17 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_27_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=11
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_14_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -6358,12 +6397,14 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%SECURE%FILES_WALL_4_1_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=5
+Number of general casting surfaces=7
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_2_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_3_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_7_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW_WALL_3_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=1
 ....Surface=2ND%FLOOR%NORTH:2ND%SECURE%FILES_WALL_4_1_0_0_0_0_SUBSURFACE
@@ -6394,43 +6435,17 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0 is used as Receiving Surface in calculations and is non-convex.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=6
-....Surface=2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0_0_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0_1_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0_2_0_1_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0_3_0_1_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0_4_0_1_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0_5_0_1_SUBSURFACE
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0_0_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0_1_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0_2_0_1_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0_3_0_1_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0_4_0_1_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0_5_0_1_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
+Number of general casting surfaces=10
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_14_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -6475,7 +6490,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_WALL_5_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=8
+Number of general casting surfaces=10
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_2_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_3_0_0
@@ -6484,6 +6499,8 @@ Number of general casting surfaces=8
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_3_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_7_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW_WALL_3_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=1
 ....Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_WALL_5_0_0_0_0_0_WIN
@@ -6494,7 +6511,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_WALL_6_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=19
+Number of general casting surfaces=21
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -6527,7 +6544,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_WALL_7_0_6 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=56
+Number of general casting surfaces=63
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -6542,7 +6559,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_WALL_7_0_7 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=32
+Number of general casting surfaces=39
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 34 - SURFACE 4 (285)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
@@ -6557,7 +6574,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_WALL_11_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=15
+Number of general casting surfaces=17
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -6572,7 +6589,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_WALL_17_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=12
+Number of general casting surfaces=14
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 35 - SURFACE 6 (286)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 42 - SURFACE 6 (292)
@@ -6612,43 +6629,17 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=6
-....Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0_0_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0_1_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0_2_0_1_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0_3_0_1_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0_4_0_2_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0_5_0_2_SUBSURFACE
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0_0_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0_1_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0_2_0_1_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0_3_0_1_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0_4_0_2_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
-Number of back surfaces=0
-Number of receiving sub surfaces=0
-==================================
-Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_1_0_0_5_0_2_SUBSURFACE is not used as Receiving Surface in calculations.
-Number of general casting surfaces=0
+Number of general casting surfaces=11
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_14_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -6658,7 +6649,17 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_ROOF_16_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=11
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_14_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -6703,7 +6704,7 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%WORK%ROOM_WALL_4_1_0 is used as Receiving Surface in calculations and is non-convex.
-Number of general casting surfaces=8
+Number of general casting surfaces=10
 ..Surface=PHIPPS_CSL BUILDING - COMPONENT BLOCK 37 - SURFACE 5 (287)
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_2_0_0
 ..Surface=2ND%PLENVM:2ND%PLENVM%FALSE_WALL_3_0_0
@@ -6712,6 +6713,8 @@ Number of general casting surfaces=8
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_3_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT_WALL_7_0_0
 ..Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW_WALL_3_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
 Number of back surfaces=0
 Number of receiving sub surfaces=1
 ....Surface=2ND%FLOOR%NORTH:2ND%WORK%ROOM_WALL_4_1_0_0_0_0_WIN
@@ -6732,36 +6735,975 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0 is used as Receiving Surface in calculations and is non-convex.
+Number of general casting surfaces=11
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_14_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=9
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=8
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_4_0_0 is used as Receiving Surface in calculations and is convex.
 Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_5_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_FLOOR_0_0_10165 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_FLOOR_0_0_0_0_0_0_HOLE_10167 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=9
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_2_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_14_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=2
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_2_0_0_1_0_1_SUBSURFACE
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_2_0_0_0_0_0_WIN
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_2_0_0_1_0_1_SUBSURFACE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_2_0_0_0_0_0_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_PARTITION_3_0_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_PARTITION_3_0_0_1_0_1_SUBSURFACE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_PARTITION_3_0_0_0_0_0_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_PARTITION_3_0_0_2_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_PARTITION_3_0_0_3_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_PARTITION_3_0_0_4_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_PARTITION_3_0_0_5_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_PARTITION_4_0_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_PARTITION_4_0_0_0_0_0_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=5
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_6_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_6_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_14_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
+Number of back surfaces=0
+Number of receiving sub surfaces=2
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_6_0_0_0_0_0_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_6_0_0_1_0_1_WIN
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_6_0_0_0_0_0_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_6_0_0_1_0_1_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=5
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
+Number of back surfaces=0
+Number of receiving sub surfaces=6
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_0_0_0_SUBSURFACE
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_1_0_1_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_2_0_2_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_5_0_5_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_6_0_6_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_8_0_8_WIN
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_0_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_1_0_1_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_2_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_5_0_5_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_6_0_6_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_8_0_8_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
 Number of back surfaces=0
 Number of receiving sub surfaces=5
-....Surface=2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0_0_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0_1_0_0_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0_2_0_1_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0_3_0_1_SUBSURFACE
-....Surface=2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0_4_0_1_SUBSURFACE
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0_0_0_0_SUBSURFACE
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0_1_0_1_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0_2_0_2_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0_4_0_4_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0_5_0_5_WIN
 ==================================
-Surface=2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0_0_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0_0_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
 Number of general casting surfaces=0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
-Surface=2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0_1_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0_1_0_1_WIN is not used as Receiving Surface in calculations.
 Number of general casting surfaces=0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
-Surface=2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0_2_0_1_SUBSURFACE is not used as Receiving Surface in calculations.
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0_2_0_2_WIN is not used as Receiving Surface in calculations.
 Number of general casting surfaces=0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
-Surface=2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0_3_0_1_SUBSURFACE is not used as Receiving Surface in calculations.
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0_4_0_4_WIN is not used as Receiving Surface in calculations.
 Number of general casting surfaces=0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
-Surface=2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0_4_0_1_SUBSURFACE is not used as Receiving Surface in calculations.
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0_5_0_5_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=2
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=5
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0_0_0_0_SUBSURFACE
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0_1_0_1_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0_2_0_2_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0_3_0_3_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0_6_0_6_WIN
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0_0_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0_1_0_1_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0_2_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0_3_0_3_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0_6_0_6_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=10
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_3_0_3_SUBSURFACE
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_0_0_0_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_1_0_1_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_2_0_2_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_4_0_4_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_5_0_5_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_6_0_6_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_7_0_7_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_15_0_15_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_23_0_23_WIN
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_3_0_3_SUBSURFACE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_0_0_0_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_1_0_1_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_2_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_4_0_4_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_5_0_5_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_6_0_6_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_7_0_7_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_15_0_15_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_23_0_23_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_11_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=3
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_11_0_0_0_0_0_SUBSURFACE
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_11_0_0_1_0_1_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_11_0_0_2_0_2_WIN
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_11_0_0_0_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_11_0_0_1_0_1_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_11_0_0_2_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=3
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_11_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_13_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_14_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_6_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_10177 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_10183 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_10188 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_10193 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10195 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10196 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10197 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10198 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10199 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10200 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10201 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10202 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10203 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10204 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10205 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_10213 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_10216 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_10219 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_10222 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_FLOOR_0_0_10235 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_CEILING_1_0_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_CEILING_1_0_0_0_0_0_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_CEILING_1_0_0_1_0_0_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_CEILING_1_0_0_2_0_0_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_CEILING_1_0_0_3_0_0_HOLE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_ROOF_1_1_0 is used as Receiving Surface in calculations and is non-convex.
+Number of general casting surfaces=4
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_PARTITION_5_0_10258 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_PARTITION_5_0_0_1_0_1_SUBSURFACE_10260 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_PARTITION_5_0_0_0_0_0_WIN_10261 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_PARTITION_5_0_0_2_0_2_WIN_10262 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_PARTITION_5_0_0_2_0_2_WIN_10263 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_PARTITION_5_0_0_2_0_2_WIN_10264 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_PARTITION_5_0_0_2_0_2_WIN_10265 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_PARTITION_4_0_10265 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_PARTITION_4_0_0_0_0_0_WIN_10267 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_2_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_14_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=2
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_2_0_0_1_0_1_SUBSURFACE
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_2_0_0_0_0_0_WIN
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_2_0_0_1_0_1_SUBSURFACE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_2_0_0_0_0_0_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_3_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_6_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
+Number of back surfaces=0
+Number of receiving sub surfaces=6
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_0_0_0_SUBSURFACE
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_1_0_1_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_2_0_2_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_3_0_2_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_4_0_2_WIN
+....Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_5_0_2_WIN
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_0_0_0_SUBSURFACE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_1_0_1_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_2_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_3_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_4_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_5_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_FLOOR_0_0_10205 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_CEILING_1_0_0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_ROOF_1_1_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_ROOF_1_1_1 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=2
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_ROOF_1_1_5 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=10
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_0_0_0_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_1_0_0_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_2_0_1_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_3_0_1_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_4_0_2_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_5_0_2_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_6_0_3_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_7_0_3_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_8_0_4_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_9_0_4_WIN
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_0_0_0_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_1_0_0_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_2_0_1_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_3_0_1_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_4_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_5_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_6_0_3_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_7_0_3_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_8_0_4_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_1_0_0_9_0_4_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0_0_0_0_WIN
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_2_0_0_0_0_0_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=10
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_0_0_0_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_1_0_0_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_2_0_1_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_3_0_1_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_4_0_2_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_5_0_2_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_6_0_3_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_7_0_3_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_8_0_4_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_9_0_4_WIN
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_0_0_0_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_1_0_0_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_2_0_1_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_3_0_1_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_4_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_5_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_6_0_3_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_7_0_3_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_8_0_4_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0_9_0_4_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=2
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0_0_0_0_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0_3_0_3_WIN
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0_0_0_0_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0_3_0_3_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_FLOOR_0_0_10253 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10255 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10256 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10257 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_FLOOR_0_0_0_0_0_0_HOLE_10258 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_FLOOR_0_0_10267 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0 is used as Receiving Surface in calculations and is non-convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=17
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_2_0_2_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_3_0_3_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_4_0_4_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_5_0_5_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_6_0_6_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_7_0_7_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_8_0_8_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_9_0_9_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_10_0_10_WIN
+....Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_11_0_11_WIN
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_2_0_2_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_3_0_3_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_4_0_4_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_5_0_5_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_6_0_6_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_7_0_7_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_8_0_8_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_9_0_9_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_10_0_10_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_11_0_11_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_12_0_12_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_13_0_13_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_14_0_14_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_15_0_15_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_16_0_16_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_17_0_17_WIN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_19_0_19_WIN is not used as Receiving Surface in calculations.
 Number of general casting surfaces=0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
@@ -6834,7 +7776,15 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=8
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
@@ -6927,7 +7877,14 @@ Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================
 Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME_ROOF_1_0_0 is used as Receiving Surface in calculations and is convex.
-Number of general casting surfaces=0
+Number of general casting surfaces=7
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_2_0_0
+..Surface=3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT_WALL_5_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0
+..Surface=3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_12_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_3_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0
+..Surface=3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0
 Number of back surfaces=0
 Number of receiving sub surfaces=0
 ==================================

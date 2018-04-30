@@ -1,2 +1,0 @@
-[2018-02-01 14:31:07,821] SDC_WriteServer DEBUG:wpCmds:[['./SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4']]
-[2018-02-01 14:31:07,822] SDC_WriteServer INFO:Server starts at 0.0.0.0:61222

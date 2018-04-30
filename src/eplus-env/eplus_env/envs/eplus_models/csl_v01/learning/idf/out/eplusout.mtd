@@ -1069,165 +1069,221 @@
   OnMeter=Cooling:EnergyTransfer [J]
   OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%WORK%ROOM [J]
 
- Meters for 3104,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Heating Energy [J]
+ Meters for 3104,3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT [J]
+
+ Meters for 3125,3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT [J]
+
+ Meters for 3136,3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY [J]
+
+ Meters for 3157,3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY [J]
+
+ Meters for 3168,3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE [J]
+
+ Meters for 3189,3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE [J]
+
+ Meters for 3200,3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY [J]
+
+ Meters for 3221,3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY [J]
+
+ Meters for 3232,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Heating Energy [J]
   OnMeter=EnergyTransfer:Facility [J]
   OnMeter=EnergyTransfer:Building [J]
   OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J]
   OnMeter=Heating:EnergyTransfer [J]
   OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J]
 
- Meters for 3125,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Cooling Energy [J]
+ Meters for 3253,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Cooling Energy [J]
   OnMeter=EnergyTransfer:Facility [J]
   OnMeter=EnergyTransfer:Building [J]
   OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J]
   OnMeter=Cooling:EnergyTransfer [J]
   OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J]
 
- Meters for 3136,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Heating Energy [J]
+ Meters for 3264,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Heating Energy [J]
   OnMeter=EnergyTransfer:Facility [J]
   OnMeter=EnergyTransfer:Building [J]
   OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME [J]
   OnMeter=Heating:EnergyTransfer [J]
   OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME [J]
 
- Meters for 3157,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Cooling Energy [J]
+ Meters for 3285,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Cooling Energy [J]
   OnMeter=EnergyTransfer:Facility [J]
   OnMeter=EnergyTransfer:Building [J]
   OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME [J]
   OnMeter=Cooling:EnergyTransfer [J]
   OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME [J]
 
- Meters for 3174,Whole Building:Facility Total Purchased Electric Energy [J]
+ Meters for 3302,Whole Building:Facility Total Purchased Electric Energy [J]
   OnMeter=ElectricityPurchased:Facility [J]
   OnMeter=ElectricityPurchased:Plant [J]
   OnMeter=Cogeneration:ElectricityPurchased [J]
 
- Meters for 3205,Whole Building:Facility Total Surplus Electric Energy [J]
+ Meters for 3333,Whole Building:Facility Total Surplus Electric Energy [J]
   OnMeter=ElectricitySurplusSold:Facility [J]
   OnMeter=ElectricitySurplusSold:Plant [J]
   OnMeter=Cogeneration:ElectricitySurplusSold [J]
 
- Meters for 3236,Whole Building:Facility Net Purchased Electric Energy [J]
+ Meters for 3364,Whole Building:Facility Net Purchased Electric Energy [J]
   OnMeter=ElectricityNet:Facility [J]
   OnMeter=ElectricityNet:Plant [J]
   OnMeter=Cogeneration:ElectricityNet [J]
 
- Meters for 3269,1ST%FLOOR:1ST%VESTIBULE WATER CONVECTOR 1:Baseboard Total Heating Energy [J]
+ Meters for 3397,1ST%FLOOR:1ST%VESTIBULE WATER CONVECTOR 1:Baseboard Total Heating Energy [J]
   OnMeter=EnergyTransfer:Facility [J]
   OnMeter=EnergyTransfer:HVAC [J]
   OnMeter=Baseboard:EnergyTransfer [J]
 
- Meters for 3290,1ST%FLOOR:1ST%VESTIBULE WATER CONVECTOR 1:Baseboard Hot Water Energy [J]
+ Meters for 3418,1ST%FLOOR:1ST%VESTIBULE WATER CONVECTOR 1:Baseboard Hot Water Energy [J]
   OnMeter=PlantLoopHeatingDemand:Facility [J]
   OnMeter=PlantLoopHeatingDemand:HVAC [J]
   OnMeter=Baseboard:PlantLoopHeatingDemand [J]
 
- Meters for 3321,AIR LOOP AHU HEATING COIL:Heating Coil Heating Energy [J]
+ Meters for 3449,AIR LOOP AHU HEATING COIL:Heating Coil Heating Energy [J]
   OnMeter=EnergyTransfer:Facility [J]
   OnMeter=EnergyTransfer:HVAC [J]
   OnMeter=HeatingCoils:EnergyTransfer [J]
 
- Meters for 3332,AIR LOOP AHU HEATING COIL:Heating Coil Source Side Heat Transfer Energy [J]
+ Meters for 3460,AIR LOOP AHU HEATING COIL:Heating Coil Source Side Heat Transfer Energy [J]
   OnMeter=PlantLoopHeatingDemand:Facility [J]
   OnMeter=PlantLoopHeatingDemand:HVAC [J]
   OnMeter=HeatingCoils:PlantLoopHeatingDemand [J]
 
- Meters for 3343,AIR LOOP AHU COOLING COIL:Cooling Coil Total Cooling Energy [J]
+ Meters for 3471,AIR LOOP AHU COOLING COIL:Cooling Coil Total Cooling Energy [J]
   OnMeter=EnergyTransfer:Facility [J]
   OnMeter=EnergyTransfer:HVAC [J]
   OnMeter=CoolingCoils:EnergyTransfer [J]
 
- Meters for 3354,AIR LOOP AHU COOLING COIL:Cooling Coil Source Side Heat Transfer Energy [J]
+ Meters for 3482,AIR LOOP AHU COOLING COIL:Cooling Coil Source Side Heat Transfer Energy [J]
   OnMeter=PlantLoopCoolingDemand:Facility [J]
   OnMeter=PlantLoopCoolingDemand:HVAC [J]
   OnMeter=CoolingCoils:PlantLoopCoolingDemand [J]
 
- Meters for 3386,DESICCANT REGEN FAN:Fan Electric Energy [J]
+ Meters for 3514,DESICCANT REGEN FAN:Fan Electric Energy [J]
   OnMeter=Electricity:Facility [J]
   OnMeter=Electricity:HVAC [J]
   OnMeter=Fans:Electricity [J]
   OnMeter=General:Fans:Electricity [J]
 
- Meters for 3418,AIR LOOP AHU SUPPLY FAN:Fan Electric Energy [J]
+ Meters for 3546,AIR LOOP AHU SUPPLY FAN:Fan Electric Energy [J]
   OnMeter=Electricity:Facility [J]
   OnMeter=Electricity:HVAC [J]
   OnMeter=Fans:Electricity [J]
   OnMeter=VAV Supply Fan Energy:Fans:Electricity [J]
 
- Meters for 3429,EXTERIOR FACADE LIGHTING:Exterior Lights Electric Energy [J]
+ Meters for 3557,EXTERIOR FACADE LIGHTING:Exterior Lights Electric Energy [J]
   OnMeter=Electricity:Facility [J]
   OnMeter=ExteriorLights:Electricity [J]
   OnMeter=Exterior Facade Lighting:ExteriorLights:Electricity [J]
 
- Meters for 3450,EXTERIOREQUIPMENT:Exterior Equipment Electric Energy [J]
+ Meters for 3578,EXTERIOREQUIPMENT:Exterior Equipment Electric Energy [J]
   OnMeter=Electricity:Facility [J]
   OnMeter=ExteriorEquipment:Electricity [J]
   OnMeter=Exterior Equipment:ExteriorEquipment:Electricity [J]
 
- Meters for 3471,DESICCANT REGEN COIL:Heating Coil Air Heating Energy [J]
+ Meters for 3599,DESICCANT REGEN COIL:Heating Coil Air Heating Energy [J]
   OnMeter=EnergyTransfer:Facility [J]
   OnMeter=EnergyTransfer:HVAC [J]
   OnMeter=HeatingCoils:EnergyTransfer [J]
 
- Meters for 3472,DESICCANT REGEN COIL:Heating Coil Electric Energy [J]
+ Meters for 3600,DESICCANT REGEN COIL:Heating Coil Electric Energy [J]
   OnMeter=Electricity:Facility [J]
   OnMeter=Electricity:HVAC [J]
   OnMeter=Heating:Electricity [J]
 
- Meters for 3483,DESICCANT 1:Dehumidifier Electric Energy [J]
+ Meters for 3611,DESICCANT 1:Dehumidifier Electric Energy [J]
   OnMeter=Electricity:Facility [J]
   OnMeter=Electricity:HVAC [J]
   OnMeter=Cooling:Electricity [J]
 
- Meters for 3494,OA HEAT RECOVERY 1:Heat Exchanger Total Heating Energy [J]
+ Meters for 3622,OA HEAT RECOVERY 1:Heat Exchanger Total Heating Energy [J]
   OnMeter=EnergyTransfer:Facility [J]
   OnMeter=EnergyTransfer:HVAC [J]
   OnMeter=HeatRecoveryForHeating:EnergyTransfer [J]
 
- Meters for 3505,OA HEAT RECOVERY 1:Heat Exchanger Total Cooling Energy [J]
+ Meters for 3633,OA HEAT RECOVERY 1:Heat Exchanger Total Cooling Energy [J]
   OnMeter=EnergyTransfer:Facility [J]
   OnMeter=EnergyTransfer:HVAC [J]
   OnMeter=HeatRecoveryForCooling:EnergyTransfer [J]
 
- Meters for 3516,OA HEAT RECOVERY 1:Heat Exchanger Electric Energy [J]
+ Meters for 3644,OA HEAT RECOVERY 1:Heat Exchanger Electric Energy [J]
   OnMeter=Electricity:Facility [J]
   OnMeter=Electricity:HVAC [J]
   OnMeter=HeatRecovery:Electricity [J]
 
- Meters for 3527,GSHPCLG:Water to Water Heat Pump Electric Energy [J]
+ Meters for 3655,GSHPCLG:Water to Water Heat Pump Electric Energy [J]
   OnMeter=Electricity:Facility [J]
   OnMeter=Electricity:Plant [J]
   OnMeter=Cooling:Electricity [J]
 
- Meters for 3538,GSHPHEATING:Water to Water Heat Pump Electric Energy [J]
+ Meters for 3666,GSHPHEATING:Water to Water Heat Pump Electric Energy [J]
   OnMeter=Electricity:Facility [J]
   OnMeter=Electricity:Plant [J]
   OnMeter=Heating:Electricity [J]
 
- Meters for 3541,COND CIRC PUMP:Pump Electric Energy [J]
+ Meters for 3669,COND CIRC PUMP:Pump Electric Energy [J]
   OnMeter=Electricity:Facility [J]
   OnMeter=Electricity:Plant [J]
   OnMeter=Pumps:Electricity [J]
 
- Meters for 3553,CHW LOOP PUMP:Pump Electric Energy [J]
+ Meters for 3681,CHW LOOP PUMP:Pump Electric Energy [J]
   OnMeter=Electricity:Facility [J]
   OnMeter=Electricity:Plant [J]
   OnMeter=Pumps:Electricity [J]
 
- Meters for 3555,HW LOOP PUMP:Pump Electric Energy [J]
+ Meters for 3683,HW LOOP PUMP:Pump Electric Energy [J]
   OnMeter=Electricity:Facility [J]
   OnMeter=Electricity:Plant [J]
   OnMeter=Pumps:Electricity [J]
 
- Meters for 3596,Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass [kg]
+ Meters for 3730,Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass [kg]
   OnMeter=Carbon Equivalent:Facility [kg]
   OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
 
- Meters for 3617,Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass [kg]
+ Meters for 3751,Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass [kg]
   OnMeter=Carbon Equivalent:Facility [kg]
   OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
 
- Meters for 3618,Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass [kg]
+ Meters for 3752,Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass [kg]
   OnMeter=Carbon Equivalent:Facility [kg]
   OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
 
@@ -2030,6 +2086,14 @@
   2ND%FLOOR%NORTH:2ND%CONFERENCE%03:Zone Air System Sensible Cooling Energy
   2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Heating Energy
   2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Cooling Energy
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Heating Energy
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Cooling Energy
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Heating Energy
@@ -2124,6 +2188,14 @@
   2ND%FLOOR%NORTH:2ND%CONFERENCE%03:Zone Air System Sensible Cooling Energy
   2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Heating Energy
   2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Cooling Energy
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Heating Energy
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Cooling Energy
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Heating Energy
@@ -2175,6 +2247,10 @@
   2ND%FLOOR%NORTH:2ND%SECURE%FILES:Zone Air System Sensible Heating Energy
   2ND%FLOOR%NORTH:2ND%CONFERENCE%03:Zone Air System Sensible Heating Energy
   2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Heating Energy
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Heating Energy
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Heating Energy
 
@@ -2223,6 +2299,10 @@
   2ND%FLOOR%NORTH:2ND%SECURE%FILES:Zone Air System Sensible Cooling Energy
   2ND%FLOOR%NORTH:2ND%CONFERENCE%03:Zone Air System Sensible Cooling Energy
   2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Cooling Energy
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Cooling Energy
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Cooling Energy
 
@@ -2628,6 +2708,46 @@
 
  For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%WORK%ROOM [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
   2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Cooling Energy
 
  For Meter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
   2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Heating Energy

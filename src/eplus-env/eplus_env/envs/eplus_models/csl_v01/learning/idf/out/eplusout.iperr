@@ -1,16 +1,11 @@
  ************* IDF Context for following error/warning message:
  ************* Note -- lines truncated at 300 characters, if necessary...
- *************   1983 Schedule:File,
+ *************   1889 Schedule:File,
  ************* indicated Name=pythonInteriorEquipment
  ************* Only last 3 lines before error line shown.....
- *************   1984     pythonInteriorEquipment, !- Name
- *************   1985     Fraction,                !- Schedule Type Limits Name
- *************   1986     /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/csl_v01/x/interior_equipment_EnergyPlus_2.csv,  !- File Name
- ** Warning ** IP: IDF line~1986 Alpha Argument length exceeds maximum, will be truncated=    /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/csl_v01/x/interior_equipment_EnergyPlus_2.cs
+ *************   1890     pythonInteriorEquipment, !- Name
+ *************   1891     Fraction,                !- Schedule Type Limits Name
+ *************   1892     /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/csl_v01/x/interior_equipment_EnergyPlus_2.csv,  !- File Name
+ ** Warning ** IP: IDF line~1892 Alpha Argument length exceeds maximum, will be truncated=    /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/csl_v01/x/interior_equipment_EnergyPlus_2.cs
  **   ~~~   ** Will be processed as Alpha=/HOME/ZHIANGZ/DOCUMENTS/HVAC-RL-CONTROL/SRC/EPLUS-ENV/EPLUS_ENV/ENVS/EPLUS_MODELS/CSL_V01/X/INTERIOR_EQUIPMENT_ENERGYPLUS_2.CSV
- ** Severe  ** IP: IDF line~30556 Did not find "AirLoopHVAC:Supplyplenvm" in list of Objects
- ** Severe  ** IP: IDF line~30582 Did not find "AirLoopHVAC:Supplyplenvm" in list of Objects
- ** Severe  ** IP: Possible incorrect IDD File
- **   ~~~   ** IDD Version:"IDD_Version 8.3.0"
- **   ~~~   ** Version in IDF="8.3" not the same as expected="8.3"
- **   ~~~   ** Possible Invalid Numerics or other problems
+ ** Severe  ** IP: Potential errors in IDF processing -- see .audit file for details.

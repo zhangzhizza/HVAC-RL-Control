@@ -277,7 +277,7 @@ class IW_IMP_V97(Env):
         occpMode = self._getCurrentOccpMode(nowDatetime)
         # Get PPD
         if isPPDBk:
-            ppdCal = self._getPPDFangerBK(readDataUnitChanged[9:], occpMode);
+            ppdCal = self._getPPDFangerBK(readDataUnitChanged[9:], occpMode, nowDatetime);
         else:
             ppdCal = self._getPPDAMV(readDataUnitChanged[9:]);
         
@@ -448,7 +448,7 @@ class IW_IMP_V97(Env):
                 occpMode = 0;
         return occpMode;
 
-    def _getPPDFangerBK(self, allAMV, occp):
+    def _getPPDFangerBK(self, allAMV, occp, nowDatetime):
         """
             ret: float
                 0-100
@@ -463,7 +463,7 @@ class IW_IMP_V97(Env):
         airVel = self._airVel #m/s
         clo = self._clo #clo
         mrtAdj = 1.0 #C
-        if occp == 0:
+        if occp == 0 or nowDatetime.weekday() >= 5: # Non-occupied mode and weekends
             met = 1.2;
             clo = 1.0;
             airVel = 0.1;

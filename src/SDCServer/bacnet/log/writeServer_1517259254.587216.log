@@ -1,9 +1,0 @@
-[2018-01-29 15:54:14,590] SDC_WriteServer DEBUG:wpCmds:[['./SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4']]
-[2018-01-29 15:54:14,591] SDC_WriteServer INFO:Server starts at 0.0.0.0:61222
-[2018-01-29 15:56:05,256] SDC_WriteServer INFO:Got connection from 127.0.0.1:37030
-[2018-01-29 15:56:05,256] SDC_WriteServer INFO:Recived WRITE request from 127.0.0.1:37030, number of data to write is 1, data to write are [82.4]
-[2018-01-29 15:56:05,256] SDC_WriteServer DEBUG:Command to write through BACnet stack: ['./SDCServer/bacnet/bacnet-stack-0.8.5/bin/bacwp', '701102', '2', '4', '85', '8', '-1', '4', '82.4']
-[2018-01-29 15:56:05,277] SDC_WriteServer DEBUG:Raw response from the BACnet stack: 
-WriteProperty Acknowledged!
-
-[2018-01-29 15:56:05,277] SDC_WriteServer INFO:Write success!
