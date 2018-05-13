@@ -177,7 +177,7 @@ class A3CThread:
               global_summary_writer, T_max, global_agent_eval_list, eval_freq, 
               global_res_list, action_space_name, dropout_prob, reward_func, 
               rewardArgs, train_action_func, eval_action_func, train_action_limits, 
-              eval_action_limits, raw_state_process_func):
+              eval_action_limits, raw_state_process_func, debug_log_prob, is_greedy_policy):
         """
         The function that the thread worker works to train the networks.
         
@@ -279,13 +279,14 @@ class A3CThread:
                 dbg_rdm = np.random.uniform();
                 noForecastDim = 13;
                 forecastSingleEntryDim = 4;
-                dbg_thres = 0.0005;
+                dbg_thres = debug_log_prob;
                 is_show_dbg = True if dbg_rdm < dbg_thres else False;
                 #################################################
 
                 action_raw_out = self._select_sto_action(ob_this_hist_prcd, sess,
                                                          self._e_greedy, is_show_dbg, 
-                                                         dropout_prob = dropout_prob);
+                                                         dropout_prob = dropout_prob,
+                                                         is_greedy = is_greedy_policy);
                 action_raw_idx = action_raw_out if isinstance(action_raw_out, int) else action_raw_out[0]
                 if action_raw_idx is not None:
                     action_raw_tup = action_space[action_raw_idx];
@@ -345,13 +346,14 @@ class A3CThread:
                 self._update_e_greedy(); # Update the epsilon value
                 with global_lock:
                     # Do the evaluation
-                    if self._global_counter.value % eval_freq == 0: 
+                    if eval_freq != 0 and self._global_counter.value % eval_freq == 0: 
                         self._local_logger.info('Evaluating...');
                         global_res_list.append([self._global_counter.value]);
                         for global_agent_eval in global_agent_eval_list:
                             eval_res = global_agent_eval.evaluate(self._local_logger,
                                                     action_space_name, reward_func, rewardArgs, 
-                                                    eval_action_func, eval_action_limits, raw_state_process_func);
+                                                    eval_action_func, eval_action_limits, raw_state_process_func,
+                                                    debug_log_prob);
                             global_res_list[-1].extend([eval_res]);
                         np.savetxt(log_dir + '/eval_res_hist.csv', 
                                    np.array(global_res_list), delimiter = ',');
@@ -441,7 +443,8 @@ class A3CThread:
     def _update_e_greedy(self):
         self._e_greedy -= self._epsilon_decay_delta;
         
-    def _select_sto_action(self, state, sess, e_greedy, is_show_dbg, dropout_prob):
+    def _select_sto_action(self, state, sess, e_greedy, is_show_dbg, dropout_prob, is_greedy = False):
+
         """
         Given a state, run stochastic policy network to give an action.
         
@@ -467,17 +470,24 @@ class A3CThread:
                              feed_dict={self._state_placeholder:state,
                                         self._keep_prob: 1.0 - dropout_prob}) ####DEBUG FOR DROPOUT
         softmax_a = softmax_a.flatten();
+        self._local_logger.debug('Policy network output: %s, sum to %0.04f'
+                                     %(str(softmax_a), sum(softmax_a)));
+        # Return the action with largest prob if prob >= 0.5, else sample
+        maxProbIdx = int(np.argmax(softmax_a));
+        if is_greedy and softmax_a[maxProbIdx] >= 0.5:
+            return int(np.argmax(softmax_a));
+        else:
+            uni_rdm = np.random.uniform(); # Avoid select an action with too small probability
+            if is_show_dbg:
+                self._local_logger.debug('Softmax action selection sampled number: %0.04f'
+                                     %(uni_rdm));
+            imd_x = uni_rdm;
+            for i in range(softmax_a.shape[-1]):
+                imd_x -= softmax_a[i];
+                if imd_x <= 0.0:
+                    selected_act = i;
+                    return selected_act;
 
-        if is_show_dbg:
-            self._local_logger.debug('Policy network output: %s, sum to %0.04f'
-                                 %(str(softmax_a), sum(softmax_a)));
-        uni_rdm = np.random.uniform(); # Avoid select an action with too small probability
-        imd_x = uni_rdm;
-        for i in range(softmax_a.shape[-1]):
-            imd_x -= softmax_a[i];
-            if imd_x <= 0.0:
-                selected_act = i;
-                return selected_act;
         return (None, softmax_a); # Return if network output is not valid
     
 
@@ -569,7 +579,7 @@ class A3CAgent:
         self._dropout_prob = dropout_prob;
         self._global_logger = global_logger;
         
-    def compile(self, is_warm_start, model_dir, save_scope = 'global'):
+    def compile(self, is_warm_start, model_dir, save_scope = 'global', save_max_to_keep = 5):
         """
         This method sets up the required TF graph and operations.
         
@@ -623,7 +633,7 @@ class A3CAgent:
                                              scope=save_scope)
             if save_scope == 'all':
                 save_var_list = None;
-            saver = tf.train.Saver(var_list = save_var_list);
+            saver = tf.train.Saver(var_list = save_var_list, max_to_keep = save_max_to_keep);
             # Init ops
             init_global_all_op = tf.global_variables_initializer();
             if not is_warm_start:
@@ -689,7 +699,8 @@ class A3CAgent:
 
     def fit(self, sess, coordinator, global_network, workers, global_summary_writer, global_saver,
             env_name_list, t_max, gamma, e_weight, p_weight, save_freq, T_max, eval_epi_num, eval_freq,
-            reward_func, rewardArgs, train_action_func, eval_action_func, train_action_limits, eval_action_limits, raw_state_process_func):
+            reward_func, rewardArgs, train_action_func, eval_action_func, train_action_limits, eval_action_limits, 
+            raw_state_process_func, debug_log_prob, is_greedy_policy):
         """
         This method is used to train the neural network. 
         
@@ -755,7 +766,8 @@ class A3CAgent:
                                                 T_max, global_agent_eval_list, eval_freq, global_res_list,
                                                 self._action_space_name, self._dropout_prob, reward_func, 
                                                 rewardArgs, train_action_func, eval_action_func, 
-                                                train_action_limits, eval_action_limits, raw_state_process_func);
+                                                train_action_limits, eval_action_limits, raw_state_process_func,
+                                                debug_log_prob, is_greedy_policy);
 
             thread = threading.Thread(target = (worker_train));
             thread.start();

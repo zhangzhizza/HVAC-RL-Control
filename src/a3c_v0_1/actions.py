@@ -152,11 +152,23 @@ iw_actFunc4_3 = [[17.5],
         [60.0],
         [65.0]];
 
+iw_actFunc4_4 = [[20.0],
+        [20.0],
+        [25.0],
+        [30.0],
+        [35.0],
+        [40.0],
+        [45.0],
+        [50.0],
+        [55.0],
+        [60.0],
+        [65.0]];
 action_map = {'default': actions_htcl_cmd, 'exp1': actions_htcl_cmd_exp1, 
               'exp2':actions_htcl_cmd_exp2, 'exp3': actions_htcl_cmd_exp3, 
               'exp4': actions_htcl_cmd_exp4,
               'iw_1': iw_1, 'iw_2': iw_2, 'iw_3': iw_3, 'iw_af3_1': iw_actFunc3_1, 
               'iw_af4_1': iw_actFunc4_1, 'iw_af5_1': iw_actFunc5_1,
-              'iw_af4_2': iw_actFunc4_2, 'iw_af4_3': iw_actFunc4_3};
+              'iw_af4_2': iw_actFunc4_2, 'iw_af4_3': iw_actFunc4_3,
+              'iw_af4_4': iw_actFunc4_4};
 
 

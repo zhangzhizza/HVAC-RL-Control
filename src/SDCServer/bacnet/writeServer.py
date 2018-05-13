@@ -15,12 +15,12 @@ LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 
 class WriteServer(object):
 
-	def runWriteServer(self, port, writeConfig, bacwpPath):
+	def runWriteServer(self, port, writeConfig, bacwpPath='%s/bacnet-stack-0.8.5/bin/bacwp'%FD):
 		# Set the logger
 		logger_main = Logger().getLogger('SDC_WriteServer', LOG_LEVEL, LOG_FMT, log_file_path = '%s/log/writeServer_%s.log'%(FD, time.time()));
 		# Read config file
-		configMap = self.readXmlConfg(writeConfig);
-		wpCmds = self.assembleBacwpCmd(configMap);
+		configList = self.readXmlConfg(writeConfig);
+		wpCmds = self.assembleBacwpCmd(configList);
 		for wpCmd in wpCmds:
 			wpCmd.insert(0, bacwpPath);
 		logger_main.debug('wpCmds:' + str(wpCmds))
@@ -71,20 +71,22 @@ class WriteServer(object):
 						sendBack.append(errMsg);
 						logger_main.warning(errMsg);
 				c.sendall(bytearray(str(sendBack), encoding = 'utf-8'));
-			else:		
+			else:
+				logger_main.warning('Recieved unrecognized request from %s: %s'%(addr, code));		
 				c.sendall(bytearray(str([0]), encoding = 'utf-8'))
 
 	def closeServer(self):
 		self._s.close();
 
 	def readXmlConfg(self, writeConfig):
-		deviceInstanceDict = {};
+		deviceInstanceList = [];
 		tree = ET.parse(writeConfig)
 		root = tree.getroot()
 		# Device level info
 		for deviceLevel in root:
 			deviceId = deviceLevel.attrib['Instance']
-			deviceInstanceDict[deviceId] = [];
+			thisDeviceList = [];
+			thisDeviceList.append(deviceId);
 			# Instance level info
 			for instanceLevel in deviceLevel:
 				thisInstanceInfo = [];
@@ -101,15 +103,16 @@ class WriteServer(object):
 				thisInstanceInfo.append(priority);
 				thisInstanceInfo.append(index);
 				thisInstanceInfo.append(bacenumMap[tag]);
-				deviceInstanceDict[deviceId].append(thisInstanceInfo);
-		return deviceInstanceDict;
+				thisDeviceList.append(thisInstanceInfo);
+			deviceInstanceList.append(thisDeviceList);
+		return deviceInstanceList;
 
-	def assembleBacwpCmd(self, configMap):
+	def assembleBacwpCmd(self, configList):
 		cmds = [];
-		for key in configMap.keys():
-			deviceWpRequests = copy.deepcopy(configMap[key]);
-			for deviceWpRequestEach in deviceWpRequests:
-				deviceWpRequestEach.insert(0, key);
+		for thisDevice in configList:
+			deviceWpRequests = copy.deepcopy(thisDevice);
+			for deviceWpRequestEach in deviceWpRequests[1:]:
+				deviceWpRequestEach.insert(0, deviceWpRequests[0]);
 				cmds.append(deviceWpRequestEach);
 		return cmds;
 

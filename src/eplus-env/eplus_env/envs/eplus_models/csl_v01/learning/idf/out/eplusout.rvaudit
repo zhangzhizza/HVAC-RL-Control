@@ -1,0 +1,16 @@
+ ReadVarsESO
+ processing:.MEPC04_model_v8.3_airtoairDX.rvi
+ input file:out/eplusout.eso
+ output file:out/eplusout.csv
+ getting all vars from:out/eplusout.eso
+  number variables requested for output=          90
+ ReadVars Run Time=00hr 00min  0.34sec
+ ReadVarsESO program completed successfully.
+ ReadVarsESO
+ processing:.MEPC04_model_v8.3_airtoairDX.mvi
+ input file:out/eplusout.mtr
+ output file:out/eplusmtr.csv
+ getting all vars from:out/eplusout.mtr
+  number variables requested for output=           9
+ ReadVars Run Time=00hr 00min  0.09sec
+ ReadVarsESO program completed successfully.

@@ -2510,7 +2510,7 @@ SizingPeriod:DesignDay,
     Reverse,       !- Damper Heating Action
     ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     AutoCalculate,           !- Maximum Flow Fraction During Reheat
-    ,                        !- Maximum Reheat Air Temperature {C}
+    40,                        !- Maximum Reheat Air Temperature {C}
     ;   !- Design Specification Outdoor Air Object Name
 
 ! Outdoor air specification should be consistent with Sizing:Zone object inputs.
@@ -2556,7 +2556,7 @@ SizingPeriod:DesignDay,
     Reverse,       !- Damper Heating Action
     ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     ,                        !- Maximum Flow Fraction During Reheat
-    ,                        !- Maximum Reheat Air Temperature {C}
+    40,                        !- Maximum Reheat Air Temperature {C}
     ;   !- Design Specification Outdoor Air Object Name
 
   AirTerminal:SingleDuct:VAV:Reheat,
@@ -2578,7 +2578,7 @@ SizingPeriod:DesignDay,
     Reverse,       !- Damper Heating Action
     ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     ,                        !- Maximum Flow Fraction During Reheat
-    ,                        !- Maximum Reheat Air Temperature {C}
+    40,                        !- Maximum Reheat Air Temperature {C}
     ;   !- Design Specification Outdoor Air Object Name
 
   AirTerminal:SingleDuct:VAV:Reheat,
@@ -2600,7 +2600,7 @@ SizingPeriod:DesignDay,
     Reverse,       !- Damper Heating Action
     ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     ,                        !- Maximum Flow Fraction During Reheat
-    ,                        !- Maximum Reheat Air Temperature {C}
+    40,                        !- Maximum Reheat Air Temperature {C}
     ;   !- Design Specification Outdoor Air Object Name
 
   AirTerminal:SingleDuct:VAV:Reheat,
@@ -2622,7 +2622,7 @@ SizingPeriod:DesignDay,
     Reverse,       !- Damper Heating Action
     ,                !- Maximum Flow per Zone Floor Area During Reheat {m3/s-m2}
     ,                        !- Maximum Flow Fraction During Reheat
-    ,                        !- Maximum Reheat Air Temperature {C}
+    40,                        !- Maximum Reheat Air Temperature {C}
     ;   !- Design Specification Outdoor Air Object Name
 
   Coil:Heating:Electric,
@@ -2976,6 +2976,15 @@ EnergyManagementSystem:Sensor,
     vavSupplyAirTempStpt,! Output:Variable or Output:Meter Index Key Name
     Schedule Value; ! Output:Variable or Output:Meter Name
 
+EnergyManagementSystem:Sensor,
+    HVAC_Elec, !Name W
+    Whole Building,! Output:Variable or Output:Meter Index Key Name
+    Facility Total HVAC Electric Demand Power; ! Output:Variable or Output:Meter Name
+
+EnergyManagementSystem:Sensor,
+    HVAC_gas, !Name W
+    MAIN HEATING COIL GAS,! Output:Variable or Output:Meter Index Key Name
+    Heating Coil Gas Rate; ! Output:Variable or Output:Meter Name
 
 !-   ===========  ALL OBJECTS IN CLASS: EnergyManagementSystem:GlobalVariable ===========
 EnergyManagementSystem:GlobalVariable,
@@ -2989,7 +2998,10 @@ EnergyManagementSystem:GlobalVariable,
     is_HtgSetP_notmet;  !- Is heating setpoint not met ?
 
 EnergyManagementSystem:GlobalVariable,
-    is_ClgSetP_notmet;  !- Is cooling setpoint not met ?    
+    is_ClgSetP_notmet;  !- Is cooling setpoint not met ?
+
+EnergyManagementSystem:GlobalVariable,
+    HVAC_total;  !- HVAC total power (gas + electric)
 
 !-   ===========  ALL OBJECTS IN CLASS: EnergyManagementSystem:Program ===========
 EnergyManagementSystem:Program, 
@@ -2997,7 +3009,12 @@ EnergyManagementSystem:Program,
     SET FZ_temp_ave = 23,
     SET FZ_rh_ave = 60,
     SET is_HtgSetP_notmet = 0,
-    SET is_ClgSetP_notmet = 0;
+    SET is_ClgSetP_notmet = 0,
+    SET HVAC_total = 0;
+
+EnergyManagementSystem:Program,
+    CalcHVACTotal, ! Name Calculate the total HVAC energy demand
+    SET HVAC_total = HVAC_Elec + HVAC_gas;
 
 EnergyManagementSystem:Program,
     CalcFZoneTemp, ! Name Calculate the average temp of north zones.
@@ -3037,6 +3054,10 @@ EnergyManagementSystem:ProgramCallingManager,
     CalcFZoneTemp, ! Program Name 1
     CalSeptNotmet; !- Program Name 4
 
+EnergyManagementSystem:ProgramCallingManager,
+    reporting_calls, ! Name the programs here set some variables based on the last timestep eplus sensor data
+    EndOfZoneTimestepBeforeZoneReporting, ! EnergyPlus Model Calling Point
+    CalcHVACTotal; ! Program Name 1
 !-   ===========  ALL OBJECTS IN CLASS: EnergyManagementSystem:OutputVariable ===========
 EnergyManagementSystem:OutputVariable,
     5 Zone Average Temperature, ! Name
@@ -3061,7 +3082,13 @@ EnergyManagementSystem:OutputVariable,
     ZoneTimeStep, ! Update Frequency
     ,      ! EMS Program or Subroutine Name
     C;
-
+EnergyManagementSystem:OutputVariable,
+    HVAC Total Energy Demand, ! Name
+    HVAC_total, ! EMS Variable Name
+    Averaged, ! Type of Data in Variable
+    ZoneTimeStep, ! Update Frequency
+    ,      ! EMS Program or Subroutine Name
+    W;
 
   !-External Interface
   ExternalInterface, !- Object to activate the external interface
@@ -3099,6 +3126,8 @@ EnergyManagementSystem:OutputVariable,
   
   !- Building HVAC output
   Output:Variable,*,Facility Total HVAC Electric Demand Power,timestep;
+  Output:Variable,*,Heating Coil Gas Rate, timestep;
+  Output:Variable,EMS,HVAC Total Energy Demand, timestep;
   
   !- Debug
   Output:Variable,SPACE1-1 IN NODE,System Node Temperature, timestep;
@@ -3109,7 +3138,7 @@ EnergyManagementSystem:OutputVariable,
   Output:Variable,SPACE1-1,Zone Air Relative Humidity,timestep;
   Output:Variable,SPACE1-1,Zone People Occupant Count, timestep;
   Output:Variable,SPACE1-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PPD,timestep;
-  Output:Variable,Main Heating Coil 2,Heating Coil Gas Rate,timestep;
+
 
   Output:VariableDictionary,Regular;
   Output:Surfaces:Drawing,dxf;

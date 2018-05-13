@@ -15327,7 +15327,7 @@ Output:Variable,tempHWLoop Supply Side Outlet,System Node Temperature,timestep; 
 
 Output:Variable,tempHWLoop Demand Side Inlet,System Node Mass Flow Rate,timestep; !- Zone Average [kg/s]
 Output:Variable,tempHWLoop Supply Side Outlet,System Node Mass Flow Rate,timestep; !- Zone Average [kg/s]
-
+Output:Variable,*,Zone Mean Radiant Temperature,timestep; !- Zone Average [C]
 Output:Variable,
     *, !- Key Value
     IW Calculated Heating Demand, !- Variable Name

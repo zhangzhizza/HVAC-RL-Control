@@ -1,7 +1,10 @@
 bacenumMap = \
-{'Analog_Output':'1',
- 'Analog_Value' :'2',
- 'Analog_Input' :'0',
- 'Binary_Value' :'5',
+{'Analog-Output':'1',
+ 'Analog-Value' :'2',
+ 'Analog-Input' :'0',
+ 'Binary-Value' :'5',
  'Enumerated'   :'9',
- 'Present_Value':'85'}
+ 'Real'         :'4',
+ 'Present-Value':'85'}
+
+bacenumMap_inv = {v: k for k, v in bacenumMap.items()}
