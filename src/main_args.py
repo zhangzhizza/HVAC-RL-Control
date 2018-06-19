@@ -67,8 +67,12 @@ def get_args():
     parser.add_argument('--gamma', default=0.99);
     parser.add_argument('--v_loss_frac', default=0.5, type=float);
     parser.add_argument('--p_loss_frac', default=1.0, type=float);
-    parser.add_argument('--h_regu_frac', default=0.01, nargs='+', type=float);
-    parser.add_argument('--h_decay_bounds', default=[], nargs='+', type=int);
+    parser.add_argument('--h_regu_frac', default=0.01, nargs='+', type=float, 
+                        help='Can be a single float or multiple floats, defining the entropy regularization weight. If multiple '
+                             'floats are input, the values will be used for different interaction steps defined in the h_decay_bounds.');
+    parser.add_argument('--h_decay_bounds', default=[], nargs='+', type=int, 
+                        help='None or 1 to many floats can be input. If multiple h_regu_frac are input, this field must not be None; ',
+                             'for interaction step 0 to the first h_decay_bound, the first h_regu_frac will be used, so on so forth.');
     parser.add_argument('--num_threads', default=8, type=int,
                         help='The number of threads to be used for the asynchronous'
                         ' training. Default is 8. If -1, then this value equals to'
