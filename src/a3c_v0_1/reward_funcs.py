@@ -783,6 +783,40 @@ def ppd_energy_reward_iw_timeRelated_v9(ob_next_prcd, e_weight, p_weight, ppd_pe
     return ret;
 
 
+def stptVio_energy_reward_cslDxCool_v1(ob_next_prcd, e_weight, p_weight, stpt_violation_scl):
+    """
+    Get the reward from hvac energy and indoor air temperature setpoint violation level (the max one
+    is used for the multi-zone case). 
+    
+    Args:
+        ob_next_prcd:
+            Processed observation.
+        e_weight: float
+            The weight to HVAC energy consumption.
+        p_weight: float
+            The weight to indoor air temperature setpoint violation.
+        ppd_penalty_limit:
+
+    Return: float
+        The reward. 
+    """
+    ZONE_NUM = 22;
+    IAT_FIRST_RAW_IDX = 4;
+    IATSSP_FIRST_RAW_IDX = 26;
+    ENERGY_RAW_IDX = 48;
+    normalized_iats = ob_next_prcd[TIMESTATE_LEN + IAT_FIRST_RAW_IDX: TIMESTATE_LEN + IAT_FIRST_RAW_IDX + ZONE_NUM];
+    normalized_iatssp = ob_next_prcd[TIMESTATE_LEN + IATSSP_FIRST_RAW_IDX: TIMESTATE_LEN + IATSSP_FIRST_RAW_IDX + ZONE_NUM];
+    normalized_sspVio_max = max(normalized_iats - normalized_iatssp); # For cooling, the IAT should be less than the IATSSP
+    normalized_energy = ob_next_prcd[TIMESTATE_LEN + ENERGY_RAW_IDX];
+    
+    energy_rwd = - normalized_energy;
+    comfort_rwd = - max(normalized_sspVio_max, 0) * stpt_violation_scl; # Penalty for the positive setpoint violation
+    ret = max(min(e_weight * energy_rwd + p_weight * comfort_rwd, 0.0), -1.0);
+    # Shift reward to 0 - 1
+    ret += 1.0;
+    return ret;
+
+
 
 reward_func_dict = {'1': err_energy_reward_iw,
                     '2': err_energy_reward_iw_v2,
@@ -798,4 +832,5 @@ reward_func_dict = {'1': err_energy_reward_iw,
                     '12': ppd_energy_reward_iw_timeRelated_v6,
                     '13': ppd_energy_reward_iw_timeRelated_v7,
                     '14': ppd_energy_reward_iw_timeRelated_v8,
-                    '15': ppd_energy_reward_iw_timeRelated_v9,}
+                    '15': ppd_energy_reward_iw_timeRelated_v9,
+                    'cslDxCool_1': stptVio_energy_reward_cslDxCool_v1,}

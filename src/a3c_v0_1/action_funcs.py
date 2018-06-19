@@ -275,6 +275,27 @@ def iw_iat_stpt_noExpHeatingOp(action_raw, stptLmt, ob_this_raw):
                 (action_raw[0], res_iat_ssp)) 
 
 
+def directPass(action_raw, action_raw_idx, stptLmt, ob_this_raw):
+    """
+    Pass the raw action as the output. 
+    
+    Args:
+        action_raw: (float, )
+            The raw action planned to be taken.
+        action_raw_idx: int
+            The index of the action in the action space.
+        stptLmt: [[float, float], [float, float], ...]
+            The low limit (included) and high limit (included) for each type of the actions.
+        ob_this_raw: [float]
+            The raw observation.
+        
+    Return: tuple
+        A tuple with length 2. The index 0 is a tuple of resulting action, 
+        and the index 1 is a tuple of resulting action idx.
+    """
+
+    return (action_raw, action_raw_idx)
+
 act_func_dict = {'1':[mull_stpt_iw, act_limits_iw_1],
                 '2':[mull_stpt_oaeTrans_iw, act_limits_iw_2],
                 '3':[mull_stpt_noExpTurnOffMullOP, act_limits_iw_2],
@@ -284,4 +305,5 @@ act_func_dict = {'1':[mull_stpt_iw, act_limits_iw_1],
                 '7':[stpt_directSelect, act_limits_iw_4],
                 '8':[stpt_directSelect, act_limits_iw_5],
                 '9':[stpt_directSelect_withHeuristics, act_limits_iw_5],
-                '10':[stpt_directSelect_sspOnly, act_limits_iw_6],}
+                '10':[stpt_directSelect_sspOnly, act_limits_iw_6],
+                'cslDxActCool_1':[directPass, act_limits_cslDxCool_1]}
