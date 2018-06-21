@@ -1,6 +1,8 @@
 from a3c_v0_1.state_index import *
 from numpy import linalg as LA
 
+import numpy as np
+
 TIMESTATE_LEN = 2;
 
 def ppd_energy_reward_smlRefBld(ob_next_prcd, e_weight, p_weight, mode, ppd_penalty_limit):
@@ -804,8 +806,8 @@ def stptVio_energy_reward_cslDxCool_v1(ob_next_prcd, e_weight, p_weight, stpt_vi
     IAT_FIRST_RAW_IDX = 4;
     IATSSP_FIRST_RAW_IDX = 26;
     ENERGY_RAW_IDX = 48;
-    normalized_iats = ob_next_prcd[TIMESTATE_LEN + IAT_FIRST_RAW_IDX: TIMESTATE_LEN + IAT_FIRST_RAW_IDX + ZONE_NUM];
-    normalized_iatssp = ob_next_prcd[TIMESTATE_LEN + IATSSP_FIRST_RAW_IDX: TIMESTATE_LEN + IATSSP_FIRST_RAW_IDX + ZONE_NUM];
+    normalized_iats = np.array(ob_next_prcd[TIMESTATE_LEN + IAT_FIRST_RAW_IDX: TIMESTATE_LEN + IAT_FIRST_RAW_IDX + ZONE_NUM]);
+    normalized_iatssp = np.array(ob_next_prcd[TIMESTATE_LEN + IATSSP_FIRST_RAW_IDX: TIMESTATE_LEN + IATSSP_FIRST_RAW_IDX + ZONE_NUM]);
     normalized_sspVio_max = max(normalized_iats - normalized_iatssp); # For cooling, the IAT should be less than the IATSSP
     normalized_energy = ob_next_prcd[TIMESTATE_LEN + ENERGY_RAW_IDX];
     

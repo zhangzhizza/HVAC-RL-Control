@@ -82,7 +82,7 @@ ZoneCapacitanceMultiplier:ResearchSpecial,
 !-   ===========  ALL OBJECTS IN CLASS: TIMESTEP ===========
 
 Timestep,
-    6;                       !- Number of Timesteps per Hour
+    12;                       !- Number of Timesteps per Hour
 
 
 !-   ===========  ALL OBJECTS IN CLASS: CONVERGENCELIMITS ===========
@@ -46776,8 +46776,8 @@ OutputControl:Table:Style,
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUTCONTROL:REPORTINGTOLERANCES ===========
 
 OutputControl:ReportingTolerances,
-    2,                       !- Tolerance for Time Heating Setpoint Not Met {deltaC}
-    2;                       !- Tolerance for Time Cooling Setpoint Not Met {deltaC}
+    0.5,                       !- Tolerance for Time Heating Setpoint Not Met {deltaC}
+    0.5;                       !- Tolerance for Time Cooling Setpoint Not Met {deltaC}
 
 
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUT:VARIABLE ===========
@@ -46843,6 +46843,21 @@ Output:Variable,
     2ND%FLOOR%SOUTH:2nd%Conference%02,      !- Key Value
     Zone Electric Equipment Electric Power,          !- Variable Name
     Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,      !- Key Value
+    Facility Cooling Setpoint Not Met Time,          !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,      !- Key Value
+    Facility Heating Setpoint Not Met Time,          !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Facility Total HVAC Electric Demand Power,  !- Variable Name
+    runperiod;                !- Reporting Frequency
 
 
 !TODO: change dx coil working schedule, for different climate different schedule

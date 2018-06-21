@@ -82,7 +82,7 @@ ZoneCapacitanceMultiplier:ResearchSpecial,
 !-   ===========  ALL OBJECTS IN CLASS: TIMESTEP ===========
 
 Timestep,
-    6;                       !- Number of Timesteps per Hour
+    12;                       !- Number of Timesteps per Hour
 
 
 !-   ===========  ALL OBJECTS IN CLASS: CONVERGENCELIMITS ===========
@@ -30291,29 +30291,68 @@ AvailabilityManagerAssignmentList,
 !-   ===========  ALL OBJECTS IN CLASS: SETPOINTMANAGER:SCHEDULED ===========
 
 
-SetpointManager:Scheduled,
+!SetpointManager:Scheduled,
+!    Air Loop Supply Side Outlet Setpoint Manager,  !- Name
+!    Temperature,             !- Control Variable
+!    AHUAirSetpoint,          !- Schedule Name
+!    Air Loop Supply Side Outlet 1;  !- Setpoint Node or NodeList Name
+
+!SetpointManager:Scheduled,
+!    Mixed Air Temp Manager,  !- Name
+!    Temperature,             !- Control Variable
+!    AHUAirSetpoint,          !- Schedule Name
+!    Mixed Air Nodes;         !- Setpoint Node or NodeList Name
+
+!SetpointManager:Scheduled,
+!    Cooling Coil Outlet Air Setpoint Manager,  !- Name
+!    Temperature,             !- Control Variable
+!    AHUAirSetpoint,     !- Schedule Name
+!    AIR LOOP AHU COOLING COIL AIR OUTLET NODE;  !- Setpoint Node or NodeList Name
+
+!SetpointManager:Scheduled,
+!    Heating Coil Outlet Air Setpoint Manager,  !- Name
+!    Temperature,             !- Control Variable
+!    AHUAirSetpoint,     !- Schedule Name
+!    AIR LOOP AHU HEATING COIL AIR OUTLET NODE;  !- Setpoint Node or NodeList Name
+
+
+SetpointManager:Warmest,
     Air Loop Supply Side Outlet Setpoint Manager,  !- Name
-    Temperature,             !- Control Variable
-    AHUAirSetpoint,          !- Schedule Name
+    Temperature,  !- Control Variable
+    Air Loop,  !- HVAC Air Loop Name
+    12,  !- Minimum Setpoint Temperature
+    24.,  !- Maximum Setpoint Temperature
+    MaximumTemperature,  !- Strategy
     Air Loop Supply Side Outlet 1;  !- Setpoint Node or NodeList Name
 
-SetpointManager:Scheduled,
+SetpointManager:Warmest,
     Mixed Air Temp Manager,  !- Name
-    Temperature,             !- Control Variable
-    AHUAirSetpoint,          !- Schedule Name
-    Mixed Air Nodes;         !- Setpoint Node or NodeList Name
+    Temperature,  !- Control Variable
+    Air Loop,  !- HVAC Air Loop Name
+    12,  !- Minimum Setpoint Temperature
+    24.,  !- Maximum Setpoint Temperature
+    MaximumTemperature,  !- Strategy
+    Mixed Air Nodes;  !- Setpoint Node or NodeList Name
 
-SetpointManager:Scheduled,
+SetpointManager:Warmest,
     Cooling Coil Outlet Air Setpoint Manager,  !- Name
-    Temperature,             !- Control Variable
-    AHUAirSetpoint,     !- Schedule Name
+    Temperature,  !- Control Variable
+    Air Loop,  !- HVAC Air Loop Name
+    12,  !- Minimum Setpoint Temperature
+    24.,  !- Maximum Setpoint Temperature
+    MaximumTemperature,  !- Strategy
     AIR LOOP AHU COOLING COIL AIR OUTLET NODE;  !- Setpoint Node or NodeList Name
 
-SetpointManager:Scheduled,
+SetpointManager:Warmest,
     Heating Coil Outlet Air Setpoint Manager,  !- Name
-    Temperature,             !- Control Variable
-    AHUAirSetpoint,     !- Schedule Name
+    Temperature,  !- Control Variable
+    Air Loop,  !- HVAC Air Loop Name
+    12,  !- Minimum Setpoint Temperature
+    24.,  !- Maximum Setpoint Temperature
+    MaximumTemperature,  !- Strategy
     AIR LOOP AHU HEATING COIL AIR OUTLET NODE;  !- Setpoint Node or NodeList Name
+
+
 
 !-   ===========  ALL OBJECTS IN CLASS: SETPOINTMANAGER:SINGLEZONE:HUMIDITY:MAXIMUM ===========
 
@@ -46776,8 +46815,8 @@ OutputControl:Table:Style,
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUTCONTROL:REPORTINGTOLERANCES ===========
 
 OutputControl:ReportingTolerances,
-    2,                       !- Tolerance for Time Heating Setpoint Not Met {deltaC}
-    2;                       !- Tolerance for Time Cooling Setpoint Not Met {deltaC}
+    0.5,                       !- Tolerance for Time Heating Setpoint Not Met {deltaC}
+    0.5;                       !- Tolerance for Time Cooling Setpoint Not Met {deltaC}
 
 
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUT:VARIABLE ===========
@@ -47010,6 +47049,23 @@ Output:Variable,
     Heating Coil Electric Power, !- Variable Name
     timestep; !- Reporting
 
+Output:Variable,
+    *,                       !- Key Value
+    Facility Total HVAC Electric Demand Power,  !- Variable Name
+    runperiod;                !- Reporting Frequency
+
+Output:Variable,
+    *, !- Key Value
+    Facility Cooling Setpoint Not Met Time, !- Variable Name
+    RunPeriod; !- Reporting
+
+Output:Variable,
+    *, !- Key Value
+    Facility Heating Setpoint Not Met Time, !- Variable Name
+    RunPeriod; !- Reporting
+
+
+
 !TODO: change dx coil working schedule, for different climate different schedule
 
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUT:METER ===========
@@ -47027,12 +47083,3 @@ Output:Diagnostics,
 
 Output:Surfaces:Drawing, DXF;
 
-!-   ===========  ALL OBJECTS IN CLASS: ExternalInterface ===========
-
-ExternalInterface,           !- Object to activate the external interface
-    PtolemyServer;              !- Name of external interface
-
-ExternalInterface:Schedule,
-    AHUAirSetpoint_ext,                 !- Name
-    Temperature,             !- ScheduleType
-    18;                      !- Initial value, used during warm-up

@@ -82,7 +82,7 @@ ZoneCapacitanceMultiplier:ResearchSpecial,
 !-   ===========  ALL OBJECTS IN CLASS: TIMESTEP ===========
 
 Timestep,
-    6;                       !- Number of Timesteps per Hour
+    12;                       !- Number of Timesteps per Hour
 
 
 !-   ===========  ALL OBJECTS IN CLASS: CONVERGENCELIMITS ===========
@@ -30165,7 +30165,7 @@ EnergyManagementSystem:Program,
         SET Set_zn_htstpt_1st2 = HeatingStptPrcd_1st2,
         SET Set_zn_clstpt_1st2 = CoolingStptPrcd_1st2,
         SET Set_zn_htstpt_2nd1 = HeatingStptPrcd_2nd1,
-        SET Set_zn_clstpt_2nd1 = HeatingStptPrcd_2nd1,
+        SET Set_zn_clstpt_2nd1 = CoolingStptPrcd_2nd1,
         SET Set_zn_htstpt_2nd2 = HeatingStptPrcd_2nd2,
         SET Set_zn_clstpt_2nd2 = CoolingStptPrcd_2nd2,
 
@@ -47024,6 +47024,22 @@ Output:Variable,
     2ND%FLOOR%SOUTH:2nd%Conference%02,      !- Key Value
     Zone Electric Equipment Electric Power,          !- Variable Name
     Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,      !- Key Value
+    Facility Cooling Setpoint Not Met Time,          !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,      !- Key Value
+    Facility Heating Setpoint Not Met Time,          !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Facility Total HVAC Electric Demand Power,  !- Variable Name
+    runperiod;                !- Reporting Frequency
+
 
 
 !TODO: change dx coil working schedule, for different climate different schedule

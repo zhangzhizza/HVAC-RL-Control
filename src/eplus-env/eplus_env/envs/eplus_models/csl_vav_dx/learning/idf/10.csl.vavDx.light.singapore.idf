@@ -46765,8 +46765,8 @@ OutputControl:Table:Style,
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUTCONTROL:REPORTINGTOLERANCES ===========
 
 OutputControl:ReportingTolerances,
-    2,                       !- Tolerance for Time Heating Setpoint Not Met {deltaC}
-    2;                       !- Tolerance for Time Cooling Setpoint Not Met {deltaC}
+    0.5,                       !- Tolerance for Time Heating Setpoint Not Met {deltaC}
+    0.5;                       !- Tolerance for Time Cooling Setpoint Not Met {deltaC}
 
 
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUT:VARIABLE ===========
@@ -46998,6 +46998,21 @@ Output:Variable,
     *, !- Key Value
     Heating Coil Electric Power, !- Variable Name
     timestep; !- Reporting
+
+Output:Variable,
+    *, !- Key Value
+    Facility Cooling Setpoint Not Met Time, !- Variable Name
+    runperiod; !- Reporting
+
+Output:Variable,
+    *, !- Key Value
+    Facility Heating Setpoint Not Met Time, !- Variable Name
+    runperiod; !- Reporting
+
+Output:Variable,
+    *,                       !- Key Value
+    Facility Total HVAC Electric Demand Power,  !- Variable Name
+    RunPeriod;                !- Reporting Frequency
 
 !TODO: change dx coil working schedule, for different climate different schedule
 

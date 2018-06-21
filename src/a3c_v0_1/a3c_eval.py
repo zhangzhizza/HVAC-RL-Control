@@ -289,7 +289,7 @@ class A3CEval:
             dbg_rdm = np.random.uniform();
             #################FOR DEBUG#######################
             is_dbg_out = False;
-            noForecastDim = 13;
+            noForecastDim = 49;
             if dbg_rdm < debug_log_prob:
                 is_dbg_out = True;
             if is_dbg_out:
