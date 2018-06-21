@@ -241,7 +241,7 @@ class A3CThread:
         env_st_wd = env.start_weekday;
         env_state_limits = env.min_max_limits;
         env_state_limits.insert(0, (0, 23)); # Add hour limit
-        env_state_limits.insert(0, (0, 6)); # Add weekday limit
+        env_state_limits.insert(0, (0, 1)); # Add weekday limit
         pcd_state_limits = np.transpose(env_state_limits);
         env_interact_wrapper = IWEnvInteract(env, raw_state_process_func);
         # Reset the env
