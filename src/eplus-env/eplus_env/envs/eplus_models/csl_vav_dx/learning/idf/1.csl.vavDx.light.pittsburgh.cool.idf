@@ -46815,33 +46815,12 @@ Output:Variable,
 
 Output:Variable,
     Air Loop Supply Side Outlet 1,  !- Key Value
-    System Node Mass Flow Rate,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    Air Loop Supply Side Outlet 1,  !- Key Value
     System Node Temperature, !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    1ST%FLOOR:1ST%RESEARCH%OPEN%NW ZONE AIR NODE,  !- Key Value
-    System Node Mass Flow Rate,  !- Variable Name
     Timestep;                !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     Facility Total HVAC Electric Demand Power,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-
-Output:Variable,
-    People 2ND%FLOOR%SOUTH:2nd%Conference%02,      !- Key Value
-    People Occupant Count,          !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    2ND%FLOOR%SOUTH:2nd%Conference%02,      !- Key Value
-    Zone Electric Equipment Electric Power,          !- Variable Name
     Timestep;                !- Reporting Frequency
 
 Output:Variable,
