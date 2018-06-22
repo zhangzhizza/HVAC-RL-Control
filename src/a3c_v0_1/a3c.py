@@ -14,7 +14,6 @@ from keras import backend as K
 
 from util.logger import Logger
 from a3c_v0_1.objectives import a3c_loss
-from a3c_v0_1.a3c_network import A3C_Network
 from a3c_v0_1.actions import action_map
 from a3c_v0_1.preprocessors import HistoryPreprocessor, process_raw_state_cmbd
 from a3c_v0_1.utils import init_variables, get_hard_target_model_updates, get_uninitialized_variables
@@ -35,7 +34,7 @@ class A3CThread:
     def __init__(self, graph, scope_name, global_name, effec_state_dim, forecast_dim, 
                 action_size, vloss_frac, ploss_frac, hregu_frac, hregu_decay_bounds, shared_optimizer,
                  clip_norm, global_train_step, window_len, init_epsilon,
-                 end_epsilon, decay_steps, global_counter):
+                 end_epsilon, decay_steps, global_counter, activation, model_type, model_param, learning_rate):
         """
         Constructor.
         
@@ -82,8 +81,7 @@ class A3CThread:
         ### Create the policy and value network ###
         ###########################################
         network_state_dim = effec_state_dim;
-        self._a3c_network = A3C_Network(graph, scope_name, network_state_dim, 
-                                        action_size);
+        self._a3c_network = model_type(graph, scope_name, network_state_dim, action_size, activation, model_param);
         self._policy_pred = self._a3c_network.policy_pred;
         self._value_pred = self._a3c_network.value_pred;
         self._state_placeholder = self._a3c_network.state_placeholder;
@@ -170,6 +168,7 @@ class A3CThread:
         self._e_greedy = init_epsilon;
         self._hregu_frac_to_loss = hregu_frac_to_loss;
         self._global_counter = global_counter;
+        self._learning_rate = learning_rate;
         
             
     def train(self, sess, t_max, env_name, coordinator, global_lock, 
@@ -242,7 +241,7 @@ class A3CThread:
         env_st_wd = env.start_weekday;
         env_state_limits = env.min_max_limits;
         env_state_limits.insert(0, (0, 23)); # Add hour limit
-        env_state_limits.insert(0, (0, 6)); # Add weekday limit
+        env_state_limits.insert(0, (0, 1)); # Add weekday limit
         pcd_state_limits = np.transpose(env_state_limits);
         env_interact_wrapper = IWEnvInteract(env, raw_state_process_func);
         # Reset the env
@@ -277,7 +276,7 @@ class A3CThread:
                 # Get the action
                 #################FOR DEBUG#######################
                 dbg_rdm = np.random.uniform();
-                noForecastDim = 13;
+                noForecastDim = 49;
                 forecastSingleEntryDim = 4;
                 dbg_thres = debug_log_prob;
                 is_show_dbg = True if dbg_rdm < dbg_thres else False;
@@ -422,6 +421,8 @@ class A3CThread:
             if (t/t_max) % printStatusFreq == 0:
                 self._local_logger.info ('Local step %d, global step %d: loss ' 
                                        '%0.04f'%(t, self._global_counter.value, loss_res));
+                self._local_logger.debug('Local step %d, global step %d: learning rate ' 
+                                       '%0.04f'%(t, self._global_counter.value, sess.run(self._learning_rate)));
                 # Update the events file.
                 #summary_str = sess.run(self._loss_summary, 
                 #                             feed_dict=training_feed_dict)
@@ -470,7 +471,8 @@ class A3CThread:
                              feed_dict={self._state_placeholder:state,
                                         self._keep_prob: 1.0 - dropout_prob}) ####DEBUG FOR DROPOUT
         softmax_a = softmax_a.flatten();
-        self._local_logger.debug('Policy network output: %s, sum to %0.04f'
+        if is_show_dbg:
+            self._local_logger.debug('Policy network output: %s, sum to %0.04f'
                                      %(str(softmax_a), sum(softmax_a)));
         # Return the action with largest prob if prob >= 0.5, else sample
         maxProbIdx = int(np.argmax(softmax_a));
@@ -543,7 +545,7 @@ class A3CAgent:
                  hregu_frac,
                  hregu_decay_bounds,
                  num_threads,
-                 learning_rate,
+                 learning_rate_args,
                  rmsprop_decay,
                  rmsprop_momet,
                  rmsprop_epsil,
@@ -554,7 +556,10 @@ class A3CAgent:
                  decay_steps,
                  action_space_name,
                  dropout_prob,
-                 global_logger):
+                 global_logger,
+                 activation,
+                 model_type,
+                 model_param):
         self._forecast_dim = forecast_dim;
         state_dim += TIME_DIM; # Add time info dimension
         self._state_dim = state_dim;
@@ -566,7 +571,7 @@ class A3CAgent:
         self._hregu_frac = hregu_frac;
         self._hregu_decay_bounds = hregu_decay_bounds;
         self._num_threads = num_threads;
-        self._learning_rate = learning_rate;
+        self._learning_rate_args = learning_rate_args;
         self._rmsprop_decay = rmsprop_decay;
         self._rmsprop_momet = rmsprop_momet;
         self._rmsprop_epsil = rmsprop_epsil;
@@ -578,6 +583,9 @@ class A3CAgent:
         self._action_space_name = action_space_name;
         self._dropout_prob = dropout_prob;
         self._global_logger = global_logger;
+        self._activation = activation;
+        self._model_type = model_type;
+        self._model_param = model_param;
         
     def compile(self, is_warm_start, model_dir, save_scope = 'global', save_max_to_keep = 5):
         """
@@ -598,28 +606,34 @@ class A3CAgent:
         """
         g = tf.Graph();
         # Create the global network
-        global_network = A3C_Network(g, 'global', self._effec_state_dim,
-                                     self._action_size);
+        global_network = self._model_type(g, 'global', self._effec_state_dim, self._action_size, self._activation, self._model_param);
         with g.as_default():
+            # Create a global train step variable to record global steps
+            global_train_step = tf.Variable(0, name='global_train_step', trainable=False);
             # Create a shared optimizer
+            init_learning_rate = self._learning_rate_args[0]
+            learning_rate_decay_rate = self._learning_rate_args[1]
+            learning_rate_decay_steps = self._learning_rate_args[2]
+            learning_rate_decay_staircase = self._learning_rate_args[3]
+            learning_rate = tf.train.exponential_decay(init_learning_rate, global_train_step, learning_rate_decay_steps, 
+                                                        learning_rate_decay_rate, staircase=learning_rate_decay_staircase, name = 'learning_rate');
             with tf.name_scope('optimizer'):
                 shared_optimizer = tf.train.RMSPropOptimizer(
-                                                     self._learning_rate, 
+                                                     learning_rate, 
                                                      self._rmsprop_decay,
                                                      self._rmsprop_momet,
                                                      self._rmsprop_epsil)
             # Create a coordinator for multithreading
             coordinator = tf.train.Coordinator();
-            # Create a global train step variable to record global steps
-            global_train_step = tf.Variable(0, name='global_train_step', 
-                                            trainable=False);
+            
         # Create the thread workers list
         global_counter = Value('d', 0.0);
         workers = [A3CThread(g, 'worker_%d'%(i), 'global', self._effec_state_dim, self._forecast_dim,
                              self._action_size, self._vloss_frac, self._ploss_frac,
                              self._hregu_frac, self._hregu_decay_bounds, shared_optimizer, self._clip_norm,
                              global_train_step, self._window_len, self._init_epsilon,
-                             self._end_epsilon, self._decay_steps, global_counter)
+                             self._end_epsilon, self._decay_steps, global_counter, self._activation, self._model_type, 
+                             self._model_param, learning_rate)
                   for i in range(self._num_threads)];
         # Init global network variables or warm start
         with g.as_default():

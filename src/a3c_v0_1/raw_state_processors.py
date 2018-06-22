@@ -20,3 +20,13 @@ def raw_state_process_iw(raw_state):
 		raw_state: python list, 1-D.
 	"""
 	return raw_state;
+
+
+def raw_state_process_cslDx_1(raw_state):
+	"""
+	This processor change the occupant count to occupancy status.
+
+	Args:
+		raw_state: python list, 1-D.
+	"""
+	return raw_state;

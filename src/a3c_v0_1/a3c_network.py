@@ -6,15 +6,13 @@ from keras.models import Model
 
 from a3c_v0_1.objectives import a3c_loss
 
-NN_WIDTH = 512;
-NN_LENGTH = 4;
-
-class A3C_Network:
+class A3C_Network_NN:
     """
     The class that creates the policy and value network for the A3C. 
     """
     
-    def __init__(self, graph, scope_name, state_dim, action_size):
+    def __init__(self, graph, scope_name, state_dim, action_size, 
+                 activation = 'relu', model_param = [512, 4]):
         """
         Constructor.
         
@@ -26,6 +24,8 @@ class A3C_Network:
             state_dim, action_size: int
                 The number of the state dimension and number of action choices. 
         """
+        self._activation = activation;
+        self._model_param = model_param;
         self._graph = graph;
         with graph.as_default(), tf.name_scope(scope_name):
             # Generate placeholder for state
@@ -85,8 +85,8 @@ class A3C_Network:
         with tf.name_scope('shared_layers'):
             # Dropout layer for the first relu layer.
             layer = tf.nn.dropout(input_state, keep_prob);
-            for layer_i in range(NN_LENGTH):
-                layer = Dense(NN_WIDTH, activation = 'relu')(layer);
+            for layer_i in range(self._model_param[1]):
+                layer = Dense(self._model_param[0], activation = self._activation)(layer);
         with tf.name_scope('policy_network'):
             policy = Dense(num_actions, activation = 'softmax')(layer);
         with tf.name_scope('value_network'):

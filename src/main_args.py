@@ -12,8 +12,9 @@ import eplus_env
 
 from util.logger import Logger
 from a3c_v0_1.a3c import A3CAgent
+from a3c_v0_1.a3c_network import A3C_Network_NN
 
-
+MODEL_DICT = {'nn': A3C_Network_NN}
 NAME = 'A3C_AGENT_MAIN'
 LOG_LEVEL = 'DEBUG'
 LOG_FORMATTER = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
@@ -67,13 +68,20 @@ def get_args():
     parser.add_argument('--gamma', default=0.99);
     parser.add_argument('--v_loss_frac', default=0.5, type=float);
     parser.add_argument('--p_loss_frac', default=1.0, type=float);
-    parser.add_argument('--h_regu_frac', default=0.01, nargs='+', type=float);
-    parser.add_argument('--h_decay_bounds', default=[], nargs='+', type=int);
+    parser.add_argument('--h_regu_frac', default=0.01, nargs='+', type=float, 
+                        help='Can be a single float or multiple floats, defining the entropy regularization weight. If multiple '
+                             'floats are input, the values will be used for different interaction steps defined in the h_decay_bounds.');
+    parser.add_argument('--h_decay_bounds', default=[], nargs='+', type=int, 
+                        help='None or 1 to many floats can be input. If multiple h_regu_frac are input, this field must not be None; '
+                             'for interaction step 0 to the first h_decay_bound, the first h_regu_frac will be used, so on so forth.');
     parser.add_argument('--num_threads', default=8, type=int,
                         help='The number of threads to be used for the asynchronous'
                         ' training. Default is 8. If -1, then this value equals to'
                         ' the max available CPUs.');
     parser.add_argument('--learning_rate', default=0.0001, type=float);
+    parser.add_argument('--learning_rate_decay_rate', default=1.0, type=float);
+    parser.add_argument('--learning_rate_decay_steps', default=10000000, type=int);
+    parser.add_argument('--is_learning_rate_decay_staircase', default=False, type=bool);
     parser.add_argument('--rmsprop_decay', default=0.99, type=float);
     parser.add_argument('--rmsprop_momet', default=0.0, type=float);
     parser.add_argument('--rmsprop_epsil', default=1e-10, type=float);
@@ -109,6 +117,9 @@ def get_args():
     	'Determines how many zones are controlled by the agent in the testing time.');
     parser.add_argument('--debug_log_prob', default=0.0001, type=float);
     parser.add_argument('--is_greedy_policy', default=False, type=bool)
+    parser.add_argument('--activation', default='relu', type=str)
+    parser.add_argument('--model_type', default='nn', type=str)
+    parser.add_argument('--model_param', nargs='+', type=int)
     return parser;
 
 def effective_main(args, reward_func, rewardArgs, train_action_func, eval_action_func, train_action_limits, eval_action_limits, raw_state_process_func):
@@ -130,7 +141,7 @@ def effective_main(args, reward_func, rewardArgs, train_action_func, eval_action
                          hregu_frac = args.h_regu_frac,
                          hregu_decay_bounds = args.h_decay_bounds,
                          num_threads = args.num_threads, 
-                         learning_rate = args.learning_rate, 
+                         learning_rate_args = [args.learning_rate, args.learning_rate_decay_rate, args.learning_rate_decay_steps, args.is_learning_rate_decay_staircase], 
                          rmsprop_decay = args.rmsprop_decay,
                          rmsprop_momet = args.rmsprop_momet,
                          rmsprop_epsil = args.rmsprop_epsil,
@@ -139,7 +150,10 @@ def effective_main(args, reward_func, rewardArgs, train_action_func, eval_action
                          decay_steps = args.decay_steps,
                          action_space_name = args.action_space,
                          dropout_prob = args.dropout_prob,
-                         global_logger = main_logger
+                         global_logger = main_logger,
+                         activation = args.activation,
+                         model_type = MODEL_DICT[args.model_type],
+                         model_param = args.model_param
                          );
     main_logger.info ('Start compiling...')
     (g, sess, coordinator, global_network, workers, global_summary_writer, 

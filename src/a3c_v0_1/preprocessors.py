@@ -42,6 +42,7 @@ def process_raw_state_1(simTime, state, start_year, start_mon,
         nowWeekday, nowHour = get_time_from_seconds(simTime[i], start_year, 
                                                     start_mon, start_day, 
                                                     start_weekday);
+        nowWeekday = 1 if nowWeekday <= 4 else 0;
         state_i_list.insert(0, nowHour);     # Add weekday and hour infomation
         state_i_list.insert(0, nowWeekday);
         #state_i_list[ZPCT_RAW_IDX + 2] = 1 if state_i_list[ZPCT_RAW_IDX + 2] > 0 \
