@@ -122,7 +122,8 @@ def get_args():
     parser.add_argument('--model_param', nargs='+', type=int)
     return parser;
 
-def effective_main(args, reward_func, rewardArgs, train_action_func, eval_action_func, train_action_limits, eval_action_limits, raw_state_process_func):
+def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func, eval_action_func, 
+                    train_action_limits, eval_action_limits, raw_state_process_func):
     args.output = get_output_folder(args.output, args.env)
     tf.gfile.MakeDirs(args.output + '/model_data')
     args.num_threads = multiprocessing.cpu_count() if args.num_threads < 0\
@@ -165,7 +166,7 @@ def effective_main(args, reward_func, rewardArgs, train_action_func, eval_action
         a3c_agent.fit(sess, coordinator, global_network, workers, 
                       global_summary_writer, global_saver, [args.env, args.test_env], args.train_freq,
                       args.gamma, args.rwd_e_para, args.rwd_p_para, args.save_freq, args.max_interactions,
-                      args.eval_epi_num, args.eval_freq, reward_func, rewardArgs, train_action_func, eval_action_func,  
+                      args.eval_epi_num, args.eval_freq, reward_func, rewardArgs, metric_func, train_action_func, eval_action_func,  
                       train_action_limits, eval_action_limits, raw_state_process_func, args.debug_log_prob, args.is_greedy_policy);
 
     if args.job_mode.lower() == 'test':
