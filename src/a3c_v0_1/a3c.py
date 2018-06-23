@@ -353,7 +353,7 @@ class A3CThread:
                                                     action_space_name, reward_func, rewardArgs, metric_func,
                                                     eval_action_func, eval_action_limits, raw_state_process_func,
                                                     debug_log_prob);
-                            global_res_list[-1].extend([eval_res]);
+                            global_res_list[-1].extend(eval_res);
                         np.savetxt(log_dir + '/eval_res_hist.csv', 
                                    np.array(global_res_list), delimiter = ',');
                         self._local_logger.info ('Global step: %d, '
@@ -713,7 +713,7 @@ class A3CAgent:
 
     def fit(self, sess, coordinator, global_network, workers, global_summary_writer, global_saver,
             env_name_list, t_max, gamma, e_weight, p_weight, save_freq, T_max, eval_epi_num, eval_freq,
-            reward_func, rewardArgs, train_action_func, eval_action_func, train_action_limits, eval_action_limits, 
+            reward_func, rewardArgs, metric_func, train_action_func, eval_action_func, train_action_limits, eval_action_limits, 
             raw_state_process_func, debug_log_prob, is_greedy_policy):
         """
         This method is used to train the neural network. 

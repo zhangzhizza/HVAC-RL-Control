@@ -828,7 +828,7 @@ def stptVio_energy_metric_cslDxCool_v1(ob_next_raw, this_ep_energy, this_ep_comf
     ENERGY_RAW_IDX = 48;
     iats = np.array(ob_next_raw[IAT_FIRST_RAW_IDX: IAT_FIRST_RAW_IDX + ZONE_NUM]);
     iatssp = np.array(ob_next_raw[IATSSP_FIRST_RAW_IDX: IATSSP_FIRST_RAW_IDX + ZONE_NUM]);
-    sspVio_sum = sum(((normalized_iats - normalized_iatssp) > 0.0)/12); # For cooling, the IAT should be less than the IATSSP
+    sspVio_sum = sum(((iats - iatssp) > 0.5)/12); # For cooling, the IAT should be less than the IATSSP (tolerance 0.5 C)
     energy = ob_next_raw[ENERGY_RAW_IDX];
     
     this_ep_energy_toNow = this_ep_energy + energy/12/1000; # Unit is kWh

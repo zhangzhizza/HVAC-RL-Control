@@ -347,7 +347,7 @@ class A3CEval:
                 #average_max_ppd = (average_max_ppd * (episode_counter - 1)
                 #                  + this_ep_max_ppd) / episode_counter;
                 local_logger.info('Evaluation: average rewards by now are %0.04f %0.04f %0.04f'
-                                  %(average_reward. average_energy, average_comfort));
+                                  %(average_reward, average_energy, average_comfort));
                 episode_counter += 1;
                 if episode_counter <= self._num_episodes:
                     time_this, ob_this_raw, is_terminal = env_interact_wrapper.reset();
@@ -371,7 +371,7 @@ class A3CEval:
                 ob_this_hist_prcd = ob_next_hist_prcd;
                 ob_this_raw = ob_next_raw;
                 
-        return (average_reward, average_energy, average_comfort);
+        return [average_reward, average_energy, average_comfort];
     
     def _select_sto_action(self, state, local_logger, is_dbg_out):
         """
