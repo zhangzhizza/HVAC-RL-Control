@@ -248,7 +248,7 @@ class A3CEval:
         self._p_weight = p_weight;
         
 
-    def evaluate(self, local_logger, action_space_name, reward_func, rewardArgs, 
+    def evaluate(self, local_logger, action_space_name, reward_func, rewardArgs, metric_func, 
                 action_func, action_limits, raw_state_process_func, debug_log_prob):
         """
         This method do the evaluation for the trained agent. 
@@ -269,6 +269,8 @@ class A3CEval:
         action_size = len(action_space)
         episode_counter = 1;
         average_reward = 0;
+        average_energy = 0;
+        average_comfort = 0;
         #average_max_ppd = 0;
         env_interact_wrapper = IWEnvInteract(self._env, raw_state_process_func);
         # Reset the env
@@ -284,6 +286,8 @@ class A3CEval:
                             process_state_for_network(ob_this_prcd) # 2-D array
         # Do the eval
         this_ep_reward = 0;
+        this_ep_energy = 0;
+        this_ep_comfort = 0;
         #this_ep_max_ppd = 0;
         while episode_counter <= self._num_episodes:
             dbg_rdm = np.random.uniform();
@@ -324,6 +328,7 @@ class A3CEval:
                                               self._pcd_state_limits); # 1-D list
             # Get the reward
             reward_next = reward_func(ob_next_prcd, self._e_weight, self._p_weight, *rewardArgs);
+            this_ep_energy, this_ep_comfort = metric_func(ob_next_raw, this_ep_energy, this_ep_comfort);
             this_ep_reward += reward_next;
             #this_ep_max_ppd = max(normalized_ppd if occupancy_status > 0 else 0,
             #                      this_ep_max_ppd);
@@ -335,10 +340,14 @@ class A3CEval:
                 # Update the average reward
                 average_reward = (average_reward * (episode_counter - 1) 
                                   + this_ep_reward) / episode_counter;
+                average_energy = (average_energy * (episode_counter - 1) 
+                                  + this_ep_energy) / episode_counter;
+                average_comfort = (average_comfort * (episode_counter - 1) 
+                                  + this_ep_comfort) / episode_counter;
                 #average_max_ppd = (average_max_ppd * (episode_counter - 1)
                 #                  + this_ep_max_ppd) / episode_counter;
-                local_logger.info('Evaluation: average reward by now is %0.04f'
-                                  %(average_reward));
+                local_logger.info('Evaluation: average rewards by now are %0.04f %0.04f %0.04f'
+                                  %(average_reward, average_energy, average_comfort));
                 episode_counter += 1;
                 if episode_counter <= self._num_episodes:
                     time_this, ob_this_raw, is_terminal = env_interact_wrapper.reset();
@@ -353,6 +362,8 @@ class A3CEval:
                                 process_state_for_network(ob_this_prcd) # 2-D array
                 
                     this_ep_reward = 0;
+                    this_ep_energy = 0;
+                    this_ep_comfort = 0;
                     #this_ep_max_ppd = 0;
                  
             else:
@@ -360,7 +371,7 @@ class A3CEval:
                 ob_this_hist_prcd = ob_next_hist_prcd;
                 ob_this_raw = ob_next_raw;
                 
-        return (average_reward);
+        return [average_reward, average_energy, average_comfort];
     
     def _select_sto_action(self, state, local_logger, is_dbg_out):
         """

@@ -818,6 +818,23 @@ def stptVio_energy_reward_cslDxCool_v1(ob_next_prcd, e_weight, p_weight, stpt_vi
     ret += 1.0;
     return ret;
 
+def stptVio_energy_metric_cslDxCool_v1(ob_next_raw, this_ep_energy, this_ep_comfort):
+    """
+    
+    """
+    ZONE_NUM = 22;
+    IAT_FIRST_RAW_IDX = 4;
+    IATSSP_FIRST_RAW_IDX = 26;
+    ENERGY_RAW_IDX = 48;
+    iats = np.array(ob_next_raw[IAT_FIRST_RAW_IDX: IAT_FIRST_RAW_IDX + ZONE_NUM]);
+    iatssp = np.array(ob_next_raw[IATSSP_FIRST_RAW_IDX: IATSSP_FIRST_RAW_IDX + ZONE_NUM]);
+    sspVio_sum = sum(((iats - iatssp) > 0.5)/12); # For cooling, the IAT should be less than the IATSSP (tolerance 0.5 C)
+    energy = ob_next_raw[ENERGY_RAW_IDX];
+    
+    this_ep_energy_toNow = this_ep_energy + energy/12/1000; # Unit is kWh
+    this_ep_comfort_toNow = this_ep_comfort + sspVio_sum; # Unit is hr
+    
+    return (this_ep_energy_toNow, this_ep_comfort_toNow);
 
 
 reward_func_dict = {'1': err_energy_reward_iw,
@@ -836,3 +853,7 @@ reward_func_dict = {'1': err_energy_reward_iw,
                     '14': ppd_energy_reward_iw_timeRelated_v8,
                     '15': ppd_energy_reward_iw_timeRelated_v9,
                     'cslDxCool_1': stptVio_energy_reward_cslDxCool_v1,}
+
+metric_func_dict = {
+                    'cslDxCool_1': stptVio_energy_metric_cslDxCool_v1,}
+
