@@ -238,6 +238,7 @@ class EplusEnv(Env):
             order of the weather variables is the same as the .epw file, 
             index 4 is the boolean indicating whether episode terminal.
         """
+        print ('gym env: enter reset!!!!!!!!!!!!!')
         ret = [];
         
         # End the last episode if exists
@@ -271,10 +272,12 @@ class EplusEnv(Env):
                                     # Create the socket.cfg file in the working dir
         self.logger_main.info('EnergyPlus working directory is in %s'
                               %(eplus_working_dir));
+        print ('gym env: enter reset1111111111111111111')
         eplus_process = self._create_eplus(self._eplus_path, self._weather_path, 
                                             eplus_working_idf_path,
                                             eplus_working_out_path,
                                             eplus_working_dir);
+        print ('gym env: enter reset2222222222222222222222')
         self.logger_main.debug('EnergyPlus process is still running ? %r' 
                                 %self._get_is_subprocess_running(eplus_process))
         self._eplus_process = eplus_process;

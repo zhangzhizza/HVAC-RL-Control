@@ -245,6 +245,7 @@ class A3CThread:
         pcd_state_limits = np.transpose(env_state_limits);
         env_interact_wrapper = IWEnvInteract(env, raw_state_process_func);
         # Reset the env
+        self._local_logger.debug('reset !!!!!!!!!!!!!!!!')
         time_this, ob_this_raw, is_terminal = env_interact_wrapper.reset();
         ob_this_prcd = process_raw_state_cmbd(ob_this_raw, [time_this], env_st_yr, 
                                               env_st_mn, env_st_dy, env_st_wd, 

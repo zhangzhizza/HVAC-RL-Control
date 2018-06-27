@@ -10,6 +10,7 @@ class IWEnvInteract(object):
 
 	def reset(self):
 		
+		print ('enter reset!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 		return self._interact(mode = 'reset', actions = None);
 
 	def step(self, actions):
@@ -25,7 +26,9 @@ class IWEnvInteract(object):
 		ob_raw = None;
 		is_terminal = None;
 		if mode == 'reset':
+			print ('before reseted!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1')
 			env_get = self._env.reset();
+			print ('reseted!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1')
 		elif mode == 'step':
 			env_get = self._env.step(actions);
 		if len(env_get) == 4:
