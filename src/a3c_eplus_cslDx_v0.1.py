@@ -14,7 +14,7 @@ Last update: Aug 28th, 2017
 from main_args import *
 from a3c_v0_1.reward_funcs import reward_func_dict
 from a3c_v0_1.action_funcs import act_func_dict
-from a3c_v0_1.raw_state_processors import raw_state_process_cslDx_1
+from a3c_v0_1.raw_state_processors import raw_state_process_map
 
 def main():
     # Common args
@@ -27,6 +27,7 @@ def main():
     parser.add_argument('--eval_act_func', default='cslDxActCool_1', type=str,
                         help='The action function corresponding to the action space, default is cslDxActCool_1')
     parser.add_argument('--reward_func', default='cslDxCool_1', type=str)
+    parser.add_argument('--raw_state_prcs_func', default='cslDx_1', type=str)
     args = parser.parse_args();
     # Prepare case specific args
     reward_func = reward_func_dict[args.reward_func]
@@ -35,8 +36,10 @@ def main():
     train_action_limits = act_func_dict[args.train_act_func][1];
     eval_action_func = act_func_dict[args.eval_act_func][0];
     eval_action_limits = act_func_dict[args.eval_act_func][1];
-    raw_state_process_func = raw_state_process_cslDx_1;
-    effective_main(args, reward_func, rewardArgs, train_action_func, eval_action_func, train_action_limits, eval_action_limits, raw_state_process_func);
+    raw_state_process_func = raw_state_process_map[args.raw_state_prcs_func][0];
+    raw_stateLimit_process_func = raw_state_process_map[args.raw_state_prcs_func][1];
+    effective_main(args, reward_func, rewardArgs, train_action_func, eval_action_func, train_action_limits, 
+                    eval_action_limits, raw_state_process_func, raw_stateLimit_process_func);
         
 
 if __name__ == '__main__':

@@ -204,7 +204,7 @@ class A3CEval_multiagent:
 
 class A3CEval:
     def __init__(self, sess, global_network, env, num_episodes, window_len, 
-                 forecast_len, e_weight, p_weight):
+                 forecast_len, e_weight, p_weight, raw_stateLimit_process_func):
         """
         This is the class for evaluation under the single-zone control mode. 
 
@@ -240,7 +240,7 @@ class A3CEval:
         self._env_st_mn = env.start_mon;
         self._env_st_dy = env.start_day;
         self._env_st_wd = env.start_weekday;
-        env_state_limits = env.min_max_limits;
+        env_state_limits = raw_stateLimit_process_func(env.min_max_limits);
         env_state_limits.insert(0, (0, 23)); # Add hour limit
         env_state_limits.insert(0, (0, 6)); # Add weekday limit
         self._pcd_state_limits = np.transpose(env_state_limits);
