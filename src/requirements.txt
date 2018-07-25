@@ -1,9 +1,10 @@
-gym
-keras
+gym==0.9.4
+keras==2.1.2
 numpy
-tensorflow
+tensorflow==1.4.1
 scipy
 matplotlib
 jupyter
 pandas
 pysolar
+
