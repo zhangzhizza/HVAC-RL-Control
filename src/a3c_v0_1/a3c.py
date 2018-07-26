@@ -782,7 +782,7 @@ class A3CAgent:
                                                 self._action_space_name, self._dropout_prob, reward_func, 
                                                 rewardArgs, metric_func, train_action_func, eval_action_func, 
                                                 train_action_limits, eval_action_limits, raw_state_process_func,
-                                                debug_log_prob, is_greedy_policy);
+                                                raw_stateLimit_process_func, debug_log_prob, is_greedy_policy);
 
             thread = threading.Thread(target = (worker_train));
             thread.start();
