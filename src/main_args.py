@@ -123,7 +123,7 @@ def get_args():
     return parser;
 
 def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func, eval_action_func, 
-                    train_action_limits, eval_action_limits, raw_state_process_func):
+                    train_action_limits, eval_action_limits, raw_state_process_func, raw_stateLimit_process_func):
     args.output = get_output_folder(args.output, args.env)
     tf.gfile.MakeDirs(args.output + '/model_data')
     args.num_threads = multiprocessing.cpu_count() if args.num_threads < 0\
@@ -167,11 +167,12 @@ def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func
                       global_summary_writer, global_saver, [args.env, args.test_env], args.train_freq,
                       args.gamma, args.rwd_e_para, args.rwd_p_para, args.save_freq, args.max_interactions,
                       args.eval_epi_num, args.eval_freq, reward_func, rewardArgs, metric_func, train_action_func, eval_action_func,  
-                      train_action_limits, eval_action_limits, raw_state_process_func, args.debug_log_prob, args.is_greedy_policy);
+                      train_action_limits, eval_action_limits, raw_state_process_func, raw_stateLimit_process_func, 
+                      args.debug_log_prob, args.is_greedy_policy);
 
     if args.job_mode.lower() == 'test':
         main_logger.info ('Start the testing...')
         a3c_agent.test(sess, global_network, args.test_env, args.eval_epi_num, args.e_weight, 
                        args.p_weight, args.reward_mode, args.test_mode.lower(), args.agent_num, 
-                       args.ppd_penalty_limit, args.output, raw_state_process_func);
+                       args.ppd_penalty_limit, args.output, raw_state_process_func, raw_stateLimit_process_func);
 
