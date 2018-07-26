@@ -14,7 +14,7 @@ Last update: Aug 28th, 2017
 from main_args import *
 from a3c_v0_1.reward_funcs import reward_func_dict, metric_func_dict
 from a3c_v0_1.action_funcs import act_func_dict
-from a3c_v0_1.raw_state_processors import raw_state_process_cslDx_1
+from a3c_v0_1.raw_state_processors import raw_state_process_map
 
 def main():
     # Common args
