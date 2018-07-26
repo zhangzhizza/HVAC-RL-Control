@@ -176,7 +176,8 @@ class A3CThread:
               global_summary_writer, T_max, global_agent_eval_list, eval_freq, 
               global_res_list, action_space_name, dropout_prob, reward_func, 
               rewardArgs, metric_func, train_action_func, eval_action_func, train_action_limits, 
-              eval_action_limits, raw_state_process_func, debug_log_prob, is_greedy_policy):
+              eval_action_limits, raw_state_process_func, raw_stateLimit_process_func, debug_log_prob, 
+              is_greedy_policy):
         """
         The function that the thread worker works to train the networks.
         
@@ -239,7 +240,7 @@ class A3CThread:
         env_st_mn = env.start_mon;
         env_st_dy = env.start_day;
         env_st_wd = env.start_weekday;
-        env_state_limits = env.min_max_limits;
+        env_state_limits = raw_stateLimit_process_func(env.min_max_limits);
         env_state_limits.insert(0, (0, 23)); # Add hour limit
         env_state_limits.insert(0, (0, 1)); # Add weekday limit
         pcd_state_limits = np.transpose(env_state_limits);
@@ -697,7 +698,7 @@ class A3CAgent:
         env_test = gym.make(env_test_name);
         if test_mode == 'single':
         	a3c_eval = A3CEval(sess, global_network, env_test, num_episodes, 
-                                self._window_len, e_weight, p_weight);
+                                self._window_len, e_weight, p_weight, raw_stateLimit_process_func);
         	eval_logger = Logger().getLogger('A3C_Test_Single-%s'%(threading.current_thread().getName()),
                                                  LOG_LEVEL, LOG_FMT, log_dir + '/main.log');
         if test_mode == 'multiple':
@@ -714,7 +715,7 @@ class A3CAgent:
     def fit(self, sess, coordinator, global_network, workers, global_summary_writer, global_saver,
             env_name_list, t_max, gamma, e_weight, p_weight, save_freq, T_max, eval_epi_num, eval_freq,
             reward_func, rewardArgs, metric_func, train_action_func, eval_action_func, train_action_limits, eval_action_limits, 
-            raw_state_process_func, debug_log_prob, is_greedy_policy):
+            raw_state_process_func, raw_stateLimit_process_func, debug_log_prob, is_greedy_policy):
         """
         This method is used to train the neural network. 
         
@@ -766,7 +767,7 @@ class A3CAgent:
         for env_name in env_name_list:
             env_eval = gym.make(env_name);
             global_agent_eval = A3CEval(sess, global_network, env_eval, eval_epi_num, 
-                                    self._window_len, self._forecast_dim, e_weight, p_weight);
+                                    self._window_len, self._forecast_dim, e_weight, p_weight, raw_stateLimit_process_func);
             global_agent_eval_list.append(global_agent_eval)
 
         global_res_list = [];
