@@ -46,11 +46,12 @@ def raw_state_process_cslDx_2(raw_state):
 	ZONE_NUM = 22;
 	IAT_FIRST_RAW_IDX = 4;
 	IATSSP_FIRST_RAW_IDX = 26;
+	ENERGY_RAW_IDX = 48;
 	iats = np.array(raw_state[IAT_FIRST_RAW_IDX: IAT_FIRST_RAW_IDX + ZONE_NUM]);
 	iatssp = np.array(raw_state[IATSSP_FIRST_RAW_IDX: IATSSP_FIRST_RAW_IDX + ZONE_NUM]);
 	sspVio_max = max(iats - iatssp); # For cooling, the IAT should be less than the IATSSP
 
-	ret = [raw_state[0], raw_state[1], raw_state[2], raw_state[3], sspVio_max, raw_state[-1]];
+	ret = [raw_state[0], raw_state[1], raw_state[2], raw_state[3], sspVio_max, raw_state[ENERGY_RAW_IDX]];
 
 	return ret;
 
@@ -66,8 +67,9 @@ def raw_stateLimit_process_cslDx_2(raw_stateLimit):
 	"""
 	This processor is used with raw_state_process_cslDx_2.
 	"""
+	ENERGY_RAW_IDX = 48;
 	ret = [raw_stateLimit[0], raw_stateLimit[1], raw_stateLimit[2], raw_stateLimit[3], 
-			raw_stateLimit[4], raw_stateLimit[-1]];
+			raw_stateLimit[4], raw_stateLimit[ENERGY_RAW_IDX]];
 	return ret;
 
 

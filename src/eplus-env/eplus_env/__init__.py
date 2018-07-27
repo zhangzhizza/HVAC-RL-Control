@@ -729,7 +729,42 @@ register(
             'forecast_hour': 12,
             'act_repeat': 1});
 
+# v2 version includes AHU Setpoint in the state
+register(
+    id='Model1-Cool-v2',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-3-0/',
+            'weather_path':FD + '/envs/weather/pittsburgh.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/eplus_models/csl_vav_dx/learning/cfg/cooling_2.cfg',
+            'idf_path':FD + '/envs/eplus_models/csl_vav_dx/learning/idf/1.csl.vavDx.light.pittsburgh.cool.idf',
+            'env_name': 'Model1-Cool-v2',
+            'min_max_limits': MIN_MAX_LIMITS_DICT['Model1-Cool-v2'],
+            'incl_forecast': False,
+            'forecastRandMode': 'normal',
+            'forecastRandStd': 0.15,
+            'forecastSource': None,
+            'forecastFilePath': None,
+            'forecast_hour': 12,
+            'act_repeat': 1});
 
+register(
+    id='Model1-Test-Cool-v2',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-3-0/',
+            'weather_path':FD + '/envs/weather/pittsburgh_test.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/eplus_models/csl_vav_dx/learning/cfg/cooling_2.cfg',
+            'idf_path':FD + '/envs/eplus_models/csl_vav_dx/learning/idf/1.csl.vavDx.light.pittsburgh.cool.test.idf',
+            'env_name': 'Model1-Test-Cool-v2',
+            'min_max_limits': MIN_MAX_LIMITS_DICT['Model1-Cool-v2'],
+            'incl_forecast': False,
+            'forecastRandMode': 'normal',
+            'forecastRandStd': 0.15,
+            'forecastSource': None,
+            'forecastFilePath': None,
+            'forecast_hour': 12,
+            'act_repeat': 1});
 
 
 def setSchedulePath(sch_path_dict, tgtIDFPath):

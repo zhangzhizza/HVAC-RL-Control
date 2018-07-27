@@ -296,6 +296,30 @@ def directPass(action_raw, action_raw_idx, stptLmt, ob_this_raw):
 
     return (action_raw, action_raw_idx)
 
+def cslDxCool_ahuStptIncmt(action_raw, action_raw_idx, stptLmt, ob_this_raw):
+    """
+    Pass the raw action as the output. 
+    
+    Args:
+        action_raw: (float, )
+            The raw action planned to be taken.
+        action_raw_idx: int
+            The index of the action in the action space.
+        stptLmt: [[float, float], [float, float], ...]
+            The low limit (included) and high limit (included) for each type of the actions.
+        ob_this_raw: [float]
+            The raw observation.
+        
+    Return: tuple
+        A tuple with length 2. The index 0 is a tuple of resulting action, 
+        and the index 1 is a tuple of resulting action idx.
+    """
+    AHUSTPT_IDX = -1;
+    lastAhuStpt = ob_this_raw[AHUSTPT_IDX];
+    thisAhuStpt = max(min(lastAhuStpt + action_raw, stptLmt[0][1]), stptLmt[0][0]);
+
+    return (thisAhuStpt, action_raw_idx)
+
 act_func_dict = {'1':[mull_stpt_iw, act_limits_iw_1],
                 '2':[mull_stpt_oaeTrans_iw, act_limits_iw_2],
                 '3':[mull_stpt_noExpTurnOffMullOP, act_limits_iw_2],
@@ -306,4 +330,5 @@ act_func_dict = {'1':[mull_stpt_iw, act_limits_iw_1],
                 '8':[stpt_directSelect, act_limits_iw_5],
                 '9':[stpt_directSelect_withHeuristics, act_limits_iw_5],
                 '10':[stpt_directSelect_sspOnly, act_limits_iw_6],
-                'cslDxActCool_1':[directPass, act_limits_cslDxCool_1]}
+                'cslDxActCool_1':[directPass, act_limits_cslDxCool_1],
+                'cslDxActCool_2':[cslDxCool_ahuStptIncmt, act_limits_cslDxCool_1]}

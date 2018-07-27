@@ -190,6 +190,46 @@ cslDxCool_1 = [[12.0],
         [23.5],
         [24.0]];
         
+cslDxCool_2 = [[12.0],
+        [12.5],
+        [13.0],
+        [13.5],
+        [14.0],
+        [14.5],
+        [15.0],
+        [15.5],
+        [16.0],
+        [16.5],
+        [17.0],
+        [17.5],
+        [18.0],
+        [18.5],
+        [19.0],
+        [19.5],
+        [20.0]];
+
+cslDxCool_3 = [[12.0],
+        [13.0],
+        [14.0],
+        [15.0],
+        [16.0],
+        [17.0],
+        [18.0],
+        [19.0],
+        [20.0],
+        [21.0],
+        [22.0],
+        [23.0],
+        [24.0]];
+
+cslDxCool_4 = [[0.0],
+        [1.0],
+        [-1.0],
+        [2.0],
+        [-2.0],
+        [5.0],
+        [-5.0]];
+        
 action_map = {'default': actions_htcl_cmd, 'exp1': actions_htcl_cmd_exp1, 
               'exp2':actions_htcl_cmd_exp2, 'exp3': actions_htcl_cmd_exp3, 
               'exp4': actions_htcl_cmd_exp4,
@@ -197,6 +237,7 @@ action_map = {'default': actions_htcl_cmd, 'exp1': actions_htcl_cmd_exp1,
               'iw_af4_1': iw_actFunc4_1, 'iw_af5_1': iw_actFunc5_1,
               'iw_af4_2': iw_actFunc4_2, 'iw_af4_3': iw_actFunc4_3,
               'iw_af4_4': iw_actFunc4_4,
-              'cslDxCool_1': cslDxCool_1};
+              'cslDxCool_1': cslDxCool_1, 'cslDxCool_2': cslDxCool_2, 
+              'cslDxCool_3': cslDxCool_3, 'cslDxCool_4': cslDxCool_4};
 
 
