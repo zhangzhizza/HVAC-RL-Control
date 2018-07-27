@@ -316,9 +316,9 @@ def cslDxCool_ahuStptIncmt(action_raw, action_raw_idx, stptLmt, ob_this_raw):
     """
     AHUSTPT_IDX = -1;
     lastAhuStpt = ob_this_raw[AHUSTPT_IDX];
-    thisAhuStpt = max(min(lastAhuStpt + action_raw, stptLmt[0][1]), stptLmt[0][0]);
+    thisAhuStpt = max(min(lastAhuStpt + action_raw[0], stptLmt[0][1]), stptLmt[0][0]);
 
-    return (thisAhuStpt, action_raw_idx)
+    return ((thisAhuStpt, ), action_raw_idx)
 
 act_func_dict = {'1':[mull_stpt_iw, act_limits_iw_1],
                 '2':[mull_stpt_oaeTrans_iw, act_limits_iw_2],
