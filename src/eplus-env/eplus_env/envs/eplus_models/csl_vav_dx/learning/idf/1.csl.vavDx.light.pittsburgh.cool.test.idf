@@ -46999,6 +46999,10 @@ Output:Variable,
     System Node Temperature, !- Variable Name
     Timestep;                !- Reporting Frequency
 
+Output:Variable,
+    Air Loop Supply Side Outlet 1,  !- Key Value
+    System Node Setpoint Temperature, !- Variable Name
+    Timestep;                !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
