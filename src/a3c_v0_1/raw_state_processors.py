@@ -1,3 +1,5 @@
+import numpy as np
+
 def raw_state_process_smlRefBld(raw_state):
 	"""
 	This processor change the occupant count to occupancy status.
