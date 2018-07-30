@@ -277,7 +277,7 @@ class A3CThread:
                 # Get the action
                 #################FOR DEBUG#######################
                 dbg_rdm = np.random.uniform();
-                noForecastDim = 49;
+                noForecastDim = 50;
                 forecastSingleEntryDim = 4;
                 dbg_thres = debug_log_prob;
                 is_show_dbg = True if dbg_rdm < dbg_thres else False;
