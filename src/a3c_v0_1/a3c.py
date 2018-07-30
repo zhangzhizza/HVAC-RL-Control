@@ -468,8 +468,8 @@ class A3CThread:
         if uni_rdm_greedy < e_greedy:
             rdm_action = np.random.choice(self._action_size);
             if is_show_dbg:
-                self._local_logger.debug('e_greedy e is: %0.04f, sampled: %0.04f, take random action: %d.', 
-                                     %(e_greedy, uni_rdm_greedy, rdm_action));
+                self._local_logger.debug('e_greedy e is: %0.04f, sampled: %0.04f, take random action: %d.'
+                                         %(e_greedy, uni_rdm_greedy, rdm_action));
             return rdm_action;
         # On policy
         softmax_a, shared_layer = sess.run([self._policy_pred, self._shared_layer],
