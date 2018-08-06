@@ -3,6 +3,7 @@ import tensorflow as tf
 from keras.layers import (Activation, Dense, Flatten, Input,
                           Permute)
 from keras.models import Model
+from copy import deepcopy
 
 from a3c_v0_1.objectives import a3c_loss
 
@@ -12,7 +13,7 @@ class A3C_Network_NN:
     """
     
     def __init__(self, graph, scope_name, state_dim, action_size, 
-                 activation = 'relu', model_param = [512, 4]):
+                 activation = 'relu', model_param = [512, 4], noisy_layer = False):
         """
         Constructor.
         
@@ -27,6 +28,7 @@ class A3C_Network_NN:
         self._activation = activation;
         self._model_param = model_param;
         self._graph = graph;
+        self._noisy_layer = noisy_layer;
         with graph.as_default(), tf.name_scope(scope_name):
             # Generate placeholder for state
             self._state_placeholder = tf.placeholder(tf.float32,
@@ -36,7 +38,7 @@ class A3C_Network_NN:
             self._keep_prob = tf.placeholder(tf.float32, name='keep_prob');
             # Build the operations that computes predictions from the nn model.
             self._policy_pred, self._v_pred, self._shared_layer= \
-                self._create_model(self._state_placeholder, self._keep_prob, action_size);
+                self._create_model(self._state_placeholder, self._keep_prob, action_size, self._noisy_layer);
             
     @property
     def state_placeholder(self):
@@ -62,7 +64,23 @@ class A3C_Network_NN:
     def shared_layer(self):
         return self._shared_layer;
 
-    def _create_model(self, input_state, keep_prob, num_actions): 
+    @property
+    def policy_weight_noise_pl(self):
+        return self._policy_weight_noise_pl;
+
+    @property
+    def policy_bias_noise_pl(self):
+        return self._policy_bias_noise_pl
+
+    @property
+    def value_weight_noise_pl(self):
+        return self._value_weight_noise_pl
+
+    @property
+    def value_bias_noise_pl(self):
+        return self._value_bias_noise_pl
+    
+    def _create_model(self, input_state, keep_prob, num_actions, noisy_layer): 
         """
         Create the model for the policy network and value network.
         The policy network and the value network share the model for feature
@@ -87,8 +105,49 @@ class A3C_Network_NN:
             layer = tf.nn.dropout(input_state, keep_prob);
             for layer_i in range(self._model_param[1]):
                 layer = Dense(self._model_param[0], activation = self._activation)(layer);
-        with tf.name_scope('policy_network'):
-            policy = Dense(num_actions, activation = 'softmax')(layer);
-        with tf.name_scope('value_network'):
-            value = Dense(1)(layer);
+        if noisy_layer == False:
+            with tf.name_scope('policy_network_noNoisy'):
+                policy = Dense(num_actions, activation = 'softmax')(layer);
+            with tf.name_scope('value_network_noNoisy'):
+                value = Dense(1)(layer);
+        else:
+            self._policy_weight_noise_pl = tf.placeholder(tf.float32, 
+                                                shape=(self._model_param[0], num_actions), name='policy_weight_noise_pl');
+            self._policy_bias_noise_pl = tf.placeholder(tf.float32, 
+                                                shape=(num_actions), name='policy_bias_noise_pl');
+            self._value_weight_noise_pl = tf.placeholder(tf.float32, 
+                                                shape=(self._model_param[0], 1), name='value_weight_noise_pl');
+            self._value_bias_noise_pl = tf.placeholder(tf.float32, 
+                                                shape=(1), name='value_bias_noise_pl');
+
+            with tf.name_scope('policy_network_noisy'):
+                noisyNet_policy = noisyNet(layer, num_actions, self._policy_weight_noise_pl, self._policy_bias_noise_pl);
+                policy =  tf.nn.softmax(noisyNet_policy);
+            with tf.name_scope('value_network_noisy'):
+                value = noisyNet(layer, 1, self._value_weight_noise_pl, self._value_bias_noise_pl);
         return (policy, value, layer);
+
+        def noisyNet(input, outShape, weight_noise, bias_noise):
+            """
+            Create NoisyNet.
+
+            Args:
+                outShape: 1-D python list
+            """
+            inShape = list(input.output_shape);
+            weight_shape = deepcopy(inShape).append(outShape)
+            p = weight_shape[0] # Number of inputs to the linear layer
+
+            mu_weight = tf.Variables(tf.random_uniform(shape = weight_shape, minval = -np.sqrt(3.0/p), maxval = np.sqrt(3.0/p)),
+                                                       trainable = True, name = 'mu_weight');
+            sigma_weight = tf.Variables(tf.constant(0.017, shape = weight_shape), trainable = True, name = 'sigma_weight');
+            noisy_weight = tf.multiply(sigma_weight, weight_noise) + mu_weight;
+
+            mu_bias = tf.Variables(tf.random_uniform(shape = outShape, minval = -np.sqrt(3.0/p), maxval = np.sqrt(3.0/p)), 
+                                                     trainable = True, name = 'mu_bias');
+            sigma_bias = tf.Variables(tf.constant(0.017, shape = outShape), trainable = True, name = 'sigma_bias');
+            noisy_bias = tf.multiply(sigma_bias, bias_noise) + mu_bias;
+
+            noisy_y = input*noisy_weight + noisy_bias;
+
+            return noisy_y;

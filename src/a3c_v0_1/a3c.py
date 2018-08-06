@@ -33,8 +33,8 @@ class A3CThread:
     
     def __init__(self, graph, scope_name, global_name, effec_state_dim, forecast_dim, 
                 action_size, vloss_frac, ploss_frac, hregu_frac, hregu_decay_bounds, shared_optimizer,
-                 clip_norm, global_train_step, window_len, init_epsilon,
-                 end_epsilon, decay_steps, global_counter, activation, model_type, model_param, learning_rate):
+                 clip_norm, global_train_step, window_len, init_epsilon, end_epsilon, decay_steps, 
+                 global_counter, activation, model_type, model_param, learning_rate, noisyNet = False):
         """
         Constructor.
         
@@ -81,7 +81,8 @@ class A3CThread:
         ### Create the policy and value network ###
         ###########################################
         network_state_dim = effec_state_dim;
-        self._a3c_network = model_type(graph, scope_name, network_state_dim, action_size, activation, model_param);
+        self._a3c_network = model_type(graph, scope_name, network_state_dim, action_size, 
+                                       activation, model_param, noisyNet);
         self._policy_pred = self._a3c_network.policy_pred;
         self._value_pred = self._a3c_network.value_pred;
         self._state_placeholder = self._a3c_network.state_placeholder;
@@ -169,6 +170,7 @@ class A3CThread:
         self._hregu_frac_to_loss = hregu_frac_to_loss;
         self._global_counter = global_counter;
         self._learning_rate = learning_rate;
+        self._noisyNet = noisyNet;
         
             
     def train(self, sess, t_max, env_name, coordinator, global_lock, 
@@ -253,8 +255,12 @@ class A3CThread:
         # Get the history stacked state
         ob_this_hist_prcd = self._histProcessor.\
                             process_state_for_network(ob_this_prcd) # 2-D array
-    
-        
+
+        if self._noisyNet:
+            policy_weight_noise_shape = tf.shape(self._a3c_network.policy_weight_noise_pl)[0];
+            policy_bias_noise_shape = tf.shape(self._a3c_network.policy_bias_noise_pl)[0];
+            value_weight_noise_shape = tf.shape(self._a3c_network.value_weight_noise_pl)[0];
+            value_bias_noise_shape = tf.shape(self._a3c_network.value_bias_noise_pl)[0];
         while not coordinator.should_stop():
             sess.run(self._local_net_update);
             # print debug
@@ -269,6 +275,15 @@ class A3CThread:
 
             # Reset the counter
             t_st = t;
+            # Reset the noisyNet placeholder
+            noisyNet_pls = None;
+            if self._noisyNet:
+                policy_weight_noise_this = tf.random_normal(policy_weight_noise_shape);
+                policy_bias_noise_this = tf.random_normal(policy_bias_noise_shape);
+                value_weight_noise_this = tf.random_normal(value_weight_noise_shape);
+                value_bias_noise_this = tf.random_normal(value_bias_noise_shape); 
+                noisyNet_pls = [policy_weight_noise_this, policy_bias_noise_this, 
+                                value_weight_noise_this, value_bias_noise_this];
             # Interact with env
             trajectory_list = []; # A list of (s_t, a_t, r_t) tuples
             while (not is_terminal) and (t - t_st != t_max):
@@ -286,7 +301,9 @@ class A3CThread:
                 action_raw_out = self._select_sto_action(ob_this_hist_prcd, sess,
                                                          self._e_greedy, is_show_dbg, 
                                                          dropout_prob = dropout_prob,
-                                                         is_greedy = is_greedy_policy);
+                                                         is_greedy = is_greedy_policy, 
+                                                         noisyNet = self._noisyNet,
+                                                         noisyNet_pls = noisyNet_pls);
                 action_raw_idx = action_raw_out if isinstance(action_raw_out, int) else action_raw_out[0]
                 if action_raw_idx is not None:
                     action_raw_tup = action_space[action_raw_idx];
@@ -350,6 +367,7 @@ class A3CThread:
                         self._local_logger.info('Evaluating...');
                         global_res_list.append([self._global_counter.value]);
                         for global_agent_eval in global_agent_eval_list:
+                            what value does the noisyNet use when evaluating????
                             eval_res = global_agent_eval.evaluate(self._local_logger,
                                                     action_space_name, reward_func, rewardArgs, metric_func,
                                                     eval_action_func, eval_action_limits, raw_state_process_func,
@@ -389,10 +407,17 @@ class A3CThread:
                     ob_this_hist_prcd = self._histProcessor.\
                             process_state_for_network(ob_this_prcd) # 2-D array
             # Prepare for the training step
+            if self._noisyNet:
+                feed_dict_R = {self._state_placeholder:ob_this_hist_prcd,
+                               self._keep_prob: 1.0 - dropout_prob,
+                               self._a3c_network.value_weight_noise_pl: value_weight_noise_this,
+                               self._a3c_network.value_bias_noise_pl:value_bias_noise_this};
+            else:
+                feed_dict_R = {self._state_placeholder:ob_this_hist_prcd,
+                               self._keep_prob: 1.0 - dropout_prob}
             R = 0 if is_terminal else sess.run(
                             self._value_pred,
-                            feed_dict = {self._state_placeholder:ob_this_hist_prcd,
-                                         self._keep_prob: 1.0 - dropout_prob})####DEBUG FOR DROPOUT####
+                            feed_dict = feed_dict_R)####DEBUG FOR DROPOUT####
             traj_len = len(trajectory_list);
             act_idx_list = np.zeros(traj_len, dtype = np.uint8);
             q_true_list = np.zeros((traj_len, 1));
@@ -404,10 +429,20 @@ class A3CThread:
                 q_true_list[i, :] = R;
                 state_list[i, :] = traj_i_from_last[0];
             # Perform training
-            training_feed_dict = {self._q_true_placeholder: q_true_list,
-                                  self._state_placeholder: state_list,
-                                  self._action_idx_placeholder: act_idx_list,
-                                  self._keep_prob: 1.0 - dropout_prob};
+            if self._noisyNet:
+                training_feed_dict = {self._q_true_placeholder: q_true_list,
+                                      self._state_placeholder: state_list,
+                                      self._action_idx_placeholder: act_idx_list,
+                                      self._keep_prob: 1.0 - dropout_prob,
+                                      self._a3c_network.policy_weight_noise_pl: policy_weight_noise_this,
+                                      self._a3c_network.policy_bias_noise_pl: policy_bias_noise_this,
+                                      self._a3c_network.value_weight_noise_pl: value_weight_noise_this,
+                                      self._a3c_network.value_bias_noise_pl: value_bias_noise_this}
+            else:
+                training_feed_dict = {self._q_true_placeholder: q_true_list,
+                                      self._state_placeholder: state_list,
+                                      self._action_idx_placeholder: act_idx_list,
+                                      self._keep_prob: 1.0 - dropout_prob};
             
             _, loss_res, value_pred = sess.run([self._train_op, self._loss, 
                                                 self._value_pred], 
@@ -445,7 +480,8 @@ class A3CThread:
     def _update_e_greedy(self):
         self._e_greedy -= self._epsilon_decay_delta;
         
-    def _select_sto_action(self, state, sess, e_greedy, is_show_dbg, dropout_prob, is_greedy = False):
+    def _select_sto_action(self, state, sess, e_greedy, is_show_dbg, dropout_prob, 
+                            is_greedy = False, noisyNet = False, noisyNet_pls = None):
 
         """
         Given a state, run stochastic policy network to give an action.
@@ -464,17 +500,25 @@ class A3CThread:
             The action index.
         """
         # Random
-        uni_rdm_greedy = np.random.uniform();
-        if uni_rdm_greedy < e_greedy:
-            rdm_action = np.random.choice(self._action_size);
-            if is_show_dbg:
-                self._local_logger.debug('e_greedy e is: %0.04f, sampled: %0.04f, take random action: %d.'
-                                         %(e_greedy, uni_rdm_greedy, rdm_action));
-            return rdm_action;
+        if e_greedy > 0:
+            uni_rdm_greedy = np.random.uniform();
+            if uni_rdm_greedy < e_greedy:
+                rdm_action = np.random.choice(self._action_size);
+                if is_show_dbg:
+                    self._local_logger.debug('e_greedy e is: %0.04f, sampled: %0.04f, take random action: %d.'
+                                             %(e_greedy, uni_rdm_greedy, rdm_action));
+                return rdm_action;
         # On policy
-        softmax_a, shared_layer = sess.run([self._policy_pred, self._shared_layer],
-                             feed_dict={self._state_placeholder:state,
-                                        self._keep_prob: 1.0 - dropout_prob}) ####DEBUG FOR DROPOUT
+        if noisyNet:
+            softmax_a, shared_layer = sess.run([self._policy_pred, self._shared_layer],
+                                 feed_dict={self._state_placeholder:state,
+                                            self._keep_prob: 1.0 - dropout_prob,
+                                            self._a3c_network.policy_weight_noise_pl: noisyNet_pls[0],
+                                            self._a3c_network.policy_bias_noise_pl: noisyNet_pls[1]});            
+        else:
+            softmax_a, shared_layer = sess.run([self._policy_pred, self._shared_layer],
+                                 feed_dict={self._state_placeholder:state,
+                                            self._keep_prob: 1.0 - dropout_prob}) ####DEBUG FOR DROPOUT
         softmax_a = softmax_a.flatten();
         if is_show_dbg:
             self._local_logger.debug('Policy network output: %s, sum to %0.04f'
@@ -564,7 +608,9 @@ class A3CAgent:
                  global_logger,
                  activation,
                  model_type,
-                 model_param):
+                 model_param,
+                 noisyNet,
+                 noisyNetEval_rmNoise):
         self._forecast_dim = forecast_dim;
         state_dim += TIME_DIM; # Add time info dimension
         self._state_dim = state_dim;
@@ -591,6 +637,8 @@ class A3CAgent:
         self._activation = activation;
         self._model_type = model_type;
         self._model_param = model_param;
+        self._noisyNet = noisyNet;
+        self._noisyNetEval_rmNoise = noisyNetEval_rmNoise;
         
     def compile(self, is_warm_start, model_dir, save_scope = 'global', save_max_to_keep = 5):
         """
@@ -611,7 +659,8 @@ class A3CAgent:
         """
         g = tf.Graph();
         # Create the global network
-        global_network = self._model_type(g, 'global', self._effec_state_dim, self._action_size, self._activation, self._model_param);
+        global_network = self._model_type(g, 'global', self._effec_state_dim, self._action_size, 
+                                          self._activation, self._model_param, self._noisyNet);
         with g.as_default():
             # Create a global train step variable to record global steps
             global_train_step = tf.Variable(0, name='global_train_step', trainable=False);
@@ -638,7 +687,7 @@ class A3CAgent:
                              self._hregu_frac, self._hregu_decay_bounds, shared_optimizer, self._clip_norm,
                              global_train_step, self._window_len, self._init_epsilon,
                              self._end_epsilon, self._decay_steps, global_counter, self._activation, self._model_type, 
-                             self._model_param, learning_rate)
+                             self._model_param, learning_rate, self._noisyNet)
                   for i in range(self._num_threads)];
         # Init global network variables or warm start
         with g.as_default():
@@ -718,8 +767,8 @@ class A3CAgent:
 
     def fit(self, sess, coordinator, global_network, workers, global_summary_writer, global_saver,
             env_name_list, t_max, gamma, e_weight, p_weight, save_freq, T_max, eval_epi_num, eval_freq,
-            reward_func, rewardArgs, metric_func, train_action_func, eval_action_func, train_action_limits, eval_action_limits, 
-            raw_state_process_func, raw_stateLimit_process_func, debug_log_prob, is_greedy_policy):
+            reward_func, rewardArgs, metric_func, train_action_func, eval_action_func, train_action_limits, 
+            eval_action_limits, raw_state_process_func, raw_stateLimit_process_func, debug_log_prob, is_greedy_policy):
         """
         This method is used to train the neural network. 
         
@@ -771,7 +820,8 @@ class A3CAgent:
         for env_name in env_name_list:
             env_eval = gym.make(env_name);
             global_agent_eval = A3CEval(sess, global_network, env_eval, eval_epi_num, 
-                                    self._window_len, self._forecast_dim, e_weight, p_weight, raw_stateLimit_process_func);
+                                    self._window_len, self._forecast_dim, e_weight, p_weight, 
+                                    raw_stateLimit_process_func, self._noisyNet, self._noisyNet_rmNoise);
             global_agent_eval_list.append(global_agent_eval)
 
         global_res_list = [];

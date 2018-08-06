@@ -204,7 +204,8 @@ class A3CEval_multiagent:
 
 class A3CEval:
     def __init__(self, sess, global_network, env, num_episodes, window_len, 
-                 forecast_len, e_weight, p_weight, raw_stateLimit_process_func):
+                 forecast_len, e_weight, p_weight, raw_stateLimit_process_func,
+                 noisyNet = False, noisyNet_rmNoise = True):
         """
         This is the class for evaluation under the single-zone control mode. 
 
@@ -246,6 +247,8 @@ class A3CEval:
         self._pcd_state_limits = np.transpose(env_state_limits);
         self._e_weight = e_weight;
         self._p_weight = p_weight;
+        self._noisyNet = noisyNet;
+        self._noisyNet_rmNoise = noisyNet_rmNoise;
         
 
     def evaluate(self, local_logger, action_space_name, reward_func, rewardArgs, metric_func, 
@@ -288,8 +291,25 @@ class A3CEval:
         this_ep_reward = 0;
         this_ep_energy = 0;
         this_ep_comfort = 0;
+
+        # noisyNet placeholder shapes
+        if self._noisyNet:
+            policy_weight_noise_shape = tf.shape(self._global_network.policy_weight_noise_pl)[0];
+            policy_bias_noise_shape = tf.shape(self._global_network.policy_bias_noise_pl)[0];
+
         #this_ep_max_ppd = 0;
         while episode_counter <= self._num_episodes:
+            noisyNet_pls = None;
+            if self._noisyNet:
+                # Sample the noisyNet noise
+                if self._noisyNet_rmNoise:
+                    policy_weight_noise_this = tf.constant(0.0, shape = policy_weight_noise_shape);
+                    policy_bias_noise_this = tf.constant(0.0, shape = policy_bias_noise_shape);
+                else:
+                    policy_weight_noise_this = tf.random_normal(policy_weight_noise_shape);
+                    policy_bias_noise_this = tf.random_normal(policy_bias_noise_shape); 
+                noisyNet_pls = [policy_weight_noise_this, policy_bias_noise_this];
+
             dbg_rdm = np.random.uniform();
             #################FOR DEBUG#######################
             is_dbg_out = False;
@@ -301,7 +321,7 @@ class A3CEval:
                 local_logger.debug('Observation forecast: %s' %(ob_this_raw[noForecastDim:]));
             #################################################
             # Get the action
-            action_raw_out = self._select_sto_action(ob_this_hist_prcd, local_logger, is_dbg_out);
+            action_raw_out = self._select_sto_action(ob_this_hist_prcd, local_logger, is_dbg_out, self._noisyNet, noisyNet_pls);
             action_raw_idx = action_raw_out if isinstance(action_raw_out, int) else action_raw_out[0]
             if action_raw_idx is not None:
                 action_raw_tup = action_space[action_raw_idx];
@@ -373,7 +393,7 @@ class A3CEval:
                 
         return [average_reward, average_energy, average_comfort];
     
-    def _select_sto_action(self, state, local_logger, is_dbg_out):
+    def _select_sto_action(self, state, local_logger, is_dbg_out, noisyNet, noisyNet_pls):
         """
         Given a state, run stochastic policy network to give an action.
         
@@ -384,11 +404,19 @@ class A3CEval:
         Return: int 
             The action index.
         """
-        
-        softmax_a = self._sess.run(self._global_network.policy_pred, 
-                        feed_dict={self._global_network.state_placeholder:state,
-                                   self._global_network.keep_prob: 1.0})\
-                        .flatten();
+        if self._noisyNet:
+            softmax_a = self._sess.run(self._global_network.policy_pred, 
+                            feed_dict={self._global_network.state_placeholder:state,
+                                       self._global_network.keep_prob: 1.0,
+                                       self._global_network.policy_weight_noise_pl: noisyNet_pls[0],
+                                       self._global_network.policy_bias_noise_pl: noisyNet_pls[1]})\
+                            .flatten();
+
+        else:
+            softmax_a = self._sess.run(self._global_network.policy_pred, 
+                            feed_dict={self._global_network.state_placeholder:state,
+                                       self._global_network.keep_prob: 1.0})\
+                            .flatten();
         ### DEBUG
         uni_rdm = np.random.uniform();
         if is_dbg_out:
