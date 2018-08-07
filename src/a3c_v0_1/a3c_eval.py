@@ -292,24 +292,14 @@ class A3CEval:
         this_ep_energy = 0;
         this_ep_comfort = 0;
 
-        # noisyNet placeholder shapes
-        if self._noisyNet:
-            policy_weight_noise_shape = tf.shape(self._global_network.policy_weight_noise_pl)[0];
-            policy_bias_noise_shape = tf.shape(self._global_network.policy_bias_noise_pl)[0];
-
         #this_ep_max_ppd = 0;
         while episode_counter <= self._num_episodes:
-            noisyNet_pls = None;
             if self._noisyNet:
                 # Sample the noisyNet noise
                 if self._noisyNet_rmNoise:
-                    policy_weight_noise_this = tf.constant(0.0, shape = policy_weight_noise_shape);
-                    policy_bias_noise_this = tf.constant(0.0, shape = policy_bias_noise_shape);
+                    self._global_network.policy_network_finalLayer.remove_noise();
                 else:
-                    policy_weight_noise_this = tf.random_normal(policy_weight_noise_shape);
-                    policy_bias_noise_this = tf.random_normal(policy_bias_noise_shape); 
-                noisyNet_pls = [policy_weight_noise_this, policy_bias_noise_this];
-
+                    self._global_network.value_network_finalLayer.resample_noise();
             dbg_rdm = np.random.uniform();
             #################FOR DEBUG#######################
             is_dbg_out = False;
@@ -321,7 +311,7 @@ class A3CEval:
                 local_logger.debug('Observation forecast: %s' %(ob_this_raw[noForecastDim:]));
             #################################################
             # Get the action
-            action_raw_out = self._select_sto_action(ob_this_hist_prcd, local_logger, is_dbg_out, self._noisyNet, noisyNet_pls);
+            action_raw_out = self._select_sto_action(ob_this_hist_prcd, local_logger, is_dbg_out);
             action_raw_idx = action_raw_out if isinstance(action_raw_out, int) else action_raw_out[0]
             if action_raw_idx is not None:
                 action_raw_tup = action_space[action_raw_idx];
@@ -393,7 +383,7 @@ class A3CEval:
                 
         return [average_reward, average_energy, average_comfort];
     
-    def _select_sto_action(self, state, local_logger, is_dbg_out, noisyNet, noisyNet_pls):
+    def _select_sto_action(self, state, local_logger, is_dbg_out):
         """
         Given a state, run stochastic policy network to give an action.
         
@@ -404,19 +394,10 @@ class A3CEval:
         Return: int 
             The action index.
         """
-        if self._noisyNet:
-            softmax_a = self._sess.run(self._global_network.policy_pred, 
-                            feed_dict={self._global_network.state_placeholder:state,
-                                       self._global_network.keep_prob: 1.0,
-                                       self._global_network.policy_weight_noise_pl: noisyNet_pls[0],
-                                       self._global_network.policy_bias_noise_pl: noisyNet_pls[1]})\
-                            .flatten();
-
-        else:
-            softmax_a = self._sess.run(self._global_network.policy_pred, 
-                            feed_dict={self._global_network.state_placeholder:state,
-                                       self._global_network.keep_prob: 1.0})\
-                            .flatten();
+        softmax_a = self._sess.run(self._global_network.policy_pred, 
+                        feed_dict={self._global_network.state_placeholder:state,
+                                   self._global_network.keep_prob: 1.0})\
+                        .flatten();
         ### DEBUG
         uni_rdm = np.random.uniform();
         if is_dbg_out:
