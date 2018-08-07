@@ -272,8 +272,8 @@ class A3CThread:
             t_st = t;
             # Reset the noisyNet noise
             if self._noisyNet:
-                self._a3c_network.policy_network_finalLayer.resample_noise();
-                self._a3c_network.value_network_finalLayer.resample_noise();
+                self._a3c_network.policy_network_finalLayer.sample_noise();
+                self._a3c_network.value_network_finalLayer.sample_noise();
             # Interact with env
             trajectory_list = []; # A list of (s_t, a_t, r_t) tuples
             while (not is_terminal) and (t - t_st != t_max):
@@ -666,6 +666,7 @@ class A3CAgent:
                 save_var_list = None;
             saver = tf.train.Saver(var_list = save_var_list, max_to_keep = save_max_to_keep);
             # Init ops
+            K.manual_variable_initialization(True)
             init_global_all_op = tf.global_variables_initializer();
             if not is_warm_start:
                 sess.run(init_global_all_op);

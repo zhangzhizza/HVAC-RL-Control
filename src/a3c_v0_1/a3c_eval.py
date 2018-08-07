@@ -299,7 +299,7 @@ class A3CEval:
                 if self._noisyNet_rmNoise:
                     self._global_network.policy_network_finalLayer.remove_noise();
                 else:
-                    self._global_network.value_network_finalLayer.resample_noise();
+                    self._global_network.value_network_finalLayer.sample_noise();
             dbg_rdm = np.random.uniform();
             #################FOR DEBUG#######################
             is_dbg_out = False;

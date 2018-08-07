@@ -37,12 +37,12 @@ class NoisyDense(Layer):
         bias_constraint: Constraint function applied to the bias vector
             (see [constraints](../constraints.md)).
     # Input shape
-        nD tensor with shape: `(batch_size, ..., input_dim)`.
+        nD tensor with shape: `(batch_size, ..., self._input_dim)`.
         The most common situation would be
-        a 2D input with shape `(batch_size, input_dim)`.
+        a 2D input with shape `(batch_size, self._input_dim)`.
     # Output shape
         nD tensor with shape: `(batch_size, ..., units)`.
-        For instance, for a 2D input with shape `(batch_size, input_dim)`,
+        For instance, for a 2D input with shape `(batch_size, self._input_dim)`,
         the output would have shape `(batch_size, units)`.
     """
     def __init__(self, units,
@@ -56,8 +56,8 @@ class NoisyDense(Layer):
                  kernel_constraint=None,
                  bias_constraint=None,
                  **kwargs):
-        if 'input_shape' not in kwargs and 'input_dim' in kwargs:
-            kwargs['input_shape'] = (kwargs.pop('input_dim'),)
+        if 'input_shape' not in kwargs and 'self._input_dim' in kwargs:
+            kwargs['input_shape'] = (kwargs.pop('self._input_dim'),)
         super(NoisyDense, self).__init__(**kwargs)
         self.units = units
         self.activation = activations.get(activation)
@@ -74,36 +74,36 @@ class NoisyDense(Layer):
 
     def build(self, input_shape):
         assert len(input_shape) >= 2
-        input_dim = input_shape[-1]
+        self._input_dim = input_shape[-1]
 
-        self._weight_noise = self.add_weight(shape=(input_dim, self.units),
-                                      initializer=initializers.RandomNormal(0, 1),
+        self._weight_noise = self.add_weight(shape=(self._input_dim, self.units),
+                                      initializer=initializers.Constant(0.0),
                                       name='weigh_noise',
                                       regularizer=self.kernel_regularizer,
                                       trainable = False,
                                       constraint=self.kernel_constraint)
-        self._mu_weight = self.add_weight(shape=(input_dim, self.units),
-                                      initializer=initializers.RandomUniform(minval = -np.sqrt(3.0/input_dim), 
-                                                                                   maxval = np.sqrt(3.0/input_dim), 
+        self._mu_weight = self.add_weight(shape=(self._input_dim, self.units),
+                                      initializer=initializers.RandomUniform(minval = -np.sqrt(3.0/self._input_dim), 
+                                                                                   maxval = np.sqrt(3.0/self._input_dim), 
                                                                                    seed=None),
                                       name='mu_weight',
                                       regularizer=self.kernel_regularizer,
                                       constraint=self.kernel_constraint)
-        self._sigma_weight = self.add_weight(shape=(input_dim, self.units),
+        self._sigma_weight = self.add_weight(shape=(self._input_dim, self.units),
                                       initializer=initializers.Constant(0.017),
                                       name='sigma_weight',
                                       regularizer=self.kernel_regularizer,
                                       constraint=self.kernel_constraint)
         if self.use_bias:
             self._bias_noise = self.add_weight(shape=(self.units,),
-                                      initializer=initializers.RandomNormal(0, 1),
+                                      initializer=initializers.Constant(0.0),
                                       name='bias_noise',
                                       regularizer=self.kernel_regularizer,
                                       trainable = False,
                                       constraint=self.kernel_constraint)
             self._mu_bias = self.add_weight(shape=(self.units,),
-                                        initializer=initializers.RandomUniform(minval = -np.sqrt(3.0/input_dim), 
-                                                                                     maxval = np.sqrt(3.0/input_dim), 
+                                        initializer=initializers.RandomUniform(minval = -np.sqrt(3.0/self._input_dim), 
+                                                                                     maxval = np.sqrt(3.0/self._input_dim), 
                                                                                      seed=None),
                                         name='mu_bias',
                                         regularizer=self.bias_regularizer,
@@ -115,8 +115,9 @@ class NoisyDense(Layer):
                                         constraint=self.bias_constraint)
         else:
             self.bias = None
-        self.input_spec = InputSpec(min_ndim=2, axes={-1: input_dim})
+        self.input_spec = InputSpec(min_ndim=2, axes={-1: self._input_dim})
         self.built = True
+        self.sample_noise();
 
     def call(self, inputs):
         noisy_weight = add([multiply([self._sigma_weight, self._weight_noise]), 
@@ -153,18 +154,20 @@ class NoisyDense(Layer):
         base_config = super(NoisyDense, self).get_config()
         return dict(list(base_config.items()) + list(config.items()))
 
-    def resample_noise(self):
+    def sample_noise(self):
 
         K.set_value(self._weight_noise, 
-                    np.random.normal(0, 1, size=(input_dim, self.units)))
-        K.set_value(self._bias_noise, 
-                    np.random.normal(0, 1, size=(self.units,)))
+                    np.random.normal(0, 1, size=(self._input_dim, self.units)))
+        if self.use_bias:
+            K.set_value(self._bias_noise, 
+                        np.random.normal(0, 1, size=(self.units,)))
 
     def remove_noise(self):
         
         K.set_value(self._weight_noise, 
-                    np.zeros(shape=(input_dim, self.units)))
-        K.set_value(self._bias_noise, 
-                    np.zeros(shape=(self.units,)))
+                    np.zeros(shape=(self._input_dim, self.units)))
+        if self.use_bias:
+            K.set_value(self._bias_noise, 
+                        np.zeros(shape=(self.units,)))
 
      
