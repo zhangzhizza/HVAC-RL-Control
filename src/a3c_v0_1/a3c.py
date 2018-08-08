@@ -662,6 +662,7 @@ class A3CAgent:
         with g.as_default():
             # Create a session for running Ops on the Graph.
             sess = tf.Session()
+            K.set_session(sess); # Set Keras backend session for safe, do not know whether Keras opens its own sessions
             # Instantiate a SummaryWriter to output summaries and the Graph.
             summary_writer = tf.summary.FileWriter(self._log_dir, sess.graph)
             # Create a saver for writing training checkpoints
