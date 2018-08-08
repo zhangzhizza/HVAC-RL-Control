@@ -120,6 +120,10 @@ def get_args():
     parser.add_argument('--activation', default='relu', type=str)
     parser.add_argument('--model_type', default='nn', type=str)
     parser.add_argument('--model_param', nargs='+', type=int)
+    parser.add_argument('--isNoisyNet', default=False, type=bool, help='Whether to include NoisyNet (proposed by DeepMind) '
+      'in the final linear layers.')
+    parser.add_argument('--isNoisyNetEval_rmNoise', default=False, type=bool, help='If NoisyNet is included, whether to remove '
+      'noise (set noise to zero) during model evaluation.')
     return parser;
 
 def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func, eval_action_func, 
@@ -154,7 +158,9 @@ def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func
                          global_logger = main_logger,
                          activation = args.activation,
                          model_type = MODEL_DICT[args.model_type],
-                         model_param = args.model_param
+                         model_param = args.model_param,
+                         noisyNet = args.isNoisyNet,
+                         noisyNetEval_rmNoise = args.isNoisyNetEval_rmNoise
                          );
     main_logger.info ('Start compiling...')
     (g, sess, coordinator, global_network, workers, global_summary_writer, 
