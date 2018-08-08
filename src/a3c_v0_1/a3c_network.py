@@ -15,7 +15,8 @@ class A3C_Network_NN:
     """
     
     def __init__(self, graph, scope_name, state_dim, action_size, 
-                 activation = 'relu', model_param = [512, 4], noisy_layer = False):
+                 activation = 'relu', model_param = [512, 4], noisy_layer = False,
+                 kernel_initializer = 'glorot_uniform'):
         """
         Constructor.
         
@@ -31,6 +32,7 @@ class A3C_Network_NN:
         self._model_param = model_param;
         self._graph = graph;
         self._noisy_layer = noisy_layer;
+        self._kernel_initializer = kernel_initializer;
         with graph.as_default(), tf.name_scope(scope_name):
             # Generate placeholder for state
             self._state_placeholder = tf.placeholder(tf.float32,
@@ -101,7 +103,8 @@ class A3C_Network_NN:
             # Dropout layer for the first relu layer.
             layer = tf.nn.dropout(input_state, keep_prob);
             for layer_i in range(self._model_param[1]):
-                layer = Dense(self._model_param[0], activation = self._activation)(layer);
+                layer = Dense(self._model_param[0], activation = self._activation, 
+                              kernel_initializer = self._kernel_initializer)(layer);
         # Choose from Dense or NoisyDense
         if noisy_layer:
             finalLayer = NoisyDense;
@@ -109,10 +112,13 @@ class A3C_Network_NN:
             finalLayer = Dense;
         # Build policy and value network
         with tf.name_scope('policy_network'):
-            self._policy_network_finalLayer = finalLayer(num_actions, activation = 'softmax')
+            self._policy_network_finalLayer = finalLayer(num_actions, 
+                                                         kernel_initializer = self._kernel_initializer,   
+                                                         activation = 'softmax')
             policy = self._policy_network_finalLayer(layer);
         with tf.name_scope('value_network'):
-            self._value_network_finalLayer = finalLayer(1);
+            self._value_network_finalLayer = finalLayer(1, 
+                                                        kernel_initializer = self._kernel_initializer);
             value = self._value_network_finalLayer(layer);
 
         return (policy, value, layer);

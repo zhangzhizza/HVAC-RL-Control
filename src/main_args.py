@@ -124,6 +124,7 @@ def get_args():
       'in the final linear layers.')
     parser.add_argument('--isNoisyNetEval_rmNoise', default=False, type=bool, help='If NoisyNet is included, whether to remove '
       'noise (set noise to zero) during model evaluation.')
+    parser.add_argument('--weight_initer', default='glorot_uniform', type=str, help='Network weight initializer type.')
     return parser;
 
 def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func, eval_action_func, 
@@ -160,7 +161,8 @@ def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func
                          model_type = MODEL_DICT[args.model_type],
                          model_param = args.model_param,
                          noisyNet = args.isNoisyNet,
-                         noisyNetEval_rmNoise = args.isNoisyNetEval_rmNoise
+                         noisyNetEval_rmNoise = args.isNoisyNetEval_rmNoise,
+                         weight_initer = args.weight_initer
                          );
     main_logger.info ('Start compiling...')
     (g, sess, coordinator, global_network, workers, global_summary_writer, 

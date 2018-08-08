@@ -34,7 +34,8 @@ class A3CThread:
     def __init__(self, graph, scope_name, global_name, effec_state_dim, forecast_dim, 
                 action_size, vloss_frac, ploss_frac, hregu_frac, hregu_decay_bounds, shared_optimizer,
                  clip_norm, global_train_step, window_len, init_epsilon, end_epsilon, decay_steps, 
-                 global_counter, activation, model_type, model_param, learning_rate, noisyNet = False):
+                 global_counter, activation, model_type, model_param, learning_rate, noisyNet = False,
+                 weight_initer = 'glorot_uniform'):
         """
         Constructor.
         
@@ -82,7 +83,7 @@ class A3CThread:
         ###########################################
         network_state_dim = effec_state_dim;
         self._a3c_network = model_type(graph, scope_name, network_state_dim, action_size, 
-                                       activation, model_param, noisyNet);
+                                       activation, model_param, noisyNet, weight_initer);
         self._policy_pred = self._a3c_network.policy_pred;
         self._value_pred = self._a3c_network.value_pred;
         self._state_placeholder = self._a3c_network.state_placeholder;
@@ -579,7 +580,8 @@ class A3CAgent:
                  model_type,
                  model_param,
                  noisyNet,
-                 noisyNetEval_rmNoise):
+                 noisyNetEval_rmNoise,
+                 weight_initer):
         self._forecast_dim = forecast_dim;
         state_dim += TIME_DIM; # Add time info dimension
         self._state_dim = state_dim;
@@ -608,6 +610,7 @@ class A3CAgent:
         self._model_param = model_param;
         self._noisyNet = noisyNet;
         self._noisyNetEval_rmNoise = noisyNetEval_rmNoise;
+        self._weight_initer = weight_initer;
         
     def compile(self, is_warm_start, model_dir, save_scope = 'global', save_max_to_keep = 5):
         """
@@ -629,7 +632,8 @@ class A3CAgent:
         g = tf.Graph();
         # Create the global network
         global_network = self._model_type(g, 'global', self._effec_state_dim, self._action_size, 
-                                          self._activation, self._model_param, self._noisyNet);
+                                          self._activation, self._model_param, self._noisyNet,
+                                          self._weight_initer);
         with g.as_default():
             # Create a global train step variable to record global steps
             global_train_step = tf.Variable(0, name='global_train_step', trainable=False);
@@ -656,7 +660,7 @@ class A3CAgent:
                              self._hregu_frac, self._hregu_decay_bounds, shared_optimizer, self._clip_norm,
                              global_train_step, self._window_len, self._init_epsilon,
                              self._end_epsilon, self._decay_steps, global_counter, self._activation, self._model_type, 
-                             self._model_param, learning_rate, self._noisyNet)
+                             self._model_param, learning_rate, self._noisyNet, self._weight_initer)
                   for i in range(self._num_threads)];
         # Init global network variables or warm start
         with g.as_default():
