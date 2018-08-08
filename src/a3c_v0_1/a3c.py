@@ -272,8 +272,8 @@ class A3CThread:
             t_st = t;
             # Reset the noisyNet noise
             if self._noisyNet:
-                self._a3c_network.policy_network_finalLayer.sample_noise();
-                self._a3c_network.value_network_finalLayer.sample_noise();
+                self._a3c_network.policy_network_finalLayer.sample_noise(sess);
+                self._a3c_network.value_network_finalLayer.sample_noise(sess);
             # Interact with env
             trajectory_list = []; # A list of (s_t, a_t, r_t) tuples
             while (not is_terminal) and (t - t_st != t_max):
@@ -320,6 +320,10 @@ class A3CThread:
                 #################FOR DEBUG#######################
                 if is_show_dbg:
                     current_hregu = sess.run(self._hregu_frac_to_loss);
+                    noisyNet_noiseSample = None;
+                    if self._noisyNet:
+                        noisyNet_noise = sess.run(self._a3c_network.value_network_finalLayer.debug())
+                        noisyNet_noiseSample = [noisyNet_noise[0][0], noisyNet_noise[1][0]];
                     self._local_logger.debug('TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
                                          'Current H regulation is %0.04f, \n'
                                          'Environment debug: raw action idx is %d, \n'
@@ -330,13 +334,15 @@ class A3CThread:
                                          'sim time next is %0.04f, \n'
                                          'raw observation next is %s, \n'
                                          'processed observation next is %s, \n'
-                                         'reward next is %0.04f. \n'
+                                         'reward next is %0.04f, \n'
+                                         'noisyNet noise sample is %s. \n'
                                          '============================================='
                                          %(current_hregu, action_effect_idx, ob_this_raw[0: noForecastDim],
                                            np.insert(np.array(ob_this_raw[noForecastDim:]).astype('str'),
                                             range(0, (len(ob_this_raw) - noForecastDim), forecastSingleEntryDim), 'Next Hour'),
                                            str(action_stpt_prcd), time_this, time_next, 
-                                           ob_next_raw[0: noForecastDim], ob_next_prcd, reward_next));
+                                           ob_next_raw[0: noForecastDim], ob_next_prcd, reward_next,
+                                           noisyNet_noiseSample));
                 #################################################
 
                 # Get the history stacked state

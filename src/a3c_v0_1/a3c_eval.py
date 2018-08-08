@@ -297,16 +297,21 @@ class A3CEval:
             if self._noisyNet:
                 # Sample the noisyNet noise
                 if self._noisyNet_rmNoise:
-                    self._global_network.policy_network_finalLayer.remove_noise();
+                    self._global_network.policy_network_finalLayer.remove_noise(self._sess);
                 else:
-                    self._global_network.value_network_finalLayer.sample_noise();
+                    self._global_network.value_network_finalLayer.sample_noise(self._sess);
             dbg_rdm = np.random.uniform();
             #################FOR DEBUG#######################
             is_dbg_out = False;
             noForecastDim = 49;
-            if dbg_rdm < debug_log_prob:
+            if dbg_rdm < 0.0001:#debug_log_prob:
                 is_dbg_out = True;
             if is_dbg_out:
+                noisyNet_noiseSample = None;
+                if self._noisyNet:
+                    noisyNet_noise = self._sess.run(self._global_network.value_network_finalLayer.debug())
+                    noisyNet_noiseSample = [noisyNet_noise[0][0], noisyNet_noise[1][0]];
+                local_logger.debug('NoisyNet noise sample: %s' %(noisyNet_noiseSample));
                 local_logger.debug('Observation this: %s' %(ob_this_raw[0: noForecastDim]));
                 local_logger.debug('Observation forecast: %s' %(ob_this_raw[noForecastDim:]));
             #################################################

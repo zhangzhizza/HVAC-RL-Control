@@ -98,9 +98,9 @@ class NoisyDense(Layer):
             self._bias_noise = self.add_weight(shape=(self.units,),
                                       initializer=initializers.Constant(0.0),
                                       name='bias_noise',
-                                      regularizer=self.kernel_regularizer,
+                                      regularizer=self.bias_regularizer,
                                       trainable = False,
-                                      constraint=self.kernel_constraint)
+                                      constraint=self.bias_constraint)
             self._mu_bias = self.add_weight(shape=(self.units,),
                                         initializer=initializers.RandomUniform(minval = -np.sqrt(3.0/self._input_dim), 
                                                                                      maxval = np.sqrt(3.0/self._input_dim), 
@@ -117,7 +117,7 @@ class NoisyDense(Layer):
             self.bias = None
         self.input_spec = InputSpec(min_ndim=2, axes={-1: self._input_dim})
         self.built = True
-        self.sample_noise();
+        self.sample_noise(K.get_session()); # Just add the assignment ops to the graph, not really do sampling
 
     def call(self, inputs):
         noisy_weight = add([multiply([self._sigma_weight, self._weight_noise]), 
@@ -154,20 +154,22 @@ class NoisyDense(Layer):
         base_config = super(NoisyDense, self).get_config()
         return dict(list(base_config.items()) + list(config.items()))
 
-    def sample_noise(self):
+    def sample_noise(self, session):
+        with session.as_default():
+            weight_noise = np.random.normal(0, 1, size=(self._input_dim, self.units))
+            K.set_value(self._weight_noise, weight_noise)
+            if self.use_bias:
+                bias_noise = np.random.normal(0, 1, size=(self.units,))
+                K.set_value(self._bias_noise, bias_noise);
 
-        K.set_value(self._weight_noise, 
-                    np.random.normal(0, 1, size=(self._input_dim, self.units)))
-        if self.use_bias:
-            K.set_value(self._bias_noise, 
-                        np.random.normal(0, 1, size=(self.units,)))
+    def remove_noise(self, session):
+        with session.as_default():
+            K.set_value(self._weight_noise, 
+                        np.zeros(shape=(self._input_dim, self.units)))
+            if self.use_bias:
+                K.set_value(self._bias_noise, 
+                            np.zeros(shape=(self.units,)))
 
-    def remove_noise(self):
-        
-        K.set_value(self._weight_noise, 
-                    np.zeros(shape=(self._input_dim, self.units)))
-        if self.use_bias:
-            K.set_value(self._bias_noise, 
-                        np.zeros(shape=(self.units,)))
-
+    def debug(self):
+        return [self._weight_noise, self._bias_noise]
      
