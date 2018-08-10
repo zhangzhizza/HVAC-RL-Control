@@ -2,19 +2,21 @@ import numpy as np
 import tensorflow as tf
 import keras.backend as K
 from keras.layers import (Activation, Dense, Flatten, Input,
-                          Permute)
+                          Permute, LSTM)
 from keras.models import Model
 from copy import deepcopy
 
 from a3c_v0_1.objectives import a3c_loss
 from a3c_v0_1.layers import NoisyDense
 
+SHARED_NETWORK_TYPE_MAP = {'Dense': Dense, 'LSTM': LSTM}
+
 class A3C_Network_NN:
     """
     The class that creates the policy and value network for the A3C. 
     """
     
-    def __init__(self, graph, scope_name, state_dim, action_size, 
+    def __init__(self, graph, scope_name, state_dim, action_size, sharedLayer_type,
                  activation = 'relu', model_param = [512, 4], noisy_layer = False,
                  kernel_initializer = 'glorot_uniform'):
         """
@@ -33,6 +35,7 @@ class A3C_Network_NN:
         self._graph = graph;
         self._noisy_layer = noisy_layer;
         self._kernel_initializer = kernel_initializer;
+        self._sharedLayer_type = SHARED_NETWORK_TYPE_MAP[sharedLayer_type];
         with graph.as_default(), tf.name_scope(scope_name):
             # Generate placeholder for state
             self._state_placeholder = tf.placeholder(tf.float32,
@@ -78,7 +81,7 @@ class A3C_Network_NN:
     
     
     
-    def _create_model(self, input_state, keep_prob, num_actions, noisy_layer): 
+    def _create_model(self, input_state, keep_prob, num_actions, is_noisy_layer): 
         """
         Create the model for the policy network and value network.
         The policy network and the value network share the model for feature
@@ -103,25 +106,59 @@ class A3C_Network_NN:
             # Dropout layer for the first relu layer.
             layer = tf.nn.dropout(input_state, keep_prob);
             for layer_i in range(self._model_param[1]):
-                layer = Dense(self._model_param[0], activation = self._activation, 
+                layer = self._sharedLayer_type(self._model_param[0], activation = self._activation, 
                               kernel_initializer = self._kernel_initializer)(layer);
-        # Choose from Dense or NoisyDense
-        if noisy_layer:
+
+        # Build non-shard layers: policy net and value net
+        policyValueNetworkBuilder = PolicyValueNetwork(self._kernel_initializer, is_noisy_layer);
+        self._policy_network_finalLayer = policyValueNetworkBuilder.policy_network_finalLayer;
+        self._value_network_finalLayer = policyValueNetworkBuilder.value_network_finalLayer;
+
+        policy, value = policyValueNetworkBuilder.getNetwork(layer);
+        
+        return (policy, value, layer);
+
+
+class PolicyValueNetwork:
+
+    def __init__(self, kernel_initializer, isNoisyLayer):
+
+        # Build the final layer
+        if isNoisyLayer:
             finalLayer = NoisyDense;
         else:
             finalLayer = Dense;
+
+        self._policy_network_finalLayer = finalLayer(num_actions, 
+                                                     kernel_initializer = kernel_initializer,   
+                                                     activation = 'softmax')
+        self._value_network_finalLayer = finalLayer(1, 
+                                                    kernel_initializer = kernel_initializer);
+
+
+    def getNetwork(self, input):
+
         # Build policy and value network
         with tf.name_scope('policy_network'):
-            self._policy_network_finalLayer = finalLayer(num_actions, 
-                                                         kernel_initializer = self._kernel_initializer,   
-                                                         activation = 'softmax')
             policy = self._policy_network_finalLayer(layer);
         with tf.name_scope('value_network'):
-            self._value_network_finalLayer = finalLayer(1, 
-                                                        kernel_initializer = self._kernel_initializer);
+            
             value = self._value_network_finalLayer(layer);
 
-        return (policy, value, layer);
+        return (policy, value);
+
+    @property
+    def policy_network_finalLayer(self):
+        return self._policy_network_finalLayer
+
+    @property
+    def value_network_finalLayer(self):
+        return self._value_network_finalLayer
+    
+    
+
+
+
 
 
     """
