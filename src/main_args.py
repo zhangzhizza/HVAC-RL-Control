@@ -12,9 +12,10 @@ import eplus_env
 
 from util.logger import Logger
 from a3c_v0_1.a3c import A3CAgent
-from a3c_v0_1.a3c_network import A3C_Network_NN
+from a3c_v0_1.a3c_network import A3C_Network_NN, A3C_Network_LSTM
 
-MODEL_DICT = {'nn': A3C_Network_NN}
+MODEL_DICT = {'nn': A3C_Network_NN, 'lstm': A3C_Network_LSTM}
+STATEDIM_DICT = {'nn': 1, 'lstm': 2}
 NAME = 'A3C_AGENT_MAIN'
 LOG_LEVEL = 'DEBUG'
 LOG_FORMATTER = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
@@ -63,8 +64,8 @@ def get_args():
     parser.add_argument('--max_interactions', default=15000000, type=int, 
     	help='The max number of interactions with the environment for A3C, default is 15000000.');
     parser.add_argument('--window_len', default=4, type=int, help='The state stacking window length, default is 4.');
-    parser.add_argument('--state_dim', default=15, type=int, help='The current observation state dimension, default is 15.');
-    parser.add_argument('--forecast_dim', default=15, type=int, help='The total forecast state dimension, default is 15.');
+    parser.add_argument('--state_dim', default=15, type=int, help='The observation state length of one step, default is 15.');
+    parser.add_argument('--forecast_dim', default=15, type=int, help='The total forecast state length, default is 15.');
     parser.add_argument('--gamma', default=0.99);
     parser.add_argument('--v_loss_frac', default=0.5, type=float);
     parser.add_argument('--p_loss_frac', default=1.0, type=float);
@@ -125,7 +126,7 @@ def get_args():
     parser.add_argument('--isNoisyNetEval_rmNoise', default=False, type=bool, help='If NoisyNet is included, whether to remove '
       'noise (set noise to zero) during model evaluation.')
     parser.add_argument('--weight_initer', default='glorot_uniform', type=str, help='Network weight initializer type.')
-    parser.add_argument('--sharedNet_type', defualt='Dense', type=str, help='The shared network layer type.')
+    parser.add_argument('--sharedNet_type', default='Dense', type=str, help='The shared network layer type.')
     return parser;
 
 def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func, eval_action_func, 
@@ -138,10 +139,9 @@ def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func
     main_logger.info(args)
     
     # State size
-    state_dim = args.state_dim # 15 for the raw state dim, 2 is the additonal time info
-    forecast_dim = args.forecast_dim;
+    stateOneStep_len = args.state_dim # 15 for the raw state dim
     # Create the agent
-    a3c_agent = A3CAgent(forecast_dim = forecast_dim, state_dim = state_dim, 
+    a3c_agent = A3CAgent(forecast_len = args.forecast_dim, stateOneStep_len = stateOneStep_len, 
                          window_len = args.window_len,
                          vloss_frac = args.v_loss_frac,
                          ploss_frac = args.p_loss_frac, 
@@ -164,7 +164,7 @@ def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func
                          noisyNet = args.isNoisyNet,
                          noisyNetEval_rmNoise = args.isNoisyNetEval_rmNoise,
                          weight_initer = args.weight_initer,
-                         sharedNet_type = args.sharedNet_type
+                         prcdState_dim = STATEDIM_DICT[args.model_type]
                          );
     main_logger.info ('Start compiling...')
     (g, sess, coordinator, global_network, workers, global_summary_writer, 

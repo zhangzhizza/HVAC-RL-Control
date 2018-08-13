@@ -1,0 +1,548 @@
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+Using TensorFlow backend.
+[2018-08-13 04:03:32,558] A3C_AGENT_MAIN INFO:Namespace(action_space='cslDxCool_1', activation='tanh/relu', agent_num=5, clip_norm=5.0, debug_log_prob=0.0005, decay_steps=1000000, dropout_prob=0.0, end_e=0.0, env='Model1-Cool-v1', eval_act_func='cslDxActCool_1', eval_epi_num=1, eval_freq=250000, forecast_dim=0, gamma=0.99, h_decay_bounds=[], h_regu_frac=[0.1], init_e=0.0, isNoisyNet=False, isNoisyNetEval_rmNoise=False, is_greedy_policy=False, is_learning_rate_decay_staircase=False, is_warm_start=False, job_mode='Train', learning_rate=0.001, learning_rate_decay_rate=0.96, learning_rate_decay_steps=100000, max_interactions=10000000, metric_func='cslDxCool_1', model_dir='None', model_param=[512, 2, 512, 2], model_type='lstm', num_threads=2, output='a3c-res-v0.1/Model1-Cool-v1-run1', p_loss_frac=1.0, raw_state_prcs_func='cslDx_1', reward_func='cslDxCool_1', rmsprop_decay=0.99, rmsprop_epsil=1e-10, rmsprop_momet=0.0, rwd_e_para=1.0, rwd_p_para=1.0, save_freq=500000, save_max_to_keep=5, save_scope='all', sharedNet_type='Dense', state_dim=49, test_env='Model1-Test-Cool-v1', test_mode='Multiple', train_act_func='cslDxActCool_1', train_freq=5, v_loss_frac=0.5, violation_penalty_scl=10.0, weight_initer='glorot_uniform', window_len=1)
+[2018-08-13 04:03:32,559] A3C_AGENT_MAIN INFO:Start compiling...
+2018-08-13 04:03:37.728635: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2
+[2018-08-13 04:03:38,995] A3C_AGENT_MAIN INFO:Start the learning...
+[2018-08-13 04:03:38,995] A3C_AGENT_MAIN INFO:Prepare the evaluation environments ['Model1-Cool-v1', 'Model1-Test-Cool-v1'] ...
+[2018-08-13 04:03:39,027] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2018-08-13 04:03:39,027] A3C_AGENT_WORKER-Thread-2 INFO:Local worker starts!
+[2018-08-13 04:03:39,073] EPLUS_ENV_Model1-Cool-v1_Thread-2_ROOT INFO:Creating EnergyPlus simulation environment...
+[2018-08-13 04:03:39,076] EPLUS_ENV_Model1-Cool-v1_Thread-2_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/rl_parametric_runs_v1/54/Eplus-env-Model1-Cool-v1-res2/Eplus-env-sub_run1
+[2018-08-13 04:03:40,029] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2018-08-13 04:03:40,030] A3C_AGENT_WORKER-Thread-3 INFO:Local worker starts!
+[2018-08-13 04:03:40,091] EPLUS_ENV_Model1-Cool-v1_Thread-3_ROOT INFO:Creating EnergyPlus simulation environment...
+[2018-08-13 04:03:40,094] EPLUS_ENV_Model1-Cool-v1_Thread-3_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/rl_parametric_runs_v1/54/Eplus-env-Model1-Cool-v1-res3/Eplus-env-sub_run1
+[2018-08-13 04:04:40,314] A3C_AGENT_WORKER-Thread-3 INFO:Evaluating...
+[2018-08-13 04:04:40,314] EPLUS_ENV_Model1-Cool-v1_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2018-08-13 04:04:40,317] EPLUS_ENV_Model1-Cool-v1_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/rl_parametric_runs_v1/54/Eplus-env-Model1-Cool-v1-res1/Eplus-env-sub_run1
+[2018-08-13 04:05:21,476] A3C_AGENT_WORKER-Thread-2 INFO:Evaluating...
+[2018-08-13 04:05:21,476] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 ERROR:Failed to peek at socket.: Success
+
+[2018-08-13 04:05:21,477] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:EnergyPlus Starting
+
+[2018-08-13 04:05:21,477] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.08.13 04:04
+
+[2018-08-13 04:05:21,477] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Processing Data Dictionary
+
+Exception in thread Thread-3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/a3c_v0_1/a3c.py", line 816, in <lambda>
+    raw_stateLimit_process_func, debug_log_prob, is_greedy_policy);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/a3c_v0_1/a3c.py", line 368, in train
+    debug_log_prob);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/a3c_v0_1/a3c_eval.py", line 319, in evaluate
+    action_raw_out = self._select_sto_action(ob_this_hist_prcd, local_logger, is_dbg_out);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/a3c_v0_1/a3c_eval.py", line 404, in _select_sto_action
+    self._global_network.keep_prob: 1.0})\
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 889, in run
+    run_metadata_ptr)
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1096, in _run
+    % (np_val.shape, subfeed_t.name, str(subfeed_t.get_shape())))
+ValueError: Cannot feed value of shape (1, 51) for Tensor 'global/state_pl:0', which has shape '(?, 1, 51)'
+
+[2018-08-13 04:05:21,477] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 ERROR:Error: The server closed the socket while the client was reading.
+
+[2018-08-13 04:05:21,477] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Processing Input File
+
+[2018-08-13 04:05:21,478] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Response Factors
+
+[2018-08-13 04:05:21,478] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "GROUNDFLOOR_ASHRAE901_2013_ZONE5", Construction # 1
+
+[2018-08-13 04:05:21,478] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "3", Construction # 2
+
+[2018-08-13 04:05:21,478] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "5", Construction # 4
+
+[2018-08-13 04:05:21,478] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "7", Construction # 6
+
+[2018-08-13 04:05:21,478] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "9", Construction # 7
+
+[2018-08-13 04:05:21,478] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "10", Construction # 8
+
+[2018-08-13 04:05:21,478] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "EXTWALL_LIGHT_ASHRAE901_2013_ZONE5", Construction # 9
+
+[2018-08-13 04:05:21,478] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "17", Construction # 10
+
+[2018-08-13 04:05:21,478] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "18", Construction # 11
+
+[2018-08-13 04:05:21,478] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2018-08-13 04:05:21,479] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2018-08-13 04:05:21,479] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2018-08-13 04:05:21,479] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "21", Construction # 13
+
+[2018-08-13 04:05:21,479] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "23", Construction # 15
+
+[2018-08-13 04:05:21,479] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "25", Construction # 17
+
+[2018-08-13 04:05:21,479] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "27", Construction # 18
+
+[2018-08-13 04:05:21,479] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "27", Construction # 18
+
+[2018-08-13 04:05:21,479] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "31", Construction # 19
+
+[2018-08-13 04:05:21,479] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "35", Construction # 21
+
+[2018-08-13 04:05:21,479] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "41", Construction # 22
+
+[2018-08-13 04:05:21,479] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "42", Construction # 23
+
+[2018-08-13 04:05:21,479] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-08-13 04:05:21,479] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-08-13 04:05:21,479] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-08-13 04:05:21,479] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-08-13 04:05:21,479] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-08-13 04:05:21,479] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-08-13 04:05:21,480] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-08-13 04:05:21,480] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-08-13 04:05:21,480] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "51", Construction # 27
+
+[2018-08-13 04:05:21,480] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "51", Construction # 27
+
+[2018-08-13 04:05:21,480] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "52", Construction # 28
+
+[2018-08-13 04:05:21,480] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "52", Construction # 28
+
+[2018-08-13 04:05:21,480] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-08-13 04:05:21,480] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-08-13 04:05:21,480] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-08-13 04:05:21,480] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-08-13 04:05:21,480] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-08-13 04:05:21,480] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-08-13 04:05:21,480] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-08-13 04:05:21,480] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-08-13 04:05:21,480] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-08-13 04:05:21,480] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-08-13 04:05:21,480] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-08-13 04:05:21,480] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "65", Construction # 31
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "ROOF_LIGHT_ASHRAE901_2013_ZONE5", Construction # 34
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "75", Construction # 35
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "83", Construction # 36
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "83", Construction # 36
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "83", Construction # 36
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "85", Construction # 38
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Window Optical Properties
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Solar Calculations
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Allocate Solar Module Arrays
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Zone Report Variables
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Surface (Shading) Report Variables
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Solar Absorption Factors
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Determining Shadowing Combinations
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Window Shade Absorption Factors
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Proceeding with Initializing Solar Calculations
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Surfaces
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Outdoor environment for Surfaces
+
+[2018-08-13 04:05:21,481] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Setting up Surface Reporting Variables
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Temperature and Flux Histories
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Window Shading
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Absorption Factors
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Diffuse Solar Absorption Factors
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Diffuse Solar Exchange through Interzone Windows
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Solar Heat Gains
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Internal Heat Gains
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Interior Solar Distribution
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Interior Convection Coefficients
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Gathering Information for Predefined Reporting
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Completed Initializing Surface Heat Balance
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculate Outside Surface Heat Balance
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculate Inside Surface Heat Balance
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculate Air Heat Balance
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing HVAC
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Performing Zone Sizing Simulation
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-08-13 04:05:21,482] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Performing Zone Sizing Simulation
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating System sizing
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating System sizing
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Simulation
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Reporting Surfaces
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Beginning Primary Simulation
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing New Environment Parameters
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {1}
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Instantiating Building Controls Virtual Test Bed
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:ExternalInterface initializes.
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Number of outputs in ExternalInterface = 49
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Number of inputs  in ExternalInterface = 1
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {2}
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {3}
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {4}
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {5}
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {6}
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Starting Simulation at 06/01 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:ExternalInterface starts first data exchange.
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:**FATAL:Error in ExternalInterface: Check EnergyPlus *.err file.
+
+[2018-08-13 04:05:21,483] EPLUS_ENV_Model1-Cool-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:EnergyPlus Run Time=00hr 00min 41.12sec
+
+[2018-08-13 04:05:22,477] EPLUS_ENV_Model1-Cool-v1_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2018-08-13 04:05:22,490] EPLUS_ENV_Model1-Cool-v1_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/rl_parametric_runs_v1/54/Eplus-env-Model1-Cool-v1-res1/Eplus-env-sub_run2
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/a3c_v0_1/a3c.py", line 816, in <lambda>
+    raw_stateLimit_process_func, debug_log_prob, is_greedy_policy);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/a3c_v0_1/a3c.py", line 368, in train
+    debug_log_prob);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/a3c_v0_1/a3c_eval.py", line 319, in evaluate
+    action_raw_out = self._select_sto_action(ob_this_hist_prcd, local_logger, is_dbg_out);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/a3c_v0_1/a3c_eval.py", line 404, in _select_sto_action
+    self._global_network.keep_prob: 1.0})\
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 889, in run
+    run_metadata_ptr)
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1096, in _run
+    % (np_val.shape, subfeed_t.name, str(subfeed_t.get_shape())))
+ValueError: Cannot feed value of shape (1, 51) for Tensor 'global/state_pl:0', which has shape '(?, 1, 51)'
+
+tanh/relu
+tanh/relu
+tanh/relu
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+Using TensorFlow backend.
+usage: a3c_eplus_rlParametric_v0.1.py [-h] [--env ENV] [-o OUTPUT]
+                                      [--max_interactions MAX_INTERACTIONS]
+                                      [--window_len WINDOW_LEN]
+                                      [--state_dim STATE_DIM]
+                                      [--forecast_len FORECAST_LEN]
+                                      [--gamma GAMMA]
+                                      [--v_loss_frac V_LOSS_FRAC]
+                                      [--p_loss_frac P_LOSS_FRAC]
+                                      [--h_regu_frac H_REGU_FRAC [H_REGU_FRAC ...]]
+                                      [--h_decay_bounds H_DECAY_BOUNDS [H_DECAY_BOUNDS ...]]
+                                      [--num_threads NUM_THREADS]
+                                      [--learning_rate LEARNING_RATE]
+                                      [--learning_rate_decay_rate LEARNING_RATE_DECAY_RATE]
+                                      [--learning_rate_decay_steps LEARNING_RATE_DECAY_STEPS]
+                                      [--is_learning_rate_decay_staircase IS_LEARNING_RATE_DECAY_STAIRCASE]
+                                      [--rmsprop_decay RMSPROP_DECAY]
+                                      [--rmsprop_momet RMSPROP_MOMET]
+                                      [--rmsprop_epsil RMSPROP_EPSIL]
+                                      [--clip_norm CLIP_NORM]
+                                      [--train_freq TRAIN_FREQ]
+                                      [--rwd_e_para RWD_E_PARA]
+                                      [--rwd_p_para RWD_P_PARA]
+                                      [--action_space ACTION_SPACE]
+                                      [--save_freq SAVE_FREQ]
+                                      [--save_max_to_keep SAVE_MAX_TO_KEEP]
+                                      [--save_scope SAVE_SCOPE]
+                                      [--eval_freq EVAL_FREQ]
+                                      [--eval_epi_num EVAL_EPI_NUM]
+                                      [--init_e INIT_E] [--end_e END_E]
+                                      [--decay_steps DECAY_STEPS]
+                                      [--dropout_prob DROPOUT_PROB]
+                                      [--is_warm_start IS_WARM_START]
+                                      [--model_dir MODEL_DIR]
+                                      [--job_mode JOB_MODE]
+                                      [--test_env TEST_ENV]
+                                      [--test_mode TEST_MODE]
+                                      [--agent_num AGENT_NUM]
+                                      [--debug_log_prob DEBUG_LOG_PROB]
+                                      [--is_greedy_policy IS_GREEDY_POLICY]
+                                      [--activation ACTIVATION]
+                                      [--model_type MODEL_TYPE]
+                                      [--model_param MODEL_PARAM [MODEL_PARAM ...]]
+                                      [--isNoisyNet ISNOISYNET]
+                                      [--isNoisyNetEval_rmNoise ISNOISYNETEVAL_RMNOISE]
+                                      [--weight_initer WEIGHT_INITER]
+                                      [--sharedNet_type SHAREDNET_TYPE]
+                                      [--violation_penalty_scl VIOLATION_PENALTY_SCL]
+                                      [--train_act_func TRAIN_ACT_FUNC]
+                                      [--eval_act_func EVAL_ACT_FUNC]
+                                      [--reward_func REWARD_FUNC]
+                                      [--metric_func METRIC_FUNC]
+                                      [--raw_state_prcs_func RAW_STATE_PRCS_FUNC]
+a3c_eplus_rlParametric_v0.1.py: error: unrecognized arguments: --forecast_dim 0
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+Using TensorFlow backend.
+[2018-08-13 05:22:39,148] A3C_AGENT_MAIN INFO:Namespace(action_space='cslDxCool_1', activation='tanh/relu', agent_num=5, clip_norm=5.0, debug_log_prob=0.0005, decay_steps=1000000, dropout_prob=0.0, end_e=0.0, env='Model1-Cool-v1', eval_act_func='cslDxActCool_1', eval_epi_num=1, eval_freq=250000, forecast_dim=0, gamma=0.99, h_decay_bounds=[], h_regu_frac=[0.1], init_e=0.0, isNoisyNet=False, isNoisyNetEval_rmNoise=False, is_greedy_policy=False, is_learning_rate_decay_staircase=False, is_warm_start=False, job_mode='Train', learning_rate=0.001, learning_rate_decay_rate=0.96, learning_rate_decay_steps=100000, max_interactions=10000000, metric_func='cslDxCool_1', model_dir='None', model_param=[512, 2, 512, 2], model_type='lstm', num_threads=2, output='a3c-res-v0.1/Model1-Cool-v1-run2', p_loss_frac=1.0, raw_state_prcs_func='cslDx_1', reward_func='cslDxCool_1', rmsprop_decay=0.99, rmsprop_epsil=1e-10, rmsprop_momet=0.0, rwd_e_para=1.0, rwd_p_para=1.0, save_freq=500000, save_max_to_keep=5, save_scope='all', sharedNet_type='Dense', state_dim=49, test_env='Model1-Test-Cool-v1', test_mode='Multiple', train_act_func='cslDxActCool_1', train_freq=5, v_loss_frac=0.5, violation_penalty_scl=10.0, weight_initer='glorot_uniform', window_len=3)
+Traceback (most recent call last):
+  File "../../a3c_eplus_rlParametric_v0.1.py", line 48, in <module>
+    main()
+  File "../../a3c_eplus_rlParametric_v0.1.py", line 44, in main
+    eval_action_limits, raw_state_process_func, raw_stateLimit_process_func);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/main_args.py", line 143, in effective_main
+    forecast_len = args.forecast_len;
+AttributeError: 'Namespace' object has no attribute 'forecast_len'
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+Using TensorFlow backend.
+[2018-08-13 05:22:55,640] A3C_AGENT_MAIN INFO:Namespace(action_space='cslDxCool_1', activation='tanh/relu', agent_num=5, clip_norm=5.0, debug_log_prob=0.0005, decay_steps=1000000, dropout_prob=0.0, end_e=0.0, env='Model1-Cool-v1', eval_act_func='cslDxActCool_1', eval_epi_num=1, eval_freq=250000, forecast_dim=0, gamma=0.99, h_decay_bounds=[], h_regu_frac=[0.1], init_e=0.0, isNoisyNet=False, isNoisyNetEval_rmNoise=False, is_greedy_policy=False, is_learning_rate_decay_staircase=False, is_warm_start=False, job_mode='Train', learning_rate=0.001, learning_rate_decay_rate=0.96, learning_rate_decay_steps=100000, max_interactions=10000000, metric_func='cslDxCool_1', model_dir='None', model_param=[512, 2, 512, 2], model_type='lstm', num_threads=2, output='a3c-res-v0.1/Model1-Cool-v1-run3', p_loss_frac=1.0, raw_state_prcs_func='cslDx_1', reward_func='cslDxCool_1', rmsprop_decay=0.99, rmsprop_epsil=1e-10, rmsprop_momet=0.0, rwd_e_para=1.0, rwd_p_para=1.0, save_freq=500000, save_max_to_keep=5, save_scope='all', sharedNet_type='Dense', state_dim=49, test_env='Model1-Test-Cool-v1', test_mode='Multiple', train_act_func='cslDxActCool_1', train_freq=5, v_loss_frac=0.5, violation_penalty_scl=10.0, weight_initer='glorot_uniform', window_len=3)
+Traceback (most recent call last):
+  File "../../a3c_eplus_rlParametric_v0.1.py", line 48, in <module>
+    main()
+  File "../../a3c_eplus_rlParametric_v0.1.py", line 44, in main
+    eval_action_limits, raw_state_process_func, raw_stateLimit_process_func);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/main_args.py", line 143, in effective_main
+    forecast_len = args.forecast_len;
+AttributeError: 'Namespace' object has no attribute 'forecast_len'
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+Using TensorFlow backend.
+[2018-08-13 05:23:19,068] A3C_AGENT_MAIN INFO:Namespace(action_space='cslDxCool_1', activation='tanh/relu', agent_num=5, clip_norm=5.0, debug_log_prob=0.0005, decay_steps=1000000, dropout_prob=0.0, end_e=0.0, env='Model1-Cool-v1', eval_act_func='cslDxActCool_1', eval_epi_num=1, eval_freq=250000, forecast_dim=0, gamma=0.99, h_decay_bounds=[], h_regu_frac=[0.1], init_e=0.0, isNoisyNet=False, isNoisyNetEval_rmNoise=False, is_greedy_policy=False, is_learning_rate_decay_staircase=False, is_warm_start=False, job_mode='Train', learning_rate=0.001, learning_rate_decay_rate=0.96, learning_rate_decay_steps=100000, max_interactions=10000000, metric_func='cslDxCool_1', model_dir='None', model_param=[512, 2, 512, 2], model_type='lstm', num_threads=2, output='a3c-res-v0.1/Model1-Cool-v1-run4', p_loss_frac=1.0, raw_state_prcs_func='cslDx_1', reward_func='cslDxCool_1', rmsprop_decay=0.99, rmsprop_epsil=1e-10, rmsprop_momet=0.0, rwd_e_para=1.0, rwd_p_para=1.0, save_freq=500000, save_max_to_keep=5, save_scope='all', sharedNet_type='Dense', state_dim=49, test_env='Model1-Test-Cool-v1', test_mode='Multiple', train_act_func='cslDxActCool_1', train_freq=5, v_loss_frac=0.5, violation_penalty_scl=10.0, weight_initer='glorot_uniform', window_len=3)
+Traceback (most recent call last):
+  File "../../a3c_eplus_rlParametric_v0.1.py", line 48, in <module>
+    main()
+  File "../../a3c_eplus_rlParametric_v0.1.py", line 44, in main
+    eval_action_limits, raw_state_process_func, raw_stateLimit_process_func);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/main_args.py", line 144, in effective_main
+    a3c_agent = A3CAgent(forecast_len = forecast_dim, stateOneStep_len = stateOneStep_len, 
+NameError: name 'forecast_dim' is not defined
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+Using TensorFlow backend.
+[2018-08-13 05:24:01,266] A3C_AGENT_MAIN INFO:Namespace(action_space='cslDxCool_1', activation='tanh/relu', agent_num=5, clip_norm=5.0, debug_log_prob=0.0005, decay_steps=1000000, dropout_prob=0.0, end_e=0.0, env='Model1-Cool-v1', eval_act_func='cslDxActCool_1', eval_epi_num=1, eval_freq=250000, forecast_dim=0, gamma=0.99, h_decay_bounds=[], h_regu_frac=[0.1], init_e=0.0, isNoisyNet=False, isNoisyNetEval_rmNoise=False, is_greedy_policy=False, is_learning_rate_decay_staircase=False, is_warm_start=False, job_mode='Train', learning_rate=0.001, learning_rate_decay_rate=0.96, learning_rate_decay_steps=100000, max_interactions=10000000, metric_func='cslDxCool_1', model_dir='None', model_param=[512, 2, 512, 2], model_type='lstm', num_threads=2, output='a3c-res-v0.1/Model1-Cool-v1-run5', p_loss_frac=1.0, raw_state_prcs_func='cslDx_1', reward_func='cslDxCool_1', rmsprop_decay=0.99, rmsprop_epsil=1e-10, rmsprop_momet=0.0, rwd_e_para=1.0, rwd_p_para=1.0, save_freq=500000, save_max_to_keep=5, save_scope='all', sharedNet_type='Dense', state_dim=49, test_env='Model1-Test-Cool-v1', test_mode='Multiple', train_act_func='cslDxActCool_1', train_freq=5, v_loss_frac=0.5, violation_penalty_scl=10.0, weight_initer='glorot_uniform', window_len=3)
+Traceback (most recent call last):
+  File "../../a3c_eplus_rlParametric_v0.1.py", line 48, in <module>
+    main()
+  File "../../a3c_eplus_rlParametric_v0.1.py", line 44, in main
+    eval_action_limits, raw_state_process_func, raw_stateLimit_process_func);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/main_args.py", line 144, in effective_main
+    a3c_agent = A3CAgent(forecast_len = forecast_dim, stateOneStep_len = stateOneStep_len, 
+NameError: name 'forecast_dim' is not defined
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+Using TensorFlow backend.
+[2018-08-13 05:24:14,582] A3C_AGENT_MAIN INFO:Namespace(action_space='cslDxCool_1', activation='tanh/relu', agent_num=5, clip_norm=5.0, debug_log_prob=0.0005, decay_steps=1000000, dropout_prob=0.0, end_e=0.0, env='Model1-Cool-v1', eval_act_func='cslDxActCool_1', eval_epi_num=1, eval_freq=250000, forecast_dim=0, gamma=0.99, h_decay_bounds=[], h_regu_frac=[0.1], init_e=0.0, isNoisyNet=False, isNoisyNetEval_rmNoise=False, is_greedy_policy=False, is_learning_rate_decay_staircase=False, is_warm_start=False, job_mode='Train', learning_rate=0.001, learning_rate_decay_rate=0.96, learning_rate_decay_steps=100000, max_interactions=10000000, metric_func='cslDxCool_1', model_dir='None', model_param=[512, 2, 512, 2], model_type='lstm', num_threads=2, output='a3c-res-v0.1/Model1-Cool-v1-run6', p_loss_frac=1.0, raw_state_prcs_func='cslDx_1', reward_func='cslDxCool_1', rmsprop_decay=0.99, rmsprop_epsil=1e-10, rmsprop_momet=0.0, rwd_e_para=1.0, rwd_p_para=1.0, save_freq=500000, save_max_to_keep=5, save_scope='all', sharedNet_type='Dense', state_dim=49, test_env='Model1-Test-Cool-v1', test_mode='Multiple', train_act_func='cslDxActCool_1', train_freq=5, v_loss_frac=0.5, violation_penalty_scl=10.0, weight_initer='glorot_uniform', window_len=3)
+[2018-08-13 05:24:14,582] A3C_AGENT_MAIN INFO:Start compiling...
+2018-08-13 05:24:19.699590: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2
+[2018-08-13 05:24:20,922] A3C_AGENT_MAIN INFO:Start the learning...
+[2018-08-13 05:24:20,922] A3C_AGENT_MAIN INFO:Prepare the evaluation environments ['Model1-Cool-v1', 'Model1-Test-Cool-v1'] ...
+tanh/relu
+tanh/relu
+tanh/relu
+Traceback (most recent call last):
+  File "../../a3c_eplus_rlParametric_v0.1.py", line 48, in <module>
+    main()
+  File "../../a3c_eplus_rlParametric_v0.1.py", line 44, in main
+    eval_action_limits, raw_state_process_func, raw_stateLimit_process_func);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/main_args.py", line 181, in effective_main
+    args.debug_log_prob, args.is_greedy_policy);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/a3c_v0_1/a3c.py", line 799, in fit
+    self._window_len, self._forecast_dim, e_weight, p_weight, 
+AttributeError: 'A3CAgent' object has no attribute '_forecast_dim'
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+Using TensorFlow backend.
+[2018-08-13 05:25:31,573] A3C_AGENT_MAIN INFO:Namespace(action_space='cslDxCool_1', activation='tanh/relu', agent_num=5, clip_norm=5.0, debug_log_prob=0.0005, decay_steps=1000000, dropout_prob=0.0, end_e=0.0, env='Model1-Cool-v1', eval_act_func='cslDxActCool_1', eval_epi_num=1, eval_freq=250000, forecast_dim=0, gamma=0.99, h_decay_bounds=[], h_regu_frac=[0.1], init_e=0.0, isNoisyNet=False, isNoisyNetEval_rmNoise=False, is_greedy_policy=False, is_learning_rate_decay_staircase=False, is_warm_start=False, job_mode='Train', learning_rate=0.001, learning_rate_decay_rate=0.96, learning_rate_decay_steps=100000, max_interactions=10000000, metric_func='cslDxCool_1', model_dir='None', model_param=[512, 2, 512, 2], model_type='lstm', num_threads=2, output='a3c-res-v0.1/Model1-Cool-v1-run7', p_loss_frac=1.0, raw_state_prcs_func='cslDx_1', reward_func='cslDxCool_1', rmsprop_decay=0.99, rmsprop_epsil=1e-10, rmsprop_momet=0.0, rwd_e_para=1.0, rwd_p_para=1.0, save_freq=500000, save_max_to_keep=5, save_scope='all', sharedNet_type='Dense', state_dim=49, test_env='Model1-Test-Cool-v1', test_mode='Multiple', train_act_func='cslDxActCool_1', train_freq=5, v_loss_frac=0.5, violation_penalty_scl=10.0, weight_initer='glorot_uniform', window_len=3)
+[2018-08-13 05:25:31,573] A3C_AGENT_MAIN INFO:Start compiling...
+2018-08-13 05:25:36.605310: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2
+[2018-08-13 05:25:37,849] A3C_AGENT_MAIN INFO:Start the learning...
+[2018-08-13 05:25:37,850] A3C_AGENT_MAIN INFO:Prepare the evaluation environments ['Model1-Cool-v1', 'Model1-Test-Cool-v1'] ...
+[2018-08-13 05:25:37,874] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2018-08-13 05:25:37,875] A3C_AGENT_WORKER-Thread-2 INFO:Local worker starts!
+[2018-08-13 05:25:37,915] EPLUS_ENV_Model1-Cool-v1_Thread-2_ROOT INFO:Creating EnergyPlus simulation environment...
+[2018-08-13 05:25:37,917] EPLUS_ENV_Model1-Cool-v1_Thread-2_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/rl_parametric_runs_v1/54/Eplus-env-Model1-Cool-v1-res6/Eplus-env-sub_run1
+[2018-08-13 05:25:38,877] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2018-08-13 05:25:38,878] A3C_AGENT_WORKER-Thread-3 INFO:Local worker starts!
+[2018-08-13 05:25:38,920] EPLUS_ENV_Model1-Cool-v1_Thread-3_ROOT INFO:Creating EnergyPlus simulation environment...
+[2018-08-13 05:25:38,924] EPLUS_ENV_Model1-Cool-v1_Thread-3_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/rl_parametric_runs_v1/54/Eplus-env-Model1-Cool-v1-res7/Eplus-env-sub_run1
+[2018-08-13 05:26:46,163] A3C_AGENT_WORKER-Thread-3 INFO:Evaluating...
+[2018-08-13 05:26:46,164] EPLUS_ENV_Model1-Cool-v1_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2018-08-13 05:26:46,168] EPLUS_ENV_Model1-Cool-v1_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/rl_parametric_runs_v1/54/Eplus-env-Model1-Cool-v1-res5/Eplus-env-sub_run1
+[2018-08-13 05:29:20,938] A3C_AGENT_WORKER-Thread-3 DEBUG:NoisyNet noise sample: None
+[2018-08-13 05:29:20,938] A3C_AGENT_WORKER-Thread-3 DEBUG:Observation this: [16.66666666666666, 59.0, 158.8333333333333, 5.999999999999998, 21.52930126415338, 21.78133362756999, 21.19680495182152, 20.86083697406469, 21.6785645434462, 21.38190049230241, 20.59417422715542, 20.98240709926959, 21.06181075444911, 21.43805649991941, 22.38539890918343, 20.75355025230635, 21.09408301174454, 21.13476384593807, 21.11536613235028, 21.43256242681734, 21.5223430081159, 21.66855540727291, 20.87015195888712, 20.55356781399555, 21.11477507838258, 20.99306034039725, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 2957.235690093713]
+[2018-08-13 05:29:20,938] A3C_AGENT_WORKER-Thread-3 DEBUG:Observation forecast: []
+[2018-08-13 05:29:20,946] A3C_AGENT_WORKER-Thread-3 INFO:Softmax [0.03994617 0.04028484 0.03966906 0.03992108 0.04027958 0.03981197
+ 0.03944392 0.04034138 0.04039271 0.03956959 0.04017109 0.03994936
+ 0.0405927  0.04004269 0.04013719 0.03985806 0.03978213 0.04057885
+ 0.03969577 0.0404641  0.03947088 0.03986728 0.03936506 0.04012717
+ 0.04023738], sampled 0.7651354298598315
+[2018-08-13 05:33:21,137] A3C_AGENT_WORKER-Thread-3 DEBUG:NoisyNet noise sample: None
+[2018-08-13 05:33:21,137] A3C_AGENT_WORKER-Thread-3 DEBUG:Observation this: [18.9, 86.75, 210.8333333333333, 95.08333333333334, 21.90649229013667, 22.21263388638968, 21.45849963202891, 21.46933448787761, 22.47216063847748, 21.81762559760757, 21.23688864458321, 21.6615383128403, 21.68690617547568, 21.96455861908981, 22.70290804932413, 21.39240098538092, 21.85500494888515, 21.91443286555436, 21.86591514560363, 22.93862586061764, 22.24925093543909, 22.59850050575621, 21.37869373013634, 20.9688393549246, 21.8590502230855, 21.62357587327602, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 6251.577449059154]
+[2018-08-13 05:33:21,137] A3C_AGENT_WORKER-Thread-3 DEBUG:Observation forecast: []
+[2018-08-13 05:33:21,144] A3C_AGENT_WORKER-Thread-3 INFO:Softmax [0.03998038 0.0403178  0.03967779 0.04002329 0.04032843 0.03982578
+ 0.03935847 0.04034907 0.04038935 0.03950709 0.04024237 0.03988168
+ 0.04053554 0.04006434 0.04017475 0.0397417  0.0397545  0.04069487
+ 0.03972512 0.04047468 0.0394153  0.03991612 0.0393287  0.04006261
+ 0.04023024], sampled 0.6330406321253743
+[2018-08-13 05:34:12,684] A3C_AGENT_WORKER-Thread-3 INFO:Evaluation: average rewards by now are 20019.1949 29938.1902 162.8333
+[2018-08-13 05:34:12,684] EPLUS_ENV_Model1-Test-Cool-v1_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2018-08-13 05:34:12,687] EPLUS_ENV_Model1-Test-Cool-v1_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/rl_parametric_runs_v1/54/Eplus-env-Model1-Test-Cool-v1-res2/Eplus-env-sub_run1
+[2018-08-13 05:45:18,770] A3C_AGENT_WORKER-Thread-3 INFO:Evaluation: average rewards by now are 18244.0442 35184.9802 885.2500
+[2018-08-13 05:45:18,772] A3C_AGENT_WORKER-Thread-3 INFO:Global step: 0, evaluation results [0.0, 20019.194883098153, 29938.190239749485, 162.8333333333334, 18244.04417396952, 35184.98024707836, 885.2500000000044]
+[2018-08-13 05:45:41,201] A3C_AGENT_WORKER-Thread-2 INFO:Local step 500, global step 997: loss 22.5098
+[2018-08-13 05:45:41,237] A3C_AGENT_WORKER-Thread-2 DEBUG:Local step 500, global step 997: learning rate 0.0010
+[2018-08-13 05:45:41,376] A3C_AGENT_WORKER-Thread-3 INFO:Local step 500, global step 1004: loss 13.8615
+[2018-08-13 05:45:41,378] A3C_AGENT_WORKER-Thread-3 DEBUG:Local step 500, global step 1004: learning rate 0.0010
+[2018-08-13 05:45:41,969] A3C_AGENT_WORKER-Thread-3 DEBUG:Policy network output: [0.05058018 0.03082062 0.04230777 0.0335405  0.04342961 0.03394083
+ 0.04220351 0.04377544 0.04169406 0.03258157 0.04383146 0.04257037
+ 0.04959007 0.04834178 0.03474754 0.03423991 0.04052004 0.04465529
+ 0.03867451 0.03644026 0.0372889  0.03298409 0.04009266 0.03616416
+ 0.04498493], sum to 1.0000
+[2018-08-13 05:45:41,969] A3C_AGENT_WORKER-Thread-3 DEBUG:Softmax action selection sampled number: 0.8092
+[2018-08-13 05:45:42,027] A3C_AGENT_WORKER-Thread-3 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.1000, 
+Environment debug: raw action idx is 20, 
+current raw observation is [20.5, 45.25, 70.0, 77.0, 23.99987817034654, 24.0026364279166, 22.98171057242358, 24.00055962568162, 24.004547988932, 24.0015865927835, 24.00049000862546, 24.0015837171555, 24.00163806974624, 24.19809958812113, 24.13423680884511, 23.96232527491297, 24.10487858956377, 24.07278099908913, 24.13371455018353, 24.14866694539404, 24.36269595934497, 24.54198032665897, 24.02564368153106, 23.82857935161407, 24.13291844975986, 24.02185062564613, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 27494.96702656255], 
+current ob forecast is [], 
+actual action is [22.0], 
+sim time this is 153900.0000, 
+sim time next is 154200.0000, 
+raw observation next is [20.33333333333334, 45.5, 63.00000000000001, 70.00000000000001, 24.00002741549776, 23.99988125381905, 22.89187379533384, 24.00029502167684, 23.99936772020364, 24.00010304074183, 24.00020594908639, 24.00028068606787, 24.00023463457611, 24.01204781422241, 24.00294454297328, 23.98868347148787, 24.0040175004605, 24.00415108436124, 24.00383767895458, 24.00699383221288, 24.06741729258703, 24.1345324365339, 24.00159452412061, 24.00114134928888, 24.00372157096243, 24.00151814368593, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 15448.00195342918], 
+processed observation next is [1.0, 0.782608695652174, 0.5606060606060609, 0.455, 0.11580882352941178, 0.07954545454545456, 0.6000027415497762, 0.5999881253819052, 0.489187379533384, 0.6000295021676841, 0.599936772020364, 0.6000103040741831, 0.6000205949086389, 0.6000280686067871, 0.6000234634576109, 0.601204781422241, 0.6002944542973282, 0.5988683471487871, 0.6004017500460499, 0.600415108436124, 0.6003837678954579, 0.6006993832212881, 0.6067417292587031, 0.6134532436533899, 0.6001594524120609, 0.6001141349288879, 0.600372157096243, 0.6001518143685931, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.25746669922381965], 
+reward next is 0.6080, 
+noisyNet noise sample is None. 
+=============================================
+[2018-08-13 05:46:02,489] A3C_AGENT_WORKER-Thread-3 INFO:Local step 1000, global step 1998: loss 6.7062
+[2018-08-13 05:46:02,490] A3C_AGENT_WORKER-Thread-3 DEBUG:Local step 1000, global step 1998: learning rate 0.0010
+[2018-08-13 05:46:02,599] A3C_AGENT_WORKER-Thread-2 INFO:Local step 1000, global step 2003: loss 8.4845
+[2018-08-13 05:46:02,601] A3C_AGENT_WORKER-Thread-2 DEBUG:Local step 1000, global step 2003: learning rate 0.0010

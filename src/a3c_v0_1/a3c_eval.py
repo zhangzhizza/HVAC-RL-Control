@@ -205,7 +205,7 @@ class A3CEval_multiagent:
 class A3CEval:
     def __init__(self, sess, global_network, env, num_episodes, window_len, 
                  forecast_len, e_weight, p_weight, raw_stateLimit_process_func,
-                 noisyNet = False, noisyNet_rmNoise = True):
+                 noisyNet = False, noisyNet_rmNoise = True, prcdState_dim = 1):
         """
         This is the class for evaluation under the single-zone control mode. 
 
@@ -235,7 +235,7 @@ class A3CEval:
         #print (sess.run(global_collection[0]));
         self._env = env;
         self._num_episodes = num_episodes;
-        self._histProcessor = HistoryPreprocessor(window_len, forecast_len);
+        self._histProcessor = HistoryPreprocessor(window_len, forecast_len, prcdState_dim);
         # Prepare env-related information
         self._env_st_yr = env.start_year;
         self._env_st_mn = env.start_mon;
