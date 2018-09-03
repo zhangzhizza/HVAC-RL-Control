@@ -2,48 +2,26 @@ import numpy as np
 import tensorflow as tf
 import keras.backend as K
 from keras.layers import (Activation, Dense, Flatten, Input,
-                          Permute)
+                          Permute, LSTM)
 from keras.models import Model
 from copy import deepcopy
 
 from a3c_v0_1.objectives import a3c_loss
 from a3c_v0_1.layers import NoisyDense
 
-class A3C_Network_NN:
-    """
-    The class that creates the policy and value network for the A3C. 
-    """
-    
-    def __init__(self, graph, scope_name, state_dim, action_size, 
-                 activation = 'relu', model_param = [512, 4], noisy_layer = False,
-                 kernel_initializer = 'glorot_uniform'):
-        """
-        Constructor.
-        
-        Args:
-            graph: tf.Graph
-                The computation graph.
-            scope_name: String
-                The name of the scope.
-            state_dim, action_size: int
-                The number of the state dimension and number of action choices. 
-        """
+
+class A3C_Network_Model:
+
+    def __init__(self, graph, scope_name, state_len_oneStep, forecast_len, window_len, 
+                 action_size, activation = 'relu', model_param = [512, 4], 
+                 noisy_layer = False, kernel_initializer = 'glorot_uniform'):
+
         self._activation = activation;
         self._model_param = model_param;
         self._graph = graph;
         self._noisy_layer = noisy_layer;
         self._kernel_initializer = kernel_initializer;
-        with graph.as_default(), tf.name_scope(scope_name):
-            # Generate placeholder for state
-            self._state_placeholder = tf.placeholder(tf.float32,
-                                                     shape=(None, 
-                                                            state_dim),
-                                                     name='state_pl');
-            self._keep_prob = tf.placeholder(tf.float32, name='keep_prob');
-            # Build the operations that computes predictions from the nn model.
-            self._policy_pred, self._v_pred, self._shared_layer= \
-                self._create_model(self._state_placeholder, self._keep_prob, action_size, self._noisy_layer);
-            
+
     @property
     def state_placeholder(self):
         return self._state_placeholder;
@@ -75,10 +53,44 @@ class A3C_Network_NN:
     @property
     def value_network_finalLayer(self):
         return self._value_network_finalLayer
+
+
+
+class A3C_Network_NN(A3C_Network_Model):
+    """
+    The class that creates the policy and value network for the A3C. 
+    """
     
+    def __init__(self, graph, scope_name, state_len_oneStep, forecast_len, window_len, 
+                 action_size, activation = 'relu', model_param = [512, 4], 
+                 noisy_layer = False, kernel_initializer = 'glorot_uniform'):
+        """
+        Constructor.
+        
+        Args:
+            graph: tf.Graph
+                The computation graph.
+            scope_name: String
+                The name of the scope.
+            state_dim, action_size: int
+                The number of the state dimension and number of action choices. 
+        """
+        super().__init__(graph, scope_name, state_len_oneStep, forecast_len, window_len, 
+                         action_size, activation, model_param, noisy_layer, kernel_initializer);
+        # State dimension
+        state_shape = (None, state_len_oneStep * window_len + forecast_len);
+        # Build network
+        with graph.as_default(), tf.name_scope(scope_name):
+            # Generate placeholder for state
+            self._state_placeholder = tf.placeholder(tf.float32,
+                                                     shape=state_shape,
+                                                     name='state_pl');
+            self._keep_prob = tf.placeholder(tf.float32, name='keep_prob');
+            # Build the operations that computes predictions from the nn model.
+            self._policy_pred, self._v_pred, self._shared_layer= \
+                self._create_model(self._state_placeholder, self._keep_prob, action_size, self._noisy_layer);
     
-    
-    def _create_model(self, input_state, keep_prob, num_actions, noisy_layer): 
+    def _create_model(self, input_state, keep_prob, num_actions, is_noisy_layer): 
         """
         Create the model for the policy network and value network.
         The policy network and the value network share the model for feature
@@ -105,23 +117,144 @@ class A3C_Network_NN:
             for layer_i in range(self._model_param[1]):
                 layer = Dense(self._model_param[0], activation = self._activation, 
                               kernel_initializer = self._kernel_initializer)(layer);
-        # Choose from Dense or NoisyDense
-        if noisy_layer:
+
+        # Build non-shard layers: policy net and value net
+        policyValueNetworkBuilder = PolicyValueNetwork(self._kernel_initializer, is_noisy_layer);
+        self._policy_network_finalLayer = policyValueNetworkBuilder.policy_network_finalLayer;
+        self._value_network_finalLayer = policyValueNetworkBuilder.value_network_finalLayer;
+
+        policy, value = policyValueNetworkBuilder.getNetwork(layer);
+        
+        return (policy, value, layer);
+
+
+class A3C_Network_LSTM(A3C_Network_Model):
+    """
+    The class that creates the policy and value network for the A3C. 
+    """
+    
+    def __init__(self, graph, scope_name, state_len_oneStep, forecast_len, window_len, 
+                 action_size, activation = 'tanh/relu', model_param = [512, 2, 512, 2], 
+                 noisy_layer = False, kernel_initializer = 'glorot_uniform'):
+        """
+        Constructor.
+        
+        Args:
+            graph: tf.Graph
+                The computation graph.
+            scope_name: String
+                The name of the scope.
+            state_dim, action_size: int
+                The number of the state dimension and number of action choices. 
+            model_param: python list
+                [LSTM width, LSTM length, Dense width, Dense length]
+        """
+        super().__init__(graph, scope_name, state_len_oneStep, forecast_len, window_len, 
+                         action_size, activation, model_param, noisy_layer, kernel_initializer);
+        # State dimension
+        # State dimension
+        state_shape = (None, window_len, state_len_oneStep + forecast_len);
+        # Build network
+        with graph.as_default(), tf.name_scope(scope_name):
+            # Generate placeholder for state
+            self._state_placeholder = tf.placeholder(tf.float32,
+                                                     shape=state_shape,
+                                                     name='state_pl');
+            self._keep_prob = tf.placeholder(tf.float32, name='keep_prob');
+            # Build the operations that computes predictions from the nn model.
+            self._policy_pred, self._v_pred, self._shared_layer= \
+                self._create_model(self._state_placeholder, self._keep_prob, action_size, self._noisy_layer);
+    
+    def _create_model(self, input_state, keep_prob, num_actions, is_noisy_layer): 
+        """
+        Create the model for the policy network and value network.
+        The policy network and the value network share the model for feature
+        extraction from the raw state, and then the policy network uses a 
+        softmax layer to provide the probablity of taking each action, and the 
+        value network uses a linear layer to provide a scalar for the value. 
+        
+        Args:
+            input_state: tf tensor or placeholder.
+                Represent the input to the network, which is the state observation.
+            keep_prob: tf tensor or placeholder.
+                The 1 - dropout probability.
+            num_actions: int.
+                Number of actions.
+        
+        Return: (tf tensor, tf tensor)
+            The policy and the value for the state. 
+            
+        """
+        # Build shared layers
+        print (self._activation)
+        activations = self._activation.split('/')
+        with tf.name_scope('shared_layers'):
+            # Dropout layer for the first relu layer.
+            layer = tf.nn.dropout(input_state, keep_prob);
+            # LSTM layers
+            for lstm_layer_i in range(self._model_param[1]):
+                if lstm_layer_i < self._model_param[1] - 1:
+                    is_return_sequences = True;
+                else:
+                    is_return_sequences = False;
+                layer = LSTM(self._model_param[0], activation = activations[0], 
+                              kernel_initializer = self._kernel_initializer, 
+                              return_sequences = is_return_sequences)(layer);
+            # Dense layers
+            for dense_layer_i in range(self._model_param[3]):
+                layer = Dense(self._model_param[2], activation = activations[1], 
+                              kernel_initializer = self._kernel_initializer)(layer);
+
+        # Build non-shard layers: policy net and value net
+        policyValueNetworkBuilder = PolicyValueNetwork(self._kernel_initializer, is_noisy_layer, num_actions);
+        self._policy_network_finalLayer = policyValueNetworkBuilder.policy_network_finalLayer;
+        self._value_network_finalLayer = policyValueNetworkBuilder.value_network_finalLayer;
+
+        policy, value = policyValueNetworkBuilder.getNetwork(layer);
+        
+        return (policy, value, layer);
+
+
+class PolicyValueNetwork:
+
+    def __init__(self, kernel_initializer, isNoisyLayer, num_actions):
+
+        # Build the final layer
+        if isNoisyLayer:
             finalLayer = NoisyDense;
         else:
             finalLayer = Dense;
+
+        self._policy_network_finalLayer = finalLayer(num_actions, 
+                                                     kernel_initializer = kernel_initializer,   
+                                                     activation = 'softmax')
+        self._value_network_finalLayer = finalLayer(1, 
+                                                    kernel_initializer = kernel_initializer);
+
+
+    def getNetwork(self, input):
+
         # Build policy and value network
         with tf.name_scope('policy_network'):
-            self._policy_network_finalLayer = finalLayer(num_actions, 
-                                                         kernel_initializer = self._kernel_initializer,   
-                                                         activation = 'softmax')
-            policy = self._policy_network_finalLayer(layer);
+            policy = self._policy_network_finalLayer(input);
         with tf.name_scope('value_network'):
-            self._value_network_finalLayer = finalLayer(1, 
-                                                        kernel_initializer = self._kernel_initializer);
-            value = self._value_network_finalLayer(layer);
+            
+            value = self._value_network_finalLayer(input);
 
-        return (policy, value, layer);
+        return (policy, value);
+
+    @property
+    def policy_network_finalLayer(self):
+        return self._policy_network_finalLayer
+
+    @property
+    def value_network_finalLayer(self):
+        return self._value_network_finalLayer
+    
+    
+
+
+
 
 
     """

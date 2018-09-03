@@ -31,11 +31,11 @@ class A3CThread:
     The thread worker of the A3C algorithm. 
     """
     
-    def __init__(self, graph, scope_name, global_name, effec_state_dim, forecast_dim, 
+    def __init__(self, graph, scope_name, global_name, stateOneStepWithTime_dim, forecast_len, 
                 action_size, vloss_frac, ploss_frac, hregu_frac, hregu_decay_bounds, shared_optimizer,
                  clip_norm, global_train_step, window_len, init_epsilon, end_epsilon, decay_steps, 
                  global_counter, activation, model_type, model_param, learning_rate, noisyNet = False,
-                 weight_initer = 'glorot_uniform'):
+                 weight_initer = 'glorot_uniform', prcdState_dim = 1):
         """
         Constructor.
         
@@ -81,9 +81,8 @@ class A3CThread:
         ###########################################
         ### Create the policy and value network ###
         ###########################################
-        network_state_dim = effec_state_dim;
-        self._a3c_network = model_type(graph, scope_name, network_state_dim, action_size, 
-                                       activation, model_param, noisyNet, weight_initer);
+        self._a3c_network = model_type(graph, scope_name, stateOneStepWithTime_dim, forecast_len, window_len, 
+                                       action_size, activation, model_param, noisyNet, weight_initer);
         self._policy_pred = self._a3c_network.policy_pred;
         self._value_pred = self._a3c_network.value_pred;
         self._state_placeholder = self._a3c_network.state_placeholder;
@@ -158,10 +157,10 @@ class A3CThread:
                                                                global_name);
         
         #####################################################
-        self._forecast_dim = forecast_dim;
-        self._network_state_dim = network_state_dim;
+        self._forecast_len = forecast_len;
+        self._stateOneStepWithTime_dim = stateOneStepWithTime_dim;
         self._window_len = window_len;
-        self._histProcessor = HistoryPreprocessor(window_len, forecast_dim);
+        self._histProcessor = HistoryPreprocessor(window_len, forecast_len, prcdState_dim);
         self._scope_name = scope_name;
         self._graph = graph;
         self._grad_norms = grad_norms;
@@ -256,6 +255,7 @@ class A3CThread:
         # Get the history stacked state
         ob_this_hist_prcd = self._histProcessor.\
                             process_state_for_network(ob_this_prcd) # 2-D array
+        stateOneStep_dim = ob_this_hist_prcd.shape;
 
         while not coordinator.should_stop():
             sess.run(self._local_net_update);
@@ -409,7 +409,7 @@ class A3CThread:
             traj_len = len(trajectory_list);
             act_idx_list = np.zeros(traj_len, dtype = np.uint8);
             q_true_list = np.zeros((traj_len, 1));
-            state_list = np.zeros((traj_len, self._network_state_dim));
+            state_list = np.zeros((traj_len,) + stateOneStep_dim[1: ]);
             for i in range(traj_len):
                 traj_i_from_last = trajectory_list[traj_len - i - 1]; #(s_t, a_t, r_t);
                 R = gamma * R + traj_i_from_last[2];
@@ -556,8 +556,8 @@ class A3CAgent:
 
     """
     def __init__(self,
-                 forecast_dim,
-                 state_dim,
+                 forecast_len,
+                 stateOneStep_len,
                  window_len,
                  vloss_frac, 
                  ploss_frac, 
@@ -581,12 +581,12 @@ class A3CAgent:
                  model_param,
                  noisyNet,
                  noisyNetEval_rmNoise,
-                 weight_initer):
-        self._forecast_dim = forecast_dim;
-        state_dim += TIME_DIM; # Add time info dimension
-        self._state_dim = state_dim;
+                 weight_initer,
+                 prcdState_dim):
+        self._forecast_len = forecast_len;
+        stateOneStepWithTime_len = stateOneStep_len + TIME_DIM; # Add time info dimension
+        self._stateOneStepWithTime_len = stateOneStepWithTime_len;
         self._window_len = window_len;
-        self._effec_state_dim = state_dim * window_len + forecast_dim;
         self._action_size = len(ACTION_MAP[action_space_name]);
         self._vloss_frac = vloss_frac;
         self._ploss_frac = ploss_frac;
@@ -611,6 +611,7 @@ class A3CAgent:
         self._noisyNet = noisyNet;
         self._noisyNetEval_rmNoise = noisyNetEval_rmNoise;
         self._weight_initer = weight_initer;
+        self._prcdState_dim = prcdState_dim;
         
     def compile(self, is_warm_start, model_dir, save_scope = 'global', save_max_to_keep = 5):
         """
@@ -631,9 +632,9 @@ class A3CAgent:
         """
         g = tf.Graph();
         # Create the global network
-        global_network = self._model_type(g, 'global', self._effec_state_dim, self._action_size, 
-                                          self._activation, self._model_param, self._noisyNet,
-                                          self._weight_initer);
+        global_network = self._model_type(g, 'global', self._stateOneStepWithTime_len, self._forecast_len, 
+                                          self._window_len, self._action_size, self._activation, self._model_param, 
+                                          self._noisyNet, self._weight_initer);
         with g.as_default():
             # Create a global train step variable to record global steps
             global_train_step = tf.Variable(0, name='global_train_step', trainable=False);
@@ -655,12 +656,12 @@ class A3CAgent:
             
         # Create the thread workers list
         global_counter = Value('d', 0.0);
-        workers = [A3CThread(g, 'worker_%d'%(i), 'global', self._effec_state_dim, self._forecast_dim,
+        workers = [A3CThread(g, 'worker_%d'%(i), 'global', self._stateOneStepWithTime_len, self._forecast_len,
                              self._action_size, self._vloss_frac, self._ploss_frac,
                              self._hregu_frac, self._hregu_decay_bounds, shared_optimizer, self._clip_norm,
                              global_train_step, self._window_len, self._init_epsilon,
                              self._end_epsilon, self._decay_steps, global_counter, self._activation, self._model_type, 
-                             self._model_param, learning_rate, self._noisyNet, self._weight_initer)
+                             self._model_param, learning_rate, self._noisyNet, self._weight_initer, self._prcdState_dim)
                   for i in range(self._num_threads)];
         # Init global network variables or warm start
         with g.as_default():
@@ -795,8 +796,9 @@ class A3CAgent:
         for env_name in env_name_list:
             env_eval = gym.make(env_name);
             global_agent_eval = A3CEval(sess, global_network, env_eval, eval_epi_num, 
-                                    self._window_len, self._forecast_dim, e_weight, p_weight, 
-                                    raw_stateLimit_process_func, self._noisyNet, self._noisyNetEval_rmNoise);
+                                    self._window_len, self._forecast_len, e_weight, p_weight, 
+                                    raw_stateLimit_process_func, self._noisyNet, 
+                                    self._noisyNetEval_rmNoise, self._prcdState_dim);
             global_agent_eval_list.append(global_agent_eval)
 
         global_res_list = [];

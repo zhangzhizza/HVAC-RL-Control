@@ -130,14 +130,18 @@ class HistoryPreprocessor:
     Args:
         history_length: int
             Number of previous states to prepend to state being processed.
+        prcdState_dim: int
+            If the dim is 1, all stacked state will be flatten ([x0, x1, xt]); if dim is 2,
+            the stacked state will not be flatten ([[x_0], [x_1], [x_t]])
 
     """
 
-    def __init__(self, history_length, forecast_dim):
+    def __init__(self, history_length, forecast_dim, prcdState_dim = 1):
         self._history_length = history_length;
         self._flag_start_net = True;
         self._stacked_return_net = None;
         self._forecast_dim = forecast_dim;
+        self._prcdState_dim = prcdState_dim;
 
     def process_state_for_network(self, state):
         """Take the current state and return a stacked state with current
@@ -146,12 +150,15 @@ class HistoryPreprocessor:
         Args:
             state: python 1-D list.
                 Expect python 1-D list representing the current state.
+            prcdState_dim: int
+                If dim == 1, 
         
         Return: np.ndarray, dim = 1*m where m is the state_dim * history_length
             Stacked states.
         """
         forecast_state = None;
-        if self._forecast_dim > 0:
+        # Avoid repeated forecast information if prcdState_dim is 1
+        if self._forecast_dim > 0 and self._prcdState_dim == 1:
             ob_state = state[0: len(state) - self._forecast_dim] # Delete the forecast states
             forecast_state = state[-self._forecast_dim: ] # Get the forecast state
             state = ob_state;
@@ -166,9 +173,14 @@ class HistoryPreprocessor:
                 self._stacked_return_net[i, :] = \
                     self._stacked_return_net[i+1, :];
             self._stacked_return_net[-1, :] = state;
-
-        ret = np.copy(self._stacked_return_net.flatten().reshape(1, -1));
-        if self._forecast_dim > 0:
+        # Determine the final state dim
+        if self._prcdState_dim == 1:
+            ret = np.copy(self._stacked_return_net.flatten().reshape(1, -1)); # Reshape makes the 1-d array to 2-d
+        elif self._prcdState_dim == 2:
+            orgShape = self._stacked_return_net.shape;
+            ret = np.copy(self._stacked_return_net.reshape((-1,) + orgShape)); # Reshape makes the 2-d array to 3-d (new axis added to dim 1)
+        # Based on prcdState_dim, append forecast info
+        if self._forecast_dim > 0 and self._prcdState_dim == 1:
             ret = np.append(ret, np.array(forecast_state).reshape(1, -1), 1);
         return ret;
 
