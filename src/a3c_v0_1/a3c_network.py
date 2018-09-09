@@ -119,7 +119,7 @@ class A3C_Network_NN(A3C_Network_Model):
                               kernel_initializer = self._kernel_initializer)(layer);
 
         # Build non-shard layers: policy net and value net
-        policyValueNetworkBuilder = PolicyValueNetwork(self._kernel_initializer, is_noisy_layer);
+        policyValueNetworkBuilder = PolicyValueNetwork(self._kernel_initializer, is_noisy_layer, num_actions);
         self._policy_network_finalLayer = policyValueNetworkBuilder.policy_network_finalLayer;
         self._value_network_finalLayer = policyValueNetworkBuilder.value_network_finalLayer;
 
