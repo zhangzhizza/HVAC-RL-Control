@@ -186,7 +186,6 @@ class A3C_Network_LSTM(A3C_Network_Model):
             
         """
         # Build shared layers
-        print (self._activation)
         activations = self._activation.split('/')
         with tf.name_scope('shared_layers'):
             # Dropout layer for the first relu layer.
