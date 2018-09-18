@@ -127,6 +127,7 @@ def get_args():
       'noise (set noise to zero) during model evaluation.')
     parser.add_argument('--weight_initer', default='glorot_uniform', type=str, help='Network weight initializer type.')
     parser.add_argument('--sharedNet_type', default='Dense', type=str, help='The shared network layer type.')
+    parser.add_argument('--action_repeat_n', default=1, type=int, help='The action repeat times.')
     return parser;
 
 def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func, eval_action_func, 
@@ -178,7 +179,7 @@ def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func
                       args.gamma, args.rwd_e_para, args.rwd_p_para, args.save_freq, args.max_interactions,
                       args.eval_epi_num, args.eval_freq, reward_func, rewardArgs, metric_func, train_action_func, eval_action_func,  
                       train_action_limits, eval_action_limits, raw_state_process_func, raw_stateLimit_process_func, 
-                      args.debug_log_prob, args.is_greedy_policy);
+                      args.debug_log_prob, args.is_greedy_policy, args.action_repeat_n);
 
     if args.job_mode.lower() == 'test':
         main_logger.info ('Start the testing...')
