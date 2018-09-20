@@ -179,7 +179,7 @@ class A3CThread:
               global_res_list, action_space_name, dropout_prob, reward_func, 
               rewardArgs, metric_func, train_action_func, eval_action_func, train_action_limits, 
               eval_action_limits, raw_state_process_func, raw_stateLimit_process_func, debug_log_prob, 
-              is_greedy_policy):
+              is_greedy_policy, action_repeat_n):
         """
         The function that the thread worker works to train the networks.
         
@@ -311,7 +311,8 @@ class A3CThread:
                 action_stpt_prcd, action_effect_idx = train_action_func(action_raw_tup, action_raw_idx, train_action_limits, ob_this_raw);
                 action_stpt_prcd = list(action_stpt_prcd);
                 # Take the action
-                time_next, ob_next_raw, is_terminal = env_interact_wrapper.step(action_stpt_prcd);
+                for _ in range(action_repeat_n):
+                    time_next, ob_next_raw, is_terminal = env_interact_wrapper.step(action_stpt_prcd);
                 ob_next_prcd = process_raw_state_cmbd(ob_next_raw, [time_next], 
                                               env_st_yr, env_st_mn, env_st_dy,
                                               env_st_wd, pcd_state_limits); # 1-D list
@@ -744,7 +745,8 @@ class A3CAgent:
     def fit(self, sess, coordinator, global_network, workers, global_summary_writer, global_saver,
             env_name_list, t_max, gamma, e_weight, p_weight, save_freq, T_max, eval_epi_num, eval_freq,
             reward_func, rewardArgs, metric_func, train_action_func, eval_action_func, train_action_limits, 
-            eval_action_limits, raw_state_process_func, raw_stateLimit_process_func, debug_log_prob, is_greedy_policy):
+            eval_action_limits, raw_state_process_func, raw_stateLimit_process_func, debug_log_prob, is_greedy_policy,
+            action_repeat_n):
         """
         This method is used to train the neural network. 
         
@@ -813,7 +815,8 @@ class A3CAgent:
                                                 self._action_space_name, self._dropout_prob, reward_func, 
                                                 rewardArgs, metric_func, train_action_func, eval_action_func, 
                                                 train_action_limits, eval_action_limits, raw_state_process_func,
-                                                raw_stateLimit_process_func, debug_log_prob, is_greedy_policy);
+                                                raw_stateLimit_process_func, debug_log_prob, is_greedy_policy,
+                                                action_repeat_n);
 
             thread = threading.Thread(target = (worker_train));
             thread.start();
