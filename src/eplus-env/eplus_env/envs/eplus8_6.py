@@ -394,7 +394,7 @@ class EplusEnv(Env):
     def _render(self, mode='human', close=False):
         pass;
     
-    def _rm_past_history_dir(cur_eplus_working_dir, dir_sig):
+    def _rm_past_history_dir(self, cur_eplus_working_dir, dir_sig):
         """Remove the past woring directory
 
         Args:
