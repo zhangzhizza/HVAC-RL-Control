@@ -60,7 +60,8 @@ class EplusEnv(Env):
 
     def __init__(self, eplus_path, weather_path, bcvtb_path, variable_path, idf_path, env_name,
                  min_max_limits, incl_forecast = False, forecastRandMode = 'normal', forecastRandStd = 0.15,
-                 forecastSource = 'tmy3', forecastFilePath = None, forecast_hour = 12, act_repeat = 1):
+                 forecastSource = 'tmy3', forecastFilePath = None, forecast_hour = 12, act_repeat = 1,
+                 max_ep_data_store_num = 20):
         self._env_name = env_name;
         self._thread_name = threading.current_thread().getName();
         self.logger_main = Logger().getLogger('EPLUS_ENV_%s_%s_ROOT'%(env_name, self._thread_name), 
@@ -113,6 +114,7 @@ class EplusEnv(Env):
                                                    self._weatherForecastSrc);
         self._epi_num = 0;
         self._act_repeat = act_repeat;
+        self._max_ep_data_store_num = max_ep_data_store_num;
 
         """legacy env
         env_5702x_82_list = {'IW-v570202', 'IW-eval-v570202', 'IW-v570203', 'IW-eval-v570203',
@@ -250,8 +252,8 @@ class EplusEnv(Env):
         self.logger_main.info('Creating EnergyPlus simulation environment...')
         eplus_working_dir = self._get_eplus_working_folder(
                                 self._env_working_dir_parent, '-sub_run');
-        os.makedirs(eplus_working_dir);
-                                    # Create the Eplus working directory
+        os.makedirs(eplus_working_dir); # Create the Eplus working directory
+        self._rm_past_history_dir(eplus_working_dir, '-sub_run'); # Remove redundant past working directories
         eplus_working_idf_path = (eplus_working_dir + 
                                   '/' + 
                                   self._get_file_name(self._idf_path));
@@ -392,6 +394,26 @@ class EplusEnv(Env):
     def _render(self, mode='human', close=False):
         pass;
     
+    def _rm_past_history_dir(cur_eplus_working_dir, dir_sig):
+        """Remove the past woring directory
+
+        Args:
+            cur_eplus_working_dir: str
+                The current eplus working directory
+            dir_sig: str
+                The directory split signature
+
+        Reture: None
+
+        """
+
+        cur_dir_name, cur_dir_id = cur_eplus_working_dir.split(dir_sig)
+        cur_dir_id = int(cur_dir_id);
+        if cur_dir_id - self._max_ep_data_store_num > 0:
+            rm_dir_id = cur_dir_id - self._max_ep_data_store_num;
+            rm_dir_full_name = cur_dir_name + dir_sig + rm_dir_id;
+            shutil.rmtree(rm_dir_full_name);
+
     def _create_eplus(self, eplus_path, weather_path, 
                       idf_path, out_path, eplus_working_dir):
         
