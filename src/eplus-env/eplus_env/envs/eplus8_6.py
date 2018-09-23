@@ -411,7 +411,7 @@ class EplusEnv(Env):
         cur_dir_id = int(cur_dir_id);
         if cur_dir_id - self._max_ep_data_store_num > 0:
             rm_dir_id = cur_dir_id - self._max_ep_data_store_num;
-            rm_dir_full_name = cur_dir_name + dir_sig + rm_dir_id;
+            rm_dir_full_name = cur_dir_name + dir_sig + str(rm_dir_id);
             shutil.rmtree(rm_dir_full_name);
 
     def _create_eplus(self, eplus_path, weather_path, 
