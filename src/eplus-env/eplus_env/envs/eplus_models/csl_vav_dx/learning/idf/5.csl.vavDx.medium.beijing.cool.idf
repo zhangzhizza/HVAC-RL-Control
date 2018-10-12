@@ -97,73 +97,73 @@ ConvergenceLimits,
 ! Hourly weather file: C:\ProgramData\DesignBuilder\Weather Data\USA_PA_PITTSBURGH INTL AP_TMY3.epw
 Site:Location,
     Phipps_CSL_Building,     !- Name
-    40.5,                    !- Latitude {deg}
-    -80.22,                  !- Longitude {deg}
-    -5,                      !- Time Zone {hr}
-    373;                     !- Elevation {m}
+    39.80,     !- Latitude {N+ S-}
+    116.47,     !- Longitude {W- E+}
+    8.00,     !- Time Zone Relative to GMT {GMT+/-}
+    32.00;     !- Elevation {m}
 
+      
 
 !-   ===========  ALL OBJECTS IN CLASS: SIZINGPERIOD:DESIGNDAY ===========
 
 SizingPeriod:DesignDay,
     Summer Design Day in Phipps_CSL_Building,  !- Name
-    7,                       !- Month
-    15,                      !- Day of Month
-    SummerDesignDay,         !- Day Type
-    31.7,                    !- Maximum Dry-Bulb Temperature {C}
-    10.5,                    !- Daily Dry-Bulb Temperature Range {deltaC}
-    DefaultMultipliers,      !- Dry-Bulb Temperature Range Modifier Type
-    ,                        !- Dry-Bulb Temperature Range Modifier Day Schedule Name
-    Wetbulb,                 !- Humidity Condition Type
-    22.5,                    !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
-    ,                        !- Humidity Condition Day Schedule Name
-    ,                        !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
-    ,                        !- Enthalpy at Maximum Dry-Bulb {J/kg}
-    ,                        !- Daily Wet-Bulb Temperature Range {deltaC}
-    96923.6,                 !- Barometric Pressure {Pa}
-    0,                       !- Wind Speed {m/s}
-    0,                       !- Wind Direction {deg}
-    No,                      !- Rain Indicator
-    No,                      !- Snow Indicator
-    Yes,                     !- Daylight Saving Time Indicator
-    ASHRAEClearSky,          !- Solar Model Indicator
-    ,                        !- Beam Solar Day Schedule Name
-    ,                        !- Diffuse Solar Day Schedule Name
-    0,                       !- ASHRAE Clear Sky Optical Depth for Beam Irradiance (taub) {dimensionless}
-    0,                       !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance (taud) {dimensionless}
+    7,      !- Month
+    21,      !- Day of Month
+    SummerDesignDay,!- Day Type
+    34.9,      !- Maximum Dry-Bulb Temperature {C}
+    8.9,      !- Daily Dry-Bulb Temperature Range {C}
+    DefaultMultipliers, !- Dry-Bulb Temperature Range Modifier Type
+    ,      !- Dry-Bulb Temperature Range Modifier Schedule Name
+    Wetbulb,      !- Humidity Condition Type
+    22.2,      !- Wetbulb at Maximum Dry-Bulb {C}
+    ,      !- Humidity Indicating Day Schedule Name
+    ,      !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+    ,      !- Enthalpy at Maximum Dry-Bulb {J/kg}
+    ,      !- Daily Wet-Bulb Temperature Range {deltaC}
+    100941.,      !- Barometric Pressure {Pa}
+    3.4,      !- Wind Speed {m/s} design conditions vs. traditional 3.35 m/s (7mph)
+    180,      !- Wind Direction {Degrees; N=0, S=180}
+    No,      !- Rain {Yes/No}
+    No,      !- Snow on ground {Yes/No}
+    No,      !- Daylight Savings Time Indicator
+    ASHRAETau, !- Solar Model Indicator
+    ,      !- Beam Solar Day Schedule Name
+    ,      !- Diffuse Solar Day Schedule Name
+    0.747,      !- ASHRAE Clear Sky Optical Depth for Beam Irradiance (taub)
+    1.448,      !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance (taud)
     0.98;                    !- Sky Clearness
 
 SizingPeriod:DesignDay,
     Winter Design Day in Phipps_CSL_Building,  !- Name
-    1,                       !- Month
-    15,                      !- Day of Month
-    WinterDesignDay,         !- Day Type
-    -16.8,                   !- Maximum Dry-Bulb Temperature {C}
-    0,                       !- Daily Dry-Bulb Temperature Range {deltaC}
-    DefaultMultipliers,      !- Dry-Bulb Temperature Range Modifier Type
-    ,                        !- Dry-Bulb Temperature Range Modifier Day Schedule Name
-    Wetbulb,                 !- Humidity Condition Type
-    -16.8,                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
-    ,                        !- Humidity Condition Day Schedule Name
-    ,                        !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
-    ,                        !- Enthalpy at Maximum Dry-Bulb {J/kg}
-    ,                        !- Daily Wet-Bulb Temperature Range {deltaC}
-    96923.6,                 !- Barometric Pressure {Pa}
-    12.7,                    !- Wind Speed {m/s}
-    0,                       !- Wind Direction {deg}
-    No,                      !- Rain Indicator
-    No,                      !- Snow Indicator
-    No,                      !- Daylight Saving Time Indicator
-    ASHRAEClearSky,          !- Solar Model Indicator
-    ,                        !- Beam Solar Day Schedule Name
-    ,                        !- Diffuse Solar Day Schedule Name
-    0,                       !- ASHRAE Clear Sky Optical Depth for Beam Irradiance (taub) {dimensionless}
-    0,                       !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance (taud) {dimensionless}
-    0;                       !- Sky Clearness
+    1,      !- Month
+    21,      !- Day of Month
+    WinterDesignDay,!- Day Type
+    -10.8,      !- Maximum Dry-Bulb Temperature {C}
+    0.0,      !- Daily Dry-Bulb Temperature Range {C}
+    DefaultMultipliers, !- Dry-Bulb Temperature Range Modifier Type
+    ,      !- Dry-Bulb Temperature Range Modifier Schedule Name
+    Wetbulb,      !- Humidity Condition Type
+    -10.8,      !- Wetbulb at Maximum Dry-Bulb {C}
+    ,      !- Humidity Indicating Day Schedule Name
+    ,      !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+    ,      !- Enthalpy at Maximum Dry-Bulb {J/kg}
+    ,      !- Daily Wet-Bulb Temperature Range {deltaC}
+    100941.,      !- Barometric Pressure {Pa}
+    2.2,      !- Wind Speed {m/s} design conditions vs. traditional 6.71 m/s (15 mph)
+    340,      !- Wind Direction {Degrees; N=0, S=180}
+    No,      !- Rain {Yes/No}
+    No,      !- Snow on ground {Yes/No}
+    No,      !- Daylight Savings Time Indicator
+    ASHRAEClearSky, !- Solar Model Indicator
+    ,      !- Beam Solar Day Schedule Name
+    ,      !- Diffuse Solar Day Schedule Name
+    ,      !- ASHRAE Clear Sky Optical Depth for Beam Irradiance (taub)
+    ,      !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance (taud)
+    0.00;      !- Clearness {0.0 to 1.1}
 
 
 !-   ===========  ALL OBJECTS IN CLASS: RUNPERIOD ===========
-
 
 !RunPeriod,
 !    Phipps_CSL_Building_Winter,  !- Name 
@@ -192,7 +192,6 @@ RunPeriod,
     Yes,                     !- Use Weather File Rain Indicators
     Yes,                     !- Use Weather File Snow Indicators
     1;                    !- Number of Times Runperiod to be Repeated
-
 
 !-   ===========  ALL OBJECTS IN CLASS: RUNPERIODCONTROL:DAYLIGHTSAVINGTIME ===========
 
@@ -1600,69 +1599,6 @@ Schedule:Compact,
     28;
 
 Schedule:Compact,
-    ZoneHeatingSetpoint_1st1,    !- Name
-    Temperature,                  !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,
-    Until: 24:00,
-    18;
-Schedule:Compact,
-    ZoneCoolingSetpoint_1st1,    !- Name
-    Temperature,                  !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,
-    Until: 24:00,
-    18;
-
-Schedule:Compact,
-    ZoneHeatingSetpoint_1st2,    !- Name
-    Temperature,                  !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,
-    Until: 24:00,
-    18;
-
-Schedule:Compact,
-    ZoneCoolingSetpoint_1st2,    !- Name
-    Temperature,                  !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,
-    Until: 24:00,
-    18;
-
-Schedule:Compact,
-    ZoneHeatingSetpoint_2nd1,    !- Name
-    Temperature,                  !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,
-    Until: 24:00,
-    18;
-
-Schedule:Compact,
-    ZoneCoolingSetpoint_2nd1,    !- Name
-    Temperature,                  !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,
-    Until: 24:00,
-    18;
-
-Schedule:Compact,
-    ZoneHeatingSetpoint_2nd2,    !- Name
-    Temperature,                  !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,
-    Until: 24:00,
-    18;
-
-Schedule:Compact,
-    ZoneCoolingSetpoint_2nd2,    !- Name
-    Temperature,                  !- Schedule Type Limits Name
-    Through: 12/31,          !- Field 1
-    For: AllDays,
-    Until: 24:00,
-    18;
-
-Schedule:Compact,
     ZoneHeatingSetpoint_1stConf,    !- Name
     Temperature,                  !- Schedule Type Limits Name
     Through: 12/31,          !- Field 1
@@ -2109,7 +2045,59 @@ Schedule:Compact,
 
 !-   ===========  ALL OBJECTS IN CLASS: MATERIAL ===========
 
-!-   ===========  ALL OBJECTS IN CLASS: MATERIAL ===========
+Material, Asphalt_0.019,
+   Rough,                                         !- Roughness
+    .019,                                         !- Thickness {m}
+   0.7,                                           !- Conductivity {w/m-K}
+   2100,                                          !- Density {kg/m3}
+   1000,                                          !- Specific Heat {J/kg-K}
+   0.9,                                           !- Thermal Emittance
+   0.85,                                          !- Solar Absorptance
+   0.9;                                           !- Visible Absorptance
+
+! Fibreboard- thickness 0.013
+Material, Fibreboard_0.013,
+   Rough,                                         !- Roughness
+    .013,                                         !- Thickness {m}
+   0.06,                                          !- Conductivity {w/m-K}
+   300,                                           !- Density {kg/m3}
+   1000,                                          !- Specific Heat {J/kg-K}
+   0.9,                                           !- Thermal Emittance
+   0.6,                                           !- Solar Absorptance
+   0.6;                                           !- Visible Absorptance
+
+! XPS Extruded Polystyrene  - CO2 Blowing- thickness 0.1608
+Material, XPS Extruded Polystyrene  - CO2 Blowing_0.1608,
+   Rough,                                         !- Roughness
+    .1608,                                        !- Thickness {m}
+   0.034,                                         !- Conductivity {w/m-K}
+   35,                                            !- Density {kg/m3}
+   1400,                                          !- Specific Heat {J/kg-K}
+   0.9,                                           !- Thermal Emittance
+   0.6,                                           !- Solar Absorptance
+   0.6;                                           !- Visible Absorptance
+
+! Cast Concrete (Lightweight)- thickness 0.1
+Material, Cast Concrete (Lightweight)_0.1,
+   Rough,                                         !- Roughness
+    .1,                                           !- Thickness {m}
+   0.38,                                          !- Conductivity {w/m-K}
+   1200,                                          !- Density {kg/m3}
+   1000,                                          !- Specific Heat {J/kg-K}
+   0.9,                                           !- Thermal Emittance
+   0.6,                                           !- Solar Absorptance
+   0.6;                                           !- Visible Absorptance
+
+Material, Brickwork Outer Leaf_0.105,
+   Rough,                                         !- Roughness
+    .105,                                         !- Thickness {m}
+   0.84,                                          !- Conductivity {w/m-K}
+   1700,                                          !- Density {kg/m3}
+   800,                                           !- Specific Heat {J/kg-K}
+   0.9,                                           !- Thermal Emittance
+   0.7,                                           !- Solar Absorptance
+   0.7;                                           !- Visible Absorptance
+
 Material, 6 in. Concrete at R-0.0625/in (NW 145 lb/ft3 solid concrete)_0.1524,
    Rough,                                         !- Roughness
     .1524,                                        !- Thickness {m}
@@ -2170,9 +2158,9 @@ Material, Gypsum Plastering_0.013,
    0.5,                                           !- Solar Absorptance
    0.5;                                           !- Visible Absorptance
 
-Material, XPS Extruded Polystyrene  - CO2 Blowing_0.1013,
+Material, XPS Extruded Polystyrene  - CO2 Blowing_0.0759,
    Rough,                                         !- Roughness
-    .1013,                                        !- Thickness {m}
+    .0759,                                        !- Thickness {m}
    0.034,                                         !- Conductivity {w/m-K}
    35,                                            !- Density {kg/m3}
    1400,                                          !- Specific Heat {J/kg-K}
@@ -3078,6 +3066,7 @@ Material:NoMass,
     0.7,                     !- Solar Absorptance
     0.7;                     !- Visible Absorptance
 
+
 Material:NoMass,
     1_RVAL_1,               !- Name
     Rough,                   !- Roughness
@@ -3256,12 +3245,11 @@ WindowMaterial:Gas,
 
 !-   ===========  ALL OBJECTS IN CLASS: CONSTRUCTION ===========
 
-
 Construction, 
-    groundfloor_ashrae901_2013_zone5, !-F-0.688 (1.191),
-    1_RVAL_1,                                      !- R-value
-    R-20 board Insulation (Glass fiber board)_0.1127,  !- .1127m
-    6 in. Concrete at R-0.0625/in (NW 145 lb/ft3 solid concrete)_0.1524;  !- .1524m
+   groundfloor_from_db,
+   1_RVAL_1,                                      !- R-value
+   R-20 board Insulation (Glass fiber board)_0.1127,  !- .1127m
+   6 in. Concrete at R-0.0625/in (NW 145 lb/ft3 solid concrete)_0.1524;  !- .1524m
 
 Construction,
     3,                       !- Name
@@ -3296,10 +3284,17 @@ Construction,
     3_2_10013,               !- Outside Layer
     10_RVAL_2;               !- Layer 2
 
+!Construction, 
+!   extWall_medium_ashrae901_2013_zone4, ! U-SI 0.363
+!   Lightweight Metallic Cladding_0.006,           !- .006m
+!   XPS Extruded Polystyrene  - CO2 Blowing_0.0860,!- .1013m
+!   Gypsum Plastering_0.013;                       !- .013m
+
+
 Construction, 
-   extWall_light_ashrae901_2013_zone5, ! U-SI 0.33
-   Lightweight Metallic Cladding_0.006,           !- .006m
-   XPS Extruded Polystyrene  - CO2 Blowing_0.1013,!- .1013m
+   extWall_medium_ashrae901_2013_zone4, ! U-SI 0.363
+   Brickwork Outer Leaf_0.105,                    !- .105m
+   XPS Extruded Polystyrene  - CO2 Blowing_0.0759,!- .0759m
    Gypsum Plastering_0.013;                       !- .013m
 
 
@@ -3464,12 +3459,19 @@ Construction,
     67_RVAL_1;               !- Outside Layer
 
 
+!Construction, 
+!    roof_medium_ashrae901_2013_zone4, ! U-SI 0.1817
+!    Asphalt_0.01,                                  !- .01m
+!    MW Glass Wool (rolls)_0.2047,                  !- .2047m
+!    10_RVAL_3,                                     !- R-value
+!    Plasterboard_0.013;                            !- .013m
+
 Construction, 
-    roof_light_ashrae901_2013_zone5, ! U-SI 0.186
-    Asphalt_0.01,                                  !- .01m
-    MW Glass Wool (rolls)_0.2047,                  !- .2047m
-    10_RVAL_3,                                     !- R-value
-    Plasterboard_0.013;                            !- .013m
+   roof_medium_ashrae901_2013_zone4, ! U-SI 0.186
+   Asphalt_0.019,                                 !- .019m
+   Fibreboard_0.013,                              !- .013m
+   XPS Extruded Polystyrene  - CO2 Blowing_0.1608,!- .1608m
+   Cast Concrete (Lightweight)_0.1;               !- .1m
 
 
 Construction,
@@ -4672,7 +4674,7 @@ Zone,
   BuildingSurface:Detailed,
     1st%plenvm:1st%plenvm_GroundFloor_0_0_0,  !- Name
     Floor,                   !- Surface Type
-    groundfloor_ashrae901_2013_zone5,                       !- Construction Name
+    groundfloor_from_db,                       !- Construction Name
     1st%plenvm:1st%plenvm,   !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5156,7 +5158,7 @@ Zone,
   BuildingSurface:Detailed,
     1st%plenvm:1st%plenvm_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    EXTWALL_LIGHT_ASHRAE901_2013_ZONE5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1st%plenvm:1st%plenvm,   !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5172,7 +5174,7 @@ Zone,
   BuildingSurface:Detailed,
     1st%plenvm:1st%plenvm_Wall_3_0_0,  !- Name
     Wall,                    !- Surface Type
-    EXTWALL_LIGHT_ASHRAE901_2013_ZONE5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1st%plenvm:1st%plenvm,   !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5188,7 +5190,7 @@ Zone,
   BuildingSurface:Detailed,
     1st%plenvm:1st%plenvm_Wall_4_0_0,  !- Name
     Wall,                    !- Surface Type
-    EXTWALL_LIGHT_ASHRAE901_2013_ZONE5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1st%plenvm:1st%plenvm,   !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5204,7 +5206,7 @@ Zone,
   BuildingSurface:Detailed,
     1st%plenvm:1st%plenvm_Wall_4_1_0,  !- Name
     Wall,                    !- Surface Type
-    EXTWALL_LIGHT_ASHRAE901_2013_ZONE5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1st%plenvm:1st%plenvm,   !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5220,7 +5222,7 @@ Zone,
   BuildingSurface:Detailed,
     1st%plenvm:1st%plenvm_Wall_5_0_0,  !- Name
     Wall,                    !- Surface Type
-    EXTWALL_LIGHT_ASHRAE901_2013_ZONE5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1st%plenvm:1st%plenvm,   !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5236,7 +5238,7 @@ Zone,
   BuildingSurface:Detailed,
     1st%plenvm:1st%plenvm_Wall_6_0_0,  !- Name
     Wall,                    !- Surface Type
-    EXTWALL_LIGHT_ASHRAE901_2013_ZONE5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1st%plenvm:1st%plenvm,   !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5252,7 +5254,7 @@ Zone,
   BuildingSurface:Detailed,
     1st%plenvm:1st%plenvm_Wall_6_1_0,  !- Name
     Wall,                    !- Surface Type
-    EXTWALL_LIGHT_ASHRAE901_2013_ZONE5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1st%plenvm:1st%plenvm,   !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5268,7 +5270,7 @@ Zone,
   BuildingSurface:Detailed,
     1st%plenvm:1st%plenvm_Wall_7_0_0,  !- Name
     Wall,                    !- Surface Type
-    EXTWALL_LIGHT_ASHRAE901_2013_ZONE5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1st%plenvm:1st%plenvm,   !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5284,7 +5286,7 @@ Zone,
   BuildingSurface:Detailed,
     1st%plenvm:1st%plenvm_Wall_8_0_0,  !- Name
     Wall,                    !- Surface Type
-    EXTWALL_LIGHT_ASHRAE901_2013_ZONE5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1st%plenvm:1st%plenvm,   !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5300,7 +5302,7 @@ Zone,
   BuildingSurface:Detailed,
     1st%plenvm:1st%plenvm_Wall_8_1_0,  !- Name
     Wall,                    !- Surface Type
-    EXTWALL_LIGHT_ASHRAE901_2013_ZONE5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1st%plenvm:1st%plenvm,   !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5316,7 +5318,7 @@ Zone,
   BuildingSurface:Detailed,
     1st%plenvm:1st%plenvm_Wall_9_0_0,  !- Name
     Wall,                    !- Surface Type
-    EXTWALL_LIGHT_ASHRAE901_2013_ZONE5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1st%plenvm:1st%plenvm,   !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5332,7 +5334,7 @@ Zone,
   BuildingSurface:Detailed,
     1st%plenvm:1st%plenvm_Wall_9_1_0,  !- Name
     Wall,                    !- Surface Type
-    EXTWALL_LIGHT_ASHRAE901_2013_ZONE5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1st%plenvm:1st%plenvm,   !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5384,7 +5386,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Conference_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Conference,!- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5432,7 +5434,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Conference_Wall_4_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Conference,!- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5544,7 +5546,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Conference_Wall_8_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Conference,!- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5560,7 +5562,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Research%Open%NE_GroundFloor_0_1_0,  !- Name
     Floor,                   !- Surface Type
-    groundfloor_ashrae901_2013_zone5,                       !- Construction Name
+    groundfloor_from_db,                       !- Construction Name
     1ST%FLOOR:1st%Research%Open%NE,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5698,7 +5700,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Research%Open%NE_Wall_4_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Research%Open%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5714,7 +5716,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Research%Open%NE_Wall_5_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Research%Open%NE,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5730,7 +5732,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Research%Open%NE_Wall_5_1_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Research%Open%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -5812,7 +5814,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Lobby_GroundFloor_0_1_0,  !- Name
     Floor,                   !- Surface Type
-    groundfloor_ashrae901_2013_zone5,                       !- Construction Name
+    groundfloor_from_db,                       !- Construction Name
     1ST%FLOOR:1st%Lobby,     !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -6393,7 +6395,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Lobby_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Lobby,     !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -6409,7 +6411,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Lobby_Wall_3_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Lobby,     !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -6425,7 +6427,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Lobby_Wall_4_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Lobby,     !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -6441,7 +6443,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Lobby_Wall_4_1_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Lobby,     !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -6457,7 +6459,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Lobby_Wall_4_2_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Lobby,     !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -6473,7 +6475,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Lobby_Wall_5_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Lobby,     !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -6489,7 +6491,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Lobby_Wall_5_1_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Lobby,     !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -6505,7 +6507,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Lobby_Wall_6_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Lobby,     !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -6521,7 +6523,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Lobby_Wall_6_1_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Lobby,     !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -6921,7 +6923,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Lobby_Wall_19_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Lobby,     !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -6937,7 +6939,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Lobby_Wall_19_1_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Lobby,     !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -7245,7 +7247,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%HVAC%Shaft_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%HVAC%Shaft,!- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -7261,7 +7263,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%HVAC%Shaft_Wall_2_1_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%HVAC%Shaft,!- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -7279,7 +7281,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%HVAC%Shaft_Wall_3_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%HVAC%Shaft,!- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -7295,7 +7297,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%HVAC%Shaft_Wall_3_1_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%HVAC%Shaft,!- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -7311,7 +7313,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%HVAC%Shaft_Wall_4_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%HVAC%Shaft,!- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -7327,7 +7329,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Classroom_GroundFloor_0_1_0,  !- Name
     Floor,                   !- Surface Type
-    groundfloor_ashrae901_2013_zone5,                       !- Construction Name
+    groundfloor_from_db,                       !- Construction Name
     1ST%FLOOR:1st%Classroom, !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -7343,7 +7345,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Classroom_GroundFloor_0_1_1,  !- Name
     Floor,                   !- Surface Type
-    groundfloor_ashrae901_2013_zone5,                       !- Construction Name
+    groundfloor_from_db,                       !- Construction Name
     1ST%FLOOR:1st%Classroom, !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -7441,7 +7443,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Classroom_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Classroom, !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -7457,7 +7459,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Classroom_Wall_3_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Classroom, !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -7601,7 +7603,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Classroom_Wall_14_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Classroom, !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -7617,7 +7619,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Vestibule_GroundFloor_0_0_0,  !- Name
     Floor,                   !- Surface Type
-    groundfloor_ashrae901_2013_zone5,                       !- Construction Name
+    groundfloor_from_db,                       !- Construction Name
     1ST%FLOOR:1st%Vestibule, !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -7681,7 +7683,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Vestibule_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Vestibule, !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -7697,7 +7699,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Vestibule_Wall_5_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Vestibule, !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -7713,7 +7715,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Electrical%Room_GroundFloor_0_0_0,  !- Name
     Floor,                   !- Surface Type
-    groundfloor_ashrae901_2013_zone5,                       !- Construction Name
+    groundfloor_from_db,                       !- Construction Name
     1ST%FLOOR:1st%Electrical%Room,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -7804,7 +7806,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Electrical%Room_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Electrical%Room,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -7948,7 +7950,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Restroom_GroundFloor_0_0_0,  !- Name
     Floor,                   !- Surface Type
-    groundfloor_ashrae901_2013_zone5,                       !- Construction Name
+    groundfloor_from_db,                       !- Construction Name
     1ST%FLOOR:1st%Restroom,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -8058,7 +8060,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Restroom_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Restroom,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -8074,7 +8076,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Restroom_Wall_3_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Restroom,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -8222,7 +8224,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Research%Open%NW_Wall_3_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Research%Open%NW,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -8238,7 +8240,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Research%Open%NW_Wall_3_1_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Research%Open%NW,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -8352,7 +8354,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Research%Open%NM_Wall_3_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Research%Open%NM,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -8368,7 +8370,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Research%Open%NM_Wall_3_1_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Research%Open%NM,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -8424,7 +8426,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Break%Room_Wall_6_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Break%Room,!- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -8440,7 +8442,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Break%Room_Wall_7_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Break%Room,!- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -8552,7 +8554,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Phone%Booth_GroundFloor_0_1_0,  !- Name
     Floor,                   !- Surface Type
-    groundfloor_ashrae901_2013_zone5,                       !- Construction Name
+    groundfloor_from_db,                       !- Construction Name
     1ST%FLOOR:1st%Phone%Booth,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -8682,7 +8684,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Volunteer%Area_GroundFloor_0_1_0,  !- Name
     Floor,                   !- Surface Type
-    groundfloor_ashrae901_2013_zone5,                       !- Construction Name
+    groundfloor_from_db,                       !- Construction Name
     1ST%FLOOR:1st%Volunteer%Area,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -8786,7 +8788,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Volunteer%Area_Wall_7_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Volunteer%Area,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -8838,7 +8840,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Research%Open%SW_Wall_7_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Research%Open%SW,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -8886,7 +8888,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Research%Open%SM_Wall_5_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Research%Open%SM,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -8934,7 +8936,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Research%Open%SE_Wall_5_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Research%Open%SE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -8950,7 +8952,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Mchncl%Rm%01_GroundFloor_0_0_0,  !- Name
     Floor,                   !- Surface Type
-    groundfloor_ashrae901_2013_zone5,                       !- Construction Name
+    groundfloor_from_db,                       !- Construction Name
     1ST%FLOOR:1st%Mchncl%Rm%01,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -9203,7 +9205,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Mchncl%Rm%01_Wall_6_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Mchncl%Rm%01,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -9219,7 +9221,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Mchncl%Rm%01_Wall_6_1_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Mchncl%Rm%01,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -9235,7 +9237,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Mchncl%Rm%01_Wall_7_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Mchncl%Rm%01,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -9251,7 +9253,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Mchncl%Rm%01_Wall_7_1_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Mchncl%Rm%01,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -9269,7 +9271,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Corridor_GroundFloor_0_0_0,  !- Name
     Floor,                   !- Surface Type
-    groundfloor_ashrae901_2013_zone5,                       !- Construction Name
+    groundfloor_from_db,                       !- Construction Name
     1ST%FLOOR:1st%Corridor,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -9528,7 +9530,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Edctn%Strg_GroundFloor_0_0_0,  !- Name
     Floor,                   !- Surface Type
-    groundfloor_ashrae901_2013_zone5,                       !- Construction Name
+    groundfloor_from_db,                       !- Construction Name
     1ST%FLOOR:1st%Edctn%Strg,!- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -9656,7 +9658,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Edctn%Strg_Wall_6_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Edctn%Strg,!- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -9674,7 +9676,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Edctn%Strg_Wall_6_1_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     1ST%FLOOR:1st%Edctn%Strg,!- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -9690,7 +9692,7 @@ Zone,
   BuildingSurface:Detailed,
     1ST%FLOOR:1st%Elevator%Machine_GroundFloor_0_0_0,  !- Name
     Floor,                   !- Surface Type
-    groundfloor_ashrae901_2013_zone5,                       !- Construction Name
+    groundfloor_from_db,                       !- Construction Name
     1ST%FLOOR:1st%Elevator%Machine,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10252,7 +10254,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10268,7 +10270,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_3_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10284,7 +10286,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_4_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10300,7 +10302,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_5_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10316,7 +10318,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_6_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10332,7 +10334,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_7_0_2,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10348,7 +10350,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_7_0_3,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10364,7 +10366,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_8_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10380,7 +10382,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_8_0_5,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10396,7 +10398,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_9_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10412,7 +10414,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_9_0_2,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10428,7 +10430,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_9_0_3,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10444,7 +10446,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_9_0_5,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10460,7 +10462,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_10_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10508,7 +10510,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_13_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10588,7 +10590,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_17_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10604,7 +10606,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_19_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10620,7 +10622,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_23_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10636,7 +10638,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_25_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10716,7 +10718,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_29_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10732,7 +10734,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%False_Wall_31_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%False,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10780,7 +10782,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%North_Wall_2_0_2,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%North,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10796,7 +10798,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%North_Wall_2_0_3,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%North,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10812,7 +10814,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%North_Wall_4_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%North,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10892,7 +10894,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%North_Wall_9_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%North,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -10908,7 +10910,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%North_Wall_11_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%North,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11020,7 +11022,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%North_Wall_15_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%North,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11036,7 +11038,7 @@ Zone,
   BuildingSurface:Detailed,
     2nd%plenvm:2nd%plenvm%North_Wall_17_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2nd%plenvm:2nd%plenvm%North,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11084,7 +11086,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft_Roof_1_1_1,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11100,7 +11102,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft_Roof_1_1_2,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11116,7 +11118,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft_Roof_1_1_3,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11132,7 +11134,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft_Roof_1_1_4,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11148,7 +11150,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft_Roof_1_1_5,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11164,7 +11166,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft_Roof_1_1_6,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11180,7 +11182,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11196,7 +11198,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft_Wall_3_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11212,7 +11214,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft_Wall_4_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11292,7 +11294,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft_Wall_7_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%HVAC%Shaft,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11308,7 +11310,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Roof_1_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11329,7 +11331,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Wall_2_0_2,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11345,7 +11347,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Wall_2_0_3,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11361,7 +11363,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Wall_4_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11377,7 +11379,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Wall_5_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11393,7 +11395,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Wall_6_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11505,7 +11507,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Wall_14_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11521,7 +11523,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Wall_14_0_1,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11537,7 +11539,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Wall_14_0_2,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11553,7 +11555,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Wall_14_0_3,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11569,7 +11571,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Wall_14_0_4,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11585,7 +11587,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Wall_14_0_5,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11665,7 +11667,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Roof_17_1_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11681,7 +11683,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Wall_18_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11697,7 +11699,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Wall_20_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11777,7 +11779,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Roof_23_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11793,7 +11795,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Wall_24_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11809,7 +11811,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Wall_26_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11857,7 +11859,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Roof_29_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11873,7 +11875,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Wall_30_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11889,7 +11891,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE_Wall_32_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11937,7 +11939,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Conference%02_Roof_1_1_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Conference%02,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11959,7 +11961,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Conference%02_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Conference%02,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11975,7 +11977,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Conference%02_Wall_3_0_2,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Conference%02,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -11991,7 +11993,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Conference%02_Wall_3_0_3,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Conference%02,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12007,7 +12009,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Conference%02_Wall_4_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Conference%02,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12023,7 +12025,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Conference%02_Wall_4_0_5,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Conference%02,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12039,7 +12041,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Conference%02_Wall_5_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Conference%02,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12215,7 +12217,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Conference%02_Wall_13_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Conference%02,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12231,7 +12233,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Conference%02_Wall_15_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Conference%02,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12279,7 +12281,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Conference%02_Wall_19_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Conference%02,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12295,7 +12297,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Conference%02_Wall_21_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Conference%02,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12311,7 +12313,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SW_Roof_1_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%SW,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12327,7 +12329,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SW_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%SW,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12343,7 +12345,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SW_Wall_5_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%SW,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12359,7 +12361,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SMW_Roof_1_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%SMW,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12375,7 +12377,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SMW_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%SMW,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12391,7 +12393,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SM_Roof_1_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%SM,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12407,7 +12409,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SM_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%SM,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12423,7 +12425,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SE_Roof_1_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%SE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12439,7 +12441,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SE_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%SE,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12455,7 +12457,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SME1_Roof_1_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%SME1,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12471,7 +12473,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SME1_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%SME1,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12487,7 +12489,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SME_Roof_1_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%SME,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12503,7 +12505,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SME_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%SME,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12551,7 +12553,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Conference%01_Roof_1_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Conference%01,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12569,7 +12571,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Conference%01_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Conference%01,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12585,7 +12587,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Conference%01_Wall_3_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Conference%01,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12665,7 +12667,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Phone%Booth_Roof_1_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Phone%Booth,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12681,7 +12683,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NMW_Roof_1_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NMW,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12697,7 +12699,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NMW_Wall_3_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NMW,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12713,7 +12715,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NME_Roof_1_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NME,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12729,7 +12731,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NME_Wall_3_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NME,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12745,7 +12747,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NW_Roof_1_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NW,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12761,7 +12763,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NW_Wall_4_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%SOUTH:2nd%Open%Office%NW,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12867,7 +12869,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Roof_1_2_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12897,7 +12899,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12913,7 +12915,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_2_0_3,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12929,7 +12931,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_2_0_5,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12945,7 +12947,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_2_0_9,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12961,7 +12963,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_3_0_2,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12977,7 +12979,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_3_0_6,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -12993,7 +12995,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_3_0_7,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13009,7 +13011,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_4_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13025,7 +13027,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_5_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13041,7 +13043,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_6_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13057,7 +13059,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_7_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13073,7 +13075,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_7_1_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13091,7 +13093,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_8_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13108,7 +13110,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_8_1_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13255,7 +13257,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_13_0_2,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13271,7 +13273,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_13_0_6,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13287,7 +13289,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_13_0_7,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13335,7 +13337,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_18_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13351,7 +13353,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_20_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13399,7 +13401,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_24_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13447,7 +13449,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_26_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13495,7 +13497,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_30_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13511,7 +13513,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_32_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13559,7 +13561,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_36_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13607,7 +13609,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_38_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13655,7 +13657,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_42_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13671,7 +13673,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_44_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13719,7 +13721,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_48_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13767,7 +13769,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_50_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13815,7 +13817,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_54_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13831,7 +13833,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_56_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13879,7 +13881,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Roof_59_1_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13895,7 +13897,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_60_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13943,7 +13945,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Lobby_Wall_62_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13959,7 +13961,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Restrooms_Roof_1_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Restrooms,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -13983,7 +13985,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Restrooms_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Restrooms,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -14001,7 +14003,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Restrooms_Wall_2_1_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Restrooms,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -14017,7 +14019,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Restrooms_Wall_3_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Restrooms,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -14037,7 +14039,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Restrooms_Wall_3_1_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Restrooms,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -14375,7 +14377,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Corridor_Roof_1_1_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Corridor,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -14530,7 +14532,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Corridor_Wall_15_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Corridor,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -14546,7 +14548,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Corridor_Wall_15_0_3,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Corridor,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -14562,7 +14564,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Corridor_Wall_15_0_5,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Corridor,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -14578,7 +14580,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Corridor_Wall_15_0_9,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Corridor,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -14594,7 +14596,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Corridor_Wall_16_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Corridor,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -14674,7 +14676,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Corridor_Wall_24_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Corridor,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -14690,7 +14692,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Corridor_Roof_27_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Corridor,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -14770,7 +14772,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Corridor_Wall_30_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Corridor,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -14786,7 +14788,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Secure%Files_Roof_1_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Secure%Files,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -14804,7 +14806,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Secure%Files_Wall_4_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Secure%Files,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -14820,7 +14822,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Secure%Files_Wall_4_1_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Secure%Files,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -14900,7 +14902,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Conference%03_Roof_1_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Conference%03,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -14981,7 +14983,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Conference%03_Wall_5_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Conference%03,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -14997,7 +14999,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Conference%03_Wall_6_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Conference%03,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15013,7 +15015,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Conference%03_Wall_7_0_6,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Conference%03,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15029,7 +15031,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Conference%03_Wall_7_0_7,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Conference%03,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15077,7 +15079,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Conference%03_Wall_11_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Conference%03,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15093,7 +15095,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Conference%03_Roof_16_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Conference%03,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15109,7 +15111,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Conference%03_Wall_17_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Conference%03,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15157,7 +15159,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Work%Room_Roof_1_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Work%Room,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15175,7 +15177,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Work%Room_Wall_4_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Work%Room,  !- Zone Name
     Ground,                  !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15191,7 +15193,7 @@ Zone,
   BuildingSurface:Detailed,
     2ND%FLOOR%NORTH:2nd%Work%Room_Wall_4_1_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     2ND%FLOOR%NORTH:2nd%Work%Room,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15209,7 +15211,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%SHAFT:3rd%HVAC%Shaft_Roof_1_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%SHAFT:3rd%HVAC%Shaft,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15225,7 +15227,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%SHAFT:3rd%HVAC%Shaft_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%SHAFT:3rd%HVAC%Shaft,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15241,7 +15243,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%SHAFT:3rd%HVAC%Shaft_Wall_3_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%SHAFT:3rd%HVAC%Shaft,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15257,7 +15259,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%SHAFT:3rd%HVAC%Shaft_Wall_4_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%SHAFT:3rd%HVAC%Shaft,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15273,7 +15275,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%SHAFT:3rd%HVAC%Shaft_Wall_5_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%SHAFT:3rd%HVAC%Shaft,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15325,7 +15327,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%LOWER:3rd%Lower%Lobby_Roof_1_1_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%LOWER:3rd%Lower%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15350,7 +15352,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%LOWER:3rd%Lower%Lobby_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%LOWER:3rd%Lower%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15430,7 +15432,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%LOWER:3rd%Lower%Lobby_Wall_5_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%LOWER:3rd%Lower%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15446,7 +15448,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%LOWER:3rd%Lower%Lobby_Wall_6_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%LOWER:3rd%Lower%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15462,7 +15464,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%LOWER:3rd%Lower%Lobby_Wall_7_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%LOWER:3rd%Lower%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15478,7 +15480,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%LOWER:3rd%Lower%Lobby_Wall_8_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%LOWER:3rd%Lower%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15494,7 +15496,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%LOWER:3rd%Lower%Lobby_Wall_9_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%LOWER:3rd%Lower%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15510,7 +15512,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%LOWER:3rd%Lower%Lobby_Wall_10_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%LOWER:3rd%Lower%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15526,7 +15528,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%LOWER:3rd%Lower%Lobby_Wall_11_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%LOWER:3rd%Lower%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15542,7 +15544,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%LOWER:3rd%Lower%Lobby_Wall_12_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%LOWER:3rd%Lower%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15558,7 +15560,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%LOWER:3rd%Lower%Lobby_Wall_13_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%LOWER:3rd%Lower%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15574,7 +15576,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%LOWER:3rd%Lower%Lobby_Wall_14_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%LOWER:3rd%Lower%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15622,7 +15624,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%LOWER:3rd%Lower%Vestibule_Roof_1_1_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%LOWER:3rd%Lower%Vestibule,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15638,7 +15640,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%LOWER:3rd%Lower%Vestibule_Roof_1_1_1,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%LOWER:3rd%Lower%Vestibule,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15654,7 +15656,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%LOWER:3rd%Lower%Vestibule_Roof_1_1_5,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%LOWER:3rd%Lower%Vestibule,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15670,7 +15672,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%LOWER:3rd%Lower%Vestibule_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%LOWER:3rd%Lower%Vestibule,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15686,7 +15688,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%LOWER:3rd%Lower%Vestibule_Wall_3_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%LOWER:3rd%Lower%Vestibule,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15720,7 +15722,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%UPPER:3rd%Upper%Lobby_Wall_1_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%UPPER:3rd%Upper%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15736,7 +15738,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%UPPER:3rd%Upper%Lobby_Wall_2_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%UPPER:3rd%Upper%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15752,7 +15754,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%UPPER:3rd%Upper%Lobby_Wall_3_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%UPPER:3rd%Upper%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15768,7 +15770,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%UPPER:3rd%Upper%Lobby_Wall_4_0_0,  !- Name
     Wall,                    !- Surface Type
-    extWall_light_ashrae901_2013_zone5,                      !- Construction Name
+    extWall_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%UPPER:3rd%Upper%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15784,7 +15786,7 @@ Zone,
   BuildingSurface:Detailed,
     3RD%FLOOR%UPPER:3rd%Upper%Lobby_Roof_5_0_0,  !- Name
     Roof,                    !- Surface Type
-    roof_light_ashrae901_2013_zone5,                      !- Construction Name
+    roof_medium_ashrae901_2013_zone4,                      !- Construction Name
     3RD%FLOOR%UPPER:3rd%Upper%Lobby,  !- Zone Name
     Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -15796,7 +15798,6 @@ Zone,
     16.6939608587,8.1431439941,14.3311427217,  !- X,Y,Z ==> Vertex 2 {m}
     19.5765057126,3.2187824185,16.0221279255,  !- X,Y,Z ==> Vertex 3 {m}
     24.4888207546,6.0547908394,16.0221279265;  !- X,Y,Z ==> Vertex 4 {m}
-
 
 !-   ===========  ALL OBJECTS IN CLASS: FENESTRATIONSURFACE:DETAILED ===========
 
@@ -25676,7 +25677,7 @@ ZoneInfiltration:DesignFlowRate,
     0.013313,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25690,7 +25691,7 @@ ZoneInfiltration:DesignFlowRate,
     0.006722,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25704,7 +25705,7 @@ ZoneInfiltration:DesignFlowRate,
     0.012919,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25718,7 +25719,7 @@ ZoneInfiltration:DesignFlowRate,
     0.079938,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25732,7 +25733,7 @@ ZoneInfiltration:DesignFlowRate,
     0.000908,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25746,7 +25747,7 @@ ZoneInfiltration:DesignFlowRate,
     0.043172,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25760,7 +25761,7 @@ ZoneInfiltration:DesignFlowRate,
     0.00239,                 !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25774,7 +25775,7 @@ ZoneInfiltration:DesignFlowRate,
     0.004731,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25788,7 +25789,7 @@ ZoneInfiltration:DesignFlowRate,
     0.018131,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25802,7 +25803,7 @@ ZoneInfiltration:DesignFlowRate,
     0.008054,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25816,7 +25817,7 @@ ZoneInfiltration:DesignFlowRate,
     0.009966,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25830,7 +25831,7 @@ ZoneInfiltration:DesignFlowRate,
     0.016523,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25844,7 +25845,7 @@ ZoneInfiltration:DesignFlowRate,
     0.002627,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25858,7 +25859,7 @@ ZoneInfiltration:DesignFlowRate,
     0.014883,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25872,7 +25873,7 @@ ZoneInfiltration:DesignFlowRate,
     0.008302,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25886,7 +25887,7 @@ ZoneInfiltration:DesignFlowRate,
     0.013535,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25900,7 +25901,7 @@ ZoneInfiltration:DesignFlowRate,
     0.013535,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25914,7 +25915,7 @@ ZoneInfiltration:DesignFlowRate,
     0.010481,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25928,7 +25929,7 @@ ZoneInfiltration:DesignFlowRate,
     0.005667,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25942,7 +25943,7 @@ ZoneInfiltration:DesignFlowRate,
     0.010001,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25956,7 +25957,7 @@ ZoneInfiltration:DesignFlowRate,
     0.00201,                 !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25970,7 +25971,7 @@ ZoneInfiltration:DesignFlowRate,
     0.008852,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25984,7 +25985,7 @@ ZoneInfiltration:DesignFlowRate,
     0.000691,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -25998,7 +25999,7 @@ ZoneInfiltration:DesignFlowRate,
     0.001582,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26012,7 +26013,7 @@ ZoneInfiltration:DesignFlowRate,
     0.073814,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26026,7 +26027,7 @@ ZoneInfiltration:DesignFlowRate,
     0.009633,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26040,7 +26041,7 @@ ZoneInfiltration:DesignFlowRate,
     0.008655,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26054,7 +26055,7 @@ ZoneInfiltration:DesignFlowRate,
     0.016051,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26068,7 +26069,7 @@ ZoneInfiltration:DesignFlowRate,
     0.011765,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26082,7 +26083,7 @@ ZoneInfiltration:DesignFlowRate,
     0.013364,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26096,7 +26097,7 @@ ZoneInfiltration:DesignFlowRate,
     0.020272,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26110,7 +26111,7 @@ ZoneInfiltration:DesignFlowRate,
     0.001408,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26124,7 +26125,7 @@ ZoneInfiltration:DesignFlowRate,
     0.016731,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26138,7 +26139,7 @@ ZoneInfiltration:DesignFlowRate,
     0.012302,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26152,7 +26153,7 @@ ZoneInfiltration:DesignFlowRate,
     0.008664,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26166,7 +26167,7 @@ ZoneInfiltration:DesignFlowRate,
     0.062516,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26180,7 +26181,7 @@ ZoneInfiltration:DesignFlowRate,
     0.02014,                 !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26194,7 +26195,7 @@ ZoneInfiltration:DesignFlowRate,
     0.013161,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26208,7 +26209,7 @@ ZoneInfiltration:DesignFlowRate,
     0.006461,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26222,7 +26223,7 @@ ZoneInfiltration:DesignFlowRate,
     0.008902,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26236,7 +26237,7 @@ ZoneInfiltration:DesignFlowRate,
     0.009768,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26250,7 +26251,7 @@ ZoneInfiltration:DesignFlowRate,
     0.01371,                 !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
@@ -26264,12 +26265,11 @@ ZoneInfiltration:DesignFlowRate,
     0.020563,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    1.0,                        !- Air Changes per Hour {1/hr}
+    0.5,                        !- Air Changes per Hour {1/hr}
     0.606,                       !- Constant Term Coefficient
     0.03636,                       !- Temperature Term Coefficient
     0.1177,                       !- Velocity Term Coefficient
     0;                       !- Velocity Squared Term Coefficient
-
 
 
 !-   ===========  ALL OBJECTS IN CLASS: EXTERIOR:LIGHTS ===========
@@ -27565,153 +27565,153 @@ ThermostatSetpoint:SingleHeating,
 
 ThermostatSetpoint:DualSetpoint,
     1ST%FLOOR:1st%Conference Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_1st1,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_1st1;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     1ST%FLOOR:1st%Research%Open%NE Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_1st2,   !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_1st2;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,   !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     1ST%FLOOR:1st%Classroom Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_1st1,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_1st1;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     1ST%FLOOR:1st%Restroom Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_1st2,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_1st2;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     1ST%FLOOR:1st%Research%Open%NW Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_1st1,   !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_1st1;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,   !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     1ST%FLOOR:1st%Research%Open%NM Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_1st2,   !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_1st2;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,   !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     1ST%FLOOR:1st%Break%Room Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_1st1,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_1st1;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     1ST%FLOOR:1st%Volunteer%Area Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_1st2,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_1st2;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     1ST%FLOOR:1st%Research%Open%SW Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_1st1,   !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_1st1;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,   !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     1ST%FLOOR:1st%Research%Open%SM Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_1st2,   !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_1st2;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,   !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     1ST%FLOOR:1st%Research%Open%SE Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_1st1,   !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_1st1;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,   !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     1ST%FLOOR:1st%Corridor Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_1st2,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_1st2;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     1ST%FLOOR:1st%Edctn%Strg Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_1st1,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_1st1;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NE Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_2nd1,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_2nd1;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     2ND%FLOOR%SOUTH:2nd%Conference%02 Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_2nd2,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_2nd2;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SW Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_2nd1,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_2nd1;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SMW Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_2nd2,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_2nd2;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SM Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_2nd1,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_2nd1;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SE Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_2nd2,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_2nd2;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SME Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_2nd1,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_2nd1;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     2ND%FLOOR%SOUTH:2nd%Conference%01 Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_2nd2,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_2nd2;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NMW Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_2nd1,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_2nd1;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NME Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_2nd2,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_2nd2;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     2ND%FLOOR%SOUTH:2nd%Open%Office%NW Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_2nd1,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_2nd1;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     2ND%FLOOR%NORTH:2nd%Restrooms Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_2nd2,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_2nd2;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     2ND%FLOOR%NORTH:2nd%Corridor Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_2nd1,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_2nd1;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     2ND%FLOOR%NORTH:2nd%Secure%Files Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_2nd2,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_2nd2;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     2ND%FLOOR%NORTH:2nd%Conference%03 Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_2nd1,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_2nd1;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     2ND%FLOOR%NORTH:2nd%Work%Room Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_2nd2,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_2nd2;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 ThermostatSetpoint:DualSetpoint,
     2ND%FLOOR%SOUTH:2nd%Open%Office%SME1 Thermostat Dual SP Control,  !- Name
-    ZoneHeatingSetpoint_2nd1,     !- Heating Setpoint Temperature Schedule Name
-    ZoneCoolingSetpoint_2nd1;     !- Cooling Setpoint Temperature Schedule Name
+    ZoneHeatingSetpoint,     !- Heating Setpoint Temperature Schedule Name
+    ZoneCoolingSetpoint;     !- Cooling Setpoint Temperature Schedule Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: ZONEHVAC:BASEBOARD:CONVECTIVE:WATER ===========
@@ -29811,7 +29811,7 @@ Schedule:Compact,
     Through: 31 Dec,         !- Field 1
     For: allDays,  !- Field 2
     Until: 24:00,            !- Field 16
-    18;                     !- Field 17
+    30;                     !- Field 17
 
 Schedule:Compact,
     CoolingCoilSchedule,  !- Name
@@ -30012,17 +30012,6 @@ EnergyManagementSystem:Sensor,
     ClassPeople,! Output:Variable or Output:Meter Index Key Name
     Schedule Value; ! Output:Variable or Output:Meter Name
 
-EnergyManagementSystem:Sensor,
-    BaseZnHeatingSch, !Name
-    ZoneHeatingSetpoint,! Output:Variable or Output:Meter Index Key Name
-    Schedule Value; ! Output:Variable or Output:Meter Name
-
-EnergyManagementSystem:Sensor,
-    BaseZnCoolingSch, !Name
-    ZoneCoolingSetpoint,! Output:Variable or Output:Meter Index Key Name
-    Schedule Value; ! Output:Variable or Output:Meter Name
-
-
 !-   ===========  ALL OBJECTS IN CLASS: EMS:GlobalVariable ===========
 
 EnergyManagementSystem:GlobalVariable,
@@ -30059,7 +30048,7 @@ EnergyManagementSystem:Program,
             SET LastMin = Minute,
         ENDIF,
         !For office schedule
-        SET SclOff = 0.2, ! Change 1
+        SET SclOff = 0.0,
         SET RdmNorm_OccpOff = @RandomNormal 5 1 0 10,
         SET RdmNorm_EquiOff = @RandomNormal 5 1 0 10,
         SET RdmNorm_OccpOff = RdmNorm_OccpOff - 5,
@@ -30069,7 +30058,7 @@ EnergyManagementSystem:Program,
         SET EquiOffRaw = RdmNorm_EquiOff * SclOff + BaseOffOccpSch,
 
         !For conference schedule
-        SET SclCof = 0.3, ! Change 1
+        SET SclCof = 0.0,
         SET RdmNorm_OccpCof = @RandomNormal 5 1 0 10,
         SET RdmNorm_EquiCof = @RandomNormal 5 1 0 10,
         SET RdmNorm_OccpCof = RdmNorm_OccpCof - 5,
@@ -30078,38 +30067,13 @@ EnergyManagementSystem:Program,
         SET EquiCofRaw = RdmNorm_EquiCof * SclCof + BaseOffOccpSch,
 
         !For classroom schedule
-        SET SclCls = 0.3, ! Change 1
+        SET SclCls = 0.0,
         SET RdmNorm_OccpCls = @RandomNormal 5 1 0 10,
         SET RdmNorm_EquiCls = @RandomNormal 5 1 0 10,
         SET RdmNorm_OccpCls = RdmNorm_OccpCls - 5,
         SET RdmNorm_EquiCls = RdmNorm_EquiCls - 5,
         SET OccpClsRaw = RdmNorm_OccpCls * SclCls + BaseClsOccpSch,
         SET EquiClsRaw = RdmNorm_EquiCls * SclCls + BaseClsOccpSch,
-
-        !For zone heating/cooling setpoint, 1st 1
-        SET SclCls = 1,
-        SET RdmNorm_Stpt_1st1 = @RandomNormal 5 1 0 10,
-        SET RdmNorm_Stpt_1st1 = RdmNorm_Stpt_1st1 - 5,
-        SET HeatingStptRaw_1st1 = RdmNorm_Stpt_1st1 * SclCls + BaseZnHeatingSch,
-        SET CoolingStptRaw_1st1 = RdmNorm_Stpt_1st1 * SclCls + BaseZnCoolingSch,
-        !For zone heating/cooling setpoint, 1st 2
-        SET SclCls = 1,
-        SET RdmNorm_Stpt_1st2 = @RandomNormal 5 1 0 10,
-        SET RdmNorm_Stpt_1st2 = RdmNorm_Stpt_1st2 - 5,
-        SET HeatingStptRaw_1st2 = RdmNorm_Stpt_1st2 * SclCls + BaseZnHeatingSch,
-        SET CoolingStptRaw_1st2 = RdmNorm_Stpt_1st2 * SclCls + BaseZnCoolingSch,
-        !For zone heating/cooling setpoint, 2nd 1
-        SET SclCls = 1,
-        SET RdmNorm_Stpt_2nd1 = @RandomNormal 5 1 0 10,
-        SET RdmNorm_Stpt_2nd1 = RdmNorm_Stpt_2nd1 - 5,
-        SET HeatingStptRaw_2nd1 = RdmNorm_Stpt_2nd1 * SclCls + BaseZnHeatingSch,
-        SET CoolingStptRaw_2nd1 = RdmNorm_Stpt_2nd1 * SclCls + BaseZnCoolingSch,
-        !For zone heating/cooling setpoint, 2nd 2
-        SET SclCls = 1,
-        SET RdmNorm_Stpt_2nd2 = @RandomNormal 5 1 0 10,
-        SET RdmNorm_Stpt_2nd2 = RdmNorm_Stpt_2nd2 - 5,
-        SET HeatingStptRaw_2nd2 = RdmNorm_Stpt_2nd2 * SclCls + BaseZnHeatingSch,
-        SET CoolingStptRaw_2nd2 = RdmNorm_Stpt_2nd2 * SclCls + BaseZnCoolingSch,
 
         !Process the raw schedules
         SET OccpOffPrcd = @Min (@Max OccpOffRaw 0.0) 1.0,
@@ -30121,15 +30085,6 @@ EnergyManagementSystem:Program,
         SET OccpClsPrcd = @Min (@Max OccpClsRaw 0.0) 1.0,
         SET EquiClsPrcd = @Min (@Max EquiClsRaw 0.0) 1.0,
 
-        SET HeatingStptPrcd_1st1 = HeatingStptRaw_1st1,
-        SET CoolingStptPrcd_1st1 = CoolingStptRaw_1st1,
-        SET HeatingStptPrcd_1st2 = HeatingStptRaw_1st2,
-        SET CoolingStptPrcd_1st2 = CoolingStptRaw_1st2,
-        SET HeatingStptPrcd_2nd1 = HeatingStptRaw_2nd1,
-        SET CoolingStptPrcd_2nd1 = CoolingStptRaw_2nd1,
-        SET HeatingStptPrcd_2nd2 = HeatingStptRaw_2nd2,
-        SET CoolingStptPrcd_2nd2 = CoolingStptRaw_2nd2,
-
         IF NoOccpFlag == 1,
             SET OccpOffPrcd = 0,
             SET EquiOffPrcd = 0.1,
@@ -30139,15 +30094,6 @@ EnergyManagementSystem:Program,
 
             SET OccpClsPrcd = 0,
             SET EquiClsPrcd = 0.1,
-
-            SET HeatingStptPrcd_1st1 = BaseZnHeatingSch,
-            SET CoolingStptPrcd_1st1 = BaseZnCoolingSch,
-            SET HeatingStptPrcd_1st2 = BaseZnHeatingSch,
-            SET CoolingStptPrcd_1st2 = BaseZnCoolingSch,
-            SET HeatingStptPrcd_2nd1 = BaseZnHeatingSch,
-            SET CoolingStptPrcd_2nd1 = BaseZnCoolingSch,
-            SET HeatingStptPrcd_2nd2 = BaseZnHeatingSch,
-            SET CoolingStptPrcd_2nd2 = BaseZnCoolingSch,
         ENDIF,
 
         !Overwrite the schedules
@@ -30159,16 +30105,6 @@ EnergyManagementSystem:Program,
 
         SET Set_cls_occpSch = OccpClsPrcd,
         SET Set_cls_equiSch = EquiClsPrcd,
-
-        SET Set_zn_htstpt_1st1 = HeatingStptPrcd_1st1,
-        SET Set_zn_clstpt_1st1 = CoolingStptPrcd_1st1,
-        SET Set_zn_htstpt_1st2 = HeatingStptPrcd_1st2,
-        SET Set_zn_clstpt_1st2 = CoolingStptPrcd_1st2,
-        SET Set_zn_htstpt_2nd1 = HeatingStptPrcd_2nd1,
-        SET Set_zn_clstpt_2nd1 = CoolingStptPrcd_2nd1,
-        SET Set_zn_htstpt_2nd2 = HeatingStptPrcd_2nd2,
-        SET Set_zn_clstpt_2nd2 = CoolingStptPrcd_2nd2,
-
     ENDIF;
 
 !-   ===========  ALL OBJECTS IN CLASS: EMS:ProgramCallingManager ===========
@@ -30220,54 +30156,6 @@ EnergyManagementSystem:Actuator,
 EnergyManagementSystem:Actuator,
     Set_cls_equiSch, !- Name
     StoClsEquiSch, !- Actuated Component Unique Name
-    Schedule:Compact, !- Actuated Component Type
-    Schedule Value ; !- Actuated Component Control Type
-
-EnergyManagementSystem:Actuator,
-    Set_zn_htstpt_1st1, !- Name
-    ZoneHeatingSetpoint_1st1, !- Actuated Component Unique Name
-    Schedule:Compact, !- Actuated Component Type
-    Schedule Value ; !- Actuated Component Control Type
-
-EnergyManagementSystem:Actuator,
-    Set_zn_clstpt_1st1, !- Name
-    ZoneCoolingSetpoint_1st1, !- Actuated Component Unique Name
-    Schedule:Compact, !- Actuated Component Type
-    Schedule Value ; !- Actuated Component Control Type
-
-EnergyManagementSystem:Actuator,
-    Set_zn_htstpt_1st2, !- Name
-    ZoneHeatingSetpoint_1st2, !- Actuated Component Unique Name
-    Schedule:Compact, !- Actuated Component Type
-    Schedule Value ; !- Actuated Component Control Type
-
-EnergyManagementSystem:Actuator,
-    Set_zn_clstpt_1st2, !- Name
-    ZoneCoolingSetpoint_1st2, !- Actuated Component Unique Name
-    Schedule:Compact, !- Actuated Component Type
-    Schedule Value ; !- Actuated Component Control Type
-
-EnergyManagementSystem:Actuator,
-    Set_zn_htstpt_2nd1, !- Name
-    ZoneHeatingSetpoint_2nd1, !- Actuated Component Unique Name
-    Schedule:Compact, !- Actuated Component Type
-    Schedule Value ; !- Actuated Component Control Type
-
-EnergyManagementSystem:Actuator,
-    Set_zn_clstpt_2nd1, !- Name
-    ZoneCoolingSetpoint_2nd1, !- Actuated Component Unique Name
-    Schedule:Compact, !- Actuated Component Type
-    Schedule Value ; !- Actuated Component Control Type
-
-EnergyManagementSystem:Actuator,
-    Set_zn_htstpt_2nd2, !- Name
-    ZoneHeatingSetpoint_2nd2, !- Actuated Component Unique Name
-    Schedule:Compact, !- Actuated Component Type
-    Schedule Value ; !- Actuated Component Control Type
-
-EnergyManagementSystem:Actuator,
-    Set_zn_clstpt_2nd2, !- Name
-    ZoneCoolingSetpoint_2nd2, !- Actuated Component Unique Name
     Schedule:Compact, !- Actuated Component Type
     Schedule Value ; !- Actuated Component Control Type
 
@@ -47009,7 +46897,6 @@ Output:Variable,
     Facility Total HVAC Electric Demand Power,  !- Variable Name
     Timestep;                !- Reporting Frequency
 
-
 Output:Variable,
     *,      !- Key Value
     Facility Cooling Setpoint Not Met Time,          !- Variable Name
@@ -47024,9 +46911,6 @@ Output:Variable,
     *,                       !- Key Value
     Facility Total HVAC Electric Demand Power,  !- Variable Name
     runperiod;                !- Reporting Frequency
-
-
-
 !TODO: change dx coil working schedule, for different climate different schedule
 
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUT:METER ===========
@@ -47044,7 +46928,9 @@ Output:Diagnostics,
 
 Output:Surfaces:Drawing, DXF;
 
+
 !-   ===========  ALL OBJECTS IN CLASS: ExternalInterface ===========
+
 ExternalInterface,           !- Object to activate the external interface
     PtolemyServer;              !- Name of external interface
 

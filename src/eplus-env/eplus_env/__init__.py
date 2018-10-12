@@ -766,6 +766,41 @@ register(
             'forecast_hour': 12,
             'act_repeat': 1});
 
+register(
+    id='Model5-Cool-v1',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-3-0/',
+            'weather_path':FD + '/envs/weather/beijing.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/eplus_models/csl_vav_dx/learning/cfg/cooling_1.cfg',
+            'idf_path':FD + '/envs/eplus_models/csl_vav_dx/learning/idf/5.csl.vavDx.medium.beijing.cool.idf',
+            'env_name': 'Model5-Cool-v1',
+            'min_max_limits': MIN_MAX_LIMITS_DICT['Model2-Cool-v1'],
+            'incl_forecast': False,
+            'forecastRandMode': 'normal',
+            'forecastRandStd': 0.15,
+            'forecastSource': None,
+            'forecastFilePath': None,
+            'forecast_hour': 12,
+            'act_repeat': 1});
+
+register(
+    id='Model5-Test-Cool-v1',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-3-0/',
+            'weather_path':FD + '/envs/weather/beijing_2017.epw',
+            'bcvtb_path':FD + '/envs/bcvtb/',
+            'variable_path':FD + '/envs/eplus_models/csl_vav_dx/learning/cfg/cooling_1.cfg',
+            'idf_path':FD + '/envs/eplus_models/csl_vav_dx/learning/idf/5.csl.vavDx.medium.beijing.cool.test.idf',
+            'env_name': 'Model5-Test-Cool-v1',
+            'min_max_limits': MIN_MAX_LIMITS_DICT['Model5-Cool-v1'],
+            'incl_forecast': False,
+            'forecastRandMode': 'normal',
+            'forecastRandStd': 0.15,
+            'forecastSource': None,
+            'forecastFilePath': None,
+            'forecast_hour': 12,
+            'act_repeat': 1});
 
 def setSchedulePath(sch_path_dict, tgtIDFPath):
     """
