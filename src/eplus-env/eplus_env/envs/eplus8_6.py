@@ -11,7 +11,7 @@ import threading
 import pandas as pd
 import numpy as np
 
-from shutil import copyfile
+from shutil import copyfile, rmtree
 from gym import Env, spaces
 from gym.envs.registration import register
 from xml.etree.ElementTree import Element, SubElement, Comment, tostring
@@ -61,7 +61,7 @@ class EplusEnv(Env):
     def __init__(self, eplus_path, weather_path, bcvtb_path, variable_path, idf_path, env_name,
                  min_max_limits, incl_forecast = False, forecastRandMode = 'normal', forecastRandStd = 0.15,
                  forecastSource = 'tmy3', forecastFilePath = None, forecast_hour = 12, act_repeat = 1,
-                 max_ep_data_store_num = 20):
+                 max_ep_data_store_num = 10):
         self._env_name = env_name;
         self._thread_name = threading.current_thread().getName();
         self.logger_main = Logger().getLogger('EPLUS_ENV_%s_%s_ROOT'%(env_name, self._thread_name), 
@@ -412,7 +412,7 @@ class EplusEnv(Env):
         if cur_dir_id - self._max_ep_data_store_num > 0:
             rm_dir_id = cur_dir_id - self._max_ep_data_store_num;
             rm_dir_full_name = cur_dir_name + dir_sig + str(rm_dir_id);
-            shutil.rmtree(rm_dir_full_name);
+            rmtree(rm_dir_full_name);
 
     def _create_eplus(self, eplus_path, weather_path, 
                       idf_path, out_path, eplus_working_dir):
