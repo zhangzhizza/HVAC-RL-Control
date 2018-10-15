@@ -614,7 +614,7 @@ class A3CAgent:
         self._weight_initer = weight_initer;
         self._prcdState_dim = prcdState_dim;
         
-    def compile(self, is_warm_start, model_dir, save_scope = 'global', save_max_to_keep = 5):
+    def compile(self, is_warm_start, model_dir, save_scope = 'global', save_max_to_keep = 20):
         """
         This method sets up the required TF graph and operations.
         

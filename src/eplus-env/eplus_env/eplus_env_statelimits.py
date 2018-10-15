@@ -232,6 +232,57 @@ Model1_Cool_v2_limits = [(8.0, 30.0), # OA
 	               ( 12.0,24.0),  # AHUSSP
 	               ]
 
+Model5_Cool_v1_limits = [(17.0, 38.0), # OA
+                   ( 0.0, 100.0), # RH
+	               ( 0.0, 482.0), # DifS
+	               ( 0.0, 904.0),  # DirS 
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IAT
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 18.0,28.0),  # IATSSP
+	               ( 0.0, 120000.0), # ENERGY
+	               ]
+
 fiveZ_tmy3Weather_v1 = [];
 
 min_max_limits_dict = {'IW-tmy3Weather-v9601': iw_v9601_limits,
@@ -256,4 +307,6 @@ min_max_limits_dict = {'IW-tmy3Weather-v9601': iw_v9601_limits,
 					   'IW-imp-v9701': iw_v9706_limits,
 					   'IW-imp-v9702': iw_v9706_limits,
 					   'Model1-Cool-v1': Model1_Cool_v1_limits,
-					   'Model1-Cool-v2': Model1_Cool_v2_limits};
+					   'Model1-Cool-v2': Model1_Cool_v2_limits,
+					   'Model5-Cool-v1': Model5_Cool_v1_limits,
+					   };
