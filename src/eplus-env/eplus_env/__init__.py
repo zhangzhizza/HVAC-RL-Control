@@ -775,7 +775,7 @@ register(
             'variable_path':FD + '/envs/eplus_models/csl_vav_dx/learning/cfg/cooling_1.cfg',
             'idf_path':FD + '/envs/eplus_models/csl_vav_dx/learning/idf/5.csl.vavDx.medium.beijing.cool.idf',
             'env_name': 'Model5-Cool-v1',
-            'min_max_limits': MIN_MAX_LIMITS_DICT['Model2-Cool-v1'],
+            'min_max_limits': MIN_MAX_LIMITS_DICT['Model5-Cool-v1'],
             'incl_forecast': False,
             'forecastRandMode': 'normal',
             'forecastRandStd': 0.15,

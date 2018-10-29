@@ -29,7 +29,6 @@ CWD = os.getcwd();
 LOG_LEVEL_MAIN = 'INFO';
 LOG_LEVEL_EPLS = 'INFO'
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
-ACTION_SIZE = 2 * 5;
 
 
 class EplusEnv(Env):
@@ -115,6 +114,7 @@ class EplusEnv(Env):
         self._epi_num = 0;
         self._act_repeat = act_repeat;
         self._max_ep_data_store_num = max_ep_data_store_num;
+        self._last_action = None; 
 
         """legacy env
         env_5702x_82_list = {'IW-v570202', 'IW-eval-v570202', 'IW-v570203', 'IW-eval-v570203',
@@ -375,6 +375,8 @@ class EplusEnv(Env):
             integral_item_list.append(Dblist[-1]); # Hard code that the last item is the integral item
             if curSimTim >= self._eplus_one_epi_len:
                 is_terminal = True;
+                # Remember the last action
+                self._last_action = action;
             act_repeat_i += 1;
         # Construct the return. The return is the state observation of the last step plus the integral item
         ret.append(curSimTim);
@@ -514,16 +516,18 @@ class EplusEnv(Env):
         resets the EnergyPlus environment.
         """
         # Send the final msg to EnergyPlus
-        #header = self._eplus_msg_header;
-        #tosend = self._assembleMsg(header[0], 1.0, ACTION_SIZE, 0,
-        #                            0, self._curSimTim, 
-        #                           [24 for i in range(ACTION_SIZE)]);
-        #self.logger_main.debug('Send final msg to Eplus.');
-        #self._conn.send(tosend.encode());
+        header = self._eplus_msg_header;
+        flag = 1.0; # Terminate flag is 1.0, specified by EnergyPlus
+        action = self._last_action;
+        action_size = len(self._last_action);
+        tosend = self._assembleMsg(header[0], flag, action_size, 0,
+                                    0, self._curSimTim, action);
+        self.logger_main.debug('Send the final msg to Eplus.');
+        self._conn.send(tosend.encode());
         # Recieve the final msg from Eplus
-        #rcv = self._conn.recv(2048).decode(encoding = 'ISO-8859-1');
-        #self.logger_main.debug('Final msh from Eplus: %s', rcv)
-        #self._conn.send(tosend.encode()); # Send again, don't know why
+        rcv = self._conn.recv(2048).decode(encoding = 'ISO-8859-1');
+        self.logger_main.debug('Final msh from Eplus: %s', rcv)
+        self._conn.send(tosend.encode()); # Send again, don't know why
         
         #time.sleep(0.2) # Rest for a while so EnergyPlus finish post processing
         # Remove the connection
