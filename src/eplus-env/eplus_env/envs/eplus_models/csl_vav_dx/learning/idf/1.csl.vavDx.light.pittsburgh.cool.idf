@@ -178,12 +178,13 @@ SizingPeriod:DesignDay,
 !    Yes,                     !- Use Weather File Snow Indicators
 !    1;                    !- Number of Times Runperiod to be Repeated
 
+! TO-DO change run period
 RunPeriod,
     Phipps_CSL_Building_Summer,  !- Name 
     6,                       !- Begin Month of 2016
     1,                       !- Begin Day of Month
-    6,                       !- End Month
-    1,                       !- End Day of Month
+    8,                       !- End Month
+    31,                       !- End Day of Month
     Wednesday,                  !- Day of Week for Start Day
     No,                      !- Use Weather File Holidays and Special Days
     No,                      !- Use Weather File Daylight Saving Period

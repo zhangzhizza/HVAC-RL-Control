@@ -179,6 +179,7 @@ SizingPeriod:DesignDay,
 !    Yes,                     !- Use Weather File Snow Indicators
 !    1;                    !- Number of Times Runperiod to be Repeated
 
+! TODO change run period
 RunPeriod,
     Phipps_CSL_Building_Summer,  !- Name 
     6,                       !- Begin Month of 2016

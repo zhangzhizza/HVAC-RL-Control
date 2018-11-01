@@ -4,7 +4,7 @@ https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow
 """
 import os
 import threading
-import time
+import time, json
 import gym
 import eplus_env
 import numpy as np
@@ -368,11 +368,19 @@ class A3CThread:
                                                     eval_action_func, eval_action_limits, raw_state_process_func,
                                                     debug_log_prob);
                             global_res_list[-1].extend(eval_res);
-                        np.savetxt(log_dir + '/eval_res_hist.csv', 
+                        np.savetxt(log_dir + '/../eval_res_hist.csv', 
                                    np.array(global_res_list), delimiter = ',');
                         self._local_logger.info ('Global step: %d, '
                                            'evaluation results %s'
                                            %(self._global_counter.value, str(global_res_list[-1])));
+                    # Write to the meta file
+                    if self._global_counter.value % 1000 == 0:
+                        meta_file_dir = log_dir + '/../run.meta'
+                        if os.path.isfile(meta_file_dir):
+                            with open(meta_file_dir, 'r+') as meta_file:
+                                meta_file_json = json.load(meta_file);
+                                meta_file_json['step'] = str(self._global_counter.value);
+                                json.dump(meta_file_json, meta_file);
                     # Global counter increment
                     self._global_counter.value += 1;
                 # Update the local global counter tensor

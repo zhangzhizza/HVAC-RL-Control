@@ -5,7 +5,7 @@
     {% load static %}
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>srtdash - ICO Dashboard</title>
+    <title>DRL-HVAC WebTrainer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="{% static "/images/icon/favicon.ico">
     <link rel="stylesheet" href="{% static "/css/bootstrap.min.css" %}">
@@ -30,6 +30,7 @@
 
     <script type="text/javascript">
         window.onload = function() {
+        // Set the project selector
         var project_selector = document.getElementById("project_select");
         var counter = 0;
         {%for run_name in run_dirs_names%}
@@ -42,8 +43,30 @@
             }
             counter = counter + 1;
         {%endfor%}
+        // Set the computer status view
+        document.getElementById('computer_1_ip').innerText = "0.0.0.0"
+        update_computer_worker_status("computer_1", "0.0.0.0", "7777")
         
+    
         }
+
+        // Repeated function
+        window.setInterval(function(){
+            update_computer_worker_status("computer_1", "0.0.0.0", "7777")
+
+        }, 5000);
+
+    function update_computer_worker_status(div_id, ip, port){
+        $.get("get_worker_status/?ip="+ip+"&port="+port, function(data, status){
+                var status = data;
+                document.getElementById(div_id + "_cpu").innerText = status.cpu
+                document.getElementById(div_id + "_mem").innerText = status.mem
+                var running_num = status.running.length
+                var queue_num = status.queue.length
+                document.getElementById(div_id + "_run").innerText = running_num + "/" + queue_num
+            });
+
+    } 
 
     function project_selector_func(select){
         var select_value = select.options[select.selectedIndex].getAttribute("value")
@@ -395,27 +418,7 @@
             </div>
             <!-- page title area end -->
             <div class="main-content-inner">
-                <!-- project overview -->
-                <div class="row mt-5 mb-5">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-sm-flex justify-content-between align-items-center">
-                                    <h4 class="header-title mb-0">Project Overview</h4>
-                                    
-                                    <select class="custome-select border-0 pr-3" id="project_select", onchange="project_selector_func(this)">
-                                    </select>
-                                </div>
-                                <div class="market-status-table mt-4">
-                                    <div class="table-responsive" id="project_table_div" style="height: 600px;">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- sales report area start -->
+                <!-- worker computer status -->
                 <div class="sales-report-area mt-5 mb-5">
                     <div class="row">
                         <div class="col-md-4">
@@ -423,15 +426,24 @@
                                 <div class="s-report-inner pr--20 pt--30 mb-3">
                                     <div class="icon"><i class="fa fa-btc"></i></div>
                                     <div class="s-report-title d-flex justify-content-between">
-                                        <h4 class="header-title mb-0">Bitcoin</h4>
-                                        <p>24 H</p>
+                                        <h4 class="header-title mb-0" id="computer_1_ip">Bitcoin</h4>
+                                        <p>Refresh every 5s</p>
+
                                     </div>
                                     <div class="d-flex justify-content-between pb-2">
-                                        <h2>$ 4567809,987</h2>
-                                        <span>- 45.87</span>
+                                        <h2>CPU Usage:</h2>
+                                        <h2 id="computer_1_cpu">50%</h2>
+                                    </div>
+                                    <div class="d-flex justify-content-between pb-2">
+                                        <h2>Memory Usage:</h2>
+                                        <h2 id="computer_1_mem">78%</h2>
+                                    </div>
+                                    <div class="d-flex justify-content-between pb-2">
+                                        <h2>Running/Queuing:</h2>
+                                        <h2 id="computer_1_run">0/0</h2>
                                     </div>
                                 </div>
-                                <canvas id="coin_sales1" height="100"></canvas>
+                                <div id="cpu_1_chart" height="100"></div>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -468,6 +480,28 @@
                         </div>
                     </div>
                 </div>
+                <!-- project overview -->
+                <div class="row mt-5 mb-5">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-sm-flex justify-content-between align-items-center">
+                                    <h4 class="header-title mb-0">Project Overview</h4>
+                                    
+                                    <select class="custome-select border-0 pr-3" id="project_select", onchange="project_selector_func(this)">
+                                    </select>
+                                </div>
+                                <div class="market-status-table mt-4">
+                                    <div class="table-responsive" id="project_table_div" style="height: 600px;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- sales report area start -->
+
                 <!-- sales report area end -->
                 <!-- overview area start -->
                 <div class="row">

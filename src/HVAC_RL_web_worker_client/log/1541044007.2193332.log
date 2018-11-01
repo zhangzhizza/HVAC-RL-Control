@@ -1,0 +1,3 @@
+[2018-10-31 23:46:47,219] worker_client_logger INFO:Socket starts at 0.0.0.0:7777
+[2018-10-31 23:49:29,152] worker_client_logger INFO:Got connection from 127.0.0.1:50078
+[2018-10-31 23:50:07,099] worker_client_logger INFO:Recived GETSTATUS request from 127.0.0.1:50078

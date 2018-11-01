@@ -1,0 +1,3 @@
+[2018-11-01 07:44:01,256] worker_client_logger INFO:Main thread worker manager starts.
+[2018-11-01 07:44:01,267] worker_client_logger INFO:Socket starts at 0.0.0.0:7777
+[2018-11-01 07:44:01,268] worker_client_logger INFO:Listening...

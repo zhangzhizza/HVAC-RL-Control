@@ -114,7 +114,7 @@ class EplusEnv(Env):
         self._epi_num = 0;
         self._act_repeat = act_repeat;
         self._max_ep_data_store_num = max_ep_data_store_num;
-        self._last_action = None; 
+        self._last_action = [20.0]; 
 
         """legacy env
         env_5702x_82_list = {'IW-v570202', 'IW-eval-v570202', 'IW-v570203', 'IW-eval-v570203',
@@ -528,7 +528,6 @@ class EplusEnv(Env):
         rcv = self._conn.recv(2048).decode(encoding = 'ISO-8859-1');
         self.logger_main.debug('Final msh from Eplus: %s', rcv)
         self._conn.send(tosend.encode()); # Send again, don't know why
-        
         #time.sleep(0.2) # Rest for a while so EnergyPlus finish post processing
         # Remove the connection
         self._conn.close();

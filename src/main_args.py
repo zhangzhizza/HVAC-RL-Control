@@ -54,7 +54,7 @@ def get_output_folder(parent_dir, env_name):
     experiment_id += 1
 
     parent_dir = os.path.join(parent_dir, env_name)
-    parent_dir = parent_dir + '-run{}'.format(experiment_id)
+    parent_dir = parent_dir + '-res{}'.format(experiment_id)
     return parent_dir
 
 
@@ -62,7 +62,7 @@ def get_args():
     parser = argparse.ArgumentParser(description='Run A3C on EnergyPlus')
     parser.add_argument('--env', default='Eplus-v1', help='EnergyPlus env name')
     parser.add_argument(
-        '-o', '--output', default='a3c-res-v0.1', help='Directory to save data to')
+        '-o', '--output', default='.', help='Directory to save data to')
     parser.add_argument('--max_interactions', default=15000000, type=int, 
     	help='The max number of interactions with the environment for A3C, default is 15000000.');
     parser.add_argument('--window_len', default=4, type=int, help='The state stacking window length, default is 4.');
@@ -144,8 +144,8 @@ def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func
         dict_writer.writerow(vars(args))
     else: 
       args.output = get_output_folder(args.output, args.env)
-      main_logger = Logger().getLogger(NAME, LOG_LEVEL, LOG_FORMATTER, args.output + '/main.log');
       tf.gfile.MakeDirs(args.output + '/model_data')
+      main_logger = Logger().getLogger(NAME, LOG_LEVEL, LOG_FORMATTER, args.output + '/main.log');
       main_logger.info(args)
       # State size
       stateOneStep_len = args.state_dim # 15 for the raw state dim
