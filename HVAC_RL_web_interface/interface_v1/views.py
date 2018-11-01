@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from xml.dom.minidom import parseString
 
 import requests
 import pandas as pd
-import os, shutil, subprocess, json
+import os, shutil, subprocess, json, socket, ast
 
 this_dir_path = os.path.dirname(os.path.realpath(__file__))
 
@@ -25,6 +25,31 @@ def getRuns():
 			run_dirs_names.append(this_dir);
 			run_dirs.append(scan_dir + this_dir)
 	return run_dirs_names, run_dirs;
+
+def get_worker_status(request):
+	"""
+	Args:
+		arguments: str
+			In the pattern "ip=0.0.0.0&port=9999"
+	"""
+	ip = request.GET.get('ip')
+	port = int(request.GET.get('port'))
+	# Create a socket
+	s = socket.socket();
+	s.connect((ip, port));
+	s.sendall(b'getstatus');
+	recv_str = s.recv(1024).decode(encoding = 'utf-8');
+	recv_list = ast.literal_eval(recv_str)
+	recv_json = {};
+	recv_json['cpu'] = recv_list[1]
+	recv_json['mem'] = recv_list[2]
+	recv_json['running'] = recv_list[3]
+	recv_json['queue'] = recv_list[4]
+	recv_json['steps'] = recv_list[5]
+
+	return JsonResponse(recv_json, json_dumps_params={'indent': 2})
+
+
 
 def get_all_exp(request, run_name):
 	run_dirs_names, run_dirs = getRuns();
