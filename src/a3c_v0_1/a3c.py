@@ -379,8 +379,10 @@ class A3CThread:
                         if os.path.isfile(meta_file_dir):
                             with open(meta_file_dir, 'r+') as meta_file:
                                 meta_file_json = json.load(meta_file);
+                                meta_file.seek(0)
                                 meta_file_json['step'] = str(self._global_counter.value);
                                 json.dump(meta_file_json, meta_file);
+                                meta_file.truncate();
                     # Global counter increment
                     self._global_counter.value += 1;
                 # Update the local global counter tensor

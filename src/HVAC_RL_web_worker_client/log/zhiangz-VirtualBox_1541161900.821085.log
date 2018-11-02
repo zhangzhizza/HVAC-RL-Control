@@ -1,0 +1,34 @@
+[2018-11-02 08:31:40,821] worker_client_logger INFO:Main thread worker manager starts.
+[2018-11-02 08:31:40,822] worker_client_logger INFO:Socket starts at 0.0.0.0:7777
+[2018-11-02 08:31:40,822] worker_client_logger INFO:Listening...
+[2018-11-02 08:31:44,238] worker_client_logger INFO:Got connection from 127.0.0.1:37148
+[2018-11-02 08:31:44,239] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:37148
+[2018-11-02 08:31:44,239] worker_client_logger INFO:Messages sent to 127.0.0.1:37148: ['getstatus', 30.1, 38.2, [], [], [None, None]]
+[2018-11-02 08:31:44,240] worker_client_logger INFO:Listening...
+[2018-11-02 08:31:49,248] worker_client_logger INFO:Got connection from 127.0.0.1:37156
+[2018-11-02 08:31:49,248] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:37156
+[2018-11-02 08:31:49,249] worker_client_logger INFO:Messages sent to 127.0.0.1:37156: ['getstatus', 42.6, 38.8, [], [], [None, None]]
+[2018-11-02 08:31:49,249] worker_client_logger INFO:Listening...
+[2018-11-02 08:31:54,251] worker_client_logger INFO:Got connection from 127.0.0.1:37162
+[2018-11-02 08:31:54,251] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:37162
+[2018-11-02 08:31:54,252] worker_client_logger INFO:Messages sent to 127.0.0.1:37162: ['getstatus', 39.8, 38.9, [], [], [None, None]]
+[2018-11-02 08:31:54,252] worker_client_logger INFO:Listening...
+[2018-11-02 08:31:58,796] worker_client_logger INFO:Got connection from 127.0.0.1:37234
+[2018-11-02 08:31:58,797] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:37234
+[2018-11-02 08:31:58,798] worker_client_logger INFO:Messages sent to 127.0.0.1:37234: ['getstatus', 55.2, 39.6, [], [], [None, None]]
+[2018-11-02 08:31:58,798] worker_client_logger INFO:Listening...
+[2018-11-02 08:32:01,531] worker_client_logger INFO:Got connection from 127.0.0.1:37238
+[2018-11-02 08:32:01,531] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:37238
+[2018-11-02 08:32:01,532] worker_client_logger INFO:Messages sent to 127.0.0.1:37238: ['getstatus', 48.3, 39.7, [], [], [None, None]]
+[2018-11-02 08:32:01,532] worker_client_logger INFO:Listening...
+[2018-11-02 08:32:03,792] worker_client_logger INFO:Got connection from 127.0.0.1:37244
+[2018-11-02 08:32:03,792] worker_client_logger INFO:Received DEPLOYRUN request from 127.0.0.1:37244
+[2018-11-02 08:32:03,837] worker_client_logger INFO:Request for exp_id webif_test_runs:1
+[2018-11-02 08:32:03,837] worker_client_logger INFO:Writing to run.sh...
+[2018-11-02 08:32:03,838] worker_client_logger INFO:Writing to run.sh finished.
+[2018-11-02 08:32:03,838] worker_client_logger INFO:Writing to run.meta...
+[2018-11-02 08:32:03,838] worker_client_logger INFO:Writing to run.meta finished.
+[2018-11-02 08:32:03,838] worker_client_logger INFO:Listening...
+[2018-11-02 08:32:03,850] worker_client_logger INFO:A new worker subprocess webif_test_runs:1 starts.
+[2018-11-02 08:32:06,525] worker_client_logger INFO:Got connection from 127.0.0.1:37248
+[2018-11-02 08:32:06,525] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:37248
