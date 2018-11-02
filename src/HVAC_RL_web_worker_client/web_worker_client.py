@@ -5,7 +5,7 @@ import time
 import os
 import psutil
 import queue
-import threading
+import threading, json
 import xml.etree.ElementTree as ET
 
 from util.logger import Logger
@@ -66,44 +66,41 @@ class WorkerClient(object):
 				io_f = None;
 				c.sendall(bytearray('ready_to_receive', encoding = 'utf-8'));
 				# Send order: exp_id, run.sh file, run.meta file
-				# Separated by "$%^next^%$", and ended by "$%^endtransfer^%$"
-				item_counter = 0;
-				recv_counter = 0;
+				# Separated by "$%^next^%$"
+				recv_byte = b'';
 				while True:
 					recv = c.recv(1024);
-					recv_decode = recv.decode(encoding = 'utf-8');
-					if recv_counter == 0:
-						this_exp_run_id = recv_decode;
-						this_exp_run_name, this_exp_run_num = recv_decode.split(':');
-						transfer_file_dir_base = FD + '/../' + this_exp_run_name + '/' \
+					recv_byte += recv;
+					recv_decode_this = recv.decode(encoding = 'utf-8');
+					print(recv_decode_this)
+					if '$%^endtransfer^%$' in recv_decode_this:
+						break;
+				recv_decode = recv_byte.decode(encoding = 'utf-8');
+				print (recv_decode)
+				recv_decode_list = recv_decode.split('$%^next^%$');
+				# Remove the ending strings
+				recv_decode_list[-1] = recv_decode_list[-1].split('$%^endtransfer^%$')[0]
+				this_exp_run_id = recv_decode_list[0];
+				self._logger_main.info('Request for exp_id %s'%this_exp_run_id);
+				this_exp_run_name, this_exp_run_num = this_exp_run_id.split(':');
+				transfer_file_dir_base = FD + '/../' + this_exp_run_name + '/' \
 											   + this_exp_run_num;
-						# Create the exp base dir if not exist
-						if not os.path.isdir(transfer_file_dir_base):
-							os.makedirs(transfer_file_dir_base);
-					else:
-						# Receive files
-						if recv_decode.lower() == '$%^next^%$':
-							item_counter += 1;
-							# Set file name
-							if item_counter == 1:
-								file_name = 'run.sh';
-							elif item_counter == 2:
-								io_f.close() # Close the last file io object
-								self._logger_main.info('Finish receiving %s'%file_name);
-								file_name = 'run.meta';
-							io_f = open(transfer_file_dir_base + '/' + file_name, 'wb');
-							self._logger_main.info('Start receiving %s'%file_name);
-						elif recv_decode.lower() != '$%^endtransfer^%$':
-							# Write byte to file
-							io_f.write(recv);
-						elif recv_decode.lower() == '$%^endtransfer^%$':
-							# End
-							io_f.close();
-							self._logger_main.info('Finish receiving %s'%file_name);
-							break;
-					recv_counter += 1;
+				# Create the exp base dir if not exist
+				if not os.path.isdir(transfer_file_dir_base):
+					os.makedirs(transfer_file_dir_base);
+				file_names_to_write = ['run.sh', 'run.meta'];
+				file_counter = 1;
+				for file_name in file_names_to_write:
+					with open(transfer_file_dir_base + '/' + file_name, 'wb') as io_f:
+						self._logger_main.info('Writing to %s...'%file_name);
+						io_f.write(bytearray(recv_decode_list[file_counter], encoding = 'utf-8'));
+					self._logger_main.info('Writing to %s finished.'%file_name);
+					file_counter += 1;
 				# Push the exp to the queue
 				self._exp_queue.put(this_exp_run_id)
+				# Set the meta status
+				self._set_meta_status(transfer_file_dir_base + '/run.meta', 'queuing');
+				c.sendall(b'exp_queuing');
 			elif recv.lower() == 'getexpstate':
 				self._logger_main.info('Received GETEXPSTATE request from ' + addr)
 				# Send run.meta and eval_res_hist.csv
@@ -127,11 +124,11 @@ class WorkerClient(object):
 						self._logger_main.info('Finish sending %s'%file_full_dir)
 					else:
 						self._logger_main.warning('%s does not exist!'%file_full_dir)
-						c.sendall('$%^file_not_exist^%$');
+						c.sendall(b'$%^file_not_exist^%$');
 					file_sent_count += 1;
 					if file_sent_count < len(files_to_send):
-						c.sendall('$%^next^%$');
-				c.sendall('$%^endtransfer^%$');
+						c.sendall(b'$%^next^%$');
+				c.sendall(b'$%^endtransfer^%$');
 			
 	def _run_exp_worker_manager(self, max_work_num):
 		
@@ -149,10 +146,7 @@ class WorkerClient(object):
 							# Modify the meta file
 							run_name, exp_id = process_name.split(':');
 							meta_file_path = FD + '/../' + run_name + '/' + exp_id + '/run.meta';
-							with open(meta_file_path, 'r+') as meta_file:
-								meta_file_json = json.load(meta_file);
-								meta_file_json['status'] = 'complete';
-								json.dump(meta_file_json, meta_file);
+							self._set_meta_status(meta_file_path, 'complete')
 				# Add new worker tasks to run
 				if len(self._current_working_processes) < max_work_num:
 					if self._exp_queue.qsize() > 0:
@@ -164,6 +158,9 @@ class WorkerClient(object):
 							preexec_fn = os.setsid, stdout = out_log_file, 
 							stderr = out_log_file, cwd = cwd);
 						self._logger_main.info('A new worker subprocess %s starts.' %exp_id)
+						# Modify the meta file
+						meta_file_dir = cwd + '/run.meta'
+						self._set_meta_status(meta_file_dir, 'running')
 						self._current_working_processes[exp_id] = process;
 			self._logger_main.info('Main thread worker manager ends.')
 
@@ -184,6 +181,16 @@ class WorkerClient(object):
 					meta_file_json = json.load(meta_file);
 					current_step = meta_file_json['step'];
 		return running_tasks_steps;
+
+	def _set_meta_status(self, meta_file_dir, status_str):
+		if os.path.isfile(meta_file_dir):
+			with open(meta_file_dir, 'r+') as meta_file:
+				meta_file_json = json.load(meta_file);
+				print (meta_file_json)
+				meta_file.seek(0);
+				meta_file_json['status'] = status_str;
+				json.dump(meta_file_json, meta_file);
+				meta_file.truncate()
 
 
 

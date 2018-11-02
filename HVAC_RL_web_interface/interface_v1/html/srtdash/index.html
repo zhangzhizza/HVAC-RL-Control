@@ -29,9 +29,21 @@
     <script src="{% static "/js/jquery.slicknav.min.js" %}"></script>
 
     <script type="text/javascript">
+        var all_workers = [];
+        var all_workers_ips = [];
+        var all_workers_ports = [];
+        var project_selector;
+
         window.onload = function() {
+        // Read all workers
+        {%for available_computer in available_computers%}
+            [ip, port] = "{{ available_computer }}".split(":");
+            all_workers.push("{{ available_computer }}")
+            all_workers_ips.push(ip);
+            all_workers_ports.push(port);
+        {%endfor%}
         // Set the project selector
-        var project_selector = document.getElementById("project_select");
+        project_selector = document.getElementById("project_select");
         var counter = 0;
         {%for run_name in run_dirs_names%}
             var project_run_opn = document.createElement("option");
@@ -43,18 +55,60 @@
             }
             counter = counter + 1;
         {%endfor%}
+
         // Set the computer status view
-        document.getElementById('computer_1_ip').innerText = "0.0.0.0"
-        update_computer_worker_status("computer_1", "0.0.0.0", "7777")
-        
+        for (var i=0; i<all_workers_ips.length; i++){
+            document.getElementById('computer_' + (i+1) + '_ip').innerText = all_workers_ips[i]
+            update_computer_worker_status('computer_' + (i+1)
+                                        , all_workers_ips[i], all_workers_ports[i])
+
+        }        
     
         }
 
         // Repeated function
         window.setInterval(function(){
-            update_computer_worker_status("computer_1", "0.0.0.0", "7777")
+            // Get worker computers status
+            for (var i=0; i<all_workers_ips.length; i++){
+                update_computer_worker_status('computer_' + (i+1)
+                                        , all_workers_ips[i], all_workers_ports[i])
+            }
+            // Update the exps status
+            update_exps_status(project_selector.options[project_selector.selectedIndex]
+                                .getAttribute("value"))
 
         }, 5000);
+
+    function update_exps_status(run_name){
+        $.get("get_exp_status/"+run_name, function(data, status){
+                var status = data;
+                var exp_ids = Object.keys(status);
+                for (var exp_i=0; exp_i<exp_ids.length; exp_i++){
+                    var this_exp_id = exp_ids[exp_i];
+                    var this_exp_statuses = status[this_exp_id];
+                    var this_exp_status = document.getElementById(this_exp_id+":status");
+                    var this_exp_machine = document.getElementById(this_exp_id+":machine:select")
+                    var this_exp_step = document.getElementById(this_exp_id+":step");
+                    if (this_exp_statuses["status"] == null){
+                        this_exp_status.innerText = "None"
+                    }else{
+                        this_exp_status.innerText = String(this_exp_statuses["status"]);
+                    }      
+                    //var this_exp_machine_sts = this_exp_statuses["machine"];
+                    //if (this_exp_machine_sts == null){
+                    //    this_exp_machine.selectedIndex = 0;
+                    //}else{
+                    //    this_exp_machine.selectedIndex = (all_workers_ips
+                    //                .indexOf(this_exp_statuses["machine"]) + 1);
+                    //}
+                    if (this_exp_statuses["step"] == null){
+                        this_exp_step.innerText = "None";
+                    }else{
+                        this_exp_step.innerText = String(this_exp_statuses["step"]);
+                    }
+                }
+            });
+    }
 
     function update_computer_worker_status(div_id, ip, port){
         $.get("get_worker_status/?ip="+ip+"&port="+port, function(data, status){
@@ -73,14 +127,81 @@
         project_selector_func_helper(select_value)
     }
 
+    function run_button_click(event){
+        var this_btn_prj_id = event.explicitOriginalTarget.value
+        var this_row_mch_slt = document.getElementById(this_btn_prj_id + ":machine:select")
+        var this_row_mch_val = this_row_mch_slt.options[this_row_mch_slt.selectedIndex].getAttribute("value")
+        $.get("run_exp/?id="+this_btn_prj_id+"&ip="+this_row_mch_val, function(data, status){
+            if (data=="Successful"){
+                this_row_status_id = this_btn_prj_id+":status";
+                document.getElementById(this_row_status_id).innerText = "starting";
+                // Set the button to disabled
+                document.getElementById(this_btn_prj_id+":action:button").disabled = true;
+                // Set the selector disabled
+                this_row_mch_slt.disabled = true;
+            }else{
+                alert(data)
+            }
+        });
+    }
+
     function project_selector_func_helper(select_value){
         $.get("get_all_exp/" + select_value + "/", function(data, status){
                 document.getElementById('project_table_div').innerHTML = data;
                 var table = document.getElementById('project_table_div').getElementsByTagName('table')[0]
-                table.classList.add('dbkit-table');
+                //table.classList.add('dbkit-table');
                 table.classList.remove('dataframe')
+                // Add button and machine selector to table
+                var tb_rows = table.tBodies[0].rows;
+                for (var i=0; i<tb_rows.length; i++){
+                    var tb_row_i = tb_rows[i];
+                    // Status col
+                    var tb_row_i_sts = tb_row_i.cells[2]
+                    // Create a button
+                    var tb_row_i_act = tb_row_i.cells[1];
+                    var button_i = document.createElement("button")
+                    button_i.innerText = "run";
+                    button_i.id = tb_row_i.id + ':action:button';
+                    button_i.value = tb_row_i.id
+                    button_i.addEventListener("click", run_button_click)
+                    if (tb_row_i_sts.innerText != "None"){
+                        button_i.disabled = true;
+                    } 
+                    // Add button as child
+                    tb_row_i_act.innerText = "";
+                    tb_row_i_act.appendChild(button_i);
+                    // Create a dropdown list
+                    var tb_row_i_mch = tb_row_i.cells[3]
+                    var mch_select = document.createElement("select")
+                    mch_select.id = tb_row_i.id + ':machine:select';
+                    // Add a none option
+                    var mch_none_opn = document.createElement("option");
+                    mch_none_opn.text = "";
+                    mch_none_opn.value = "";
+                    mch_select.add(mch_none_opn);
+                    for (var j=0; j<all_workers_ips.length; j++){
+                        var mch_i_opn = document.createElement("option");
+                        var mch_i_ip = all_workers_ips[j]
+                        mch_i_opn.text = mch_i_ip
+                        mch_i_opn.value = mch_i_ip
+                        mch_select.add(mch_i_opn);
+                    }
+                    // Set selection
+                    if (tb_row_i_mch.innerText != "None"){
+                        mch_select.selectedIndex = all_workers_ips.indexOf(tb_row_i_mch.innerText) + 1;
+                        mch_select.disabled = true
+                    } 
+                    // Add select as child
+                    tb_row_i_mch.innerText = "";
+                    tb_row_i_mch.appendChild(mch_select);
+                }
+
             });
         
+
+    }
+
+    function add_action_button(){
 
     }
 
