@@ -9,7 +9,6 @@ import threading, json
 import xml.etree.ElementTree as ET
 
 from util.logger import Logger
-from SDCServer.bacnet.bacenum import bacenumMap, bacenumMap_inv
 
 FD = os.path.dirname(os.path.realpath(__file__));
 LOG_LEVEL = 'DEBUG';
@@ -23,7 +22,7 @@ class WorkerClient(object):
 		self._current_working_processes = {};
 		self._main_thread_manager = None;
 		self._logger_main = Logger().getLogger('worker_client_logger', LOG_LEVEL, LOG_FMT, 
-			log_file_path = '%s/log/%s_%s.log'%(FD, socket.gethostname(), time.time()));
+			log_file_path = '%s/log/%s_%s_client.log'%(FD, socket.gethostname(), time.time()));
 		self._run_exp_worker_manager(max_work_num)
 		self._port = port;
 
@@ -50,10 +49,25 @@ class WorkerClient(object):
 				# Get cpu and memory usage
 				cpu = psutil.cpu_percent()
 				memory = psutil.virtual_memory().percent
-				running_tasks = [subp_name for subp_name in self._current_working_processes];
+				running_tasks = [subp_name for subp_name in list(self._current_working_processes)];
 				waitng_tasks = [exp[0] for exp in list(self._exp_queue.queue)]
-				running_tasks_steps = self._get_running_tasks_steps(running_tasks)
-				to_send = ['getstatus', cpu, memory, running_tasks, waitng_tasks, running_tasks_steps];
+				to_send = {};
+				to_send['cpu'] = str(cpu);
+				to_send['mem'] = str(memory);
+				exp_dict = {}
+				# All processes
+				all_processes = []
+				all_processes.extend(running_tasks);
+				all_processes.extend(waitng_tasks);
+				all_processes = running_tasks + waitng_tasks;
+				print (list(self._exp_queue.queue))
+				print (list(self._current_working_processes))
+				for process_i in all_processes:
+					process_i_status, process_i_step = self._get_exp_status(process_i)
+					exp_dict[process_i] = [process_i_status, process_i_step];
+				to_send['exps'] = exp_dict;
+				to_send['running_queuing'] = '%s/%s'%(len(running_tasks), len(waitng_tasks));
+				to_send = json.dumps(to_send);
 				c.sendall(bytearray(str(to_send), encoding = 'utf-8'));
 				self._logger_main.info('Messages sent to %s: %s'%(addr, to_send))
 			elif recv.lower() == 'deployrun':
@@ -138,7 +152,7 @@ class WorkerClient(object):
 				time.sleep(1)
 				# Remove finsihed threads from the list
 				if len(self._current_working_processes) > 0:
-					for process_name in self._current_working_processes:
+					for process_name in list(self._current_working_processes):
 						process = self._current_working_processes[process_name];
 						if not process.poll() == None:
 							del self._current_working_processes[process_name];
@@ -171,16 +185,15 @@ class WorkerClient(object):
 	def _run_exp_worker(self):
 		return;
 
-	def _get_running_tasks_steps(self, running_task_ids):
-		running_tasks_steps = [None, None]
-		for running_task_id in running_task_ids:
-			run_name, exp_id = running_task_id.split(':');
-			meta_file_path = FD + '/../' + run_name + '/' + exp_id + '/run.meta';
-			if os.path.isfile(meta_file_path):
-				with open(meta_file_path, 'r') as meta_file:
-					meta_file_json = json.load(meta_file);
-					current_step = meta_file_json['step'];
-		return running_tasks_steps;
+	def _get_exp_status(self, task_id):
+		run_name, exp_id = task_id.split(':');
+		meta_file_path = FD + '/../' + run_name + '/' + exp_id + '/run.meta';
+		if os.path.isfile(meta_file_path):
+			with open(meta_file_path, 'r') as meta_file:
+				meta_file_json = json.load(meta_file);
+				current_status = meta_file_json['status'];
+				current_step = meta_file_json['step'];
+		return [current_status, current_step];
 
 	def _set_meta_status(self, meta_file_dir, status_str):
 		if os.path.isfile(meta_file_dir):

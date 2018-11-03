@@ -8,6 +8,7 @@ import os, shutil, subprocess, json, socket, ast
 
 this_dir_path = os.path.dirname(os.path.realpath(__file__))
 available_computers = ["0.0.0.0:7777"]
+print('hahah')
 
 # Create your views here.
 def index(request):
@@ -40,15 +41,8 @@ def get_worker_status(request):
 	s = socket.socket();
 	s.connect((ip, port));
 	s.sendall(b'getstatus');
-	recv_str = s.recv(1024).decode(encoding = 'utf-8');
-	recv_list = ast.literal_eval(recv_str)
-	recv_json = {};
-	recv_json['cpu'] = recv_list[1]
-	recv_json['mem'] = recv_list[2]
-	recv_json['running'] = recv_list[3]
-	recv_json['queue'] = recv_list[4]
-	recv_json['steps'] = recv_list[5]
-
+	recv_str = s.recv(4096).decode(encoding = 'utf-8');
+	recv_json = json.loads(recv_str)
 	return JsonResponse(recv_json, json_dumps_params={'indent': 2})
 
 def run_exp(request):
