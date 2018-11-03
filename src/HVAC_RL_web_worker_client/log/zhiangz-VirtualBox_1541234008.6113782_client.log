@@ -1,0 +1,54 @@
+[2018-11-03 04:33:28,611] worker_client_logger INFO:Main thread worker manager starts.
+[2018-11-03 04:33:28,612] worker_client_logger INFO:Socket starts at 0.0.0.0:7777
+[2018-11-03 04:33:28,612] worker_client_logger INFO:Listening...
+[2018-11-03 04:33:29,872] worker_client_logger INFO:Got connection from 127.0.0.1:52866
+[2018-11-03 04:33:29,872] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:52866
+[2018-11-03 04:33:29,874] worker_client_logger INFO:Messages sent to 127.0.0.1:52866: {"running_queuing": "0/0", "mem": "55.4", "cpu": "5.5", "exps": {}}
+[2018-11-03 04:33:29,874] worker_client_logger INFO:Listening...
+[2018-11-03 04:33:30,669] worker_client_logger INFO:Got connection from 127.0.0.1:52870
+[2018-11-03 04:33:30,669] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:52870
+[2018-11-03 04:33:30,670] worker_client_logger INFO:Messages sent to 127.0.0.1:52870: {"running_queuing": "0/0", "mem": "55.4", "cpu": "12.1", "exps": {}}
+[2018-11-03 04:33:30,670] worker_client_logger INFO:Listening...
+[2018-11-03 04:33:34,882] worker_client_logger INFO:Got connection from 127.0.0.1:52874
+[2018-11-03 04:33:34,882] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:52874
+[2018-11-03 04:33:34,883] worker_client_logger INFO:Messages sent to 127.0.0.1:52874: {"running_queuing": "0/0", "mem": "55.4", "cpu": "13.1", "exps": {}}
+[2018-11-03 04:33:34,884] worker_client_logger INFO:Listening...
+[2018-11-03 04:33:35,686] worker_client_logger INFO:Got connection from 127.0.0.1:52878
+[2018-11-03 04:33:35,686] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:52878
+[2018-11-03 04:33:35,687] worker_client_logger INFO:Messages sent to 127.0.0.1:52878: {"running_queuing": "0/0", "mem": "55.4", "cpu": "6.3", "exps": {}}
+[2018-11-03 04:33:35,687] worker_client_logger INFO:Listening...
+[2018-11-03 04:33:39,891] worker_client_logger INFO:Got connection from 127.0.0.1:52882
+[2018-11-03 04:33:39,891] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:52882
+[2018-11-03 04:33:39,891] worker_client_logger INFO:Messages sent to 127.0.0.1:52882: {"running_queuing": "0/0", "mem": "55.5", "cpu": "11.4", "exps": {}}
+[2018-11-03 04:33:39,891] worker_client_logger INFO:Listening...
+[2018-11-03 04:33:40,689] worker_client_logger INFO:Got connection from 127.0.0.1:52888
+[2018-11-03 04:33:40,689] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:52888
+[2018-11-03 04:33:40,690] worker_client_logger INFO:Messages sent to 127.0.0.1:52888: {"running_queuing": "0/0", "mem": "55.0", "cpu": "18.3", "exps": {}}
+[2018-11-03 04:33:40,690] worker_client_logger INFO:Listening...
+[2018-11-03 04:33:43,488] worker_client_logger INFO:Got connection from 127.0.0.1:52962
+[2018-11-03 04:33:43,488] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:52962
+[2018-11-03 04:33:43,488] worker_client_logger INFO:Messages sent to 127.0.0.1:52962: {"running_queuing": "0/0", "mem": "55.9", "cpu": "31.2", "exps": {}}
+[2018-11-03 04:33:43,488] worker_client_logger INFO:Listening...
+[2018-11-03 04:33:44,900] worker_client_logger INFO:Got connection from 127.0.0.1:52964
+[2018-11-03 04:33:44,900] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:52964
+[2018-11-03 04:33:44,901] worker_client_logger INFO:Messages sent to 127.0.0.1:52964: {"running_queuing": "0/0", "mem": "56.0", "cpu": "25.6", "exps": {}}
+[2018-11-03 04:33:44,902] worker_client_logger INFO:Listening...
+[2018-11-03 04:33:46,903] worker_client_logger INFO:Got connection from 127.0.0.1:52968
+[2018-11-03 04:33:46,903] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:52968
+[2018-11-03 04:33:46,904] worker_client_logger INFO:Messages sent to 127.0.0.1:52968: {"running_queuing": "0/0", "mem": "56.0", "cpu": "7.9", "exps": {}}
+[2018-11-03 04:33:46,904] worker_client_logger INFO:Listening...
+[2018-11-03 04:33:49,911] worker_client_logger INFO:Got connection from 127.0.0.1:52972
+[2018-11-03 04:33:49,912] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:52972
+[2018-11-03 04:33:49,913] worker_client_logger INFO:Messages sent to 127.0.0.1:52972: {"running_queuing": "0/0", "mem": "55.6", "cpu": "13.7", "exps": {}}
+[2018-11-03 04:33:49,913] worker_client_logger INFO:Listening...
+[2018-11-03 04:33:51,850] worker_client_logger INFO:Got connection from 127.0.0.1:52976
+[2018-11-03 04:33:51,852] worker_client_logger INFO:Received DEPLOYRUN request from 127.0.0.1:52976
+[2018-11-03 04:33:51,895] worker_client_logger INFO:Request for exp_id webif_test_runs:1
+[2018-11-03 04:33:51,896] worker_client_logger INFO:Writing to run.sh...
+[2018-11-03 04:33:51,896] worker_client_logger INFO:Writing to run.sh finished.
+[2018-11-03 04:33:51,897] worker_client_logger INFO:Writing to run.meta...
+[2018-11-03 04:33:51,897] worker_client_logger INFO:Writing to run.meta finished.
+[2018-11-03 04:33:51,898] worker_client_logger INFO:Listening...
+[2018-11-03 04:33:51,910] worker_client_logger INFO:Got connection from 127.0.0.1:52982
+[2018-11-03 04:33:51,910] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:52982
+[2018-11-03 04:33:52,645] worker_client_logger INFO:A new worker subprocess webif_test_runs:1 starts.

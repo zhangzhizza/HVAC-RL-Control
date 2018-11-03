@@ -5,22 +5,1060 @@
 /home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/importlib/_bootstrap.py:222: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
   return f(*args, **kwds)
 Using TensorFlow backend.
-[2018-11-02 08:57:09,643] A3C_AGENT_MAIN INFO:Namespace(action_repeat_n=1, action_space='cslDxCool_1', activation='linear', agent_num=5, check_args_only=False, clip_norm=5.0, debug_log_prob=0.0005, decay_steps=1000000, dropout_prob=0.0, end_e=0.0, env='Model1-Cool-v1', eval_act_func='cslDxActCool_1', eval_epi_num=1, eval_freq=250000, forecast_dim=0, gamma=0.99, h_decay_bounds=[], h_regu_frac=[0.0], init_e=0.0, isNoisyNet=True, isNoisyNetEval_rmNoise=True, is_greedy_policy=False, is_learning_rate_decay_staircase=False, is_warm_start=False, job_mode='Train', learning_rate=0.001, learning_rate_decay_rate=0.9, learning_rate_decay_steps=100000, max_interactions=1000, metric_func='cslDxCool_1', model_dir='None', model_param=[8, 1], model_type='nn', num_threads=2, output='./Model1-Cool-v1-res1', p_loss_frac=1.0, raw_state_prcs_func='cslDx_1', reward_func='cslDxCool_1', rmsprop_decay=0.99, rmsprop_epsil=1e-10, rmsprop_momet=0.0, rwd_e_para=1.0, rwd_p_para=1.0, save_freq=500000, save_max_to_keep=5, save_scope='all', sharedNet_type='Dense', state_dim=49, test_env='Model1-Test-Cool-v1', test_mode='Multiple', train_act_func='cslDxActCool_1', train_freq=5, v_loss_frac=0.5, violation_penalty_scl=10.0, weight_initer='glorot_uniform', window_len=6)
-[2018-11-02 08:57:09,643] A3C_AGENT_MAIN INFO:Start compiling...
-2018-11-02 08:57:09.725577: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2
-[2018-11-02 08:57:12,853] A3C_AGENT_MAIN INFO:Start the learning...
-[2018-11-02 08:57:12,854] A3C_AGENT_MAIN INFO:Prepare the evaluation environments ['Model1-Cool-v1', 'Model1-Test-Cool-v1'] ...
-[2018-11-02 08:57:12,914] A3C_AGENT_MAIN INFO:Prepare the local workers ...
-[2018-11-02 08:57:12,915] A3C_AGENT_WORKER-Thread-2 INFO:Local worker starts!
-[2018-11-02 08:57:12,946] EPLUS_ENV_Model1-Cool-v1_Thread-2_ROOT INFO:Creating EnergyPlus simulation environment...
-[2018-11-02 08:57:12,950] EPLUS_ENV_Model1-Cool-v1_Thread-2_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/webif_test_runs/1/Eplus-env-Model1-Cool-v1-res2/Eplus-env-sub_run1
-[2018-11-02 08:57:13,916] A3C_AGENT_MAIN INFO:Prepare the local workers ...
-[2018-11-02 08:57:13,917] A3C_AGENT_WORKER-Thread-3 INFO:Local worker starts!
-[2018-11-02 08:57:13,959] EPLUS_ENV_Model1-Cool-v1_Thread-3_ROOT INFO:Creating EnergyPlus simulation environment...
-[2018-11-02 08:57:13,963] EPLUS_ENV_Model1-Cool-v1_Thread-3_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/webif_test_runs/1/Eplus-env-Model1-Cool-v1-res3/Eplus-env-sub_run1
-[2018-11-02 08:58:09,526] A3C_AGENT_WORKER-Thread-2 INFO:Evaluating...
-[2018-11-02 08:58:09,526] EPLUS_ENV_Model1-Cool-v1_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
-[2018-11-02 08:58:09,529] EPLUS_ENV_Model1-Cool-v1_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/webif_test_runs/1/Eplus-env-Model1-Cool-v1-res1/Eplus-env-sub_run1
-[2018-11-02 08:58:59,644] A3C_AGENT_WORKER-Thread-2 INFO:Evaluation: average rewards by now are 228.1196 276.0354 0.5000
-[2018-11-02 08:58:59,644] EPLUS_ENV_Model1-Test-Cool-v1_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
-[2018-11-02 08:58:59,648] EPLUS_ENV_Model1-Test-Cool-v1_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/webif_test_runs/1/Eplus-env-Model1-Test-Cool-v1-res1/Eplus-env-sub_run1
+[2018-11-03 04:43:06,409] A3C_AGENT_MAIN INFO:Namespace(action_repeat_n=1, action_space='cslDxCool_1', activation='linear', agent_num=5, check_args_only=False, clip_norm=5.0, debug_log_prob=0.0005, decay_steps=1000000, dropout_prob=0.0, end_e=0.0, env='Model1-Cool-v1', eval_act_func='cslDxActCool_1', eval_epi_num=1, eval_freq=250000, forecast_dim=0, gamma=0.99, h_decay_bounds=[], h_regu_frac=[0.0], init_e=0.0, isNoisyNet=True, isNoisyNetEval_rmNoise=True, is_greedy_policy=False, is_learning_rate_decay_staircase=False, is_warm_start=False, job_mode='Train', learning_rate=0.001, learning_rate_decay_rate=0.9, learning_rate_decay_steps=100000, max_interactions=1000, metric_func='cslDxCool_1', model_dir='None', model_param=[8, 1], model_type='nn', num_threads=2, output='./Model1-Cool-v1-res1', p_loss_frac=1.0, raw_state_prcs_func='cslDx_1', reward_func='cslDxCool_1', rmsprop_decay=0.99, rmsprop_epsil=1e-10, rmsprop_momet=0.0, rwd_e_para=1.0, rwd_p_para=1.0, save_freq=500000, save_max_to_keep=5, save_scope='all', sharedNet_type='Dense', state_dim=49, test_env='Model1-Test-Cool-v1', test_mode='Multiple', train_act_func='cslDxActCool_1', train_freq=5, v_loss_frac=0.5, violation_penalty_scl=10.0, weight_initer='glorot_uniform', window_len=6)
+[2018-11-03 04:43:06,410] A3C_AGENT_MAIN INFO:Start compiling...
+2018-11-03 04:43:06.502090: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2
+[2018-11-03 04:43:09,576] A3C_AGENT_MAIN INFO:Start the learning...
+[2018-11-03 04:43:09,576] A3C_AGENT_MAIN INFO:Prepare the evaluation environments ['Model1-Cool-v1', 'Model1-Test-Cool-v1'] ...
+[2018-11-03 04:43:09,627] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2018-11-03 04:43:09,628] A3C_AGENT_WORKER-Thread-2 INFO:Local worker starts!
+[2018-11-03 04:43:09,658] EPLUS_ENV_Model1-Cool-v1_Thread-2_ROOT INFO:Creating EnergyPlus simulation environment...
+[2018-11-03 04:43:09,661] EPLUS_ENV_Model1-Cool-v1_Thread-2_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/webif_test_runs/1/Eplus-env-Model1-Cool-v1-res3/Eplus-env-sub_run1
+[2018-11-03 04:43:10,629] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2018-11-03 04:43:10,630] A3C_AGENT_WORKER-Thread-3 INFO:Local worker starts!
+[2018-11-03 04:43:10,659] EPLUS_ENV_Model1-Cool-v1_Thread-3_ROOT INFO:Creating EnergyPlus simulation environment...
+[2018-11-03 04:43:10,668] EPLUS_ENV_Model1-Cool-v1_Thread-3_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/webif_test_runs/1/Eplus-env-Model1-Cool-v1-res4/Eplus-env-sub_run1
+[2018-11-03 04:44:05,540] A3C_AGENT_WORKER-Thread-2 INFO:Evaluating...
+[2018-11-03 04:44:05,540] EPLUS_ENV_Model1-Cool-v1_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2018-11-03 04:44:05,543] EPLUS_ENV_Model1-Cool-v1_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/webif_test_runs/1/Eplus-env-Model1-Cool-v1-res2/Eplus-env-sub_run1
+[2018-11-03 04:44:57,916] A3C_AGENT_WORKER-Thread-2 INFO:Evaluation: average rewards by now are 223.0537 292.8130 0.5000
+[2018-11-03 04:44:57,917] EPLUS_ENV_Model1-Test-Cool-v1_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2018-11-03 04:44:57,920] EPLUS_ENV_Model1-Test-Cool-v1_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/webif_test_runs/1/Eplus-env-Model1-Test-Cool-v1-res1/Eplus-env-sub_run2
+[2018-11-03 04:47:45,446] A3C_AGENT_WORKER-Thread-2 INFO:Evaluation: average rewards by now are 229.7145 231.0541 6.2500
+[2018-11-03 04:47:45,448] A3C_AGENT_WORKER-Thread-2 INFO:Global step: 0, evaluation results [0.0, 223.05371257906432, 292.81299039639646, 0.49999999999999994, 229.71446077469554, 231.05408304233305, 6.250000000000001]
+[2018-11-03 04:47:52,364] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:EnergyPlus Starting
+
+[2018-11-03 04:47:52,365] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.11.03 04:43
+
+[2018-11-03 04:47:52,365] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Processing Data Dictionary
+
+[2018-11-03 04:47:52,365] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Processing Input File
+
+[2018-11-03 04:47:52,365] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Initializing Response Factors
+
+[2018-11-03 04:47:52,365] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "GROUNDFLOOR_ASHRAE901_2013_ZONE5", Construction # 1
+
+[2018-11-03 04:47:52,365] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "3", Construction # 2
+
+[2018-11-03 04:47:52,365] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "5", Construction # 4
+
+[2018-11-03 04:47:52,365] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "7", Construction # 6
+
+[2018-11-03 04:47:52,366] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "9", Construction # 7
+
+[2018-11-03 04:47:52,366] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "10", Construction # 8
+
+[2018-11-03 04:47:52,366] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "EXTWALL_LIGHT_ASHRAE901_2013_ZONE5", Construction # 9
+
+[2018-11-03 04:47:52,366] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "17", Construction # 10
+
+[2018-11-03 04:47:52,366] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "18", Construction # 11
+
+[2018-11-03 04:47:52,366] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2018-11-03 04:47:52,367] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2018-11-03 04:47:52,367] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2018-11-03 04:47:52,367] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "21", Construction # 13
+
+[2018-11-03 04:47:52,367] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "23", Construction # 15
+
+[2018-11-03 04:47:52,367] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "25", Construction # 17
+
+[2018-11-03 04:47:52,367] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "27", Construction # 18
+
+[2018-11-03 04:47:52,368] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "27", Construction # 18
+
+[2018-11-03 04:47:52,368] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "31", Construction # 19
+
+[2018-11-03 04:47:52,368] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "35", Construction # 21
+
+[2018-11-03 04:47:52,368] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "41", Construction # 22
+
+[2018-11-03 04:47:52,368] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "42", Construction # 23
+
+[2018-11-03 04:47:52,368] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-11-03 04:47:52,368] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-11-03 04:47:52,368] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-11-03 04:47:52,369] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-11-03 04:47:52,369] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-11-03 04:47:52,369] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-11-03 04:47:52,369] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-11-03 04:47:52,369] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-11-03 04:47:52,369] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "51", Construction # 27
+
+[2018-11-03 04:47:52,369] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "51", Construction # 27
+
+[2018-11-03 04:47:52,369] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "52", Construction # 28
+
+[2018-11-03 04:47:52,370] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "52", Construction # 28
+
+[2018-11-03 04:47:52,370] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,370] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,370] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,370] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,370] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,370] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,370] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,370] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,371] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,371] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,371] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,371] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,371] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2018-11-03 04:47:52,371] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2018-11-03 04:47:52,371] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2018-11-03 04:47:52,371] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "65", Construction # 31
+
+[2018-11-03 04:47:52,372] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "ROOF_LIGHT_ASHRAE901_2013_ZONE5", Construction # 34
+
+[2018-11-03 04:47:52,372] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "75", Construction # 35
+
+[2018-11-03 04:47:52,372] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "83", Construction # 36
+
+[2018-11-03 04:47:52,372] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "83", Construction # 36
+
+[2018-11-03 04:47:52,372] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "83", Construction # 36
+
+[2018-11-03 04:47:52,372] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "85", Construction # 38
+
+[2018-11-03 04:47:52,372] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Initializing Window Optical Properties
+
+[2018-11-03 04:47:52,372] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Initializing Solar Calculations
+
+[2018-11-03 04:47:52,373] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Allocate Solar Module Arrays
+
+[2018-11-03 04:47:52,373] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Initializing Zone Report Variables
+
+[2018-11-03 04:47:52,373] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Initializing Surface (Shading) Report Variables
+
+[2018-11-03 04:47:52,373] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Computing Interior Solar Absorption Factors
+
+[2018-11-03 04:47:52,373] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Determining Shadowing Combinations
+
+[2018-11-03 04:47:52,373] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Computing Window Shade Absorption Factors
+
+[2018-11-03 04:47:52,373] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Proceeding with Initializing Solar Calculations
+
+[2018-11-03 04:47:52,373] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Initializing Surfaces
+
+[2018-11-03 04:47:52,373] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Initializing Outdoor environment for Surfaces
+
+[2018-11-03 04:47:52,374] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Setting up Surface Reporting Variables
+
+[2018-11-03 04:47:52,374] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Initializing Temperature and Flux Histories
+
+[2018-11-03 04:47:52,374] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Initializing Window Shading
+
+[2018-11-03 04:47:52,374] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Computing Interior Absorption Factors
+
+[2018-11-03 04:47:52,374] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Computing Interior Diffuse Solar Absorption Factors
+
+[2018-11-03 04:47:52,374] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Computing Interior Diffuse Solar Exchange through Interzone Windows
+
+[2018-11-03 04:47:52,374] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Initializing Solar Heat Gains
+
+[2018-11-03 04:47:52,374] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Initializing Internal Heat Gains
+
+[2018-11-03 04:47:52,374] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Initializing Interior Solar Distribution
+
+[2018-11-03 04:47:52,375] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Initializing Interior Convection Coefficients
+
+[2018-11-03 04:47:52,375] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Gathering Information for Predefined Reporting
+
+[2018-11-03 04:47:52,375] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Completed Initializing Surface Heat Balance
+
+[2018-11-03 04:47:52,375] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculate Outside Surface Heat Balance
+
+[2018-11-03 04:47:52,375] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculate Inside Surface Heat Balance
+
+[2018-11-03 04:47:52,375] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculate Air Heat Balance
+
+[2018-11-03 04:47:52,376] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Initializing HVAC
+
+[2018-11-03 04:47:52,376] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,376] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,376] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,376] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,376] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,376] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,376] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Performing Zone Sizing Simulation
+
+[2018-11-03 04:47:52,376] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-11-03 04:47:52,376] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,377] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,377] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,377] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,377] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,377] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,377] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,377] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,377] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Performing Zone Sizing Simulation
+
+[2018-11-03 04:47:52,378] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-11-03 04:47:52,378] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating System sizing
+
+[2018-11-03 04:47:52,378] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-11-03 04:47:52,378] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Calculating System sizing
+
+[2018-11-03 04:47:52,378] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-11-03 04:47:52,378] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Initializing Simulation
+
+[2018-11-03 04:47:52,378] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Reporting Surfaces
+
+[2018-11-03 04:47:52,379] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Beginning Primary Simulation
+
+[2018-11-03 04:47:52,379] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Initializing New Environment Parameters
+
+[2018-11-03 04:47:52,379] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up {1}
+
+[2018-11-03 04:47:52,379] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Instantiating Building Controls Virtual Test Bed
+
+[2018-11-03 04:47:52,379] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:ExternalInterface initializes.
+
+[2018-11-03 04:47:52,379] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Number of outputs in ExternalInterface = 49
+
+[2018-11-03 04:47:52,379] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Number of inputs  in ExternalInterface = 1
+
+[2018-11-03 04:47:52,379] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up {2}
+
+[2018-11-03 04:47:52,379] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up {3}
+
+[2018-11-03 04:47:52,380] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up {4}
+
+[2018-11-03 04:47:52,380] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up {5}
+
+[2018-11-03 04:47:52,380] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Warming up {6}
+
+[2018-11-03 04:47:52,380] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Starting Simulation at 06/01 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2018-11-03 04:47:52,380] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:ExternalInterface starts first data exchange.
+
+[2018-11-03 04:47:52,380] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Writing tabular output file results using comma format.
+
+[2018-11-03 04:47:52,380] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Writing tabular output file results using HTML format.
+
+[2018-11-03 04:47:52,380] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:Writing final SQL reports
+
+[2018-11-03 04:47:52,380] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_0 INFO:EnergyPlus Run Time=00hr 04min 42.68sec
+
+[2018-11-03 04:47:52,384] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:EnergyPlus Starting
+
+[2018-11-03 04:47:52,385] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.11.03 04:43
+
+[2018-11-03 04:47:52,385] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Processing Data Dictionary
+
+[2018-11-03 04:47:52,385] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Processing Input File
+
+[2018-11-03 04:47:52,385] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Initializing Response Factors
+
+[2018-11-03 04:47:52,385] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "GROUNDFLOOR_ASHRAE901_2013_ZONE5", Construction # 1
+
+[2018-11-03 04:47:52,385] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "3", Construction # 2
+
+[2018-11-03 04:47:52,385] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "5", Construction # 4
+
+[2018-11-03 04:47:52,385] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "7", Construction # 6
+
+[2018-11-03 04:47:52,385] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "9", Construction # 7
+
+[2018-11-03 04:47:52,386] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "10", Construction # 8
+
+[2018-11-03 04:47:52,386] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "EXTWALL_LIGHT_ASHRAE901_2013_ZONE5", Construction # 9
+
+[2018-11-03 04:47:52,386] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "17", Construction # 10
+
+[2018-11-03 04:47:52,386] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "18", Construction # 11
+
+[2018-11-03 04:47:52,386] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2018-11-03 04:47:52,386] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2018-11-03 04:47:52,386] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2018-11-03 04:47:52,386] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "21", Construction # 13
+
+[2018-11-03 04:47:52,386] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "23", Construction # 15
+
+[2018-11-03 04:47:52,386] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "25", Construction # 17
+
+[2018-11-03 04:47:52,387] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "27", Construction # 18
+
+[2018-11-03 04:47:52,387] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "27", Construction # 18
+
+[2018-11-03 04:47:52,387] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "31", Construction # 19
+
+[2018-11-03 04:47:52,387] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "35", Construction # 21
+
+[2018-11-03 04:47:52,387] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "41", Construction # 22
+
+[2018-11-03 04:47:52,387] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "42", Construction # 23
+
+[2018-11-03 04:47:52,387] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-11-03 04:47:52,387] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-11-03 04:47:52,387] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-11-03 04:47:52,388] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-11-03 04:47:52,388] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-11-03 04:47:52,388] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-11-03 04:47:52,388] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-11-03 04:47:52,388] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-11-03 04:47:52,388] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "51", Construction # 27
+
+[2018-11-03 04:47:52,388] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "51", Construction # 27
+
+[2018-11-03 04:47:52,388] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "52", Construction # 28
+
+[2018-11-03 04:47:52,388] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "52", Construction # 28
+
+[2018-11-03 04:47:52,388] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,389] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,389] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,389] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,389] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,389] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,389] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,389] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,389] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,389] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,390] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,390] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:47:52,390] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2018-11-03 04:47:52,390] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2018-11-03 04:47:52,390] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2018-11-03 04:47:52,390] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "65", Construction # 31
+
+[2018-11-03 04:47:52,390] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "ROOF_LIGHT_ASHRAE901_2013_ZONE5", Construction # 34
+
+[2018-11-03 04:47:52,390] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "75", Construction # 35
+
+[2018-11-03 04:47:52,390] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "83", Construction # 36
+
+[2018-11-03 04:47:52,391] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "83", Construction # 36
+
+[2018-11-03 04:47:52,391] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "83", Construction # 36
+
+[2018-11-03 04:47:52,391] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "85", Construction # 38
+
+[2018-11-03 04:47:52,391] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Initializing Window Optical Properties
+
+[2018-11-03 04:47:52,391] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Initializing Solar Calculations
+
+[2018-11-03 04:47:52,392] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Allocate Solar Module Arrays
+
+[2018-11-03 04:47:52,392] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Initializing Zone Report Variables
+
+[2018-11-03 04:47:52,392] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Initializing Surface (Shading) Report Variables
+
+[2018-11-03 04:47:52,392] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Computing Interior Solar Absorption Factors
+
+[2018-11-03 04:47:52,392] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Determining Shadowing Combinations
+
+[2018-11-03 04:47:52,392] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Computing Window Shade Absorption Factors
+
+[2018-11-03 04:47:52,392] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Proceeding with Initializing Solar Calculations
+
+[2018-11-03 04:47:52,392] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Initializing Surfaces
+
+[2018-11-03 04:47:52,393] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Initializing Outdoor environment for Surfaces
+
+[2018-11-03 04:47:52,393] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Setting up Surface Reporting Variables
+
+[2018-11-03 04:47:52,393] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Initializing Temperature and Flux Histories
+
+[2018-11-03 04:47:52,393] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Initializing Window Shading
+
+[2018-11-03 04:47:52,393] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Computing Interior Absorption Factors
+
+[2018-11-03 04:47:52,393] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Computing Interior Diffuse Solar Absorption Factors
+
+[2018-11-03 04:47:52,393] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Computing Interior Diffuse Solar Exchange through Interzone Windows
+
+[2018-11-03 04:47:52,394] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Initializing Solar Heat Gains
+
+[2018-11-03 04:47:52,394] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Initializing Internal Heat Gains
+
+[2018-11-03 04:47:52,394] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Initializing Interior Solar Distribution
+
+[2018-11-03 04:47:52,394] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Initializing Interior Convection Coefficients
+
+[2018-11-03 04:47:52,394] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Gathering Information for Predefined Reporting
+
+[2018-11-03 04:47:52,394] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Completed Initializing Surface Heat Balance
+
+[2018-11-03 04:47:52,395] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculate Outside Surface Heat Balance
+
+[2018-11-03 04:47:52,395] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculate Inside Surface Heat Balance
+
+[2018-11-03 04:47:52,395] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculate Air Heat Balance
+
+[2018-11-03 04:47:52,395] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Initializing HVAC
+
+[2018-11-03 04:47:52,395] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,395] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,395] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,396] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,396] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,396] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,396] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Performing Zone Sizing Simulation
+
+[2018-11-03 04:47:52,396] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-11-03 04:47:52,396] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,396] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,396] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,397] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,397] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,397] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,397] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,397] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2018-11-03 04:47:52,397] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Performing Zone Sizing Simulation
+
+[2018-11-03 04:47:52,397] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-11-03 04:47:52,397] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating System sizing
+
+[2018-11-03 04:47:52,398] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-11-03 04:47:52,398] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Calculating System sizing
+
+[2018-11-03 04:47:52,398] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-11-03 04:47:52,398] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Initializing Simulation
+
+[2018-11-03 04:47:52,398] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Reporting Surfaces
+
+[2018-11-03 04:47:52,398] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Beginning Primary Simulation
+
+[2018-11-03 04:47:52,398] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Initializing New Environment Parameters
+
+[2018-11-03 04:47:52,398] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up {1}
+
+[2018-11-03 04:47:52,398] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Instantiating Building Controls Virtual Test Bed
+
+[2018-11-03 04:47:52,399] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:ExternalInterface initializes.
+
+[2018-11-03 04:47:52,399] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Number of outputs in ExternalInterface = 49
+
+[2018-11-03 04:47:52,399] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Number of inputs  in ExternalInterface = 1
+
+[2018-11-03 04:47:52,399] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up {2}
+
+[2018-11-03 04:47:52,399] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up {3}
+
+[2018-11-03 04:47:52,399] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up {4}
+
+[2018-11-03 04:47:52,399] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up {5}
+
+[2018-11-03 04:47:52,399] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Warming up {6}
+
+[2018-11-03 04:47:52,400] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Starting Simulation at 06/01 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2018-11-03 04:47:52,400] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:ExternalInterface starts first data exchange.
+
+[2018-11-03 04:47:52,400] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Writing tabular output file results using comma format.
+
+[2018-11-03 04:47:52,400] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Writing tabular output file results using HTML format.
+
+[2018-11-03 04:47:52,400] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:Writing final SQL reports
+
+[2018-11-03 04:47:52,400] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_0 INFO:EnergyPlus Run Time=00hr 04min 41.69sec
+
+[2018-11-03 04:47:53,378] EPLUS_ENV_Model1-Cool-v1_Thread-2_ROOT INFO:Creating EnergyPlus simulation environment...
+[2018-11-03 04:47:53,381] EPLUS_ENV_Model1-Cool-v1_Thread-2_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/webif_test_runs/1/Eplus-env-Model1-Cool-v1-res3/Eplus-env-sub_run4
+[2018-11-03 04:47:53,393] EPLUS_ENV_Model1-Cool-v1_Thread-3_ROOT INFO:Creating EnergyPlus simulation environment...
+[2018-11-03 04:47:53,397] EPLUS_ENV_Model1-Cool-v1_Thread-3_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/webif_test_runs/1/Eplus-env-Model1-Cool-v1-res4/Eplus-env-sub_run2
+[2018-11-03 04:48:55,623] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:EnergyPlus Starting
+
+[2018-11-03 04:48:55,623] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.11.03 04:47
+
+[2018-11-03 04:48:55,623] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Processing Data Dictionary
+
+[2018-11-03 04:48:55,624] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Processing Input File
+
+[2018-11-03 04:48:55,624] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Initializing Response Factors
+
+[2018-11-03 04:48:55,624] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "GROUNDFLOOR_ASHRAE901_2013_ZONE5", Construction # 1
+
+[2018-11-03 04:48:55,624] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "3", Construction # 2
+
+[2018-11-03 04:48:55,624] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "5", Construction # 4
+
+[2018-11-03 04:48:55,624] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "7", Construction # 6
+
+[2018-11-03 04:48:55,624] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "9", Construction # 7
+
+[2018-11-03 04:48:55,624] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "10", Construction # 8
+
+[2018-11-03 04:48:55,624] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "EXTWALL_LIGHT_ASHRAE901_2013_ZONE5", Construction # 9
+
+[2018-11-03 04:48:55,624] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "17", Construction # 10
+
+[2018-11-03 04:48:55,624] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "18", Construction # 11
+
+[2018-11-03 04:48:55,625] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "19", Construction # 12
+
+[2018-11-03 04:48:55,625] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "19", Construction # 12
+
+[2018-11-03 04:48:55,625] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "19", Construction # 12
+
+[2018-11-03 04:48:55,625] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "21", Construction # 13
+
+[2018-11-03 04:48:55,625] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "23", Construction # 15
+
+[2018-11-03 04:48:55,625] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "25", Construction # 17
+
+[2018-11-03 04:48:55,625] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "27", Construction # 18
+
+[2018-11-03 04:48:55,625] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "27", Construction # 18
+
+[2018-11-03 04:48:55,625] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "31", Construction # 19
+
+[2018-11-03 04:48:55,625] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "35", Construction # 21
+
+[2018-11-03 04:48:55,625] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "41", Construction # 22
+
+[2018-11-03 04:48:55,626] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "42", Construction # 23
+
+[2018-11-03 04:48:55,626] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-11-03 04:48:55,626] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-11-03 04:48:55,626] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-11-03 04:48:55,626] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-11-03 04:48:55,626] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-11-03 04:48:55,626] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-11-03 04:48:55,626] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-11-03 04:48:55,626] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-11-03 04:48:55,626] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "51", Construction # 27
+
+[2018-11-03 04:48:55,626] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "51", Construction # 27
+
+[2018-11-03 04:48:55,626] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "52", Construction # 28
+
+[2018-11-03 04:48:55,627] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "52", Construction # 28
+
+[2018-11-03 04:48:55,627] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:55,627] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:55,627] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:55,627] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:55,627] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:55,627] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:55,627] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:55,627] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:55,627] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:55,627] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:55,628] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:55,628] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:55,628] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "59", Construction # 30
+
+[2018-11-03 04:48:55,628] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "59", Construction # 30
+
+[2018-11-03 04:48:55,628] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "59", Construction # 30
+
+[2018-11-03 04:48:55,628] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "65", Construction # 31
+
+[2018-11-03 04:48:55,628] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "ROOF_LIGHT_ASHRAE901_2013_ZONE5", Construction # 34
+
+[2018-11-03 04:48:55,628] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "75", Construction # 35
+
+[2018-11-03 04:48:55,628] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "83", Construction # 36
+
+[2018-11-03 04:48:55,628] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "83", Construction # 36
+
+[2018-11-03 04:48:55,628] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "83", Construction # 36
+
+[2018-11-03 04:48:55,628] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "85", Construction # 38
+
+[2018-11-03 04:48:55,629] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Initializing Window Optical Properties
+
+[2018-11-03 04:48:55,629] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Initializing Solar Calculations
+
+[2018-11-03 04:48:55,629] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Allocate Solar Module Arrays
+
+[2018-11-03 04:48:55,629] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Initializing Zone Report Variables
+
+[2018-11-03 04:48:55,629] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Initializing Surface (Shading) Report Variables
+
+[2018-11-03 04:48:55,629] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Computing Interior Solar Absorption Factors
+
+[2018-11-03 04:48:55,629] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Determining Shadowing Combinations
+
+[2018-11-03 04:48:55,629] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Computing Window Shade Absorption Factors
+
+[2018-11-03 04:48:55,629] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Proceeding with Initializing Solar Calculations
+
+[2018-11-03 04:48:55,629] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Initializing Surfaces
+
+[2018-11-03 04:48:55,629] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Initializing Outdoor environment for Surfaces
+
+[2018-11-03 04:48:55,629] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Setting up Surface Reporting Variables
+
+[2018-11-03 04:48:55,630] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Initializing Temperature and Flux Histories
+
+[2018-11-03 04:48:55,630] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Initializing Window Shading
+
+[2018-11-03 04:48:55,630] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Computing Interior Absorption Factors
+
+[2018-11-03 04:48:55,630] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Computing Interior Diffuse Solar Absorption Factors
+
+[2018-11-03 04:48:55,630] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Computing Interior Diffuse Solar Exchange through Interzone Windows
+
+[2018-11-03 04:48:55,630] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Initializing Solar Heat Gains
+
+[2018-11-03 04:48:55,630] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Initializing Internal Heat Gains
+
+[2018-11-03 04:48:55,630] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Initializing Interior Solar Distribution
+
+[2018-11-03 04:48:55,630] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Initializing Interior Convection Coefficients
+
+[2018-11-03 04:48:55,630] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Gathering Information for Predefined Reporting
+
+[2018-11-03 04:48:55,630] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Completed Initializing Surface Heat Balance
+
+[2018-11-03 04:48:55,630] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculate Outside Surface Heat Balance
+
+[2018-11-03 04:48:55,631] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculate Inside Surface Heat Balance
+
+[2018-11-03 04:48:55,631] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculate Air Heat Balance
+
+[2018-11-03 04:48:55,631] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Initializing HVAC
+
+[2018-11-03 04:48:55,631] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:55,631] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:55,631] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:55,631] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:55,631] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:55,631] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:55,631] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Performing Zone Sizing Simulation
+
+[2018-11-03 04:48:55,632] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-11-03 04:48:55,632] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:55,632] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:55,632] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:55,632] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:55,632] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:55,632] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:55,632] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:55,632] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:55,632] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Performing Zone Sizing Simulation
+
+[2018-11-03 04:48:55,632] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-11-03 04:48:55,633] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating System sizing
+
+[2018-11-03 04:48:55,633] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-11-03 04:48:55,633] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Calculating System sizing
+
+[2018-11-03 04:48:55,633] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-11-03 04:48:55,633] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Initializing Simulation
+
+[2018-11-03 04:48:55,633] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Reporting Surfaces
+
+[2018-11-03 04:48:55,633] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Beginning Primary Simulation
+
+[2018-11-03 04:48:55,633] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Initializing New Environment Parameters
+
+[2018-11-03 04:48:55,633] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up {1}
+
+[2018-11-03 04:48:55,633] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Instantiating Building Controls Virtual Test Bed
+
+[2018-11-03 04:48:55,634] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:ExternalInterface initializes.
+
+[2018-11-03 04:48:55,634] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Number of outputs in ExternalInterface = 49
+
+[2018-11-03 04:48:55,634] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Number of inputs  in ExternalInterface = 1
+
+[2018-11-03 04:48:55,634] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up {2}
+
+[2018-11-03 04:48:55,634] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up {3}
+
+[2018-11-03 04:48:55,635] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up {4}
+
+[2018-11-03 04:48:55,635] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up {5}
+
+[2018-11-03 04:48:55,635] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Warming up {6}
+
+[2018-11-03 04:48:55,635] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Starting Simulation at 06/01 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2018-11-03 04:48:55,635] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:ExternalInterface starts first data exchange.
+
+[2018-11-03 04:48:55,635] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Writing tabular output file results using comma format.
+
+[2018-11-03 04:48:55,635] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Writing tabular output file results using HTML format.
+
+[2018-11-03 04:48:55,636] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:Writing final SQL reports
+
+[2018-11-03 04:48:55,636] EPLUS_ENV_Model1-Cool-v1_Thread-3-EPLUSPROCESS_EPI_1 INFO:EnergyPlus Run Time=00hr 01min  2.19sec
+
+[2018-11-03 04:48:56,078] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:EnergyPlus Starting
+
+[2018-11-03 04:48:56,078] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.11.03 04:47
+
+[2018-11-03 04:48:56,078] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Processing Data Dictionary
+
+[2018-11-03 04:48:56,078] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Processing Input File
+
+[2018-11-03 04:48:56,078] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Initializing Response Factors
+
+[2018-11-03 04:48:56,078] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "GROUNDFLOOR_ASHRAE901_2013_ZONE5", Construction # 1
+
+[2018-11-03 04:48:56,078] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "3", Construction # 2
+
+[2018-11-03 04:48:56,078] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "5", Construction # 4
+
+[2018-11-03 04:48:56,079] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "7", Construction # 6
+
+[2018-11-03 04:48:56,079] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "9", Construction # 7
+
+[2018-11-03 04:48:56,079] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "10", Construction # 8
+
+[2018-11-03 04:48:56,079] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "EXTWALL_LIGHT_ASHRAE901_2013_ZONE5", Construction # 9
+
+[2018-11-03 04:48:56,079] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "17", Construction # 10
+
+[2018-11-03 04:48:56,079] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "18", Construction # 11
+
+[2018-11-03 04:48:56,079] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "19", Construction # 12
+
+[2018-11-03 04:48:56,079] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "19", Construction # 12
+
+[2018-11-03 04:48:56,079] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "19", Construction # 12
+
+[2018-11-03 04:48:56,079] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "21", Construction # 13
+
+[2018-11-03 04:48:56,079] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "23", Construction # 15
+
+[2018-11-03 04:48:56,079] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "25", Construction # 17
+
+[2018-11-03 04:48:56,079] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "27", Construction # 18
+
+[2018-11-03 04:48:56,080] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "27", Construction # 18
+
+[2018-11-03 04:48:56,080] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "31", Construction # 19
+
+[2018-11-03 04:48:56,080] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "35", Construction # 21
+
+[2018-11-03 04:48:56,080] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "41", Construction # 22
+
+[2018-11-03 04:48:56,080] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "42", Construction # 23
+
+[2018-11-03 04:48:56,080] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-11-03 04:48:56,080] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-11-03 04:48:56,080] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-11-03 04:48:56,080] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "43", Construction # 24
+
+[2018-11-03 04:48:56,080] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-11-03 04:48:56,080] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-11-03 04:48:56,080] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-11-03 04:48:56,081] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "49", Construction # 26
+
+[2018-11-03 04:48:56,081] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "51", Construction # 27
+
+[2018-11-03 04:48:56,081] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "51", Construction # 27
+
+[2018-11-03 04:48:56,081] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "52", Construction # 28
+
+[2018-11-03 04:48:56,081] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "52", Construction # 28
+
+[2018-11-03 04:48:56,081] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:56,081] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:56,081] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:56,081] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:56,081] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:56,081] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:56,081] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:56,081] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:56,081] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:56,081] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:56,082] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:56,082] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "57", Construction # 29
+
+[2018-11-03 04:48:56,082] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "59", Construction # 30
+
+[2018-11-03 04:48:56,082] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "59", Construction # 30
+
+[2018-11-03 04:48:56,082] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "59", Construction # 30
+
+[2018-11-03 04:48:56,082] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "65", Construction # 31
+
+[2018-11-03 04:48:56,082] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "ROOF_LIGHT_ASHRAE901_2013_ZONE5", Construction # 34
+
+[2018-11-03 04:48:56,082] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "75", Construction # 35
+
+[2018-11-03 04:48:56,082] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "83", Construction # 36
+
+[2018-11-03 04:48:56,082] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "83", Construction # 36
+
+[2018-11-03 04:48:56,082] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "83", Construction # 36
+
+[2018-11-03 04:48:56,082] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating CTFs for "85", Construction # 38
+
+[2018-11-03 04:48:56,082] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Initializing Window Optical Properties
+
+[2018-11-03 04:48:56,082] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Initializing Solar Calculations
+
+[2018-11-03 04:48:56,083] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Allocate Solar Module Arrays
+
+[2018-11-03 04:48:56,083] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Initializing Zone Report Variables
+
+[2018-11-03 04:48:56,083] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Initializing Surface (Shading) Report Variables
+
+[2018-11-03 04:48:56,083] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Computing Interior Solar Absorption Factors
+
+[2018-11-03 04:48:56,083] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Determining Shadowing Combinations
+
+[2018-11-03 04:48:56,083] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Computing Window Shade Absorption Factors
+
+[2018-11-03 04:48:56,083] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Proceeding with Initializing Solar Calculations
+
+[2018-11-03 04:48:56,083] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Initializing Surfaces
+
+[2018-11-03 04:48:56,083] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Initializing Outdoor environment for Surfaces
+
+[2018-11-03 04:48:56,083] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Setting up Surface Reporting Variables
+
+[2018-11-03 04:48:56,083] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Initializing Temperature and Flux Histories
+
+[2018-11-03 04:48:56,083] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Initializing Window Shading
+
+[2018-11-03 04:48:56,083] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Computing Interior Absorption Factors
+
+[2018-11-03 04:48:56,084] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Computing Interior Diffuse Solar Absorption Factors
+
+[2018-11-03 04:48:56,084] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Computing Interior Diffuse Solar Exchange through Interzone Windows
+
+[2018-11-03 04:48:56,084] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Initializing Solar Heat Gains
+
+[2018-11-03 04:48:56,084] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Initializing Internal Heat Gains
+
+[2018-11-03 04:48:56,084] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Initializing Interior Solar Distribution
+
+[2018-11-03 04:48:56,084] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Initializing Interior Convection Coefficients
+
+[2018-11-03 04:48:56,084] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Gathering Information for Predefined Reporting
+
+[2018-11-03 04:48:56,084] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Completed Initializing Surface Heat Balance
+
+[2018-11-03 04:48:56,084] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculate Outside Surface Heat Balance
+
+[2018-11-03 04:48:56,084] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculate Inside Surface Heat Balance
+
+[2018-11-03 04:48:56,084] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculate Air Heat Balance
+
+[2018-11-03 04:48:56,084] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Initializing HVAC
+
+[2018-11-03 04:48:56,084] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:56,084] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:56,085] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:56,085] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:56,085] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:56,085] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:56,085] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Performing Zone Sizing Simulation
+
+[2018-11-03 04:48:56,085] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-11-03 04:48:56,085] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:56,085] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:56,085] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:56,085] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:56,085] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:56,085] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:56,085] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:56,085] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up
+
+[2018-11-03 04:48:56,086] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Performing Zone Sizing Simulation
+
+[2018-11-03 04:48:56,086] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-11-03 04:48:56,086] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating System sizing
+
+[2018-11-03 04:48:56,086] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-11-03 04:48:56,086] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Calculating System sizing
+
+[2018-11-03 04:48:56,086] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2018-11-03 04:48:56,086] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Initializing Simulation
+
+[2018-11-03 04:48:56,086] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Reporting Surfaces
+
+[2018-11-03 04:48:56,086] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Beginning Primary Simulation
+
+[2018-11-03 04:48:56,086] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Initializing New Environment Parameters
+
+[2018-11-03 04:48:56,086] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up {1}
+
+[2018-11-03 04:48:56,086] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Instantiating Building Controls Virtual Test Bed
+
+[2018-11-03 04:48:56,086] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:ExternalInterface initializes.
+
+[2018-11-03 04:48:56,086] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Number of outputs in ExternalInterface = 49
+
+[2018-11-03 04:48:56,086] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Number of inputs  in ExternalInterface = 1
+
+[2018-11-03 04:48:56,087] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up {2}
+
+[2018-11-03 04:48:56,087] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up {3}
+
+[2018-11-03 04:48:56,087] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up {4}
+
+[2018-11-03 04:48:56,087] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up {5}
+
+[2018-11-03 04:48:56,087] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Warming up {6}
+
+[2018-11-03 04:48:56,087] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Starting Simulation at 06/01 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2018-11-03 04:48:56,087] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:ExternalInterface starts first data exchange.
+
+[2018-11-03 04:48:56,087] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Writing tabular output file results using comma format.
+
+[2018-11-03 04:48:56,087] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Writing tabular output file results using HTML format.
+
+[2018-11-03 04:48:56,087] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:Writing final SQL reports
+
+[2018-11-03 04:48:56,087] EPLUS_ENV_Model1-Cool-v1_Thread-2-EPLUSPROCESS_EPI_1 INFO:EnergyPlus Run Time=00hr 01min  2.67sec
+

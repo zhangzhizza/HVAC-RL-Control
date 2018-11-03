@@ -1,0 +1,76 @@
+[2018-11-03 04:33:19,859] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:33:19,859] worker_client_logger INFO:state_file_syncher started.
+[2018-11-03 04:33:24,865] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:33:29,872] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:33:29,874] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:33:34,882] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:33:34,884] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:33:39,890] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:33:39,891] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:33:44,899] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:33:44,902] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:33:49,911] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:33:49,913] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:33:54,917] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:34:11,652] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:34:16,657] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:34:21,663] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:34:26,669] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:34:31,675] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:34:36,681] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:34:41,687] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:34:46,692] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:34:51,699] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:34:56,704] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:35:01,710] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:35:06,717] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:35:11,722] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:35:16,728] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:35:21,733] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:35:26,739] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:35:31,745] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:35:36,749] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:35:41,753] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:35:46,758] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:35:51,763] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:35:56,769] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:36:01,775] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:36:06,781] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:36:11,787] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:36:16,792] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:36:21,797] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:36:26,803] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:36:31,808] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:36:36,811] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:36:41,817] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:36:46,824] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:36:51,829] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:36:56,834] worker_client_logger INFO:STATE_SYNCHER: ERROR: <module 'traceback' from '/usr/lib/python3.5/traceback.py'>
+[2018-11-03 04:37:01,842] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:37:01,848] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:37:06,853] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:37:06,858] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:37:11,864] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:37:11,866] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:37:16,873] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:37:16,875] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:37:21,880] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:37:21,881] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:37:26,890] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:37:26,895] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:37:31,899] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:37:31,901] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:37:36,906] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:37:36,907] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:37:41,916] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:37:41,920] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:37:46,926] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:37:46,928] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:37:51,934] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:37:51,935] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:37:56,943] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:37:56,945] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:38:01,948] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:38:01,950] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:38:06,958] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:38:06,960] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].

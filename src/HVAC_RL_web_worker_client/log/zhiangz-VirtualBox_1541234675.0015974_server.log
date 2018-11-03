@@ -1,0 +1,209 @@
+[2018-11-03 04:44:35,002] worker_client_logger INFO:state_file_syncher started.
+[2018-11-03 04:44:35,002] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:44:35,004] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:44:40,010] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:44:40,011] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:44:45,018] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:44:45,019] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:44:50,026] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:44:50,027] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:44:55,036] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:44:55,037] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:45:00,040] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:45:00,041] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:45:05,043] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:45:05,045] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:45:10,047] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:45:10,049] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:45:15,051] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:45:15,053] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:45:20,056] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:45:20,061] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:45:25,064] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:45:25,066] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:45:30,072] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:45:30,073] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:45:35,080] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:45:35,081] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:45:40,084] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:45:40,086] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:45:45,088] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:45:45,090] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:45:50,094] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:45:50,096] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:45:55,100] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:45:55,101] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:46:00,103] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:46:00,105] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:46:05,108] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:46:05,110] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:46:10,116] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:46:10,120] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:46:15,126] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:46:15,129] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:46:20,135] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:46:20,138] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:46:25,143] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:46:25,145] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:46:30,150] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:46:30,152] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:46:35,153] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:46:35,155] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:46:40,161] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:46:40,164] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:46:45,168] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:46:45,171] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:46:50,176] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:46:50,177] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:46:55,183] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:46:55,185] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:47:00,190] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:47:00,192] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:47:05,198] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:47:05,200] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:47:10,205] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:47:10,208] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:47:15,213] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:47:15,215] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:47:20,220] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:47:20,222] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:47:25,227] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:47:25,229] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:47:30,232] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:47:30,234] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:47:35,239] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:47:35,241] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:47:40,247] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:47:40,250] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:47:45,256] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:47:45,257] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:47:50,262] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:47:50,265] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:47:55,271] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:47:55,273] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:48:00,279] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:48:00,281] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:48:05,282] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:48:05,285] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:48:10,288] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:48:10,290] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:48:15,295] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:48:15,298] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:48:20,304] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:48:20,306] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:48:25,312] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:48:25,314] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:48:30,320] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:48:30,323] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:48:35,328] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:48:35,331] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:48:40,338] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:48:40,341] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:48:45,346] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:48:45,349] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:48:50,356] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:48:50,358] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:48:55,364] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:48:55,366] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps ['webif_test_runs:1'].
+[2018-11-03 04:49:00,372] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:49:00,377] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:49:05,380] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:49:05,382] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:49:10,387] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:49:10,388] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:49:15,397] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:49:15,399] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:49:20,406] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:49:20,408] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:49:25,414] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:49:25,416] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:49:30,423] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:49:30,427] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:49:35,434] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:49:35,435] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:49:40,441] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:49:40,442] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:49:45,450] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:49:45,452] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:49:50,458] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:49:50,460] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:49:55,465] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:49:55,468] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:50:00,472] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:50:00,473] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:50:05,478] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:50:05,481] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:50:10,487] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:50:10,488] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:50:15,496] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:50:15,500] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:50:20,505] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:50:20,506] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:50:25,511] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:50:25,512] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:50:30,519] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:50:30,520] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:50:35,530] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:50:35,532] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:50:40,536] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:50:40,538] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:50:45,544] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:50:45,545] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:50:50,549] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:50:50,551] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:50:55,554] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:50:55,557] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:51:00,560] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:51:00,562] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:51:05,567] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:51:05,569] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:51:10,572] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:51:10,574] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:51:15,575] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:51:15,577] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:51:20,582] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:51:20,584] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:51:25,589] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:51:25,591] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:51:30,597] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:51:30,599] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:51:35,604] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:51:35,605] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:51:40,610] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:51:40,612] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:51:45,618] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:51:45,619] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:51:50,625] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:51:50,628] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:51:55,629] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:51:55,630] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:52:00,637] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:52:00,639] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:52:05,644] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:52:05,645] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:52:10,652] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:52:10,653] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:52:15,662] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:52:15,663] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:52:20,669] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:52:20,673] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:52:25,679] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:52:25,682] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:52:30,688] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:52:30,690] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:52:35,696] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:52:35,697] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:52:40,703] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:52:40,704] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:52:45,710] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:52:45,711] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:52:50,715] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:52:50,716] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:52:55,724] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:52:55,728] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:53:00,732] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:53:00,734] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:53:05,739] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:53:05,741] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:53:10,748] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:53:10,752] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].

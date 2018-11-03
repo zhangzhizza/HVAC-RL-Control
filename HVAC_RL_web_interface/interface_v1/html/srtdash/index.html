@@ -33,6 +33,7 @@
         var all_workers_ips = [];
         var all_workers_ports = [];
         var project_selector;
+        var debug;
 
         window.onload = function() {
         // Read all workers
@@ -110,14 +111,14 @@
             });
     }
 
+    
     function update_computer_worker_status(div_id, ip, port){
         $.get("get_worker_status/?ip="+ip+"&port="+port, function(data, status){
                 var status = data;
                 document.getElementById(div_id + "_cpu").innerText = status.cpu
                 document.getElementById(div_id + "_mem").innerText = status.mem
-                var running_num = status.running.length
-                var queue_num = status.queue.length
-                document.getElementById(div_id + "_run").innerText = running_num + "/" + queue_num
+                document.getElementById(div_id + "_run").innerText = status.running_queuing
+                // Update the local meta files
             });
 
     } 
@@ -613,7 +614,7 @@
                                     </select>
                                 </div>
                                 <div class="market-status-table mt-4">
-                                    <div class="table-responsive" id="project_table_div" style="height: 600px;">
+                                    <div class="table-responsive" id="project_table_div" style="height: 400px;">
 
                                     </div>
                                 </div>
