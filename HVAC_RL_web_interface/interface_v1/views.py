@@ -8,7 +8,6 @@ import os, shutil, subprocess, json, socket, ast
 
 this_dir_path = os.path.dirname(os.path.realpath(__file__))
 available_computers = ["0.0.0.0:7777"]
-print('hahah')
 
 # Create your views here.
 def index(request):
@@ -28,6 +27,31 @@ def getRuns():
 			run_dirs_names.append(this_dir);
 			run_dirs.append(scan_dir + this_dir)
 	return run_dirs_names, run_dirs;
+
+def get_eval_res_hist(request):
+	ids_list = [];
+	to_response = {};
+	counter = 1;
+	hist_col_num = int(request.GET.get("col")); 
+	while True:
+		arg_i = "exp%d"%(counter);
+		arg_i_value = request.GET.get(arg_i);
+		print(arg_i_value)
+		if arg_i_value == None:
+			break;
+		else:
+			ids_list.append(arg_i_value);
+			counter += 1;
+	pd_list = []
+	for exp_id in ids_list:
+		this_exp_res = [];
+		exp_run_name, exp_run_num = exp_id.split(":");
+		eval_file_full_dir = (this_dir_path + '/../../src/' + exp_run_name 
+						+ '/' + exp_run_num + '/eval_res_hist.csv');
+		eval_res_hist_pd = pd.read_csv(eval_file_full_dir, index_col = 0, header = None);
+		to_response[exp_id] = eval_res_hist_pd[hist_col_num].reset_index().as_matrix().tolist();
+
+	return JsonResponse(to_response, json_dumps_params={'indent': 2})
 
 def get_worker_status(request):
 	"""
@@ -103,9 +127,7 @@ def deploy_run(exp_full_dir, exp_id, ip, port):
 			file_sent_count += 1;
 			if file_sent_count < len(files_to_send):
 				s.sendall(b'$%^next^%$');
-		print('endtranser')
 		s.sendall(b'$%^endtransfer^%$');
-		print('final msg sent')
 		recv_str = s.recv(1024).decode(encoding = 'utf-8');
 	return recv_str;
 
