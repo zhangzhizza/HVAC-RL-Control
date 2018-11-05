@@ -8,4 +8,5 @@ urlpatterns = [
     re_path(r'^get_worker_status/$', views.get_worker_status, name='get_worker_status'),
     path('get_exp_status/<slug:run_name>/', views.get_exp_status, name='get_exps_status'),
     re_path(r'^run_exp/$', views.run_exp, name='run_exp'),
+    re_path(r'^get_eval_res_hist/$', views.get_eval_res_hist, name='get_eval_res_hist'),   
 ]

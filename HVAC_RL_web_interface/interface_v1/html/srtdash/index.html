@@ -27,6 +27,8 @@
     <script src="{% static "/js/vendor/jquery-2.2.4.min.js" %}"></script>
     <script src="{% static "/js/jquery.slimscroll.min.js" %}"></script>
     <script src="{% static "/js/jquery.slicknav.min.js" %}"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
     <script type="text/javascript">
         var all_workers = [];
@@ -171,6 +173,15 @@
                     // Add button as child
                     tb_row_i_act.innerText = "";
                     tb_row_i_act.appendChild(button_i);
+                    // Add checkbox
+                    var checkbox_i = document.createElement('input');
+                    checkbox_i.type = "checkbox";
+                    checkbox_i.id = tb_row_i.id + ':action:checkbox';
+                    if (tb_row_i_sts.innerText != "complete"){
+                        checkbox_i.disabled = true;
+                    }
+                    // Add checkbox as child
+                    tb_row_i_act.appendChild(checkbox_i);
                     // Create a dropdown list
                     var tb_row_i_mch = tb_row_i.cells[3]
                     var mch_select = document.createElement("select")
@@ -195,10 +206,109 @@
                     // Add select as child
                     tb_row_i_mch.innerText = "";
                     tb_row_i_mch.appendChild(mch_select);
+
                 }
 
             });
         
+
+    }
+
+    function show_eval_hist(){
+        var checked_list = [];
+        var tb_rows = (document.getElementById('project_table_div')
+            .getElementsByTagName('table')[0].tBodies[0].rows)
+        for (var i=0; i<tb_rows.length; i++){
+            var this_exp_id = tb_rows[i].id;
+            this_exp_check_id = this_exp_id + ':action:checkbox';
+            if (document.getElementById(this_exp_check_id).checked == true){
+                checked_list.push(this_exp_id);
+            }
+        }
+        // Show chart
+        var request_url = 'get_eval_res_hist/?col=1';
+        for (var i=0; i<checked_list.length; i++){
+            request_url += "&exp" + (i+1) + "=" + checked_list[i];
+        }
+        $.getJSON(request_url, function (data, status) {
+                srsForChart = [];
+                Object.keys(data).forEach(function(key) {
+                    srsForChart.push({name: key, 
+                        data:data[key], 
+                        lineWidth:4,
+                        marker:{
+                            radius:4
+                        }})
+                })
+                console.log(srsForChart)
+
+                Highcharts.chart('eval_res_hist_chart', {
+                    chart: {
+                        zoomType: 'x'
+                    },
+                    title: {
+                        text: 'Evaluation History'
+                    },
+                    subtitle: {
+                        text: document.ontouchstart === undefined ?
+                                'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
+                    },
+                    xAxis: {
+                        type: 'int',
+                        tickInterval: 500000, 
+                        tickWidth: 0,
+                        gridLineWidth: 1,
+                        labels: {
+                            align: 'left',
+                            x: 3,
+                            y: -3
+                        }
+                        
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Value'
+                        }
+                    },
+                    legend: {
+                        enabled: true
+                    },
+                    labels: {
+                        align: 'right',
+                        x: -3,
+                        y: 16,
+                        format: '{value:.,0f}'
+                    },
+                    plotOptions: {
+                        area: {
+                            fillColor: {
+                                linearGradient: {
+                                    x1: 0,
+                                    y1: 0,
+                                    x2: 0,
+                                    y2: 1
+                                },
+                                stops: [
+                                    [0, Highcharts.getOptions().colors[0]],
+                                    [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                                ]
+                            },
+                            marker: {
+                                radius: 2
+                            },
+                            lineWidth: 1,
+                            states: {
+                                hover: {
+                                    lineWidth: 1
+                                }
+                            },
+                            threshold: null
+                        }
+                    },
+
+                    series: srsForChart
+                });
+            });
 
     }
 
@@ -548,7 +658,7 @@
                                 <div class="s-report-inner pr--20 pt--30 mb-3">
                                     <div class="icon"><i class="fa fa-btc"></i></div>
                                     <div class="s-report-title d-flex justify-content-between">
-                                        <h4 class="header-title mb-0" id="computer_1_ip">Bitcoin</h4>
+                                        <h4 class="header-title mb-0" id="computer_1_ip"></h4>
                                         <p>Refresh every 5s</p>
 
                                     </div>
@@ -625,19 +735,16 @@
                 <!-- sales report area start -->
 
                 <!-- sales report area end -->
-                <!-- overview area start -->
+                <!-- eval_res_hist start -->
                 <div class="row">
                     <div class="col-xl-9 col-lg-8">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <h4 class="header-title mb-0">Overview</h4>
-                                    <select class="custome-select border-0 pr-3">
-                                        <option selected>Last 24 Hours</option>
-                                        <option value="0">01 July 2018</option>
-                                    </select>
+                                    <h4 class="header-title mb-0">Evaluation Results History</h4>
+                                    <button id="eval_button" onclick="show_eval_hist()">Show Evaluation Hisotry</button>
                                 </div>
-                                <div id="verview-shart"></div>
+                                <div id="eval_res_hist_chart"></div>
                             </div>
                         </div>
                     </div>

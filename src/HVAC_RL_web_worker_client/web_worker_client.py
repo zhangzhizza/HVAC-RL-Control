@@ -12,7 +12,8 @@ from util.logger import Logger
 
 FD = os.path.dirname(os.path.realpath(__file__));
 LOG_LEVEL = 'DEBUG';
-LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";     
+LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s"; 
+server_addr = '0.0.0.0:6666'    
 
 class WorkerClient(object):
 
@@ -60,8 +61,6 @@ class WorkerClient(object):
 				all_processes.extend(running_tasks);
 				all_processes.extend(waitng_tasks);
 				all_processes = running_tasks + waitng_tasks;
-				print (list(self._exp_queue.queue))
-				print (list(self._current_working_processes))
 				for process_i in all_processes:
 					process_i_status, process_i_step = self._get_exp_status(process_i)
 					exp_dict[process_i] = [process_i_status, process_i_step];
@@ -86,11 +85,9 @@ class WorkerClient(object):
 					recv = c.recv(1024);
 					recv_byte += recv;
 					recv_decode_this = recv.decode(encoding = 'utf-8');
-					print(recv_decode_this)
 					if '$%^endtransfer^%$' in recv_decode_this:
 						break;
 				recv_decode = recv_byte.decode(encoding = 'utf-8');
-				print (recv_decode)
 				recv_decode_list = recv_decode.split('$%^next^%$');
 				# Remove the ending strings
 				recv_decode_list[-1] = recv_decode_list[-1].split('$%^endtransfer^%$')[0]
@@ -161,6 +158,10 @@ class WorkerClient(object):
 							run_name, exp_id = process_name.split(':');
 							meta_file_path = FD + '/../' + run_name + '/' + exp_id + '/run.meta';
 							self._set_meta_status(meta_file_path, 'complete')
+							# Send the results files to the server
+							self._logger_main.info('Sending the %s results files to the server.'%(process_name));
+							recv_msg = self._send_results_to_server(run_name, exp_id);
+							self._logger_main.info('Files sending status: %s.'%(recv_msg));
 				# Add new worker tasks to run
 				if len(self._current_working_processes) < max_work_num:
 					if self._exp_queue.qsize() > 0:
@@ -199,13 +200,43 @@ class WorkerClient(object):
 		if os.path.isfile(meta_file_dir):
 			with open(meta_file_dir, 'r+') as meta_file:
 				meta_file_json = json.load(meta_file);
-				print (meta_file_json)
 				meta_file.seek(0);
 				meta_file_json['status'] = status_str;
 				json.dump(meta_file_json, meta_file);
 				meta_file.truncate()
 
-
+	def _send_results_to_server(self, run_name, run_num):
+		s = socket.socket();
+		server_ip, server_port = server_addr.split(':');
+		s.connect((server_ip, int(server_port)));
+		s.sendall(b'recvevallog');
+		recv_str = s.recv(1024).decode(encoding = 'utf-8');
+		# Send files to the server
+		if recv_str == "ready_to_receive":
+			# Send the exp id
+			s.sendall(bytearray(':'.join([run_name, run_num]), encoding = 'utf-8'))
+			# Send seperator
+			s.sendall(b'$%^next^%$')
+			# Send eval_res_hist.csv in order
+			files_to_send = ['eval_res_hist.csv']
+			file_sent_count = 0;
+			exp_full_dir = FD + '/../' + run_name + '/' + run_num;
+			for file_name in files_to_send:
+				file_full_dir = exp_full_dir + '/' + file_name;
+				if os.path.isfile(file_full_dir):
+					f = open(file_full_dir, 'rb');
+					f_line = f.readline(1024);
+					while len(f_line)>0:
+						s.sendall(f_line);
+						f_line = f.readline(1024);
+				else:
+					pass;
+				file_sent_count += 1;
+				if file_sent_count < len(files_to_send):
+					s.sendall(b'$%^next^%$');
+			s.sendall(b'$%^endtransfer^%$');
+		recv_str = s.recv(1024).decode(encoding = 'utf-8');
+		return recv_str;
 
 
 
