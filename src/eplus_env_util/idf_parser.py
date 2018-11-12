@@ -1,4 +1,4 @@
-
+import os, copy
 
 class IdfParser(object):
 
@@ -45,6 +45,49 @@ class IdfParser(object):
 				to_write_str += obj_content + '\n';
 		with open(to_write_dir, 'w') as idf_file:
 			idf_file.write(to_write_str);
+
+	def remove_objects_all(self, class_name):
+		self._idf_dict.pop(class_name);
+
+	def remove_object(self, class_name, obj_name):
+		try:
+			tgt_objects = self._idf_dict[class_name];
+			tgt_idx = 0;
+			for obj in tgt_objects:
+				obj_name_this = self.get_object_name(obj);
+				if obj_name_this == obj_name:
+					break;
+				else:
+					tgt_idx += 1;
+			self._idf_dict[class_name].pop(tgt_idx);
+		except Exception as e:
+			print('Func: remove_object, args:(%s, %s), error: %s'%(class_name, obj_name, traceback.format_exc()))
+
+	def get_object_name(self, object_content):
+		obj_name = object_content.split(',')[0].split('\n')[-1].strip();
+		return obj_name;
+
+	def localize_schedule(self, local_file_path):
+		file_name = local_file_path.split(os.sep)[-1];
+		file_dir = local_file_path[:local_file_path.rfind(os.sep)];
+		sch_file_contents = self._idf_dict['Schedule:File'];
+		content_i = 0;
+		for sch_file_obj in copy.deepcopy(sch_file_contents):
+			if file_name in sch_file_obj:
+				file_name_st_idx = sch_file_obj.rfind(file_name);
+				full_path_st_idx = sch_file_obj.rfind(',', 0, file_name_st_idx);
+				sch_file_obj = sch_file_obj[0:full_path_st_idx] + ',\n' + file_dir + sch_file_obj[file_name_st_idx:];
+				sch_file_contents[content_i] = sch_file_obj;
+			content_i += 1;
+		self._idf_dict['Schedule:File'] = sch_file_contents;
+
+	def add_objects(self, dict_to_add):
+		for key in dict_to_add:
+			objects_to_add = dict_to_add[key];
+			if key in self._idf_dict:
+				self._idf_dict[key].extend(objects_to_add);
+			else:
+				self._idf_dict[key] = objects_to_add;
 
 
 	@property
