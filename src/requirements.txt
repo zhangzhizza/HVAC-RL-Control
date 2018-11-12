@@ -9,3 +9,4 @@ pandas
 pysolar
 seaborn
 psutil
+scikit-learn

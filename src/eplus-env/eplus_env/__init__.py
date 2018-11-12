@@ -802,6 +802,7 @@ register(
             'forecast_hour': 12,
             'act_repeat': 1});
 
+
 def setSchedulePath(sch_path_dict, tgtIDFPath):
     """
     Set the abosolute path for the Schedule:File.
@@ -829,6 +830,8 @@ def setSchedulePath(sch_path_dict, tgtIDFPath):
             i += 1;
     with open(tgtIDFPath, 'w', encoding = 'ISO-8859-1') as idf:
         idf.writelines(contents);
+
+
 
 # Replace some schedule file path in 5ZoneAutoDXVAV_eval.idf with the 
 # absolute path
