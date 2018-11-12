@@ -7,7 +7,8 @@ from util.logger import Logger
 
 FD = os.path.dirname(os.path.realpath(__file__));
 LOG_LEVEL = 'DEBUG';
-LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";     
+LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
+TRUSTED_ADDR = ['0.0.0.0:7777', '0.0.0.0:6666']
 available_computers = ["0.0.0.0:7777"]
 
 class WorkerServer(object):
@@ -44,6 +45,9 @@ class WorkerServer(object):
 			c, addr = s.accept()
 			addr = (':'.join(str(e) for e in addr));   
 			self._logger_main.info('EVALLOG_RECVER: Got connection from ' + addr);
+			if addr not in TRUSTED_ADDR:
+				self._logger_main.warning('Got untrusted connection, server exits.');
+				break;
 			recv = c.recv(1024).decode(encoding = 'utf-8')
 			if recv.lower() == 'recvevallog':
 				self._logger_main.info('EVALLOG_RECVER: Received RECVEVALLOG request from ' + addr)

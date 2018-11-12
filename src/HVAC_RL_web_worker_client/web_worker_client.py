@@ -13,7 +13,8 @@ from util.logger import Logger
 FD = os.path.dirname(os.path.realpath(__file__));
 LOG_LEVEL = 'DEBUG';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s"; 
-server_addr = '0.0.0.0:6666'    
+TRUSTED_ADDR = ['0.0.0.0:7777', '0.0.0.0:6666']
+server_addr = '0.0.0.0:6666' 
 
 class WorkerClient(object):
 
@@ -28,6 +29,10 @@ class WorkerClient(object):
 		self._port = port;
 
 	def runWorkerClient(self):
+		"""
+		SSL example
+		https://carlo-hamalainen.net/2013/01/24/python-ssl-socket-echo-test-with-self-signed-certificate/
+		"""
 		# Set the logger
 		
 		# Create the socket
@@ -42,6 +47,9 @@ class WorkerClient(object):
 			c, addr = s.accept()
 			addr = (':'.join(str(e) for e in addr));   
 			self._logger_main.info('Got connection from ' + addr);
+			if addr not in TRUSTED_ADDR:
+				self._logger_main.warning('Got untrusted connection, server exits.');
+				break;
 			recv = c.recv(1024).decode(encoding = 'utf-8')
 			to_send = None;
 			if recv.lower() == 'getstatus': 
