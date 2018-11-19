@@ -1,13 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from xml.dom.minidom import parseString
+from .forms import UploadFileForm, SelectActionForm
 
 import requests
 import pandas as pd
 import os, shutil, subprocess, json, socket, ast
+import eplus_env_util.idf_parser as idf_parser
 
 this_dir_path = os.path.dirname(os.path.realpath(__file__))
-available_computers = ["0.0.0.0:7777"]
+eplus_model_path = this_dir_path + '/../../src/eplus-env/eplus_env/envs/eplus_models/';
+available_computers = ["127.0.0.1:7777"]
 
 # Create your views here.
 def index(request):
@@ -15,6 +18,84 @@ def index(request):
 	return render(request, 'interface_v1/html/srtdash/index.html',\
     	{'run_dirs_names': run_dirs_names,
     	 'available_computers': available_computers})
+
+def openJSCAD(request):
+	group_name = request.GET.get('group_name')
+	idf_name = request.GET.get('idf_name')
+	dxf_dir = (this_dir_path + '/../../src/eplus-env/eplus_env/envs/eplus_models/'
+						+ group_name + '/idf/' + idf_name + '_base_out/eplusout.dxf');
+	with open(dxf_dir, 'r') as dxf_file:
+		dxf_content = dxf_file.read();
+	print ('\n' in dxf_content)
+	dxf_content = dxf_content.replace("\n", "\\n")
+	return render(request, 'interface_v1/html/OpenJSCAD/index.html', {'dxf_content': [dxf_content]});
+
+def test(request):
+	action_select = SelectActionForm(options = (('1','e'),('1','2')))
+	return HttpResponse(action_select);
+
+def simulator_eplus(request):
+	form = UploadFileForm()
+	action_select = SelectActionForm(options = [['-','-']])
+	return render(request, 'interface_v1/html/srtdash/simulator.html', 
+		{'form': form, 'action_select':action_select})
+
+def simulator_eplus_idf_upload(request):
+	if request.method == 'POST':
+		form = UploadFileForm(request.POST, request.FILES)
+		if form.is_valid():
+			handle_uploaded_idf_file(request.POST['title'], request.FILES['file'])
+			return HttpResponse('simulator_eplus/openjscad/'+
+								'?group_name=%s&idf_name=%s'
+								%(request.POST['title'], request.FILES['file'].name));
+
+def generate_idf_schedule_names(request):
+	# Get common variables
+	group_name = request.GET.get('group_name');
+	idf_name = request.GET.get('idf_name');
+	env_path = eplus_model_path + group_name + '/idf/';
+	env_idf_store_dir = (env_path + idf_name);
+	org_idf_parser = idf_parser.IdfParser(env_idf_store_dir);
+	if request.method == 'POST':
+		query = dict(request.POST.lists())
+		selected_actions = query['ACTIONS'];
+		with open(env_path + idf_name + '.add', 'a') as idf_add_file:
+			ext_int_head = ('\nExternalInterface,\n' +
+							'PtolemyServer;!- Name of External Interface\n');
+			idf_add_file.write(ext_int_head)
+			for selected_action in selected_actions:
+				sch_type, sch_init = org_idf_parser.get_schedule_type_init_value(selected_action);
+				ext_sch = ('\nExternalInterface:Schedule,\n' + 
+						   '%s,!- Name\n'%(selected_action) +
+						   '%s,!- Schedule Type Limits Name\n'%(sch_type) +
+    					   '%s;!- Initial Value\n'%(sch_init))
+				idf_add_file.write(ext_sch);
+		return HttpResponse('hELLO');
+	sch_names = sorted(org_idf_parser.get_all_compact_schedules_names());
+	form_options = [];
+	for i in range(len(sch_names)):
+		form_options.append([sch_names[i], sch_names[i]])
+	action_select = SelectActionForm(options = form_options);
+	# Write the output variable objects to file
+	org_idf_parser.write_object_in_idf(env_path + idf_name + '.add', 'Output:Variable')
+	return HttpResponse(action_select)
+
+
+
+def handle_uploaded_idf_file(group_name, file):
+	env_idf_store_dir = (this_dir_path + '/../../src/eplus-env/eplus_env/envs/eplus_models/'
+									   + group_name);
+	if not os.path.isdir(env_idf_store_dir):
+		os.makedirs(env_idf_store_dir + '/idf');
+	with open(env_idf_store_dir + '/idf/' + file.name, 'wb') as idf_file:
+		for chunk in file.chunks():
+			idf_file.write(chunk);
+	org_idf_parser_for_dxf = idf_parser.IdfParser(env_idf_store_dir + '/idf/' + file.name);
+	org_idf_parser_for_dxf.add_dxf_output();
+	org_idf_parser_for_dxf.set_minimum_run();
+	org_idf_parser_for_dxf.run_eplus_minimum(env_idf_store_dir + '/idf/' + file.name + '_base_out')
+
+
 
 
 def getRuns():
@@ -63,6 +144,7 @@ def get_worker_status(request):
 	port = int(request.GET.get('port'))
 	# Create a socket
 	s = socket.socket();
+	s.bind(('0.0.0.0', 6668))
 	s.connect((ip, port));
 	s.sendall(b'getstatus');
 	recv_str = s.recv(4096).decode(encoding = 'utf-8');

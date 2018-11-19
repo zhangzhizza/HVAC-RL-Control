@@ -1,0 +1,300 @@
+Output:Variable,
+    *,                       !- Key Value
+    Site Outdoor Air Drybulb Temperature,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Site Outdoor Air Relative Humidity,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Site Wind Speed,         !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Site Wind Direction,     !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Site Diffuse Solar Radiation Rate per Area,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Site Direct Solar Radiation Rate per Area,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    1ST%FLOOR:1ST%RESEARCH%OPEN%NW,  !- Key Value
+    Zone Air Temperature,    !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    1ST%FLOOR:1ST%RESEARCH%OPEN%NW,  !- Key Value
+    Zone Air Relative Humidity,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    2ND%FLOOR%SOUTH:2nd%Open%Office%SMW,  !- Key Value
+    Zone Air Temperature,    !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    2ND%FLOOR%SOUTH:2nd%Open%Office%SMW,  !- Key Value
+    Zone Air Relative Humidity,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Mixed Air Node,          !- Key Value
+    System Node Mass Flow Rate,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Mixed Air Node,          !- Key Value
+    System Node Temperature, !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Mixed Air Node,          !- Key Value
+    System Node Humidity Ratio,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Relief Air Outlet Node,  !- Key Value
+    System Node Mass Flow Rate,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Relief Air Outlet Node,  !- Key Value
+    System Node Temperature, !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Relief Air Outlet Node,  !- Key Value
+    System Node Humidity Ratio,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Heat Recovery Outlet Node,  !- Key Value
+    System Node Mass Flow Rate,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Heat Recovery Outlet Node,  !- Key Value
+    System Node Temperature, !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Heat Recovery Outlet Node,  !- Key Value
+    System Node Humidity Ratio,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Outside Air Inlet Node,  !- Key Value
+    System Node Mass Flow Rate,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Outside Air Inlet Node,  !- Key Value
+    System Node Temperature, !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Outside Air Inlet Node,  !- Key Value
+    System Node Humidity Ratio,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Air Loop Supply Side Outlet 1,  !- Key Value
+    System Node Mass Flow Rate,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Air Loop Supply Side Outlet 1,  !- Key Value
+    System Node Temperature, !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Air Loop Supply Side Outlet 1,  !- Key Value
+    System Node Humidity Ratio,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Desiccant Process Outlet Node,  !- Key Value
+    System Node Mass Flow Rate,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Desiccant Process Outlet Node,  !- Key Value
+    System Node Temperature, !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Desiccant Process Outlet Node,  !- Key Value
+    System Node Humidity Ratio,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    1ST%FLOOR:1ST%RESEARCH%OPEN%NW ZONE AIR NODE,  !- Key Value
+    System Node Mass Flow Rate,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    1ST%FLOOR:1ST%RESEARCH%OPEN%NW Single Duct VAV,  !- Key Value
+    Zone Air Terminal Outdoor Air Volume Flow Rate,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    2ND%FLOOR%SOUTH:2nd%Open%Office%SMW ZONE AIR NODE,  !- Key Value
+    System Node Mass Flow Rate,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    2ND%FLOOR%SOUTH:2nd%Open%Office%SMW Single Duct VAV,  !- Key Value
+    Zone Air Terminal Outdoor Air Volume Flow Rate,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Heating Coil Electric Energy,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    AIR LOOP AHU SUPPLY FAN, !- Key Value
+    Fan Electric Energy,     !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Facility Total HVAC Electric Demand Power,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Facility Total HVAC Electric Demand Power,  !- Variable Name
+    Hourly;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Pump Electric Power,     !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Fan Electric Power,      !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    People 1ST%FLOOR:1st%Classroom,  !- Key Value
+    People Occupant Count,   !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    People 1ST%FLOOR:1st%Research%Open%NW,  !- Key Value
+    People Occupant Count,   !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    People 2ND%FLOOR%SOUTH:2nd%Conference%02,  !- Key Value
+    People Occupant Count,   !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    1ST%FLOOR:1st%Classroom, !- Key Value
+    Zone Electric Equipment Electric Power,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    1ST%FLOOR:1st%Research%Open%NW,  !- Key Value
+    Zone Electric Equipment Electric Power,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    2ND%FLOOR%SOUTH:2nd%Conference%02,  !- Key Value
+    Zone Electric Equipment Electric Power,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Cooling Coil Electric Power,  !- Variable Name
+    timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Heating Coil Electric Power,  !- Variable Name
+    timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Facility Total HVAC Electric Demand Power,  !- Variable Name
+    runperiod;               !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Facility Cooling Setpoint Not Met Time,  !- Variable Name
+    RunPeriod;               !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Facility Heating Setpoint Not Met Time,  !- Variable Name
+    RunPeriod;               !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Facility Total HVAC Electric Demand Power ,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    1ST%FLOOR:1st%Conference,!- Key Value
+    Zone Air Temperature ,   !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    2ND%FLOOR%SOUTH:2nd%Open%Office%NE, !- Key Value 2nd1
+    Zone Thermostat Cooling Setpoint Temperature, !- Variable Name
+    timestep; !- Reporting
+
+Output:Variable,
+    2ND%FLOOR%SOUTH:2nd%Conference%02, !- Key Value 2nd2
+    Zone Thermostat Cooling Setpoint Temperature, !- Variable Name
+    timestep; !- Reporting
+
+Output:Variable,
+    1ST%FLOOR:1st%Conference, !- Key Value 1st1
+    Zone Thermostat Cooling Setpoint Temperature, !- Variable Name
+    timestep; !- Reporting
+
+Output:Variable,
+    1ST%FLOOR:1st%Research%Open%NE, !- Key Value 1st2
+    Zone Thermostat Cooling Setpoint Temperature, !- Variable Name
+    timestep; !- Reporting
+
+Output:Variable,
+    People 1ST%FLOOR:1st%Classroom,      !- Key Value
+    People Occupant Count,          !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    People 1ST%FLOOR:1st%Research%Open%NW,      !- Key Value
+    People Occupant Count,          !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    People 2ND%FLOOR%SOUTH:2nd%Conference%02,      !- Key Value
+    People Occupant Count,          !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    1ST%FLOOR:1st%Classroom, !- Key Value 1st2
+    Zone Thermostat Heating Setpoint Temperature, !- Variable Name
+    timestep; !- Reporting
+
+Output:Variable,
+    1ST%FLOOR:1st%Classroom, !- Key Value 1st2
+    Zone Thermostat Cooling Setpoint Temperature, !- Variable Name
+    timestep; !- Reporting
+

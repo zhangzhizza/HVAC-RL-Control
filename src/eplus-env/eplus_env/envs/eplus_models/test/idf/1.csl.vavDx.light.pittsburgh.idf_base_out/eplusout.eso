@@ -1,0 +1,37 @@
+Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.11.19 04:54
+1,5,Environment Title[],Latitude[deg],Longitude[deg],Time Zone[],Elevation[m]
+2,6,Day of Simulation[],Month[],Day of Month[],DST Indicator[1=yes 0=no],Hour[],StartMinute[],EndMinute[],DayType
+3,3,Cumulative Day of Simulation[],Month[],Day of Month[],DST Indicator[1=yes 0=no],DayType  ! When Daily Report Variables Requested
+4,2,Cumulative Days of Simulation[],Month[]  ! When Monthly Report Variables Requested
+5,1,Cumulative Days of Simulation[] ! When Run Period Report Variables Requested
+6,1,Environment,Site Outdoor Air Drybulb Temperature [C] !TimeStep
+7,1,Environment,Site Outdoor Air Relative Humidity [%] !TimeStep
+8,1,Environment,Site Wind Speed [m/s] !TimeStep
+9,1,Environment,Site Wind Direction [deg] !TimeStep
+10,1,Environment,Site Diffuse Solar Radiation Rate per Area [W/m2] !TimeStep
+11,1,Environment,Site Direct Solar Radiation Rate per Area [W/m2] !TimeStep
+12,1,PEOPLE 1ST%FLOOR:1ST%CLASSROOM,People Occupant Count [] !TimeStep
+13,1,PEOPLE 1ST%FLOOR:1ST%RESEARCH%OPEN%NW,People Occupant Count [] !TimeStep
+14,1,PEOPLE 2ND%FLOOR%SOUTH:2ND%CONFERENCE%02,People Occupant Count [] !TimeStep
+1296,1,1ST%FLOOR:1ST%CLASSROOM,Zone Electric Equipment Electric Power [W] !TimeStep
+1318,1,1ST%FLOOR:1ST%RESEARCH%OPEN%NW,Zone Electric Equipment Electric Power [W] !TimeStep
+1487,1,2ND%FLOOR%SOUTH:2ND%CONFERENCE%02,Zone Electric Equipment Electric Power [W] !TimeStep
+1845,1,1ST%FLOOR:1ST%CONFERENCE,Zone Air Temperature [C] !TimeStep
+1846,1,1ST%FLOOR:1ST%CONFERENCE,Zone Thermostat Cooling Setpoint Temperature [C] !TimeStep
+1879,1,1ST%FLOOR:1ST%RESEARCH%OPEN%NE,Zone Thermostat Cooling Setpoint Temperature [C] !TimeStep
+1976,1,1ST%FLOOR:1ST%CLASSROOM,Zone Thermostat Heating Setpoint Temperature [C] !TimeStep
+1977,1,1ST%FLOOR:1ST%CLASSROOM,Zone Thermostat Cooling Setpoint Temperature [C] !TimeStep
+2106,1,1ST%FLOOR:1ST%RESEARCH%OPEN%NW,Zone Air Temperature [C] !TimeStep
+2107,1,1ST%FLOOR:1ST%RESEARCH%OPEN%NW,Zone Air Relative Humidity [%] !TimeStep
+2588,1,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE,Zone Thermostat Cooling Setpoint Temperature [C] !TimeStep
+2621,1,2ND%FLOOR%SOUTH:2ND%CONFERENCE%02,Zone Thermostat Cooling Setpoint Temperature [C] !TimeStep
+2686,1,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW,Zone Air Temperature [C] !TimeStep
+2687,1,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW,Zone Air Relative Humidity [%] !TimeStep
+3389,1,Whole Building,Facility Total HVAC Electric Demand Power [W] !TimeStep
+3390,1,Whole Building,Facility Total HVAC Electric Demand Power [W] !Hourly
+3391,11,Whole Building,Facility Total HVAC Electric Demand Power [W] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+3392,11,Facility,Facility Heating Setpoint Not Met Time [hr] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+3393,11,Facility,Facility Cooling Setpoint Not Met Time [hr] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+3438,1,DESICCANT REGEN FAN,Fan Electric Power [W] !TimeStep
+3470,1,AIR LOOP AHU SUPPLY FAN,Fan Electric Power [W] !TimeStep
+3471,1,AIR LOOP AHU SUPPLY FAN,Fan Electric Energy [J] !TimeStep

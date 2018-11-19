@@ -1,0 +1,102 @@
+[2018-11-14 05:36:07,125] worker_client_logger INFO:state_file_syncher started.
+[2018-11-14 05:36:07,125] worker_client_logger INFO:STATE_SYNCHER: Connected to 127.0.0.1:7777.
+[2018-11-14 05:36:07,126] worker_client_logger INFO:EVALLOG_RECVER: Socket starts at 0.0.0.0:6666
+[2018-11-14 05:36:07,126] worker_client_logger INFO:Listening...
+[2018-11-14 05:36:07,126] worker_client_logger INFO:eval_log_file_receiver started.
+[2018-11-14 05:36:07,127] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-14 05:36:12,134] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+OSError: [Errno 99] Cannot assign requested address
+
+[2018-11-14 05:36:18,163] worker_client_logger INFO:STATE_SYNCHER: Connected to 127.0.0.1:7777.
+[2018-11-14 05:36:18,167] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-14 05:36:23,174] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+OSError: [Errno 99] Cannot assign requested address
+
+[2018-11-14 05:36:29,203] worker_client_logger INFO:STATE_SYNCHER: Connected to 127.0.0.1:7777.
+[2018-11-14 05:36:29,205] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-14 05:36:34,212] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+OSError: [Errno 99] Cannot assign requested address
+
+[2018-11-14 05:36:40,243] worker_client_logger INFO:STATE_SYNCHER: Connected to 127.0.0.1:7777.
+[2018-11-14 05:36:40,247] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-14 05:36:45,254] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+OSError: [Errno 99] Cannot assign requested address
+
+[2018-11-14 05:36:51,283] worker_client_logger INFO:STATE_SYNCHER: Connected to 127.0.0.1:7777.
+[2018-11-14 05:36:51,286] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-14 05:36:56,294] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+OSError: [Errno 99] Cannot assign requested address
+
+[2018-11-14 05:37:02,323] worker_client_logger INFO:STATE_SYNCHER: Connected to 127.0.0.1:7777.
+[2018-11-14 05:37:02,327] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-14 05:37:07,333] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+OSError: [Errno 99] Cannot assign requested address
+
+[2018-11-14 05:37:13,364] worker_client_logger INFO:STATE_SYNCHER: Connected to 127.0.0.1:7777.
+[2018-11-14 05:37:13,364] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-14 05:37:18,366] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+OSError: [Errno 99] Cannot assign requested address
+
+[2018-11-14 05:37:24,403] worker_client_logger INFO:STATE_SYNCHER: Connected to 127.0.0.1:7777.
+[2018-11-14 05:37:24,403] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-14 05:37:29,410] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+OSError: [Errno 99] Cannot assign requested address
+
+[2018-11-14 05:37:35,443] worker_client_logger INFO:STATE_SYNCHER: Connected to 127.0.0.1:7777.
+[2018-11-14 05:37:35,444] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-14 05:37:40,450] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+OSError: [Errno 99] Cannot assign requested address
+
+[2018-11-14 05:37:46,484] worker_client_logger INFO:STATE_SYNCHER: Connected to 127.0.0.1:7777.
+[2018-11-14 05:37:46,485] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-14 05:37:51,491] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+OSError: [Errno 99] Cannot assign requested address
+
+[2018-11-14 05:37:57,523] worker_client_logger INFO:STATE_SYNCHER: Connected to 127.0.0.1:7777.
+[2018-11-14 05:37:57,523] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-14 05:38:02,530] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+OSError: [Errno 99] Cannot assign requested address
+
+[2018-11-14 05:38:08,563] worker_client_logger INFO:STATE_SYNCHER: Connected to 127.0.0.1:7777.
+[2018-11-14 05:38:08,564] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-14 05:38:13,570] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+OSError: [Errno 99] Cannot assign requested address
+
+[2018-11-14 05:38:19,603] worker_client_logger INFO:STATE_SYNCHER: Connected to 127.0.0.1:7777.
+[2018-11-14 05:38:19,604] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-14 05:38:24,609] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+OSError: [Errno 99] Cannot assign requested address
+
+[2018-11-14 05:38:30,643] worker_client_logger INFO:STATE_SYNCHER: Connected to 127.0.0.1:7777.
+[2018-11-14 05:38:30,643] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-14 05:38:35,645] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+OSError: [Errno 99] Cannot assign requested address
+

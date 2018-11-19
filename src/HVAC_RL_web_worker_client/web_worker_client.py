@@ -13,8 +13,8 @@ from util.logger import Logger
 FD = os.path.dirname(os.path.realpath(__file__));
 LOG_LEVEL = 'DEBUG';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s"; 
-TRUSTED_ADDR = ['0.0.0.0:7777', '0.0.0.0:6666']
-server_addr = '0.0.0.0:6666' 
+TRUSTED_ADDR = ['127.0.0.1:7777', '127.0.0.1:6666', '127.0.0.1:6667', '127.0.0.1:6668']
+server_addr = '127.0.0.1:6666' 
 
 class WorkerClient(object):
 
