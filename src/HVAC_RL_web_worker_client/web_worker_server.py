@@ -9,7 +9,7 @@ FD = os.path.dirname(os.path.realpath(__file__));
 LOG_LEVEL = 'DEBUG';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 TRUSTED_ADDR = ['0.0.0.0:7777', '0.0.0.0:6666']
-available_computers = ["0.0.0.0:7777"]
+available_computers = ["127.0.0.1:7777"]
 
 class WorkerServer(object):
 
@@ -96,6 +96,8 @@ class WorkerServer(object):
 				try:
 					ip_this, port_this = worker_ip_port.split(":");
 					s = socket.socket();
+					s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+					s.bind(('0.0.0.0', self._port + 1))  
 					s.connect((ip_this, int(port_this)));
 					self._logger_main.info('STATE_SYNCHER: Connected to %s.'%(worker_ip_port))
 					s.sendall(b'getstatus');
@@ -111,6 +113,7 @@ class WorkerServer(object):
 						self._set_meta_status(exp_this_meta_dir + '/run.meta', ip_this
 											, exp_this_worker_status, exp_this_worker_step);
 					self._logger_main.info('STATE_SYNCHER: Finished updating for exps %s.'%(list(exps_this_worker)));
+					s.close()
 				except Exception as e:
 					self._logger_main.info('STATE_SYNCHER: ERROR: %s'%(traceback.format_exc()))
 			time.sleep(interval)

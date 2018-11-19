@@ -1,0 +1,564 @@
+Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.11.14 07:35,IDD_Version 8.3.0
+   ** Warning ** ProcessScheduleInput: Schedule:Compact="HVACTEMPLATE-ALWAYS 4", Schedule Type Limits Name="HVACTEMPLATE ANY NUMBER" not found -- will not be validated
+   ** Warning ** ProcessScheduleInput: Schedule:Compact="HYBRID CONTROL MODE SCHEDULE", Schedule Type Limits Name="HYBRID CONTROL MODE TYPE" not found -- will not be validated
+   ** Warning ** ProcessScheduleInput: Schedule:Compact="OUTDOORCO2SCHEDULE", Schedule Type Limits Name="VALUE" not found -- will not be validated
+   ** Warning ** Sizing:Parameters: note Timesteps in Averaging Window entered value=[1] is less than 1 hour (i.e., 12 timesteps).
+   ************* Beginning Zone Sizing Calculations
+   ** Warning ** Site:GroundTemperature:BuildingSurface: Some values fall outside the range of 15-25C.
+   **   ~~~   ** These values may be inappropriate.  Please consult the Input Output Reference for more details.
+   ** Warning ** CheckConvexity: Zone="1ST%FLOOR:1ST%RESEARCH%OPEN%NE", Surface="1ST%FLOOR:1ST%RESEARCH%OPEN%NE_WALL_5_1_0" is non-convex.
+   **   ~~~   ** ...vertex 3 to vertex 4 to vertex 5
+   **   ~~~   ** ...vertex 3=[3.61,-0.78,0.51]
+   **   ~~~   ** ...vertex 4=[3.61,-0.78,0.77]
+   **   ~~~   ** ...vertex 5=[-3.20,-0.78,0.77]
+   ** Warning ** GetVertices: Distance between two vertices < .01, possibly coincident. for Surface=1ST%FLOOR:1ST%LOBBY_CEILING_1_12_0, in Zone=1ST%FLOOR:1ST%LOBBY
+   **   ~~~   ** Vertex [7]=(19.49,9.58,4.42)
+   **   ~~~   ** Vertex [6]=(19.49,9.57,4.42)
+   **   ~~~   ** Dropping Vertex [7].
+   ** Warning ** GetVertices: Distance between two vertices < .01, possibly coincident. for Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_FLOOR_0_0_10048, in Zone=2ND%FLOOR%NORTH:2ND%CORRIDOR
+   **   ~~~   ** Vertex [2]=(19.49,9.57,4.42)
+   **   ~~~   ** Vertex [1]=(19.49,9.58,4.42)
+   **   ~~~   ** Dropping Vertex [2].
+   ** Warning ** CheckConvexity: Zone="1ST%FLOOR:1ST%LOBBY", Surface="1ST%FLOOR:1ST%LOBBY_WALL_19_1_0" is non-convex.
+   **   ~~~   ** ...vertex 3 to vertex 4 to vertex 5
+   **   ~~~   ** ...vertex 3=[3.99,6.13,0.51]
+   **   ~~~   ** ...vertex 4=[3.99,6.13,0.77]
+   **   ~~~   ** ...vertex 5=[3.99,-0.39,0.77]
+   ** Warning ** CheckConvexity: Zone="1ST%FLOOR:1ST%HVAC%SHAFT", Surface="1ST%FLOOR:1ST%HVAC%SHAFT_WALL_2_1_0" is non-convex.
+   **   ~~~   ** ...vertex 3 to vertex 4 to vertex 5
+   **   ~~~   ** ...vertex 3=[-16.71,-0.39,0.51]
+   **   ~~~   ** ...vertex 4=[-16.71,-0.39,0.77]
+   **   ~~~   ** ...vertex 5=[-16.71,0.11,0.77]
+   ** Warning ** CheckConvexity: Zone="1ST%FLOOR:1ST%CLASSROOM", Surface="1ST%FLOOR:1ST%CLASSROOM_EXTFLOOR_0_2_1" is non-convex.
+   **   ~~~   ** ...vertex 3 to vertex 4 to vertex 5
+   **   ~~~   ** ...vertex 3=[24.42,-6.89,0.51]
+   **   ~~~   ** ...vertex 4=[24.42,-3.71,0.51]
+   **   ~~~   ** ...vertex 5=[22.69,-3.71,0.51]
+   ** Warning ** CheckConvexity: Zone="1ST%FLOOR:1ST%RESEARCH%OPEN%NW", Surface="1ST%FLOOR:1ST%RESEARCH%OPEN%NW_WALL_3_1_0" is non-convex.
+   **   ~~~   ** ...vertex 2 to vertex 3 to vertex 4
+   **   ~~~   ** ...vertex 2=[-9.55,-0.78,0.77]
+   **   ~~~   ** ...vertex 3=[-16.32,-0.78,0.77]
+   **   ~~~   ** ...vertex 4=[-16.32,-0.78,0.51]
+   ** Warning ** CheckConvexity: Zone="1ST%FLOOR:1ST%PHONE%BOOTH", Surface="1ST%FLOOR:1ST%PHONE%BOOTH_EXTFLOOR_0_2_0" is non-convex.
+   **   ~~~   ** ...vertex 5 to vertex 6 to vertex 1
+   **   ~~~   ** ...vertex 5=[3.91,-3.26,0.51]
+   **   ~~~   ** ...vertex 6=[3.91,-3.33,0.51]
+   **   ~~~   ** ...vertex 1=[6.63,-3.33,0.51]
+   ** Warning ** CheckConvexity: Zone="1ST%FLOOR:1ST%MCHNCL%RM%01", Surface="1ST%FLOOR:1ST%MCHNCL%RM%01_WALL_7_1_0" is non-convex.
+   **   ~~~   ** ...vertex 2 to vertex 3 to vertex 4
+   **   ~~~   ** ...vertex 2=[2.06,9.58,2.82]
+   **   ~~~   ** ...vertex 3=[3.94,6.32,1.65]
+   **   ~~~   ** ...vertex 4=[3.94,6.32,0.51]
+   ** Warning ** GetVertices: Distance between two vertices < .01, possibly coincident. for Surface=2ND%PLENVM:2ND%PLENVM%FALSE_EXTFLOOR_0_0_0, in Zone=2ND%PLENVM:2ND%PLENVM%FALSE
+   **   ~~~   ** Vertex [11]=(-16.71,-0.72,4.42)
+   **   ~~~   ** Vertex [10]=(-16.71,-0.72,4.42)
+   **   ~~~   ** Dropping Vertex [11].
+   ** Warning ** GetVertices: Distance between two vertices < .01, possibly coincident. for Surface=2ND%PLENVM:2ND%PLENVM%FALSE_EXTFLOOR_0_0_0, in Zone=2ND%PLENVM:2ND%PLENVM%FALSE
+   **   ~~~   ** Vertex [14]=(-20.24,-0.72,4.42)
+   **   ~~~   ** Vertex [13]=(-20.24,-0.72,4.42)
+   **   ~~~   ** Dropping Vertex [14].
+   ** Warning ** GetVertices: Distance between two vertices < .01, possibly coincident. for Surface=2ND%PLENVM:2ND%PLENVM%FALSE_EXTFLOOR_0_0_0, in Zone=2ND%PLENVM:2ND%PLENVM%FALSE
+   **   ~~~   ** Vertex [15]=(-20.23,-6.10,4.42)
+   **   ~~~   ** Vertex [14]=(-20.23,-6.10,4.42)
+   **   ~~~   ** Dropping Vertex [15].
+   ** Warning ** GetVertices: Distance between two vertices < .01, possibly coincident. for Surface=2ND%PLENVM:2ND%PLENVM%FALSE_EXTFLOOR_0_0_0, in Zone=2ND%PLENVM:2ND%PLENVM%FALSE
+   **   ~~~   ** Vertex [17]=(-13.11,-12.26,4.42)
+   **   ~~~   ** Vertex [16]=(-13.11,-12.26,4.42)
+   **   ~~~   ** Dropping Vertex [17].
+   ** Warning ** GetVertices: Distance between two vertices < .01, possibly coincident. for Surface=2ND%PLENVM:2ND%PLENVM%FALSE_EXTFLOOR_0_0_0, in Zone=2ND%PLENVM:2ND%PLENVM%FALSE
+   **   ~~~   ** Vertex [20]=(24.64,-6.90,4.42)
+   **   ~~~   ** Vertex [19]=(24.64,-6.89,4.42)
+   **   ~~~   ** Dropping Vertex [20].
+   ** Warning ** GetVertices: Distance between two vertices < .01, possibly coincident. for Surface=2ND%PLENVM:2ND%PLENVM%FALSE_EXTFLOOR_0_0_0, in Zone=2ND%PLENVM:2ND%PLENVM%FALSE
+   **   ~~~   ** Vertex [22]=(27.37,-4.08,4.42)
+   **   ~~~   ** Vertex [21]=(27.38,-4.08,4.42)
+   **   ~~~   ** Dropping Vertex [22].
+   ** Warning ** CheckConvexity: Zone="2ND%PLENVM:2ND%PLENVM%FALSE", Surface="2ND%PLENVM:2ND%PLENVM%FALSE_EXTFLOOR_0_0_0" is non-convex.
+   **   ~~~   ** ...vertex 5 to vertex 6 to vertex 7
+   **   ~~~   ** ...vertex 5=[-16.46,0.36,4.42]
+   **   ~~~   ** ...vertex 6=[-16.46,-0.52,4.42]
+   **   ~~~   ** ...vertex 7=[3.99,-0.52,4.42]
+   ** Warning ** CheckConvexity: Zone="2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE", Surface="2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0" is non-convex.
+   **   ~~~   ** ...vertex 5 to vertex 6 to vertex 7
+   **   ~~~   ** ...vertex 5=[23.99,-0.79,9.15]
+   **   ~~~   ** ...vertex 6=[9.08,-0.79,9.15]
+   **   ~~~   ** ...vertex 7=[9.08,5.74,9.15]
+   ** Warning ** GetVertices: Distance between two vertices < .01, possibly coincident. for Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_14_0_1, in Zone=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE
+   **   ~~~   ** Vertex [2]=(23.53,-0.79,4.78)
+   **   ~~~   ** Vertex [1]=(23.53,-0.79,4.78)
+   **   ~~~   ** Dropping Vertex [2].
+   ** Warning ** GetVertices: Distance between two vertices < .01, possibly coincident. for Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_14_0_1, in Zone=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE
+   **   ~~~   ** Vertex [3]=(9.08,-0.79,4.78)
+   **   ~~~   ** Vertex [2]=(9.08,-0.79,4.78)
+   **   ~~~   ** Cannot Drop Vertex [3]; Number of Surface Sides at minimum. This surface is now a degenerate surface.
+   ** Warning ** GetVertices: Distance between two vertices < .01, possibly coincident. for Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_14_0_4, in Zone=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE
+   **   ~~~   ** Vertex [2]=(23.99,-0.79,9.14)
+   **   ~~~   ** Vertex [1]=(23.99,-0.79,9.15)
+   **   ~~~   ** Dropping Vertex [2].
+   ** Warning ** GetVertices: Distance between two vertices < .01, possibly coincident. for Surface=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_WALL_14_0_4, in Zone=2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE
+   **   ~~~   ** Vertex [3]=(9.86,-0.79,9.15)
+   **   ~~~   ** Vertex [2]=(9.86,-0.79,9.14)
+   **   ~~~   ** Cannot Drop Vertex [3]; Number of Surface Sides at minimum. This surface is now a degenerate surface.
+   ** Warning ** CheckConvexity: Zone="2ND%FLOOR%SOUTH:2ND%CONFERENCE%02", Surface="2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_ROOF_1_1_0" is non-convex.
+   **   ~~~   ** ...vertex 2 to vertex 3 to vertex 4
+   **   ~~~   ** ...vertex 2=[23.99,-5.07,9.15]
+   **   ~~~   ** ...vertex 3=[26.41,-5.07,9.15]
+   **   ~~~   ** ...vertex 4=[26.41,-5.68,9.15]
+   ** Warning ** CheckConvexity: Zone="2ND%FLOOR%SOUTH:2ND%CONFERENCE%01", Surface="2ND%FLOOR%SOUTH:2ND%CONFERENCE%01_ROOF_1_0_0" is non-convex.
+   **   ~~~   ** ...vertex 5 to vertex 6 to vertex 1
+   **   ~~~   ** ...vertex 5=[26.41,-5.68,9.15]
+   **   ~~~   ** ...vertex 6=[26.41,-6.68,9.15]
+   **   ~~~   ** ...vertex 1=[19.40,-6.68,9.15]
+   ** Warning ** CheckConvexity: Zone="2ND%FLOOR%NORTH:2ND%LOBBY", Surface="2ND%FLOOR%NORTH:2ND%LOBBY_ROOF_1_2_0" is non-convex.
+   **   ~~~   ** ...vertex 3 to vertex 4 to vertex 5
+   **   ~~~   ** ...vertex 3=[14.29,6.48,9.15]
+   **   ~~~   ** ...vertex 4=[21.55,10.67,9.15]
+   **   ~~~   ** ...vertex 5=[22.79,8.51,9.15]
+   ** Warning ** CheckConvexity: Zone="2ND%FLOOR%NORTH:2ND%LOBBY", Surface="2ND%FLOOR%NORTH:2ND%LOBBY_WALL_7_1_0" is non-convex.
+   **   ~~~   ** ...vertex 2 to vertex 3 to vertex 4
+   **   ~~~   ** ...vertex 2=[29.69,5.25,4.73]
+   **   ~~~   ** ...vertex 3=[27.94,5.25,4.73]
+   **   ~~~   ** ...vertex 4=[27.94,5.25,4.42]
+   ** Warning ** CheckConvexity: Zone="2ND%FLOOR%NORTH:2ND%LOBBY", Surface="2ND%FLOOR%NORTH:2ND%LOBBY_WALL_8_1_0" is non-convex.
+   **   ~~~   ** ...vertex 3 to vertex 4 to vertex 5
+   **   ~~~   ** ...vertex 3=[27.61,5.44,4.42]
+   **   ~~~   ** ...vertex 4=[27.61,5.44,4.73]
+   **   ~~~   ** ...vertex 5=[23.79,12.06,4.73]
+   ** Warning ** CheckConvexity: Zone="2ND%FLOOR%NORTH:2ND%RESTROOMS", Surface="2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0" is non-convex.
+   **   ~~~   ** ...vertex 3 to vertex 4 to vertex 5
+   **   ~~~   ** ...vertex 3=[17.21,10.18,9.15]
+   **   ~~~   ** ...vertex 4=[16.34,11.68,9.15]
+   **   ~~~   ** ...vertex 5=[17.71,12.46,9.15]
+   ** Warning ** CheckConvexity: Zone="2ND%FLOOR%NORTH:2ND%RESTROOMS", Surface="2ND%FLOOR%NORTH:2ND%RESTROOMS_WALL_3_1_0" is non-convex.
+   **   ~~~   ** ...vertex 2 to vertex 3 to vertex 4
+   **   ~~~   ** ...vertex 2=[15.95,17.60,7.42]
+   **   ~~~   ** ...vertex 3=[14.00,16.47,7.42]
+   **   ~~~   ** ...vertex 4=[14.00,16.47,6.12]
+   ** Warning ** CheckConvexity: Zone="2ND%FLOOR%NORTH:2ND%CORRIDOR", Surface="2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0" is non-convex.
+   **   ~~~   ** ...vertex 2 to vertex 3 to vertex 4
+   **   ~~~   ** ...vertex 2=[7.57,6.52,9.15]
+   **   ~~~   ** ...vertex 3=[9.85,6.52,9.15]
+   **   ~~~   ** ...vertex 4=[9.85,6.48,9.15]
+   ** Warning ** CheckConvexity: Zone="2ND%FLOOR%NORTH:2ND%SECURE%FILES", Surface="2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0" is non-convex.
+   **   ~~~   ** ...vertex 6 to vertex 1 to vertex 2
+   **   ~~~   ** ...vertex 6=[10.21,14.29,9.15]
+   **   ~~~   ** ...vertex 1=[12.68,10.02,9.15]
+   **   ~~~   ** ...vertex 2=[12.68,8.25,9.15]
+   ** Warning ** CheckConvexity: Zone="2ND%FLOOR%NORTH:2ND%WORK%ROOM", Surface="2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0" is non-convex.
+   **   ~~~   ** ...vertex 6 to vertex 1 to vertex 2
+   **   ~~~   ** ...vertex 6=[6.42,12.10,9.15]
+   **   ~~~   ** ...vertex 1=[7.57,10.18,9.15]
+   **   ~~~   ** ...vertex 2=[7.57,8.25,9.15]
+   ** Warning ** CheckConvexity: Zone="2ND%FLOOR%NORTH:2ND%WORK%ROOM", Surface="2ND%FLOOR%NORTH:2ND%WORK%ROOM_WALL_4_1_0" is non-convex.
+   **   ~~~   ** ...vertex 6 to vertex 1 to vertex 2
+   **   ~~~   ** ...vertex 6=[10.21,14.29,6.12]
+   **   ~~~   ** ...vertex 1=[10.15,14.25,6.12]
+   **   ~~~   ** ...vertex 2=[10.15,14.25,4.42]
+   ** Warning ** CheckConvexity: Zone="3RD%FLOOR%LOWER:3RD%LOWER%LOBBY", Surface="3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_ROOF_1_1_0" is non-convex.
+   **   ~~~   ** ...vertex 3 to vertex 4 to vertex 5
+   **   ~~~   ** ...vertex 3=[27.35,-0.38,12.81]
+   **   ~~~   ** ...vertex 4=[27.35,2.89,12.81]
+   **   ~~~   ** ...vertex 5=[29.68,2.89,12.81]
+   ** Warning ** CheckConvexity: Zone="3RD%FLOOR%UPPER:3RD%UPPER%LOBBY", Surface="3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0" is non-convex.
+   **   ~~~   ** ...vertex 2 to vertex 3 to vertex 4
+   **   ~~~   ** ...vertex 2=[22.79,8.51,12.81]
+   **   ~~~   ** ...vertex 3=[21.55,10.67,12.81]
+   **   ~~~   ** ...vertex 4=[16.81,7.94,12.81]
+   ** Warning ** GetHTSubSurfaceData: A Multiplier > 1.0 for window/glass door 3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_1_0_1_WIN
+   **   ~~~   ** in conjunction with SolarDistribution = FullExterior or FullInteriorExterior
+   **   ~~~   ** can cause inaccurate shadowing on the window and/or
+   **   ~~~   ** inaccurate interior solar distribution from the window.
+   ** Warning ** GetHTSubSurfaceData: A Multiplier > 1.0 for window/glass door 3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_2_0_2_WIN
+   **   ~~~   ** in conjunction with SolarDistribution = FullExterior or FullInteriorExterior
+   **   ~~~   ** can cause inaccurate shadowing on the window and/or
+   **   ~~~   ** inaccurate interior solar distribution from the window.
+   ** Warning ** GetHTSubSurfaceData: A Multiplier > 1.0 for window/glass door 3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_7_0_0_6_0_6_WIN
+   **   ~~~   ** in conjunction with SolarDistribution = FullExterior or FullInteriorExterior
+   **   ~~~   ** can cause inaccurate shadowing on the window and/or
+   **   ~~~   ** inaccurate interior solar distribution from the window.
+   ** Warning ** GetHTSubSurfaceData: A Multiplier > 1.0 for window/glass door 3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0_2_0_2_WIN
+   **   ~~~   ** in conjunction with SolarDistribution = FullExterior or FullInteriorExterior
+   **   ~~~   ** can cause inaccurate shadowing on the window and/or
+   **   ~~~   ** inaccurate interior solar distribution from the window.
+   ** Warning ** GetHTSubSurfaceData: A Multiplier > 1.0 for window/glass door 3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_8_0_0_5_0_5_WIN
+   **   ~~~   ** in conjunction with SolarDistribution = FullExterior or FullInteriorExterior
+   **   ~~~   ** can cause inaccurate shadowing on the window and/or
+   **   ~~~   ** inaccurate interior solar distribution from the window.
+   ** Warning ** GetHTSubSurfaceData: A Multiplier > 1.0 for window/glass door 3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0_3_0_3_WIN
+   **   ~~~   ** in conjunction with SolarDistribution = FullExterior or FullInteriorExterior
+   **   ~~~   ** can cause inaccurate shadowing on the window and/or
+   **   ~~~   ** inaccurate interior solar distribution from the window.
+   ** Warning ** GetHTSubSurfaceData: A Multiplier > 1.0 for window/glass door 3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_9_0_0_6_0_6_WIN
+   **   ~~~   ** in conjunction with SolarDistribution = FullExterior or FullInteriorExterior
+   **   ~~~   ** can cause inaccurate shadowing on the window and/or
+   **   ~~~   ** inaccurate interior solar distribution from the window.
+   ** Warning ** GetHTSubSurfaceData: A Multiplier > 1.0 for window/glass door 3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_7_0_7_WIN
+   **   ~~~   ** in conjunction with SolarDistribution = FullExterior or FullInteriorExterior
+   **   ~~~   ** can cause inaccurate shadowing on the window and/or
+   **   ~~~   ** inaccurate interior solar distribution from the window.
+   ** Warning ** GetHTSubSurfaceData: A Multiplier > 1.0 for window/glass door 3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_10_0_0_15_0_15_WIN
+   **   ~~~   ** in conjunction with SolarDistribution = FullExterior or FullInteriorExterior
+   **   ~~~   ** can cause inaccurate shadowing on the window and/or
+   **   ~~~   ** inaccurate interior solar distribution from the window.
+   ** Warning ** GetHTSubSurfaceData: A Multiplier > 1.0 for window/glass door 3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_WALL_11_0_0_2_0_2_WIN
+   **   ~~~   ** in conjunction with SolarDistribution = FullExterior or FullInteriorExterior
+   **   ~~~   ** can cause inaccurate shadowing on the window and/or
+   **   ~~~   ** inaccurate interior solar distribution from the window.
+   ** Warning ** GetHTSubSurfaceData: A Multiplier > 1.0 for window/glass door 3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_2_0_2_WIN
+   **   ~~~   ** in conjunction with SolarDistribution = FullExterior or FullInteriorExterior
+   **   ~~~   ** can cause inaccurate shadowing on the window and/or
+   **   ~~~   ** inaccurate interior solar distribution from the window.
+   ** Warning ** GetHTSubSurfaceData: A Multiplier > 1.0 for window/glass door 3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE_WALL_3_0_0_4_0_2_WIN
+   **   ~~~   ** in conjunction with SolarDistribution = FullExterior or FullInteriorExterior
+   **   ~~~   ** can cause inaccurate shadowing on the window and/or
+   **   ~~~   ** inaccurate interior solar distribution from the window.
+   ** Warning ** GetHTSubSurfaceData: A Multiplier > 1.0 for window/glass door 3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_WALL_4_0_0_0_0_0_WIN
+   **   ~~~   ** in conjunction with SolarDistribution = FullExterior or FullInteriorExterior
+   **   ~~~   ** can cause inaccurate shadowing on the window and/or
+   **   ~~~   ** inaccurate interior solar distribution from the window.
+   ** Warning ** GetHTSubSurfaceData: A Multiplier > 1.0 for window/glass door 3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_ROOF_5_0_0_16_0_16_WIN
+   **   ~~~   ** in conjunction with SolarDistribution = FullExterior or FullInteriorExterior
+   **   ~~~   ** can cause inaccurate shadowing on the window and/or
+   **   ~~~   ** inaccurate interior solar distribution from the window.
+   ** Warning ** GetSurfaceData: Construction 9 of interzone surface 1ST%PLENVM:1ST%PLENVM_CEILING_1_4_0 does not have the same materials in the reverse order as the construction 10 of adjacent surface 1ST%FLOOR:1ST%CLASSROOM_FLOOR_0_0_10005
+   **   ~~~   ** ...but Nominal U values are similar, diff=[0.0000] ... simulation proceeds.
+   **   ~~~   ** ...if the two zones are expected to have significantly different temperatures, the proper "reverse" construction should be created.
+   **   ~~~   ** ...this problem for this pair will not be reported again.
+   ** Warning ** GetSurfaceData: Construction 17 of interzone surface 1ST%FLOOR:1ST%CONFERENCE_PARTITION_3_0_0 does not have the same materials in the reverse order as the construction 18 of adjacent surface 1ST%FLOOR:1ST%HVAC%SHAFT_PARTITION_5_0_10015
+   **   ~~~   ** ...but Nominal U values are similar, diff=[0.0000] ... simulation proceeds.
+   **   ~~~   ** ...this problem for this pair will not be reported again.
+   ** Warning ** GetSurfaceData: Construction 42 of interzone surface 1ST%FLOOR:1ST%LOBBY_PARTITION_8_0_0 does not have the same materials in the reverse order as the construction 41 of adjacent surface 1ST%FLOOR:1ST%ELECTRICAL%ROOM_PARTITION_7_0_10052
+   **   ~~~   ** ...but Nominal U values are similar, diff=[1.1102E-016] ... simulation proceeds.
+   **   ~~~   ** ...this problem for this pair will not be reported again.
+   ** Warning ** GetSurfaceData: Construction 1006 of interzone surface 1ST%FLOOR:1ST%LOBBY_PARTITION_23_0_0_0_0_0_WIN does not have the same materials in the reverse order as the construction 1006 of adjacent surface 1ST%FLOOR:1ST%CLASSROOM_PARTITION_10_0_0_0_0_0_WIN_10070
+   **   ~~~   ** ...but Nominal U values are similar, diff=[0.0000] ... simulation proceeds.
+   **   ~~~   ** ...this problem for this pair will not be reported again.
+   ** Warning ** GetSurfaceData: Construction 51 of interzone surface 1ST%FLOOR:1ST%CLASSROOM_PARTITION_4_0_0 does not have the same materials in the reverse order as the construction 52 of adjacent surface 1ST%FLOOR:1ST%VESTIBULE_PARTITION_4_0_10080
+   **   ~~~   ** ...but Nominal U values are similar, diff=[2.7756E-017] ... simulation proceeds.
+   **   ~~~   ** ...this problem for this pair will not be reported again.
+   ** Warning ** GetSurfaceData: Construction 1008 of interzone surface 2ND%PLENVM:2ND%PLENVM%NORTH_PARTITION_7_0_0_0_0_0_WIN does not have the same materials in the reverse order as the construction 1008 of adjacent surface 2ND%FLOOR%NORTH:2ND%LOBBY_PARTITION_40_0_0_0_0_0_WIN_10161
+   **   ~~~   ** ...but Nominal U values are similar, diff=[0.0000] ... simulation proceeds.
+   **   ~~~   ** ...this problem for this pair will not be reported again.
+   ** Warning ** GetSurfaceData: CAUTION -- Interzone surfaces are usually in different zones
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%LOBBY_FLOOR_25_0_10212, Zone=2ND%FLOOR%NORTH:2ND%LOBBY
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%LOBBY_CEILING_17_0_0, Zone=2ND%FLOOR%NORTH:2ND%LOBBY
+   ** Warning ** GetSurfaceData: CAUTION -- Interzone surfaces are usually in different zones
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%LOBBY_FLOOR_25_0_0, Zone=2ND%FLOOR%NORTH:2ND%LOBBY
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%LOBBY_CEILING_17_0_10214, Zone=2ND%FLOOR%NORTH:2ND%LOBBY
+   ** Warning ** GetSurfaceData: CAUTION -- Interzone surfaces are usually in different zones
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%LOBBY_FLOOR_37_0_10215, Zone=2ND%FLOOR%NORTH:2ND%LOBBY
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%LOBBY_CEILING_29_0_0, Zone=2ND%FLOOR%NORTH:2ND%LOBBY
+   ** Warning ** GetSurfaceData: CAUTION -- Interzone surfaces are usually in different zones
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%LOBBY_FLOOR_37_0_0, Zone=2ND%FLOOR%NORTH:2ND%LOBBY
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%LOBBY_CEILING_29_0_10217, Zone=2ND%FLOOR%NORTH:2ND%LOBBY
+   ** Warning ** GetSurfaceData: CAUTION -- Interzone surfaces are usually in different zones
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%LOBBY_FLOOR_49_0_10218, Zone=2ND%FLOOR%NORTH:2ND%LOBBY
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%LOBBY_CEILING_41_0_0, Zone=2ND%FLOOR%NORTH:2ND%LOBBY
+   ** Warning ** GetSurfaceData: CAUTION -- Interzone surfaces are usually in different zones
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%LOBBY_FLOOR_49_0_0, Zone=2ND%FLOOR%NORTH:2ND%LOBBY
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%LOBBY_CEILING_41_0_10220, Zone=2ND%FLOOR%NORTH:2ND%LOBBY
+   ** Warning ** GetSurfaceData: CAUTION -- Interzone surfaces are usually in different zones
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%LOBBY_FLOOR_61_0_10221, Zone=2ND%FLOOR%NORTH:2ND%LOBBY
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%LOBBY_CEILING_53_0_0, Zone=2ND%FLOOR%NORTH:2ND%LOBBY
+   ** Warning ** GetSurfaceData: CAUTION -- Interzone surfaces are usually in different zones
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%LOBBY_FLOOR_61_0_0, Zone=2ND%FLOOR%NORTH:2ND%LOBBY
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%LOBBY_CEILING_53_0_10223, Zone=2ND%FLOOR%NORTH:2ND%LOBBY
+   ** Warning ** GetSurfaceData: CAUTION -- Interzone surfaces are usually in different zones
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_FLOOR_29_0_10243, Zone=2ND%FLOOR%NORTH:2ND%CORRIDOR
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_CEILING_21_0_0, Zone=2ND%FLOOR%NORTH:2ND%CORRIDOR
+   ** Warning ** GetSurfaceData: CAUTION -- Interzone surfaces are usually in different zones
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_FLOOR_29_0_0, Zone=2ND%FLOOR%NORTH:2ND%CORRIDOR
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_CEILING_21_0_10246, Zone=2ND%FLOOR%NORTH:2ND%CORRIDOR
+   ** Warning ** GetSurfaceData: CAUTION -- Interzone surfaces are usually in different zones
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_FLOOR_18_0_10251, Zone=2ND%FLOOR%NORTH:2ND%CONFERENCE%03
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_CEILING_10_0_0, Zone=2ND%FLOOR%NORTH:2ND%CONFERENCE%03
+   ** Warning ** GetSurfaceData: CAUTION -- Interzone surfaces are usually in different zones
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_FLOOR_18_0_0, Zone=2ND%FLOOR%NORTH:2ND%CONFERENCE%03
+   **   ~~~   ** Surface=2ND%FLOOR%NORTH:2ND%CONFERENCE%03_CEILING_10_0_10252, Zone=2ND%FLOOR%NORTH:2ND%CONFERENCE%03
+   ** Warning ** GetSurfaceData: The total number of floors, walls, roofs and internal mass surfaces in Zone 1ST%FLOOR:1ST%RESEARCH%OPEN%NM
+   **   ~~~   ** is < 6. This may cause an inaccurate zone heat balance calculation.
+   ** Warning ** GetSurfaceData: The total number of floors, walls, roofs and internal mass surfaces in Zone 1ST%FLOOR:1ST%RESEARCH%OPEN%SM
+   **   ~~~   ** is < 6. This may cause an inaccurate zone heat balance calculation.
+   ** Warning ** GetSurfaceData: The total number of floors, walls, roofs and internal mass surfaces in Zone 1ST%FLOOR:1ST%RESEARCH%OPEN%SE
+   **   ~~~   ** is < 6. This may cause an inaccurate zone heat balance calculation.
+   ** Warning ** GetSurfaceData: The total number of floors, walls, roofs and internal mass surfaces in Zone 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW
+   **   ~~~   ** is < 6. This may cause an inaccurate zone heat balance calculation.
+   ** Warning ** GetSurfaceData: The total number of floors, walls, roofs and internal mass surfaces in Zone 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW
+   **   ~~~   ** is < 6. This may cause an inaccurate zone heat balance calculation.
+   ** Warning ** GetSurfaceData: The total number of floors, walls, roofs and internal mass surfaces in Zone 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM
+   **   ~~~   ** is < 6. This may cause an inaccurate zone heat balance calculation.
+   ** Warning ** GetSurfaceData: The total number of floors, walls, roofs and internal mass surfaces in Zone 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE
+   **   ~~~   ** is < 6. This may cause an inaccurate zone heat balance calculation.
+   ** Warning ** GetSurfaceData: The total number of floors, walls, roofs and internal mass surfaces in Zone 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW
+   **   ~~~   ** is < 6. This may cause an inaccurate zone heat balance calculation.
+   ** Warning ** GetSurfaceData: The total number of floors, walls, roofs and internal mass surfaces in Zone 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME
+   **   ~~~   ** is < 6. This may cause an inaccurate zone heat balance calculation.
+   ** Warning ** GetSurfaceData: The total number of floors, walls, roofs and internal mass surfaces in Zone 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW
+   **   ~~~   ** is < 6. This may cause an inaccurate zone heat balance calculation.
+   ** Warning ** GetSurfaceData: The total number of floors, walls, roofs and internal mass surfaces in Zone 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1
+   **   ~~~   ** is < 6. This may cause an inaccurate zone heat balance calculation.
+   ** Warning ** GetSurfaceData: The total number of floors, walls, roofs and internal mass surfaces in Zone 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME
+   **   ~~~   ** is < 6. This may cause an inaccurate zone heat balance calculation.
+   ** Warning ** GetSurfaceData: There are 14 window/glass door(s) that may cause inaccurate shadowing due to Solar Distribution.
+   **   ~~~   ** For explicit details on each window, use Output:Diagnostics,DisplayExtraWarnings;
+   ** Warning ** GetSurfaceData: There are 12 coincident/collinear vertices; These have been deleted unless the deletion would bring the number of surface sides < 3.
+   **   ~~~   ** For explicit details on each problem surface, use Output:Diagnostics,DisplayExtraWarnings;
+   ** Severe  ** GetSurfaceData: There are 2 degenerate surfaces; Degenerate surfaces are those with number of sides < 3.
+   **   ~~~   ** These surfaces should be deleted.
+   **   ~~~   ** For explicit details on each problem surface, use Output:Diagnostics,DisplayExtraWarnings;
+   ************* Note that the following warning(s) may/will occur if you have not enclosed your zone completely.
+   ** Warning ** Entered Volume entered for Zone="2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW" significantly different from calculated Volume
+   **   ~~~   ** Entered Zone Volume value=192.62, Calculated Zone Volume value=202.89, entered volume will be used in calculations.
+   ** Warning ** CheckUsedConstructions: There are 10 nominally unused constructions in input.
+   **   ~~~   ** Each Unused construction is shown.
+   ************* Construction=EXTWIN_1001
+   ************* Construction=1002
+   ************* Construction=EXTWIN_1003
+   ************* Construction=1004
+   ************* Construction=1005
+   ************* Construction=1007
+   ************* Construction=1009
+   ************* Construction=1010
+   ************* Construction=1011
+   ************* Construction=1012
+   ** Warning ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%RESEARCH%OPEN%NE_WALL_5_1_0" is a receiving surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Warning ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%LOBBY_WALL_19_1_0" is a receiving surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Warning ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%HVAC%SHAFT_WALL_2_1_0" is a receiving surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Warning ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%RESEARCH%OPEN%NW_WALL_3_1_0" is a receiving surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Warning ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%MCHNCL%RM%01_WALL_7_1_0" is a receiving surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0" is a receiving surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_ROOF_1_1_0" is a receiving surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%SOUTH:2ND%CONFERENCE%01_ROOF_1_0_0" is a receiving surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%LOBBY_WALL_7_1_0" is a receiving surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%LOBBY_WALL_8_1_0" is a receiving surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%LOBBY_ROOF_1_2_0" is a receiving surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%RESTROOMS_WALL_3_1_0" is a receiving surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0" is a receiving surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0" is a receiving surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0" is a receiving surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%WORK%ROOM_WALL_4_1_0" is a receiving surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0" is a receiving surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Warning ** DetermineShadowingCombinations: Surface="3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_ROOF_1_1_0" is a receiving surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Severe  ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%RESEARCH%OPEN%NE_WALL_5_1_0" is a casting surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Severe  ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%LOBBY_WALL_19_1_0" is a casting surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Severe  ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%HVAC%SHAFT_WALL_2_1_0" is a casting surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Severe  ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%CLASSROOM_EXTFLOOR_0_2_1" is a casting surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Severe  ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%RESEARCH%OPEN%NW_WALL_3_1_0" is a casting surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Severe  ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%PHONE%BOOTH_EXTFLOOR_0_2_0" is a casting surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Severe  ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%MCHNCL%RM%01_WALL_7_1_0" is a casting surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Severe  ** DetermineShadowingCombinations: Surface="2ND%PLENVM:2ND%PLENVM%FALSE_EXTFLOOR_0_0_0" is a casting surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Severe  ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%LOBBY_WALL_7_1_0" is a casting surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Severe  ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%LOBBY_WALL_8_1_0" is a casting surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Severe  ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%RESTROOMS_WALL_3_1_0" is a casting surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Severe  ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%WORK%ROOM_WALL_4_1_0" is a casting surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Severe  ** DetermineShadowingCombinations: Surface="3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0" is a casting surface and is non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   ** Warning ** SetUpZoneSizingArrays: Requested Sizing for Zone="1ST%FLOOR:1ST%VESTIBULE", Zone is not found in the Controlled Zones List
+   ** Warning ** SetUpZoneSizingArrays: Requested Sizing for Zone="1ST%FLOOR:1ST%VESTIBULE", Zone has no thermostat (ref: ZoneControl:Thermostat, et al)
+   ** Warning ** RoomAirManager: Inconsistent ceiling heights in Zone: 2ND%FLOOR%NORTH:2ND%LOBBY
+   **   ~~~   ** Lowest height=[4.422].
+   **   ~~~   ** Highest height=[9.146].
+   **   ~~~   ** Ceiling height=[3.753].
+   ** Warning ** RoomAirManager: Inconsistent ceiling heights in Zone: 2ND%FLOOR%NORTH:2ND%CORRIDOR
+   **   ~~~   ** Lowest height=[4.422].
+   **   ~~~   ** Highest height=[9.146].
+   **   ~~~   ** Ceiling height=[4.565].
+   ** Warning ** RoomAirManager: Inconsistent ceiling heights in Zone: 2ND%FLOOR%NORTH:2ND%CONFERENCE%03
+   **   ~~~   ** Lowest height=[4.422].
+   **   ~~~   ** Highest height=[9.146].
+   **   ~~~   ** Ceiling height=[4.213].
+   ** Warning ** RoomAirManager: Inconsistent ceiling heights in Zone: 3RD%FLOOR%UPPER:3RD%UPPER%LOBBY
+   **   ~~~   ** Lowest height=[12.806].
+   **   ~~~   ** Highest height=[16.022].
+   **   ~~~   ** Ceiling height=[2.371].
+   ************* Beginning System Sizing Calculations
+   ************* Beginning Plant Sizing Calculations
+   ** Warning ** SizeDXCoil Coil:Cooling:DX:SingleSpeed HEAT PUMP DX COOLING COIL 1
+   **   ~~~   ** ...Gross Rated Total Cooling Capacity [W] will be limited by the minimum rated volume flow per rated total capacity ratio.
+   **   ~~~   ** ...DX coil volume flow rate (m3/s ) = 19.623531
+   **   ~~~   ** ...Requested capacity (W ) = 537617.889
+   **   ~~~   ** ...Requested flow/capacity ratio (m3/s/W ) = 3.650E-005
+   **   ~~~   ** ...Minimum flow/capacity ratio (m3/s/W ) = 4.027E-005
+   **   ~~~   ** ...Adjusted capacity ( W ) = 487299.018
+   ** Warning ** DXFOut: Could not triangulate surface="1ST%FLOOR:1ST%LOBBY_WALL_19_1_0", type="Wall", check surface vertex order(entry)
+   *************  surface=1ST%FLOOR:1ST%LOBBY_WALL_19_1_0 class=Wall
+   *************  side=1 (4.0,6.2,4.4)
+   *************  side=2 (4.0,6.2,0.5)
+   *************  side=3 (4.0,6.1,0.5)
+   *************  side=4 (4.0,6.1,0.8)
+   *************  side=5 (4.0,-0.4,0.8)
+   *************  side=6 (4.0,-0.4,0.5)
+   *************  side=7 (4.0,-0.5,0.5)
+   *************  side=8 (4.0,-0.5,4.4)
+   *************  number of triangles found=           4
+   *************  r angle=1 vert=5 deg=226.9
+   ** Warning ** DXFOut: Could not triangulate surface="1ST%FLOOR:1ST%LOBBY_CEILING_1_0_0", type="Roof", check surface vertex order(entry)
+   *************  surface=1ST%FLOOR:1ST%LOBBY_CEILING_1_0_0 class=Roof
+   *************  side=1 (6.6,-0.5,4.4)
+   *************  side=2 (6.6,-3.3,4.4)
+   *************  side=3 (20.3,-3.3,4.4)
+   *************  side=4 (20.3,-4.5,4.4)
+   *************  side=5 (22.7,-4.5,4.4)
+   *************  side=6 (22.7,-3.3,4.4)
+   *************  side=7 (24.6,-3.3,4.4)
+   *************  side=8 (24.6,-4.1,4.4)
+   *************  side=9 (27.4,-4.1,4.4)
+   *************  side=10 (27.4,0.1,4.4)
+   *************  side=11 (24.3,0.1,4.4)
+   *************  side=12 (24.3,-0.8,4.4)
+   *************  side=13 (9.1,-0.8,4.4)
+   *************  side=14 (9.1,-0.5,4.4)
+   *************  number of triangles found=           7
+   *************  r angle=1 vert=6 deg=270.0
+   *************  r angle=2 vert=7 deg=196.6
+   *************  r angle=3 vert=3 deg=193.7
+   ** Warning ** DXFOut: Could not triangulate surface="1ST%FLOOR:1ST%RESTROOM_CEILING_1_0_0", type="Roof", check surface vertex order(entry)
+   *************  surface=1ST%FLOOR:1ST%RESTROOM_CEILING_1_0_0 class=Roof
+   *************  side=1 (12.1,15.4,4.4)
+   *************  side=2 (15.1,10.3,4.4)
+   *************  side=3 (15.6,9.4,4.4)
+   *************  side=4 (17.1,10.3,4.4)
+   *************  side=5 (16.3,11.7,4.4)
+   *************  side=6 (17.7,12.5,4.4)
+   *************  side=7 (18.2,11.5,4.4)
+   *************  side=8 (19.5,12.3,4.4)
+   *************  side=9 (18.9,13.2,4.4)
+   *************  side=10 (20.5,14.1,4.4)
+   *************  side=11 (21.2,12.7,4.4)
+   *************  side=12 (21.4,12.8,4.4)
+   *************  side=13 (22.9,13.6,4.4)
+   *************  side=14 (19.4,19.6,4.4)
+   *************  number of triangles found=          10
+   *************  r angle=1 vert=10 deg=180.7
+   ** Warning ** DXFOut: Could not triangulate surface="2ND%FLOOR%NORTH:2ND%LOBBY_ROOF_1_2_0", type="Roof", check surface vertex order(entry)
+   *************  surface=2ND%FLOOR%NORTH:2ND%LOBBY_ROOF_1_2_0 class=Roof
+   *************  side=1 (22.1,11.1,9.1)
+   *************  side=2 (14.2,6.5,9.1)
+   *************  side=3 (14.3,6.5,9.1)
+   *************  side=4 (21.5,10.7,9.1)
+   *************  side=5 (22.8,8.5,9.1)
+   *************  side=6 (25.1,9.8,9.1)
+   *************  side=7 (27.7,5.2,9.1)
+   *************  side=8 (29.7,5.2,9.1)
+   *************  side=9 (29.7,2.9,9.1)
+   *************  side=10 (27.4,2.9,9.1)
+   *************  side=11 (27.4,0.9,9.1)
+   *************  side=12 (27.4,0.9,9.1)
+   *************  side=13 (27.4,2.9,9.1)
+   *************  side=14 (29.7,2.9,9.1)
+   *************  side=15 (29.7,5.3,9.1)
+   *************  side=16 (27.7,5.3,9.1)
+   *************  side=17 (23.0,13.5,9.1)
+   *************  side=18 (21.3,12.5,9.1)
+   *************  number of triangles found=           8
+   *************  r angle=1 vert=6 deg=216.3
+   *************  r angle=2 vert=8 deg=270.0
+   *************  r angle=3 vert=9 deg=270.0
+   *************  r angle=4 vert=16 deg=240.0
+   ** Warning ** DXFOut: Could not triangulate surface="2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0", type="Roof", check surface vertex order(entry)
+   *************  surface=2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0 class=Roof
+   *************  side=1 (12.1,15.4,9.1)
+   *************  side=2 (15.7,9.3,9.1)
+   *************  side=3 (17.2,10.2,9.1)
+   *************  side=4 (16.3,11.7,9.1)
+   *************  side=5 (17.7,12.5,9.1)
+   *************  side=6 (18.2,11.5,9.1)
+   *************  side=7 (19.5,12.3,9.1)
+   *************  side=8 (18.9,13.2,9.1)
+   *************  side=9 (20.5,14.1,9.1)
+   *************  side=10 (21.3,12.5,9.1)
+   *************  side=11 (23.0,13.5,9.1)
+   *************  side=12 (19.4,19.6,9.1)
+   *************  number of triangles found=           8
+   *************  r angle=1 vert=9 deg=183.6
+   ** Warning ** DXFOut: Could not triangulate surface="2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0", type="Roof", check surface vertex order(entry)
+   *************  surface=2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0 class=Roof
+   *************  side=1 (7.6,8.3,9.1)
+   *************  side=2 (7.6,6.5,9.1)
+   *************  side=3 (9.9,6.5,9.1)
+   *************  side=4 (9.9,6.5,9.1)
+   *************  side=5 (14.2,6.5,9.1)
+   *************  side=6 (22.1,11.1,9.1)
+   *************  side=7 (21.3,12.5,9.1)
+   *************  side=8 (20.5,14.1,9.1)
+   *************  side=9 (18.9,13.2,9.1)
+   *************  side=10 (19.5,12.3,9.1)
+   *************  side=11 (18.2,11.5,9.1)
+   *************  side=12 (17.7,12.5,9.1)
+   *************  side=13 (16.3,11.7,9.1)
+   *************  side=14 (17.2,10.2,9.1)
+   *************  side=15 (13.9,8.3,9.1)
+   *************  number of triangles found=           9
+   *************  r angle=1 vert=14 deg=202.8
+   *************  r angle=2 vert=15 deg=210.1
+   ************* Testing Individual Branch Integrity
+   ************* All Branches passed integrity testing
+   ************* Testing Individual Supply Air Path Integrity
+   ************* All Supply Air Paths passed integrity testing
+   ************* Testing Individual Return Air Path Integrity
+   ************* All Return Air Paths passed integrity testing
+   ************* No node connection errors were found.
+   ************* Beginning Simulation
+   ** Severe  ** ExternalInterface: Did not find file "socket.cfg".
+   **   ~~~   ** This file needs to be in same directory as in.idf.
+   **   ~~~   ** Check the documentation for the ExternalInterface.
+   **  Fatal  ** Error in ExternalInterface: Check EnergyPlus *.err file.
+   ...Summary of Errors that led to program termination:
+   ..... Reference severe error count=22
+   ..... Last severe error=ExternalInterface: Did not find file "socket.cfg".
+   *************
+   ************* ===== Recurring Error Summary =====
+   ************* The following recurring error messages occurred.
+   *************
+   *************  ** Severe  ** Inadequate heat delivered by desiccant regen coil - RESULTS INVALID! Check regen coil capacity and schedule.
+   *************  **   ~~~   **   This error occurred 6 total times;
+   *************  **   ~~~   **   during Warmup 6 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   ** Dehumidifier:Desiccant:NoFans=DESICCANT 1
+   *************  **   ~~~   ** Load requested [W] from COIL:HEATING:ELECTRIC=DESICCANT REGEN COIL
+   *************  **   ~~~   **   Max=253052.768845
+   *************  **   ~~~   ** Load request exceeded delivered by [W]
+   *************  **   ~~~   **   Max=123431.083173
+   *************
+   *************
+   ************* ===== Final Error Summary =====
+   ************* The following error categories occurred.  Consider correcting or noting.
+   ************* Interzone surfaces - different zones
+   ************* Nominally Unused Constructions
+   ************* ..The nominally unused constructions warning is provided to alert you to potential conditions that can cause
+   ************* ..extra time during simulation. Each construction is calculated by the algorithm indicated in the HeatBalanceAlgorithm
+   ************* ..object. You may remove the constructions indicated (when you use the DisplayExtraWarnings option).
+   *************
+   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 1 Severe Errors.
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 109 Warning; 13 Severe Errors.
+   ************* EnergyPlus Terminated--Fatal Error Detected. 142 Warning; 22 Severe Errors; Elapsed Time=00hr 00min 25.13sec

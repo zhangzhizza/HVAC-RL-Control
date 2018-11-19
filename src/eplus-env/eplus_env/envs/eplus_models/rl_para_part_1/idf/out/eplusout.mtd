@@ -1,0 +1,2856 @@
+
+ Meters for 10,1ST%FLOOR:1ST%CONFERENCE GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%CONFERENCE [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%CONFERENCE [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Conference#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 71,1ST%FLOOR:1ST%RESEARCH%OPEN%NE GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NE [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NE [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%NE#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 102,1ST%FLOOR:1ST%LOBBY GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%LOBBY [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%LOBBY [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Lobby#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 133,1ST%FLOOR:1ST%CLASSROOM GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%CLASSROOM [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%CLASSROOM [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Classroom#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 164,1ST%FLOOR:1ST%VESTIBULE GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%VESTIBULE [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%VESTIBULE [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Vestibule#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 195,1ST%FLOOR:1ST%ELECTRICAL%ROOM GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%ELECTRICAL%ROOM [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%ELECTRICAL%ROOM [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Electrical%Room#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 226,1ST%FLOOR:1ST%RESTROOM GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%RESTROOM [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%RESTROOM [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Restroom#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 257,1ST%FLOOR:1ST%RESEARCH%OPEN%NW GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NW [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NW [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%NW#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 288,1ST%FLOOR:1ST%RESEARCH%OPEN%NM GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NM [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NM [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%NM#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 319,1ST%FLOOR:1ST%BREAK%ROOM GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%BREAK%ROOM [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%BREAK%ROOM [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Break%Room#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 350,1ST%FLOOR:1ST%PHONE%BOOTH GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%PHONE%BOOTH [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%PHONE%BOOTH [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Phone%Booth#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 381,1ST%FLOOR:1ST%VOLUNTEER%AREA GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%VOLUNTEER%AREA [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%VOLUNTEER%AREA [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Volunteer%Area#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 412,1ST%FLOOR:1ST%RESEARCH%OPEN%SW GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SW [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SW [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%SW#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 443,1ST%FLOOR:1ST%RESEARCH%OPEN%SM GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SM [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SM [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%SM#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 474,1ST%FLOOR:1ST%RESEARCH%OPEN%SE GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SE [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SE [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%SE#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 505,1ST%FLOOR:1ST%MCHNCL%RM%01 GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%MCHNCL%RM%01 [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%MCHNCL%RM%01 [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Mchncl%Rm%01#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 536,1ST%FLOOR:1ST%CORRIDOR GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%CORRIDOR [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%CORRIDOR [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Corridor#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 567,1ST%FLOOR:1ST%EDCTN%STRG GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%EDCTN%STRG [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%EDCTN%STRG [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Edctn%Strg#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 598,1ST%FLOOR:1ST%ELEVATOR%MACHINE GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%ELEVATOR%MACHINE [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%ELEVATOR%MACHINE [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Elevator%Machine#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 629,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%NE#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 660,2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Conference%02#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 691,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SW#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 722,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SMW#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 753,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SM#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 784,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SE#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 815,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SME#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 846,2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Conference%01#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 877,2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Phone%Booth#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 908,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%NMW#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 939,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%NME#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 970,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%NW#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 1001,2ND%FLOOR%NORTH:2ND%LOBBY GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%NORTH:2ND%LOBBY [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%NORTH:2ND%LOBBY [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%NORTH:2nd%Lobby#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 1032,2ND%FLOOR%NORTH:2ND%RESTROOMS GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%NORTH:2ND%RESTROOMS [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%NORTH:2ND%RESTROOMS [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%NORTH:2nd%Restrooms#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 1063,2ND%FLOOR%NORTH:2ND%CORRIDOR GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%NORTH:2ND%CORRIDOR [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%NORTH:2ND%CORRIDOR [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%NORTH:2nd%Corridor#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 1094,2ND%FLOOR%NORTH:2ND%SECURE%FILES GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%NORTH:2ND%SECURE%FILES [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%NORTH:2ND%SECURE%FILES [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%NORTH:2nd%Secure%Files#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 1125,2ND%FLOOR%NORTH:2ND%CONFERENCE%03 GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%NORTH:2ND%CONFERENCE%03 [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%NORTH:2ND%CONFERENCE%03 [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%NORTH:2nd%Conference%03#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 1156,2ND%FLOOR%NORTH:2ND%WORK%ROOM GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%NORTH:2ND%WORK%ROOM [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%NORTH:2ND%WORK%ROOM [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%NORTH:2nd%Work%Room#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 1187,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 GENERAL LIGHTING:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SME1#GeneralLights:InteriorLights:Electricity [J]
+
+ Meters for 1218,1ST%FLOOR:1ST%CONFERENCE EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%CONFERENCE [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%CONFERENCE [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Conference#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1249,1ST%FLOOR:1ST%RESEARCH%OPEN%NE EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NE [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NE [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%NE#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1270,1ST%FLOOR:1ST%CLASSROOM EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%CLASSROOM [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%CLASSROOM [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Classroom#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1291,1ST%FLOOR:1ST%RESEARCH%OPEN%NW EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NW [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NW [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%NW#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1312,1ST%FLOOR:1ST%RESEARCH%OPEN%NM EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NM [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NM [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%NM#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1333,1ST%FLOOR:1ST%BREAK%ROOM EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%BREAK%ROOM [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%BREAK%ROOM [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Break%Room#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1354,1ST%FLOOR:1ST%VOLUNTEER%AREA EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%VOLUNTEER%AREA [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%VOLUNTEER%AREA [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Volunteer%Area#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1375,1ST%FLOOR:1ST%RESEARCH%OPEN%SW EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SW [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SW [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%SW#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1396,1ST%FLOOR:1ST%RESEARCH%OPEN%SM EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SM [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SM [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%SM#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1417,1ST%FLOOR:1ST%RESEARCH%OPEN%SE EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SE [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SE [J]
+  OnMeter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%SE#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1438,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%NE#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1459,2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Conference%02#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1480,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SW#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1501,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SMW#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1522,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SM#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1543,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SE#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1564,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SME#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1585,2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Conference%01#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1606,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%NMW#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1627,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%NME#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1648,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%NW#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1669,2ND%FLOOR%NORTH:2ND%CONFERENCE%03 EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%NORTH:2ND%CONFERENCE%03 [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%NORTH:2ND%CONFERENCE%03 [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%NORTH:2nd%Conference%03#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1690,2ND%FLOOR%NORTH:2ND%WORK%ROOM EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%NORTH:2ND%WORK%ROOM [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%NORTH:2ND%WORK%ROOM [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%NORTH:2nd%Work%Room#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1711,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 EQUIPMENT 1:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J]
+  OnMeter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SME1#05:InteriorEquipment:Electricity [J]
+
+ Meters for 1733,1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%PLENVM:1ST%PLENVM [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%PLENVM:1ST%PLENVM [J]
+
+ Meters for 1784,1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%PLENVM:1ST%PLENVM [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%PLENVM:1ST%PLENVM [J]
+
+ Meters for 1807,1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%CONFERENCE [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%CONFERENCE [J]
+
+ Meters for 1828,1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%CONFERENCE [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%CONFERENCE [J]
+
+ Meters for 1841,1ST%FLOOR:1ST%RESEARCH%OPEN%NE:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NE [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NE [J]
+
+ Meters for 1862,1ST%FLOOR:1ST%RESEARCH%OPEN%NE:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NE [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NE [J]
+
+ Meters for 1875,1ST%FLOOR:1ST%LOBBY:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%LOBBY [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%LOBBY [J]
+
+ Meters for 1896,1ST%FLOOR:1ST%LOBBY:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%LOBBY [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%LOBBY [J]
+
+ Meters for 1909,1ST%FLOOR:1ST%HVAC%SHAFT:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%HVAC%SHAFT [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%HVAC%SHAFT [J]
+
+ Meters for 1930,1ST%FLOOR:1ST%HVAC%SHAFT:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%HVAC%SHAFT [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%HVAC%SHAFT [J]
+
+ Meters for 1943,1ST%FLOOR:1ST%CLASSROOM:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%CLASSROOM [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%CLASSROOM [J]
+
+ Meters for 1964,1ST%FLOOR:1ST%CLASSROOM:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%CLASSROOM [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%CLASSROOM [J]
+
+ Meters for 1977,1ST%FLOOR:1ST%VESTIBULE:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%VESTIBULE [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%VESTIBULE [J]
+
+ Meters for 1998,1ST%FLOOR:1ST%VESTIBULE:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%VESTIBULE [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%VESTIBULE [J]
+
+ Meters for 2011,1ST%FLOOR:1ST%ELECTRICAL%ROOM:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%ELECTRICAL%ROOM [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%ELECTRICAL%ROOM [J]
+
+ Meters for 2032,1ST%FLOOR:1ST%ELECTRICAL%ROOM:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%ELECTRICAL%ROOM [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%ELECTRICAL%ROOM [J]
+
+ Meters for 2045,1ST%FLOOR:1ST%RESTROOM:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESTROOM [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESTROOM [J]
+
+ Meters for 2066,1ST%FLOOR:1ST%RESTROOM:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESTROOM [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESTROOM [J]
+
+ Meters for 2079,1ST%FLOOR:1ST%RESEARCH%OPEN%NW:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NW [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NW [J]
+
+ Meters for 2100,1ST%FLOOR:1ST%RESEARCH%OPEN%NW:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NW [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NW [J]
+
+ Meters for 2113,1ST%FLOOR:1ST%RESEARCH%OPEN%NM:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NM [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NM [J]
+
+ Meters for 2134,1ST%FLOOR:1ST%RESEARCH%OPEN%NM:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NM [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NM [J]
+
+ Meters for 2147,1ST%FLOOR:1ST%BREAK%ROOM:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%BREAK%ROOM [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%BREAK%ROOM [J]
+
+ Meters for 2168,1ST%FLOOR:1ST%BREAK%ROOM:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%BREAK%ROOM [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%BREAK%ROOM [J]
+
+ Meters for 2181,1ST%FLOOR:1ST%PHONE%BOOTH:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%PHONE%BOOTH [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%PHONE%BOOTH [J]
+
+ Meters for 2202,1ST%FLOOR:1ST%PHONE%BOOTH:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%PHONE%BOOTH [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%PHONE%BOOTH [J]
+
+ Meters for 2215,1ST%FLOOR:1ST%VOLUNTEER%AREA:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%VOLUNTEER%AREA [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%VOLUNTEER%AREA [J]
+
+ Meters for 2236,1ST%FLOOR:1ST%VOLUNTEER%AREA:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%VOLUNTEER%AREA [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%VOLUNTEER%AREA [J]
+
+ Meters for 2249,1ST%FLOOR:1ST%RESEARCH%OPEN%SW:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SW [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SW [J]
+
+ Meters for 2270,1ST%FLOOR:1ST%RESEARCH%OPEN%SW:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SW [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SW [J]
+
+ Meters for 2283,1ST%FLOOR:1ST%RESEARCH%OPEN%SM:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SM [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SM [J]
+
+ Meters for 2304,1ST%FLOOR:1ST%RESEARCH%OPEN%SM:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SM [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SM [J]
+
+ Meters for 2317,1ST%FLOOR:1ST%RESEARCH%OPEN%SE:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SE [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SE [J]
+
+ Meters for 2338,1ST%FLOOR:1ST%RESEARCH%OPEN%SE:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SE [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SE [J]
+
+ Meters for 2351,1ST%FLOOR:1ST%MCHNCL%RM%01:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%MCHNCL%RM%01 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%MCHNCL%RM%01 [J]
+
+ Meters for 2372,1ST%FLOOR:1ST%MCHNCL%RM%01:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%MCHNCL%RM%01 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%MCHNCL%RM%01 [J]
+
+ Meters for 2385,1ST%FLOOR:1ST%CORRIDOR:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%CORRIDOR [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%CORRIDOR [J]
+
+ Meters for 2406,1ST%FLOOR:1ST%CORRIDOR:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%CORRIDOR [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%CORRIDOR [J]
+
+ Meters for 2419,1ST%FLOOR:1ST%EDCTN%STRG:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%EDCTN%STRG [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%EDCTN%STRG [J]
+
+ Meters for 2440,1ST%FLOOR:1ST%EDCTN%STRG:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%EDCTN%STRG [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%EDCTN%STRG [J]
+
+ Meters for 2453,1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%ELEVATOR%MACHINE [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%ELEVATOR%MACHINE [J]
+
+ Meters for 2474,1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:1ST%FLOOR:1ST%ELEVATOR%MACHINE [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%ELEVATOR%MACHINE [J]
+
+ Meters for 2487,2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%FALSE [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%FALSE [J]
+
+ Meters for 2508,2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%FALSE [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%FALSE [J]
+
+ Meters for 2521,2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%NORTH [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%NORTH [J]
+
+ Meters for 2542,2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%NORTH [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%NORTH [J]
+
+ Meters for 2555,2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT [J]
+
+ Meters for 2576,2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT [J]
+
+ Meters for 2589,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE [J]
+
+ Meters for 2610,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE [J]
+
+ Meters for 2623,2ND%FLOOR%SOUTH:2ND%CONFERENCE%02:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 [J]
+
+ Meters for 2644,2ND%FLOOR%SOUTH:2ND%CONFERENCE%02:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 [J]
+
+ Meters for 2657,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW [J]
+
+ Meters for 2678,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW [J]
+
+ Meters for 2691,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW [J]
+
+ Meters for 2712,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW [J]
+
+ Meters for 2725,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM [J]
+
+ Meters for 2746,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM [J]
+
+ Meters for 2759,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE [J]
+
+ Meters for 2780,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE [J]
+
+ Meters for 2793,2ND%FLOOR%SOUTH:2ND%CONFERENCE%01:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 [J]
+
+ Meters for 2814,2ND%FLOOR%SOUTH:2ND%CONFERENCE%01:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 [J]
+
+ Meters for 2827,2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH [J]
+
+ Meters for 2848,2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH [J]
+
+ Meters for 2861,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW [J]
+
+ Meters for 2882,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW [J]
+
+ Meters for 2895,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME [J]
+
+ Meters for 2916,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME [J]
+
+ Meters for 2929,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW [J]
+
+ Meters for 2950,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW [J]
+
+ Meters for 2963,2ND%FLOOR%NORTH:2ND%LOBBY:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%LOBBY [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%LOBBY [J]
+
+ Meters for 2984,2ND%FLOOR%NORTH:2ND%LOBBY:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%LOBBY [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%LOBBY [J]
+
+ Meters for 2997,2ND%FLOOR%NORTH:2ND%RESTROOMS:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%RESTROOMS [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%RESTROOMS [J]
+
+ Meters for 3018,2ND%FLOOR%NORTH:2ND%RESTROOMS:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%RESTROOMS [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%RESTROOMS [J]
+
+ Meters for 3031,2ND%FLOOR%NORTH:2ND%CORRIDOR:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%CORRIDOR [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%CORRIDOR [J]
+
+ Meters for 3052,2ND%FLOOR%NORTH:2ND%CORRIDOR:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%CORRIDOR [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%CORRIDOR [J]
+
+ Meters for 3065,2ND%FLOOR%NORTH:2ND%SECURE%FILES:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%SECURE%FILES [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%SECURE%FILES [J]
+
+ Meters for 3086,2ND%FLOOR%NORTH:2ND%SECURE%FILES:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%SECURE%FILES [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%SECURE%FILES [J]
+
+ Meters for 3099,2ND%FLOOR%NORTH:2ND%CONFERENCE%03:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%CONFERENCE%03 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%CONFERENCE%03 [J]
+
+ Meters for 3120,2ND%FLOOR%NORTH:2ND%CONFERENCE%03:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%CONFERENCE%03 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%CONFERENCE%03 [J]
+
+ Meters for 3133,2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%WORK%ROOM [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%WORK%ROOM [J]
+
+ Meters for 3154,2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%WORK%ROOM [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%WORK%ROOM [J]
+
+ Meters for 3167,3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT [J]
+
+ Meters for 3188,3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT [J]
+
+ Meters for 3201,3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY [J]
+
+ Meters for 3222,3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY [J]
+
+ Meters for 3235,3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE [J]
+
+ Meters for 3256,3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE [J]
+
+ Meters for 3269,3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY [J]
+
+ Meters for 3290,3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY [J]
+
+ Meters for 3303,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J]
+
+ Meters for 3324,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J]
+
+ Meters for 3337,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME [J]
+
+ Meters for 3358,2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME [J]
+
+ Meters for 3371,Whole Building:Facility Total Purchased Electric Energy [J]
+  OnMeter=ElectricityPurchased:Facility [J]
+  OnMeter=ElectricityPurchased:Plant [J]
+  OnMeter=Cogeneration:ElectricityPurchased [J]
+
+ Meters for 3402,Whole Building:Facility Total Surplus Electric Energy [J]
+  OnMeter=ElectricitySurplusSold:Facility [J]
+  OnMeter=ElectricitySurplusSold:Plant [J]
+  OnMeter=Cogeneration:ElectricitySurplusSold [J]
+
+ Meters for 3433,Whole Building:Facility Net Purchased Electric Energy [J]
+  OnMeter=ElectricityNet:Facility [J]
+  OnMeter=ElectricityNet:Plant [J]
+  OnMeter=Cogeneration:ElectricityNet [J]
+
+ Meters for 3470,DESICCANT REGEN FAN:Fan Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=Fans:Electricity [J]
+  OnMeter=General:Fans:Electricity [J]
+
+ Meters for 3501,AIR LOOP AHU SUPPLY FAN:Fan Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=Fans:Electricity [J]
+  OnMeter=VAV Supply Fan Energy:Fans:Electricity [J]
+
+ Meters for 3512,EXTERIOR FACADE LIGHTING:Exterior Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=ExteriorLights:Electricity [J]
+  OnMeter=Exterior Facade Lighting:ExteriorLights:Electricity [J]
+
+ Meters for 3533,EXTERIOREQUIPMENT:Exterior Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=ExteriorEquipment:Electricity [J]
+  OnMeter=Exterior Equipment:ExteriorEquipment:Electricity [J]
+
+ Meters for 3554,DESICCANT REGEN COIL:Heating Coil Air Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatingCoils:EnergyTransfer [J]
+
+ Meters for 3575,DESICCANT REGEN COIL:Heating Coil Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=Heating:Electricity [J]
+
+ Meters for 3586,DESICCANT 1:Dehumidifier Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=Cooling:Electricity [J]
+
+ Meters for 3597,OA HEAT RECOVERY 1:Heat Exchanger Total Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatRecoveryForHeating:EnergyTransfer [J]
+
+ Meters for 3608,OA HEAT RECOVERY 1:Heat Exchanger Total Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatRecoveryForCooling:EnergyTransfer [J]
+
+ Meters for 3619,OA HEAT RECOVERY 1:Heat Exchanger Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=HeatRecovery:Electricity [J]
+
+ Meters for 3630,HEAT PUMP DX COOLING COIL 1:Cooling Coil Total Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=CoolingCoils:EnergyTransfer [J]
+
+ Meters for 3641,HEAT PUMP DX COOLING COIL 1:Cooling Coil Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=Cooling:Electricity [J]
+
+ Meters for 3642,HEAT PUMP DX HEATING COIL 1:Heating Coil Total Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatingCoils:EnergyTransfer [J]
+
+ Meters for 3643,HEAT PUMP DX HEATING COIL 1:Heating Coil Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=Heating:Electricity [J]
+
+ Meters for 3644,HEAT PUMP DX HEATING COIL 1:Heating Coil Defrost Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=Heating:Electricity [J]
+
+ Meters for 3645,HEAT PUMP DX HEATING COIL 1:Heating Coil Crankcase Heater Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=Heating:Electricity [J]
+
+ Meters for 3646,HEAT PUMP DX COOLING COIL 1:Cooling Coil Crankcase Heater Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Cooling:Electricity [J]
+
+ Meters for 3659,Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass [kg]
+  OnMeter=Carbon Equivalent:Facility [kg]
+  OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
+
+ Meters for 3680,Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass [kg]
+  OnMeter=Carbon Equivalent:Facility [kg]
+  OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
+
+ Meters for 3681,Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass [kg]
+  OnMeter=Carbon Equivalent:Facility [kg]
+  OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
+
+ For Meter=Electricity:Facility [J], ResourceType=Electricity, contents are:
+  1ST%FLOOR:1ST%CONFERENCE GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%LOBBY GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%CLASSROOM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%VESTIBULE GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%ELECTRICAL%ROOM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESTROOM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%BREAK%ROOM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%PHONE%BOOTH GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%VOLUNTEER%AREA GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%MCHNCL%RM%01 GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%CORRIDOR GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%EDCTN%STRG GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%ELEVATOR%MACHINE GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%LOBBY GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%RESTROOMS GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%CORRIDOR GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%SECURE%FILES GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03 GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%CONFERENCE EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%CLASSROOM EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%BREAK%ROOM EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%VOLUNTEER%AREA EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03 EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 EQUIPMENT 1:Electric Equipment Electric Energy
+  DESICCANT REGEN FAN:Fan Electric Energy
+  AIR LOOP AHU SUPPLY FAN:Fan Electric Energy
+  EXTERIOR FACADE LIGHTING:Exterior Lights Electric Energy
+  EXTERIOREQUIPMENT:Exterior Equipment Electric Energy
+  DESICCANT REGEN COIL:Heating Coil Electric Energy
+  DESICCANT 1:Dehumidifier Electric Energy
+  OA HEAT RECOVERY 1:Heat Exchanger Electric Energy
+  HEAT PUMP DX COOLING COIL 1:Cooling Coil Electric Energy
+  HEAT PUMP DX HEATING COIL 1:Heating Coil Electric Energy
+  HEAT PUMP DX HEATING COIL 1:Heating Coil Defrost Electric Energy
+  HEAT PUMP DX HEATING COIL 1:Heating Coil Crankcase Heater Electric Energy
+  HEAT PUMP DX COOLING COIL 1:Cooling Coil Crankcase Heater Electric Energy
+
+ For Meter=Electricity:Building [J], ResourceType=Electricity, Group=Building, contents are:
+  1ST%FLOOR:1ST%CONFERENCE GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%LOBBY GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%CLASSROOM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%VESTIBULE GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%ELECTRICAL%ROOM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESTROOM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%BREAK%ROOM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%PHONE%BOOTH GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%VOLUNTEER%AREA GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%MCHNCL%RM%01 GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%CORRIDOR GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%EDCTN%STRG GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%ELEVATOR%MACHINE GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%LOBBY GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%RESTROOMS GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%CORRIDOR GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%SECURE%FILES GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03 GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%CONFERENCE EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%CLASSROOM EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%BREAK%ROOM EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%VOLUNTEER%AREA EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03 EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%CONFERENCE [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%CONFERENCE GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%CONFERENCE EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%CONFERENCE GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%LOBBY GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%CLASSROOM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%VESTIBULE GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%ELECTRICAL%ROOM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESTROOM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%BREAK%ROOM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%PHONE%BOOTH GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%VOLUNTEER%AREA GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%MCHNCL%RM%01 GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%CORRIDOR GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%EDCTN%STRG GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%ELEVATOR%MACHINE GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%LOBBY GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%RESTROOMS GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%CORRIDOR GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%SECURE%FILES GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03 GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%CONFERENCE [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%CONFERENCE GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Conference#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%CONFERENCE GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NE [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NE [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%NE#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%LOBBY [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%LOBBY GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%LOBBY [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%LOBBY GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Lobby#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%LOBBY GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%CLASSROOM [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%CLASSROOM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%CLASSROOM EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%CLASSROOM [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%CLASSROOM GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Classroom#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%CLASSROOM GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%VESTIBULE [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%VESTIBULE GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%VESTIBULE [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%VESTIBULE GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Vestibule#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%VESTIBULE GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%ELECTRICAL%ROOM [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%ELECTRICAL%ROOM GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%ELECTRICAL%ROOM [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%ELECTRICAL%ROOM GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Electrical%Room#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%ELECTRICAL%ROOM GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%RESTROOM [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESTROOM GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%RESTROOM [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESTROOM GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Restroom#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%RESTROOM GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NW [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NW [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%NW#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NM [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NM [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%NM#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%BREAK%ROOM [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%BREAK%ROOM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%BREAK%ROOM EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%BREAK%ROOM [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%BREAK%ROOM GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Break%Room#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%BREAK%ROOM GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%PHONE%BOOTH [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%PHONE%BOOTH GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%PHONE%BOOTH [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%PHONE%BOOTH GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Phone%Booth#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%PHONE%BOOTH GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%VOLUNTEER%AREA [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%VOLUNTEER%AREA GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%VOLUNTEER%AREA EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%VOLUNTEER%AREA [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%VOLUNTEER%AREA GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Volunteer%Area#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%VOLUNTEER%AREA GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SW [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SW [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%SW#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SM [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SM [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%SM#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SE [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE GENERAL LIGHTING:Lights Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SE [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%SE#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%MCHNCL%RM%01 [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%MCHNCL%RM%01 GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%MCHNCL%RM%01 [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%MCHNCL%RM%01 GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Mchncl%Rm%01#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%MCHNCL%RM%01 GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%CORRIDOR [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%CORRIDOR GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%CORRIDOR [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%CORRIDOR GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Corridor#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%CORRIDOR GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%EDCTN%STRG [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%EDCTN%STRG GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%EDCTN%STRG [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%EDCTN%STRG GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Edctn%Strg#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%EDCTN%STRG GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:1ST%FLOOR:1ST%ELEVATOR%MACHINE [J], ResourceType=Electricity, Group=Zone, contents are:
+  1ST%FLOOR:1ST%ELEVATOR%MACHINE GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:1ST%FLOOR:1ST%ELEVATOR%MACHINE [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  1ST%FLOOR:1ST%ELEVATOR%MACHINE GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Elevator%Machine#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  1ST%FLOOR:1ST%ELEVATOR%MACHINE GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%NE#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Conference%02#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SW#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SMW#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SM#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SE#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SME#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Conference%01#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Phone%Booth#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%NMW#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%NME#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%NW#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%NORTH:2ND%LOBBY [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%LOBBY GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%NORTH:2ND%LOBBY [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%LOBBY GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%NORTH:2nd%Lobby#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%NORTH:2ND%LOBBY GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%NORTH:2ND%RESTROOMS [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%RESTROOMS GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%NORTH:2ND%RESTROOMS [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%RESTROOMS GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%NORTH:2nd%Restrooms#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%NORTH:2ND%RESTROOMS GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%NORTH:2ND%CORRIDOR [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%CORRIDOR GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%NORTH:2ND%CORRIDOR [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%CORRIDOR GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%NORTH:2nd%Corridor#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%NORTH:2ND%CORRIDOR GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%NORTH:2ND%SECURE%FILES [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%SECURE%FILES GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%NORTH:2ND%SECURE%FILES [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%SECURE%FILES GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%NORTH:2nd%Secure%Files#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%NORTH:2ND%SECURE%FILES GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%NORTH:2ND%CONFERENCE%03 [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03 GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03 EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%NORTH:2ND%CONFERENCE%03 [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03 GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%NORTH:2nd%Conference%03#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03 GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%NORTH:2ND%WORK%ROOM [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%NORTH:2ND%WORK%ROOM [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%NORTH:2nd%Work%Room#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J], ResourceType=Electricity, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 GENERAL LIGHTING:Lights Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SME1#GeneralLights:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 GENERAL LIGHTING:Lights Electric Energy
+
+ For Meter=InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  1ST%FLOOR:1ST%CONFERENCE EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%CLASSROOM EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%BREAK%ROOM EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%VOLUNTEER%AREA EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM EQUIPMENT 1:Electric Equipment Electric Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03 EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM EQUIPMENT 1:Electric Equipment Electric Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%CONFERENCE [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  1ST%FLOOR:1ST%CONFERENCE EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Conference#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  1ST%FLOOR:1ST%CONFERENCE EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NE [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%NE#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%CLASSROOM [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  1ST%FLOOR:1ST%CLASSROOM EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Classroom#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  1ST%FLOOR:1ST%CLASSROOM EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NW [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%NW#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NM [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%NM#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%BREAK%ROOM [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  1ST%FLOOR:1ST%BREAK%ROOM EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Break%Room#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  1ST%FLOOR:1ST%BREAK%ROOM EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%VOLUNTEER%AREA [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  1ST%FLOOR:1ST%VOLUNTEER%AREA EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Volunteer%Area#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  1ST%FLOOR:1ST%VOLUNTEER%AREA EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SW [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%SW#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SM [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%SM#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SE [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#1ST%FLOOR:1st%Research%Open%SE#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%NE#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Conference%02#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SW#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SMW#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SM#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SE#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SME#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Conference%01#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%NMW#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%NME#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%NW#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%NORTH:2ND%CONFERENCE%03 [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03 EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%NORTH:2nd%Conference%03#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03 EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%NORTH:2ND%WORK%ROOM [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%NORTH:2nd%Work%Room#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=ELECTRIC EQUIPMENT#2ND%FLOOR%SOUTH:2nd%Open%Office%SME1#05:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 EQUIPMENT 1:Electric Equipment Electric Energy
+
+ For Meter=EnergyTransfer:Facility [J], ResourceType=EnergyTransfer, contents are:
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Heating Energy
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%LOBBY:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%LOBBY:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%CLASSROOM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%CLASSROOM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%VESTIBULE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%VESTIBULE:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%ELECTRICAL%ROOM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%ELECTRICAL%ROOM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESTROOM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESTROOM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%BREAK%ROOM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%BREAK%ROOM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%PHONE%BOOTH:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%PHONE%BOOTH:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%VOLUNTEER%AREA:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%VOLUNTEER%AREA:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%MCHNCL%RM%01:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%MCHNCL%RM%01:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%CORRIDOR:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%CORRIDOR:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%EDCTN%STRG:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%EDCTN%STRG:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Cooling Energy
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Heating Energy
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Cooling Energy
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Heating Energy
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%NORTH:2ND%LOBBY:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%LOBBY:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%NORTH:2ND%RESTROOMS:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%RESTROOMS:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%NORTH:2ND%CORRIDOR:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%CORRIDOR:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%NORTH:2ND%SECURE%FILES:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%SECURE%FILES:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Cooling Energy
+  DESICCANT REGEN COIL:Heating Coil Air Heating Energy
+  OA HEAT RECOVERY 1:Heat Exchanger Total Heating Energy
+  OA HEAT RECOVERY 1:Heat Exchanger Total Cooling Energy
+  HEAT PUMP DX COOLING COIL 1:Cooling Coil Total Cooling Energy
+  HEAT PUMP DX HEATING COIL 1:Heating Coil Total Heating Energy
+
+ For Meter=EnergyTransfer:Building [J], ResourceType=EnergyTransfer, Group=Building, contents are:
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Heating Energy
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%LOBBY:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%LOBBY:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%CLASSROOM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%CLASSROOM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%VESTIBULE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%VESTIBULE:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%ELECTRICAL%ROOM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%ELECTRICAL%ROOM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESTROOM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESTROOM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%BREAK%ROOM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%BREAK%ROOM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%PHONE%BOOTH:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%PHONE%BOOTH:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%VOLUNTEER%AREA:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%VOLUNTEER%AREA:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%MCHNCL%RM%01:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%MCHNCL%RM%01:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%CORRIDOR:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%CORRIDOR:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%EDCTN%STRG:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%EDCTN%STRG:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Cooling Energy
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Heating Energy
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Cooling Energy
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Heating Energy
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%NORTH:2ND%LOBBY:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%LOBBY:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%NORTH:2ND%RESTROOMS:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%RESTROOMS:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%NORTH:2ND%CORRIDOR:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%CORRIDOR:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%NORTH:2ND%SECURE%FILES:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%SECURE%FILES:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%PLENVM:1ST%PLENVM [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Heating Energy
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Heating, contents are:
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%LOBBY:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%CLASSROOM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%VESTIBULE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%ELECTRICAL%ROOM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESTROOM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%BREAK%ROOM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%PHONE%BOOTH:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%VOLUNTEER%AREA:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%MCHNCL%RM%01:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%CORRIDOR:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%EDCTN%STRG:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Heating Energy
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Heating Energy
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%LOBBY:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%RESTROOMS:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%CORRIDOR:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%SECURE%FILES:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Heating Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%PLENVM:1ST%PLENVM [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Cooling, contents are:
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%LOBBY:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%CLASSROOM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%VESTIBULE:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%ELECTRICAL%ROOM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESTROOM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%BREAK%ROOM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%PHONE%BOOTH:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%VOLUNTEER%AREA:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%MCHNCL%RM%01:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%CORRIDOR:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%EDCTN%STRG:Zone Air System Sensible Cooling Energy
+  1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Cooling Energy
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Cooling Energy
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%NORTH:2ND%LOBBY:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%NORTH:2ND%RESTROOMS:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%NORTH:2ND%CORRIDOR:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%NORTH:2ND%SECURE%FILES:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Cooling Energy
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Cooling Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Cooling Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%PLENVM:1ST%PLENVM [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%PLENVM:1ST%PLENVM:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%CONFERENCE [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%CONFERENCE [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%CONFERENCE [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%CONFERENCE:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NE [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NE [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NE [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NE:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%LOBBY [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%LOBBY:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%LOBBY:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%LOBBY [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%LOBBY:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%LOBBY [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%LOBBY:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%HVAC%SHAFT [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%HVAC%SHAFT [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%HVAC%SHAFT [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%CLASSROOM [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%CLASSROOM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%CLASSROOM:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%CLASSROOM [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%CLASSROOM:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%CLASSROOM [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%CLASSROOM:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%VESTIBULE [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%VESTIBULE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%VESTIBULE:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%VESTIBULE [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%VESTIBULE:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%VESTIBULE [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%VESTIBULE:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%ELECTRICAL%ROOM [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%ELECTRICAL%ROOM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%ELECTRICAL%ROOM:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%ELECTRICAL%ROOM [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%ELECTRICAL%ROOM:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%ELECTRICAL%ROOM [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%ELECTRICAL%ROOM:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESTROOM [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESTROOM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESTROOM:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESTROOM [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESTROOM:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESTROOM [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESTROOM:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NW [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NW [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NW [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NW:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NM [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NM [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%NM [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%NM:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%BREAK%ROOM [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%BREAK%ROOM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%BREAK%ROOM:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%BREAK%ROOM [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%BREAK%ROOM:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%BREAK%ROOM [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%BREAK%ROOM:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%PHONE%BOOTH [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%PHONE%BOOTH:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%PHONE%BOOTH:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%PHONE%BOOTH [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%PHONE%BOOTH:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%PHONE%BOOTH [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%PHONE%BOOTH:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%VOLUNTEER%AREA [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%VOLUNTEER%AREA:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%VOLUNTEER%AREA:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%VOLUNTEER%AREA [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%VOLUNTEER%AREA:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%VOLUNTEER%AREA [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%VOLUNTEER%AREA:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SW [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SW [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SW [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SW:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SM [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SM [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SM [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SM:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SE [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SE [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%RESEARCH%OPEN%SE [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%RESEARCH%OPEN%SE:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%MCHNCL%RM%01 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%MCHNCL%RM%01:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%MCHNCL%RM%01:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%MCHNCL%RM%01 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%MCHNCL%RM%01:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%MCHNCL%RM%01 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%MCHNCL%RM%01:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%CORRIDOR [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%CORRIDOR:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%CORRIDOR:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%CORRIDOR [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%CORRIDOR:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%CORRIDOR [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%CORRIDOR:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%EDCTN%STRG [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%EDCTN%STRG:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%EDCTN%STRG:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%EDCTN%STRG [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%EDCTN%STRG:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%EDCTN%STRG [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%EDCTN%STRG:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:1ST%FLOOR:1ST%ELEVATOR%MACHINE [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Heating Energy
+  1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:1ST%FLOOR:1ST%ELEVATOR%MACHINE [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:1ST%FLOOR:1ST%ELEVATOR%MACHINE [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  1ST%FLOOR:1ST%ELEVATOR%MACHINE:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%FALSE [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Heating Energy
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%FALSE [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%FALSE [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%PLENVM:2ND%PLENVM%FALSE:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%NORTH [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Heating Energy
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%NORTH [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%PLENVM:2ND%PLENVM%NORTH [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%PLENVM:2ND%PLENVM%NORTH:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%02 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%02:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%CONFERENCE%01 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%CONFERENCE%01:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%LOBBY [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%LOBBY:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%LOBBY:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%LOBBY [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%LOBBY:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%LOBBY [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%LOBBY:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%RESTROOMS [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%RESTROOMS:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%RESTROOMS:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%RESTROOMS [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%RESTROOMS:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%RESTROOMS [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%RESTROOMS:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%CORRIDOR [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%CORRIDOR:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%CORRIDOR:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%CORRIDOR [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%CORRIDOR:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%CORRIDOR [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%CORRIDOR:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%SECURE%FILES [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%SECURE%FILES:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%SECURE%FILES:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%SECURE%FILES [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%SECURE%FILES:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%SECURE%FILES [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%SECURE%FILES:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%CONFERENCE%03 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%CONFERENCE%03 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%CONFERENCE%03 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%CONFERENCE%03:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%WORK%ROOM [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%WORK%ROOM [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%NORTH:2ND%WORK%ROOM [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%NORTH:2ND%WORK%ROOM:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%LOBBY [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  3RD%FLOOR%LOWER:3RD%LOWER%LOBBY:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Heating Energy
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:3RD%FLOOR%UPPER:3RD%UPPER%LOBBY [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  3RD%FLOOR%UPPER:3RD%UPPER%LOBBY:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Heating Energy
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME:Zone Air System Sensible Cooling Energy
+
+ For Meter=ElectricityPurchased:Facility [J], ResourceType=ElectricityPurchased, contents are:
+  Whole Building:Facility Total Purchased Electric Energy
+
+ For Meter=ElectricityPurchased:Plant [J], ResourceType=ElectricityPurchased, Group=Plant, contents are:
+  Whole Building:Facility Total Purchased Electric Energy
+
+ For Meter=Cogeneration:ElectricityPurchased [J], ResourceType=ElectricityPurchased, EndUse=Cogeneration, contents are:
+  Whole Building:Facility Total Purchased Electric Energy
+
+ For Meter=ElectricitySurplusSold:Facility [J], ResourceType=ElectricitySurplusSold, contents are:
+  Whole Building:Facility Total Surplus Electric Energy
+
+ For Meter=ElectricitySurplusSold:Plant [J], ResourceType=ElectricitySurplusSold, Group=Plant, contents are:
+  Whole Building:Facility Total Surplus Electric Energy
+
+ For Meter=Cogeneration:ElectricitySurplusSold [J], ResourceType=ElectricitySurplusSold, EndUse=Cogeneration, contents are:
+  Whole Building:Facility Total Surplus Electric Energy
+
+ For Meter=ElectricityNet:Facility [J], ResourceType=ElectricityNet, contents are:
+  Whole Building:Facility Net Purchased Electric Energy
+
+ For Meter=ElectricityNet:Plant [J], ResourceType=ElectricityNet, Group=Plant, contents are:
+  Whole Building:Facility Net Purchased Electric Energy
+
+ For Meter=Cogeneration:ElectricityNet [J], ResourceType=ElectricityNet, EndUse=Cogeneration, contents are:
+  Whole Building:Facility Net Purchased Electric Energy
+
+ For Meter=Electricity:HVAC [J], ResourceType=Electricity, Group=HVAC, contents are:
+  DESICCANT REGEN FAN:Fan Electric Energy
+  AIR LOOP AHU SUPPLY FAN:Fan Electric Energy
+  DESICCANT REGEN COIL:Heating Coil Electric Energy
+  DESICCANT 1:Dehumidifier Electric Energy
+  OA HEAT RECOVERY 1:Heat Exchanger Electric Energy
+  HEAT PUMP DX COOLING COIL 1:Cooling Coil Electric Energy
+  HEAT PUMP DX HEATING COIL 1:Heating Coil Electric Energy
+  HEAT PUMP DX HEATING COIL 1:Heating Coil Defrost Electric Energy
+  HEAT PUMP DX HEATING COIL 1:Heating Coil Crankcase Heater Electric Energy
+
+ For Meter=Fans:Electricity [J], ResourceType=Electricity, EndUse=Fans, contents are:
+  DESICCANT REGEN FAN:Fan Electric Energy
+  AIR LOOP AHU SUPPLY FAN:Fan Electric Energy
+
+ For Meter=General:Fans:Electricity [J], ResourceType=Electricity, EndUse=Fans, contents are:
+  DESICCANT REGEN FAN:Fan Electric Energy
+
+ For Meter=VAV Supply Fan Energy:Fans:Electricity [J], ResourceType=Electricity, EndUse=Fans, contents are:
+  AIR LOOP AHU SUPPLY FAN:Fan Electric Energy
+
+ For Meter=ExteriorLights:Electricity [J], ResourceType=Electricity, EndUse=ExteriorLights, contents are:
+  EXTERIOR FACADE LIGHTING:Exterior Lights Electric Energy
+
+ For Meter=Exterior Facade Lighting:ExteriorLights:Electricity [J], ResourceType=Electricity, EndUse=ExteriorLights, contents are:
+  EXTERIOR FACADE LIGHTING:Exterior Lights Electric Energy
+
+ For Meter=ExteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=ExteriorEquipment, contents are:
+  EXTERIOREQUIPMENT:Exterior Equipment Electric Energy
+
+ For Meter=Exterior Equipment:ExteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=ExteriorEquipment, contents are:
+  EXTERIOREQUIPMENT:Exterior Equipment Electric Energy
+
+ For Meter=EnergyTransfer:HVAC [J], ResourceType=EnergyTransfer, Group=HVAC, contents are:
+  DESICCANT REGEN COIL:Heating Coil Air Heating Energy
+  OA HEAT RECOVERY 1:Heat Exchanger Total Heating Energy
+  OA HEAT RECOVERY 1:Heat Exchanger Total Cooling Energy
+  HEAT PUMP DX COOLING COIL 1:Cooling Coil Total Cooling Energy
+  HEAT PUMP DX HEATING COIL 1:Heating Coil Total Heating Energy
+
+ For Meter=HeatingCoils:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=HeatingCoils, contents are:
+  DESICCANT REGEN COIL:Heating Coil Air Heating Energy
+  HEAT PUMP DX HEATING COIL 1:Heating Coil Total Heating Energy
+
+ For Meter=Heating:Electricity [J], ResourceType=Electricity, EndUse=Heating, contents are:
+  DESICCANT REGEN COIL:Heating Coil Electric Energy
+  HEAT PUMP DX HEATING COIL 1:Heating Coil Electric Energy
+  HEAT PUMP DX HEATING COIL 1:Heating Coil Defrost Electric Energy
+  HEAT PUMP DX HEATING COIL 1:Heating Coil Crankcase Heater Electric Energy
+
+ For Meter=Cooling:Electricity [J], ResourceType=Electricity, EndUse=Cooling, contents are:
+  DESICCANT 1:Dehumidifier Electric Energy
+  HEAT PUMP DX COOLING COIL 1:Cooling Coil Electric Energy
+  HEAT PUMP DX COOLING COIL 1:Cooling Coil Crankcase Heater Electric Energy
+
+ For Meter=HeatRecoveryForHeating:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=HeatRecoveryForHeating, contents are:
+  OA HEAT RECOVERY 1:Heat Exchanger Total Heating Energy
+
+ For Meter=HeatRecoveryForCooling:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=HeatRecoveryForCooling, contents are:
+  OA HEAT RECOVERY 1:Heat Exchanger Total Cooling Energy
+
+ For Meter=HeatRecovery:Electricity [J], ResourceType=Electricity, EndUse=HeatRecovery, contents are:
+  OA HEAT RECOVERY 1:Heat Exchanger Electric Energy
+
+ For Meter=CoolingCoils:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=CoolingCoils, contents are:
+  HEAT PUMP DX COOLING COIL 1:Cooling Coil Total Cooling Energy
+
+ For Meter=Electricity:Plant [J], ResourceType=Electricity, Group=Plant, contents are:
+  HEAT PUMP DX COOLING COIL 1:Cooling Coil Crankcase Heater Electric Energy
+
+ For Meter=Carbon Equivalent:Facility [kg], ResourceType=Carbon Equivalent, contents are:
+  Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass
+
+ For Meter=CarbonEquivalentEmissions:Carbon Equivalent [kg], ResourceType=Carbon Equivalent, EndUse=CarbonEquivalentEmissions, contents are:
+  Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass
