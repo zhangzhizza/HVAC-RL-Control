@@ -1,4 +1,10 @@
-Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.11.19 09:43,IDD_Version 8.3.0
+Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.11.26 21:11,IDD_Version 8.3.0
+   ** Warning ** GetFluidPropertiesData: FluidProperties:Superheated Name=R22
+   **   ~~~   ** Fluid Property Type="SPECIFICHEAT" is not valid.
+   **   ~~~   ** Valid choices are "ENTHALPY", "DENSITY".
+   **   ~~~   ** Pressure value of this item=[0.40].
+   **   ~~~   ** This fluid property will not be processed nor available for the simulation.
+   ** Warning ** GetFluidPropertiesData: FluidProperties:Superheated has 67 similar errors to the previous.
    ** Warning ** "Do the design day simulations" and "Do the weather file simulation" are both set to "No".  No simulations will be performed, and most input will not be read.
    ** Warning ** ProcessScheduleInput: Schedule:Compact="HVACTEMPLATE-ALWAYS 4", Schedule Type Limits Name="HVACTEMPLATE ANY NUMBER" not found -- will not be validated
    ** Warning ** ProcessScheduleInput: Schedule:Compact="HYBRID CONTROL MODE SCHEDULE", Schedule Type Limits Name="HYBRID CONTROL MODE TYPE" not found -- will not be validated
@@ -322,93 +328,37 @@ Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.11.19 09:43,IDD_V
    ************* Construction=1010
    ************* Construction=1011
    ************* Construction=1012
-   ** Warning ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%RESEARCH%OPEN%NE_WALL_5_1_0" is a receiving surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Warning ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%LOBBY_WALL_19_1_0" is a receiving surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Warning ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%HVAC%SHAFT_WALL_2_1_0" is a receiving surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Warning ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%RESEARCH%OPEN%NW_WALL_3_1_0" is a receiving surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Warning ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%MCHNCL%RM%01_WALL_7_1_0" is a receiving surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE_ROOF_1_0_0" is a receiving surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%SOUTH:2ND%CONFERENCE%02_ROOF_1_1_0" is a receiving surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%SOUTH:2ND%CONFERENCE%01_ROOF_1_0_0" is a receiving surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%LOBBY_WALL_7_1_0" is a receiving surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%LOBBY_WALL_8_1_0" is a receiving surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%LOBBY_ROOF_1_2_0" is a receiving surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%RESTROOMS_WALL_3_1_0" is a receiving surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%RESTROOMS_ROOF_1_0_0" is a receiving surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%CORRIDOR_ROOF_1_1_0" is a receiving surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%SECURE%FILES_ROOF_1_0_0" is a receiving surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%WORK%ROOM_WALL_4_1_0" is a receiving surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Warning ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%WORK%ROOM_ROOF_1_0_0" is a receiving surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Warning ** DetermineShadowingCombinations: Surface="3RD%FLOOR%LOWER:3RD%LOWER%LOBBY_ROOF_1_1_0" is a receiving surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Severe  ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%RESEARCH%OPEN%NE_WALL_5_1_0" is a casting surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Severe  ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%LOBBY_WALL_19_1_0" is a casting surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Severe  ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%HVAC%SHAFT_WALL_2_1_0" is a casting surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Severe  ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%CLASSROOM_EXTFLOOR_0_2_1" is a casting surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Severe  ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%RESEARCH%OPEN%NW_WALL_3_1_0" is a casting surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Severe  ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%PHONE%BOOTH_EXTFLOOR_0_2_0" is a casting surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Severe  ** DetermineShadowingCombinations: Surface="1ST%FLOOR:1ST%MCHNCL%RM%01_WALL_7_1_0" is a casting surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Severe  ** DetermineShadowingCombinations: Surface="2ND%PLENVM:2ND%PLENVM%FALSE_EXTFLOOR_0_0_0" is a casting surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Severe  ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%LOBBY_WALL_7_1_0" is a casting surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Severe  ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%LOBBY_WALL_8_1_0" is a casting surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Severe  ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%RESTROOMS_WALL_3_1_0" is a casting surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Severe  ** DetermineShadowingCombinations: Surface="2ND%FLOOR%NORTH:2ND%WORK%ROOM_WALL_4_1_0" is a casting surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Severe  ** DetermineShadowingCombinations: Surface="3RD%FLOOR%UPPER:3RD%UPPER%LOBBY_EXTFLOOR_0_2_0" is a casting surface and is non-convex.
-   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
-   ** Warning ** SetUpZoneSizingArrays: Requested Sizing for Zone="1ST%FLOOR:1ST%VESTIBULE", Zone is not found in the Controlled Zones List
-   ** Warning ** SetUpZoneSizingArrays: Requested Sizing for Zone="1ST%FLOOR:1ST%VESTIBULE", Zone has no thermostat (ref: ZoneControl:Thermostat, et al)
-   ** Warning ** RoomAirManager: Inconsistent ceiling heights in Zone: 2ND%FLOOR%NORTH:2ND%LOBBY
-   **   ~~~   ** Lowest height=[4.422].
-   **   ~~~   ** Highest height=[9.146].
-   **   ~~~   ** Ceiling height=[3.753].
-   ** Warning ** RoomAirManager: Inconsistent ceiling heights in Zone: 2ND%FLOOR%NORTH:2ND%CORRIDOR
-   **   ~~~   ** Lowest height=[4.422].
-   **   ~~~   ** Highest height=[9.146].
-   **   ~~~   ** Ceiling height=[4.565].
-   ** Warning ** RoomAirManager: Inconsistent ceiling heights in Zone: 2ND%FLOOR%NORTH:2ND%CONFERENCE%03
-   **   ~~~   ** Lowest height=[4.422].
-   **   ~~~   ** Highest height=[9.146].
-   **   ~~~   ** Ceiling height=[4.213].
-   ** Warning ** RoomAirManager: Inconsistent ceiling heights in Zone: 3RD%FLOOR%UPPER:3RD%UPPER%LOBBY
-   **   ~~~   ** Lowest height=[12.806].
-   **   ~~~   ** Highest height=[16.022].
-   **   ~~~   ** Ceiling height=[2.371].
-   ** Warning ** ManageSimulation: Input file has requested Sizing Calculations but no Simulations are requested (in SimulationControl object). Succeeding warnings/errors may be confusing.
-   ** Severe  ** For autosizing of Branch AIR LOOP AHU MAIN BRANCH, a system sizing run must be done.
-   **   ~~~   ** The "SimulationControl" object did not have the field "Do System Sizing Calculation" set to Yes.
-   **  Fatal  ** Program terminates due to previously shown condition(s).
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 1ST%FLOOR:1ST%CONFERENCE", invalid Number of People Schedule Name entered=STOCOFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 1ST%FLOOR:1ST%RESEARCH%OPEN%NE", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 1ST%FLOOR:1ST%LOBBY", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 1ST%FLOOR:1ST%CLASSROOM", invalid Number of People Schedule Name entered=STOCLSOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 1ST%FLOOR:1ST%RESEARCH%OPEN%NW", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 1ST%FLOOR:1ST%RESEARCH%OPEN%NM", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 1ST%FLOOR:1ST%BREAK%ROOM", invalid Number of People Schedule Name entered=STOCOFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 1ST%FLOOR:1ST%VOLUNTEER%AREA", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 1ST%FLOOR:1ST%RESEARCH%OPEN%SW", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 1ST%FLOOR:1ST%RESEARCH%OPEN%SM", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 1ST%FLOOR:1ST%RESEARCH%OPEN%SE", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 1ST%FLOOR:1ST%CORRIDOR", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 2ND%FLOOR%SOUTH:2ND%CONFERENCE%02", invalid Number of People Schedule Name entered=STOCOFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 2ND%FLOOR%SOUTH:2ND%CONFERENCE%01", invalid Number of People Schedule Name entered=STOCOFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 2ND%FLOOR%NORTH:2ND%LOBBY", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 2ND%FLOOR%NORTH:2ND%CORRIDOR", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 2ND%FLOOR%NORTH:2ND%CONFERENCE%03", invalid Number of People Schedule Name entered=STOCOFOCCPSCH
+   ** Severe  ** GetInternalHeatGains: People="PEOPLE 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
+   **  Fatal  ** GetInternalHeatGains: Errors found in Getting Internal Gains Input, Program Stopped
    ...Summary of Errors that led to program termination:
-   ..... Reference severe error count=16
-   ..... Last severe error=For autosizing of Branch AIR LOOP AHU MAIN BRANCH, a system sizing run must be done.
+   ..... Reference severe error count=29
+   ..... Last severe error=GetInternalHeatGains: People="PEOPLE 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1", invalid Number of People Schedule Name entered=STOOFFOCCPSCH
    ************* Warning:  Node connection errors not checked - most system input has not been read (see previous warning).
    ************* Fatal error -- final processing.  Program exited before simulations began.  See previous error messages.
    ** Warning ** DXFOut: Could not triangulate surface="1ST%FLOOR:1ST%LOBBY_WALL_19_1_0", type="Wall", check surface vertex order(entry)
@@ -532,5 +482,5 @@ Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.11.19 09:43,IDD_V
    ************* ..object. You may remove the constructions indicated (when you use the DisplayExtraWarnings option).
    *************
    ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
-   ************* EnergyPlus Sizing Error Summary. During Sizing: 109 Warning; 13 Severe Errors.
-   ************* EnergyPlus Terminated--Fatal Error Detected. 143 Warning; 16 Severe Errors; Elapsed Time=00hr 00min 32.34sec
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 91 Warning; 27 Severe Errors.
+   ************* EnergyPlus Terminated--Fatal Error Detected. 121 Warning; 29 Severe Errors; Elapsed Time=00hr 00min  1.15sec

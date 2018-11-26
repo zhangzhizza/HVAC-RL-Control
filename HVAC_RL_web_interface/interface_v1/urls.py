@@ -7,6 +7,8 @@ urlpatterns = [
     path('test/', views.test),
     re_path(r'^simulator_eplus/openjscad/$', views.openJSCAD, name='openJSCAD'),
     re_path(r'^simulator_eplus/get_aval_schedules/$', views.generate_idf_schedule_names, name='generate_idf_schedule_names'),
+    re_path(r'^simulator_eplus/get_fileschedules/$', views.generate_idf_fileschedule_names, name='generate_idf_fileschedule_names'),
+    re_path(r'^simulator_eplus/get_weathers/$', views.generate_epw_names, name='generate_epw_names'),
     path('simulator_eplus', views.simulator_eplus, name='simulator_eplus'),
     path('simulator_eplus/upload_idf', views.simulator_eplus_idf_upload, name='simulator_eplus_idf_upload'),
     path('get_all_exp/<slug:run_name>/', views.get_all_exp, name='get_all_exp'),

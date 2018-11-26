@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{% static "/css/owl.carousel.min.css" %}">
     <link rel="stylesheet" href="{% static "/css/slicknav.min.css" %}">
     <!-- amchart css -->
-    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static "/css/amcharts.export.css" %}">
     <!-- others css -->
     <link rel="stylesheet" href="{% static "/css/typography.css" %}">
     <link rel="stylesheet" href="{% static "/css/default-css.css" %}">
@@ -41,20 +41,61 @@
     <script src="{% static "/js/vendor/jquery-2.2.4.min.js" %}"></script>
     <script src="{% static "/js/jquery.slimscroll.min.js" %}"></script>
     <script src="{% static "/js/jquery.slicknav.min.js" %}"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-
+    
     <script type="text/javascript">
-        window.onload = function() {
+        function reset_all_button_status(){
+            document.getElementById("idf_file_select_field").disabled = false;
+            document.getElementById("sch_submit_btn").disabled = true;
+            document.getElementById("sch_submit_status").innerText = "Not available";
             document.getElementById('action_submit_btn').disabled = true;
+            document.getElementById('action_submit_status').innerText = 'Not available';
+            document.getElementById("schfile_select").innerHTML = '';
+            document.getElementById("action_select").innerHTML = '';
+        }
+
+        function afterupload_button_status(){
+            document.getElementById("idf_file_select_field").disabled = true;
+        }
+
+        window.onload = function() {
+            reset_all_button_status();
+            // Get the epws
+            $.get('simulator_eplus/get_weathers/', function(data, status){
+                document.getElementById("wea_select").innerHTML = data;
+            })
+
+
+            $("#sch_select_fm").submit(function (event) {
+              document.getElementById('sch_submit_status').innerText = "Processing...";
+              event.preventDefault();
+              idf_upload_form = document.getElementById('idf_file_select')
+              var group_name = document.getElementById('id_title').value;
+              var idf_name = document.getElementById('id_file_idf').value.split('\\').splice(-1)[0]
+              //grab all form data  
+              var formData = $(this);
+
+              $.ajax({
+                  url: 'simulator_eplus/get_fileschedules/?group_name='+group_name+'&idf_name='+idf_name,
+                  type: 'POST',
+                  data: formData.serialize(),
+                  success: function (data, status) {
+                      document.getElementById('sch_submit_status').innerText = 'Confirmed';
+                      document.getElementById('sch_submit_btn').disabled = true;
+                  },
+                  error: function () {
+                      alert("error in ajax form submission");
+                  }
+              });
+
+      return false;
+  });
 
             $("#action_select_fm").submit(function (event) {
-              console.log('submit action')
               document.getElementById('action_submit_status').innerText = "Processing...";
               event.preventDefault();
               idf_upload_form = document.getElementById('idf_file_select')
-              var group_name = idf_upload_form[1].value;
-              var idf_name = idf_upload_form[2].value.split('\\').splice(-1)[0]
+              var group_name = document.getElementById('id_title').value;
+              var idf_name = document.getElementById('id_file_idf').value.split('\\').splice(-1)[0]
               //grab all form data  
               var formData = $(this);
 
@@ -65,8 +106,6 @@
                   success: function (data, status) {
                       document.getElementById('action_submit_status').innerText = 'Confirmed';
                       document.getElementById('action_submit_btn').disabled = true;
-
-                      console.log(data)
                   },
                   error: function () {
                       alert("error in ajax form submission");
@@ -77,14 +116,11 @@
   });
 
             $("#idf_file_select").submit(function (event) {
-              console.log('submit')
               document.getElementById('idf_submit_status').innerText = "Processing...";
               event.preventDefault();
               //file upload form basic info
-              var group_name = this[1].value;
-              var idf_name = this[2].value.split('\\').splice(-1)[0]
-              console.log(group_name)
-              console.log(idf_name)
+              var group_name = document.getElementById('id_title').value;
+              var idf_name = document.getElementById('id_file_idf').value.split('\\').splice(-1)[0]
               //grab all form data  
               var formData = new FormData($(this)[0]);
 
@@ -97,6 +133,15 @@
                   success: function (data, status) {
                       document.getElementById('dxf_viewer').src = data;
                       document.getElementById('idf_submit_status').innerText = "Ready";
+                      // Set the sch selection
+                      sch_request_url = "simulator_eplus/get_fileschedules/?group_name="+group_name+"&idf_name="+idf_name;
+                      $.get(sch_request_url, function(data, status){
+                        if (data != 'None'){
+                            document.getElementById("schfile_select").innerHTML = data;
+                            document.getElementById("sch_submit_btn").disabled = false;
+                            document.getElementById("sch_submit_status").innerText = 'Ready';
+                        }
+                      })
                       // Set the action selection
                       document.getElementById('action_submit_btn').disabled = false;
                       document.getElementById('action_submit_status').innerText = 'Ready';
@@ -104,18 +149,24 @@
                       $.get(action_request_url, function(data, status){
                         document.getElementById("action_select").innerHTML = data;
                       })
-                      console.log(data)
+                      // Update the weathers
+                      $.get('simulator_eplus/get_weathers/', function(data, status){
+                        document.getElementById("wea_select").innerHTML = data;
+                        })
+
                   },
                   error: function () {
                       alert("error in ajax form submission");
                   }
               });
-
+      afterupload_button_status();
       return false;
   });
       
     
         }
+
+        
 
         // Repeated function
         window.setInterval(function(){
@@ -347,13 +398,47 @@
                             <div class="single-report mb-xs-30">
                                 <div class="card-body">
                                     <div class="d-sm-flex justify-content-between align-items-center">
-                                    <h4 class="header-title mb-0">Upload IDF</h4></div>
+                                    <h4 class="header-title mb-0">Upload Files</h4></div>
 
                                     <form id="idf_file_select" action="simulator_eplus/upload_idf" enctype="multipart/form-data" method=POST>
+                                        <fieldset id='idf_file_select_field'>
                                         {% csrf_token %}
-                                        {{ form }}
-                                        <input type="submit" value="Upload IDF"><p id="idf_submit_status">Ready</p>
+                                        {% for field in form  %}
+                                        <h5 class="header-title mb-0">{{ field.label_tag }} {{ field }}</h5>  
+                                        {% endfor %}
+                                        <input type="submit" value="Upload Files"><p id="idf_submit_status">Ready</p>
+                                        </fieldset>
                                     </form>
+
+                                    <div class="d-sm-flex justify-content-between align-items-center">
+                                    <br />&nbsp</div>
+                                    <div class="d-sm-flex justify-content-between align-items-center">
+                                    <h4 class="header-title mb-0">Select Schedule File</h4></div>
+                                    <form id="sch_select_fm" action="simulator_eplus/get_fileschedules" method=POST>
+                                        {% csrf_token %}
+                                        <div id="schfile_select" style="overflow: auto; max-height: 200px">
+                                        
+                                        {{ sch_select }}
+                                        </div>
+                                        <input id="sch_submit_btn" disabled="true" type="submit" value="Confirm Schedule"><p id="sch_submit_status">Not available</p>
+                                    </form>
+
+                                    <div class="d-sm-flex justify-content-between align-items-center">
+                                    <br />&nbsp</div>
+                                    <div class="d-sm-flex justify-content-between align-items-center">
+                                    <h4 class="header-title mb-0">Select Weather File</h4></div>
+                                    <form id="wea_select_fm" action="simulator_eplus/get_weathers" method=POST>
+                                        {% csrf_token %}
+                                        <div id="wea_select" style="overflow: auto; max-height: 200px">
+                                        
+                                        {{ sch_select }}
+                                        </div>
+                                    </form>
+
+                                    <div class="d-sm-flex justify-content-between align-items-center">
+                                    <br />&nbsp</div>
+                                    <div class="d-sm-flex justify-content-between align-items-center">
+                                    <button id="clear_all_forms_btn" onclick="reset_all_button_status()">Clear All Forms</button></div>
                                 </div>
                             </div>
                         </div>
@@ -908,11 +993,12 @@
     
 
     <!-- start chart js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="{% static "/js/Chart.min.js" %}"></script>
     <!-- start highcharts js -->
-    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="{% static "/js/highcharts.js" %}"></script>
+    <script src="{% static "/js/highcharts.exporting.js" %}"></script>
     <!-- start zingchart js -->
-    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script src="{% static "/js/zingchart.min.js" %}"></script>
     <script>
     zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
     ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from xml.dom.minidom import parseString
-from .forms import UploadFileForm, SelectActionForm
+from .forms import *
 
 import requests
 import pandas as pd
@@ -36,18 +36,73 @@ def test(request):
 
 def simulator_eplus(request):
 	form = UploadFileForm()
-	action_select = SelectActionForm(options = [['-','-']])
+	action_select = ''#SelectActionForm(options = [['','']])
+	sch_select = ''#SelectSchForm(options = [['','']])
+
 	return render(request, 'interface_v1/html/srtdash/simulator.html', 
-		{'form': form, 'action_select':action_select})
+		{'form': form, 'action_select':action_select, 
+		 'sch_select': sch_select});
 
 def simulator_eplus_idf_upload(request):
 	if request.method == 'POST':
 		form = UploadFileForm(request.POST, request.FILES)
 		if form.is_valid():
-			handle_uploaded_idf_file(request.POST['title'], request.FILES['file'])
+			print (request.FILES)
+			file_epw = request.FILES['file_epw'] if 'file_epw' in request.FILES else None;
+			file_sch = request.FILES['file_sch'] if 'file_sch' in request.FILES else None;
+			handle_uploaded_idf_file(request.POST['title'], request.FILES['file_idf'],
+									 file_epw, file_sch)
 			return HttpResponse('simulator_eplus/openjscad/'+
 								'?group_name=%s&idf_name=%s'
-								%(request.POST['title'], request.FILES['file'].name));
+								%(request.POST['title'], request.FILES['file_idf'].name));
+
+def generate_epw_names(request):
+	# Get common variables
+	epw_path = eplus_model_path + '/../weather';
+	epws = os.listdir(epw_path)
+	epws = sorted(epws);
+	form_options = [];
+	for i in range(len(epws)):
+		form_options.append([epws[i], epws[i]])
+	wea_select = SelectWeaForm(options = form_options);
+	return HttpResponse(wea_select)
+
+def generate_idf_fileschedule_names(request):
+	# Get common variables
+	group_name = request.GET.get('group_name');
+	idf_name = request.GET.get('idf_name');
+	env_path = eplus_model_path + group_name;
+	env_idf_store_dir = (env_path + '/idf/' + idf_name);
+	org_idf_parser = idf_parser.IdfParser(env_idf_store_dir);
+	if request.method == 'POST':
+		query = dict(request.POST.lists())
+		selected_sch = query['SCHEDULE'];
+		print(env_path + '/schedules/' + selected_sch[0])
+		org_idf_parser.localize_schedule(env_path + '/schedules/' + selected_sch[0])
+		new_idf_name_add_idx = env_idf_store_dir.rfind('.idf');
+		new_idf_name = (env_idf_store_dir[:new_idf_name_add_idx] + '.env' 
+						+ env_idf_store_dir[new_idf_name_add_idx:]);
+		org_idf_parser.write_idf(new_idf_name);
+		return HttpResponse('hELLO');
+	if (org_idf_parser.is_contain_filesch()):
+		sch_names = sorted(get_fileschedule_names(group_name));
+		form_options = [];
+		for i in range(len(sch_names)):
+			form_options.append([sch_names[i], sch_names[i]])
+		filesch_select = SelectSchForm(options = form_options);
+	else:
+		filesch_select = None;
+	return HttpResponse(filesch_select)
+
+def get_fileschedule_names(group_name):
+	file_name_list = []
+	try:
+		file_name_list = os.listdir(eplus_model_path + '/' + group_name + '/schedules')
+	except Exception as e:
+		file_name_list = [];
+	return file_name_list;
+	
+
 
 def generate_idf_schedule_names(request):
 	# Get common variables
@@ -82,18 +137,36 @@ def generate_idf_schedule_names(request):
 
 
 
-def handle_uploaded_idf_file(group_name, file):
+def handle_uploaded_idf_file(group_name, file_idf, file_epw=None, file_sch=None):
+	# epw file
+	if file_epw is not None:
+		env_epw_store_dir = (this_dir_path + '/../../src/eplus-env/eplus_env/envs/weather/');
+		with open(env_epw_store_dir + file_epw.name, 'wb') as epw_file:
+			for chunk in file_epw.chunks():
+				epw_file.write(chunk);
+	# sch file
+	if file_sch is not None:
+		env_sch_store_dir = (this_dir_path + '/../../src/eplus-env/eplus_env/envs/eplus_models/'
+									   + group_name + '/schedules/');
+		if not os.path.isdir(env_sch_store_dir):
+			os.makedirs(env_sch_store_dir);
+		with open(env_sch_store_dir + file_sch.name, 'wb') as sch_file:
+			for chunk in file_sch.chunks():
+				sch_file.write(chunk);
+	# idf file
 	env_idf_store_dir = (this_dir_path + '/../../src/eplus-env/eplus_env/envs/eplus_models/'
 									   + group_name);
 	if not os.path.isdir(env_idf_store_dir):
 		os.makedirs(env_idf_store_dir + '/idf');
-	with open(env_idf_store_dir + '/idf/' + file.name, 'wb') as idf_file:
-		for chunk in file.chunks():
+	with open(env_idf_store_dir + '/idf/' + file_idf.name, 'wb') as idf_file:
+		for chunk in file_idf.chunks():
 			idf_file.write(chunk);
-	org_idf_parser_for_dxf = idf_parser.IdfParser(env_idf_store_dir + '/idf/' + file.name);
+	org_idf_parser_for_dxf = idf_parser.IdfParser(env_idf_store_dir + '/idf/' + file_idf.name);
 	org_idf_parser_for_dxf.add_dxf_output();
 	org_idf_parser_for_dxf.set_minimum_run();
-	org_idf_parser_for_dxf.run_eplus_minimum(env_idf_store_dir + '/idf/' + file.name + '_base_out')
+	org_idf_parser_for_dxf.run_eplus_minimum(env_idf_store_dir + '/idf/' + file_idf.name + '_base_out')
+	
+
 
 
 
