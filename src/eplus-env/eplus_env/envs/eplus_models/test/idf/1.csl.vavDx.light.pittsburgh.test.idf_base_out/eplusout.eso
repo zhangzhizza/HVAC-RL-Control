@@ -1,0 +1,18 @@
+Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.11.26 21:11
+1,5,Environment Title[],Latitude[deg],Longitude[deg],Time Zone[],Elevation[m]
+2,6,Day of Simulation[],Month[],Day of Month[],DST Indicator[1=yes 0=no],Hour[],StartMinute[],EndMinute[],DayType
+3,3,Cumulative Day of Simulation[],Month[],Day of Month[],DST Indicator[1=yes 0=no],DayType  ! When Daily Report Variables Requested
+4,2,Cumulative Days of Simulation[],Month[]  ! When Monthly Report Variables Requested
+5,1,Cumulative Days of Simulation[] ! When Run Period Report Variables Requested
+6,1,Environment,Site Outdoor Air Drybulb Temperature [C] !TimeStep
+7,1,Environment,Site Outdoor Air Relative Humidity [%] !TimeStep
+8,1,Environment,Site Wind Speed [m/s] !TimeStep
+9,1,Environment,Site Wind Direction [deg] !TimeStep
+10,1,Environment,Site Diffuse Solar Radiation Rate per Area [W/m2] !TimeStep
+11,1,Environment,Site Direct Solar Radiation Rate per Area [W/m2] !TimeStep
+12,1,PEOPLE 1ST%FLOOR:1ST%CLASSROOM,People Occupant Count [] !TimeStep
+13,1,PEOPLE 1ST%FLOOR:1ST%RESEARCH%OPEN%NW,People Occupant Count [] !TimeStep
+14,1,PEOPLE 2ND%FLOOR%SOUTH:2ND%CONFERENCE%02,People Occupant Count [] !TimeStep
+1296,1,1ST%FLOOR:1ST%CLASSROOM,Zone Electric Equipment Electric Power [W] !TimeStep
+1318,1,1ST%FLOOR:1ST%RESEARCH%OPEN%NW,Zone Electric Equipment Electric Power [W] !TimeStep
+1487,1,2ND%FLOOR%SOUTH:2ND%CONFERENCE%02,Zone Electric Equipment Electric Power [W] !TimeStep

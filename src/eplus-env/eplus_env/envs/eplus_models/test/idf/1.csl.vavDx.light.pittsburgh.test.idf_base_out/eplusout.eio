@@ -1,0 +1,105 @@
+Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.11.26 21:11
+! <Version>, Version ID
+ Version, 8.3
+! <Timesteps per Hour>, #TimeSteps, Minutes per TimeStep {minutes}
+ Timesteps per Hour, 12,  5
+! <System Convergence Limits>, Minimum System TimeStep {minutes}, Max HVAC Iterations, Minimum Plant Iterations, Maximum Plant Iterations
+ System Convergence Limits, 1, 20, 2, 8
+! <Simulation Control>, Do Zone Sizing, Do System Sizing, Do Plant Sizing, Do Design Days, Do Weather Simulation, Do HVAC Sizing Simulation
+ Simulation Control, Yes, No, No, No, No, No
+! <Output Reporting Tolerances>, Tolerance for Time Heating Setpoint Not Met, Tolerance for Zone Cooling Setpoint Not Met Time
+ Output Reporting Tolerances, 0.500, 0.500, 
+! <Site:GroundTemperature:BuildingSurface>, Months From Jan to Dec {C}
+ Site:GroundTemperature:BuildingSurface,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00
+! <Site:GroundTemperature:FCfactorMethod>, Months From Jan to Dec {C}
+ Site:GroundTemperature:FCfactorMethod,   2.10,   1.21,   2.79,   5.27,  11.76,  16.77,  20.14,  21.17,  19.42,  15.53,  10.34,   5.52
+! <Site:GroundTemperature:Shallow>, Months From Jan to Dec {C}
+ Site:GroundTemperature:Shallow,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00
+! <Site:GroundTemperature:Deep>, Months From Jan to Dec {C}
+ Site:GroundTemperature:Deep,  14.89,  14.89,  14.89,  14.89,  14.89,  14.89,  14.89,  14.89,  14.89,  14.89,  14.89,  14.89
+! <Site:GroundReflectance>, Months From Jan to Dec {dimensionless}
+ Site:GroundReflectance,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Site:GroundReflectance:SnowModifier>, Normal, Daylighting {dimensionless}
+ Site:GroundReflectance:SnowModifier,   1.000,   1.000
+! <Site:GroundReflectance:Snow>, Months From Jan to Dec {dimensionless}
+ Site:GroundReflectance:Snow,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Site:GroundReflectance:Snow:Daylighting>, Months From Jan to Dec {dimensionless}
+ Site:GroundReflectance:Snow:Daylighting,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Environment:Weather Station>,Wind Sensor Height Above Ground {m},Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Sensor Height Above Ground {m},Wind Speed Modifier Coefficient [Internal],Temperature Modifier Coefficient [Internal]
+Environment:Weather Station,10.000,0.140,270.000,1.500,1.586,9.750E-003
+! <Site:Location>, Location Name, Latitude {N+/S- Deg}, Longitude {E+/W- Deg},  Time Zone Number {GMT+/-}, Elevation {m},  Standard Pressure at Elevation {Pa}, Standard RhoAir at Elevation
+Site:Location,Pittsburgh Allegheny Co Ap PA USA TMY3 WMO#=725205,40.35,-79.92,-5.00,380.00,96842,1.1510
+! <Building Information>, Building Name,North Axis {deg},Terrain,  Loads Convergence Tolerance Value,Temperature Convergence Tolerance Value,  Solar Distribution,Maximum Number of Warmup Days,Minimum Number of Warmup Days
+ Building Information,Building,0.000,Suburbs,0.40000,0.40000,FullExterior,25,6
+! <Inside Convection Algorithm>, Algorithm {Simple | TARP | CeilingDiffuser | AdaptiveConvectionAlgorithm}
+Inside Convection Algorithm,AdaptiveConvectionAlgorithm
+! <Outside Convection Algorithm>, Algorithm {SimpleCombined | TARP | MoWitt | DOE-2 | AdaptiveConvectionAlgorithm}
+Outside Convection Algorithm,DOE-2
+! <Sky Radiance Distribution>, Value {Anisotropic}
+Sky Radiance Distribution,Anisotropic
+! <Zone Air Solution Algorithm>, Value {ThirdOrderBackwardDifference | AnalyticalSolution | EulerMethod}
+ Zone Air Solution Algorithm, ThirdOrderBackwardDifference
+! <Zone Air Contaminant Balance Simulation>, Simulation {Yes/No}, Carbon Dioxide Concentration
+ Zone Air Carbon Dioxide Balance Simulation, Yes,YES
+! <Zone Air Contaminant Balance Simulation>, Simulation {Yes/No}, Generic Contaminant Concentration
+ Zone Air Generic Contaminant Balance Simulation, No,N/A
+! <Zone Air Mass Flow Balance Simulation>, Simulation {Yes/No}
+ Zone Air Mass Flow Balance Simulation, No
+! <Environment:Site Atmospheric Variation>,Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Gradient Coefficient {K/m}
+Environment:Site Atmospheric Variation,0.220,370.000,6.500000E-003
+! <SurfaceGeometry>,Starting Corner,Vertex Input Direction,Coordinate System,Daylight Reference Point Coordinate System,Rectangular (Simple) Surface Coordinate System
+ Surface Geometry,LowerLeftCorner,Counterclockwise,RelativeCoordinateSystem,RelativeCoordinateSystem,RelativeToZoneOrigin
+! <Surface Heat Transfer Algorithm>, Value {CTF - ConductionTransferFunction | EMPD - MoisturePenetrationDepthConductionTransferFunction | CondFD - ConductionFiniteDifference | HAMT - CombinedHeatAndMoistureFiniteElement} - Description,Inside Surface Max Temperature Limit{C}, Surface Convection Coefficient Lower Limit {W/m2-K}, Surface Convection Coefficient Upper Limit {W/m2-K}
+Surface Heat Transfer Algorithm, CTF - ConductionTransferFunction,2000,0.10,1000.0
+! <Shading Summary>, Number of Fixed Detached Shades, Number of Building Detached Shades, Number of Attached Shades
+ Shading Summary,0,16,0
+! <Zone Summary>, Number of Zones, Number of Zone Surfaces, Number of SubSurfaces
+ Zone Summary,47,1128,461
+! <Zone Information>,Zone Name,North Axis {deg},Origin X-Coordinate {m},Origin Y-Coordinate {m},Origin Z-Coordinate {m},Centroid X-Coordinate {m},Centroid Y-Coordinate {m},Centroid Z-Coordinate {m},Type,Zone Multiplier,Zone List Multiplier,Minimum X {m},Maximum X {m},Minimum Y {m},Maximum Y {m},Minimum Z {m},Maximum Z {m},Ceiling Height {m},Volume {m3},Zone Inside Convection Algorithm {Simple-Detailed-CeilingDiffuser-TrombeWall},Zone Outside Convection Algorithm {Simple-Detailed-Tarp-MoWitt-DOE-2-BLAST}, Floor Area {m2},Exterior Gross Wall Area {m2},Exterior Net Wall Area {m2},Exterior Window Area {m2}, Number of Surfaces, Number of SubSurfaces, Number of Shading SubSurfaces,  Part of Total Building Area
+ Zone Information, 1ST%PLENVM:1ST%PLENVM,0.0,0.00,0.00,0.00,-0.64,-5.27,0.26,1,1,1,-20.24,24.42,-12.26,0.11,0.00,0.51,0.51,232.57,AdaptiveConvectionAlgorithm,DOE-2,454.37,9.08,9.08,0.00,26,1,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%CONFERENCE,0.0,0.00,0.00,0.00,-18.10,-3.09,2.47,1,1,1,-20.24,-16.36,-6.10,-0.71,0.51,4.42,3.91,81.52,TARP,DOE-2,20.84,22.70,15.25,2.92,9,5,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%RESEARCH%OPEN%NE,0.0,0.00,0.00,0.00,2.92,-2.28,2.35,1,1,1,-3.20,6.63,-5.65,-0.45,0.51,4.42,3.91,91.06,TARP,DOE-2,40.43,27.69,18.21,6.94,11,9,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%LOBBY,0.0,0.00,0.00,0.00,18.27,2.41,2.43,1,1,1,3.99,29.69,-4.45,9.58,0.51,4.42,3.91,996.41,TARP,DOE-2,254.59,65.33,18.75,34.67,50,38,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%HVAC%SHAFT,0.0,0.00,0.00,0.00,-18.47,-0.30,2.42,1,1,1,-20.24,-16.71,-0.71,0.11,0.51,4.42,3.91,11.30,TARP,DOE-2,1.69E-002,19.18,16.05,0.00,8,4,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%CLASSROOM,0.0,0.00,0.00,0.00,17.59,-6.56,2.47,1,1,1,8.97,24.64,-12.26,-3.26,0.51,4.42,3.91,526.50,TARP,DOE-2,134.62,82.27,43.43,20.29,19,23,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%VESTIBULE,0.0,0.00,0.00,0.00,26.01,-5.49,2.47,1,1,1,24.64,27.37,-6.89,-4.08,0.51,4.42,3.91,30.11,TARP,DOE-2,7.70,21.70,2.43,17.38,7,10,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%ELECTRICAL%ROOM,0.0,0.00,0.00,0.00,23.33,10.20,2.47,1,1,1,21.39,26.10,6.74,13.64,0.51,4.42,3.91,59.19,TARP,DOE-2,15.13,0.00,0.00,0.00,10,1,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%RESTROOM,0.0,0.00,0.00,0.00,17.77,13.84,2.47,1,1,1,12.15,22.88,9.44,19.61,0.51,4.42,3.91,226.83,TARP,DOE-2,58.00,0.00,0.00,0.00,9,2,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%RESEARCH%OPEN%NW,0.0,0.00,0.00,0.00,-13.83,-2.48,2.30,1,1,1,-16.36,-9.55,-5.65,-0.78,0.51,4.42,3.91,128.76,TARP,DOE-2,24.97,24.91,18.57,3.11,7,7,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%RESEARCH%OPEN%NM,0.0,0.00,0.00,0.00,-6.38,-2.51,2.47,1,1,1,-9.55,-3.20,-5.65,-0.78,0.51,4.42,3.91,33.86,TARP,DOE-2,30.90,23.21,13.26,7.25,4,7,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%BREAK%ROOM,0.0,0.00,0.00,0.00,-16.13,-7.95,2.47,1,1,1,-20.23,-13.11,-12.26,-2.72,0.51,4.42,3.91,200.38,TARP,DOE-2,51.24,51.87,23.08,15.81,11,16,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%PHONE%BOOTH,0.0,0.00,0.00,0.00,4.83,-4.40,2.47,1,1,1,3.14,6.63,-5.65,-3.26,0.51,4.42,3.91,31.52,TARP,DOE-2,8.32,0.00,0.00,0.00,8,1,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%VOLUNTEER%AREA,0.0,0.00,0.00,0.00,7.01,-7.13,2.47,1,1,1,3.14,10.63,-12.26,-3.26,0.51,4.42,3.91,181.38,TARP,DOE-2,46.38,22.79,9.25,7.37,12,9,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%RESEARCH%OPEN%SW,0.0,0.00,0.00,0.00,-12.37,-9.76,2.47,1,1,1,-13.57,-9.55,-12.26,-5.65,0.51,4.42,3.91,212.56,TARP,DOE-2,25.74,13.92,6.13,5.66,6,5,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%RESEARCH%OPEN%SM,0.0,0.00,0.00,0.00,-6.38,-9.71,2.47,1,1,1,-9.55,-3.20,-12.26,-5.65,0.51,4.42,3.91,156.15,TARP,DOE-2,41.97,24.82,10.35,10.65,3,8,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%RESEARCH%OPEN%SE,0.0,0.00,0.00,0.00,0.58,-9.56,2.47,1,1,1,-3.20,3.14,-12.26,-5.65,0.51,4.42,3.91,183.23,TARP,DOE-2,41.97,24.82,10.43,10.65,4,9,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%MCHNCL%RM%01,0.0,0.00,0.00,0.00,6.61,8.90,2.42,1,1,1,2.06,10.21,6.23,12.88,0.51,4.42,3.91,131.08,TARP,DOE-2,33.53,18.23,0.46,0.00,15,4,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%CORRIDOR,0.0,0.00,0.00,0.00,17.46,9.83,2.47,1,1,1,13.08,22.30,6.87,12.77,0.51,4.42,3.91,70.85,TARP,DOE-2,18.13,0.00,0.00,0.00,15,6,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%EDCTN%STRG,0.0,0.00,0.00,0.00,11.60,10.80,2.51,1,1,1,7.78,15.07,7.69,15.40,0.51,4.42,3.91,125.03,TARP,DOE-2,31.99,3.99,1.68E-002,0.00,13,2,0,Yes
+ Zone Information, 1ST%FLOOR:1ST%ELEVATOR%MACHINE,0.0,0.00,0.00,0.00,21.19,9.01,2.47,1,1,1,19.49,22.89,7.24,10.77,0.51,4.42,3.91,25.13,TARP,DOE-2,6.43,0.00,0.00,0.00,6,1,0,Yes
+ Zone Information, 2ND%PLENVM:2ND%PLENVM%FALSE,0.0,0.00,0.00,0.00,3.82,-5.76,4.60,1,1,1,-20.49,28.69,-12.51,0.51,4.42,4.78,0.36,213.17,AdaptiveConvectionAlgorithm,DOE-2,597.96,37.80,37.80,0.00,58,3,0,Yes
+ Zone Information, 2ND%PLENVM:2ND%PLENVM%NORTH,0.0,0.00,0.00,0.00,6.71,2.84,4.60,1,1,1,3.99,9.47,-0.45,6.13,4.42,4.78,0.36,12.68,AdaptiveConvectionAlgorithm,DOE-2,4.25,2.91,2.91,0.00,17,2,0,Yes
+ Zone Information, 2ND%FLOOR%SOUTH:2ND%HVAC%SHAFT,0.0,0.00,0.00,0.00,-18.40,-0.21,6.96,1,1,1,-20.49,-16.41,-0.75,0.36,4.78,9.15,4.37,19.60,TARP,DOE-2,2.62E-002,26.55,26.55,0.00,14,4,0,Yes
+ Zone Information, 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NE,0.0,0.00,0.00,0.00,10.45,-0.82,6.96,1,1,1,-3.25,23.99,-6.68,6.13,4.78,9.15,4.37,644.92,TARP,DOE-2,204.64,78.05,50.38,21.51,34,21,0,Yes
+ Zone Information, 2ND%FLOOR%SOUTH:2ND%CONFERENCE%02,0.0,0.00,0.00,0.00,26.20,-2.45,6.96,1,1,1,23.92,28.69,-5.68,0.51,4.78,9.15,4.37,116.72,TARP,DOE-2,26.66,42.64,38.63,2.95,21,4,0,Yes
+ Zone Information, 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SW,0.0,0.00,0.00,0.00,-19.02,-10.14,6.96,1,1,1,-20.49,-16.41,-12.51,-6.63,4.78,9.15,4.37,284.75,TARP,DOE-2,24.00,43.53,29.69,11.03,4,7,0,Yes
+ Zone Information, 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SMW,0.0,0.00,0.00,0.00,-12.62,-10.37,6.96,1,1,1,-16.41,-8.82,-12.51,-6.64,4.78,9.15,4.37,192.62,TARP,DOE-2,44.52,33.14,14.92,14.14,3,9,0,Yes
+ Zone Information, 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SM,0.0,0.00,0.00,0.00,-6.04,-10.37,6.96,1,1,1,-8.82,-3.25,-12.51,-6.64,4.78,9.15,4.37,148.90,TARP,DOE-2,32.63,24.33,11.00,9.93,3,9,0,Yes
+ Zone Information, 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SE,0.0,0.00,0.00,0.00,-8.15E-002,-10.37,6.96,1,1,1,-3.25,3.09,-12.50,-6.65,4.78,9.15,4.37,169.34,TARP,DOE-2,37.06,27.69,12.49,11.54,3,9,0,Yes
+ Zone Information, 2ND%FLOOR%SOUTH:2ND%CONFERENCE%01,0.0,0.00,0.00,0.00,24.52,-8.85,6.96,1,1,1,19.40,28.69,-12.49,-5.68,4.78,9.15,4.37,245.57,TARP,DOE-2,56.22,70.29,35.72,28.51,9,15,0,Yes
+ Zone Information, 2ND%FLOOR%SOUTH:2ND%PHONE%BOOTH,0.0,0.00,0.00,0.00,25.20,-5.87,6.96,1,1,1,23.99,26.41,-6.68,-5.07,4.78,9.15,4.37,16.90,TARP,DOE-2,3.91,0.00,0.00,0.00,7,1,0,Yes
+ Zone Information, 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NMW,0.0,0.00,0.00,0.00,-12.64,-2.76,6.96,1,1,1,-16.41,-8.82,-6.64,-0.52,4.78,9.15,4.37,67.18,TARP,DOE-2,46.40,33.14,26.29,3.57,4,5,0,Yes
+ Zone Information, 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NME,0.0,0.00,0.00,0.00,-6.04,-2.78,6.96,1,1,1,-8.82,-3.25,-6.65,-0.52,4.78,9.15,4.37,45.43,TARP,DOE-2,34.12,24.33,14.49,7.25,3,7,0,Yes
+ Zone Information, 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%NW,0.0,0.00,0.00,0.00,-19.02,-3.12,6.96,1,1,1,-20.49,-16.41,-6.64,-0.75,4.78,9.15,4.37,206.01,TARP,DOE-2,24.03,25.69,21.70,2.94,4,3,0,Yes
+ Zone Information, 2ND%FLOOR%NORTH:2ND%LOBBY,0.0,0.00,0.00,0.00,20.70,4.60,6.61,1,1,1,9.47,29.69,-0.41,13.49,4.42,9.15,3.75,771.37,TARP,DOE-2,121.63,107.04,82.21,19.81,76,33,0,Yes
+ Zone Information, 2ND%FLOOR%NORTH:2ND%RESTROOMS,0.0,0.00,0.00,0.00,17.82,13.62,6.83,1,1,1,12.14,22.96,9.28,19.61,4.42,9.15,4.72,249.17,TARP,DOE-2,52.63,20.80,5.62E-002,0.00,18,8,0,Yes
+ Zone Information, 2ND%FLOOR%NORTH:2ND%CORRIDOR,0.0,0.00,0.00,0.00,15.24,9.39,6.77,1,1,1,7.57,22.13,6.13,14.06,4.42,9.15,4.57,157.93,TARP,DOE-2,34.86,5.93,5.93,0.00,40,8,0,Yes
+ Zone Information, 2ND%FLOOR%NORTH:2ND%SECURE%FILES,0.0,0.00,0.00,0.00,12.92,11.36,6.78,1,1,1,10.21,15.67,8.25,15.40,4.42,9.15,4.72,78.27,TARP,DOE-2,16.52,6.72,2.10E-002,0.00,10,2,0,Yes
+ Zone Information, 2ND%FLOOR%NORTH:2ND%CONFERENCE%03,0.0,0.00,0.00,0.00,5.40,8.69,6.71,1,1,1,2.06,7.57,6.13,12.10,4.42,9.15,4.21,107.87,TARP,DOE-2,25.57,43.07,37.60,4.11,22,5,0,Yes
+ Zone Information, 2ND%FLOOR%NORTH:2ND%WORK%ROOM,0.0,0.00,0.00,0.00,9.77,10.68,6.75,1,1,1,6.42,12.68,8.25,14.29,4.42,9.15,4.72,118.24,TARP,DOE-2,25.03,20.54,19.04,1.19,10,2,0,Yes
+ Zone Information, 3RD%FLOOR%SHAFT:3RD%HVAC%SHAFT,0.0,0.00,0.00,0.00,-18.47,-0.28,9.85,1,1,1,-20.15,-16.80,-0.59,2.22E-002,9.15,10.56,1.41,2.89,AdaptiveConvectionAlgorithm,DOE-2,1.59E-002,11.19,11.19,0.00,6,1,0,Yes
+ Zone Information, 3RD%FLOOR%LOWER:3RD%LOWER%LOBBY,0.0,0.00,0.00,0.00,20.79,4.41,10.98,1,1,1,9.44,29.68,-0.38,10.67,9.14,12.81,3.66,520.52,AdaptiveConvectionAlgorithm,DOE-2,48.77,191.26,62.80,52.71,24,55,0,Yes
+ Zone Information, 3RD%FLOOR%LOWER:3RD%LOWER%VESTIBULE,0.0,0.00,0.00,0.00,24.87,7.66,10.98,1,1,1,22.90,26.84,5.49,9.82,9.15,12.81,3.66,32.51,AdaptiveConvectionAlgorithm,DOE-2,8.88,22.18,4.80,13.32,9,15,0,Yes
+ Zone Information, 3RD%FLOOR%UPPER:3RD%UPPER%LOBBY,0.0,0.00,0.00,0.00,20.94,6.97,14.05,1,1,1,16.69,24.49,3.22,11.00,12.81,16.02,2.37,76.93,AdaptiveConvectionAlgorithm,DOE-2,2.35,54.00,15.48,53.89,8,44,0,Yes
+ Zone Information, 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME1,0.0,0.00,0.00,0.00,6.35,-10.37,6.96,1,1,1,3.09,9.61,-12.50,-6.66,4.78,9.15,4.37,173.97,TARP,DOE-2,38.02,28.46,12.84,11.91,3,9,0,Yes
+ Zone Information, 2ND%FLOOR%SOUTH:2ND%OPEN%OFFICE%SME,0.0,0.00,0.00,0.00,15.18,-10.27,6.96,1,1,1,9.61,19.40,-12.50,-6.67,4.78,9.15,4.37,425.54,TARP,DOE-2,57.03,42.79,19.63,18.20,4,12,0,Yes

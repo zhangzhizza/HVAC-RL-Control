@@ -115,10 +115,14 @@ class IdfParser(object):
 			if file_name in sch_file_obj:
 				file_name_st_idx = sch_file_obj.rfind(file_name);
 				full_path_st_idx = sch_file_obj.rfind(',', 0, file_name_st_idx);
-				sch_file_obj = sch_file_obj[0:full_path_st_idx] + ',\n' + file_dir + sch_file_obj[file_name_st_idx:];
+				sch_file_obj = sch_file_obj[0:full_path_st_idx] + ',\n' + file_dir + '/' + sch_file_obj[file_name_st_idx:];
 				sch_file_contents[content_i] = sch_file_obj;
 			content_i += 1;
 		self._idf_dict['Schedule:File'] = sch_file_contents;
+
+	def is_contain_filesch(self):
+		result = 'Schedule:File' in self._idf_dict
+		return (result);
 
 	def add_objects(self, dict_to_add):
 		for key in dict_to_add:
@@ -138,6 +142,8 @@ class IdfParser(object):
                                         'No,!- Do Plant Sizing Calculation\n' +
     									'No,!- Run Simulation for Sizing Periods\n' +
     									'No;!- Run Simulation for Weather File Run Periods\n'];
+		if 'Schedule:File' in self._idf_dict:
+			self._idf_dict.pop('Schedule:File', None);
 
 	def run_eplus_minimum(self, out_dir):
 		eplus_path_this = EPLUS_PATH[self._version];

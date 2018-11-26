@@ -1,0 +1,17 @@
+ ************* IDF Context for following error/warning message:
+ ************* Note -- lines truncated at 300 characters, if necessary...
+ *************  48526 EnergyManagementSystem:Program,
+ ************* indicated Name=StochasticStpt
+ ************* Only last 10 lines before error line shown.....
+ *************  48576             SET adj_2ndFloor2ndOpenNMW = -(adjScl * Pmv_2ndFloor2ndOpenNMW) + ((@RandomNormal 5 0.5 4.0 6.0)-5), 
+ *************  48577         ENDIF,
+ *************  48578         IF (@Abs Pmv_2ndFloor2ndOpenNME) > 0.5, 
+ *************  48579             SET adj_2ndFloor2ndOpenNME = -(adjScl * Pmv_2ndFloor2ndOpenNME) + ((@RandomNormal 5 0.5 4.0 6.0)-5),
+ *************  48580         ENDIF,
+ *************  48581         IF (@Abs Pmv_2ndFloor2ndOpenNW) > 0.5, 
+ *************  48582             SET adj_2ndFloor2ndOpenNW = -(adjScl * Pmv_2ndFloor2ndOpenNW) + ((@RandomNormal 5 0.5 4.0 6.0)-5),
+ *************  48583         ENDIF,
+ *************  48584         IF (@Abs Pmv_2ndFloor2ndOpenSME1) > 0.5, 
+ *************  48585             SET adj_2ndFloor2ndOpenSME1 = -(adjScl * Pmv_2ndFloor2ndOpenSME1) + ((@RandomNormal 5 0.5 4.0 6.0)-5),
+ ** Warning ** IP: IDF line~48585 Alpha Argument length exceeds maximum, will be truncated=            SET adj_2ndFloor2ndOpenSME1 = -(adjScl * Pmv_2ndFloor2ndOpenSME1) + ((@RandomNormal 5 0.5 4.0 6.0)-5
+ **   ~~~   ** Will be processed as Alpha=SET ADJ_2NDFLOOR2NDOPENSME1 = -(ADJSCL * PMV_2NDFLOOR2NDOPENSME1) + ((@RANDOMNORMAL 5 0.5 4.0 6.0)-5)
