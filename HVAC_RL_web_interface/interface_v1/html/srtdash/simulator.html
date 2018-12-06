@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{% static "/css/metisMenu.css" %}">
     <link rel="stylesheet" href="{% static "/css/owl.carousel.min.css" %}">
     <link rel="stylesheet" href="{% static "/css/slicknav.min.css" %}">
+    <link rel="stylesheet" href="{% static "/css/custom.css" %}">
     <!-- amchart css -->
     <link rel="stylesheet" href="{% static "/css/amcharts.export.css" %}">
     <!-- others css -->
@@ -43,6 +44,14 @@
     <script src="{% static "/js/jquery.slicknav.min.js" %}"></script>
     
     <script type="text/javascript">
+        function state_names_popup(){
+            var group_name = document.getElementById('id_title').value;
+            var idf_name = document.getElementById('id_file_idf').value.split('\\').splice(-1)[0]
+            open_url = "simulator_eplus/get_state_names/?group_name="+group_name+"&idf_name="+idf_name;
+            var popwindow = window.open(open_url, 'State Names', "width=1000,height=1000")
+        }
+
+        var create_env_ready_flag = [false, false] // 1st for sch, 2nd for action
         function reset_all_button_status(){
             document.getElementById("idf_file_select_field").disabled = false;
             document.getElementById("sch_submit_btn").disabled = true;
@@ -51,19 +60,230 @@
             document.getElementById('action_submit_status').innerText = 'Not available';
             document.getElementById("schfile_select").innerHTML = '';
             document.getElementById("action_select").innerHTML = '';
+            document.getElementById("env_name_input").disabled = true;
+            document.getElementById("create_env_btn").disabled = true;
+            document.getElementById('create_env_status').innerText = 'Not available';
+            document.getElementById('show_state_btn').disabled = true;
+            document.getElementById('minmax_input_fm_field').disabled = true;
+            document.getElementById('minmax_input_status').innerText = 'Not available';
+
+            // Change the button colors
+            document.getElementById("idf_file_select_btn").classList.remove('btn-success')
+            document.getElementById("idf_file_select_btn").classList.add('btn-warning')
+            document.getElementById("sch_submit_btn").classList.remove('btn-success')
+            document.getElementById("sch_submit_btn").classList.remove('btn-warning')
+            document.getElementById("sch_submit_btn").classList.add('btn-dark')
+            document.getElementById("action_submit_btn").classList.remove('btn-success')
+            document.getElementById("action_submit_btn").classList.add('btn-warning')
+            document.getElementById("create_env_btn").classList.remove('btn-primary')
+            document.getElementById("create_env_btn").classList.add('btn-dark')
+            document.getElementById("minmax_input_btn").classList.remove('btn-success')
+            document.getElementById("minmax_input_btn").classList.remove('btn-danger')
+            document.getElementById("minmax_input_btn").classList.add('btn-warning')
+
+            // Change the placeholder of the minmax inputs
+            var minmax_plc_org = document.getElementById('id_maxm').placeholder;
+            var tgt_idx = minmax_plc_org.indexOf(' (');
+            if (tgt_idx > 0){
+                document.getElementById('id_maxm').placeholder = minmax_plc_org.slice(0, tgt_idx)
+                document.getElementById('id_minm').placeholder = minmax_plc_org.slice(0, tgt_idx)
+            }
+            // Clear minmax inputs values
+            document.getElementById('id_maxm').value = ''
+            document.getElementById('id_minm').value = ''
+            
+
+            // Reset the flag
+            create_env_ready_flag = [false, false];
         }
 
         function afterupload_button_status(){
             document.getElementById("idf_file_select_field").disabled = true;
         }
 
+        function afterupload_success_status(){
+            // Change the file upload button color and status bar info
+            document.getElementById("idf_file_select_btn").classList.remove('btn-warning')
+            document.getElementById("idf_file_select_btn").classList.add('btn-success')
+            document.getElementById('idf_submit_status').innerText = "Uploaded";
+            // Get infos
+            var group_name = document.getElementById('id_title').value;
+            var idf_name = document.getElementById('id_file_idf').value.split('\\').splice(-1)[0]
+            // Set the sch selection
+            sch_request_url = "simulator_eplus/get_fileschedules/?group_name="+group_name+"&idf_name="+idf_name;
+            $.get(sch_request_url, function(data, status){
+              if (data != 'None'){
+                  document.getElementById("schfile_select").innerHTML = data;
+                  var sch_submit_btn = document.getElementById("sch_submit_btn");
+                  sch_submit_btn.disabled = false;
+                  document.getElementById("sch_submit_status").innerText = 'Ready';
+                  // Change the button color
+                  sch_submit_btn.classList.remove('btn-dark');
+                  sch_submit_btn.classList.add('btn-warning');
+              }else{
+                // No need to set the schedule file
+                create_env_ready_flag[0] = true;
+              }
+            })
+            // Set the action selection
+            document.getElementById('action_submit_btn').disabled = false;
+            document.getElementById('action_submit_status').innerText = 'Ready';
+            action_request_url = "simulator_eplus/get_aval_schedules/?group_name="+group_name+"&idf_name="+idf_name;
+            $.get(action_request_url, function(data, status){
+              document.getElementById("action_select").innerHTML = data;
+            })
+            // Update the weathers
+            $.get('simulator_eplus/get_weathers/', function(data, status){
+              document.getElementById("wea_select").innerHTML = data;
+            })
+
+        }
+
+        function aftersch_success_status(){
+            document.getElementById('sch_submit_status').innerText = 'Confirmed';
+            var sch_submit_btn = document.getElementById("sch_submit_btn");
+            sch_submit_btn.disabled = true;
+            // Change the button color
+            sch_submit_btn.classList.remove('btn-warning');
+            sch_submit_btn.classList.add('btn-success');
+            // Change the ready flag
+            create_env_ready_flag[0] = true;
+            
+        }
+
+        function enable_minmax_input(){
+            document.getElementById('show_state_btn').disabled = false;
+            document.getElementById('minmax_input_fm_field').disabled = false;
+            document.getElementById('minmax_input_status').innerText = 'Ready';
+            // Get the number of inputs needed
+            var group_name = document.getElementById('id_title').value;
+            var idf_name = document.getElementById('id_file_idf').value.split('\\').splice(-1)[0]
+            open_url = "simulator_eplus/get_state_names/?group_name="+group_name+"&idf_name="+idf_name;
+            $.get(open_url, function(data, status){
+                var input_number = data['state_names'].length;
+                document.getElementById('id_maxm').placeholder += ' (' + input_number + ' numbers are needed)';
+                document.getElementById('id_minm').placeholder += ' (' + input_number + ' numbers are needed)';
+
+            })
+
+        }
+
+        function afteraction_success_status(){
+            document.getElementById('action_submit_status').innerText = 'Confirmed';
+            var action_submit_btn = document.getElementById('action_submit_btn');
+            action_submit_btn.disabled = true;
+            // Change button color
+            action_submit_btn.classList.remove('btn-warning');
+            action_submit_btn.classList.add('btn-success');
+            // Change flag
+            create_env_ready_flag[1] = true;
+            // Enable state limit
+            enable_minmax_input();
+        }
+
+        function afterminmax_success_status(){
+            document.getElementById('minmax_input_status').innerText = 'Submitted';
+            document.getElementById('minmax_input_fm_field').disabled = true;
+            var minmax_submit_btn = document.getElementById('minmax_input_btn');
+            // Change button color
+            minmax_submit_btn.classList.remove('btn-danger');
+            minmax_submit_btn.classList.remove('btn-warning');
+            minmax_submit_btn.classList.add('btn-success');
+            // Enable create env
+            enable_create_env();
+        }
+
+        function afterminmax_fail_status(msg){
+            document.getElementById('minmax_input_status').innerText = msg;
+            // Change button color
+            var minmax_submit_btn = document.getElementById('minmax_input_btn');
+            minmax_submit_btn.classList.remove('btn-warning');
+            minmax_submit_btn.classList.add('btn-danger');
+        }
+
+        function aftercreate_success_status(){
+            document.getElementById('create_env_status').innerText = 'Created';
+        }
+
+        function aftercreate_fail_status(){
+            document.getElementById('create_env_status').innerText = 'Environment name must be unique!'
+        }
+
+        function enable_create_env(){
+            if (create_env_ready_flag[0] == true && create_env_ready_flag[1] == true){
+                document.getElementById("env_name_input").disabled = false;
+                var create_env_btn = document.getElementById("create_env_btn");
+                create_env_btn.disabled = false;
+                // Change the button color
+                create_env_btn.classList.remove('btn-dark')
+                create_env_btn.classList.add('btn-primary');
+                // Change the status bar
+                document.getElementById('create_env_status').innerText = 'Ready';
+            }
+        }
+
+        function create_env_btn_clicked(){
+            var group_name = document.getElementById('id_title').value;
+            var idf_name = document.getElementById('id_file_idf').value.split('\\').splice(-1)[0];
+            var wea_opts = document.getElementById('id_EPW');
+            var env_name = document.getElementById('env_name_input').value;
+            var wea_name = wea_opts.options[wea_opts.selectedIndex].value;
+            var request_url = 'simulator_eplus/create_env/?group_name='+group_name+'&idf_name='+idf_name+'&epw_name='+wea_name+'&env_name='+env_name;
+            $.get(request_url, function(data, status){
+                if (data==0){
+                    aftercreate_success_status();
+                }else if (data==1){
+                    aftercreate_fail_status();
+                }
+            })
+        }
+
+        function get_all_envs(){
+            $.get('simulator_eplus/get_all_envs/', function(data, status){
+                document.getElementById('env_overview_div').innerHTML = data;
+            })
+            
+        }
+
         window.onload = function() {
             reset_all_button_status();
+            get_all_envs();
             // Get the epws
             $.get('simulator_eplus/get_weathers/', function(data, status){
                 document.getElementById("wea_select").innerHTML = data;
             })
 
+            $("#minmax_input_fm").submit(function (event) {
+              document.getElementById('minmax_input_status').innerText = "Processing...";
+              event.preventDefault();
+              var group_name = document.getElementById('id_title').value;
+              var idf_name = document.getElementById('id_file_idf').value.split('\\').splice(-1)[0]
+              //grab all form data  
+              var formData = $(this);
+
+              $.ajax({
+                  url: 'simulator_eplus/generate_minmax_limits/?group_name='+group_name+'&idf_name='+idf_name,
+                  type: 'POST',
+                  data: formData.serialize(),
+                  success: function (data, status) {
+                    if (data == 0){
+                        afterminmax_success_status();
+                    }else if(data == 1){
+                        afterminmax_fail_status('Inputs contain non-number elements!');
+                    }else if(data == 2){
+                        afterminmax_fail_status('Inputs are too few or too many!');
+                    }else if(data == 3){
+                        afterminmax_fail_status('Max limits must be larger than the Min limits!');
+                    }
+                      
+                  },
+                  error: function () {
+                      alert("error in ajax form submission");
+                  }
+              });
+
+      return false;
+  });
 
             $("#sch_select_fm").submit(function (event) {
               document.getElementById('sch_submit_status').innerText = "Processing...";
@@ -79,8 +299,7 @@
                   type: 'POST',
                   data: formData.serialize(),
                   success: function (data, status) {
-                      document.getElementById('sch_submit_status').innerText = 'Confirmed';
-                      document.getElementById('sch_submit_btn').disabled = true;
+                      aftersch_success_status();
                   },
                   error: function () {
                       alert("error in ajax form submission");
@@ -104,14 +323,12 @@
                   type: 'POST',
                   data: formData.serialize(),
                   success: function (data, status) {
-                      document.getElementById('action_submit_status').innerText = 'Confirmed';
-                      document.getElementById('action_submit_btn').disabled = true;
+                      afteraction_success_status();
                   },
                   error: function () {
                       alert("error in ajax form submission");
                   }
               });
-
       return false;
   });
 
@@ -132,27 +349,7 @@
                   contentType: false,
                   success: function (data, status) {
                       document.getElementById('dxf_viewer').src = data;
-                      document.getElementById('idf_submit_status').innerText = "Ready";
-                      // Set the sch selection
-                      sch_request_url = "simulator_eplus/get_fileschedules/?group_name="+group_name+"&idf_name="+idf_name;
-                      $.get(sch_request_url, function(data, status){
-                        if (data != 'None'){
-                            document.getElementById("schfile_select").innerHTML = data;
-                            document.getElementById("sch_submit_btn").disabled = false;
-                            document.getElementById("sch_submit_status").innerText = 'Ready';
-                        }
-                      })
-                      // Set the action selection
-                      document.getElementById('action_submit_btn').disabled = false;
-                      document.getElementById('action_submit_status').innerText = 'Ready';
-                      action_request_url = "simulator_eplus/get_aval_schedules/?group_name="+group_name+"&idf_name="+idf_name;
-                      $.get(action_request_url, function(data, status){
-                        document.getElementById("action_select").innerHTML = data;
-                      })
-                      // Update the weathers
-                      $.get('simulator_eplus/get_weathers/', function(data, status){
-                        document.getElementById("wea_select").innerHTML = data;
-                        })
+                      afterupload_success_status()
 
                   },
                   error: function () {
@@ -399,46 +596,49 @@
                                 <div class="card-body">
                                     <div class="d-sm-flex justify-content-between align-items-center">
                                     <h4 class="header-title mb-0">Upload Files</h4></div>
-
                                     <form id="idf_file_select" action="simulator_eplus/upload_idf" enctype="multipart/form-data" method=POST>
+                                        <div class="form-group">
                                         <fieldset id='idf_file_select_field'>
                                         {% csrf_token %}
                                         {% for field in form  %}
                                         <h5 class="header-title mb-0">{{ field.label_tag }} {{ field }}</h5>  
                                         {% endfor %}
-                                        <input type="submit" value="Upload Files"><p id="idf_submit_status">Ready</p>
+                                        <input id="idf_file_select_btn" class="btn btn-warning btn-sm btn-block" type="submit" value="Upload Files"><p id="idf_submit_status">Ready</p>
                                         </fieldset>
+                                        </div>
                                     </form>
+                                    
 
-                                    <div class="d-sm-flex justify-content-between align-items-center">
-                                    <br />&nbsp</div>
+                                    
+                                    <hr>
                                     <div class="d-sm-flex justify-content-between align-items-center">
                                     <h4 class="header-title mb-0">Select Schedule File</h4></div>
                                     <form id="sch_select_fm" action="simulator_eplus/get_fileschedules" method=POST>
                                         {% csrf_token %}
-                                        <div id="schfile_select" style="overflow: auto; max-height: 200px">
+                                        <div id="schfile_select">
                                         
                                         {{ sch_select }}
                                         </div>
-                                        <input id="sch_submit_btn" disabled="true" type="submit" value="Confirm Schedule"><p id="sch_submit_status">Not available</p>
+                                        <input id="sch_submit_btn" class="btn btn-dark btn-sm btn-block" disabled="true" type="submit" value="Confirm Schedule"><p id="sch_submit_status">Not available</p>
                                     </form>
 
-                                    <div class="d-sm-flex justify-content-between align-items-center">
-                                    <br />&nbsp</div>
+                                    <hr>
                                     <div class="d-sm-flex justify-content-between align-items-center">
                                     <h4 class="header-title mb-0">Select Weather File</h4></div>
                                     <form id="wea_select_fm" action="simulator_eplus/get_weathers" method=POST>
                                         {% csrf_token %}
-                                        <div id="wea_select" style="overflow: auto; max-height: 200px">
+                                        <div id="wea_select">
                                         
                                         {{ sch_select }}
                                         </div>
                                     </form>
 
+                                    <!-- Clear all forms-->
+                                    <hr>
                                     <div class="d-sm-flex justify-content-between align-items-center">
-                                    <br />&nbsp</div>
-                                    <div class="d-sm-flex justify-content-between align-items-center">
-                                    <button id="clear_all_forms_btn" onclick="reset_all_button_status()">Clear All Forms</button></div>
+                                    <button class="btn btn-danger btn-sm btn-block" id="clear_all_forms_btn" onclick="reset_all_button_status()">Clear All Forms</button></div>
+
+                                    
                                 </div>
                             </div>
                         </div>
@@ -449,12 +649,35 @@
                                     <h4 class="header-title mb-0">Select Action</h4></div>
                                     <form id="action_select_fm" action="simulator_eplus/get_aval_schedules/" method=POST>
                                         {% csrf_token %}
-                                        <div id="action_select" style="overflow: auto; max-height: 200px">
-                                        
+                                        <div id="action_select" style="overflow: auto; max-height: 150px">
                                         {{ action_select }}
                                         </div>
-                                        <input id="action_submit_btn" disabled="true" type="submit" value="Confirm Actions"><p id="action_submit_status">Not available</p>
+                                        <input class="btn btn-warning btn-sm btn-block" id="action_submit_btn" disabled="true" type="submit" value="Confirm Actions"><p id="action_submit_status">Not available</p>
                                     </form>
+                                    <!-- Min max limits-->
+                                    <hr>
+                                    <div class="d-sm-flex justify-content-between align-items-center">
+                                    <h4 class="header-title mb-0">State Min-max Limits</h4>
+                                    <button id="show_state_btn" class="btn btn-default" type="button" onclick="state_names_popup()" disabled="true">Show the State</button>
+                                    </div>
+                                    <form id="minmax_input_fm" action="simulator_eplus/generate_minmax_limits/" method=POST>
+                                        <fieldset id='minmax_input_fm_field' disabled="true">
+                                        {% csrf_token %}
+                                        <div id="minmax_input">
+                                        {{ minmax_limit_form }}
+                                        </div>
+                                        <input class="btn btn-warning btn-sm btn-block" id="minmax_input_btn"type="submit" value="Confirm Min-max Limits"><p id="minmax_input_status">Not available</p>
+                                        </fieldset>
+                                    </form>
+
+
+                                    <!-- Create env button-->
+                                    <hr>
+                                    <div class="d-sm-flex justify-content-between align-items-center">
+                                    <input class="form-control" type="text" id="env_name_input" disabled="true" placeholder="Environment name"></div>
+                                    <button class="btn btn-dark btn-lg btn-block" id="create_env_btn" type="submit" disabled="true" onclick="create_env_btn_clicked()">Create the Environment</button><p id="create_env_status">Not available</p>
+
+                                    
                                 </div>
                             </div>
                         </div>
@@ -466,10 +689,27 @@
                         <div class="card">
                             <div class="card-body">
                                     <div class="d-sm-flex justify-content-between align-items-center">
-                                    <h4 class="header-title mb-0">Simulator Overview</h4></div>
+                                    <h4 class="header-title mb-0">Current Simulator 3D Geometry</h4></div>
                                     <div class="resp-container" style="height: 400px;">
                                         <iframe class="resp-iframe" id="dxf_viewer" src="" width="700" height="450"></iframe>
                                     </div>
+                                
+                            
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                    <div class="d-sm-flex justify-content-between align-items-center">
+                                    <h4 class="header-title mb-0">Envrionments Overview</h4></div>
+                                    <div class="market-status-table mt-4">
+                                    <div class="table-responsive" id="env_overview_div" style="height: 400px;">
+
+                                    </div>
+                                </div>
                                 
                             
 

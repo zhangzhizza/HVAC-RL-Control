@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.11.26 21:11,IDD_Version 8.3.0
+Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.11.28 19:50,IDD_Version 8.3.0
    ** Warning ** GetFluidPropertiesData: FluidProperties:Superheated Name=R22
    **   ~~~   ** Fluid Property Type="SPECIFICHEAT" is not valid.
    **   ~~~   ** Valid choices are "ENTHALPY", "DENSITY".
@@ -483,4 +483,4 @@ Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.11.26 21:11,IDD_V
    *************
    ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
    ************* EnergyPlus Sizing Error Summary. During Sizing: 91 Warning; 27 Severe Errors.
-   ************* EnergyPlus Terminated--Fatal Error Detected. 121 Warning; 29 Severe Errors; Elapsed Time=00hr 00min  1.15sec
+   ************* EnergyPlus Terminated--Fatal Error Detected. 121 Warning; 29 Severe Errors; Elapsed Time=00hr 00min  1.42sec

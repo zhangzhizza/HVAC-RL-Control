@@ -298,3 +298,11 @@ Output:Variable,
     Zone Thermostat Cooling Setpoint Temperature, !- Variable Name
     timestep; !- Reporting
 
+
+ExternalInterface,
+PtolemyServer;!- Name of External Interface
+
+ExternalInterface:Schedule,
+ACTIVITY SCHEDULE,!- Name
+Any Number,!- Schedule Type Limits Name
+126.0;!- Initial Value
