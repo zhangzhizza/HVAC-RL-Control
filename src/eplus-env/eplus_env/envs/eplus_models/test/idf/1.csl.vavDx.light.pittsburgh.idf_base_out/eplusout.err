@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.11.19 09:43,IDD_Version 8.3.0
+Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.11.27 18:11,IDD_Version 8.3.0
    ** Warning ** "Do the design day simulations" and "Do the weather file simulation" are both set to "No".  No simulations will be performed, and most input will not be read.
    ** Warning ** ProcessScheduleInput: Schedule:Compact="HVACTEMPLATE-ALWAYS 4", Schedule Type Limits Name="HVACTEMPLATE ANY NUMBER" not found -- will not be validated
    ** Warning ** ProcessScheduleInput: Schedule:Compact="HYBRID CONTROL MODE SCHEDULE", Schedule Type Limits Name="HYBRID CONTROL MODE TYPE" not found -- will not be validated
@@ -533,4 +533,4 @@ Program Version,EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2018.11.19 09:43,IDD_V
    *************
    ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
    ************* EnergyPlus Sizing Error Summary. During Sizing: 109 Warning; 13 Severe Errors.
-   ************* EnergyPlus Terminated--Fatal Error Detected. 143 Warning; 16 Severe Errors; Elapsed Time=00hr 00min 32.34sec
+   ************* EnergyPlus Terminated--Fatal Error Detected. 143 Warning; 16 Severe Errors; Elapsed Time=00hr 00min 27.16sec

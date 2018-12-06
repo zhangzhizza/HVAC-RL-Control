@@ -5,12 +5,21 @@ from .forms import *
 
 import requests
 import pandas as pd
+import numpy as np
 import os, shutil, subprocess, json, socket, ast
 import eplus_env_util.idf_parser as idf_parser
+import eplus_env_util.cfg_creator as cfg_creator
+import eplus_env_util.eplus_env_creator as eplus_env_creator;
 
 this_dir_path = os.path.dirname(os.path.realpath(__file__))
+GYM_INIT_PATH = this_dir_path + '/../../src/eplus-env/eplus_env/__init__.py';
 eplus_model_path = this_dir_path + '/../../src/eplus-env/eplus_env/envs/eplus_models/';
 available_computers = ["127.0.0.1:7777"]
+
+"""
+When the idf_file is uploaded, it is firstly copied to idf_file.local, and then an add file
+idf_file.add is generated, and the cfg file idf_file.cfg is generated.
+"""
 
 # Create your views here.
 def index(request):
@@ -34,14 +43,46 @@ def test(request):
 	action_select = SelectActionForm(options = (('1','e'),('1','2')))
 	return HttpResponse(action_select);
 
+def get_all_envs(request):
+	# List all available envs
+	all_envs = [];
+	with open(GYM_INIT_PATH, 'r') as init_file:
+		init_lines = init_file.readlines();
+	line_i = 0;
+	while line_i < len(init_lines):
+		init_line_i = init_lines[line_i];
+		if ('register(' in init_line_i):
+			this_env = [];
+			# Env id
+			env_id = init_lines[line_i + 1].split(',')[0].split('id=')[-1][1:-1];
+			this_env.append(env_id)
+			# Epw
+			epw = init_lines[line_i + 4].split(',')[0].split('/')[-1][0:-1];
+			this_env.append(epw);
+			# idf
+			idf = init_lines[line_i + 7].split(',')[0].split('/')[-1][0:-1];
+			this_env.append(idf)
+			# Min-max limit
+			minmax = init_lines[line_i + 9][0:-1].split(':')[-1];
+			this_env.append(minmax);
+			all_envs.append(this_env);
+			# Increment index
+			line_i += 17;
+		else:
+			line_i += 1;
+	all_env_pd = pd.DataFrame(all_envs);
+	all_env_pd.columns = ['ID', 'Weather', 'IDF', 'Min-max Limits']
+	return HttpResponse(all_env_pd.to_html());
+
 def simulator_eplus(request):
 	form = UploadFileForm()
 	action_select = ''#SelectActionForm(options = [['','']])
 	sch_select = ''#SelectSchForm(options = [['','']])
+	minmax_limit_form = MinMaxLimitsForm();
 
 	return render(request, 'interface_v1/html/srtdash/simulator.html', 
 		{'form': form, 'action_select':action_select, 
-		 'sch_select': sch_select});
+		 'sch_select': sch_select, 'minmax_limit_form': minmax_limit_form});
 
 def simulator_eplus_idf_upload(request):
 	if request.method == 'POST':
@@ -72,16 +113,13 @@ def generate_idf_fileschedule_names(request):
 	group_name = request.GET.get('group_name');
 	idf_name = request.GET.get('idf_name');
 	env_path = eplus_model_path + group_name;
-	env_idf_store_dir = (env_path + '/idf/' + idf_name);
+	env_idf_store_dir = (env_path + '/idf/' + idf_name + '.local');
 	org_idf_parser = idf_parser.IdfParser(env_idf_store_dir);
 	if request.method == 'POST':
 		query = dict(request.POST.lists())
 		selected_sch = query['SCHEDULE'];
-		print(env_path + '/schedules/' + selected_sch[0])
 		org_idf_parser.localize_schedule(env_path + '/schedules/' + selected_sch[0])
-		new_idf_name_add_idx = env_idf_store_dir.rfind('.idf');
-		new_idf_name = (env_idf_store_dir[:new_idf_name_add_idx] + '.env' 
-						+ env_idf_store_dir[new_idf_name_add_idx:]);
+		new_idf_name = env_idf_store_dir; 
 		org_idf_parser.write_idf(new_idf_name);
 		return HttpResponse('hELLO');
 	if (org_idf_parser.is_contain_filesch()):
@@ -94,6 +132,23 @@ def generate_idf_fileschedule_names(request):
 		filesch_select = None;
 	return HttpResponse(filesch_select)
 
+def get_state_names(request):
+	group_name = request.GET.get('group_name');
+	idf_name = request.GET.get('idf_name');
+	env_path = eplus_model_path + group_name;
+	add_idf_store_dir = (env_path + '/idf/' + idf_name + '.add');
+	add_idf_parser = idf_parser.IdfParser(add_idf_store_dir);
+	state_names = [];
+	for output_var in add_idf_parser.idf_dict['Output:Variable']:
+		output_var_list = output_var.split(',');
+		output_var_key = output_var_list[0].split('\n')[-1].strip();
+		output_var_name = output_var_list[1].split('\n')[-1].strip();
+		state_names.append(output_var_key + ':' + output_var_name);
+	to_response = {};
+	to_response['state_names'] = state_names;
+	return JsonResponse(to_response, json_dumps_params={'indent': 2});
+
+
 def get_fileschedule_names(group_name):
 	file_name_list = []
 	try:
@@ -102,14 +157,67 @@ def get_fileschedule_names(group_name):
 		file_name_list = [];
 	return file_name_list;
 	
+def create_env(request):
+	env_name = request.GET.get('env_name');
+	group_name = request.GET.get('group_name');
+	idf_name = request.GET.get('idf_name');
+	epw_name = request.GET.get('epw_name');
+	# Create the cfg file
+	create_cfg(group_name, idf_name);
+	# Prepare the creator arguments
+	idf_model_dir = eplus_model_path + group_name + '/idf/';
+	idf_model_path = idf_model_dir + idf_name + '.local';
+	cfg_path = idf_model_dir + idf_name + '.cfg';
+	add_path = idf_model_dir + idf_name + '.add';
+	epw_path = eplus_model_path + '/../weather/' + epw_name;
+	limit_path = idf_model_dir + idf_name + '.limit';
+	env_creator = eplus_env_creator.EplusEnvCreator();
+	create_env_rt = env_creator.create_env(idf_model_path, add_path, cfg_path, 
+							env_name, epw_path, limit_path);
+	return HttpResponse(create_env_rt);
 
+
+def create_cfg(group_name, idf_name):
+	add_idf_dir = eplus_model_path + group_name + '/idf/';
+	add_idf_path = add_idf_dir + idf_name + '.add';
+	out_cfg_path = add_idf_dir + idf_name + '.cfg';
+	cfg_creator_this = cfg_creator.CfgCreator();
+	cfg_creator_this.create_cfg(add_idf_path, out_cfg_path);
+
+def generate_minmax_limits(request):
+	group_name = request.GET.get('group_name');
+	idf_name = request.GET.get('idf_name');
+	env_path = eplus_model_path + group_name;
+	add_idf_store_dir = (env_path + '/idf/' + idf_name + '.add');
+	add_idf_parser = idf_parser.IdfParser(add_idf_store_dir);
+	state_num = len(add_idf_parser.idf_dict['Output:Variable'])
+	if request.method == 'POST':
+		query = dict(request.POST.lists())
+		minm = query['minm'][0].split(',');
+		maxm = query['maxm'][0].split(',');
+		# Convert all inputs to number
+		try:
+			minm = np.array([float(i) for i in minm]).reshape(1, -1);
+			maxm = np.array([float(i) for i in maxm]).reshape(1, -1);
+		except Exception as e:
+			return HttpResponse(1) # 1: non-number inputs
+		# Check input number 
+		if not(minm.shape[1] == state_num and maxm.shape[1] == state_num):
+			return HttpResponse(2) # 2: not enough or too many input numbers
+		# Check max is large than min
+		if np.any((maxm - minm) < 0):
+			return HttpResponse(3) # 3: max is smaller than min
+		# Passed all the checks
+		min_max = np.concatenate([minm, maxm]);
+		np.savetxt(env_path + '/idf/' + idf_name + '.limit', min_max, delimiter = ',');
+	return HttpResponse(0)
 
 def generate_idf_schedule_names(request):
 	# Get common variables
 	group_name = request.GET.get('group_name');
 	idf_name = request.GET.get('idf_name');
 	env_path = eplus_model_path + group_name + '/idf/';
-	env_idf_store_dir = (env_path + idf_name);
+	env_idf_store_dir = (env_path + idf_name + '.local');
 	org_idf_parser = idf_parser.IdfParser(env_idf_store_dir);
 	if request.method == 'POST':
 		query = dict(request.POST.lists())
@@ -158,7 +266,7 @@ def handle_uploaded_idf_file(group_name, file_idf, file_epw=None, file_sch=None)
 									   + group_name);
 	if not os.path.isdir(env_idf_store_dir):
 		os.makedirs(env_idf_store_dir + '/idf');
-	with open(env_idf_store_dir + '/idf/' + file_idf.name, 'wb') as idf_file:
+	with open(env_idf_store_dir + '/idf/' + file_idf.name + '.local', 'wb') as idf_file:
 		for chunk in file_idf.chunks():
 			idf_file.write(chunk);
 	org_idf_parser_for_dxf = idf_parser.IdfParser(env_idf_store_dir + '/idf/' + file_idf.name);
