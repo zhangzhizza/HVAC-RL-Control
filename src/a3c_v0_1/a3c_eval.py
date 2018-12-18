@@ -52,7 +52,8 @@ class A3CEval_multiagent:
         
 
     def evaluate(self, local_logger, reward_mode, action_space_name, 
-                 ppd_penalty_limit, STPT_LIMITS, raw_state_process_func):
+                 ppd_penalty_limit, STPT_LIMITS, raw_state_process_func, 
+                 is_add_time_to_state = True):
         """
         This method do the evaluation for the trained agent. 
 
@@ -85,7 +86,7 @@ class A3CEval_multiagent:
             ob_this_prcd_agent_i = process_raw_state_cmbd(ob_this_raw_agent_i, [time_this], 
                                                         self._env_st_yr, self._env_st_mn, 
                                                         self._env_st_dy, self._env_st_wd, 
-                                                        self._pcd_state_limits); # 1-D list
+                                                        self._pcd_state_limits, is_add_time_to_state); # 1-D list
             histProcessor_i = self._histProcessor_list[agent_i]; 
             histProcessor_i.reset();
             ob_this_hist_prcd_agent_i = histProcessor_i.process_state_for_network(ob_this_prcd_agent_i) # 2-D array
@@ -111,7 +112,7 @@ class A3CEval_multiagent:
             # Process the state and normalize it
             ob_next_raw_list = [raw_state_process_func(ob_next_raw_agent_i) for ob_next_raw_agent_i in ob_next_raw_list];
             ob_next_prcd_list = [process_raw_state_cmbd(ob_next_raw_agent_i, [time_next], self._env_st_yr, self._env_st_mn, 
-                                                        self._env_st_dy, self._env_st_wd, self._pcd_state_limits) \
+                                                        self._env_st_dy, self._env_st_wd, self._pcd_state_limits, is_add_time_to_state) \
                                 for ob_next_raw_agent_i in ob_next_raw_list];
             # Get the reward
             reward_next_list = [];
@@ -140,7 +141,7 @@ class A3CEval_multiagent:
                     ob_this_prcd_agent_i = process_raw_state_cmbd(ob_this_raw_agent_i, [time_this], 
                                                         self._env_st_yr, self._env_st_mn, 
                                                         self._env_st_dy, self._env_st_wd, 
-                                                        self._pcd_state_limits); # 1-D list
+                                                        self._pcd_state_limits, is_add_time_to_state); # 1-D list
                     histProcessor_i = self._histProcessor_list[agent_i]; 
                     histProcessor_i.reset();
                     ob_this_hist_prcd_agent_i = histProcessor_i.process_state_for_network(ob_this_prcd_agent_i) # 2-D array
@@ -252,7 +253,7 @@ class A3CEval:
         
 
     def evaluate(self, local_logger, action_space_name, reward_func, rewardArgs, metric_func, 
-                action_func, action_limits, raw_state_process_func, debug_log_prob):
+                action_func, action_limits, raw_state_process_func, debug_log_prob, is_add_time_to_state = True):
         """
         This method do the evaluation for the trained agent. 
 
@@ -282,7 +283,7 @@ class A3CEval:
         ob_this_prcd = process_raw_state_cmbd(ob_this_raw, [time_this], 
                                               self._env_st_yr, self._env_st_mn, 
                                               self._env_st_dy, self._env_st_wd, 
-                                              self._pcd_state_limits); # 1-D list
+                                              self._pcd_state_limits, is_add_time_to_state); # 1-D list
         # Get the history stacked state
         self._histProcessor.reset();
         ob_this_hist_prcd = self._histProcessor.\
@@ -340,7 +341,7 @@ class A3CEval:
             ob_next_prcd = process_raw_state_cmbd(ob_next_raw, [time_next], 
                                               self._env_st_yr, self._env_st_mn, 
                                               self._env_st_dy, self._env_st_wd, 
-                                              self._pcd_state_limits); # 1-D list
+                                              self._pcd_state_limits, is_add_time_to_state); # 1-D list
             # Get the reward
             reward_next = reward_func(ob_next_prcd, self._e_weight, self._p_weight, *rewardArgs);
             this_ep_energy, this_ep_comfort = metric_func(ob_next_raw, this_ep_energy, this_ep_comfort);
@@ -370,7 +371,7 @@ class A3CEval:
                     ob_this_prcd = process_raw_state_cmbd(ob_this_raw, [time_this], 
                                               self._env_st_yr, self._env_st_mn, 
                                               self._env_st_dy, self._env_st_wd, 
-                                              self._pcd_state_limits); # 1-D list
+                                              self._pcd_state_limits, is_add_time_to_state); # 1-D list
                     # Get the history stacked state
                     self._histProcessor.reset();
                     ob_this_hist_prcd = self._histProcessor.\

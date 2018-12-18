@@ -12,9 +12,9 @@ Last update: Aug 28th, 2017
 
 """
 from main_args import *
-from a3c_v0_1.reward_funcs import ppd_energy_reward_smlRefBld     
-from a3c_v0_1.action_funcs import iat_stpt_smlRefBld
-from a3c_v0_1.action_limits import act_limits_smlRefBld   
+from a3c_v0_1.customized.reward_funcs import ppd_energy_reward_smlRefBld     
+from a3c_v0_1.customized.action_funcs import iat_stpt_smlRefBld
+from a3c_v0_1.customized.action_limits import act_limits_smlRefBld   
 
 def main():
     # Common args

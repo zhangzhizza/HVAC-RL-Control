@@ -1,5 +1,6 @@
 import random
 import datetime
+import copy
 import numpy as np
 
 from a3c_v0_1.state_index import *
@@ -80,7 +81,7 @@ def process_raw_state_2(state_prcd_1, min_max_limits):
     return std_state.tolist()
     
 def process_raw_state_cmbd(raw_state, simTime, start_year, start_mon, 
-                          start_date, start_day, min_max_limits):
+                          start_date, start_day, min_max_limits, is_add_time_to_state):
     """
     Process the raw state by calling process_raw_state_1 and process_raw_state_2
     in order.
@@ -112,8 +113,11 @@ def process_raw_state_cmbd(raw_state, simTime, start_year, start_mon,
         State feature order:
         
     """
-    state_after_1 = process_raw_state_1(simTime, raw_state, start_year, start_mon, 
-                                        start_date, start_day);
+    if is_add_time_to_state:
+        state_after_1 = process_raw_state_1(simTime, raw_state, start_year, start_mon, 
+                                            start_date, start_day);
+    else:
+        state_after_1 = copy.deepcopy(raw_state);
     state_after_2 = process_raw_state_2(state_after_1, min_max_limits)
     
     return state_after_2;
