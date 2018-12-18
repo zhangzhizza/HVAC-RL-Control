@@ -282,20 +282,6 @@ Model5_Cool_v1_limits = [(17.0, 38.0), # OA
 	               ( 18.0,28.0),  # IATSSP
 	               ( 0.0, 120000.0), # ENERGY
 	               ]
-Part1_pit_light_v1 = [(8.0, 30.0), # OA
-                   ( 0.0, 100.0), # RH
-	               ( 0.0, 544.0), # DifS
-	               ( 0.0, 880),  # DirS 
-	               ( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),  # IAT
-	               ( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),  # IAT
-	               ( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),  # IAT
-	               ( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),  # IAT
-	               ( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),  # IATSSP
-	               ( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),  # IATSSP
-	               ( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),  # IATSSP
-	               ( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),( 18.0,28.0),  # IATSSP
-	               ( 0.0, 160000.0), # ENERGY
-	               ]
 
 Part1_pit_light_v2 = [(8.0, 30.0), # OA
                    ( 0.0, 100.0), # RH
@@ -466,30 +452,7 @@ Part1_pit_light_v12 = [(21.0, 33.0), # OA
 
 fiveZ_tmy3Weather_v1 = [];
 
-min_max_limits_dict = {'Part1-pit-light-v1': Part1_pit_light_v1,
-					   'Part1-pit-light-test-v1': Part1_pit_light_v1,
-					   'Part1-pit-light-v2': Part1_pit_light_v2,
-					   'Part1-pit-light-test-v2': Part1_pit_light_v2,
-					   'Part1-pit-light-v3': Part1_pit_light_v3,
-					   'Part1-pit-light-test-v3': Part1_pit_light_v3,
-					   'Part1-pit-light-v4': Part1_pit_light_v4,
-					   'Part1-pit-light-test-v4': Part1_pit_light_v4,
-					   'Part1-pit-light-v5': Part1_pit_light_v5,
-					   'Part1-pit-light-test-v5': Part1_pit_light_v5,
-					   'Part1-pit-light-v6': Part1_pit_light_v6,
-					   'Part1-pit-light-test-v6': Part1_pit_light_v6,
-					   'Part1-pit-light-v7': Part1_pit_light_v7,
-					   'Part1-pit-light-test-v7': Part1_pit_light_v7,
-					   'Part1-pit-light-v8': Part1_pit_light_v8,
-					   'Part1-pit-light-test-v8': Part1_pit_light_v8,
-					   'Part1-pit-light-v9': Part1_pit_light_v9,
-					   'Part1-pit-light-test-v9': Part1_pit_light_v9,
-					   'Part1-pit-light-v10': Part1_pit_light_v10,
-					   'Part1-pit-light-test-v10': Part1_pit_light_v10,
-					   'Part1-pit-light-v11': Part1_pit_light_v11,
-					   'Part1-pit-light-test-v11': Part1_pit_light_v11,
-					   'Part1-pit-light-v12': Part1_pit_light_v12,
-					   'Part1-pit-light-test-v12': Part1_pit_light_v12,
+min_max_limits_dict = {
 					   'IW-tmy3Weather-v9601': iw_v9601_limits,
 					   'IW-realWeather-v9601': iw_v9601_limits,
 					   'IW-tmy3Weather-v9602': iw_v9602_limits,

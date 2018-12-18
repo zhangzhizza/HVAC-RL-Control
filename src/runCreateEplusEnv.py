@@ -15,6 +15,7 @@ def main():
     parser.add_argument('--cfg_path', type=str, help='The cfg file path.')
     parser.add_argument('--env_name', type=str, help='The new Gym env name.')
     parser.add_argument('--weather_path', type=str, help='The weather file path.')
+    parser.add_argument('--state_limit_path', type=str, help='The state limit file path.')
     parser.add_argument('--ext_sch_paths', nargs='+', type=str, default = [],
     					help='The IDF external schedule files paths.')
     args = parser.parse_args();
@@ -27,13 +28,14 @@ def main():
     ext_sch_paths = [];
     for ext_sch_path in args.ext_sch_paths:
     	ext_sch_paths.append(get_abs_path(ext_sch_path));
+    args.state_limit_path = get_abs_path(args.state_limit_path);
     args.ext_sch_paths = ext_sch_paths;
 
     print (args)
 
     env_creator = creator.EplusEnvCreator();
     env_creator.create_env(args.base_idf_path, args.add_idf_path, args.cfg_path, args.env_name,
-    						args.weather_path, args.ext_sch_paths);
+    						args.weather_path, args.state_limit_path, args.ext_sch_paths);
 
 
 if __name__ == '__main__':

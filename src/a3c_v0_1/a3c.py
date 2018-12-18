@@ -14,12 +14,12 @@ from keras import backend as K
 
 from util.logger import Logger
 from a3c_v0_1.objectives import a3c_loss
-from a3c_v0_1.actions import action_map
 from a3c_v0_1.preprocessors import HistoryPreprocessor, process_raw_state_cmbd
 from a3c_v0_1.utils import init_variables, get_hard_target_model_updates, get_uninitialized_variables
 from a3c_v0_1.state_index import *
 from a3c_v0_1.a3c_eval import A3CEval_multiagent, A3CEval
 from a3c_v0_1.env_interaction import IWEnvInteract
+from a3c_v0_1.cutomized.actions import action_map
 
 ACTION_MAP = action_map;
 LOG_LEVEL = 'DEBUG';
@@ -179,7 +179,7 @@ class A3CThread:
               global_res_list, action_space_name, dropout_prob, reward_func, 
               rewardArgs, metric_func, train_action_func, eval_action_func, train_action_limits, 
               eval_action_limits, raw_state_process_func, raw_stateLimit_process_func, debug_log_prob, 
-              is_greedy_policy, action_repeat_n):
+              is_greedy_policy, action_repeat_n, is_add_time_to_state = True):
         """
         The function that the thread worker works to train the networks.
         
@@ -243,15 +243,16 @@ class A3CThread:
         env_st_dy = env.start_day;
         env_st_wd = env.start_weekday;
         env_state_limits = raw_stateLimit_process_func(env.min_max_limits);
-        env_state_limits.insert(0, (0, 23)); # Add hour limit
-        env_state_limits.insert(0, (0, 1)); # Add weekday limit
+        if is_add_time_to_state:
+            env_state_limits.insert(0, (0, 23)); # Add hour limit
+            env_state_limits.insert(0, (0, 1)); # Add weekday limit
         pcd_state_limits = np.transpose(env_state_limits);
         env_interact_wrapper = IWEnvInteract(env, raw_state_process_func);
         # Reset the env
         time_this, ob_this_raw, is_terminal = env_interact_wrapper.reset();
         ob_this_prcd = process_raw_state_cmbd(ob_this_raw, [time_this], env_st_yr, 
                                               env_st_mn, env_st_dy, env_st_wd, 
-                                              pcd_state_limits); # 1-D list
+                                              pcd_state_limits, is_add_time_to_state); # 1-D list
         # Get the history stacked state
         ob_this_hist_prcd = self._histProcessor.\
                             process_state_for_network(ob_this_prcd) # 2-D array
@@ -315,7 +316,7 @@ class A3CThread:
                     time_next, ob_next_raw, is_terminal = env_interact_wrapper.step(action_stpt_prcd);
                 ob_next_prcd = process_raw_state_cmbd(ob_next_raw, [time_next], 
                                               env_st_yr, env_st_mn, env_st_dy,
-                                              env_st_wd, pcd_state_limits); # 1-D list
+                                              env_st_wd, pcd_state_limits, is_add_time_to_state); # 1-D list
                 # Get the reward
                 reward_next = reward_func(ob_next_prcd, e_weight, p_weight, *rewardArgs);
                 
@@ -406,7 +407,7 @@ class A3CThread:
                     time_this, ob_this_raw, is_terminal_cp = env_interact_wrapper.reset();
                     ob_this_prcd = process_raw_state_cmbd(ob_this_raw, [time_this], 
                                               env_st_yr, env_st_mn, env_st_dy,
-                                              env_st_wd, pcd_state_limits); # 1-D list
+                                              env_st_wd, pcd_state_limits, is_add_time_to_state); # 1-D list
                     # Get the history stacked state
                     self._histProcessor.reset();
                     ob_this_hist_prcd = self._histProcessor.\
