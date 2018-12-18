@@ -636,24 +636,6 @@ sch_path_dict = {'oat_2017': FD + '/envs/eplus_models/iw_v97/weather/x.csv',
                  'solDif_2017': FD + '/envs/eplus_models/iw_v97/weather/x.csv'};
 setSchedulePath(sch_path_dict, FD + '/envs/eplus_models/iw_v97/learning/idf/realWeather.idf');
 
-
-register(
-id='test1',
-entry_point='eplus_env.envs:EplusEnv',
-kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-3-0/',
-'weather_path':'/home/zhiangz/Documents/HVAC-RL-Control/HVAC_RL_web_interface/interface_v1/../../src/eplus-env/eplus_env/envs/eplus_models//../weather/beijing.epw',
-'bcvtb_path':FD + '/envs/bcvtb/',
-'variable_path':'/home/zhiangz/Documents/HVAC-RL-Control/HVAC_RL_web_interface/interface_v1/../../src/eplus-env/eplus_env/envs/eplus_models/test/idf/1.csl.vavDx.light.pittsburgh.test.idf.cfg',
-'idf_path':'/home/zhiangz/Documents/HVAC-RL-Control/HVAC_RL_web_interface/interface_v1/../../src/eplus-env/eplus_env/envs/eplus_models/test/idf/1.csl.vavDx.light.pittsburgh.test.idf.local.env',
-'env_name':'test1',
-'min_max_limits': [(0.0, 1.0), (1.0, 2.0), (2.0, 3.0), (3.0, 4.0), (4.0, 5.0), (5.0, 6.0), (6.0, 7.0), (7.0, 8.0), (8.0, 9.0), (9.0, 10.0), (10.0, 11.0), (11.0, 12.0), (12.0, 13.0), (13.0, 14.0), (14.0, 15.0), (15.0, 16.0), (16.0, 17.0), (17.0, 18.0), (18.0, 19.0), (19.0, 20.0), (20.0, 21.0), (21.0, 22.0), (22.0, 23.0), (23.0, 24.0), (24.0, 25.0), (25.0, 26.0), (26.0, 27.0), (27.0, 28.0), (28.0, 29.0), (29.0, 30.0), (30.0, 31.0), (31.0, 32.0), (32.0, 33.0), (33.0, 34.0), (34.0, 35.0), (35.0, 36.0), (36.0, 37.0), (37.0, 38.0), (38.0, 39.0), (39.0, 40.0), (40.0, 41.0), (41.0, 42.0), (42.0, 43.0), (43.0, 44.0), (44.0, 45.0), (45.0, 46.0), (46.0, 47.0), (47.0, 48.0), (48.0, 49.0), (49.0, 50.0), (50.0, 51.0), (51.0, 52.0), (52.0, 53.0), (53.0, 54.0), (54.0, 55.0), (55.0, 56.0), (56.0, 57.0), (57.0, 58.0), (58.0, 59.0), (59.0, 60.0), (60.0, 61.0), (61.0, 62.0), (62.0, 63.0), (63.0, 64.0), (64.0, 65.0), (65.0, 66.0), (66.0, 67.0), (67.0, 68.0)],
-'incl_forecast': False,
-'forecastRandMode': 'normal',
-'forecastRandStd': 0.15,
-'forecastSource': None,
-'forecastFilePath': None,
-'forecast_hour': 12,
-'act_repeat': 1});
 register(
 id='Part1-Light-Pit-Train-v1',
 entry_point='eplus_env.envs:EplusEnv',
