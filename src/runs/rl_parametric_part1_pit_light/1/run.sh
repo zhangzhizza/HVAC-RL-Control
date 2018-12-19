@@ -1,4 +1,4 @@
-python ../../../a3c_eplus_rlParametric_v0.1.py --env Part1-Light-Pit-Train-v1 --max_interactions 5000000 --window_len 1 \
+python ../../../a3c_eplus_rlParametric_v0.1.py --env Part1-Light-Pit-Train-v1 --max_interactions 100 --window_len 1 \
 --state_dim 71 --num_threads 16 --action_space part1_v1 --save_freq 500000 --eval_freq 250000 \
 --job_mode Train --test_env Part1-Light-Pit-Test-v1 Part1-Light-Pit-Test-v2 --train_act_func part1_v1 --eval_act_func part1_v1 \
 --reward_func part1_v1 --metric_func part1_v1 --init_e 0.0 --rwd_e_para 1.0 --rwd_p_para 1.0 \

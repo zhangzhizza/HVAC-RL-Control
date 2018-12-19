@@ -51,6 +51,11 @@ class EplusEnvCreator(object):
 		tgt_class_name_in_org = 'Schedule:Compact';
 		for to_rm_obj_name in tgt_sch_names_in_org:
 			source_idf.remove_object(tgt_class_name_in_org, to_rm_obj_name);
+		# Check whether or not the tgt_sch_names have been actually used in the source idf
+		for tgt_sch_name in tgt_sch_names_in_org:
+			tgt_sch_ref_ct = source_idf.get_obj_reference_count(tgt_sch_name);
+			if tgt_sch_ref_ct < 1:
+				print('WARNING!!!!! The target schedule %s may not be used the source IDF.')
 		# Localize the schedule files
 		for schedule_file_path in schedule_file_paths:
 			source_idf.localize_schedule(schedule_file_path)

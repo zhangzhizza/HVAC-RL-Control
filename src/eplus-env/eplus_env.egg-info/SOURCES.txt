@@ -1,4 +1,5 @@
 README.md
+setup.py
 eplus_env.egg-info/PKG-INFO
 eplus_env.egg-info/SOURCES.txt
 eplus_env.egg-info/dependency_links.txt

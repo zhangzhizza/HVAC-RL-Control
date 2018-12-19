@@ -16,6 +16,9 @@ class IWEnvInteract(object):
 
 		return self._interact(mode = 'step', actions = actions);
 
+	def end_env(self):
+		return self._env.end_env();
+
 	def _interact(self, mode, actions = None):
 		ret = [];
 		# Reset the env
