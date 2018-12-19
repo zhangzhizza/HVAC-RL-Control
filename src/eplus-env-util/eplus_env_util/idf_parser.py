@@ -64,6 +64,14 @@ class IdfParser(object):
 	def remove_objects_all(self, class_name):
 		self._idf_dict.pop(class_name);
 
+	def get_obj_reference_count(self, obj_name):
+		ref_ct = 0;
+		for key, value in self._idf_dict.items():
+			if obj_name in value[1: ]: # Exclude the obj itself from the reference
+				ref_ct += 1;
+		return ref_ct;
+
+
 	def remove_object(self, class_name, obj_name):
 		try:
 			tgt_objects = self._idf_dict[class_name];

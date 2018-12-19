@@ -1,6 +1,6 @@
 import numpy as np
 import tensorflow as tf
-from a3c_v0_1.actions import action_map
+from a3c_v0_1.customized.actions import action_map
 from a3c_v0_1.preprocessors import HistoryPreprocessor, process_raw_state_cmbd
 from a3c_v0_1.state_index import *
 from a3c_v0_1.env_interaction import IWEnvInteract
@@ -304,7 +304,7 @@ class A3CEval:
             dbg_rdm = np.random.uniform();
             #################FOR DEBUG#######################
             is_dbg_out = False;
-            noForecastDim = 49;
+            noForecastDim = 71;
             if dbg_rdm < 0.0001:#debug_log_prob:
                 is_dbg_out = True;
             if is_dbg_out:
@@ -381,12 +381,12 @@ class A3CEval:
                     this_ep_energy = 0;
                     this_ep_comfort = 0;
                     #this_ep_max_ppd = 0;
-                 
             else:
                 time_this = time_next;
                 ob_this_hist_prcd = ob_next_hist_prcd;
                 ob_this_raw = ob_next_raw;
-                
+
+        env_interact_wrapper.end_env();        
         return [average_reward, average_energy, average_comfort];
     
     def _select_sto_action(self, state, local_logger, is_dbg_out):

@@ -19,7 +19,7 @@ from a3c_v0_1.utils import init_variables, get_hard_target_model_updates, get_un
 from a3c_v0_1.state_index import *
 from a3c_v0_1.a3c_eval import A3CEval_multiagent, A3CEval
 from a3c_v0_1.env_interaction import IWEnvInteract
-from a3c_v0_1.cutomized.actions import action_map
+from a3c_v0_1.customized.actions import action_map
 
 ACTION_MAP = action_map;
 LOG_LEVEL = 'DEBUG';
@@ -284,7 +284,7 @@ class A3CThread:
                 # Get the action
                 #################FOR DEBUG#######################
                 dbg_rdm = np.random.uniform();
-                noForecastDim = 50;
+                noForecastDim = 71;
                 forecastSingleEntryDim = 4;
                 dbg_thres = debug_log_prob;
                 is_show_dbg = True if dbg_rdm < dbg_thres else False;

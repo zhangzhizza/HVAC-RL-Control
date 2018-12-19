@@ -245,7 +245,7 @@ class EplusEnv(Env):
         # End the last episode if exists
         if self._episode_existed:
             self._end_episode()
-            self.logger_main.debug('Last EnergyPlus process has been closed. ')
+            self.logger_main.info('Last EnergyPlus process has been closed. ')
             self._epi_num += 1;
         
         # Create EnergyPlus simulaton process

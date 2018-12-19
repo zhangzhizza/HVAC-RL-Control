@@ -112,7 +112,7 @@ def get_args():
     parser.add_argument('--model_dir', default='None');
     parser.add_argument('--job_mode', default='Train', type=str,
                         help='The job mode, choice of Train or Test. Default is Train.');
-    parser.add_argument('--test_env', default='Eplus-eval-v1', type=str);
+    parser.add_argument('--test_env', nargs='+', type=str);
     parser.add_argument('--test_mode', default='Multiple', type=str, help='The test mode, choice of Single and Multiple. '
     	'Default is Multiple. If Single, the trained agent will control the single zone, else, the trained agent will control '
     	'multiple zones.');
@@ -179,11 +179,13 @@ def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func
       (g, sess, coordinator, global_network, workers, global_summary_writer, 
        global_saver) = a3c_agent.compile(args.is_warm_start, args.model_dir, 
                                          args.save_scope, args.save_max_to_keep);
+      test_envs = [args.env]
+      test_envs.extend(args.test_env);
       if args.job_mode.lower() == "train":
           # Start the training
           main_logger.info ('Start the learning...')
           a3c_agent.fit(sess, coordinator, global_network, workers, 
-                        global_summary_writer, global_saver, [args.env, args.test_env], args.train_freq,
+                        global_summary_writer, global_saver, test_envs, args.train_freq,
                         args.gamma, args.rwd_e_para, args.rwd_p_para, args.save_freq, args.max_interactions,
                         args.eval_epi_num, args.eval_freq, reward_func, rewardArgs, metric_func, train_action_func, eval_action_func,  
                         train_action_limits, eval_action_limits, raw_state_process_func, raw_stateLimit_process_func, 
@@ -191,7 +193,7 @@ def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func
 
       if args.job_mode.lower() == 'test':
           main_logger.info ('Start the testing...')
-          a3c_agent.test(sess, global_network, args.test_env, args.eval_epi_num, args.e_weight, 
+          a3c_agent.test(sess, global_network, test_envs, args.eval_epi_num, args.e_weight, 
                          args.p_weight, args.reward_mode, args.test_mode.lower(), args.agent_num, 
                          args.ppd_penalty_limit, args.output, raw_state_process_func, raw_stateLimit_process_func);
 
