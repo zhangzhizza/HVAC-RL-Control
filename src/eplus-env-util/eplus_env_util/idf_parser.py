@@ -67,8 +67,12 @@ class IdfParser(object):
 	def get_obj_reference_count(self, obj_name):
 		ref_ct = 0;
 		for key, value in self._idf_dict.items():
-			if obj_name in value[1: ]: # Exclude the obj itself from the reference
-				ref_ct += 1;
+			for obj in value:
+				obj_lines = obj.split(',')[1: ] # Exclude the obj name itself from the reference
+				for obj_line in obj_lines:
+					effc_obj_line = obj_line.split('\n')[-1].strip();
+					if obj_name == effc_obj_line: 
+						ref_ct += 1;
 		return ref_ct;
 
 
