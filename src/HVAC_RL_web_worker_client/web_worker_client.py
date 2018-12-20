@@ -12,13 +12,13 @@ from util.logger import Logger
 
 FD = os.path.dirname(os.path.realpath(__file__));
 LOG_LEVEL = 'DEBUG';
-LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s"; 
-TRUSTED_ADDR = ['127.0.0.1:7777', '127.0.0.1:6666', '127.0.0.1:6667', '127.0.0.1:6668']
-server_addr = '127.0.0.1:6666' 
-
+LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
+CONFIG_FILE_PATH = FD + '/../../HVAC_RL_web_interface/configurations/configurations.json';
+TRUSTED_ADDR = json.load(open(CONFIG_FILE_PATH, 'r'))['TRUSTED_ADDR']
+worker_server_addr = json.load(open(CONFIG_FILE_PATH, 'r'))['worker_server_addr']
 class WorkerClient(object):
 
-	def __init__(self, port, max_work_num):
+	def __init__(self, max_work_num, ip, port = 16785):
 		self._is_exp_worker_manager_run = True;
 		self._exp_queue = queue.Queue();
 		self._current_working_processes = {};
@@ -27,6 +27,7 @@ class WorkerClient(object):
 			log_file_path = '%s/log/%s_%s_client.log'%(FD, socket.gethostname(), time.time()));
 		self._run_exp_worker_manager(max_work_num)
 		self._port = port;
+		self._ip = ip;
 
 	def runWorkerClient(self):
 		"""
@@ -38,7 +39,7 @@ class WorkerClient(object):
 		# Create the socket
 		s = socket.socket();
 		s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-		s.bind(('0.0.0.0', self._port))        
+		s.bind((self._ip, self._port))        
 		s.listen(5)
 		self._logger_main.info('Socket starts at ' + (':'.join(str(e) for e in s.getsockname())))
 		working_list = [];                 
@@ -215,7 +216,7 @@ class WorkerClient(object):
 
 	def _send_results_to_server(self, run_name, run_num):
 		s = socket.socket();
-		server_ip, server_port = server_addr.split(':');
+		server_ip, server_port = worker_server_addr.split(':');
 		s.connect((server_ip, int(server_port)));
 		s.sendall(b'recvevallog');
 		recv_str = s.recv(1024).decode(encoding = 'utf-8');

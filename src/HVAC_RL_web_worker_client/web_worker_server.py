@@ -8,18 +8,20 @@ from util.logger import Logger
 FD = os.path.dirname(os.path.realpath(__file__));
 LOG_LEVEL = 'DEBUG';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
-TRUSTED_ADDR = ['0.0.0.0:7777', '0.0.0.0:6666']
-available_computers = ["127.0.0.1:7777"]
+CONFIG_FILE_PATH = FD + '/../../HVAC_RL_web_interface/configurations/configurations.json';
+TRUSTED_ADDR = json.load(open(CONFIG_FILE_PATH, 'r'))['TRUSTED_ADDR']
+available_worker_clients = json.load(open(CONFIG_FILE_PATH, 'r'))['available_worker_clients']
 
 class WorkerServer(object):
 
-	def __init__(self, state_syn_interval, port):
-		self._logger_main = Logger().getLogger('worker_client_logger', LOG_LEVEL, LOG_FMT, 
+	def __init__(self, state_syn_interval, ip, port = 14786):
+		self._logger_main = Logger().getLogger('worker_server_logger', LOG_LEVEL, LOG_FMT, 
 			log_file_path = '%s/log/%s_%s_server.log'%(FD, socket.gethostname(), time.time()));
 		self._is_run_file_syncher = True;
 		self._threads = [];
 		self._state_syn_interval = state_syn_interval;
 		self._port = port;
+		self._ip = ip;
 
 	def runWorkerServer(self):
 		state_file_syncher_thread = threading.Thread(target = self._state_file_syncher
@@ -37,7 +39,7 @@ class WorkerServer(object):
 		# Create the socket
 		s = socket.socket();
 		s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-		s.bind(('0.0.0.0', self._port))        
+		s.bind((self._ip, self._port))        
 		s.listen(5)
 		self._logger_main.info('EVALLOG_RECVER: Socket starts at ' + (':'.join(str(e) for e in s.getsockname())));
 		while True:
@@ -92,12 +94,12 @@ class WorkerServer(object):
 
 	def _state_file_syncher(self, interval):
 		while self._is_run_file_syncher:
-			for worker_ip_port in available_computers:
+			for worker_ip_port in available_worker_clients:
 				try:
 					ip_this, port_this = worker_ip_port.split(":");
 					s = socket.socket();
 					s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-					s.bind(('0.0.0.0', self._port + 1))  
+					s.bind((self._ip, self._port + 1))  
 					s.connect((ip_this, int(port_this)));
 					self._logger_main.info('STATE_SYNCHER: Connected to %s.'%(worker_ip_port))
 					s.sendall(b'getstatus');

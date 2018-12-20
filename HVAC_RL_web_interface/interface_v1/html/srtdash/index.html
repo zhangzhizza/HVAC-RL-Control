@@ -36,14 +36,45 @@
         var all_workers_ports = [];
         var project_selector;
         var debug;
+        var computer_status_html = `<div class="single-report mb-xs-30">
+                                <div class="s-report-inner pr--20 pt--30 mb-3">
+                                    <div class="icon"><i class="fa fa-btc"></i></div>
+                                    <div class="s-report-title d-flex justify-content-between">
+                                        <h4 class="header-title mb-0" id="computer_computerindex_ip"></h4>
+                                        <p>Refresh every 5s</p>
+
+                                    </div>
+                                    <div class="d-flex justify-content-between pb-2">
+                                        <h2>CPU Usage:</h2>
+                                        <h2 id="computer_computerindex_cpu">50%</h2>
+                                    </div>
+                                    <div class="d-flex justify-content-between pb-2">
+                                        <h2>Memory Usage:</h2>
+                                        <h2 id="computer_computerindex_mem">78%</h2>
+                                    </div>
+                                    <div class="d-flex justify-content-between pb-2">
+                                        <h2>Running/Queuing:</h2>
+                                        <h2 id="computer_computerindex_run">0/0</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            `
 
         window.onload = function() {
         // Read all workers
+        var ct_i = 1;
         {%for available_computer in available_computers%}
             [ip, port] = "{{ available_computer }}".split(":");
             all_workers.push("{{ available_computer }}")
             all_workers_ips.push(ip);
             all_workers_ports.push(port);
+            // Create the div for computer status
+            var status_div = document.createElement("div");
+            status_div.className = "col-md-4";
+            status_div.innerHTML = computer_status_html.replace(/computerindex/g, ct_i)
+            console.log(status_div)
+            document.getElementById('computer_status').appendChild(status_div);
+            ct_i += 1;
         {%endfor%}
         // Set the project selector
         project_selector = document.getElementById("project_select");
@@ -83,7 +114,7 @@
         }, 5000);
 
     function update_exps_status(run_name){
-        $.get("get_exp_status/"+run_name, function(data, status){
+        $.get("get_exp_status/?run_name="+run_name, function(data, status){
                 var status = data;
                 var exp_ids = Object.keys(status);
                 for (var exp_i=0; exp_i<exp_ids.length; exp_i++){
@@ -149,7 +180,7 @@
     }
 
     function project_selector_func_helper(select_value){
-        $.get("get_all_exp/" + select_value + "/", function(data, status){
+        $.get("get_all_exp/?run_name=" + select_value, function(data, status){
                 document.getElementById('project_table_div').innerHTML = data;
                 var table = document.getElementById('project_table_div').getElementsByTagName('table')[0]
                 //table.classList.add('dbkit-table');
@@ -532,64 +563,8 @@
             <div class="main-content-inner">
                 <!-- worker computer status -->
                 <div class="sales-report-area mt-5 mb-5">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="single-report mb-xs-30">
-                                <div class="s-report-inner pr--20 pt--30 mb-3">
-                                    <div class="icon"><i class="fa fa-btc"></i></div>
-                                    <div class="s-report-title d-flex justify-content-between">
-                                        <h4 class="header-title mb-0" id="computer_1_ip"></h4>
-                                        <p>Refresh every 5s</p>
-
-                                    </div>
-                                    <div class="d-flex justify-content-between pb-2">
-                                        <h2>CPU Usage:</h2>
-                                        <h2 id="computer_1_cpu">50%</h2>
-                                    </div>
-                                    <div class="d-flex justify-content-between pb-2">
-                                        <h2>Memory Usage:</h2>
-                                        <h2 id="computer_1_mem">78%</h2>
-                                    </div>
-                                    <div class="d-flex justify-content-between pb-2">
-                                        <h2>Running/Queuing:</h2>
-                                        <h2 id="computer_1_run">0/0</h2>
-                                    </div>
-                                </div>
-                                <div id="cpu_1_chart" height="100"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="single-report mb-xs-30">
-                                <div class="s-report-inner pr--20 pt--30 mb-3">
-                                    <div class="icon"><i class="fa fa-btc"></i></div>
-                                    <div class="s-report-title d-flex justify-content-between">
-                                        <h4 class="header-title mb-0">Bitcoin Dash</h4>
-                                        <p>24 H</p>
-                                    </div>
-                                    <div class="d-flex justify-content-between pb-2">
-                                        <h2>$ 4567809,987</h2>
-                                        <span>- 45.87</span>
-                                    </div>
-                                </div>
-                                <canvas id="coin_sales2" height="100"></canvas>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="single-report">
-                                <div class="s-report-inner pr--20 pt--30 mb-3">
-                                    <div class="icon"><i class="fa fa-eur"></i></div>
-                                    <div class="s-report-title d-flex justify-content-between">
-                                        <h4 class="header-title mb-0">Euthorium</h4>
-                                        <p>24 H</p>
-                                    </div>
-                                    <div class="d-flex justify-content-between pb-2">
-                                        <h2>$ 4567809,987</h2>
-                                        <span>- 45.87</span>
-                                    </div>
-                                </div>
-                                <canvas id="coin_sales3" height="100"></canvas>
-                            </div>
-                        </div>
+                    <div class="row" id="computer_status">
+                        
                     </div>
                 </div>
                 <!-- project overview -->

@@ -3,7 +3,7 @@ from django.http import HttpResponse, JsonResponse
 from xml.dom.minidom import parseString
 from .forms import *
 
-import requests
+import requests, json
 import pandas as pd
 import numpy as np
 import os, shutil, subprocess, json, socket, ast
@@ -12,9 +12,9 @@ import eplus_env_util.cfg_creator as cfg_creator
 import eplus_env_util.eplus_env_creator as eplus_env_creator;
 
 this_dir_path = os.path.dirname(os.path.realpath(__file__))
+CONFIG_FILE_PATH = this_dir_path + '/../configurations/configurations.json';
 GYM_INIT_PATH = this_dir_path + '/../../src/eplus-env/eplus_env/__init__.py';
 eplus_model_path = this_dir_path + '/../../src/eplus-env/eplus_env/envs/eplus_models/';
-available_computers = ["127.0.0.1:7777"]
 
 """
 When the idf_file is uploaded, it is firstly copied to idf_file.local, and then an add file
@@ -22,11 +22,17 @@ idf_file.add is generated, and the cfg file idf_file.cfg is generated.
 """
 
 # Create your views here.
+def get_info_from_config_file(key):
+	with open(CONFIG_FILE_PATH, 'r') as config_f:
+		config_data = json.load(config_f);
+	return config_data[key];
+
+
 def index(request):
 	run_dirs_names, run_dirs = getRuns();
 	return render(request, 'interface_v1/html/srtdash/index.html',\
     	{'run_dirs_names': run_dirs_names,
-    	 'available_computers': available_computers})
+    	 'available_computers': get_info_from_config_file('available_worker_clients')})
 
 def openJSCAD(request):
 	group_name = request.GET.get('group_name')
@@ -273,19 +279,14 @@ def handle_uploaded_idf_file(group_name, file_idf, file_epw=None, file_sch=None)
 	org_idf_parser_for_dxf.add_dxf_output();
 	org_idf_parser_for_dxf.set_minimum_run();
 	org_idf_parser_for_dxf.run_eplus_minimum(env_idf_store_dir + '/idf/' + file_idf.name + '_base_out')
-	
-
-
-
-
 
 def getRuns():
-	scan_dir = this_dir_path + '/../../src/';
+	scan_dir = this_dir_path + '/../../src/runs/';
 	dirs = os.listdir(scan_dir);
 	run_dirs_names = [];
 	run_dirs = []
 	for this_dir in dirs:
-		if 'run' in this_dir and os.path.isdir(scan_dir + this_dir):
+		if os.path.isdir(scan_dir + this_dir):
 			run_dirs_names.append(this_dir);
 			run_dirs.append(scan_dir + this_dir)
 	return run_dirs_names, run_dirs;
@@ -317,19 +318,21 @@ def get_eval_res_hist(request):
 
 def get_worker_status(request):
 	"""
-	Args:
-		arguments: str
-			In the pattern "ip=0.0.0.0&port=9999"
+
 	"""
-	ip = request.GET.get('ip')
+	ip = request.GET.get('ip').strip()
 	port = int(request.GET.get('port'))
 	# Create a socket
 	s = socket.socket();
-	s.bind(('0.0.0.0', 6668))
+	s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+	interface_server_addr = get_info_from_config_file('interface_server_addr')
+	this_server_ip, this_server_port = interface_server_addr.split(':');
+	s.bind((this_server_ip, int(this_server_port)))
 	s.connect((ip, port));
 	s.sendall(b'getstatus');
 	recv_str = s.recv(4096).decode(encoding = 'utf-8');
 	recv_json = json.loads(recv_str)
+	s.close();
 	return JsonResponse(recv_json, json_dumps_params={'indent': 2})
 
 def run_exp(request):
@@ -348,7 +351,8 @@ def run_exp(request):
 			with open(exp_full_dir + '/run.meta', 'w') as meta_file:
 				json.dump(to_write_meta, meta_file);
 			# Deploy the exp
-			port = int(available_computers[ip_idx_in_list].split(":")[1])
+			available_worker_clients = get_info_from_config_file('available_worker_clients')
+			port = int(available_worker_clients[ip_idx_in_list].split(":")[1])
 			recv_msg = deploy_run(exp_full_dir, exp_id, mch_ip, port)
 			if recv_msg == 'exp_queuing':
 				return_msg = "Successful"
@@ -397,6 +401,7 @@ def deploy_run(exp_full_dir, exp_id, ip, port):
 
 
 def get_exp_status(request, run_name):
+	run_name = request.GET.get('run_name');
 	response = {};
 	# List all available runs
 	run_dirs_names, run_dirs = getRuns();
@@ -412,7 +417,8 @@ def get_exp_status(request, run_name):
 																'step': this_exp_step}
 	return JsonResponse(response, json_dumps_params={'indent': 2})
 
-def get_all_exp(request, run_name):
+def get_all_exp(request):
+	run_name = request.GET.get('run_name');
 	# List all available runs
 	run_dirs_names, run_dirs = getRuns();
 	run_dir_this = run_dirs[run_dirs_names.index(run_name)]
@@ -501,7 +507,8 @@ def check_exp_status(exp_full_dir):
 def get_ip_idx_in_list(ip_to_test):
 	index = 0;
 	to_return = -1;
-	for ip_port in available_computers:
+	available_worker_clients = get_info_from_config_file('available_worker_clients')
+	for ip_port in available_worker_clients:
 		ip, port = ip_port.split(':');
 		if ip == ip_to_test:
 			to_return = index;

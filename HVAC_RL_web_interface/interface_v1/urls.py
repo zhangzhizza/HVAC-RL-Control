@@ -15,9 +15,9 @@ urlpatterns = [
     path('simulator_eplus/get_all_envs/', views.get_all_envs, name='get_all_envs'),
     path('simulator_eplus', views.simulator_eplus, name='simulator_eplus'),
     path('simulator_eplus/upload_idf', views.simulator_eplus_idf_upload, name='simulator_eplus_idf_upload'),
-    path('get_all_exp/<slug:run_name>/', views.get_all_exp, name='get_all_exp'),
+    re_path(r'get_all_exp/$', views.get_all_exp, name='get_all_exp'),
     re_path(r'^get_worker_status/$', views.get_worker_status, name='get_worker_status'),
-    path('get_exp_status/<slug:run_name>/', views.get_exp_status, name='get_exps_status'),
+    re_path(r'get_exp_status/$', views.get_exp_status, name='get_exps_status'),
     re_path(r'^run_exp/$', views.run_exp, name='run_exp'),
     re_path(r'^get_eval_res_hist/$', views.get_eval_res_hist, name='get_eval_res_hist'),   
 ]
