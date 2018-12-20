@@ -1,0 +1,958 @@
+[2018-12-20 11:40:16,198] worker_client_logger INFO:state_file_syncher started.
+[2018-12-20 11:40:16,198] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:40:16,199] worker_client_logger INFO:eval_log_file_receiver started.
+[2018-12-20 11:40:16,199] worker_client_logger INFO:EVALLOG_RECVER: Socket starts at 128.2.110.217:14786
+[2018-12-20 11:40:16,199] worker_client_logger INFO:Listening...
+[2018-12-20 11:40:16,200] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:40:22,221] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:40:22,222] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:40:28,237] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:40:28,238] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:40:34,253] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:40:34,254] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:40:40,269] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:40:40,270] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:40:46,285] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:40:46,286] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:40:52,301] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:40:52,302] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:40:58,317] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:40:58,318] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:41:04,333] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:41:04,334] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:41:10,349] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:41:10,350] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:41:16,365] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:41:16,366] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:41:22,381] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:41:22,382] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:41:28,397] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:41:28,398] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:41:34,413] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:41:34,414] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:41:40,429] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:41:40,430] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:41:46,445] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:41:46,446] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:41:52,461] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:41:52,462] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:41:58,477] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:41:58,479] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:42:04,493] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:42:04,494] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:42:10,509] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:42:10,511] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:42:16,525] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:42:16,526] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:42:22,541] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:42:22,542] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:42:28,557] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:42:28,558] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:42:34,573] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:42:34,574] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:42:40,589] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:42:40,590] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:42:46,605] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:42:46,606] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:42:52,621] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:42:52,622] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:42:58,637] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:42:58,638] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:43:04,653] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:43:04,654] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:43:10,669] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:43:10,670] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:43:16,685] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:43:16,686] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:43:22,701] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:43:22,702] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:43:27,613] worker_client_logger INFO:EVALLOG_RECVER: Got connection from 128.2.110.217:14785
+[2018-12-20 11:43:27,613] worker_client_logger INFO:Listening...
+[2018-12-20 11:43:28,717] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:43:28,718] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:43:34,733] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:43:34,734] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:43:40,749] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:43:40,750] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:43:46,765] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:43:46,766] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:43:52,781] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:43:52,782] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:43:58,797] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:43:58,799] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:44:04,813] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:44:04,814] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:44:10,829] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:44:10,830] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:44:13,325] worker_client_logger INFO:EVALLOG_RECVER: Got connection from 128.2.110.217:14785
+[2018-12-20 11:44:13,325] worker_client_logger INFO:Listening...
+[2018-12-20 11:44:16,845] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:44:16,846] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:44:22,861] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:44:22,862] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:44:23,341] worker_client_logger INFO:EVALLOG_RECVER: Got connection from 128.2.110.217:14785
+[2018-12-20 11:44:23,341] worker_client_logger INFO:Listening...
+[2018-12-20 11:44:28,877] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:44:28,878] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:44:34,893] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:44:34,894] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:44:40,909] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:44:40,910] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:44:46,925] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:44:46,926] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:44:52,941] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:44:52,942] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:44:58,957] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:44:58,958] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:45:04,973] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:45:04,974] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:45:10,989] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:45:10,990] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:45:17,005] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:45:17,006] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:45:23,021] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:45:23,022] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:45:29,037] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:45:29,038] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:45:35,053] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:45:35,054] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:45:41,069] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:45:41,070] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:45:47,085] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:45:47,086] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:45:53,101] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:45:53,102] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:45:59,117] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:45:59,118] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:46:05,133] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:46:05,134] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:46:11,149] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:46:11,150] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:46:17,165] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:46:17,167] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:46:23,181] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:46:23,182] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:46:28,333] worker_client_logger INFO:EVALLOG_RECVER: Got connection from 128.2.110.217:14785
+[2018-12-20 11:46:28,333] worker_client_logger INFO:Listening...
+[2018-12-20 11:46:29,197] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:46:29,198] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:46:35,213] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:46:35,214] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:46:41,229] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:46:41,230] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:46:47,245] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:46:47,246] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:46:53,261] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:46:53,263] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:46:59,277] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:46:59,278] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:47:05,293] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:47:05,294] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:47:11,309] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:47:11,310] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:47:17,325] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:47:17,326] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:47:18,349] worker_client_logger INFO:EVALLOG_RECVER: Got connection from 128.2.110.217:14785
+[2018-12-20 11:47:18,349] worker_client_logger INFO:Listening...
+[2018-12-20 11:47:23,341] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:47:23,342] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:47:29,357] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:47:29,358] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:47:35,373] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:47:35,375] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:47:38,349] worker_client_logger INFO:EVALLOG_RECVER: Got connection from 128.2.110.217:14785
+[2018-12-20 11:47:38,349] worker_client_logger INFO:Listening...
+[2018-12-20 11:47:41,389] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:47:41,390] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:47:47,405] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:47:47,406] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:47:53,421] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:47:53,422] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:47:59,437] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:47:59,438] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:48:05,453] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:48:05,454] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:48:11,469] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:48:11,470] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:48:17,485] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:48:17,486] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:48:23,501] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:48:23,502] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:48:29,517] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:48:29,518] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:48:35,533] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:48:35,534] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:48:41,549] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:48:41,550] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:48:47,565] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:48:47,567] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:48:53,581] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:48:53,582] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:48:59,597] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:48:59,598] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:49:05,613] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:49:05,614] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:49:11,629] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:49:11,630] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:49:17,645] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:49:17,646] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:49:23,341] worker_client_logger INFO:EVALLOG_RECVER: Got connection from 128.2.110.217:14785
+[2018-12-20 11:49:23,341] worker_client_logger INFO:Listening...
+[2018-12-20 11:49:23,661] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:49:23,662] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:49:29,677] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:49:29,678] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:49:35,693] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:49:35,695] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:49:41,709] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:49:41,710] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:49:47,725] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:49:47,726] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:49:53,741] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:49:53,742] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:49:59,757] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:49:59,758] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:50:05,773] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:50:05,774] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:50:11,789] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:50:11,790] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:50:17,805] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:50:17,806] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:50:23,821] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:50:23,822] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:50:29,837] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:50:29,838] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:50:35,853] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:50:35,854] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:50:40,860] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:50:40,861] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:50:45,867] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:50:45,869] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:50:50,875] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:50:50,877] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:50:55,882] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:50:55,885] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:51:00,890] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:51:00,893] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:51:05,898] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:51:05,899] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:51:08,333] worker_client_logger INFO:EVALLOG_RECVER: Got connection from 128.2.110.217:14785
+[2018-12-20 11:51:08,333] worker_client_logger INFO:Listening...
+[2018-12-20 11:51:11,917] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:51:11,918] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:51:17,933] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:51:17,934] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:51:23,949] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:51:23,950] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:51:29,965] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:51:29,966] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:51:35,981] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:51:35,982] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:51:41,997] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:51:41,998] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:51:48,013] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:51:48,045] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:51:54,061] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:51:54,062] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:52:00,077] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:52:00,078] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:52:06,093] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:52:06,094] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:52:11,100] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:52:11,102] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:52:16,107] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:52:16,109] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:52:21,115] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:52:21,117] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:52:26,123] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:52:26,125] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:52:31,130] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:52:31,132] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:52:36,138] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:52:36,139] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:52:41,144] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:52:41,146] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:52:46,151] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:52:46,153] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:52:51,159] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:52:51,161] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:52:56,166] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:52:56,168] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:53:01,174] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:53:01,176] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:53:06,182] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:53:06,184] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:53:11,185] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:53:11,188] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:53:16,193] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:53:16,195] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:53:21,201] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:53:21,202] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:53:26,208] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:53:26,210] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:53:31,215] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:53:31,217] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:53:36,223] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:53:36,225] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:53:41,230] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:53:41,232] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:53:46,238] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:53:46,240] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:53:51,246] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:53:51,248] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:53:56,253] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:53:56,255] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:54:01,261] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:54:01,262] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:54:06,268] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:54:06,269] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:54:11,275] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:54:11,276] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:54:16,281] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:54:16,283] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:54:21,288] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:54:21,290] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:54:26,296] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:54:26,298] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:54:31,303] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:54:31,305] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:54:36,310] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:54:36,312] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:54:41,317] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:54:41,319] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:54:46,324] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:54:46,326] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:54:51,332] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:54:51,333] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:54:56,339] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:54:56,340] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:55:01,346] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:55:01,347] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:55:06,353] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:55:06,355] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:55:11,361] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:55:11,363] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:55:16,368] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:55:16,371] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:55:21,376] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:55:21,378] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:55:26,384] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:55:26,386] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:55:31,391] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:55:31,393] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:55:36,399] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:55:36,401] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:55:41,406] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:55:41,409] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:55:46,414] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:55:46,416] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:55:51,422] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:55:51,424] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:55:56,430] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:55:56,432] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:56:01,437] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:56:01,439] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:56:06,444] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:56:06,446] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:56:11,451] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:56:11,454] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:56:16,459] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:56:16,461] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:56:21,463] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:56:21,464] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:56:26,469] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:56:26,470] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:56:31,473] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:56:31,474] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:56:36,478] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:56:36,479] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:56:41,484] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:56:41,486] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:56:46,491] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:56:46,493] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:56:51,497] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:56:51,499] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:56:56,504] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:56:56,506] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:57:01,512] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:57:01,514] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:57:06,515] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:57:06,517] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:57:11,518] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:57:11,519] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:57:16,525] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:57:16,527] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:57:21,532] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:57:21,533] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:57:26,539] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:57:26,541] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:57:31,546] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:57:31,548] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:57:36,554] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:57:36,556] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:57:41,561] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:57:41,563] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:57:46,568] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:57:46,570] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:57:51,573] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:57:51,574] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:57:56,580] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:57:56,582] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:58:01,587] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:58:01,589] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:58:06,594] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:58:06,596] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:58:11,601] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:58:11,602] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:58:16,605] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:58:16,607] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:58:21,612] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:58:21,614] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:58:26,617] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:58:26,618] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:58:31,624] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:58:31,625] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:58:36,631] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:58:36,632] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:58:41,638] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:58:41,639] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:58:46,645] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:58:46,646] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:58:51,651] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:58:51,653] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:58:56,657] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:58:56,658] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:59:01,661] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:59:01,662] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:59:06,665] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:59:06,666] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:59:11,672] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:59:11,673] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:59:17,709] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:59:17,710] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:59:23,725] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:59:23,726] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:59:29,741] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:59:29,742] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:59:35,757] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:59:35,758] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:59:41,773] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:59:41,774] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:59:47,789] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:59:47,790] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:59:53,805] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:59:53,806] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 11:59:59,821] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 11:59:59,822] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:00:05,837] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:00:05,838] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:00:11,853] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:00:11,854] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:00:17,869] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:00:17,870] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:00:23,885] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:00:23,886] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:00:29,901] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:00:29,902] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:00:35,917] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:00:35,918] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:00:41,933] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:00:41,934] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:00:47,949] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:00:47,950] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:00:53,965] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:00:53,966] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:00:59,981] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:00:59,982] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:01:05,997] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:01:05,998] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:01:12,013] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:01:12,014] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:01:18,029] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:01:18,030] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:01:24,045] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:01:24,046] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:01:30,061] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:01:30,062] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:01:36,077] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:01:36,079] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:01:42,093] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:01:42,094] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:01:48,109] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:01:48,110] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:01:54,125] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:01:54,126] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:02:00,141] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:02:00,143] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:02:06,157] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:02:06,158] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:02:12,177] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:02:12,178] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:02:18,189] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:02:18,190] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:02:24,205] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:02:24,206] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:02:30,221] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:02:30,222] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:02:36,237] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:02:36,238] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:02:42,253] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:02:42,254] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:02:48,269] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:02:48,270] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:02:54,285] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:02:54,286] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:03:00,301] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:03:00,302] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:03:06,317] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:03:06,318] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:03:12,333] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:03:12,334] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:03:18,349] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:03:18,351] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:03:24,365] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:03:24,367] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:03:30,381] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:03:30,382] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:03:36,397] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:03:36,398] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:03:42,413] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:03:42,414] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:03:48,429] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:03:48,430] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:03:54,445] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:03:54,446] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:04:00,461] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:04:00,462] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:04:06,477] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:04:06,478] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:04:12,493] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:04:12,494] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:04:18,509] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:04:18,510] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:04:24,525] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:04:24,526] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:04:30,541] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:04:30,542] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:04:36,557] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:04:36,558] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:04:42,573] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:04:42,574] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:04:48,589] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:04:48,590] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:04:54,605] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:04:54,606] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:05:00,621] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:05:00,622] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:05:06,637] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:05:06,638] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:05:12,653] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:05:12,654] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:05:18,669] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:05:18,670] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:05:24,685] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:05:24,686] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:05:30,701] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:05:30,702] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:05:36,717] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:05:36,718] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:05:42,733] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:05:42,734] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:05:48,749] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:05:48,750] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:05:54,765] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:05:54,766] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:06:00,781] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:06:00,782] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:06:06,797] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:06:06,799] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:06:12,813] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:06:12,815] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:06:18,829] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:06:18,831] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:06:24,845] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:06:24,847] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:06:30,861] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:06:30,862] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:06:36,877] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:06:36,878] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:06:42,893] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:06:42,894] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:06:48,909] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:06:48,910] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:06:54,925] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:06:54,926] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:07:00,941] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:07:00,942] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:07:06,957] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:07:06,958] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:07:12,973] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:07:12,974] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:07:18,989] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:07:18,990] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:07:25,005] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:07:25,006] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:07:31,021] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:07:31,022] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:07:37,037] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:07:37,038] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:07:43,053] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:07:43,054] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:07:49,069] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:07:49,070] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:07:55,085] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:07:55,086] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:08:01,101] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:08:01,102] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:08:07,117] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:08:07,118] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:08:13,133] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:08:13,134] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:08:19,149] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:08:19,150] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:08:25,165] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:08:25,166] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:08:31,181] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:08:31,182] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:08:37,197] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:08:37,199] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:08:43,213] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:08:43,214] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:08:49,229] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:08:49,230] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:08:55,245] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:08:55,246] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:09:01,261] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:09:01,262] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:09:07,277] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:09:07,278] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:09:13,293] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:09:13,294] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:09:19,309] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:09:19,310] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:09:25,325] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:09:25,326] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:09:31,341] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:09:31,342] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:09:37,357] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:09:37,358] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:09:43,373] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:09:43,374] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:09:49,389] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:09:49,390] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:09:55,405] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:09:55,406] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:10:01,421] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:10:01,422] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:10:07,441] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:10:07,442] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:10:13,453] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:10:13,454] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:10:19,469] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:10:19,470] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:10:25,485] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:10:25,486] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:10:31,501] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:10:31,502] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:10:37,517] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:10:37,519] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:10:43,533] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:10:43,535] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:10:49,549] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:10:49,550] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:10:55,565] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:10:55,566] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:11:01,581] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:11:01,582] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:11:07,597] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:11:07,598] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:11:13,613] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:11:13,614] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:11:19,629] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:11:19,630] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:11:25,645] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:11:25,646] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:11:31,661] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:11:31,662] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:11:37,677] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:11:37,678] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:11:43,693] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:11:43,694] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:11:49,709] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:11:49,710] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:11:55,725] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:11:55,726] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:12:01,741] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:12:01,742] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:12:07,757] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:12:07,758] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:12:13,773] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:12:13,774] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:12:19,789] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:12:19,790] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:12:25,805] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:12:25,806] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:12:31,821] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:12:31,822] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:12:37,837] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:12:37,838] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:12:43,853] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:12:43,854] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:12:49,869] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:12:49,870] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:12:55,885] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:12:55,886] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:13:01,901] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:13:01,902] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:13:07,917] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:13:07,919] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:13:13,933] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:13:13,934] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:13:19,949] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:13:19,950] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:13:25,965] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:13:25,966] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:13:31,981] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:13:31,982] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:13:37,997] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:13:37,999] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:13:44,013] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:13:44,015] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:13:50,029] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:13:50,031] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:13:56,045] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:13:56,047] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:14:02,061] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:14:02,063] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:14:08,077] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:14:08,079] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:14:14,093] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:14:14,094] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:14:20,109] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:14:20,111] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:14:26,125] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:14:26,127] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:14:32,141] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:14:32,142] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:14:38,157] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:14:38,158] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:14:44,173] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:14:44,174] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:14:50,189] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:14:50,190] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:14:56,205] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:14:56,206] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:15:01,209] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:15:01,211] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:15:06,216] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:15:06,218] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:15:11,223] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:15:11,225] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:15:16,231] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:15:16,232] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:15:21,238] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:15:21,240] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:15:26,245] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:15:26,247] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:15:31,252] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:15:31,254] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:15:36,259] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:15:36,261] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:15:41,266] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:15:41,268] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:15:46,272] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:15:46,274] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:15:51,279] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:15:51,281] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:15:56,286] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:15:56,288] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:16:01,293] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:16:01,295] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:16:06,300] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:16:06,302] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:16:11,308] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:16:11,309] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:16:16,315] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:16:16,316] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:16:21,322] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:16:21,323] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:16:26,329] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:16:26,330] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:16:31,336] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:16:31,338] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:16:36,343] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:16:36,346] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:16:41,352] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:16:41,353] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:16:46,359] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:16:46,360] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:16:51,366] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:16:51,367] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:16:56,373] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:16:56,375] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:17:01,380] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:17:01,382] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:17:06,387] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:17:06,389] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:17:11,395] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:17:11,396] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:17:16,402] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:17:16,403] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:17:21,409] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:17:21,410] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:17:26,416] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:17:26,417] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:17:31,423] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:17:31,424] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:17:36,430] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:17:36,431] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:17:41,437] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:17:41,438] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:17:46,444] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:17:46,446] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:17:51,451] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:17:51,453] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:17:56,459] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:17:56,461] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:18:01,466] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:18:01,468] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:18:06,473] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:18:06,475] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:18:11,477] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:18:11,480] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:18:16,485] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:18:16,487] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:18:21,492] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:18:21,494] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:18:26,500] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:18:26,501] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:18:31,507] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:18:31,508] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:18:36,513] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:18:36,515] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:18:41,520] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:18:41,522] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:18:46,528] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:18:46,529] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:18:51,535] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:18:51,536] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:18:56,542] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:18:56,544] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:19:01,549] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:19:01,551] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:19:07,565] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:19:07,566] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:19:13,581] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:19:13,582] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:19:19,597] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:19:19,598] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:19:25,613] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:19:25,614] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:19:31,629] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:19:31,630] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:19:37,645] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:19:37,646] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:19:43,665] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:19:43,666] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:19:49,677] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:19:49,679] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:19:55,693] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:19:55,694] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:20:01,709] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:20:01,711] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:20:07,725] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:20:07,726] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:20:13,741] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:20:13,742] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:20:19,757] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:20:19,758] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:20:25,773] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:20:25,774] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:20:31,789] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:20:31,790] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:20:37,805] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:20:37,806] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:20:43,821] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:20:43,822] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:20:49,837] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:20:49,838] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:20:55,853] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:20:55,855] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:21:01,869] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:21:01,870] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:21:06,876] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:21:06,878] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:21:11,884] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:21:11,885] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:21:16,891] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:21:16,892] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:21:21,898] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:21:21,899] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:21:26,902] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:21:26,904] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:21:31,909] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:21:31,911] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:21:36,916] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:21:36,918] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:21:41,923] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:21:41,924] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:21:46,930] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:21:46,931] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:21:51,936] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:21:51,938] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:21:56,943] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:21:56,945] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:22:01,950] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:22:01,952] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:22:06,958] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:22:06,959] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:22:11,963] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:22:11,964] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:22:16,970] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:22:16,972] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:22:21,977] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:22:21,979] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:22:26,984] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:22:26,986] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:22:31,992] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:22:31,994] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:22:36,999] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:22:37,001] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:22:42,006] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:22:42,008] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:22:47,014] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:22:47,015] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:22:52,021] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:22:52,022] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:22:57,028] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:22:57,030] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:23:02,035] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:23:02,037] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:23:07,042] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:23:07,044] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:23:12,050] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:23:12,052] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:23:17,058] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:23:17,060] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:23:22,061] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:23:22,062] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:23:27,068] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:23:27,070] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:23:32,075] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:23:32,077] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:23:37,083] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:23:37,084] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:23:42,090] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:23:42,091] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:23:47,097] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:23:47,098] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:23:52,104] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:23:52,106] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:23:57,111] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:23:57,113] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:24:02,114] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:24:02,116] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:24:07,121] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:24:07,123] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:24:12,128] worker_client_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:24:12,130] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
