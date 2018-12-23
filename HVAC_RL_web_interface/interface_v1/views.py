@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from xml.dom.minidom import parseString
+from django.contrib.auth.decorators import login_required
 from .forms import *
 
 import requests, json
@@ -27,13 +28,14 @@ def get_info_from_config_file(key):
 		config_data = json.load(config_f);
 	return config_data[key];
 
-
+@login_required
 def index(request):
 	run_dirs_names, run_dirs = getRuns();
 	return render(request, 'interface_v1/html/srtdash/index.html',\
     	{'run_dirs_names': run_dirs_names,
     	 'available_computers': get_info_from_config_file('available_worker_clients')})
 
+@login_required
 def openJSCAD(request):
 	group_name = request.GET.get('group_name')
 	idf_name = request.GET.get('idf_name')
@@ -45,10 +47,12 @@ def openJSCAD(request):
 	dxf_content = dxf_content.replace("\n", "\\n")
 	return render(request, 'interface_v1/html/OpenJSCAD/index.html', {'dxf_content': [dxf_content]});
 
+@login_required
 def test(request):
 	action_select = SelectActionForm(options = (('1','e'),('1','2')))
 	return HttpResponse(action_select);
 
+@login_required
 def get_all_envs(request):
 	# List all available envs
 	all_envs = [];
@@ -80,6 +84,7 @@ def get_all_envs(request):
 	all_env_pd.columns = ['ID', 'Weather', 'IDF', 'Min-max Limits']
 	return HttpResponse(all_env_pd.to_html());
 
+@login_required
 def simulator_eplus(request):
 	form = UploadFileForm()
 	action_select = ''#SelectActionForm(options = [['','']])
@@ -90,6 +95,7 @@ def simulator_eplus(request):
 		{'form': form, 'action_select':action_select, 
 		 'sch_select': sch_select, 'minmax_limit_form': minmax_limit_form});
 
+@login_required
 def simulator_eplus_idf_upload(request):
 	if request.method == 'POST':
 		form = UploadFileForm(request.POST, request.FILES)
@@ -103,6 +109,7 @@ def simulator_eplus_idf_upload(request):
 								'?group_name=%s&idf_name=%s'
 								%(request.POST['title'], request.FILES['file_idf'].name));
 
+@login_required
 def generate_epw_names(request):
 	# Get common variables
 	epw_path = eplus_model_path + '/../weather';
@@ -114,6 +121,7 @@ def generate_epw_names(request):
 	wea_select = SelectWeaForm(options = form_options);
 	return HttpResponse(wea_select)
 
+@login_required
 def generate_idf_fileschedule_names(request):
 	# Get common variables
 	group_name = request.GET.get('group_name');
@@ -138,6 +146,7 @@ def generate_idf_fileschedule_names(request):
 		filesch_select = None;
 	return HttpResponse(filesch_select)
 
+@login_required
 def get_state_names(request):
 	group_name = request.GET.get('group_name');
 	idf_name = request.GET.get('idf_name');
@@ -154,7 +163,7 @@ def get_state_names(request):
 	to_response['state_names'] = state_names;
 	return JsonResponse(to_response, json_dumps_params={'indent': 2});
 
-
+@login_required
 def get_fileschedule_names(group_name):
 	file_name_list = []
 	try:
@@ -162,7 +171,8 @@ def get_fileschedule_names(group_name):
 	except Exception as e:
 		file_name_list = [];
 	return file_name_list;
-	
+
+@login_required	
 def create_env(request):
 	env_name = request.GET.get('env_name');
 	group_name = request.GET.get('group_name');
@@ -190,6 +200,7 @@ def create_cfg(group_name, idf_name):
 	cfg_creator_this = cfg_creator.CfgCreator();
 	cfg_creator_this.create_cfg(add_idf_path, out_cfg_path);
 
+@login_required
 def generate_minmax_limits(request):
 	group_name = request.GET.get('group_name');
 	idf_name = request.GET.get('idf_name');
@@ -218,6 +229,7 @@ def generate_minmax_limits(request):
 		np.savetxt(env_path + '/idf/' + idf_name + '.limit', min_max, delimiter = ',');
 	return HttpResponse(0)
 
+@login_required
 def generate_idf_schedule_names(request):
 	# Get common variables
 	group_name = request.GET.get('group_name');
@@ -248,8 +260,6 @@ def generate_idf_schedule_names(request):
 	# Write the output variable objects to file
 	org_idf_parser.write_object_in_idf(env_path + idf_name + '.add', 'Output:Variable')
 	return HttpResponse(action_select)
-
-
 
 def handle_uploaded_idf_file(group_name, file_idf, file_epw=None, file_sch=None):
 	# epw file
@@ -291,6 +301,7 @@ def getRuns():
 			run_dirs.append(scan_dir + this_dir)
 	return run_dirs_names, run_dirs;
 
+@login_required
 def get_eval_res_hist(request):
 	ids_list = [];
 	to_response = {};
@@ -316,6 +327,7 @@ def get_eval_res_hist(request):
 
 	return JsonResponse(to_response, json_dumps_params={'indent': 2})
 
+@login_required
 def get_worker_status(request):
 	"""
 
@@ -335,6 +347,7 @@ def get_worker_status(request):
 	s.close();
 	return JsonResponse(recv_json, json_dumps_params={'indent': 2})
 
+@login_required
 def run_exp(request):
 	exp_id = request.GET.get('id')
 	mch_ip = request.GET.get('ip')
@@ -363,6 +376,7 @@ def run_exp(request):
 	else:
 		return_msg = "ERROR: The specified IP does not exist!"
 	return HttpResponse(return_msg)
+
 
 def deploy_run(exp_full_dir, exp_id, ip, port):
 	# Create a socket to communicate with the workers
@@ -398,9 +412,8 @@ def deploy_run(exp_full_dir, exp_id, ip, port):
 		recv_str = s.recv(1024).decode(encoding = 'utf-8');
 	return recv_str;
 
-
-
-def get_exp_status(request, run_name):
+@login_required
+def get_exp_status(request):
 	run_name = request.GET.get('run_name');
 	response = {};
 	# List all available runs
@@ -417,6 +430,7 @@ def get_exp_status(request, run_name):
 																'step': this_exp_step}
 	return JsonResponse(response, json_dumps_params={'indent': 2})
 
+@login_required
 def get_all_exp(request):
 	run_name = request.GET.get('run_name');
 	# List all available runs
