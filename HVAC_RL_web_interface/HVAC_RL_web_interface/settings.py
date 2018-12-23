@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['128.2.110.217:8000', 'localhost']
 
+# LOGIN url
+LOGIN_URL = '/portal/login'
+LOGIN_REDIRECT_URL = '/v1/'
 
 # Application definition
 
