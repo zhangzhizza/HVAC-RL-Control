@@ -504,6 +504,7 @@ class EplusEnv(Env):
         self._end_episode();
         self._socket.shutdown(socket.SHUT_RDWR);
         self._socket.close();
+        self._episode_existed = False;
         
         
         
