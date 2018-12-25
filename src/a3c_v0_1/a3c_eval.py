@@ -386,7 +386,7 @@ class A3CEval:
                 ob_this_hist_prcd = ob_next_hist_prcd;
                 ob_this_raw = ob_next_raw;
 
-        env_interact_wrapper.end_env();        
+        env_interact_wrapper.end_episode();        
         return [average_reward, average_energy, average_comfort];
     
     def _select_sto_action(self, state, local_logger, is_dbg_out):
