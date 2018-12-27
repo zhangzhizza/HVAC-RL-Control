@@ -40944,7 +40944,7 @@ EnergyManagementSystem:ProgramCallingManager,
 ! Name Init
 EnergyManagementSystem:Program,
     Init,                    !- Name
-    SET DebugRdm = Minute,   !- Program Line 1
+    SET DebugRdm = 1,   !- Program Line 1
     SET LastMin = 0,         !- Program Line 2
     SET NoOccpFlag = 0;      !- A4
 
@@ -40970,7 +40970,7 @@ EnergyManagementSystem:Program,
 !Overwrite the schedules
 EnergyManagementSystem:Program,
     StochasticSch,           !- Name
-    SET DebugRdm = Minute,   !- Program Line 1
+    !SET DebugRdm = Minute,   !- Program Line 1
     !For office schedule
     SET SclOff = 0.15, ! Change 1
 
@@ -41011,7 +41011,9 @@ EnergyManagementSystem:Program,
     SET EquiClsPrcd = @Min (@Max EquiClsRaw 0.1) 1.0,
     
     !For heating and cooling setpoints
-    SET SclStpt = 1.0, ! Change 1 1.0
+    IF DebugRdm == 1,
+    SET DebugRdm = DebugRdm + 1,
+    SET SclStpt = 0.5, ! Change 1 1.0
     
     SET RdmNorm_StptOff_1stFloor1stOpenNE = (@RandomNormal 5 1 0 10) - 5,
     SET Set%ZoneHeatingSetpoint_1stFloor1stOpenNE = RdmNorm_StptOff_1stFloor1stOpenNE * SclStpt + BaseOffHtgStpt,
@@ -41100,6 +41102,13 @@ EnergyManagementSystem:Program,
     SET RdmNorm_StptOff_1stFloor1stCof = (@RandomNormal 5 1 0 10) - 5,
     SET Set%ZoneHeatingSetpoint_1stFloor1stCof = RdmNorm_StptOff_1stFloor1stCof * SclStpt + BaseOffHtgStpt,
     SET Set%ZoneCoolingSetpoint_1stFloor1stCof = RdmNorm_StptOff_1stFloor1stCof * SclStpt + BaseOffClgStpt,
+    ELSE,
+    IF DebugRdm > 5,
+    SET DebugRdm = 1,
+    ELSE,
+    SET DebugRdm = DebugRdm + 1,
+    ENDIF,
+    ENDIF,
 
     !- Overwrite the schedules
     SET Set_off_occpSch = OccpOffPrcd,  !- A44
@@ -41108,7 +41117,6 @@ EnergyManagementSystem:Program,
     SET Set_cof_equiSch = EquiCofPrcd,  !- A47
     SET Set_cls_occpSch = OccpClsPrcd,  !- A48
     SET Set_cls_equiSch = EquiClsPrcd;  !- A49
-
 
 !-   ===========  ALL OBJECTS IN CLASS: ENERGYMANAGEMENTSYSTEM:GLOBALVARIABLE ===========
 
