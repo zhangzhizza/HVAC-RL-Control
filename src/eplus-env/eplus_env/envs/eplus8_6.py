@@ -503,10 +503,11 @@ class EplusEnv(Env):
         """
         self._end_episode();
         self._socket.shutdown(socket.SHUT_RDWR);
-        self._socket.close();
+        self._socket.close();        
         
-        
-        
+    def end_episode(self):
+        self._end_episode();
+            
     def _end_episode(self):
         """
         This method terminates the current EnergyPlus subprocess 
@@ -539,6 +540,7 @@ class EplusEnv(Env):
 
         # Kill subprocess
         os.killpg(self._eplus_process.pid, signal.SIGTERM);
+        self._episode_existed = False;
         
     def _run_eplus_outputProcessing(self):
         eplus_outputProcessing_process =\
