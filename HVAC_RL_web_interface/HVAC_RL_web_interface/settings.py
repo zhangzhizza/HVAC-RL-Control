@@ -25,7 +25,7 @@ SECRET_KEY = '%9c059)wl8+^a0e)wgfvmr7u3_m*0@wrhcxtqr=3g@anr_r4yf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['128.2.110.217:8000', 'localhost']
+ALLOWED_HOSTS = ['128.2.110.217', 'localhost',]
 
 # LOGIN url
 LOGIN_URL = '/portal/login'

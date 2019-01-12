@@ -59,11 +59,14 @@ class WorkerClient(object):
 				# Get cpu and memory usage
 				cpu = psutil.cpu_percent()
 				memory = psutil.virtual_memory().percent
+				st = os.statvfs('.')
+				disk = round(st.f_bavail * st.f_frsize/1000/1000/1000, 1) # in GB
 				running_tasks = [subp_name for subp_name in list(self._current_working_processes)];
 				waitng_tasks = [exp[0] for exp in list(self._exp_queue.queue)]
 				to_send = {};
 				to_send['cpu'] = str(cpu);
 				to_send['mem'] = str(memory);
+				to_send['dsk'] = str(disk);
 				exp_dict = {}
 				# All processes
 				all_processes = []
