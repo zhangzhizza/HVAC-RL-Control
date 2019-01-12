@@ -1,8 +1,8 @@
 {
-"available_worker_clients":["128.2.110.217:16785"],
+"available_worker_clients":["128.2.110.217:16785", "128.2.111.196:16785", "128.2.108.125:16785"],
 "interface_server_addr":"128.2.110.217:14785",
 "worker_server_addr":"128.2.110.217:14786", 
 "token":"mrgMbdMamd2iA6SZf7URo2WIUiM6Cn",
-"TRUSTED_ADDR":["128.2.110.217:14785", "128.2.110.217:14786", "128.2.110.217:14787", "128.2.110.217:16785"],
+"TRUSTED_ADDR":["128.2.110.217:14785", "128.2.110.217:14786", "128.2.110.217:14787", "128.2.110.217:16785", "128.2.111.196:16785"],
 "_comment1": "# 128.2.110.217 with Port 14785: interface server, 14786: worker_server (listen), 14787: worker_server (send); Port 16785: worker client"
 }
