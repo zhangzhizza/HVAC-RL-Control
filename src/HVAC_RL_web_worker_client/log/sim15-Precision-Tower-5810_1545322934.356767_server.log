@@ -1,0 +1,1079 @@
+[2018-12-20 11:22:14,357] worker_client_logger INFO:state_file_syncher started.
+[2018-12-20 11:22:14,357] worker_client_logger INFO:eval_log_file_receiver started.
+[2018-12-20 11:22:14,358] worker_client_logger INFO:EVALLOG_RECVER: Socket starts at 0.0.0.0:6666
+[2018-12-20 11:22:14,358] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:22:14,358] worker_client_logger INFO:Listening...
+[2018-12-20 11:22:19,361] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:22:24,367] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:22:29,372] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:22:34,378] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:22:39,383] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:22:44,389] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:22:49,395] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:22:54,401] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:22:59,407] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:23:04,409] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:23:09,415] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:23:14,420] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:23:19,426] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:23:24,432] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:23:29,438] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:23:34,443] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:23:39,449] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:23:44,455] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:23:49,461] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:23:54,467] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:23:59,473] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:24:04,478] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:24:09,484] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:24:14,490] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:24:19,496] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:24:24,498] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:24:29,504] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:24:34,506] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:24:39,512] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:24:44,518] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:24:49,524] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:24:54,530] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:24:59,535] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:25:04,541] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:25:09,547] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:25:14,548] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:25:19,554] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:25:24,560] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:25:29,566] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:25:34,572] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:25:39,578] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:25:44,584] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:25:49,590] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:25:54,595] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:25:59,601] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:26:04,607] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:26:09,613] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:26:14,619] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:26:19,625] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:26:24,631] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:26:29,636] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:26:34,642] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:26:39,648] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:26:44,654] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:26:49,660] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:26:54,666] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:26:59,670] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:27:04,676] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:27:09,682] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:27:14,688] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:27:19,694] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:27:24,698] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:27:29,704] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:27:34,710] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:27:39,713] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind(('0.0.0.0', self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:27:44,719] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:27:49,721] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:27:54,727] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:27:59,728] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:28:04,734] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:28:09,740] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:28:14,746] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:28:19,752] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:28:24,757] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:28:29,763] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:28:34,769] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:28:39,775] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:28:44,781] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:28:49,787] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:28:54,792] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:28:59,798] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:29:04,804] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:29:09,810] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:29:14,816] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:29:19,822] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:29:24,828] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:29:29,833] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:29:34,839] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:29:39,845] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:29:44,851] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:29:49,857] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:29:54,863] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:29:59,865] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:30:04,871] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:30:09,877] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:30:14,883] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:30:19,889] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:30:24,895] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:30:29,900] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:30:34,906] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:30:39,912] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:30:44,918] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:30:49,924] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:30:54,930] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:30:59,936] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:31:04,942] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:31:09,947] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:31:14,953] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:31:19,959] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:31:24,965] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:31:29,971] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:31:34,977] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:31:39,981] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:31:44,987] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:31:49,993] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:31:54,999] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:32:00,005] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:32:05,011] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:32:10,015] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:32:15,021] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:32:20,027] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:32:25,033] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:32:30,039] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:32:35,044] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:32:40,048] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:32:45,054] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:32:50,060] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:32:55,066] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:33:00,067] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:33:05,072] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:33:10,078] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:33:15,081] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:33:20,085] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:33:25,089] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:33:30,093] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:33:35,097] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:33:40,103] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:33:45,109] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:33:50,115] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:33:55,121] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:34:00,126] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:34:05,132] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:34:10,138] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:34:15,144] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:34:20,150] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:34:25,153] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:34:30,159] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:34:35,165] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:34:40,170] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:34:45,176] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:34:50,182] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:34:55,188] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:35:00,194] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:35:05,200] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:35:10,205] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:35:15,211] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:35:20,217] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:35:25,223] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:35:30,229] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:35:35,235] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:35:40,241] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:35:45,246] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:35:50,252] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:35:55,257] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:36:00,263] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:36:05,269] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:36:10,273] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:36:15,279] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:36:20,285] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:36:25,290] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:36:30,296] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:36:35,302] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:36:40,308] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:36:45,314] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:36:50,320] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:36:55,325] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:37:00,331] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:37:05,336] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:37:10,343] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:37:15,348] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:37:20,354] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:37:25,360] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:37:30,366] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:37:35,372] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:37:40,378] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:37:45,384] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:37:50,390] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:37:55,393] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:38:00,399] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:38:05,401] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:38:10,407] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:38:15,413] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:38:20,419] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:38:25,424] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:38:30,430] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:38:35,431] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:38:40,437] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:38:45,441] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:38:50,447] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:38:55,453] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:39:00,459] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:39:05,465] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:39:10,471] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:39:15,477] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:39:20,483] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:39:25,485] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:39:30,491] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:39:35,497] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:39:40,503] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:39:45,508] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:39:50,514] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:39:55,520] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:40:00,526] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-12-20 11:40:05,532] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 101, in _state_file_syncher
+    s.bind((self._ip, self._port + 1))
+ConnectionRefusedError: [Errno 111] Connection refused
+

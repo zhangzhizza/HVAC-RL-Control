@@ -1,0 +1,9 @@
+[2018-11-02 08:13:15,313] worker_client_logger INFO:Main thread worker manager starts.
+[2018-11-02 08:13:15,314] worker_client_logger INFO:Socket starts at 0.0.0.0:7777
+[2018-11-02 08:13:15,314] worker_client_logger INFO:Listening...
+[2018-11-02 08:13:15,455] worker_client_logger INFO:Got connection from 127.0.0.1:35438
+[2018-11-02 08:13:15,456] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:35438
+[2018-11-02 08:13:15,457] worker_client_logger INFO:Messages sent to 127.0.0.1:35438: ['getstatus', 12.4, 22.4, [], [], [None, None]]
+[2018-11-02 08:13:15,457] worker_client_logger INFO:Listening...
+[2018-11-02 08:13:19,706] worker_client_logger INFO:Got connection from 127.0.0.1:35444
+[2018-11-02 08:13:19,706] worker_client_logger INFO:Received DEPLOYRUN request from 127.0.0.1:35444

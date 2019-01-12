@@ -1,0 +1,29 @@
+[2018-12-20 12:24:17,620] worker_server_logger INFO:state_file_syncher started.
+[2018-12-20 12:24:17,621] worker_server_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:24:17,621] worker_server_logger INFO:eval_log_file_receiver started.
+[2018-12-20 12:24:17,621] worker_server_logger INFO:EVALLOG_RECVER: Socket starts at 128.2.110.217:14786
+[2018-12-20 12:24:17,621] worker_server_logger INFO:Listening...
+[2018-12-20 12:24:17,622] worker_server_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:24:22,628] worker_server_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:24:22,629] worker_server_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:24:27,635] worker_server_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:24:27,636] worker_server_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:24:32,642] worker_server_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:24:32,644] worker_server_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:24:37,648] worker_server_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:24:37,649] worker_server_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:24:42,655] worker_server_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:24:42,657] worker_server_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:24:47,663] worker_server_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:24:47,664] worker_server_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:24:52,670] worker_server_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:24:52,671] worker_server_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:24:57,677] worker_server_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:24:57,678] worker_server_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:25:02,684] worker_server_logger INFO:STATE_SYNCHER: Connected to 128.2.110.217:16785.
+[2018-12-20 12:25:02,685] worker_server_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-12-20 12:25:07,691] worker_server_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 103, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+

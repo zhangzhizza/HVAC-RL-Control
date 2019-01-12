@@ -1,0 +1,44 @@
+[2018-11-02 08:28:02,416] worker_client_logger INFO:Main thread worker manager starts.
+[2018-11-02 08:28:02,416] worker_client_logger INFO:Socket starts at 0.0.0.0:7777
+[2018-11-02 08:28:02,416] worker_client_logger INFO:Listening...
+[2018-11-02 08:28:03,880] worker_client_logger INFO:Got connection from 127.0.0.1:36714
+[2018-11-02 08:28:03,880] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:36714
+[2018-11-02 08:28:03,881] worker_client_logger INFO:Messages sent to 127.0.0.1:36714: ['getstatus', 18.3, 30.2, [], [], [None, None]]
+[2018-11-02 08:28:03,881] worker_client_logger INFO:Listening...
+[2018-11-02 08:28:08,885] worker_client_logger INFO:Got connection from 127.0.0.1:36720
+[2018-11-02 08:28:08,885] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:36720
+[2018-11-02 08:28:08,885] worker_client_logger INFO:Messages sent to 127.0.0.1:36720: ['getstatus', 21.7, 30.2, [], [], [None, None]]
+[2018-11-02 08:28:08,886] worker_client_logger INFO:Listening...
+[2018-11-02 08:28:13,890] worker_client_logger INFO:Got connection from 127.0.0.1:36726
+[2018-11-02 08:28:13,890] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:36726
+[2018-11-02 08:28:13,891] worker_client_logger INFO:Messages sent to 127.0.0.1:36726: ['getstatus', 22.6, 30.5, [], [], [None, None]]
+[2018-11-02 08:28:13,891] worker_client_logger INFO:Listening...
+[2018-11-02 08:28:17,967] worker_client_logger INFO:Got connection from 127.0.0.1:36802
+[2018-11-02 08:28:17,967] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:36802
+[2018-11-02 08:28:17,968] worker_client_logger INFO:Messages sent to 127.0.0.1:36802: ['getstatus', 39.2, 30.5, [], [], [None, None]]
+[2018-11-02 08:28:17,968] worker_client_logger INFO:Listening...
+[2018-11-02 08:28:21,166] worker_client_logger INFO:Got connection from 127.0.0.1:36806
+[2018-11-02 08:28:21,166] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:36806
+[2018-11-02 08:28:21,166] worker_client_logger INFO:Messages sent to 127.0.0.1:36806: ['getstatus', 33.8, 30.7, [], [], [None, None]]
+[2018-11-02 08:28:21,166] worker_client_logger INFO:Listening...
+[2018-11-02 08:28:26,158] worker_client_logger INFO:Got connection from 127.0.0.1:36814
+[2018-11-02 08:28:26,159] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:36814
+[2018-11-02 08:28:26,159] worker_client_logger INFO:Messages sent to 127.0.0.1:36814: ['getstatus', 20.6, 30.7, [], [], [None, None]]
+[2018-11-02 08:28:26,159] worker_client_logger INFO:Listening...
+[2018-11-02 08:28:27,205] worker_client_logger INFO:Got connection from 127.0.0.1:36820
+[2018-11-02 08:28:27,205] worker_client_logger INFO:Received DEPLOYRUN request from 127.0.0.1:36820
+[2018-11-02 08:28:27,249] worker_client_logger INFO:Request for exp_id webif_test_runs:1
+[2018-11-02 08:28:27,249] worker_client_logger INFO:Writing to run.sh...
+[2018-11-02 08:28:27,249] worker_client_logger INFO:Writing to run.sh finished.
+[2018-11-02 08:28:27,249] worker_client_logger INFO:Writing to run.meta...
+[2018-11-02 08:28:27,250] worker_client_logger INFO:Writing to run.meta finished.
+[2018-11-02 08:28:27,250] worker_client_logger INFO:Listening...
+[2018-11-02 08:28:27,449] worker_client_logger INFO:A new worker subprocess webif_test_runs:1 starts.
+[2018-11-02 08:28:31,157] worker_client_logger INFO:Got connection from 127.0.0.1:36824
+[2018-11-02 08:28:31,157] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:36824
+[2018-11-02 08:28:31,158] worker_client_logger INFO:Messages sent to 127.0.0.1:36824: ['getstatus', 34.2, 31.6, [], [], [None, None]]
+[2018-11-02 08:28:31,158] worker_client_logger INFO:Listening...
+[2018-11-02 08:28:36,165] worker_client_logger INFO:Got connection from 127.0.0.1:36832
+[2018-11-02 08:28:36,166] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:36832
+[2018-11-02 08:28:36,166] worker_client_logger INFO:Messages sent to 127.0.0.1:36832: ['getstatus', 33.4, 35.4, [], [], [None, None]]
+[2018-11-02 08:28:36,166] worker_client_logger INFO:Listening...

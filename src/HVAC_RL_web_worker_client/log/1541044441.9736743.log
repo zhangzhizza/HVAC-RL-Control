@@ -1,0 +1,4 @@
+[2018-10-31 23:54:01,974] worker_client_logger INFO:Socket starts at 0.0.0.0:7777
+[2018-10-31 23:54:12,354] worker_client_logger INFO:Got connection from 127.0.0.1:50090
+[2018-10-31 23:54:19,196] worker_client_logger INFO:Recived GETSTATUS request from 127.0.0.1:50090
+[2018-10-31 23:54:19,197] worker_client_logger INFO:Messages sent to 127.0.0.1:50090: [11.2, 42.0, [], [], [None, None]]

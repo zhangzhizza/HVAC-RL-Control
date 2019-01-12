@@ -1,0 +1,37 @@
+[2018-11-02 07:22:03,411] worker_client_logger INFO:Main thread worker manager starts.
+[2018-11-02 07:22:03,411] worker_client_logger INFO:Socket starts at 0.0.0.0:7777
+[2018-11-02 07:22:03,411] worker_client_logger INFO:Listening...
+[2018-11-02 07:22:04,081] worker_client_logger INFO:Got connection from 127.0.0.1:60266
+[2018-11-02 07:22:04,082] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:60266
+[2018-11-02 07:22:04,083] worker_client_logger INFO:Messages sent to 127.0.0.1:60266: ['getstatus', 4.4, 21.7, [], [], [None, None]]
+[2018-11-02 07:22:04,083] worker_client_logger INFO:Listening...
+[2018-11-02 07:22:04,451] worker_client_logger INFO:Got connection from 127.0.0.1:60250
+[2018-11-02 07:22:04,452] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:60250
+[2018-11-02 07:22:04,455] worker_client_logger INFO:Messages sent to 127.0.0.1:60250: ['getstatus', 8.9, 21.7, [], [], [None, None]]
+[2018-11-02 07:22:04,455] worker_client_logger INFO:Listening...
+[2018-11-02 07:22:06,241] worker_client_logger INFO:Got connection from 127.0.0.1:60260
+[2018-11-02 07:22:06,241] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:60260
+[2018-11-02 07:22:06,242] worker_client_logger INFO:Messages sent to 127.0.0.1:60260: ['getstatus', 8.0, 21.7, [], [], [None, None]]
+[2018-11-02 07:22:06,242] worker_client_logger INFO:Listening...
+[2018-11-02 07:22:09,087] worker_client_logger INFO:Got connection from 127.0.0.1:60272
+[2018-11-02 07:22:09,087] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:60272
+[2018-11-02 07:22:09,088] worker_client_logger INFO:Messages sent to 127.0.0.1:60272: ['getstatus', 9.2, 21.7, [], [], [None, None]]
+[2018-11-02 07:22:09,088] worker_client_logger INFO:Listening...
+[2018-11-02 07:22:09,570] worker_client_logger INFO:Got connection from 127.0.0.1:60254
+[2018-11-02 07:22:09,570] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:60254
+[2018-11-02 07:22:09,571] worker_client_logger INFO:Messages sent to 127.0.0.1:60254: ['getstatus', 10.3, 21.7, [], [], [None, None]]
+[2018-11-02 07:22:09,571] worker_client_logger INFO:Listening...
+[2018-11-02 07:22:13,094] worker_client_logger INFO:Got connection from 127.0.0.1:60338
+[2018-11-02 07:22:13,094] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:60338
+[2018-11-02 07:22:13,094] worker_client_logger INFO:Messages sent to 127.0.0.1:60338: ['getstatus', 20.8, 22.1, [], [], [None, None]]
+[2018-11-02 07:22:13,095] worker_client_logger INFO:Listening...
+[2018-11-02 07:22:15,457] worker_client_logger INFO:Got connection from 127.0.0.1:60242
+[2018-11-02 07:22:15,457] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:60242
+[2018-11-02 07:22:15,458] worker_client_logger INFO:Messages sent to 127.0.0.1:60242: ['getstatus', 20.1, 22.4, [], [], [None, None]]
+[2018-11-02 07:22:15,459] worker_client_logger INFO:Listening...
+[2018-11-02 07:22:17,022] worker_client_logger INFO:Got connection from 127.0.0.1:60342
+[2018-11-02 07:22:17,022] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:60342
+[2018-11-02 07:22:17,023] worker_client_logger INFO:Messages sent to 127.0.0.1:60342: ['getstatus', 8.2, 22.5, [], [], [None, None]]
+[2018-11-02 07:22:17,024] worker_client_logger INFO:Listening...
+[2018-11-02 07:22:18,041] worker_client_logger INFO:Got connection from 127.0.0.1:60348
+[2018-11-02 07:22:18,041] worker_client_logger INFO:Received DEPLOYRUN request from 127.0.0.1:60348

@@ -1,0 +1,7 @@
+[2018-11-01 06:15:03,193] worker_client_logger INFO:Socket starts at 0.0.0.0:7777
+[2018-11-01 06:15:14,761] worker_client_logger INFO:Got connection from 127.0.0.1:53082
+[2018-11-01 06:15:21,129] worker_client_logger INFO:Received DEPLOYRUN request from 127.0.0.1:53082
+[2018-11-01 06:15:42,320] worker_client_logger INFO:Start receiving run.sh
+[2018-11-01 06:48:14,845] worker_client_logger INFO:Finish receiving run.sh
+[2018-11-01 06:48:14,846] worker_client_logger INFO:Start receiving run.meta
+[2018-11-01 06:55:44,685] worker_client_logger INFO:Finish receiving run.meta

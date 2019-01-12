@@ -1,0 +1,219 @@
+[2018-11-03 04:40:57,406] worker_client_logger INFO:state_file_syncher started.
+[2018-11-03 04:40:57,407] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 35, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-11-03 04:41:02,413] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 35, in _state_file_syncher
+    s.connect((ip_this, int(port_this)));
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[2018-11-03 04:41:07,414] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:41:07,415] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:41:12,421] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:41:12,422] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:41:17,426] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:41:17,428] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:41:22,433] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:41:22,434] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:41:27,439] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:41:27,440] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:41:32,446] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:41:32,447] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:41:37,452] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:41:37,453] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:41:42,455] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:41:42,456] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:41:47,458] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:41:47,459] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:41:52,464] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:41:52,466] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:41:57,471] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:41:57,473] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:42:02,479] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:42:02,480] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:42:07,483] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:42:07,485] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:42:12,491] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:42:12,493] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:42:17,499] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:42:17,500] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:42:22,501] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:42:22,503] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:42:27,508] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:42:27,509] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:42:32,514] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:42:32,520] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:42:37,525] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:42:37,527] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:42:42,532] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:42:42,533] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:42:47,539] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:42:47,541] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:42:52,543] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:42:52,544] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:42:57,551] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:42:57,553] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:43:02,556] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:43:02,557] worker_client_logger INFO:STATE_SYNCHER: Finished updating for exps [].
+[2018-11-03 04:43:07,559] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:43:07,562] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 48, in _state_file_syncher
+    , exp_this_worker_status, exp_this_worker_step);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 56, in _set_meta_status
+    if os.path.isfile(meta_file_dir):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/genericpath.py", line 30, in isfile
+    st = os.stat(path)
+TypeError: argument should be string, bytes or integer, not WorkerServer
+
+[2018-11-03 04:43:12,568] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:43:12,569] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 48, in _state_file_syncher
+    , exp_this_worker_status, exp_this_worker_step);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 56, in _set_meta_status
+    if os.path.isfile(meta_file_dir):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/genericpath.py", line 30, in isfile
+    st = os.stat(path)
+TypeError: argument should be string, bytes or integer, not WorkerServer
+
+[2018-11-03 04:43:17,572] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:43:17,573] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 48, in _state_file_syncher
+    , exp_this_worker_status, exp_this_worker_step);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 56, in _set_meta_status
+    if os.path.isfile(meta_file_dir):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/genericpath.py", line 30, in isfile
+    st = os.stat(path)
+TypeError: argument should be string, bytes or integer, not WorkerServer
+
+[2018-11-03 04:43:22,575] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:43:22,577] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 48, in _state_file_syncher
+    , exp_this_worker_status, exp_this_worker_step);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 56, in _set_meta_status
+    if os.path.isfile(meta_file_dir):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/genericpath.py", line 30, in isfile
+    st = os.stat(path)
+TypeError: argument should be string, bytes or integer, not WorkerServer
+
+[2018-11-03 04:43:27,580] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:43:27,582] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 48, in _state_file_syncher
+    , exp_this_worker_status, exp_this_worker_step);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 56, in _set_meta_status
+    if os.path.isfile(meta_file_dir):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/genericpath.py", line 30, in isfile
+    st = os.stat(path)
+TypeError: argument should be string, bytes or integer, not WorkerServer
+
+[2018-11-03 04:43:32,588] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:43:32,592] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 48, in _state_file_syncher
+    , exp_this_worker_status, exp_this_worker_step);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 56, in _set_meta_status
+    if os.path.isfile(meta_file_dir):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/genericpath.py", line 30, in isfile
+    st = os.stat(path)
+TypeError: argument should be string, bytes or integer, not WorkerServer
+
+[2018-11-03 04:43:37,597] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:43:37,600] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 48, in _state_file_syncher
+    , exp_this_worker_status, exp_this_worker_step);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 56, in _set_meta_status
+    if os.path.isfile(meta_file_dir):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/genericpath.py", line 30, in isfile
+    st = os.stat(path)
+TypeError: argument should be string, bytes or integer, not WorkerServer
+
+[2018-11-03 04:43:42,603] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:43:42,606] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 48, in _state_file_syncher
+    , exp_this_worker_status, exp_this_worker_step);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 56, in _set_meta_status
+    if os.path.isfile(meta_file_dir):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/genericpath.py", line 30, in isfile
+    st = os.stat(path)
+TypeError: argument should be string, bytes or integer, not WorkerServer
+
+[2018-11-03 04:43:47,611] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:43:47,613] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 48, in _state_file_syncher
+    , exp_this_worker_status, exp_this_worker_step);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 56, in _set_meta_status
+    if os.path.isfile(meta_file_dir):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/genericpath.py", line 30, in isfile
+    st = os.stat(path)
+TypeError: argument should be string, bytes or integer, not WorkerServer
+
+[2018-11-03 04:43:52,615] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:43:52,618] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 48, in _state_file_syncher
+    , exp_this_worker_status, exp_this_worker_step);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 56, in _set_meta_status
+    if os.path.isfile(meta_file_dir):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/genericpath.py", line 30, in isfile
+    st = os.stat(path)
+TypeError: argument should be string, bytes or integer, not WorkerServer
+
+[2018-11-03 04:43:57,624] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:43:57,627] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 48, in _state_file_syncher
+    , exp_this_worker_status, exp_this_worker_step);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 56, in _set_meta_status
+    if os.path.isfile(meta_file_dir):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/genericpath.py", line 30, in isfile
+    st = os.stat(path)
+TypeError: argument should be string, bytes or integer, not WorkerServer
+
+[2018-11-03 04:44:02,632] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:44:02,635] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 48, in _state_file_syncher
+    , exp_this_worker_status, exp_this_worker_step);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 56, in _set_meta_status
+    if os.path.isfile(meta_file_dir):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/genericpath.py", line 30, in isfile
+    st = os.stat(path)
+TypeError: argument should be string, bytes or integer, not WorkerServer
+
+[2018-11-03 04:44:07,641] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:44:07,642] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 48, in _state_file_syncher
+    , exp_this_worker_status, exp_this_worker_step);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 56, in _set_meta_status
+    if os.path.isfile(meta_file_dir):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/genericpath.py", line 30, in isfile
+    st = os.stat(path)
+TypeError: argument should be string, bytes or integer, not WorkerServer
+
+[2018-11-03 04:44:12,648] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:44:12,650] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 48, in _state_file_syncher
+    , exp_this_worker_status, exp_this_worker_step);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 56, in _set_meta_status
+    if os.path.isfile(meta_file_dir):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/genericpath.py", line 30, in isfile
+    st = os.stat(path)
+TypeError: argument should be string, bytes or integer, not WorkerServer
+
+[2018-11-03 04:44:17,655] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:44:17,661] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 48, in _state_file_syncher
+    , exp_this_worker_status, exp_this_worker_step);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 56, in _set_meta_status
+    if os.path.isfile(meta_file_dir):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/genericpath.py", line 30, in isfile
+    st = os.stat(path)
+TypeError: argument should be string, bytes or integer, not WorkerServer
+
+[2018-11-03 04:44:22,664] worker_client_logger INFO:STATE_SYNCHER: Connected to 0.0.0.0:7777.
+[2018-11-03 04:44:22,666] worker_client_logger INFO:STATE_SYNCHER: ERROR: Traceback (most recent call last):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 48, in _state_file_syncher
+    , exp_this_worker_status, exp_this_worker_step);
+  File "/home/zhiangz/Documents/HVAC-RL-Control/src/HVAC_RL_web_worker_client/web_worker_server.py", line 56, in _set_meta_status
+    if os.path.isfile(meta_file_dir):
+  File "/home/zhiangz/Documents/HVAC-RL-Control/virt_env/lib/python3.5/genericpath.py", line 30, in isfile
+    st = os.stat(path)
+TypeError: argument should be string, bytes or integer, not WorkerServer
+

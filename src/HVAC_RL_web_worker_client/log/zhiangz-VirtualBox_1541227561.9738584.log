@@ -1,0 +1,5 @@
+[2018-11-03 02:46:01,974] worker_client_logger INFO:Main thread worker manager starts.
+[2018-11-03 02:46:01,974] worker_client_logger INFO:Socket starts at 0.0.0.0:7777
+[2018-11-03 02:46:01,974] worker_client_logger INFO:Listening...
+[2018-11-03 02:46:02,381] worker_client_logger INFO:Got connection from 127.0.0.1:43452
+[2018-11-03 02:46:02,381] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:43452

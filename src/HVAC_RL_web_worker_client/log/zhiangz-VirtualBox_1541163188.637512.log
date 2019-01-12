@@ -1,0 +1,23 @@
+[2018-11-02 08:53:08,637] worker_client_logger INFO:Main thread worker manager starts.
+[2018-11-02 08:53:08,638] worker_client_logger INFO:Socket starts at 0.0.0.0:7777
+[2018-11-02 08:53:08,638] worker_client_logger INFO:Listening...
+[2018-11-02 08:53:12,952] worker_client_logger INFO:Got connection from 127.0.0.1:38952
+[2018-11-02 08:53:12,952] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:38952
+[2018-11-02 08:53:12,953] worker_client_logger INFO:Messages sent to 127.0.0.1:38952: ['getstatus', 5.0, 30.4, [], [], [None, None]]
+[2018-11-02 08:53:12,954] worker_client_logger INFO:Listening...
+[2018-11-02 08:53:15,848] worker_client_logger INFO:Got connection from 127.0.0.1:39028
+[2018-11-02 08:53:15,849] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:39028
+[2018-11-02 08:53:15,849] worker_client_logger INFO:Messages sent to 127.0.0.1:39028: ['getstatus', 27.0, 31.0, [], [], [None, None]]
+[2018-11-02 08:53:15,849] worker_client_logger INFO:Listening...
+[2018-11-02 08:53:19,368] worker_client_logger INFO:Got connection from 127.0.0.1:39032
+[2018-11-02 08:53:19,368] worker_client_logger INFO:Received GETSTATUS request from 127.0.0.1:39032
+[2018-11-02 08:53:19,370] worker_client_logger INFO:Messages sent to 127.0.0.1:39032: ['getstatus', 16.0, 31.3, [], [], [None, None]]
+[2018-11-02 08:53:19,371] worker_client_logger INFO:Listening...
+[2018-11-02 08:53:20,095] worker_client_logger INFO:Got connection from 127.0.0.1:39038
+[2018-11-02 08:53:20,095] worker_client_logger INFO:Received DEPLOYRUN request from 127.0.0.1:39038
+[2018-11-02 08:53:20,139] worker_client_logger INFO:Request for exp_id webif_test_runs:1
+[2018-11-02 08:53:20,139] worker_client_logger INFO:Writing to run.sh...
+[2018-11-02 08:53:20,139] worker_client_logger INFO:Writing to run.sh finished.
+[2018-11-02 08:53:20,140] worker_client_logger INFO:Writing to run.meta...
+[2018-11-02 08:53:20,141] worker_client_logger INFO:Writing to run.meta finished.
+[2018-11-02 08:53:20,653] worker_client_logger INFO:A new worker subprocess webif_test_runs:1 starts.
