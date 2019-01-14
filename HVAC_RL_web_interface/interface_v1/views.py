@@ -351,12 +351,17 @@ def get_worker_status(request):
 			logger.error('Socker binding for getting worker status is unsuccessful with the error: ' 
 						+ traceback.format_exc() + ', will retry after 2 seconds.')
 			time.sleep(2);
-	s.connect((ip, port));
-	s.sendall(b'getstatus');
-	recv_str = s.recv(4096).decode(encoding = 'utf-8');
-	recv_json = json.loads(recv_str)
-	s.close();
-	return JsonResponse(recv_json, json_dumps_params={'indent': 2})
+	try:
+		s.connect((ip, port));
+		s.sendall(b'getstatus');
+		recv_str = s.recv(4096).decode(encoding = 'utf-8');
+		recv_json = json.loads(recv_str)
+		s.close();
+		return JsonResponse(recv_json, json_dumps_params={'indent': 2})
+	except Exception as e:
+		logger.error(traceback.format_exc());
+		return JsonResponse({'Error': True}, json_dumps_params={'indent': 2})
+	
 
 @login_required
 def run_exp(request):

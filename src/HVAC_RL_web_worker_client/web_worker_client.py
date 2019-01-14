@@ -15,6 +15,7 @@ LOG_LEVEL = 'DEBUG';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 CONFIG_FILE_PATH = FD + '/../../HVAC_RL_web_interface/configurations/configurations.json';
 TRUSTED_ADDR = json.load(open(CONFIG_FILE_PATH, 'r'))['TRUSTED_ADDR']
+RUNS_PATH = FD + '/../runs/'
 worker_server_addr = json.load(open(CONFIG_FILE_PATH, 'r'))['worker_server_addr']
 class WorkerClient(object):
 
@@ -106,7 +107,7 @@ class WorkerClient(object):
 				this_exp_run_id = recv_decode_list[0];
 				self._logger_main.info('Request for exp_id %s'%this_exp_run_id);
 				this_exp_run_name, this_exp_run_num = this_exp_run_id.split(':');
-				transfer_file_dir_base = FD + '/../' + this_exp_run_name + '/' \
+				transfer_file_dir_base = RUNS_PATH + this_exp_run_name + '/' \
 											   + this_exp_run_num;
 				# Create the exp base dir if not exist
 				if not os.path.isdir(transfer_file_dir_base):
@@ -132,7 +133,7 @@ class WorkerClient(object):
 				target_exp_run_id = recv.decode(encoding = 'utf-8');
 				self._logger_main.info('Received the request for run_id %s'%target_exp_run_id);
 				target_run_name. target_run_num = target_exp_run_id.split(':');
-				base_dir = FD + '/../' + target_run_name + '/' + target_run_num;
+				base_dir = RUNS_PATH + target_run_name + '/' + target_run_num;
 				files_to_send = ['run.meta', 'eval_res_hist.csv']
 				file_sent_count = 0;
 				for file_name in files_to_send:
@@ -168,7 +169,7 @@ class WorkerClient(object):
 							self._logger_main.info('Process %s finished.'%process_name);
 							# Modify the meta file
 							run_name, exp_id = process_name.split(':');
-							meta_file_path = FD + '/../' + run_name + '/' + exp_id + '/run.meta';
+							meta_file_path = RUNS_PATH + run_name + '/' + exp_id + '/run.meta';
 							self._set_meta_status(meta_file_path, 'complete')
 							# Send the results files to the server
 							self._logger_main.info('Sending the %s results files to the server.'%(process_name));
@@ -179,7 +180,7 @@ class WorkerClient(object):
 					if self._exp_queue.qsize() > 0:
 						exp_id = self._exp_queue.get();
 						exp_run_name, exp_run_num = exp_id.split(':');
-						cwd = FD + '/../' + exp_run_name + '/' + exp_run_num;
+						cwd = RUNS_PATH + exp_run_name + '/' + exp_run_num;
 						out_log_file = open(cwd + '/out.log', 'w+');
 						process = subprocess.Popen('bash run.sh', shell = True, 
 							preexec_fn = os.setsid, stdout = out_log_file, 
@@ -200,7 +201,7 @@ class WorkerClient(object):
 
 	def _get_exp_status(self, task_id):
 		run_name, exp_id = task_id.split(':');
-		meta_file_path = FD + '/../' + run_name + '/' + exp_id + '/run.meta';
+		meta_file_path = RUNS_PATH + run_name + '/' + exp_id + '/run.meta';
 		if os.path.isfile(meta_file_path):
 			with open(meta_file_path, 'r') as meta_file:
 				meta_file_json = json.load(meta_file);
@@ -241,7 +242,7 @@ class WorkerClient(object):
 			# Send eval_res_hist.csv in order
 			files_to_send = ['eval_res_hist.csv']
 			file_sent_count = 0;
-			exp_full_dir = FD + '/../' + run_name + '/' + run_num;
+			exp_full_dir = RUNS_PATH + run_name + '/' + run_num;
 			for file_name in files_to_send:
 				file_full_dir = exp_full_dir + '/' + file_name;
 				if os.path.isfile(file_full_dir):

@@ -151,6 +151,7 @@
     
     function update_computer_worker_status(div_id, ip, port){
         $.get("get_worker_status/?ip="+ip+"&port="+port, function(data, status){
+                console.log(data, ip)
                 var status = data;
                 document.getElementById(div_id + "_cpu").innerText = status.cpu+' %'
                 document.getElementById(div_id + "_mem").innerText = status.mem+' %'
