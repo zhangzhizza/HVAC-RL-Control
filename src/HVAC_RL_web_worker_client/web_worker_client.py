@@ -219,6 +219,15 @@ class WorkerClient(object):
 
 	def _send_results_to_server(self, run_name, run_num):
 		s = socket.socket();
+		s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+		while True:
+			try:
+				s.bind((self._ip, self._port + 1));
+				break;
+			except Exception as e:
+				logger.error('Socker binding for sending results is unsuccessful with the error: ' 
+							+ traceback.format_exc() + ', will retry after 2 seconds.')
+				time.sleep(2);
 		server_ip, server_port = worker_server_addr.split(':');
 		s.connect((server_ip, int(server_port)));
 		s.sendall(b'recvevallog');

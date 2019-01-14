@@ -7,6 +7,7 @@ from .forms import *
 import requests, json
 import pandas as pd
 import numpy as np
+import logging, time, traceback
 import os, shutil, subprocess, json, socket, ast
 import eplus_env_util.idf_parser as idf_parser
 import eplus_env_util.cfg_creator as cfg_creator
@@ -15,7 +16,10 @@ import eplus_env_util.eplus_env_creator as eplus_env_creator;
 this_dir_path = os.path.dirname(os.path.realpath(__file__))
 CONFIG_FILE_PATH = this_dir_path + '/../configurations/configurations.json';
 GYM_INIT_PATH = this_dir_path + '/../../src/eplus-env/eplus_env/__init__.py';
+RUNS_PATH = this_dir_path + '/../../src/runs/';
 eplus_model_path = this_dir_path + '/../../src/eplus-env/eplus_env/envs/eplus_models/';
+
+logger = logging.getLogger(__name__)
 
 """
 When the idf_file is uploaded, it is firstly copied to idf_file.local, and then an add file
@@ -291,7 +295,7 @@ def handle_uploaded_idf_file(group_name, file_idf, file_epw=None, file_sch=None)
 	org_idf_parser_for_dxf.run_eplus_minimum(env_idf_store_dir + '/idf/' + file_idf.name + '_base_out')
 
 def getRuns():
-	scan_dir = this_dir_path + '/../../src/runs/';
+	scan_dir = RUNS_PATH;
 	dirs = os.listdir(scan_dir);
 	run_dirs_names = [];
 	run_dirs = []
@@ -320,7 +324,7 @@ def get_eval_res_hist(request):
 	for exp_id in ids_list:
 		this_exp_res = [];
 		exp_run_name, exp_run_num = exp_id.split(":");
-		eval_file_full_dir = (this_dir_path + '/../../src/' + exp_run_name 
+		eval_file_full_dir = (RUNS_PATH + exp_run_name 
 						+ '/' + exp_run_num + '/eval_res_hist.csv');
 		eval_res_hist_pd = pd.read_csv(eval_file_full_dir, index_col = 0, header = None);
 		to_response[exp_id] = eval_res_hist_pd[hist_col_num].reset_index().as_matrix().tolist();
@@ -339,7 +343,14 @@ def get_worker_status(request):
 	s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 	interface_server_addr = get_info_from_config_file('interface_server_addr')
 	this_server_ip, this_server_port = interface_server_addr.split(':');
-	s.bind((this_server_ip, int(this_server_port)))
+	while True:
+		try:
+			s.bind((this_server_ip, int(this_server_port)))
+			break;
+		except Exception as e:
+			logger.error('Socker binding for getting worker status is unsuccessful with the error: ' 
+						+ traceback.format_exc() + ', will retry after 2 seconds.')
+			time.sleep(2);
 	s.connect((ip, port));
 	s.sendall(b'getstatus');
 	recv_str = s.recv(4096).decode(encoding = 'utf-8');
@@ -352,7 +363,7 @@ def run_exp(request):
 	exp_id = request.GET.get('id')
 	mch_ip = request.GET.get('ip')
 	exp_run_name, exp_run_num = exp_id.split(":");
-	exp_full_dir = this_dir_path + '/../../src/' + exp_run_name + '/' + exp_run_num;
+	exp_full_dir = RUNS_PATH + exp_run_name + '/' + exp_run_num;
 	to_write_meta = {}
 	to_write_meta['status'] = 'starting';
 	to_write_meta['machine'] = mch_ip;
@@ -381,6 +392,17 @@ def run_exp(request):
 def deploy_run(exp_full_dir, exp_id, ip, port):
 	# Create a socket to communicate with the workers
 	s = socket.socket();
+	s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+	interface_server_addr = get_info_from_config_file('interface_server_addr')
+	this_server_ip, this_server_port = interface_server_addr.split(':');
+	while True:
+		try:
+			s.bind((this_server_ip, int(this_server_port)))
+			break;
+		except Exception as e:
+			logger.error('Socker binding for deploying the run is unsuccessful with the error: ' 
+						+ traceback.format_exc() + ', will retry after 2 seconds.')
+			time.sleep(2);
 	s.connect((ip, port));
 	s.sendall(b'deployrun');
 	recv_str = s.recv(1024).decode(encoding = 'utf-8');
@@ -394,7 +416,6 @@ def deploy_run(exp_full_dir, exp_id, ip, port):
 		files_to_send = ['run.sh', 'run.meta']
 		file_sent_count = 0;
 		for file_name in files_to_send:
-			print (file_name)
 			file_full_dir = exp_full_dir + '/' + file_name;
 			if os.path.isfile(file_full_dir):
 				f = open(file_full_dir, 'rb');
@@ -410,6 +431,7 @@ def deploy_run(exp_full_dir, exp_id, ip, port):
 				s.sendall(b'$%^next^%$');
 		s.sendall(b'$%^endtransfer^%$');
 		recv_str = s.recv(1024).decode(encoding = 'utf-8');
+	s.close();
 	return recv_str;
 
 @login_required
