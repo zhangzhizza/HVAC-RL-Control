@@ -55,7 +55,7 @@ class EplusEnvCreator(object):
 		for tgt_sch_name in tgt_sch_names_in_org:
 			tgt_sch_ref_ct = source_idf.get_obj_reference_count(tgt_sch_name);
 			if tgt_sch_ref_ct < 1:
-				print('WARNING!!!!! The target schedule %s may not be used the source IDF.')
+				print('WARNING!!!!! The target schedule %s may not be used the source IDF.'%tgt_sch_name)
 		# Localize the schedule files
 		for schedule_file_path in schedule_file_paths:
 			source_idf.localize_schedule(schedule_file_path)

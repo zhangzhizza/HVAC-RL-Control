@@ -44,20 +44,20 @@
 
                                     </div>
                                     <div class="d-flex justify-content-between pb-2">
-                                        <h2>CPU Usage:</h2>
-                                        <h2 id="computer_computerindex_cpu">--%</h2>
+                                        <h4>CPU Usage:</h4>
+                                        <h4 id="computer_computerindex_cpu">--%</h4>
                                     </div>
                                     <div class="d-flex justify-content-between pb-2">
-                                        <h2>Memory Usage:</h2>
-                                        <h2 id="computer_computerindex_mem">--%</h2>
+                                        <h4>Memory Usage:</h4>
+                                        <h4 id="computer_computerindex_mem">--%</h4>
                                     </div>
                                     <div class="d-flex justify-content-between pb-2">
-                                        <h2>Free Disk Space:</h2>
-                                        <h2 id="computer_computerindex_dsk">--GB</h2>
+                                        <h4>Free Disk Space:</h4>
+                                        <h4 id="computer_computerindex_dsk">--GB</h4>
                                     </div>
                                     <div class="d-flex justify-content-between pb-2">
-                                        <h2>Running/Queuing:</h2>
-                                        <h2 id="computer_computerindex_run">--</h2>
+                                        <h4>Running/Queuing:</h4>
+                                        <h4 id="computer_computerindex_run">--</h4>
                                     </div>
                                 </div>
                             </div>
@@ -126,9 +126,13 @@
                     var this_exp_machine = document.getElementById(this_exp_id+":machine:select")
                     var this_exp_step = document.getElementById(this_exp_id+":step");
                     if (this_exp_statuses["status"] == null){
-                        this_exp_status.innerText = "None"
+                        if (this_exp_status.innerText != "None"){
+                            this_exp_status.innerText = "None";
+                        }
                     }else{
-                        this_exp_status.innerText = String(this_exp_statuses["status"]);
+                        if (this_exp_status.innerText != String(this_exp_statuses["status"])){
+                            this_exp_status.innerText = String(this_exp_statuses["status"]);
+                        }
                     }      
                     //var this_exp_machine_sts = this_exp_statuses["machine"];
                     //if (this_exp_machine_sts == null){
@@ -138,9 +142,13 @@
                     //                .indexOf(this_exp_statuses["machine"]) + 1);
                     //}
                     if (this_exp_statuses["step"] == null){
-                        this_exp_step.innerText = "None";
+                        if (this_exp_step.innerText != "None"){
+                            this_exp_step.innerText = "None";
+                        }
                     }else{
-                        this_exp_step.innerText = String(this_exp_statuses["step"]);
+                        if (this_exp_step.innerText != String(this_exp_statuses["step"])){
+                            this_exp_step.innerText = String(this_exp_statuses["step"]);
+                        }
                     }
                 }
             });
@@ -255,7 +263,8 @@
                     var step_highlight_effect = function(mutationsList, observer) {
                         for(var mutation of mutationsList) {
                             if (mutation.type == 'childList') {
-                                var tb_row_i_id_array = tb_row_i.id.split(':');
+                                var tb_row_i_id_array = mutation.target.id.split(':');
+                                console.log(mutation.target.id)
                                 $("#"+tb_row_i_id_array[0]+"\\:"+tb_row_i_id_array[1]+"\\:step").effect( "highlight", {color:"#FF0000"}, 500);
                             }
                         }
@@ -616,17 +625,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-6 clearfix">
-                        <div class="user-profile pull-right">
-                            <img class="avatar user-thumb" src="{% static "/images/author/avatar.png" alt="avatar">
-                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Kumkum Rai <i class="fa fa-angle-down"></i></h4>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Message</a>
-                                <a class="dropdown-item" href="#">Settings</a>
-                                <a class="dropdown-item" href="#">Log Out</a>
-                            </div>
-                        </div>
-                    </div>
+                
                 </div>
             </div>
             <!-- page title area end -->
