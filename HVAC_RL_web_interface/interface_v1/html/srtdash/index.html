@@ -264,7 +264,6 @@
                         for(var mutation of mutationsList) {
                             if (mutation.type == 'childList') {
                                 var tb_row_i_id_array = mutation.target.id.split(':');
-                                console.log(mutation.target.id)
                                 $("#"+tb_row_i_id_array[0]+"\\:"+tb_row_i_id_array[1]+"\\:step").effect( "highlight", {color:"#FF0000"}, 500);
                             }
                         }
@@ -277,7 +276,7 @@
                     var status_highlight_effect = function(mutationsList, observer) {
                         for(var mutation of mutationsList) {
                             if (mutation.type == 'childList') {
-                                var tb_row_i_id_array = tb_row_i.id.split(':');
+                                var tb_row_i_id_array = mutation.target.id.split(':');
                                 $("#"+tb_row_i_id_array[0]+"\\:"+tb_row_i_id_array[1]+"\\:status").effect( "highlight", {color:"#FF0000"}, 500);
                             }
                         }
