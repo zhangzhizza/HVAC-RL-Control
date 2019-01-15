@@ -9,7 +9,7 @@ FD = os.path.dirname(os.path.realpath(__file__));
 LOG_LEVEL = 'DEBUG';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 CONFIG_FILE_PATH = FD + '/../../HVAC_RL_web_interface/configurations/configurations.json';
-RUNS_PATH = FD + '/../'
+RUNS_PATH = FD + '/../runs/'
 TRUSTED_ADDR = json.load(open(CONFIG_FILE_PATH, 'r'))['TRUSTED_ADDR']
 available_worker_clients = json.load(open(CONFIG_FILE_PATH, 'r'))['available_worker_clients']
 
@@ -83,7 +83,7 @@ class WorkerServer(object):
 				# Create the exp base dir if not exist
 				if not os.path.isdir(transfer_file_dir_base):
 					os.makedirs(transfer_file_dir_base);
-				file_names_to_write = ['eval_res_hist.csv'];
+				file_names_to_write = ['eval_res_hist.csv', 'run.meta'];
 				file_counter = 1;
 				for file_name in file_names_to_write:
 					with open(transfer_file_dir_base + '/' + file_name, 'wb') as io_f:

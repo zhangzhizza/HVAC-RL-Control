@@ -117,6 +117,16 @@
 
         }, 5000);
 
+    function register_change_effect(){
+        var exp_ids = Object.keys(status);
+        for (var exp_i=0; exp_i<exp_ids.length; exp_i++){
+            var this_exp_id = exp_ids[exp_i];
+            $("#"+this_exp_id+":step").change(function(){
+               $("#"+this_exp_id+":step").effect( "highlight", {color:"#FF0000"}, 1000);
+            });
+        }
+    }
+
     function update_exps_status(run_name){
         $.get("get_exp_status/?run_name="+run_name, function(data, status){
                 var status = data;
