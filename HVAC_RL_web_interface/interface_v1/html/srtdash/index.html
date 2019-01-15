@@ -24,9 +24,8 @@
     <!-- modernizr css -->
     <script src="{% static "/js/vendor/modernizr-2.8.3.min.js" %}"></script>
      <!-- jquery latest version -->
-    <script src="{% static "/js/vendor/jquery-2.2.4.min.js" %}"></script>
-    <script src="{% static "/js/jquery.slimscroll.min.js" %}"></script>
-    <script src="{% static "/js/jquery.slicknav.min.js" %}"></script>
+    <script src="{% static "/js/vendor/jquery-3.3.1.min.js" %}"></script>
+    <script src="{% static "/js/vendor/jquery-ui-1.12.1.min.js" %}"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
@@ -64,7 +63,7 @@
                             </div>
                             `
 
-        window.onload = function() {
+        $(document).ready(function(){
         // Read all workers
         var ct_i = 1;
         {%for available_computer in available_computers%}
@@ -76,7 +75,6 @@
             var status_div = document.createElement("div");
             status_div.className = "col-md-4";
             status_div.innerHTML = computer_status_html.replace(/computerindex/g, ct_i)
-            console.log(status_div)
             document.getElementById('computer_status').appendChild(status_div);
             ct_i += 1;
         {%endfor%}
@@ -100,9 +98,8 @@
             update_computer_worker_status('computer_' + (i+1)
                                         , all_workers_ips[i], all_workers_ports[i])
 
-        }        
-    
-        }
+        }       
+        });
 
         // Repeated function
         window.setInterval(function(){
@@ -117,15 +114,6 @@
 
         }, 5000);
 
-    function register_change_effect(){
-        var exp_ids = Object.keys(status);
-        for (var exp_i=0; exp_i<exp_ids.length; exp_i++){
-            var this_exp_id = exp_ids[exp_i];
-            $("#"+this_exp_id+":step").change(function(){
-               $("#"+this_exp_id+":step").effect( "highlight", {color:"#FF0000"}, 1000);
-            });
-        }
-    }
 
     function update_exps_status(run_name){
         $.get("get_exp_status/?run_name="+run_name, function(data, status){
@@ -161,7 +149,6 @@
     
     function update_computer_worker_status(div_id, ip, port){
         $.get("get_worker_status/?ip="+ip+"&port="+port, function(data, status){
-                console.log(data, ip)
                 var status = data;
                 document.getElementById(div_id + "_cpu").innerText = status.cpu+' %'
                 document.getElementById(div_id + "_mem").innerText = status.mem+' %'
@@ -258,6 +245,37 @@
                     // Add select as child
                     tb_row_i_mch.innerText = "";
                     tb_row_i_mch.appendChild(mch_select);
+                    // Register text change effect on the steps
+                    var this_row_step = document.getElementById(tb_row_i.id+":step");
+                    this_row_step.setAttribute('id', tb_row_i.id+":step:outer")
+                    var this_row_step_div = document.createElement('div')
+                    this_row_step_div.setAttribute("id", tb_row_i.id+":step");
+                    this_row_step.innerHTML = '';
+                    this_row_step.appendChild(this_row_step_div);
+                    var step_highlight_effect = function(mutationsList, observer) {
+                        for(var mutation of mutationsList) {
+                            if (mutation.type == 'childList') {
+                                var tb_row_i_id_array = tb_row_i.id.split(':');
+                                $("#"+tb_row_i_id_array[0]+"\\:"+tb_row_i_id_array[1]+"\\:step").effect( "highlight", {color:"#FF0000"}, 500);
+                            }
+                        }
+                    }
+                    var this_row_step_obs = new MutationObserver(step_highlight_effect);
+                    var this_row_step_obs_config = { attributes: true, childList: true, subtree: true };
+                    this_row_step_obs.observe(this_row_step, this_row_step_obs_config);
+                    // Register text change effect on the status
+                    var this_row_status = document.getElementById(tb_row_i.id+":status");
+                    var status_highlight_effect = function(mutationsList, observer) {
+                        for(var mutation of mutationsList) {
+                            if (mutation.type == 'childList') {
+                                var tb_row_i_id_array = tb_row_i.id.split(':');
+                                $("#"+tb_row_i_id_array[0]+"\\:"+tb_row_i_id_array[1]+"\\:status").effect( "highlight", {color:"#FF0000"}, 500);
+                            }
+                        }
+                    }
+                    var this_row_status_obs = new MutationObserver(status_highlight_effect);
+                    var this_row_status_obs_config = { attributes: true, childList: true, subtree: true };
+                    this_row_status_obs.observe(this_row_status, this_row_status_obs_config);
 
                 }
                 // Table head styles
