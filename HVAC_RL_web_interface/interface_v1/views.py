@@ -18,6 +18,7 @@ CONFIG_FILE_PATH = this_dir_path + '/../configurations/configurations.json';
 GYM_INIT_PATH = this_dir_path + '/../../src/eplus-env/eplus_env/__init__.py';
 RUNS_PATH = this_dir_path + '/../../src/runs/';
 eplus_model_path = this_dir_path + '/../../src/eplus-env/eplus_env/envs/eplus_models/';
+worker_server = json.load(open(CONFIG_FILE_PATH, 'r'))['worker_server_addr']
 
 logger = logging.getLogger(__name__)
 
@@ -361,7 +362,31 @@ def get_worker_status(request):
 	except Exception as e:
 		logger.error(traceback.format_exc());
 		return JsonResponse({'Error': True}, json_dumps_params={'indent': 2})
-	
+
+@login_required
+def reset_exp(request):
+	exp_id = request.GET.get('id')
+	exp_run_name, exp_run_num = exp_id.split(":");
+	# Create a socket to communicate with the workerserver
+	s = socket.socket();
+	s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+	interface_server_addr = get_info_from_config_file('interface_server_addr')
+	this_server_ip, this_server_port = interface_server_addr.split(':');
+	while True:
+		try:
+			s.bind((this_server_ip, int(this_server_port)))
+			break;
+		except Exception as e:
+			logger.error('Socker binding for reseting the run is unsuccessful with the error: ' 
+						+ traceback.format_exc() + ', will retry after 2 seconds.')
+			time.sleep(2);
+	workerserver_ip, workerserver_port = worker_server.split(':');
+	workerserver_port = int(workerserver_port) + 2;
+	s.connect((workerserver_ip, workerserver_port));
+	s.sendall(b'%s:%s'%(resetexp, exp_id));
+	recv_str = s.recv(1024).decode(encoding = 'utf-8');
+	return HttpResponse(recv_str);
+
 
 @login_required
 def run_exp(request):

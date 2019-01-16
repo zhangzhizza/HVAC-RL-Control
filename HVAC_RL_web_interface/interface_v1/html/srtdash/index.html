@@ -190,6 +190,17 @@
         });
     }
 
+    function reset_button_click(event){
+        var this_btn_prj_id = event.explicitOriginalTarget.value
+        $.get("reset_exp/?id="+this_btn_prj_id, function(data, status){
+            if (data=="Successful"){
+                alert("Reset " + this_btn_prj_id + " successfully");
+            }else{
+                alert(data)
+            }
+        });
+    }
+
     function project_selector_func_helper(select_value){
         $.get("get_all_exp/?run_name=" + select_value, function(data, status){
                 document.getElementById('project_table_div').innerHTML = data;
@@ -209,17 +220,23 @@
                     var tb_row_i_sts = tb_row_i.cells[2]
                     // Create a button
                     var tb_row_i_act = tb_row_i.cells[1];
-                    var button_i = document.createElement("button")
-                    button_i.innerText = "run";
-                    button_i.id = tb_row_i.id + ':action:button';
-                    button_i.value = tb_row_i.id
-                    button_i.addEventListener("click", run_button_click)
+                    var button_i_run = document.createElement("button")
+                    button_i_run.innerText = "run";
+                    button_i_run.id = tb_row_i.id + ':action:button';
+                    button_i_run.value = tb_row_i.id
+                    button_i_run.addEventListener("click", run_button_click)
                     if (tb_row_i_sts.innerText != "None"){
-                        button_i.disabled = true;
+                        button_i_run.disabled = true;
                     } 
+                    var button_i_reset = document.createElement("button")
+                    button_i_reset.innerText = "reset";
+                    button_i_reset.id = tb_row_i.id + ':action:button:reset';
+                    button_i_reset.value = tb_row_i.id
+                    button_i_reset.addEventListener("click", reset_button_click)
                     // Add button as child
                     tb_row_i_act.innerText = "";
-                    tb_row_i_act.appendChild(button_i);
+                    tb_row_i_act.appendChild(button_i_run);
+                    tb_row_i_act.appendChild(button_i_reset)
                     // Add checkbox
                     var checkbox_i = document.createElement('input');
                     checkbox_i.type = "checkbox";

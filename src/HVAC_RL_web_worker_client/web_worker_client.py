@@ -153,6 +153,22 @@ class WorkerClient(object):
 					if file_sent_count < len(files_to_send):
 						c.sendall(b'$%^next^%$');
 				c.sendall(b'$%^endtransfer^%$');
+			elif recv.lower().split(':')[0] == 'resetexp':
+				code, prj_name, run_id = recv.lower().split(':');
+				self._logger_main.info('Received RESETEXP request from %s to clear %s:%s.'
+										%(addr, prj_name, run_id))
+				tgt_run_dir = RUNS_PATH + '/' + prj_name + '/' + run_id;
+				# Clear files in the worker
+				files_to_keep = ['run.sh'];
+				for tgt_run_file in os.listdir(tgt_run_dir):
+					if tgt_run_file not in files_to_keep:
+						if os.path.isfile(tgt_run_dir + '/' + tgt_run_file):
+							os.remove(tgt_run_dir + '/' + tgt_run_file);
+						else:
+							shutil.rmtree(tgt_run_dir + '/' + tgt_run_file);
+				self._logger_main.info('Cleared the run directory for %s:%s in the worker'
+										%(prj_name, run_id));
+				c.sendall(b'exp_cleared')
 			
 	def _run_exp_worker_manager(self, max_work_num):
 		
