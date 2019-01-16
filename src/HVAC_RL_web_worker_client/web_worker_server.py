@@ -175,7 +175,8 @@ class WorkerServer(object):
 					s_st.connect((rmt_worker_ip, int(rmt_worker_port)));
 					self._logger_main.info('EXP_RESETER: Connected to %s. to clear the run directory'
 											%(rmt_worker_addr))
-					s_st.sendall(b'%s:%s:%s'%(code, prj_name, run_id));
+					to_sent = '%s:%s:%s'%(code, prj_name, run_id)
+					s_st.sendall(bytearray(to_sent, encoding = 'utf-8'));
 					recv_str = s_st.recv(4096).decode(encoding = 'utf-8');
 					self._logger_main.info('EXP_RESETER: Remote experiment directory cleared');
 				else:

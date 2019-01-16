@@ -2,7 +2,7 @@ import socket
 import subprocess
 import copy
 import time
-import os
+import os, shutil
 import psutil
 import queue
 import threading, json

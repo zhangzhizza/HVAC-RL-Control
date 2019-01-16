@@ -383,7 +383,8 @@ def reset_exp(request):
 	workerserver_ip, workerserver_port = worker_server.split(':');
 	workerserver_port = int(workerserver_port) + 2;
 	s.connect((workerserver_ip, workerserver_port));
-	s.sendall(b'%s:%s'%(resetexp, exp_id));
+	send_code = '%s:%s'%('resetexp', exp_id)
+	s.sendall(bytearray(send_code, encoding = 'utf-8'));
 	recv_str = s.recv(1024).decode(encoding = 'utf-8');
 	return HttpResponse(recv_str);
 
