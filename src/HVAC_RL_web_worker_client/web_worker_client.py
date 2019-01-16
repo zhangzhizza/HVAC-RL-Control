@@ -240,7 +240,7 @@ class WorkerClient(object):
 			# Send seperator
 			s.sendall(b'$%^next^%$')
 			# Send eval_res_hist.csv in order
-			files_to_send = ['eval_res_hist.csv']
+			files_to_send = ['eval_res_hist.csv', 'run.meta']
 			file_sent_count = 0;
 			exp_full_dir = RUNS_PATH + run_name + '/' + run_num;
 			for file_name in files_to_send:
