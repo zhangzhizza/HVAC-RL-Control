@@ -194,6 +194,7 @@
         var this_btn_prj_id = event.explicitOriginalTarget.value
         $.get("reset_exp/?id="+this_btn_prj_id, function(data, status){
             if (data=="Successful"){
+                project_selector_func_helper(this_btn_prj_id.split(":")[0]);
                 alert("Reset " + this_btn_prj_id + " successfully");
             }else{
                 alert(data)

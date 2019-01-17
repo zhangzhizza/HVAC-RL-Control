@@ -386,6 +386,8 @@ def reset_exp(request):
 	send_code = '%s:%s'%('resetexp', exp_id)
 	s.sendall(bytearray(send_code, encoding = 'utf-8'));
 	recv_str = s.recv(1024).decode(encoding = 'utf-8');
+	if 'successful' in recv_str:
+		recv_str = 'Successful'; 
 	return HttpResponse(recv_str);
 
 
