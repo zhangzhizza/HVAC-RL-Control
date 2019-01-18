@@ -172,8 +172,8 @@
         project_selector_func_helper(select_value)
     }
 
-    function run_button_click(event){
-        var this_btn_prj_id = event.explicitOriginalTarget.value
+    function run_button_click(){
+        var this_btn_prj_id = this.value;
         var this_row_mch_slt = document.getElementById(this_btn_prj_id + ":machine:select")
         var this_row_mch_val = this_row_mch_slt.options[this_row_mch_slt.selectedIndex].getAttribute("value")
         $.get("run_exp/?id="+this_btn_prj_id+"&ip="+this_row_mch_val, function(data, status){
@@ -190,8 +190,9 @@
         });
     }
 
-    function reset_button_click(event){
-        var this_btn_prj_id = event.explicitOriginalTarget.value
+    function reset_button_click(){
+        var this_btn_prj_id = this.value;
+        console.log(this_btn_prj_id)
         $.get("reset_exp/?id="+this_btn_prj_id, function(data, status){
             if (data=="Successful"){
                 project_selector_func_helper(this_btn_prj_id.split(":")[0]);
@@ -345,7 +346,7 @@
         var checked_list = [];
         var tb_rows = (document.getElementById('project_table_div')
             .getElementsByTagName('table')[0].tBodies[0].rows)
-        for (var i=0; i<tb_rows.length; i++){
+        for (var i=1; i<tb_rows.length; i++){
             var this_exp_id = tb_rows[i].id;
             this_exp_check_id = this_exp_id + ':action:checkbox';
             if (document.getElementById(this_exp_check_id).checked == true){

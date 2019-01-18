@@ -1,0 +1,737 @@
+Using TensorFlow backend.
+[2019-01-18 14:31:10,350] A3C_AGENT_MAIN INFO:Namespace(action_repeat_n=1, action_space='part1_v1', activation='relu', agent_num=5, check_args_only=False, clip_norm=5.0, debug_log_prob=0.0005, decay_steps=1000000, dropout_prob=0.0, end_e=0.0, env='Part1-Light-Pit-Train-v1', eval_act_func='part1_v1', eval_epi_num=1, eval_freq=250000, forecast_dim=0, gamma=0.99, h_decay_bounds=[], h_regu_frac=[0.0], init_e=0.0, isNoisyNet=True, isNoisyNetEval_rmNoise=True, is_greedy_policy=False, is_learning_rate_decay_staircase=False, is_warm_start=False, job_mode='Train', learning_rate=0.001, learning_rate_decay_rate=0.9, learning_rate_decay_steps=100000, max_interactions=5000000, metric_func='part1_v1', model_dir='None', model_param=[64, 4], model_type='nn', num_threads=16, output='./Part1-Light-Pit-Train-v1-res1', p_loss_frac=1.0, raw_state_prcs_func='cslDx_1', reward_func='part1_v1', rmsprop_decay=0.99, rmsprop_epsil=1e-10, rmsprop_momet=0.0, rwd_e_para=1.0, rwd_p_para=1.0, save_freq=500000, save_max_to_keep=5, save_scope='all', sharedNet_type='Dense', state_dim=71, test_env=['Part1-Light-Pit-Test-v1', 'Part1-Light-Pit-Test-v2'], test_mode='Multiple', train_act_func='part1_v1', train_freq=5, v_loss_frac=0.5, violation_penalty_scl=10.0, weight_initer='glorot_uniform', window_len=1)
+[2019-01-18 14:31:10,350] A3C_AGENT_MAIN INFO:Start compiling...
+2019-01-18 14:31:10.439282: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+[2019-01-18 14:31:29,668] A3C_AGENT_MAIN INFO:Start the learning...
+[2019-01-18 14:31:29,668] A3C_AGENT_MAIN INFO:Prepare the evaluation environments ['Part1-Light-Pit-Train-v1', 'Part1-Light-Pit-Test-v1', 'Part1-Light-Pit-Test-v2'] ...
+[2019-01-18 14:31:29,868] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-18 14:31:29,868] A3C_AGENT_WORKER-Thread-2 INFO:Local worker starts!
+[2019-01-18 14:31:29,959] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-2_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:31:29,961] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-2_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Train-v1-res2/Eplus-env-sub_run1
+[2019-01-18 14:31:30,869] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-18 14:31:30,873] A3C_AGENT_WORKER-Thread-3 INFO:Local worker starts!
+[2019-01-18 14:31:30,975] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-3_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:31:30,976] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-3_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Train-v1-res3/Eplus-env-sub_run1
+[2019-01-18 14:31:31,874] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-18 14:31:31,875] A3C_AGENT_WORKER-Thread-4 INFO:Local worker starts!
+[2019-01-18 14:31:31,979] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-4_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:31:31,981] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-4_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Train-v1-res4/Eplus-env-sub_run1
+[2019-01-18 14:31:32,876] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-18 14:31:32,878] A3C_AGENT_WORKER-Thread-5 INFO:Local worker starts!
+[2019-01-18 14:31:32,979] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-5_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:31:32,981] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-5_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Train-v1-res5/Eplus-env-sub_run1
+[2019-01-18 14:31:33,879] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-18 14:31:33,881] A3C_AGENT_WORKER-Thread-6 INFO:Local worker starts!
+[2019-01-18 14:31:33,987] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-6_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:31:33,989] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-6_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Train-v1-res6/Eplus-env-sub_run1
+[2019-01-18 14:31:34,881] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-18 14:31:34,882] A3C_AGENT_WORKER-Thread-7 INFO:Local worker starts!
+[2019-01-18 14:31:35,013] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-7_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:31:35,015] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-7_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Train-v1-res7/Eplus-env-sub_run1
+[2019-01-18 14:31:35,883] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-18 14:31:35,884] A3C_AGENT_WORKER-Thread-8 INFO:Local worker starts!
+[2019-01-18 14:31:36,051] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-8_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:31:36,054] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-8_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Train-v1-res8/Eplus-env-sub_run1
+[2019-01-18 14:31:36,885] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-18 14:31:36,886] A3C_AGENT_WORKER-Thread-9 INFO:Local worker starts!
+[2019-01-18 14:31:37,057] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-9_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:31:37,060] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-9_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Train-v1-res9/Eplus-env-sub_run1
+[2019-01-18 14:31:37,887] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-18 14:31:37,888] A3C_AGENT_WORKER-Thread-10 INFO:Local worker starts!
+[2019-01-18 14:31:38,056] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-10_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:31:38,059] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-10_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Train-v1-res10/Eplus-env-sub_run1
+[2019-01-18 14:31:38,889] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-18 14:31:38,889] A3C_AGENT_WORKER-Thread-11 INFO:Local worker starts!
+[2019-01-18 14:31:39,060] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-11_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:31:39,063] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-11_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Train-v1-res11/Eplus-env-sub_run1
+[2019-01-18 14:31:39,890] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-18 14:31:39,891] A3C_AGENT_WORKER-Thread-12 INFO:Local worker starts!
+[2019-01-18 14:31:40,060] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-12_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:31:40,063] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-12_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Train-v1-res12/Eplus-env-sub_run1
+[2019-01-18 14:31:40,892] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-18 14:31:40,893] A3C_AGENT_WORKER-Thread-13 INFO:Local worker starts!
+[2019-01-18 14:31:41,096] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-13_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:31:41,102] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-13_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Train-v1-res13/Eplus-env-sub_run1
+[2019-01-18 14:31:41,894] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-18 14:31:41,895] A3C_AGENT_WORKER-Thread-14 INFO:Local worker starts!
+[2019-01-18 14:31:42,178] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-14_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:31:42,185] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-14_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Train-v1-res14/Eplus-env-sub_run1
+[2019-01-18 14:31:42,896] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-18 14:31:42,897] A3C_AGENT_WORKER-Thread-15 INFO:Local worker starts!
+[2019-01-18 14:31:43,128] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-15_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:31:43,132] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-15_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Train-v1-res15/Eplus-env-sub_run1
+[2019-01-18 14:31:43,897] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-18 14:31:43,898] A3C_AGENT_WORKER-Thread-16 INFO:Local worker starts!
+[2019-01-18 14:31:44,184] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-16_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:31:44,187] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-16_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Train-v1-res16/Eplus-env-sub_run1
+[2019-01-18 14:31:44,899] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-18 14:31:44,900] A3C_AGENT_WORKER-Thread-17 INFO:Local worker starts!
+[2019-01-18 14:31:45,223] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-17_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:31:45,226] EPLUS_ENV_Part1-Light-Pit-Train-v1_Thread-17_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Train-v1-res17/Eplus-env-sub_run1
+[2019-01-18 14:33:58,808] A3C_AGENT_WORKER-Thread-2 INFO:Evaluating...
+[2019-01-18 14:33:58,808] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:33:58,812] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Train-v1-res1/Eplus-env-sub_run1
+[2019-01-18 14:35:09,601] A3C_AGENT_WORKER-Thread-2 DEBUG:NoisyNet noise sample: [array([0.], dtype=float32), 0.0]
+[2019-01-18 14:35:09,601] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation this: [17.83333333333333, 54.66666666666666, 212.0, 7.999999999999999, 23.06437008817944, 22.2220395658278, 18.84418398446317, 21.99120950674555, 22.32875483008402, 21.37991728770784, 22.72952495203717, 21.89088185784409, 21.945436831228, 22.28177207887406, 22.08668674732488, 21.9053485052209, 22.2837683037213, 22.35775144152687, 22.19810035944937, 22.05092587863719, 22.86795958287821, 23.07160815683959, 22.26266637958865, 22.16582489250694, 22.39111744146273, 22.71939108144933, 25.06396326851613, 24.22112297116619, 27.68531828032829, 23.99131328045741, 24.2938434252571, 23.37470395131515, 24.72936443259394, 23.76027468327885, 23.94507845870901, 24.20718437784743, 24.08416156304239, 23.90527492195634, 23.46397108444301, 23.79398745759491, 23.95447326333021, 23.93670604985108, 24.21490477099677, 23.93989071389587, 24.26273891259336, 24.16400323364119, 24.06030694363657, 24.71910497102571, 23.06396326851613, 22.22112297116619, 17.68531828032829, 21.99131328045741, 22.2938434252571, 21.37470395131515, 22.72936443259394, 21.76027468327885, 21.94507845870901, 22.20718437784743, 22.08416156304239, 21.90527492195634, 21.46397108444301, 21.79398745759491, 21.95447326333021, 21.93670604985108, 22.21490477099677, 21.93989071389587, 22.26273891259336, 22.16400323364119, 22.06030694363657, 22.71910497102571, 24994.32270078832]
+[2019-01-18 14:35:09,601] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation forecast: []
+[2019-01-18 14:35:09,603] A3C_AGENT_WORKER-Thread-2 INFO:Softmax [0.04579185 0.04687867 0.03515901 0.0321588  0.04116153 0.0347122
+ 0.03394435 0.04176654 0.04062576 0.03466695 0.0457597  0.03152406
+ 0.05232261 0.04686407 0.03213993 0.04404517 0.04050613 0.03291424
+ 0.03010723 0.03816362 0.04051781 0.03168597 0.04512793 0.05022163
+ 0.05123424], sampled 0.908987240489878
+[2019-01-18 14:35:31,534] A3C_AGENT_WORKER-Thread-2 DEBUG:NoisyNet noise sample: [array([0.], dtype=float32), 0.0]
+[2019-01-18 14:35:31,534] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation this: [25.16666666666667, 82.33333333333334, 163.6666666666667, 23.66666666666666, 20.72981356592366, 21.01973640572803, 21.89053999490663, 20.75828593468166, 21.14001238653282, 20.80011667109763, 20.66438445528765, 20.90560821502879, 20.90363321409476, 22.43357570951042, 21.89172412694456, 22.10514006424247, 22.48942565323959, 22.62064076874193, 22.58170860642345, 22.94163230634298, 22.39640346840942, 22.70741501449995, 21.93191271910368, 21.21366322372868, 22.58735343348946, 22.20443519652514, 27.95469728580694, 28.45565553274342, 23.88829085982666, 26.78659563271072, 28.06362207761437, 28.65593674149863, 28.15663215807462, 28.37397240073426, 27.88282814447652, 28.9416434954695, 27.96503622894961, 28.28533941802621, 27.7687146701369, 27.19233811172229, 28.13086188274695, 28.31396413711223, 26.865115390976, 27.85173700861468, 27.89417067115658, 28.14878317269192, 27.35113256568097, 26.88185399011984, 17.95469728580694, 18.45565553274342, 21.88829085982666, 16.78659563271072, 18.06362207761437, 18.65593674149863, 18.15663215807462, 18.37397240073426, 17.88282814447652, 18.9416434954695, 17.96503622894961, 18.28533941802621, 17.7687146701369, 17.19233811172229, 18.13086188274695, 18.31396413711223, 16.865115390976, 17.85173700861468, 17.89417067115658, 18.14878317269192, 17.35113256568097, 16.88185399011984, 43462.88084572615]
+[2019-01-18 14:35:31,534] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation forecast: []
+[2019-01-18 14:35:31,536] A3C_AGENT_WORKER-Thread-2 INFO:Softmax [0.04651602 0.04596729 0.03233866 0.03104696 0.03972653 0.03723832
+ 0.03255237 0.0391615  0.03910954 0.03082543 0.0495247  0.03121741
+ 0.05610173 0.04651752 0.03094621 0.04551413 0.04084752 0.03073379
+ 0.03027997 0.04009701 0.04198517 0.03246031 0.04564436 0.05103701
+ 0.05261049], sampled 0.011239453149232137
+[2019-01-18 14:37:37,441] A3C_AGENT_WORKER-Thread-2 INFO:Evaluation: average rewards by now are 10339.8533 477666544.4147 597.0000
+[2019-01-18 14:37:37,537] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:EnergyPlus Starting
+
+[2019-01-18 14:37:37,538] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2019.01.18 14:33
+
+[2019-01-18 14:37:37,538] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Processing Data Dictionary
+
+[2019-01-18 14:37:37,538] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Processing Input File
+
+[2019-01-18 14:37:37,538] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Response Factors
+
+[2019-01-18 14:37:37,538] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "GROUNDFLOOR_ASHRAE901_2013_ZONE5", Construction # 1
+
+[2019-01-18 14:37:37,538] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "GROUNDFLOOR_ASHRAE901_2013_ZONE5", Construction # 1
+
+[2019-01-18 14:37:37,538] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "GROUNDFLOOR_ASHRAE901_2013_ZONE5", Construction # 1
+
+[2019-01-18 14:37:37,538] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "3", Construction # 2
+
+[2019-01-18 14:37:37,538] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "5", Construction # 4
+
+[2019-01-18 14:37:37,538] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "7", Construction # 6
+
+[2019-01-18 14:37:37,538] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "9", Construction # 7
+
+[2019-01-18 14:37:37,539] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "10", Construction # 8
+
+[2019-01-18 14:37:37,539] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "EXTWALL_LIGHT_ASHRAE901_2013_ZONE5", Construction # 9
+
+[2019-01-18 14:37:37,539] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "17", Construction # 10
+
+[2019-01-18 14:37:37,539] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "18", Construction # 11
+
+[2019-01-18 14:37:37,539] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2019-01-18 14:37:37,539] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2019-01-18 14:37:37,539] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2019-01-18 14:37:37,539] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "21", Construction # 13
+
+[2019-01-18 14:37:37,539] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "23", Construction # 15
+
+[2019-01-18 14:37:37,539] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "25", Construction # 17
+
+[2019-01-18 14:37:37,539] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "27", Construction # 18
+
+[2019-01-18 14:37:37,539] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "31", Construction # 19
+
+[2019-01-18 14:37:37,539] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "35", Construction # 21
+
+[2019-01-18 14:37:37,539] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "41", Construction # 22
+
+[2019-01-18 14:37:37,539] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "42", Construction # 23
+
+[2019-01-18 14:37:37,539] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2019-01-18 14:37:37,540] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2019-01-18 14:37:37,540] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2019-01-18 14:37:37,540] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2019-01-18 14:37:37,540] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2019-01-18 14:37:37,540] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2019-01-18 14:37:37,540] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "51", Construction # 27
+
+[2019-01-18 14:37:37,540] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "52", Construction # 28
+
+[2019-01-18 14:37:37,540] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-18 14:37:37,540] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-18 14:37:37,540] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-18 14:37:37,540] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-18 14:37:37,540] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-18 14:37:37,540] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-18 14:37:37,540] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-18 14:37:37,540] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-18 14:37:37,540] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-18 14:37:37,541] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2019-01-18 14:37:37,541] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2019-01-18 14:37:37,541] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2019-01-18 14:37:37,541] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "65", Construction # 31
+
+[2019-01-18 14:37:37,541] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "ROOF_LIGHT_ASHRAE901_2013_ZONE5", Construction # 34
+
+[2019-01-18 14:37:37,541] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "75", Construction # 35
+
+[2019-01-18 14:37:37,541] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "83", Construction # 36
+
+[2019-01-18 14:37:37,541] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "85", Construction # 38
+
+[2019-01-18 14:37:37,541] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Window Optical Properties
+
+[2019-01-18 14:37:37,541] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Solar Calculations
+
+[2019-01-18 14:37:37,541] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Allocate Solar Module Arrays
+
+[2019-01-18 14:37:37,541] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Zone Report Variables
+
+[2019-01-18 14:37:37,541] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Surface (Shading) Report Variables
+
+[2019-01-18 14:37:37,541] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Solar Absorption Factors
+
+[2019-01-18 14:37:37,541] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Determining Shadowing Combinations
+
+[2019-01-18 14:37:37,542] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Window Shade Absorption Factors
+
+[2019-01-18 14:37:37,542] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Proceeding with Initializing Solar Calculations
+
+[2019-01-18 14:37:37,542] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Surfaces
+
+[2019-01-18 14:37:37,542] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Outdoor environment for Surfaces
+
+[2019-01-18 14:37:37,542] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Setting up Surface Reporting Variables
+
+[2019-01-18 14:37:37,542] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Temperature and Flux Histories
+
+[2019-01-18 14:37:37,542] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Window Shading
+
+[2019-01-18 14:37:37,542] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Absorption Factors
+
+[2019-01-18 14:37:37,542] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Diffuse Solar Absorption Factors
+
+[2019-01-18 14:37:37,542] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Diffuse Solar Exchange through Interzone Windows
+
+[2019-01-18 14:37:37,542] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Solar Heat Gains
+
+[2019-01-18 14:37:37,542] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Internal Heat Gains
+
+[2019-01-18 14:37:37,542] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Interior Solar Distribution
+
+[2019-01-18 14:37:37,542] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Interior Convection Coefficients
+
+[2019-01-18 14:37:37,542] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Gathering Information for Predefined Reporting
+
+[2019-01-18 14:37:37,542] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Completed Initializing Surface Heat Balance
+
+[2019-01-18 14:37:37,542] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculate Outside Surface Heat Balance
+
+[2019-01-18 14:37:37,543] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculate Inside Surface Heat Balance
+
+[2019-01-18 14:37:37,543] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculate Air Heat Balance
+
+[2019-01-18 14:37:37,543] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing HVAC
+
+[2019-01-18 14:37:37,543] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,543] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,543] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,543] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,543] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,543] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,543] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,543] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,543] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,543] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,543] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,543] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,543] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,544] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,544] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,544] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,544] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,544] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,544] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,544] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,544] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,544] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,544] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,544] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,544] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,544] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Performing Zone Sizing Simulation
+
+[2019-01-18 14:37:37,544] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,545] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,546] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,546] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,546] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,546] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,546] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,546] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:37:37,546] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Performing Zone Sizing Simulation
+
+[2019-01-18 14:37:37,546] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-18 14:37:37,546] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating System sizing
+
+[2019-01-18 14:37:37,546] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-18 14:37:37,546] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating System sizing
+
+[2019-01-18 14:37:37,546] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-18 14:37:37,546] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Simulation
+
+[2019-01-18 14:37:37,546] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Reporting Surfaces
+
+[2019-01-18 14:37:37,546] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Beginning Primary Simulation
+
+[2019-01-18 14:37:37,546] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing New Environment Parameters
+
+[2019-01-18 14:37:37,546] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {1}
+
+[2019-01-18 14:37:37,546] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Instantiating Building Controls Virtual Test Bed
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:ExternalInterface initializes.
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Number of outputs in ExternalInterface = 71
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Number of inputs  in ExternalInterface = 1
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {2}
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {3}
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {4}
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {5}
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {6}
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {7}
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {8}
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {9}
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {10}
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {11}
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {12}
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {13}
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {14}
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {15}
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {16}
+
+[2019-01-18 14:37:37,547] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {17}
+
+[2019-01-18 14:37:37,548] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {18}
+
+[2019-01-18 14:37:37,548] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {19}
+
+[2019-01-18 14:37:37,548] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {20}
+
+[2019-01-18 14:37:37,548] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {21}
+
+[2019-01-18 14:37:37,548] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {22}
+
+[2019-01-18 14:37:37,548] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {23}
+
+[2019-01-18 14:37:37,548] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {24}
+
+[2019-01-18 14:37:37,548] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {25}
+
+[2019-01-18 14:37:37,548] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Starting Simulation at 06/01 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-18 14:37:37,548] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:ExternalInterface starts first data exchange.
+
+[2019-01-18 14:37:37,548] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=06/21
+
+[2019-01-18 14:37:37,548] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 06/21 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-18 14:37:37,548] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=07/11
+
+[2019-01-18 14:37:37,548] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 07/11 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-18 14:37:37,548] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=07/31
+
+[2019-01-18 14:37:37,548] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 07/31 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-18 14:37:37,548] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=08/20
+
+[2019-01-18 14:37:37,548] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 08/20 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-18 14:37:37,549] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Writing tabular output file results using comma format.
+
+[2019-01-18 14:37:37,549] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Writing tabular output file results using HTML format.
+
+[2019-01-18 14:37:37,549] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Writing final SQL reports
+
+[2019-01-18 14:37:37,549] EPLUS_ENV_Part1-Light-Pit-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:EnergyPlus Run Time=00hr 03min 38.62sec
+
+[2019-01-18 14:37:38,539] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:37:38,545] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Test-v1-res1/Eplus-env-sub_run1
+[2019-01-18 14:39:08,516] A3C_AGENT_WORKER-Thread-2 DEBUG:NoisyNet noise sample: [array([0.], dtype=float32), 0.0]
+[2019-01-18 14:39:08,516] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation this: [17.95, 86.5, 93.0, 222.0, 19.76109518020077, 20.0383321336102, 21.16551646893778, 20.11273198889544, 20.13935199916094, 20.26544238234312, 19.67449351730291, 20.0044747655936, 19.54947754097788, 19.88480874637466, 20.54345260685643, 19.17579728562781, 19.85829188313005, 19.58820249487595, 19.82914660118092, 19.96664707330075, 19.88796721176732, 19.91051960575634, 20.17344390966332, 19.42958158655851, 19.41797727301108, 20.56180182606711, 29.75909367841259, 30.03257279859988, 31.16511182072571, 30.112524067038, 30.13907639383623, 30.26407761689104, 29.67421444958082, 30.00425076294414, 29.54364734261322, 29.46157919446106, 30.47337074374554, 26.81669396255025, 29.85785713030867, 29.56147017207917, 29.82837953102878, 29.7733094073949, 29.83713929579566, 29.8962549789036, 30.17323288635946, 29.42886554313173, 29.37248727440297, 30.56153099557656, 19.75909367841259, 20.03257279859988, 21.16511182072571, 20.112524067038, 20.13907639383623, 20.26407761689104, 19.67421444958082, 20.00425076294414, 19.54364734261322, 19.46157919446106, 20.47337074374554, 16.81669396255025, 19.85785713030867, 19.56147017207917, 19.82837953102878, 19.7733094073949, 19.83713929579566, 19.8962549789036, 20.17323288635946, 19.42886554313173, 19.37248727440297, 20.56153099557656, 37334.39579647205]
+[2019-01-18 14:39:08,517] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation forecast: []
+[2019-01-18 14:39:08,518] A3C_AGENT_WORKER-Thread-2 INFO:Softmax [0.04632695 0.04559885 0.03268543 0.02974268 0.03820417 0.03601021
+ 0.03082321 0.03931725 0.03953205 0.02794383 0.05532543 0.03080459
+ 0.05369885 0.04567762 0.03114296 0.04507866 0.04804786 0.0291629
+ 0.02963707 0.04133701 0.03836201 0.03193477 0.0513047  0.05166025
+ 0.05064071], sampled 0.9831591492827986
+[2019-01-18 14:39:50,028] A3C_AGENT_WORKER-Thread-2 DEBUG:NoisyNet noise sample: [array([0.], dtype=float32), 0.0]
+[2019-01-18 14:39:50,028] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation this: [19.21666666666667, 65.83333333333333, 0.0, 0.0, 20.30249931816807, 20.62797777251429, 21.16604150673667, 19.65534693535283, 19.79096335816117, 22.06167114283961, 20.41454348733502, 19.62867248785695, 19.54498132922348, 21.96179819116211, 21.2727905118334, 20.18354748963544, 20.57803655368292, 20.58595905839926, 20.67472681197502, 20.82288089778351, 21.24048150370405, 21.08761445954677, 20.8421518878462, 19.75467649707398, 20.63187487804086, 20.49034398787217, 30.32896792316513, 30.63686026357162, 31.16511182072571, 28.84938439024954, 28.92829798681953, 32.06051400442668, 30.41401513360682, 29.63899913016456, 29.39908549654867, 31.96544690292745, 29.45654045033532, 30.11527630100816, 29.83230656649146, 29.6647710102753, 29.92794519876367, 30.03411569382425, 29.39330739141583, 28.27877871775432, 30.85359452806483, 29.74574952207658, 29.27669796258159, 29.6882629808693, 20.32896792316513, 20.63686026357162, 21.16511182072571, 18.84938439024954, 18.92829798681953, 22.06051400442668, 20.41401513360682, 19.63899913016456, 19.39908549654867, 21.96544690292745, 19.45654045033532, 20.11527630100816, 19.83230656649146, 19.6647710102753, 19.92794519876367, 20.03411569382425, 19.39330739141583, 18.27877871775432, 20.85359452806483, 19.74574952207658, 19.27669796258159, 19.6882629808693, 28628.85851703976]
+[2019-01-18 14:39:50,028] A3C_AGENT_WORKER-Thread-2 DEBUG:Observation forecast: []
+[2019-01-18 14:39:50,030] A3C_AGENT_WORKER-Thread-2 INFO:Softmax [0.04665378 0.04547682 0.03267282 0.02998552 0.03823017 0.03655728
+ 0.03133168 0.03915331 0.03872144 0.02892363 0.05392268 0.0310621
+ 0.05371694 0.04539188 0.03158647 0.04568223 0.04725669 0.02957319
+ 0.02969735 0.04096287 0.03912326 0.03224563 0.04919617 0.05120812
+ 0.051668  ], sampled 0.7280719583537467
+[2019-01-18 14:40:26,270] A3C_AGENT_WORKER-Thread-2 INFO:Evaluation: average rewards by now are 10274.1371 497188932.9917 500.0000
+[2019-01-18 14:40:26,348] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:EnergyPlus Starting
+
+[2019-01-18 14:40:26,349] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2019.01.18 14:37
+
+[2019-01-18 14:40:26,349] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Processing Data Dictionary
+
+[2019-01-18 14:40:26,349] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Processing Input File
+
+[2019-01-18 14:40:26,349] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Response Factors
+
+[2019-01-18 14:40:26,349] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "GROUNDFLOOR_ASHRAE901_2013_ZONE5", Construction # 1
+
+[2019-01-18 14:40:26,349] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "GROUNDFLOOR_ASHRAE901_2013_ZONE5", Construction # 1
+
+[2019-01-18 14:40:26,349] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "GROUNDFLOOR_ASHRAE901_2013_ZONE5", Construction # 1
+
+[2019-01-18 14:40:26,349] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "3", Construction # 2
+
+[2019-01-18 14:40:26,349] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "5", Construction # 4
+
+[2019-01-18 14:40:26,350] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "7", Construction # 6
+
+[2019-01-18 14:40:26,350] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "9", Construction # 7
+
+[2019-01-18 14:40:26,350] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "10", Construction # 8
+
+[2019-01-18 14:40:26,350] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "EXTWALL_LIGHT_ASHRAE901_2013_ZONE5", Construction # 9
+
+[2019-01-18 14:40:26,350] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "17", Construction # 10
+
+[2019-01-18 14:40:26,350] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "18", Construction # 11
+
+[2019-01-18 14:40:26,350] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2019-01-18 14:40:26,350] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2019-01-18 14:40:26,350] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2019-01-18 14:40:26,350] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "21", Construction # 13
+
+[2019-01-18 14:40:26,350] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "23", Construction # 15
+
+[2019-01-18 14:40:26,350] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "25", Construction # 17
+
+[2019-01-18 14:40:26,351] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "27", Construction # 18
+
+[2019-01-18 14:40:26,351] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "31", Construction # 19
+
+[2019-01-18 14:40:26,351] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "35", Construction # 21
+
+[2019-01-18 14:40:26,351] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "41", Construction # 22
+
+[2019-01-18 14:40:26,351] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "42", Construction # 23
+
+[2019-01-18 14:40:26,351] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2019-01-18 14:40:26,351] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2019-01-18 14:40:26,351] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2019-01-18 14:40:26,351] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2019-01-18 14:40:26,351] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2019-01-18 14:40:26,351] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2019-01-18 14:40:26,351] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "51", Construction # 27
+
+[2019-01-18 14:40:26,351] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "52", Construction # 28
+
+[2019-01-18 14:40:26,352] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-18 14:40:26,352] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-18 14:40:26,352] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-18 14:40:26,352] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-18 14:40:26,352] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-18 14:40:26,352] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-18 14:40:26,352] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-18 14:40:26,352] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-18 14:40:26,352] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-18 14:40:26,352] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2019-01-18 14:40:26,352] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2019-01-18 14:40:26,352] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2019-01-18 14:40:26,352] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "65", Construction # 31
+
+[2019-01-18 14:40:26,353] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "ROOF_LIGHT_ASHRAE901_2013_ZONE5", Construction # 34
+
+[2019-01-18 14:40:26,353] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "75", Construction # 35
+
+[2019-01-18 14:40:26,353] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "83", Construction # 36
+
+[2019-01-18 14:40:26,353] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "85", Construction # 38
+
+[2019-01-18 14:40:26,353] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Window Optical Properties
+
+[2019-01-18 14:40:26,353] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Solar Calculations
+
+[2019-01-18 14:40:26,353] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Allocate Solar Module Arrays
+
+[2019-01-18 14:40:26,353] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Zone Report Variables
+
+[2019-01-18 14:40:26,353] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Surface (Shading) Report Variables
+
+[2019-01-18 14:40:26,353] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Solar Absorption Factors
+
+[2019-01-18 14:40:26,353] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Determining Shadowing Combinations
+
+[2019-01-18 14:40:26,353] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Window Shade Absorption Factors
+
+[2019-01-18 14:40:26,353] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Proceeding with Initializing Solar Calculations
+
+[2019-01-18 14:40:26,354] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Surfaces
+
+[2019-01-18 14:40:26,354] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Outdoor environment for Surfaces
+
+[2019-01-18 14:40:26,354] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Setting up Surface Reporting Variables
+
+[2019-01-18 14:40:26,354] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Temperature and Flux Histories
+
+[2019-01-18 14:40:26,354] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Window Shading
+
+[2019-01-18 14:40:26,354] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Absorption Factors
+
+[2019-01-18 14:40:26,354] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Diffuse Solar Absorption Factors
+
+[2019-01-18 14:40:26,354] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Diffuse Solar Exchange through Interzone Windows
+
+[2019-01-18 14:40:26,354] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Solar Heat Gains
+
+[2019-01-18 14:40:26,354] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Internal Heat Gains
+
+[2019-01-18 14:40:26,354] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Interior Solar Distribution
+
+[2019-01-18 14:40:26,354] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Interior Convection Coefficients
+
+[2019-01-18 14:40:26,355] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Gathering Information for Predefined Reporting
+
+[2019-01-18 14:40:26,355] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Completed Initializing Surface Heat Balance
+
+[2019-01-18 14:40:26,355] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculate Outside Surface Heat Balance
+
+[2019-01-18 14:40:26,355] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculate Inside Surface Heat Balance
+
+[2019-01-18 14:40:26,355] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculate Air Heat Balance
+
+[2019-01-18 14:40:26,355] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing HVAC
+
+[2019-01-18 14:40:26,355] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:40:26,355] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:40:26,355] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:40:26,355] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:40:26,355] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:40:26,355] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:40:26,355] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Performing Zone Sizing Simulation
+
+[2019-01-18 14:40:26,356] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-18 14:40:26,356] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:40:26,356] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:40:26,356] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:40:26,356] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:40:26,356] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:40:26,356] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:40:26,356] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-18 14:40:26,356] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Performing Zone Sizing Simulation
+
+[2019-01-18 14:40:26,356] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-18 14:40:26,356] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating System sizing
+
+[2019-01-18 14:40:26,356] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-18 14:40:26,356] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating System sizing
+
+[2019-01-18 14:40:26,357] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-18 14:40:26,357] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Simulation
+
+[2019-01-18 14:40:26,357] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Reporting Surfaces
+
+[2019-01-18 14:40:26,357] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Beginning Primary Simulation
+
+[2019-01-18 14:40:26,357] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing New Environment Parameters
+
+[2019-01-18 14:40:26,357] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {1}
+
+[2019-01-18 14:40:26,357] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Instantiating Building Controls Virtual Test Bed
+
+[2019-01-18 14:40:26,357] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:ExternalInterface initializes.
+
+[2019-01-18 14:40:26,357] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Number of outputs in ExternalInterface = 71
+
+[2019-01-18 14:40:26,357] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Number of inputs  in ExternalInterface = 1
+
+[2019-01-18 14:40:26,357] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {2}
+
+[2019-01-18 14:40:26,357] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {3}
+
+[2019-01-18 14:40:26,358] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {4}
+
+[2019-01-18 14:40:26,358] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {5}
+
+[2019-01-18 14:40:26,358] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {6}
+
+[2019-01-18 14:40:26,358] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {7}
+
+[2019-01-18 14:40:26,358] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Starting Simulation at 06/01 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-18 14:40:26,358] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:ExternalInterface starts first data exchange.
+
+[2019-01-18 14:40:26,358] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=06/21
+
+[2019-01-18 14:40:26,358] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 06/21 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-18 14:40:26,358] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=07/11
+
+[2019-01-18 14:40:26,358] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 07/11 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-18 14:40:26,358] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=07/31
+
+[2019-01-18 14:40:26,358] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 07/31 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-18 14:40:26,358] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=08/20
+
+[2019-01-18 14:40:26,359] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 08/20 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-18 14:40:26,359] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Writing tabular output file results using comma format.
+
+[2019-01-18 14:40:26,359] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Writing tabular output file results using HTML format.
+
+[2019-01-18 14:40:26,359] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Writing final SQL reports
+
+[2019-01-18 14:40:26,359] EPLUS_ENV_Part1-Light-Pit-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:EnergyPlus Run Time=00hr 02min 47.75sec
+
+[2019-01-18 14:40:27,350] EPLUS_ENV_Part1-Light-Pit-Test-v2_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-18 14:40:27,356] EPLUS_ENV_Part1-Light-Pit-Test-v2_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_pit_light/3/Eplus-env-Part1-Light-Pit-Test-v2-res1/Eplus-env-sub_run1

@@ -454,7 +454,6 @@ def deploy_run(exp_full_dir, exp_id, ip, port):
 				f = open(file_full_dir, 'rb');
 				f_line = f.readline(1024);
 				while len(f_line)>0:
-					print (f_line);
 					s.sendall(f_line);
 					f_line = f.readline(1024);
 			else:

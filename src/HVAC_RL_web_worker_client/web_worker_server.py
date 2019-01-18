@@ -135,53 +135,57 @@ class WorkerServer(object):
 		s.listen(5)
 		self._logger_main.info('EXP_RESETER: Socket starts at ' + (':'.join(str(e) for e in s.getsockname())));
 		while True:
-			self._logger_main.info("EXP_RESETER: Listening...")
-			c, addr = s.accept()
-			addr = (':'.join(str(e) for e in addr));   
-			self._logger_main.info('EXP_RESETER: Got connection from ' + addr);
-			if addr not in TRUSTED_ADDR:
-				self._logger_main.warning('EXP_RESETER: Got untrusted connection, server exits.');
-				break;
-			recv = c.recv(1024).decode(encoding = 'utf-8')
-			code, prj_name, run_id = recv.lower().split(':');
-			if code == 'resetexp':
-				self._logger_main.info('EXP_RESETER: Received RESETEXP request from ' + addr);
-				tgt_run_dir = RUNS_PATH + '/' + prj_name + '/' + run_id;
-				# Get the remote worker addr
-				try:
-					with open(tgt_run_dir + '/run.meta') as run_meta_f:
-						run_meta = json.load(run_meta_f)
-						rmt_worker_ip = run_meta['machine'];
-				except Exception as e:
-					self._logger_main.error('EXP_RESETER: ERROR: %s'%(traceback.format_exc()));
-					rmt_worker_ip = None;
-				# Clear files in the server
-				files_to_keep = ['run.sh'];
-				for tgt_run_file in os.listdir(tgt_run_dir):
-					if tgt_run_file not in files_to_keep:
-						if os.path.isfile(tgt_run_dir + '/' + tgt_run_file):
-							os.remove(tgt_run_dir + '/' + tgt_run_file);
-						else:
-							shutil.rmtree(tgt_run_dir + '/' + tgt_run_file);
-				self._logger_main.info('EXP_RESETER: Cleared the run directory for %s:%s in the main server'
-										%(prj_name, run_id));
-				# Clear files in the remote worker
-				if rmt_worker_ip != None:
-					rmt_worker_addr = self._get_client_addr(rmt_worker_ip);
-					rmt_worker_ip, rmt_worker_port = rmt_worker_addr.split(":");
-					s_st = socket.socket();
-					s_st.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-					s_st.bind((self._ip, port + 1))  
-					s_st.connect((rmt_worker_ip, int(rmt_worker_port)));
-					self._logger_main.info('EXP_RESETER: Connected to %s. to clear the run directory'
-											%(rmt_worker_addr))
-					to_sent = '%s:%s:%s'%(code, prj_name, run_id)
-					s_st.sendall(bytearray(to_sent, encoding = 'utf-8'));
-					recv_str = s_st.recv(4096).decode(encoding = 'utf-8');
-					self._logger_main.info('EXP_RESETER: Remote experiment directory cleared');
-				else:
-					self._logger_main.info('EXP_RESETER: The remote worker of the experiment is not defined');
-				c.sendall(b'reset_successful');
+			try:
+				self._logger_main.info("EXP_RESETER: Listening...")
+				c, addr = s.accept()
+				addr = (':'.join(str(e) for e in addr));   
+				self._logger_main.info('EXP_RESETER: Got connection from ' + addr);
+				if addr not in TRUSTED_ADDR:
+					self._logger_main.warning('EXP_RESETER: Got untrusted connection, server exits.');
+					break;
+				recv = c.recv(1024).decode(encoding = 'utf-8')
+				code, prj_name, run_id = recv.lower().split(':');
+				if code == 'resetexp':
+					self._logger_main.info('EXP_RESETER: Received RESETEXP request from ' + addr);
+					tgt_run_dir = RUNS_PATH + '/' + prj_name + '/' + run_id;
+					# Get the remote worker addr
+					try:
+						with open(tgt_run_dir + '/run.meta') as run_meta_f:
+							run_meta = json.load(run_meta_f)
+							rmt_worker_ip = run_meta['machine'];
+					except Exception as e:
+						self._logger_main.error('EXP_RESETER: ERROR: %s'%(traceback.format_exc()));
+						rmt_worker_ip = None;
+					# Clear files in the server
+					files_to_keep = ['run.sh'];
+					for tgt_run_file in os.listdir(tgt_run_dir):
+						if tgt_run_file not in files_to_keep:
+							if os.path.isfile(tgt_run_dir + '/' + tgt_run_file):
+								os.remove(tgt_run_dir + '/' + tgt_run_file);
+							else:
+								shutil.rmtree(tgt_run_dir + '/' + tgt_run_file);
+					self._logger_main.info('EXP_RESETER: Cleared the run directory for %s:%s in the main server'
+											%(prj_name, run_id));
+					# Clear files in the remote worker
+					if rmt_worker_ip != None:
+						rmt_worker_addr = self._get_client_addr(rmt_worker_ip);
+						rmt_worker_ip, rmt_worker_port = rmt_worker_addr.split(":");
+						s_st = socket.socket();
+						s_st.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+						s_st.bind((self._ip, port + 1))  
+						s_st.connect((rmt_worker_ip, int(rmt_worker_port)));
+						self._logger_main.info('EXP_RESETER: Connected to %s. to clear the run directory'
+												%(rmt_worker_addr))
+						to_sent = '%s:%s:%s'%(code, prj_name, run_id)
+						s_st.sendall(bytearray(to_sent, encoding = 'utf-8'));
+						recv_str = s_st.recv(4096).decode(encoding = 'utf-8');
+						self._logger_main.info('EXP_RESETER: Remote experiment directory cleared');
+					else:
+						self._logger_main.info('EXP_RESETER: The remote worker of the experiment is not defined');
+					c.sendall(b'reset_successful');
+			except Exception as e:
+				self._logger_main.error('EXP_RESETER: %s'%(traceback.format_exc()));
+
 
 	def _get_client_addr(self, ip):
 		for addr in available_worker_clients:
