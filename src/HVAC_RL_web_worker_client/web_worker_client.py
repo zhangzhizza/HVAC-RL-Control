@@ -75,7 +75,7 @@ class WorkerClient(object):
 					all_processes.extend(running_tasks);
 					all_processes.extend(waitng_tasks);
 					all_processes = running_tasks + waitng_tasks;
-					self._logger_main.debug(all_processes);
+					self._logger_main.debug(list(self._exp_queue.queue));
 					for process_i in all_processes:
 						process_i_status, process_i_step = self._get_exp_status(process_i)
 						exp_dict[process_i] = [process_i_status, process_i_step];
@@ -172,7 +172,7 @@ class WorkerClient(object):
 											%(prj_name, run_id));
 					c.sendall(b'exp_cleared')
 			except Exception as e:
-				logger.error('The client main loop encountered: ' + traceback.format_exc());
+				self._logger_main.error('The client main loop encountered: ' + traceback.format_exc());
 
 	def _run_exp_worker_manager(self, max_work_num):
 		
