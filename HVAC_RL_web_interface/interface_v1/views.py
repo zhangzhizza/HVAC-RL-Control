@@ -17,6 +17,7 @@ this_dir_path = os.path.dirname(os.path.realpath(__file__))
 CONFIG_FILE_PATH = this_dir_path + '/../configurations/configurations.json';
 GYM_INIT_PATH = this_dir_path + '/../../src/eplus-env/eplus_env/__init__.py';
 RUNS_PATH = this_dir_path + '/../../src/runs/';
+WORKERS_META_PATH = this_dir_path + '/../../src/HVAC_RL_web_worker_client/workers_meta/'
 eplus_model_path = this_dir_path + '/../../src/eplus-env/eplus_env/envs/eplus_models/';
 worker_server = json.load(open(CONFIG_FILE_PATH, 'r'))['worker_server_addr']
 
@@ -338,30 +339,11 @@ def get_worker_status(request):
 
 	"""
 	ip = request.GET.get('ip').strip()
-	port = int(request.GET.get('port'))
-	# Create a socket
-	s = socket.socket();
-	s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-	interface_server_addr = get_info_from_config_file('interface_server_addr')
-	this_server_ip, this_server_port = interface_server_addr.split(':');
-	while True:
-		try:
-			s.bind((this_server_ip, int(this_server_port)))
-			break;
-		except Exception as e:
-			logger.error('Socker binding for getting worker status is unsuccessful with the error: ' 
-						+ traceback.format_exc() + ', will retry after 2 seconds.')
-			time.sleep(2);
-	try:
-		s.connect((ip, port));
-		s.sendall(b'getstatus');
-		recv_str = s.recv(4096).decode(encoding = 'utf-8');
-		recv_json = json.loads(recv_str)
-		s.close();
-		return JsonResponse(recv_json, json_dumps_params={'indent': 2})
-	except Exception as e:
-		logger.error(traceback.format_exc());
-		return JsonResponse({'Error': True}, json_dumps_params={'indent': 2})
+	# Read the worker status from file
+	with open(WORKERS_META_PATH + '/' + ip + '.meta') as worker_meta_f:
+		recv_json = json.load(worker_meta_f);
+
+	return JsonResponse(recv_json, json_dumps_params={'indent': 2})
 
 @login_required
 def reset_exp(request):
@@ -381,7 +363,7 @@ def reset_exp(request):
 						+ traceback.format_exc() + ', will retry after 2 seconds.')
 			time.sleep(2);
 	workerserver_ip, workerserver_port = worker_server.split(':');
-	workerserver_port = int(workerserver_port) + 2;
+	workerserver_port = int(workerserver_port) + 4;
 	s.connect((workerserver_ip, workerserver_port));
 	send_code = '%s:%s'%('resetexp', exp_id)
 	s.sendall(bytearray(send_code, encoding = 'utf-8'));
@@ -410,7 +392,7 @@ def run_exp(request):
 			# Deploy the exp
 			available_worker_clients = get_info_from_config_file('available_worker_clients')
 			port = int(available_worker_clients[ip_idx_in_list].split(":")[1])
-			recv_msg = deploy_run(exp_full_dir, exp_id, mch_ip, port)
+			recv_msg = deploy_run(exp_id, mch_ip, port)
 			if recv_msg == 'exp_queuing':
 				return_msg = "Successful"
 			else:
@@ -422,8 +404,8 @@ def run_exp(request):
 	return HttpResponse(return_msg)
 
 
-def deploy_run(exp_full_dir, exp_id, ip, port):
-	# Create a socket to communicate with the workers
+def deploy_run(exp_id, ip, port):
+	# Create a socket to communicate with the workserver
 	s = socket.socket();
 	s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 	interface_server_addr = get_info_from_config_file('interface_server_addr')
@@ -436,33 +418,12 @@ def deploy_run(exp_full_dir, exp_id, ip, port):
 			logger.error('Socker binding for deploying the run is unsuccessful with the error: ' 
 						+ traceback.format_exc() + ', will retry after 2 seconds.')
 			time.sleep(2);
-	s.connect((ip, port));
-	s.sendall(b'deployrun');
+	workerserver_ip, workerserver_port = worker_server.split(':');
+	workerserver_port = int(workerserver_port) + 6;
+	s.connect((workerserver_ip, workerserver_port));
+	to_send_str = '%s:%s:%s:%s'%('deployrun', ip, port, exp_id);
+	s.sendall(bytearray(to_send_str));
 	recv_str = s.recv(1024).decode(encoding = 'utf-8');
-	# Send files to the worker
-	if recv_str == "ready_to_receive":
-		# Send the exp id
-		s.sendall(bytearray(exp_id, encoding = 'utf-8'))
-		# Send seperator
-		s.sendall(b'$%^next^%$')
-		# Send run.sh and run.meta in order
-		files_to_send = ['run.sh', 'run.meta']
-		file_sent_count = 0;
-		for file_name in files_to_send:
-			file_full_dir = exp_full_dir + '/' + file_name;
-			if os.path.isfile(file_full_dir):
-				f = open(file_full_dir, 'rb');
-				f_line = f.readline(1024);
-				while len(f_line)>0:
-					s.sendall(f_line);
-					f_line = f.readline(1024);
-			else:
-				pass;
-			file_sent_count += 1;
-			if file_sent_count < len(files_to_send):
-				s.sendall(b'$%^next^%$');
-		s.sendall(b'$%^endtransfer^%$');
-		recv_str = s.recv(1024).decode(encoding = 'utf-8');
 	s.close();
 	return recv_str;
 

@@ -4,12 +4,14 @@ import os, shutil
 import threading, json, traceback
 
 from util.logger import Logger
+from datetime import datetime 
 
 FD = os.path.dirname(os.path.realpath(__file__));
 LOG_LEVEL = 'DEBUG';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 CONFIG_FILE_PATH = FD + '/../../HVAC_RL_web_interface/configurations/configurations.json';
 RUNS_PATH = FD + '/../runs/'
+WORKER_META_PATH = FD + '/workers_meta/'
 TRUSTED_ADDR = json.load(open(CONFIG_FILE_PATH, 'r'))['TRUSTED_ADDR']
 available_worker_clients = json.load(open(CONFIG_FILE_PATH, 'r'))['available_worker_clients']
 
@@ -25,27 +27,36 @@ class WorkerServer(object):
 		self._ip = ip;
 
 	def runWorkerServer(self):
-		state_file_syncher_thread = threading.Thread(target = self._state_file_syncher
-													, args = (self._state_syn_interval, self._port + 1));
-		self._threads.append(state_file_syncher_thread);
-		state_file_syncher_thread.start();
-		self._logger_main.info('state_file_syncher started.')
+		# Eval_log_file_recver @ port 14786 (listen) 14787 (send)
 		eval_log_file_recver_thread = threading.Thread(target = self._eval_log_file_receiver
 													, args = (self._port, ));
 		self._threads.append(eval_log_file_recver_thread);
 		eval_log_file_recver_thread.start();
 		self._logger_main.info('eval_log_file_receiver started.')
+		# state_file_syncher @ port 14788 (listen) 14789 (send)
+		state_file_syncher_thread = threading.Thread(target = self._state_file_syncher
+													, args = (self._state_syn_interval, self._port + 2));
+		self._threads.append(state_file_syncher_thread);
+		state_file_syncher_thread.start();
+		self._logger_main.info('state_file_syncher started.')
+		# run_exp_reseter @ port 14790 (listen) 14791 (send)
 		run_exp_reseter_thread = threading.Thread(target = self._run_exp_reseter
-													, args = (self._port + 2, ));
+													, args = (self._port + 4, ));
 		self._threads.append(run_exp_reseter_thread);
 		run_exp_reseter_thread.start();
 		self._logger_main.info('run_exp_reseter_thread started.')
+		# run_deployer @ port 14792 (listen) 14793 (send)
+		run_deployer_thread = threading.Thread(target = self._run_deployer
+													, args = (self._port + 6, ));
+		self._threads.append(run_deployer_thread);
+		run_deployer_thread.start();
+		self._logger_main.info('run_deployer_thread started.')
 
 	def _eval_log_file_receiver(self, port):
 		# Create the socket
 		s = socket.socket();
 		s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-		s.bind((self._ip, self._port))        
+		s.bind((self._ip, port))        
 		s.listen(5)
 		self._logger_main.info('EVALLOG_RECVER: Socket starts at ' + (':'.join(str(e) for e in s.getsockname())));
 		while True:
@@ -111,6 +122,7 @@ class WorkerServer(object):
 					s.sendall(b'getstatus');
 					recv_str = s.recv(4096).decode(encoding = 'utf-8');
 					recv_json = json.loads(recv_str)
+					# Update the exp meta file
 					exps_this_worker = recv_json['exps'];
 					for exp_this_worker_name in list(exps_this_worker):
 						exp_this_worker_status, exp_this_worker_step = exps_this_worker[exp_this_worker_name];
@@ -118,9 +130,15 @@ class WorkerServer(object):
 						exp_this_meta_dir = RUNS_PATH + exp_this_run_name + '/' + exp_this_run_num;
 						if not os.path.isdir(exp_this_meta_dir):
 							os.makedirs(exp_this_meta_dir);
-						self._set_meta_status(exp_this_meta_dir + '/run.meta', ip_this
+						self._set_runmeta_status(exp_this_meta_dir + '/run.meta', ip_this
 											, exp_this_worker_status, exp_this_worker_step);
 					self._logger_main.info('STATE_SYNCHER: Finished updating for exps %s.'%(list(exps_this_worker)));
+					# Update the worker status file
+					worker_this_meta_file_dir = WORKER_META_PATH + '/' + ip_this + '.meta';
+					time_now = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S.%f')
+					self._set_workermeta_status(worker_this_meta_file_dir, recv_json['cpu'], recv_json['mem'],
+												recv_json['dsk'], recv_json['running_queuing'], time_now);
+					self._logger_main.info('STATE_SYNCHER: Finished updating for the worker %s.'%(ip_this));
 					s.close()
 				except Exception as e:
 					self._logger_main.error('STATE_SYNCHER: when connecting %s, %s'
@@ -183,6 +201,71 @@ class WorkerServer(object):
 					else:
 						self._logger_main.info('EXP_RESETER: The remote worker of the experiment is not defined');
 					c.sendall(b'reset_successful');
+
+			except Exception as e:
+				self._logger_main.error('EXP_RESETER: %s'%(traceback.format_exc()));
+
+	def _run_deployer(self, port):
+		# Create the socket
+		s = socket.socket();
+		s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+		s.bind((self._ip, port))        
+		s.listen(5)
+		self._logger_main.info('RUN_DEPLOYER: Socket starts at ' + (':'.join(str(e) for e in s.getsockname())));
+		while True:
+			try:
+				self._logger_main.info("RUN_DEPLOYER: Listening...")
+				c, addr = s.accept()
+				addr = (':'.join(str(e) for e in addr));   
+				self._logger_main.info('RUN_DEPLOYER: Got connection from ' + addr);
+				if addr not in TRUSTED_ADDR:
+					self._logger_main.warning('RUN_DEPLOYER: Got untrusted connection, server exits.');
+					break;
+				recv = c.recv(1024).decode(encoding = 'utf-8')
+				if recv.lower().split(':')[0] == 'deployrun':
+					_, worker_ip, worker_port, exp_run_name, exp_run_num = recv.lower().split(':');
+					exp_full_dir = RUNS_PATH + exp_run_name + '/' + exp_run_num;
+					self._logger_main.info('RUN_DEPLOYER: Received DEPLOYRUN request from ' + addr);
+					# Create a socket to communicate with the worker
+					s_st = socket.socket();
+					s_st.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+					while True:
+						try:
+							s.bind((self._ip, int(port + 1)))
+							break;
+						except Exception as e:
+							self._logger_main.error('RUN_DEPLOYER: Socker binding for deploying the run is unsuccessful with the error: ' 
+										+ traceback.format_exc() + ', will retry after 2 seconds.')
+							time.sleep(2);
+					s_st.connect((worker_ip, worker_port));
+					s_st.sendall(b'deployrun');
+					recv_str = s_st.recv(1024).decode(encoding = 'utf-8');
+					# Send files to the worker
+					if recv_str == "ready_to_receive":
+						# Send the exp id
+						s_st.sendall(bytearray(exp_id, encoding = 'utf-8'))
+						# Send seperator
+						s_st.sendall(b'$%^next^%$')
+						# Send run.sh and run.meta in order
+						files_to_send = ['run.sh', 'run.meta']
+						file_sent_count = 0;
+						for file_name in files_to_send:
+							file_full_dir = exp_full_dir + '/' + file_name;
+							if os.path.isfile(file_full_dir):
+								f = open(file_full_dir, 'rb');
+								f_line = f.readline(1024);
+								while len(f_line)>0:
+									s_st.sendall(f_line);
+									f_line = f.readline(1024);
+							else:
+								pass;
+							file_sent_count += 1;
+							if file_sent_count < len(files_to_send):
+								s_st.sendall(b'$%^next^%$');
+						s_st.sendall(b'$%^endtransfer^%$');
+						recv_str = s_st.recv(1024).decode(encoding = 'utf-8');
+					s_st.close();
+					c.sendall(bytearray(recv_str));
 			except Exception as e:
 				self._logger_main.error('EXP_RESETER: %s'%(traceback.format_exc()));
 
@@ -193,7 +276,7 @@ class WorkerServer(object):
 				return addr;
 		return None;
 
-	def _set_meta_status(self, meta_file_dir, ip, status_str, step_str):
+	def _set_runmeta_status(self, meta_file_dir, ip, status_str, step_str):
 		if os.path.isfile(meta_file_dir):
 			with open(meta_file_dir, 'r+') as meta_file:
 				meta_file_json = json.load(meta_file);
@@ -208,6 +291,28 @@ class WorkerServer(object):
 				meta_file_json['status'] = status_str;
 				meta_file_json['step'] = step_str;
 				meta_file_json['machine'] = ip;
+				json.dump(meta_file_json, meta_file);
+
+	def _set_workermeta_status(self, meta_file_dir, cpu_str, mem_str, disk_str, queue_str, time_str):
+		if os.path.isfile(meta_file_dir):
+			with open(meta_file_dir, 'r+') as meta_file:
+				meta_file_json = json.load(meta_file);
+				meta_file.seek(0);
+				meta_file_json['cpu'] = cpu_str;
+				meta_file_json['mem'] = mem_str;
+				meta_file_json['dsk'] = disk_str;
+				meta_file_json['running_queuing'] = queue_str;
+				meta_file_json['time'] = time_str;
+				json.dump(meta_file_json, meta_file);
+				meta_file.truncate()
+		else:
+			with open(meta_file_dir, 'w') as meta_file:
+				meta_file_json = {}
+				meta_file_json['cpu'] = cpu_str;
+				meta_file_json['mem'] = mem_str;
+				meta_file_json['dsk'] = disk_str;
+				meta_file_json['running_queuing'] = queue_str;
+				meta_file_json['time'] = time_str;
 				json.dump(meta_file_json, meta_file);
 
 
