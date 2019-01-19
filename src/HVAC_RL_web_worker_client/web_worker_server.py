@@ -190,17 +190,35 @@ class WorkerServer(object):
 						rmt_worker_ip, rmt_worker_port = rmt_worker_addr.split(":");
 						s_st = socket.socket();
 						s_st.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-						s_st.bind((self._ip, port + 1))  
-						s_st.connect((rmt_worker_ip, int(rmt_worker_port)));
-						self._logger_main.info('EXP_RESETER: Connected to %s. to clear the run directory'
+						s_st.bind((self._ip, port + 1))
+						s_st_trial_times = 5;
+						while s_st_trial_times > 0:
+							try:   
+								s_st.connect((rmt_worker_ip, int(rmt_worker_port)));
+								self._logger_main.info('EXP_RESETER: Connected to %s. to clear the run directory'
 												%(rmt_worker_addr))
-						to_sent = '%s:%s:%s'%(code, prj_name, run_id)
-						s_st.sendall(bytearray(to_sent, encoding = 'utf-8'));
-						recv_str = s_st.recv(4096).decode(encoding = 'utf-8');
-						self._logger_main.info('EXP_RESETER: Remote experiment directory cleared');
+								to_sent = '%s:%s:%s'%(code, prj_name, run_id)
+								s_st.sendall(bytearray(to_sent, encoding = 'utf-8'));
+								recv_str = s_st.recv(4096).decode(encoding = 'utf-8');
+								if recv_str == 'exp_cleared':
+									self._logger_main.info('EXP_RESETER: Remote experiment directory cleared');
+								else:
+									self._logger_main.error('EXP_RESETER: Message from the remote worker: %s'%(recv_str));
+								s_st_trial_times = 0;
+								c_sendback_msg = 'reset_successful';
+							except Exception as e:
+								if s_st_trial_times > 1:
+									self._logger_main.warning('EXP_RESETER: %s Retry connecting to the worker %s'
+															%(traceback.format_exc(), rmt_worker_addr));
+								else:
+									c_sendback_msg = 'reset_error';
+									self._logger_main.error('EXP_RESETER: %s Failed to connect to the worker %s'
+															%(traceback.format_exc(), rmt_worker_addr));
+							s_st_trial_times -= 1;
 					else:
 						self._logger_main.info('EXP_RESETER: The remote worker of the experiment is not defined');
-					c.sendall(b'reset_successful');
+						c_sendback_msg = 'reset_successful';
+					c.sendall(bytearray(c_sendback_msg, encoding = 'utf-8'));
 
 			except Exception as e:
 				self._logger_main.error('EXP_RESETER: %s'%(traceback.format_exc()));
@@ -265,7 +283,7 @@ class WorkerServer(object):
 						s_st.sendall(b'$%^endtransfer^%$');
 						recv_str = s_st.recv(1024).decode(encoding = 'utf-8');
 					s_st.close();
-					c.sendall(bytearray(recv_str));
+					c.sendall(bytearray(recv_str, encoding = 'utf-8'));
 			except Exception as e:
 				self._logger_main.error('EXP_RESETER: %s'%(traceback.format_exc()));
 

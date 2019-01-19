@@ -422,7 +422,7 @@ def deploy_run(exp_id, ip, port):
 	workerserver_port = int(workerserver_port) + 6;
 	s.connect((workerserver_ip, workerserver_port));
 	to_send_str = '%s:%s:%s:%s'%('deployrun', ip, port, exp_id);
-	s.sendall(bytearray(to_send_str));
+	s.sendall(bytearray(to_send_str, encoding = 'utf-8'));
 	recv_str = s.recv(1024).decode(encoding = 'utf-8');
 	s.close();
 	return recv_str;
