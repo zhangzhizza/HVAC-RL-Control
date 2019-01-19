@@ -64,7 +64,7 @@ class WorkerClient(object):
 					st = os.statvfs('.')
 					disk = round(st.f_bavail * st.f_frsize/1000/1000/1000, 1) # in GB
 					running_tasks = [subp_name for subp_name in list(self._current_working_processes)];
-					waitng_tasks = [exp[0] for exp in list(self._exp_queue.queue)]
+					waitng_tasks = [exp for exp in list(self._exp_queue.queue)]
 					to_send = {};
 					to_send['cpu'] = str(cpu);
 					to_send['mem'] = str(memory);

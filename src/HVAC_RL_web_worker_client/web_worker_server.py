@@ -249,18 +249,19 @@ class WorkerServer(object):
 					s_st.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 					while True:
 						try:
-							s.bind((self._ip, int(port + 1)))
+							s_st.bind((self._ip, port + 1));
 							break;
 						except Exception as e:
 							self._logger_main.error('RUN_DEPLOYER: Socker binding for deploying the run is unsuccessful with the error: ' 
 										+ traceback.format_exc() + ', will retry after 2 seconds.')
 							time.sleep(2);
-					s_st.connect((worker_ip, worker_port));
+					s_st.connect((worker_ip, int(worker_port)));
 					s_st.sendall(b'deployrun');
 					recv_str = s_st.recv(1024).decode(encoding = 'utf-8');
 					# Send files to the worker
 					if recv_str == "ready_to_receive":
 						# Send the exp id
+						exp_id = exp_run_name + ':' + exp_run_num;
 						s_st.sendall(bytearray(exp_id, encoding = 'utf-8'))
 						# Send seperator
 						s_st.sendall(b'$%^next^%$')
