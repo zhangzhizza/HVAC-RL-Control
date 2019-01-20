@@ -102,7 +102,9 @@
             update_computer_worker_status('computer_' + (i+1)
                                         , all_workers_ips[i], all_workers_ports[i])
 
-        }       
+        }
+        // Set current time
+        set_current_time_utc();       
         });
 
         // Repeated function
@@ -115,9 +117,15 @@
             // Update the exps status
             update_exps_status(project_selector.options[project_selector.selectedIndex]
                                 .getAttribute("value"))
+            // Update current time in UTC
+            set_current_time_utc();
 
         }, 5000);
 
+    function set_current_time_utc(){
+        now_time = new Date();
+        document.getElementById('current_time_utc').innerText = now_time.toUTCString();
+    }
 
     function update_exps_status(run_name){
         $.get("get_exp_status/?run_name="+run_name, function(data, status){
@@ -646,6 +654,18 @@
                                 <li><a href="index.html">Home</a></li>
                                 <li><span>Dashboard</span></li>
                             </ul>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+            <!-- page title area end -->
+            <!-- page title area start -->
+            <div class="page-title-area">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="breadcrumbs-area clearfix">
+                            <h6 id='current_time_utc'>--</h6>
                         </div>
                     </div>
                 
