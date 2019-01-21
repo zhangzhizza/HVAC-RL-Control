@@ -3,6 +3,7 @@ from django.http import HttpResponse, JsonResponse
 from xml.dom.minidom import parseString
 from django.contrib.auth.decorators import login_required
 from .forms import *
+from datetime import datetime 
 
 import requests, json
 import pandas as pd
@@ -426,6 +427,11 @@ def deploy_run(exp_id, ip, port):
 	recv_str = s.recv(1024).decode(encoding = 'utf-8');
 	s.close();
 	return recv_str;
+
+@login_required
+def get_server_time_utc(request):
+	time_now = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S.%f')
+	return HttpResponse(time_now)
 
 @login_required
 def get_exp_status(request):

@@ -123,8 +123,9 @@
         }, 5000);
 
     function set_current_time_utc(){
-        now_time = new Date();
-        document.getElementById('current_time_utc').innerText = now_time.toUTCString();
+        $.get("get_server_time_utc/", function(data, status){
+        document.getElementById('current_time_utc').innerText = 'Server Time (UTC): ' + data;
+        })
     }
 
     function update_exps_status(run_name){

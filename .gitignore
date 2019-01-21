@@ -15,6 +15,8 @@ src/core/eplus-env/eplus_env/envs/v1-*
 **/*res*/
 src/SDCServer/bacnet/log
 src/HVAC_RL_web_worker_client/log
+**/*args.csv*
+**/*~run.sh*
 
 *.swp
 *.pyc

@@ -20,5 +20,6 @@ urlpatterns = [
     re_path(r'get_exp_status/$', views.get_exp_status, name='get_exps_status'),
     re_path(r'^run_exp/$', views.run_exp, name='run_exp'),
     re_path(r'^reset_exp/$', views.reset_exp, name='reset_exp'),
-    re_path(r'^get_eval_res_hist/$', views.get_eval_res_hist, name='get_eval_res_hist'),   
+    re_path(r'^get_eval_res_hist/$', views.get_eval_res_hist, name='get_eval_res_hist'),
+    path('get_server_time_utc/', views.get_server_time_utc, name='get_server_time_utc'),  
 ]
