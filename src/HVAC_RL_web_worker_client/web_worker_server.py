@@ -174,17 +174,8 @@ class WorkerServer(object):
 					except Exception as e:
 						self._logger_main.error('EXP_RESETER: ERROR: %s'%(traceback.format_exc()));
 						rmt_worker_ip = None;
-					# Clear files in the server
-					files_to_keep = ['run.sh'];
-					for tgt_run_file in os.listdir(tgt_run_dir):
-						if tgt_run_file not in files_to_keep:
-							if os.path.isfile(tgt_run_dir + '/' + tgt_run_file):
-								os.remove(tgt_run_dir + '/' + tgt_run_file);
-							else:
-								shutil.rmtree(tgt_run_dir + '/' + tgt_run_file);
-					self._logger_main.info('EXP_RESETER: Cleared the run directory for %s:%s in the main server'
-											%(prj_name, run_id));
 					# Clear files in the remote worker
+					rmt_worker_clear_success = False;
 					if rmt_worker_ip != None:
 						rmt_worker_addr = self._get_client_addr(rmt_worker_ip);
 						rmt_worker_ip, rmt_worker_port = rmt_worker_addr.split(":");
@@ -205,7 +196,7 @@ class WorkerServer(object):
 								else:
 									self._logger_main.error('EXP_RESETER: Message from the remote worker: %s'%(recv_str));
 								s_st_trial_times = 0;
-								c_sendback_msg = 'reset_successful';
+								rmt_worker_clear_success = True;
 							except Exception as e:
 								if s_st_trial_times > 1:
 									self._logger_main.warning('EXP_RESETER: %s Retry connecting to the worker %s'
@@ -216,7 +207,19 @@ class WorkerServer(object):
 															%(traceback.format_exc(), rmt_worker_addr));
 							s_st_trial_times -= 1;
 					else:
+						rmt_worker_clear_success = True;
 						self._logger_main.info('EXP_RESETER: The remote worker of the experiment is not defined');
+					# Clear files in the server
+					if rmt_worker_clear_success:
+						files_to_keep = ['run.sh'];
+						for tgt_run_file in os.listdir(tgt_run_dir):
+							if tgt_run_file not in files_to_keep:
+								if os.path.isfile(tgt_run_dir + '/' + tgt_run_file):
+									os.remove(tgt_run_dir + '/' + tgt_run_file);
+								else:
+									shutil.rmtree(tgt_run_dir + '/' + tgt_run_file);
+						self._logger_main.info('EXP_RESETER: Cleared the run directory for %s:%s in the main server'
+												%(prj_name, run_id));
 						c_sendback_msg = 'reset_successful';
 					c.sendall(bytearray(c_sendback_msg, encoding = 'utf-8'));
 
