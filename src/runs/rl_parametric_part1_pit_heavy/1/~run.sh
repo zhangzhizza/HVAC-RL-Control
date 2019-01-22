@@ -5,4 +5,4 @@ python ../../../a3c_eplus_rlParametric_v0.1.py --env Part1-Heavy-Pit-Train-v1 --
 --h_regu_frac 0.0 --forecast_dim 0 --rmsprop_decay 0.99 --rmsprop_momet 0.0 --train_freq 5 \
 --violation_penalty_scl 10 --eval_epi_num 1 --activation linear --model_type nn --model_param 73 1 \
 --learning_rate 0.001 --learning_rate_decay_rate 0.90 --learning_rate_decay_steps 100000 --debug_log_prob 0.0005 \
---isNoisyNet True --isNoisyNetEval_rmNoise True --check_args_only True
+--isNoisyNet True --isNoisyNetEval_rmNoise True --clip_norm 1.0 --check_args_only True

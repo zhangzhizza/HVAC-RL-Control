@@ -6,6 +6,8 @@ from a3c_v0_1.state_index import *
 from a3c_v0_1.env_interaction import IWEnvInteract
 
 ACTION_MAP = action_map;
+LOG_LEVEL = 'DEBUG';
+LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 
 class A3CEval_multiagent:
     def __init__(self, sess, global_network, env, num_episodes, window_len, 
@@ -206,7 +208,8 @@ class A3CEval_multiagent:
 class A3CEval:
     def __init__(self, sess, global_network, env, num_episodes, window_len, 
                  forecast_len, e_weight, p_weight, raw_stateLimit_process_func,
-                 noisyNet = False, noisyNet_rmNoise = True, prcdState_dim = 1):
+                 noisyNet = False, noisyNet_rmNoise = True, prcdState_dim = 1,
+                 log_dir = './'):
         """
         This is the class for evaluation under the single-zone control mode. 
 
@@ -250,10 +253,16 @@ class A3CEval:
         self._p_weight = p_weight;
         self._noisyNet = noisyNet;
         self._noisyNet_rmNoise = noisyNet_rmNoise;
+        # Create a logger
+        self._local_logger = Logger().getLogger('A3C_EVAL-%s'
+                                    %(self._env.env_name),
+                                              LOG_LEVEL, LOG_FMT, log_dir + '/main.log');
+        self._local_logger.info('Evaluation worker starts!')
         
 
-    def evaluate(self, local_logger, action_space_name, reward_func, rewardArgs, metric_func, 
-                action_func, action_limits, raw_state_process_func, debug_log_prob, is_add_time_to_state = True):
+    def evaluate(self, action_space_name, reward_func, rewardArgs, metric_func, 
+                action_func, action_limits, raw_state_process_func, debug_log_prob, 
+                is_add_time_to_state = True, returned_res = None):
         """
         This method do the evaluation for the trained agent. 
 
@@ -269,6 +278,7 @@ class A3CEval:
         Return: tuple
             The average reward for each controlled zone. 
         """
+        self._local_logger.info('Evaluation job starts!')
         action_space = ACTION_MAP[action_space_name];
         action_size = len(action_space)
         episode_counter = 1;
@@ -312,12 +322,12 @@ class A3CEval:
                 if self._noisyNet:
                     noisyNet_noise = self._sess.run(self._global_network.value_network_finalLayer.debug())
                     noisyNet_noiseSample = [noisyNet_noise[0][0], noisyNet_noise[1][0]];
-                local_logger.debug('NoisyNet noise sample: %s' %(noisyNet_noiseSample));
-                local_logger.debug('Observation this: %s' %(ob_this_raw[0: noForecastDim]));
-                local_logger.debug('Observation forecast: %s' %(ob_this_raw[noForecastDim:]));
+                self._local_logger.debug('NoisyNet noise sample: %s' %(noisyNet_noiseSample));
+                self._local_logger.debug('Observation this: %s' %(ob_this_raw[0: noForecastDim]));
+                self._local_logger.debug('Observation forecast: %s' %(ob_this_raw[noForecastDim:]));
             #################################################
             # Get the action
-            action_raw_out = self._select_sto_action(ob_this_hist_prcd, local_logger, is_dbg_out);
+            action_raw_out = self._select_sto_action(ob_this_hist_prcd, self._local_logger, is_dbg_out);
             action_raw_idx = action_raw_out if isinstance(action_raw_out, int) else action_raw_out[0]
             if action_raw_idx is not None:
                 action_raw_tup = action_space[action_raw_idx];
@@ -326,7 +336,7 @@ class A3CEval:
                 random_act_idx = np.random.choice(action_size)
                 action_raw_idx = random_act_idx;
                 action_raw_tup = action_space[random_act_idx];
-                local_logger.warning('!!!!!!!!!!!!!!!!!!WARNING!!!!!!!!!!!!!!!!!!\n'
+                self._local_logger.warning('!!!!!!!!!!!!!!!!!!WARNING!!!!!!!!!!!!!!!!!!\n'
                                            'Select action function returns None, indicating the network output may not be valid!\n'
                                            'Network output is %s.'
                                            'A random action is taken instead, index is %s.'
@@ -362,7 +372,7 @@ class A3CEval:
                                   + this_ep_comfort) / episode_counter;
                 #average_max_ppd = (average_max_ppd * (episode_counter - 1)
                 #                  + this_ep_max_ppd) / episode_counter;
-                local_logger.info('Evaluation: average rewards by now are %0.04f %0.04f %0.04f'
+                self._local_logger.info('Evaluation: average rewards by now are %0.04f %0.04f %0.04f'
                                   %(average_reward, average_energy, average_comfort));
                 episode_counter += 1;
                 if episode_counter <= self._num_episodes:
@@ -386,7 +396,12 @@ class A3CEval:
                 ob_this_hist_prcd = ob_next_hist_prcd;
                 ob_this_raw = ob_next_raw;
 
-        env_interact_wrapper.end_episode();        
+        env_interact_wrapper.end_episode();
+        # In multi-threading mode, the results are stored in the mutable list
+        if returned_res is not None:
+            returned_res.append(average_reward);
+            returned_res.append(average_energy);
+            returned_res.append(average_comfort);     
         return [average_reward, average_energy, average_comfort];
     
     def _select_sto_action(self, state, local_logger, is_dbg_out):

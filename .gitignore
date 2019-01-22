@@ -17,6 +17,8 @@ src/SDCServer/bacnet/log
 src/HVAC_RL_web_worker_client/log
 **/*args.csv*
 **/*~run.sh*
+**/*run.meta*
+**/*workers_meta*/
 
 *.swp
 *.pyc

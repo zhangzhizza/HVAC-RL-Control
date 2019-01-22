@@ -363,12 +363,25 @@ class A3CThread:
                     if eval_freq != 0 and self._global_counter.value % eval_freq == 0: 
                         self._local_logger.info('Evaluating...');
                         global_res_list.append([self._global_counter.value]);
+                        temp_res_store_list_outer = [];
+                        eval_worker_threads = [];
                         for global_agent_eval in global_agent_eval_list:
-                            eval_res = global_agent_eval.evaluate(self._local_logger,
+                            temp_res_store_list_inner = [];
+                            temp_res_store_list_outer.append(temp_res_store_list_inner);
+                            worker_eval = lambda: global_agent_eval.evaluate(
                                                     action_space_name, reward_func, rewardArgs, metric_func,
                                                     eval_action_func, eval_action_limits, raw_state_process_func,
-                                                    debug_log_prob);
+                                                    debug_log_prob, temp_res_store_list_inner);
+                            eval_thread = threading.Thread(target = (worker_eval));
+                            eval_thread.start();
+                            eval_worker_threads.append(eval_thread);
+                        # Join all threads so the main thread waits until all threads finish
+                        for eval_thread in eval_worker_threads:
+                            eval_thread.join();
+                        # Get all evaluation results
+                        for eval_res in temp_res_store_list_outer:
                             global_res_list[-1].extend(eval_res);
+                        # Save the eval res to file
                         np.savetxt(log_dir + '/../eval_res_hist.csv', 
                                    np.array(global_res_list), delimiter = ',');
                         self._local_logger.info ('Global step: %d, '
@@ -749,7 +762,7 @@ class A3CAgent:
                                                  LOG_LEVEL, LOG_FMT, log_dir + '/main.log');
         
         eval_logger.info("Testing...")
-        eval_res = a3c_eval.evaluate(eval_logger, reward_mode, self._action_space_name, 
+        eval_res = a3c_eval.evaluate(reward_mode, self._action_space_name, 
                                         ppd_penalty_limit, raw_state_process_func);
         eval_logger.info("Testing finished.")
 
@@ -811,7 +824,7 @@ class A3CAgent:
             global_agent_eval = A3CEval(sess, global_network, env_eval, eval_epi_num, 
                                     self._window_len, self._forecast_len, e_weight, p_weight, 
                                     raw_stateLimit_process_func, self._noisyNet, 
-                                    self._noisyNetEval_rmNoise, self._prcdState_dim);
+                                    self._noisyNetEval_rmNoise, self._prcdState_dim, self._log_dir);
             global_agent_eval_list.append(global_agent_eval)
 
         global_res_list = [];

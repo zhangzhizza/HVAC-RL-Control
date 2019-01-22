@@ -838,4 +838,9 @@ class EplusEnv(Env):
         """
         return self._eplus_run_st_weekday;
 
+    @property
+    def env_name(self):
+        return self._env_name;
+    
+
     
