@@ -4,6 +4,7 @@ from a3c_v0_1.customized.actions import action_map
 from a3c_v0_1.preprocessors import HistoryPreprocessor, process_raw_state_cmbd
 from a3c_v0_1.state_index import *
 from a3c_v0_1.env_interaction import IWEnvInteract
+from util.logger import Logger
 
 ACTION_MAP = action_map;
 LOG_LEVEL = 'DEBUG';
