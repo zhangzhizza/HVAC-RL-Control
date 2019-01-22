@@ -371,7 +371,7 @@ class A3CThread:
                             worker_eval = lambda: global_agent_eval.evaluate(
                                                     action_space_name, reward_func, rewardArgs, metric_func,
                                                     eval_action_func, eval_action_limits, raw_state_process_func,
-                                                    debug_log_prob, temp_res_store_list_inner);
+                                                    debug_log_prob, True, temp_res_store_list_inner);
                             eval_thread = threading.Thread(target = (worker_eval));
                             eval_thread.start();
                             eval_worker_threads.append(eval_thread);
