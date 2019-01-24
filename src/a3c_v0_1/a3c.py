@@ -86,7 +86,6 @@ class A3CThread:
         self._policy_pred = self._a3c_network.policy_pred;
         self._value_pred = self._a3c_network.value_pred;
         self._state_placeholder = self._a3c_network.state_placeholder;
-        self._keep_prob = self._a3c_network.keep_prob;
         self._shared_layer = self._a3c_network.shared_layer;
         
         with graph.as_default(), tf.name_scope(scope_name):
@@ -291,8 +290,7 @@ class A3CThread:
                 #################################################
 
                 action_raw_out = self._select_sto_action(ob_this_hist_prcd, sess,
-                                                         self._e_greedy, is_show_dbg, 
-                                                         dropout_prob = dropout_prob,
+                                                         self._e_greedy, is_show_dbg,
                                                          is_greedy = is_greedy_policy);
                 action_raw_idx = action_raw_out if isinstance(action_raw_out, int) else action_raw_out[0]
                 if action_raw_idx is not None:
@@ -426,8 +424,7 @@ class A3CThread:
                     ob_this_hist_prcd = self._histProcessor.\
                             process_state_for_network(ob_this_prcd) # 2-D array
             # Prepare for the training step
-            feed_dict_R = {self._state_placeholder:ob_this_hist_prcd,
-                           self._keep_prob: 1.0 - dropout_prob}
+            feed_dict_R = {self._state_placeholder:ob_this_hist_prcd}
             R = 0 if is_terminal else sess.run(
                             self._value_pred,
                             feed_dict = feed_dict_R)####DEBUG FOR DROPOUT####
@@ -444,8 +441,7 @@ class A3CThread:
             # Perform training
             training_feed_dict = {self._q_true_placeholder: q_true_list,
                                   self._state_placeholder: state_list,
-                                  self._action_idx_placeholder: act_idx_list,
-                                  self._keep_prob: 1.0 - dropout_prob};
+                                  self._action_idx_placeholder: act_idx_list};
             _, loss_res, value_pred = sess.run([self._train_op, self._loss, 
                                                 self._value_pred], 
                                    feed_dict = training_feed_dict);
@@ -482,7 +478,7 @@ class A3CThread:
     def _update_e_greedy(self):
         self._e_greedy -= self._epsilon_decay_delta;
         
-    def _select_sto_action(self, state, sess, e_greedy, is_show_dbg, dropout_prob, 
+    def _select_sto_action(self, state, sess, e_greedy, is_show_dbg, 
                             is_greedy = False):
 
         """
@@ -512,8 +508,7 @@ class A3CThread:
                 return rdm_action;
         # On policy        
         softmax_a, shared_layer = sess.run([self._policy_pred, self._shared_layer],
-                             feed_dict={self._state_placeholder:state,
-                                        self._keep_prob: 1.0 - dropout_prob}) ####DEBUG FOR DROPOUT
+                             feed_dict={self._state_placeholder:state}) ####DEBUG FOR DROPOUT
         softmax_a = softmax_a.flatten();
         if is_show_dbg:
             self._local_logger.debug('Policy network output: %s, sum to %0.04f'

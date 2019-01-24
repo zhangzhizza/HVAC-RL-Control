@@ -106,7 +106,7 @@ def get_args():
     parser.add_argument('--init_e', default = 0.0, type=float);
     parser.add_argument('--end_e', default = 0.0, type=float);
     parser.add_argument('--decay_steps', default = 1000000, type=int);
-    parser.add_argument('--dropout_prob', default = 0.0, type=float);
+    parser.add_argument('--dropout_prob', default = 0.0, type=float, help='Deprecated.');
     parser.add_argument('--is_warm_start', default=False, type=bool, 
     	help='This is a bool argument, including this arg makes the algorithm read the trained neural network from the model_dir.');
     parser.add_argument('--model_dir', default='None');

@@ -102,7 +102,7 @@ class A3C_Network_NN(A3C_Network_Model):
             input_state: tf tensor or placeholder.
                 Represent the input to the network, which is the state observation.
             keep_prob: tf tensor or placeholder.
-                The 1 - dropout probability.
+                The 1 - dropout probability. Deprecated.
             num_actions: int.
                 Number of actions.
         
@@ -112,8 +112,7 @@ class A3C_Network_NN(A3C_Network_Model):
         """
         # Build shared layers
         with tf.name_scope('shared_layers'):
-            # Dropout layer for the first relu layer.
-            layer = tf.nn.dropout(input_state, keep_prob);
+            layer = input_state;
             for layer_i in range(self._model_param[1]):
                 layer = Dense(self._model_param[0], activation = self._activation, 
                               kernel_initializer = self._kernel_initializer)(layer);
@@ -177,7 +176,7 @@ class A3C_Network_LSTM(A3C_Network_Model):
             input_state: tf tensor or placeholder.
                 Represent the input to the network, which is the state observation.
             keep_prob: tf tensor or placeholder.
-                The 1 - dropout probability.
+                The 1 - dropout probability. Deprecated
             num_actions: int.
                 Number of actions.
         
@@ -188,8 +187,7 @@ class A3C_Network_LSTM(A3C_Network_Model):
         # Build shared layers
         activations = self._activation.split('/')
         with tf.name_scope('shared_layers'):
-            # Dropout layer for the first relu layer.
-            layer = tf.nn.dropout(input_state, keep_prob);
+            layer = input_state;
             # LSTM layers
             for lstm_layer_i in range(self._model_param[1]):
                 if lstm_layer_i < self._model_param[1] - 1:

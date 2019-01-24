@@ -175,8 +175,7 @@ class A3CEval_multiagent:
         """
         
         softmax_a = self._sess.run(self._global_network.policy_pred, 
-                        feed_dict={self._global_network.state_placeholder:state,
-                                   self._global_network.keep_prob: 1.0})\
+                        feed_dict={self._global_network.state_placeholder:state})\
                         .flatten();
         ### DEBUG
         dbg_rdm = np.random.uniform();
@@ -311,7 +310,7 @@ class A3CEval:
                 if self._noisyNet_rmNoise:
                     self._global_network.policy_network_finalLayer.remove_noise(self._sess);
                 else:
-                    self._global_network.value_network_finalLayer.sample_noise(self._sess);
+                    self._global_network.policy_network_finalLayer.sample_noise(self._sess);
             dbg_rdm = np.random.uniform();
             #################FOR DEBUG#######################
             is_dbg_out = False;
@@ -417,8 +416,7 @@ class A3CEval:
             The action index.
         """
         softmax_a = self._sess.run(self._global_network.policy_pred, 
-                        feed_dict={self._global_network.state_placeholder:state,
-                                   self._global_network.keep_prob: 1.0})\
+                        feed_dict={self._global_network.state_placeholder:state})\
                         .flatten();
         ### DEBUG
         uni_rdm = np.random.uniform();
