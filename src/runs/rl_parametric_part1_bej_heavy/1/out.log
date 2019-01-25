@@ -1,0 +1,1113 @@
+Using TensorFlow backend.
+[2019-01-24 14:37:20,423] A3C_AGENT_MAIN INFO:Namespace(action_repeat_n=1, action_space='part1_v1', activation='linear', agent_num=5, check_args_only=False, clip_norm=5.0, debug_log_prob=0.0005, decay_steps=1000000, dropout_prob=0.0, end_e=0.0, env='Part1-Heavy-Bej-Train-v1', eval_act_func='part1_v1', eval_epi_num=1, eval_freq=250000, forecast_dim=0, gamma=0.99, h_decay_bounds=[], h_regu_frac=[0.0], init_e=0.0, isNoisyNet=True, isNoisyNetEval_rmNoise=True, is_greedy_policy=False, is_learning_rate_decay_staircase=False, is_warm_start=False, job_mode='Train', learning_rate=5e-05, learning_rate_decay_rate=0.9, learning_rate_decay_steps=100000, max_interactions=5000000, metric_func='part1_v1', model_dir='None', model_param=[73, 1], model_type='nn', num_threads=16, output='./Part1-Heavy-Bej-Train-v1-res1', p_loss_frac=1.0, raw_state_prcs_func='cslDx_1', reward_func='part1_v1', rmsprop_decay=0.99, rmsprop_epsil=1e-10, rmsprop_momet=0.0, rwd_e_para=1.0, rwd_p_para=1.0, save_freq=500000, save_max_to_keep=5, save_scope='all', sharedNet_type='Dense', state_dim=71, test_env=['Part1-Heavy-Bej-Test-v1', 'Part1-Heavy-Bej-Test-v2'], test_mode='Multiple', train_act_func='part1_v1', train_freq=5, v_loss_frac=0.5, violation_penalty_scl=10.0, weight_initer='glorot_uniform', window_len=1)
+[2019-01-24 14:37:20,423] A3C_AGENT_MAIN INFO:Start compiling...
+2019-01-24 14:37:20.459496: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+[2019-01-24 14:37:39,449] A3C_AGENT_MAIN INFO:Start the learning...
+[2019-01-24 14:37:39,449] A3C_AGENT_MAIN INFO:Prepare the evaluation environments ['Part1-Heavy-Bej-Train-v1', 'Part1-Heavy-Bej-Test-v1', 'Part1-Heavy-Bej-Test-v2'] ...
+[2019-01-24 14:37:39,492] A3C_EVAL-Part1-Heavy-Bej-Train-v1 INFO:Evaluation worker starts!
+[2019-01-24 14:37:39,540] A3C_EVAL-Part1-Heavy-Bej-Test-v1 INFO:Evaluation worker starts!
+[2019-01-24 14:37:39,588] A3C_EVAL-Part1-Heavy-Bej-Test-v2 INFO:Evaluation worker starts!
+[2019-01-24 14:37:39,588] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-24 14:37:39,588] A3C_AGENT_WORKER-Thread-2 INFO:Local worker starts!
+[2019-01-24 14:37:39,668] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-2_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:37:39,670] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-2_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Train-v1-res2/Eplus-env-sub_run1
+[2019-01-24 14:37:40,589] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-24 14:37:40,592] A3C_AGENT_WORKER-Thread-3 INFO:Local worker starts!
+[2019-01-24 14:37:40,668] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-3_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:37:40,671] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-3_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Train-v1-res3/Eplus-env-sub_run1
+[2019-01-24 14:37:41,593] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-24 14:37:41,594] A3C_AGENT_WORKER-Thread-4 INFO:Local worker starts!
+[2019-01-24 14:37:41,673] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-4_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:37:41,676] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-4_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Train-v1-res4/Eplus-env-sub_run1
+[2019-01-24 14:37:42,595] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-24 14:37:42,596] A3C_AGENT_WORKER-Thread-5 INFO:Local worker starts!
+[2019-01-24 14:37:42,708] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-5_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:37:42,711] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-5_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Train-v1-res5/Eplus-env-sub_run1
+[2019-01-24 14:37:43,597] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-24 14:37:43,598] A3C_AGENT_WORKER-Thread-6 INFO:Local worker starts!
+[2019-01-24 14:37:43,715] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-6_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:37:43,719] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-6_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Train-v1-res6/Eplus-env-sub_run1
+[2019-01-24 14:37:44,598] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-24 14:37:44,599] A3C_AGENT_WORKER-Thread-7 INFO:Local worker starts!
+[2019-01-24 14:37:44,721] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-7_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:37:44,725] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-7_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Train-v1-res7/Eplus-env-sub_run1
+[2019-01-24 14:37:45,600] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-24 14:37:45,601] A3C_AGENT_WORKER-Thread-8 INFO:Local worker starts!
+[2019-01-24 14:37:45,726] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-8_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:37:45,729] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-8_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Train-v1-res8/Eplus-env-sub_run1
+[2019-01-24 14:37:46,602] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-24 14:37:46,603] A3C_AGENT_WORKER-Thread-9 INFO:Local worker starts!
+[2019-01-24 14:37:46,727] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-9_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:37:46,730] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-9_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Train-v1-res9/Eplus-env-sub_run1
+[2019-01-24 14:37:47,604] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-24 14:37:47,605] A3C_AGENT_WORKER-Thread-10 INFO:Local worker starts!
+[2019-01-24 14:37:47,749] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-10_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:37:47,753] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-10_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Train-v1-res10/Eplus-env-sub_run1
+[2019-01-24 14:37:48,606] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-24 14:37:48,607] A3C_AGENT_WORKER-Thread-11 INFO:Local worker starts!
+[2019-01-24 14:37:48,797] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-11_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:37:48,800] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-11_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Train-v1-res11/Eplus-env-sub_run1
+[2019-01-24 14:37:49,608] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-24 14:37:49,609] A3C_AGENT_WORKER-Thread-12 INFO:Local worker starts!
+[2019-01-24 14:37:49,819] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-12_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:37:49,838] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-12_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Train-v1-res12/Eplus-env-sub_run1
+[2019-01-24 14:37:50,610] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-24 14:37:50,611] A3C_AGENT_WORKER-Thread-13 INFO:Local worker starts!
+[2019-01-24 14:37:50,820] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-13_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:37:50,824] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-13_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Train-v1-res13/Eplus-env-sub_run1
+[2019-01-24 14:37:51,612] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-24 14:37:51,613] A3C_AGENT_WORKER-Thread-14 INFO:Local worker starts!
+[2019-01-24 14:37:51,785] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-14_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:37:51,796] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-14_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Train-v1-res14/Eplus-env-sub_run1
+[2019-01-24 14:37:52,613] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-24 14:37:52,614] A3C_AGENT_WORKER-Thread-15 INFO:Local worker starts!
+[2019-01-24 14:37:52,842] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-15_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:37:52,845] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-15_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Train-v1-res15/Eplus-env-sub_run1
+[2019-01-24 14:37:53,615] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-24 14:37:53,616] A3C_AGENT_WORKER-Thread-16 INFO:Local worker starts!
+[2019-01-24 14:37:53,867] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-16_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:37:53,871] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-16_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Train-v1-res16/Eplus-env-sub_run1
+[2019-01-24 14:37:54,617] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-01-24 14:37:54,617] A3C_AGENT_WORKER-Thread-17 INFO:Local worker starts!
+[2019-01-24 14:37:54,858] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-17_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:37:54,864] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_Thread-17_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Train-v1-res17/Eplus-env-sub_run1
+[2019-01-24 14:40:23,904] A3C_AGENT_WORKER-Thread-2 INFO:Evaluating...
+[2019-01-24 14:40:23,905] A3C_EVAL-Part1-Heavy-Bej-Train-v1 INFO:Evaluation job starts!
+[2019-01-24 14:40:23,905] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:40:23,909] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Train-v1-res1/Eplus-env-sub_run1
+[2019-01-24 14:40:23,945] A3C_EVAL-Part1-Heavy-Bej-Test-v1 INFO:Evaluation job starts!
+[2019-01-24 14:40:23,946] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:40:23,949] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Test-v1-res1/Eplus-env-sub_run1
+[2019-01-24 14:40:24,005] A3C_EVAL-Part1-Heavy-Bej-Test-v2 INFO:Evaluation job starts!
+[2019-01-24 14:40:24,005] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-01-24 14:40:24,009] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part1_bej_heavy/1/Eplus-env-Part1-Heavy-Bej-Test-v2-res1/Eplus-env-sub_run1
+[2019-01-24 14:42:55,900] A3C_EVAL-Part1-Heavy-Bej-Test-v2 DEBUG:NoisyNet noise sample: [array([0.], dtype=float32), 0.0]
+[2019-01-24 14:42:55,901] A3C_EVAL-Part1-Heavy-Bej-Test-v2 DEBUG:Observation this: [28.36895609166667, 71.40708974833333, 0.0, 0.0, 24.51175944095751, 23.74164726384326, 23.08404288977849, 24.01023494440315, 24.80883857939311, 24.83750078213378, 24.26338251069653, 24.0252681555095, 23.89317944177939, 25.20680793014073, 25.10867849052667, 24.01898424434125, 24.96518340881606, 25.14244115653527, 25.23817361461425, 25.21717067488868, 24.36547697996839, 24.54123366491622, 24.86039536292794, 24.61394069527672, 25.31529237838635, 25.27212154038076, 26.51145981761706, 25.73723767131985, 30.20732691373347, 25.77194070110444, 26.80766823507541, 26.83696966817938, 26.2286943396655, 25.17158483819907, 24.81389845672507, 25.67258207237565, 25.62999647231858, 24.01788749448009, 25.34862826889313, 25.93526218229724, 25.51268312070889, 25.35070808311135, 25.52462281620087, 25.10301834300849, 25.5025066548119, 26.61284671198475, 25.76204663502543, 25.61421455613253, 24.51145981761706, 23.73723767131985, 20.20732691373347, 23.77194070110444, 24.80766823507541, 24.83696966817938, 24.2286943396655, 23.17158483819907, 22.81389845672507, 23.67258207237565, 23.62999647231858, 22.01788749448009, 23.34862826889313, 23.93526218229724, 23.51268312070889, 23.35070808311135, 23.52462281620087, 23.10301834300849, 23.5025066548119, 24.61284671198475, 23.76204663502543, 23.61421455613253, 58314.92281000318]
+[2019-01-24 14:42:55,901] A3C_EVAL-Part1-Heavy-Bej-Test-v2 DEBUG:Observation forecast: []
+[2019-01-24 14:42:55,902] A3C_EVAL-Part1-Heavy-Bej-Test-v2 INFO:Softmax [0.07364926 0.04313902 0.03485571 0.0201928  0.05834737 0.02044046
+ 0.00623313 0.02334873 0.05049407 0.04936714 0.01715485 0.03039247
+ 0.04909018 0.02399905 0.01487946 0.0554122  0.01325803 0.04534835
+ 0.05684321 0.08420899 0.04787323 0.10528039 0.0414836  0.02307034
+ 0.01163791], sampled 0.21502210541474054
+[2019-01-24 14:43:19,689] A3C_EVAL-Part1-Heavy-Bej-Train-v1 DEBUG:NoisyNet noise sample: [array([0.], dtype=float32), 0.0]
+[2019-01-24 14:43:19,689] A3C_EVAL-Part1-Heavy-Bej-Train-v1 DEBUG:Observation this: [32.83333333333333, 66.16666666666667, 194.0, 290.0, 24.34751724258681, 24.34408813106336, 22.99086216593567, 23.54987589084861, 24.94182110895868, 24.15320108123582, 24.28460213734163, 23.86627086112499, 24.07442068009598, 24.55283368010825, 24.92817047369576, 24.11122906546916, 23.00935063771714, 24.5490765284557, 23.94391965273259, 23.31986467153089, 23.94617141555952, 24.35512463020222, 23.70188756745968, 23.65843938337411, 24.30106671544611, 23.57432187182339, 24.3480327062986, 24.34193447249866, 26.5619067239873, 23.55245449328092, 25.04550429113301, 24.15347244965675, 24.28451429839174, 23.86734093782039, 24.07562501306237, 24.55345622533726, 24.9268350262073, 24.11282894029004, 22.86800925267083, 24.55067783989534, 23.94926851290379, 23.30830346157331, 23.9513107775758, 24.35636104006753, 23.70605923349052, 23.65720776473331, 24.30444032751124, 23.57883846470146, 22.3480327062986, 22.34193447249866, 16.5619067239873, 21.55245449328092, 23.04550429113301, 22.15347244965675, 22.28451429839174, 21.86734093782039, 22.07562501306237, 22.55345622533726, 22.9268350262073, 22.11282894029004, 20.86800925267083, 22.55067783989534, 21.94926851290379, 21.30830346157331, 21.9513107775758, 22.35636104006753, 21.70605923349052, 21.65720776473331, 22.30444032751124, 21.57883846470146, 88410.25003068674]
+[2019-01-24 14:43:19,690] A3C_EVAL-Part1-Heavy-Bej-Train-v1 DEBUG:Observation forecast: []
+[2019-01-24 14:43:19,691] A3C_EVAL-Part1-Heavy-Bej-Train-v1 INFO:Softmax [0.0645888  0.04859676 0.03825529 0.01773352 0.06874989 0.02441067
+ 0.00920217 0.02479888 0.0467227  0.05071288 0.01797986 0.03491587
+ 0.05984828 0.02104931 0.02179641 0.05037722 0.01549828 0.0484433
+ 0.05616629 0.06589825 0.05029452 0.09276768 0.03167939 0.02380781
+ 0.01570597], sampled 0.19573196373101287
+[2019-01-24 14:43:30,148] A3C_EVAL-Part1-Heavy-Bej-Test-v2 DEBUG:NoisyNet noise sample: [array([0.], dtype=float32), 0.0]
+[2019-01-24 14:43:30,148] A3C_EVAL-Part1-Heavy-Bej-Test-v2 DEBUG:Observation this: [31.003911515, 66.39460088, 396.8734862, 160.5623636, 24.87115625520424, 24.09980743411934, 23.69519785345118, 24.52359951117082, 24.086134597825, 24.59861090732567, 24.99719991894932, 24.86137288951775, 24.78820865629742, 25.47125560392671, 25.53823916304687, 24.02024606952973, 25.35100025123231, 25.72976905315576, 25.51537331133208, 25.35307733924084, 24.94388688912032, 25.10770143439684, 25.21317464330768, 24.62335781959776, 25.76341577349357, 25.59239123853846, 26.51145981761706, 25.47577018147033, 30.20732691373347, 24.63006650115786, 25.77375171619112, 25.44902968325253, 26.40840083251939, 25.14354418420677, 25.2162763801744, 25.67258207237565, 25.62999647231858, 24.01788749448009, 25.34862826889313, 25.93526218229724, 25.51268312070889, 25.35070808311135, 25.52462281620087, 25.10301834300849, 25.5025066548119, 26.61284671198475, 25.76204663502543, 25.61421455613253, 24.51145981761706, 23.47577018147033, 20.20732691373347, 22.63006650115786, 23.77375171619112, 23.44902968325253, 24.40840083251939, 23.14354418420677, 23.2162763801744, 23.67258207237565, 23.62999647231858, 22.01788749448009, 23.34862826889313, 23.93526218229724, 23.51268312070889, 23.35070808311135, 23.52462281620087, 23.10301834300849, 23.5025066548119, 24.61284671198475, 23.76204663502543, 23.61421455613253, 61810.09770997301]
+[2019-01-24 14:43:30,149] A3C_EVAL-Part1-Heavy-Bej-Test-v2 DEBUG:Observation forecast: []
+[2019-01-24 14:43:30,151] A3C_EVAL-Part1-Heavy-Bej-Test-v2 INFO:Softmax [0.05497538 0.04642073 0.04280797 0.01971777 0.07569524 0.01807756
+ 0.0069338  0.02466875 0.04998882 0.04863303 0.01455357 0.02944223
+ 0.05259654 0.02397091 0.01607127 0.04747149 0.01253872 0.04678471
+ 0.0536181  0.08149812 0.0567974  0.11089798 0.0303043  0.02202156
+ 0.01351397], sampled 0.1864432192417509
+[2019-01-24 14:44:56,743] A3C_EVAL-Part1-Heavy-Bej-Test-v1 INFO:Evaluation: average rewards by now are 9109.6991 590310311.3583 1893.0000
+[2019-01-24 14:44:56,864] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:EnergyPlus Starting
+
+[2019-01-24 14:44:56,864] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2019.01.24 14:40
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Processing Data Dictionary
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Processing Input File
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Response Factors
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "GROUNDFLOOR_FROM_DB", Construction # 1
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "GROUNDFLOOR_FROM_DB", Construction # 1
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "GROUNDFLOOR_FROM_DB", Construction # 1
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "3", Construction # 2
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "5", Construction # 4
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "7", Construction # 6
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "9", Construction # 7
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "10", Construction # 8
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "EXTWALL_HEAVY_ASHRAE901_2013_ZONE4", Construction # 9
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "17", Construction # 10
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "18", Construction # 11
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "21", Construction # 13
+
+[2019-01-24 14:44:56,865] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "23", Construction # 15
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "25", Construction # 17
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "27", Construction # 18
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "31", Construction # 19
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "35", Construction # 21
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "41", Construction # 22
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "42", Construction # 23
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "51", Construction # 27
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "52", Construction # 28
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:44:56,866] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "65", Construction # 31
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "ROOF_HEAVY_ASHRAE901_2013_ZONE4", Construction # 34
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "75", Construction # 35
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "83", Construction # 36
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "85", Construction # 38
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Window Optical Properties
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Solar Calculations
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Allocate Solar Module Arrays
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Zone Report Variables
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Surface (Shading) Report Variables
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Solar Absorption Factors
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Determining Shadowing Combinations
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Window Shade Absorption Factors
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Proceeding with Initializing Solar Calculations
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Surfaces
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Outdoor environment for Surfaces
+
+[2019-01-24 14:44:56,867] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Setting up Surface Reporting Variables
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Temperature and Flux Histories
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Window Shading
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Absorption Factors
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Diffuse Solar Absorption Factors
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Diffuse Solar Exchange through Interzone Windows
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Solar Heat Gains
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Internal Heat Gains
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Interior Solar Distribution
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Interior Convection Coefficients
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Gathering Information for Predefined Reporting
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Completed Initializing Surface Heat Balance
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculate Outside Surface Heat Balance
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculate Inside Surface Heat Balance
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculate Air Heat Balance
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing HVAC
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,868] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,869] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,869] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,869] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,871] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,871] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,871] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,871] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Performing Zone Sizing Simulation
+
+[2019-01-24 14:44:56,871] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-24 14:44:56,871] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,871] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,872] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,872] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,872] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,872] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,872] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,872] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,872] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,872] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,872] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,872] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,872] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,872] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,872] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,872] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,872] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,872] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,872] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,872] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,873] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,873] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,873] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:56,873] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Performing Zone Sizing Simulation
+
+[2019-01-24 14:44:56,873] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-24 14:44:56,873] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating System sizing
+
+[2019-01-24 14:44:56,873] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-24 14:44:56,874] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating System sizing
+
+[2019-01-24 14:44:56,874] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-24 14:44:56,874] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Simulation
+
+[2019-01-24 14:44:56,874] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Reporting Surfaces
+
+[2019-01-24 14:44:56,874] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Beginning Primary Simulation
+
+[2019-01-24 14:44:56,874] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing New Environment Parameters
+
+[2019-01-24 14:44:56,874] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {1}
+
+[2019-01-24 14:44:56,874] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Instantiating Building Controls Virtual Test Bed
+
+[2019-01-24 14:44:56,874] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:ExternalInterface initializes.
+
+[2019-01-24 14:44:56,874] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Number of outputs in ExternalInterface = 71
+
+[2019-01-24 14:44:56,874] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Number of inputs  in ExternalInterface = 1
+
+[2019-01-24 14:44:56,874] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {2}
+
+[2019-01-24 14:44:56,874] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {3}
+
+[2019-01-24 14:44:56,874] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {4}
+
+[2019-01-24 14:44:56,874] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {5}
+
+[2019-01-24 14:44:56,874] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {6}
+
+[2019-01-24 14:44:56,874] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {7}
+
+[2019-01-24 14:44:56,874] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Starting Simulation at 06/01 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-24 14:44:56,875] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:ExternalInterface starts first data exchange.
+
+[2019-01-24 14:44:56,875] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=06/21
+
+[2019-01-24 14:44:56,875] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 06/21 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-24 14:44:56,875] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=07/11
+
+[2019-01-24 14:44:56,875] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 07/11 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-24 14:44:56,875] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=07/31
+
+[2019-01-24 14:44:56,875] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 07/31 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-24 14:44:56,875] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=08/20
+
+[2019-01-24 14:44:56,875] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 08/20 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-24 14:44:56,875] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Writing tabular output file results using comma format.
+
+[2019-01-24 14:44:56,875] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Writing tabular output file results using HTML format.
+
+[2019-01-24 14:44:56,875] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Writing final SQL reports
+
+[2019-01-24 14:44:56,875] EPLUS_ENV_Part1-Heavy-Bej-Test-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:EnergyPlus Run Time=00hr 04min 32.79sec
+
+[2019-01-24 14:44:56,975] A3C_EVAL-Part1-Heavy-Bej-Test-v2 INFO:Evaluation: average rewards by now are 9511.4632 567926555.8619 424.0000
+[2019-01-24 14:44:57,096] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:EnergyPlus Starting
+
+[2019-01-24 14:44:57,096] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2019.01.24 14:40
+
+[2019-01-24 14:44:57,096] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Processing Data Dictionary
+
+[2019-01-24 14:44:57,096] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Processing Input File
+
+[2019-01-24 14:44:57,096] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Response Factors
+
+[2019-01-24 14:44:57,096] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "GROUNDFLOOR_FROM_DB", Construction # 1
+
+[2019-01-24 14:44:57,096] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "GROUNDFLOOR_FROM_DB", Construction # 1
+
+[2019-01-24 14:44:57,096] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "GROUNDFLOOR_FROM_DB", Construction # 1
+
+[2019-01-24 14:44:57,096] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "3", Construction # 2
+
+[2019-01-24 14:44:57,096] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "5", Construction # 4
+
+[2019-01-24 14:44:57,096] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "7", Construction # 6
+
+[2019-01-24 14:44:57,097] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "9", Construction # 7
+
+[2019-01-24 14:44:57,097] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "10", Construction # 8
+
+[2019-01-24 14:44:57,097] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "EXTWALL_HEAVY_ASHRAE901_2013_ZONE4", Construction # 9
+
+[2019-01-24 14:44:57,097] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "17", Construction # 10
+
+[2019-01-24 14:44:57,097] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "18", Construction # 11
+
+[2019-01-24 14:44:57,097] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2019-01-24 14:44:57,097] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2019-01-24 14:44:57,097] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2019-01-24 14:44:57,097] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "21", Construction # 13
+
+[2019-01-24 14:44:57,097] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "23", Construction # 15
+
+[2019-01-24 14:44:57,097] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "25", Construction # 17
+
+[2019-01-24 14:44:57,097] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "27", Construction # 18
+
+[2019-01-24 14:44:57,097] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "31", Construction # 19
+
+[2019-01-24 14:44:57,097] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "35", Construction # 21
+
+[2019-01-24 14:44:57,097] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "41", Construction # 22
+
+[2019-01-24 14:44:57,097] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "42", Construction # 23
+
+[2019-01-24 14:44:57,097] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2019-01-24 14:44:57,097] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2019-01-24 14:44:57,098] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2019-01-24 14:44:57,098] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2019-01-24 14:44:57,098] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2019-01-24 14:44:57,098] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2019-01-24 14:44:57,098] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "51", Construction # 27
+
+[2019-01-24 14:44:57,098] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "52", Construction # 28
+
+[2019-01-24 14:44:57,098] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:44:57,098] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:44:57,098] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:44:57,098] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:44:57,098] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:44:57,098] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:44:57,098] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:44:57,098] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:44:57,098] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:44:57,098] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2019-01-24 14:44:57,098] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2019-01-24 14:44:57,098] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2019-01-24 14:44:57,099] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "65", Construction # 31
+
+[2019-01-24 14:44:57,099] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "ROOF_HEAVY_ASHRAE901_2013_ZONE4", Construction # 34
+
+[2019-01-24 14:44:57,099] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "75", Construction # 35
+
+[2019-01-24 14:44:57,099] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "83", Construction # 36
+
+[2019-01-24 14:44:57,099] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "85", Construction # 38
+
+[2019-01-24 14:44:57,099] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Window Optical Properties
+
+[2019-01-24 14:44:57,099] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Solar Calculations
+
+[2019-01-24 14:44:57,099] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Allocate Solar Module Arrays
+
+[2019-01-24 14:44:57,099] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Zone Report Variables
+
+[2019-01-24 14:44:57,099] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Surface (Shading) Report Variables
+
+[2019-01-24 14:44:57,099] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Solar Absorption Factors
+
+[2019-01-24 14:44:57,099] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Determining Shadowing Combinations
+
+[2019-01-24 14:44:57,099] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Window Shade Absorption Factors
+
+[2019-01-24 14:44:57,099] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Proceeding with Initializing Solar Calculations
+
+[2019-01-24 14:44:57,099] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Surfaces
+
+[2019-01-24 14:44:57,099] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Outdoor environment for Surfaces
+
+[2019-01-24 14:44:57,099] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Setting up Surface Reporting Variables
+
+[2019-01-24 14:44:57,099] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Temperature and Flux Histories
+
+[2019-01-24 14:44:57,100] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Window Shading
+
+[2019-01-24 14:44:57,100] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Absorption Factors
+
+[2019-01-24 14:44:57,100] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Diffuse Solar Absorption Factors
+
+[2019-01-24 14:44:57,100] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Diffuse Solar Exchange through Interzone Windows
+
+[2019-01-24 14:44:57,100] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Solar Heat Gains
+
+[2019-01-24 14:44:57,100] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Internal Heat Gains
+
+[2019-01-24 14:44:57,100] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Interior Solar Distribution
+
+[2019-01-24 14:44:57,100] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Interior Convection Coefficients
+
+[2019-01-24 14:44:57,100] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Gathering Information for Predefined Reporting
+
+[2019-01-24 14:44:57,100] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Completed Initializing Surface Heat Balance
+
+[2019-01-24 14:44:57,100] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculate Outside Surface Heat Balance
+
+[2019-01-24 14:44:57,100] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculate Inside Surface Heat Balance
+
+[2019-01-24 14:44:57,100] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculate Air Heat Balance
+
+[2019-01-24 14:44:57,100] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing HVAC
+
+[2019-01-24 14:44:57,100] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,100] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,100] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,100] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,101] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,101] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,101] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,101] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,102] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,102] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,102] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,102] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Performing Zone Sizing Simulation
+
+[2019-01-24 14:44:57,102] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-24 14:44:57,102] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,102] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,102] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,102] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,102] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,102] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,103] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,103] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,103] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,103] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,103] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,103] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,103] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,103] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,103] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,103] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,103] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,103] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,104] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,104] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,104] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,104] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,104] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:44:57,104] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Performing Zone Sizing Simulation
+
+[2019-01-24 14:44:57,104] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-24 14:44:57,104] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating System sizing
+
+[2019-01-24 14:44:57,104] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-24 14:44:57,104] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating System sizing
+
+[2019-01-24 14:44:57,104] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-24 14:44:57,105] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Simulation
+
+[2019-01-24 14:44:57,105] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Reporting Surfaces
+
+[2019-01-24 14:44:57,105] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Beginning Primary Simulation
+
+[2019-01-24 14:44:57,105] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing New Environment Parameters
+
+[2019-01-24 14:44:57,105] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {1}
+
+[2019-01-24 14:44:57,105] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Instantiating Building Controls Virtual Test Bed
+
+[2019-01-24 14:44:57,105] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:ExternalInterface initializes.
+
+[2019-01-24 14:44:57,105] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Number of outputs in ExternalInterface = 71
+
+[2019-01-24 14:44:57,105] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Number of inputs  in ExternalInterface = 1
+
+[2019-01-24 14:44:57,105] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {2}
+
+[2019-01-24 14:44:57,106] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {3}
+
+[2019-01-24 14:44:57,106] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {4}
+
+[2019-01-24 14:44:57,106] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {5}
+
+[2019-01-24 14:44:57,106] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {6}
+
+[2019-01-24 14:44:57,106] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Starting Simulation at 06/01 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-24 14:44:57,106] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:ExternalInterface starts first data exchange.
+
+[2019-01-24 14:44:57,106] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=06/21
+
+[2019-01-24 14:44:57,106] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 06/21 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-24 14:44:57,106] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=07/11
+
+[2019-01-24 14:44:57,106] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 07/11 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-24 14:44:57,106] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=07/31
+
+[2019-01-24 14:44:57,106] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 07/31 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-24 14:44:57,107] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=08/20
+
+[2019-01-24 14:44:57,107] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 08/20 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-24 14:44:57,107] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Writing tabular output file results using comma format.
+
+[2019-01-24 14:44:57,107] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Writing tabular output file results using HTML format.
+
+[2019-01-24 14:44:57,107] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:Writing final SQL reports
+
+[2019-01-24 14:44:57,107] EPLUS_ENV_Part1-Heavy-Bej-Test-v2_MainThread-EPLUSPROCESS_EPI_0 INFO:EnergyPlus Run Time=00hr 04min 32.95sec
+
+[2019-01-24 14:45:47,286] A3C_EVAL-Part1-Heavy-Bej-Train-v1 INFO:Evaluation: average rewards by now are 8883.7062 633816528.9088 1181.0000
+[2019-01-24 14:45:47,396] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:EnergyPlus Starting
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:EnergyPlus, Version 8.3.0-6d97d074ea, YMD=2019.01.24 14:40
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Processing Data Dictionary
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Processing Input File
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Response Factors
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "GROUNDFLOOR_FROM_DB", Construction # 1
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "GROUNDFLOOR_FROM_DB", Construction # 1
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "GROUNDFLOOR_FROM_DB", Construction # 1
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "3", Construction # 2
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "5", Construction # 4
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "7", Construction # 6
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "9", Construction # 7
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "10", Construction # 8
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "EXTWALL_HEAVY_ASHRAE901_2013_ZONE4", Construction # 9
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "17", Construction # 10
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "18", Construction # 11
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "19", Construction # 12
+
+[2019-01-24 14:45:47,397] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "21", Construction # 13
+
+[2019-01-24 14:45:47,398] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "23", Construction # 15
+
+[2019-01-24 14:45:47,398] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "25", Construction # 17
+
+[2019-01-24 14:45:47,398] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "27", Construction # 18
+
+[2019-01-24 14:45:47,398] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "31", Construction # 19
+
+[2019-01-24 14:45:47,398] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "35", Construction # 21
+
+[2019-01-24 14:45:47,398] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "41", Construction # 22
+
+[2019-01-24 14:45:47,398] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "42", Construction # 23
+
+[2019-01-24 14:45:47,398] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2019-01-24 14:45:47,398] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2019-01-24 14:45:47,398] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "43", Construction # 24
+
+[2019-01-24 14:45:47,398] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2019-01-24 14:45:47,398] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2019-01-24 14:45:47,398] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "49", Construction # 26
+
+[2019-01-24 14:45:47,398] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "51", Construction # 27
+
+[2019-01-24 14:45:47,398] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "52", Construction # 28
+
+[2019-01-24 14:45:47,398] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "57", Construction # 29
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "59", Construction # 30
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "65", Construction # 31
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "ROOF_HEAVY_ASHRAE901_2013_ZONE4", Construction # 34
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "75", Construction # 35
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "83", Construction # 36
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating CTFs for "85", Construction # 38
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Window Optical Properties
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Solar Calculations
+
+[2019-01-24 14:45:47,399] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Allocate Solar Module Arrays
+
+[2019-01-24 14:45:47,400] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Zone Report Variables
+
+[2019-01-24 14:45:47,400] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Surface (Shading) Report Variables
+
+[2019-01-24 14:45:47,400] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Solar Absorption Factors
+
+[2019-01-24 14:45:47,400] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Determining Shadowing Combinations
+
+[2019-01-24 14:45:47,400] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Window Shade Absorption Factors
+
+[2019-01-24 14:45:47,400] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Proceeding with Initializing Solar Calculations
+
+[2019-01-24 14:45:47,400] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Surfaces
+
+[2019-01-24 14:45:47,400] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Outdoor environment for Surfaces
+
+[2019-01-24 14:45:47,400] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Setting up Surface Reporting Variables
+
+[2019-01-24 14:45:47,400] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Temperature and Flux Histories
+
+[2019-01-24 14:45:47,400] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Window Shading
+
+[2019-01-24 14:45:47,400] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Absorption Factors
+
+[2019-01-24 14:45:47,400] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Diffuse Solar Absorption Factors
+
+[2019-01-24 14:45:47,400] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Computing Interior Diffuse Solar Exchange through Interzone Windows
+
+[2019-01-24 14:45:47,400] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Solar Heat Gains
+
+[2019-01-24 14:45:47,400] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Internal Heat Gains
+
+[2019-01-24 14:45:47,401] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Interior Solar Distribution
+
+[2019-01-24 14:45:47,401] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Interior Convection Coefficients
+
+[2019-01-24 14:45:47,401] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Gathering Information for Predefined Reporting
+
+[2019-01-24 14:45:47,401] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Completed Initializing Surface Heat Balance
+
+[2019-01-24 14:45:47,401] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculate Outside Surface Heat Balance
+
+[2019-01-24 14:45:47,401] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculate Inside Surface Heat Balance
+
+[2019-01-24 14:45:47,401] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculate Air Heat Balance
+
+[2019-01-24 14:45:47,401] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing HVAC
+
+[2019-01-24 14:45:47,401] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,401] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,401] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,401] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,401] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,401] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,401] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,401] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,401] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,401] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,402] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,402] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,402] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,402] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,402] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,402] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,402] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,402] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,402] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,402] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,402] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,402] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,402] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,402] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,402] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,402] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Performing Zone Sizing Simulation
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,403] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,404] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,404] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,404] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,404] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,404] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,404] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,404] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up
+
+[2019-01-24 14:45:47,404] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Performing Zone Sizing Simulation
+
+[2019-01-24 14:45:47,404] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-24 14:45:47,404] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating System sizing
+
+[2019-01-24 14:45:47,404] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #1 SUMMER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-24 14:45:47,404] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Calculating System sizing
+
+[2019-01-24 14:45:47,404] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:...for Sizing Period: #2 WINTER DESIGN DAY IN PHIPPS_CSL_BUILDING
+
+[2019-01-24 14:45:47,404] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing Simulation
+
+[2019-01-24 14:45:47,404] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Reporting Surfaces
+
+[2019-01-24 14:45:47,404] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Beginning Primary Simulation
+
+[2019-01-24 14:45:47,404] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Initializing New Environment Parameters
+
+[2019-01-24 14:45:47,405] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {1}
+
+[2019-01-24 14:45:47,405] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Instantiating Building Controls Virtual Test Bed
+
+[2019-01-24 14:45:47,405] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:ExternalInterface initializes.
+
+[2019-01-24 14:45:47,405] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Number of outputs in ExternalInterface = 71
+
+[2019-01-24 14:45:47,405] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Number of inputs  in ExternalInterface = 1
+
+[2019-01-24 14:45:47,405] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {2}
+
+[2019-01-24 14:45:47,405] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {3}
+
+[2019-01-24 14:45:47,405] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {4}
+
+[2019-01-24 14:45:47,405] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {5}
+
+[2019-01-24 14:45:47,405] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {6}
+
+[2019-01-24 14:45:47,405] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {7}
+
+[2019-01-24 14:45:47,406] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {8}
+
+[2019-01-24 14:45:47,406] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {9}
+
+[2019-01-24 14:45:47,406] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {10}
+
+[2019-01-24 14:45:47,406] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {11}
+
+[2019-01-24 14:45:47,406] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {12}
+
+[2019-01-24 14:45:47,406] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {13}
+
+[2019-01-24 14:45:47,407] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {14}
+
+[2019-01-24 14:45:47,407] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {15}
+
+[2019-01-24 14:45:47,407] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {16}
+
+[2019-01-24 14:45:47,407] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {17}
+
+[2019-01-24 14:45:47,413] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {18}
+
+[2019-01-24 14:45:47,413] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {19}
+
+[2019-01-24 14:45:47,413] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {20}
+
+[2019-01-24 14:45:47,413] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {21}
+
+[2019-01-24 14:45:47,413] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {22}
+
+[2019-01-24 14:45:47,413] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {23}
+
+[2019-01-24 14:45:47,413] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {24}
+
+[2019-01-24 14:45:47,413] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Warming up {25}
+
+[2019-01-24 14:45:47,413] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Starting Simulation at 06/01 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-24 14:45:47,413] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:ExternalInterface starts first data exchange.
+
+[2019-01-24 14:45:47,414] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=06/21
+
+[2019-01-24 14:45:47,414] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 06/21 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-24 14:45:47,414] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=07/11
+
+[2019-01-24 14:45:47,414] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 07/11 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-24 14:45:47,414] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=07/31
+
+[2019-01-24 14:45:47,414] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 07/31 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-24 14:45:47,414] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Updating Shadowing Calculations, Start Date=08/20
+
+[2019-01-24 14:45:47,414] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Continuing Simulation at 08/20 for PHIPPS_CSL_BUILDING_SUMMER
+
+[2019-01-24 14:45:47,414] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Writing tabular output file results using comma format.
+
+[2019-01-24 14:45:47,414] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Writing tabular output file results using HTML format.
+
+[2019-01-24 14:45:47,414] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:Writing final SQL reports
+
+[2019-01-24 14:45:47,414] EPLUS_ENV_Part1-Heavy-Bej-Train-v1_MainThread-EPLUSPROCESS_EPI_0 INFO:EnergyPlus Run Time=00hr 05min 23.38sec
+
+[2019-01-24 14:45:48,404] A3C_AGENT_WORKER-Thread-2 INFO:Global step: 0, evaluation results [0.0, 8883.706244315503, 633816528.9087903, 1181.0, 9109.699103965357, 590310311.3583455, 1893.0, 9511.4631754963, 567926555.8619263, 424.0]
+[2019-01-24 14:45:56,626] A3C_AGENT_WORKER-Thread-4 DEBUG:Policy network output: [0.0659723  0.04844365 0.04280047 0.02004531 0.05214018 0.01564321
+ 0.00703029 0.02501757 0.05494485 0.04289714 0.02053655 0.04200123
+ 0.06258389 0.02692909 0.0208292  0.05222152 0.01406819 0.04753244
+ 0.05586907 0.06223674 0.04524278 0.10637698 0.03515619 0.02247255
+ 0.01100864], sum to 1.0000
+[2019-01-24 14:45:56,629] A3C_AGENT_WORKER-Thread-4 DEBUG:Softmax action selection sampled number: 0.7712
+[2019-01-24 14:45:56,834] A3C_AGENT_WORKER-Thread-4 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 19, 
+current raw observation is [29.83333333333334, 36.66666666666667, 217.8333333333333, 8.833333333333334, 24.35743994818857, 23.32048185182576, 23.07106517913135, 24.59698793923061, 23.57814479621913, 24.30954684319646, 23.65693486608352, 23.87673464400051, 24.2898730714687, 23.71856740709336, 24.43750751914015, 24.7894475781818, 24.89424936705606, 24.83624962383342, 24.22768338594382, 24.52619740342133, 24.20883991986029, 24.38727189287315, 23.65182211543019, 23.66207005329851, 24.67120932702316, 24.12367315103156, 24.34353390831771, 23.32649832141276, 27.92284502931604, 24.65699501872099, 23.5703315475505, 24.29760792821069, 23.66161524975125, 23.87335939498026, 24.28571789354142, 23.66496865496235, 24.42748550545103, 24.99837793047526, 24.88889905171206, 24.83181020747463, 24.22184582810221, 24.52524499016547, 24.20483364101423, 24.3793187511204, 23.64424277102945, 23.66051472896746, 24.66712053119855, 24.12136037025751, 22.34353390831771, 21.32649832141276, 17.92284502931604, 22.65699501872099, 21.5703315475505, 22.29760792821069, 21.66161524975125, 21.87335939498026, 22.28571789354142, 21.66496865496235, 22.42748550545103, 22.99837793047526, 22.88889905171206, 22.83181020747463, 22.22184582810221, 22.52524499016547, 22.20483364101423, 22.3793187511204, 21.64424277102945, 21.66051472896746, 22.66712053119855, 22.12136037025751, 56762.05022004103], 
+current ob forecast is [], 
+actual action is [21.5], 
+sim time this is 49200.0000, 
+sim time next is 49800.0000, 
+raw observation next is [30.01666666666667, 36.33333333333333, 214.6666666666667, 7.666666666666668, 24.34991464331513, 23.32682726029701, 23.13047377891044, 24.62773404470999, 23.5734002408126, 24.30251656130783, 23.66140168193849, 23.87553785618137, 24.28788212043395, 23.70606503098105, 24.42970351017249, 24.90788622805362, 24.89153416778998, 24.83394711780383, 24.2236878752189, 24.52615106843286, 24.20536674770993, 24.37973211934878, 23.64541265251055, 23.66246728545788, 24.66843309679047, 24.12274532388062, 24.34353390831771, 23.32649832141276, 27.92284502931604, 24.65699501872099, 23.5703315475505, 24.29760792821069, 23.66161524975125, 23.87335939498026, 24.28571789354142, 23.66496865496235, 24.42748550545103, 24.99837793047526, 24.88889905171206, 24.83181020747463, 24.22184582810221, 24.52524499016547, 24.20483364101423, 24.3793187511204, 23.64424277102945, 23.66051472896746, 24.66712053119855, 24.12136037025751, 22.34353390831771, 21.32649832141276, 17.92284502931604, 22.65699501872099, 21.5703315475505, 22.29760792821069, 21.66161524975125, 21.87335939498026, 22.28571789354142, 21.66496865496235, 22.42748550545103, 22.99837793047526, 22.88889905171206, 22.83181020747463, 22.22184582810221, 22.52524499016547, 22.20483364101423, 22.3793187511204, 21.64424277102945, 21.66051472896746, 22.66712053119855, 22.12136037025751, 61805.17175515935], 
+processed observation next is [1.0, 0.5652173913043478, 0.61984126984127, 0.3633333333333333, 0.4453665283540803, 0.008480825958702067, 0.6349914643315131, 0.5326827260297009, 0.5130473778910438, 0.6627734044709989, 0.5573400240812599, 0.6302516561307829, 0.5661401681938489, 0.5875537856181371, 0.6287882120433949, 0.5706065030981051, 0.6429703510172491, 0.690788622805362, 0.6891534167789981, 0.6833947117803831, 0.62236878752189, 0.6526151068432859, 0.6205366747709931, 0.637973211934878, 0.5645412652510551, 0.566246728545788, 0.6668433096790469, 0.6122745323880618, 0.634353390831771, 0.532649832141276, 0.992284502931604, 0.6656995018720991, 0.5570331547550499, 0.6297607928210691, 0.5661615249751251, 0.5873359394980259, 0.628571789354142, 0.5664968654962351, 0.6427485505451032, 0.6998377930475261, 0.6888899051712059, 0.6831810207474629, 0.622184582810221, 0.6525244990165469, 0.6204833641014229, 0.6379318751120401, 0.5644242771029451, 0.566051472896746, 0.6667120531198549, 0.6121360370257509, 0.434353390831771, 0.332649832141276, -0.007715497068396004, 0.46569950187209913, 0.3570331547550499, 0.42976079282106916, 0.366161524975125, 0.3873359394980259, 0.42857178935414203, 0.3664968654962351, 0.4427485505451031, 0.49983779304752607, 0.4888899051712059, 0.48318102074746283, 0.4221845828102211, 0.45252449901654684, 0.4204833641014229, 0.4379318751120401, 0.364424277102945, 0.366051472896746, 0.46671205311985486, 0.4121360370257509, 0.3862823234697459], 
+reward next is 0.5726, 
+noisyNet noise sample is [array([-0.06809963], dtype=float32), 0.505548]. 
+=============================================
+[2019-01-24 14:46:01,921] A3C_AGENT_WORKER-Thread-6 DEBUG:Policy network output: [0.07532645 0.03884525 0.04539602 0.01836536 0.06661254 0.03552421
+ 0.00767857 0.03985703 0.03623129 0.05971682 0.03578383 0.02398664
+ 0.06838565 0.04300026 0.02939255 0.05934905 0.01871557 0.02434903
+ 0.05283098 0.03341558 0.02860498 0.05152164 0.06144138 0.03191872
+ 0.01375065], sum to 1.0000
+[2019-01-24 14:46:01,945] A3C_AGENT_WORKER-Thread-6 DEBUG:Softmax action selection sampled number: 0.5850
+[2019-01-24 14:46:02,156] A3C_AGENT_WORKER-Thread-6 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 13, 
+current raw observation is [21.3, 77.0, 0.0, 0.0, 20.68982046271865, 20.61606980170848, 20.15455039661752, 20.5883767827923, 20.19668417500998, 20.49605851540703, 20.45135593335046, 20.44046403285351, 20.49791614763605, 22.1504109618807, 22.77701465590994, 21.82840470877609, 21.98221336822304, 21.9608014742165, 21.99246214208801, 22.216302647825, 22.00214811140502, 21.82804477416034, 21.95031776632487, 20.54587848811633, 22.01369281489825, 21.90616416341431, 28.53395589799736, 27.18919966461824, 27.93086195465736, 28.44746718830717, 27.50405356975991, 28.26087350866597, 28.03257277537737, 29.14573930770184, 28.39141052583409, 28.55365006263285, 28.11483648402422, 27.53732949027389, 28.56535797555878, 27.85813232795081, 27.91402364758942, 28.54165406575554, 29.6027747334611, 27.71472447045794, 28.46682275247799, 28.10963598693365, 28.07809899938105, 28.04988120362068, 18.53395589799736, 17.18919966461824, 17.93086195465736, 18.44746718830717, 17.50405356975991, 18.26087350866597, 18.03257277537737, 19.14573930770184, 18.39141052583409, 18.55365006263285, 18.11483648402422, 17.53732949027389, 18.56535797555878, 17.85813232795081, 17.91402364758942, 18.54165406575554, 19.6027747334611, 17.71472447045794, 18.46682275247799, 18.10963598693365, 18.07809899938105, 18.04988120362068, 36141.51764210984], 
+current ob forecast is [], 
+actual action is [18.5], 
+sim time this is 103200.0000, 
+sim time next is 103800.0000, 
+raw observation next is [21.2, 77.0, 0.0, 0.0, 20.55689373356098, 20.60136733669383, 20.06411836750615, 20.47687689231264, 20.33642057634583, 20.4038812240584, 20.32280232016438, 20.30985047260837, 20.37302498738383, 22.08885532914953, 22.7244996943796, 21.72396790757761, 21.88708949851647, 21.86102793569403, 21.90042784496573, 22.13784537421806, 22.11289652425054, 21.98821451276665, 21.84741460939896, 21.01562752336667, 21.92346926695889, 21.80795550723824, 28.53395589799736, 27.18919966461824, 27.93086195465736, 28.44746718830717, 27.50405356975991, 28.26087350866597, 28.03257277537737, 29.14573930770184, 28.39141052583409, 28.55365006263285, 28.11483648402422, 27.53732949027389, 28.56535797555878, 27.85813232795081, 27.91402364758942, 28.54165406575554, 29.6027747334611, 27.71472447045794, 28.46682275247799, 28.10963598693365, 28.07809899938105, 28.04988120362068, 18.53395589799736, 17.18919966461824, 17.93086195465736, 18.44746718830717, 17.50405356975991, 18.26087350866597, 18.03257277537737, 19.14573930770184, 18.39141052583409, 18.55365006263285, 18.11483648402422, 17.53732949027389, 18.56535797555878, 17.85813232795081, 17.91402364758942, 18.54165406575554, 19.6027747334611, 17.71472447045794, 18.46682275247799, 18.10963598693365, 18.07809899938105, 18.04988120362068, 29520.5104618228], 
+processed observation next is [1.0, 0.17391304347826086, 0.19999999999999996, 0.77, 0.0, 0.0, 0.255689373356098, 0.260136733669383, 0.20641183675061506, 0.24768768923126389, 0.233642057634583, 0.24038812240583987, 0.23228023201643816, 0.2309850472608371, 0.23730249873838288, 0.4088855329149531, 0.4724499694379599, 0.37239679075776094, 0.38870894985164706, 0.3861027935694029, 0.390042784496573, 0.413784537421806, 0.4112896524250541, 0.39882145127666496, 0.38474146093989603, 0.30156275233666713, 0.39234692669588894, 0.38079555072382404, 1.0533955897997358, 0.918919966461824, 0.993086195465736, 1.044746718830717, 0.9504053569759912, 1.026087350866597, 1.003257277537737, 1.114573930770184, 1.039141052583409, 1.055365006263285, 1.011483648402422, 0.953732949027389, 1.056535797555878, 0.9858132327950809, 0.9914023647589421, 1.0541654065755541, 1.16027747334611, 0.9714724470457942, 1.046682275247799, 1.010963598693365, 1.007809899938105, 1.0049881203620679, 0.05339558979973589, -0.08108003353817601, -0.006913804534264045, 0.04474671883071686, -0.049594643024008886, 0.02608735086659699, 0.003257277537737124, 0.11457393077018416, 0.03914105258340896, 0.05536500626328511, 0.01148364840242202, -0.04626705097261095, 0.05653579755587792, -0.014186767204919093, -0.008597635241057944, 0.05416540657555409, 0.16027747334611, -0.028527552954205858, 0.04668227524779915, 0.010963598693365028, 0.007809899938105147, 0.0049881203620678605, 0.18450319038639248], 
+reward next is 0.8155, 
+noisyNet noise sample is [array([1.4208986], dtype=float32), 0.07422309]. 
+=============================================
