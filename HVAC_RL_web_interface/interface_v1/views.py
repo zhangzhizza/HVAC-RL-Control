@@ -476,6 +476,7 @@ def get_all_exp(request):
 									cwd = run_this_exp_full_dir)
 				# Read args.csv
 				this_exp_pd = pd.read_csv(run_this_exp_full_dir + '/args.csv');
+				this_exp_pd.sort_index(axis=1, inplace = True);
 				this_exp_pd['exp_id'] = pd.Series([int(run_this_exp_dir)]);
 				this_exp_status, this_exp_machine, this_exp_step = check_exp_status(run_this_exp_full_dir);
 				this_exp_pd.insert(0, 'step', '%s'%(this_exp_step));

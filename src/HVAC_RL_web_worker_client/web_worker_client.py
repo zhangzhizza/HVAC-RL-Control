@@ -5,7 +5,7 @@ import time
 import os, shutil
 import psutil
 import queue
-import threading, json
+import threading, json, traceback
 import xml.etree.ElementTree as ET
 
 from util.logger import Logger
