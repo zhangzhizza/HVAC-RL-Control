@@ -138,6 +138,7 @@
                     var this_exp_status = document.getElementById(this_exp_id+":status");
                     var this_exp_machine = document.getElementById(this_exp_id+":machine:select")
                     var this_exp_step = document.getElementById(this_exp_id+":step");
+                    // Update status
                     if (this_exp_statuses["status"] == null){
                         if (this_exp_status.innerText != "None"){
                             this_exp_status.innerText = "None";
@@ -145,6 +146,17 @@
                     }else{
                         if (this_exp_status.innerText != String(this_exp_statuses["status"])){
                             this_exp_status.innerText = String(this_exp_statuses["status"]);
+                            // Change text color
+                            if (this_exp_status.innerText == 'running'){
+                                this_exp_status.style.color = 'orangered'
+                            }else if(this_exp_status.innerText == 'queuing'){
+                                this_exp_status.style.color = 'mediumvioletred'
+                            }else if(this_exp_status.innerText == 'complete'){
+                                this_exp_status.style.color = 'mediumseagreen'
+                            }else if(this_exp_status.innerText == 'None'){
+                                this_exp_status.style.color = 'black'
+                            }
+
                         }
                     }      
                     //var this_exp_machine_sts = this_exp_statuses["machine"];
@@ -317,6 +329,16 @@
                     var this_row_status_obs = new MutationObserver(status_highlight_effect);
                     var this_row_status_obs_config = { attributes: true, childList: true, subtree: true };
                     this_row_status_obs.observe(this_row_status, this_row_status_obs_config);
+                    // Change status text color
+                    if (this_row_status.innerText == 'running'){
+                        this_row_status.style.color = 'orangered'
+                    }else if(this_row_status.innerText == 'queuing'){
+                        this_row_status.style.color = 'mediumvioletred'
+                    }else if(this_row_status.innerText == 'complete'){
+                        this_row_status.style.color = 'mediumseagreen'
+                    }else if(this_row_status.innerText == 'None'){
+                        this_row_status.style.color = 'black'
+                    }
 
                 }
                 // Table head styles
