@@ -35707,61 +35707,58 @@ AvailabilityManagerAssignmentList,
 !-   ===========  ALL OBJECTS IN CLASS: SETPOINTMANAGER:SCHEDULED ===========
 !
 
-!SetpointManager:Scheduled,
-!    Air Loop Supply Side Outlet Setpoint Manager,  !- Name
-!    Temperature,             !- Control Variable
-!    AHUAirSetpoint,          !- Schedule Name
-!    Air Loop Supply Side Outlet 1;  !- Setpoint Node or NodeList Name!
-
-!SetpointManager:Scheduled,
-!    Mixed Air Temp Manager,  !- Name
-!    Temperature,             !- Control Variable
-!    AHUAirSetpoint,          !- Schedule Name
-!    Mixed Air Nodes;         !- Setpoint Node or NodeList Name!
-
-!SetpointManager:Scheduled,
-!    Cooling Coil Outlet Air Setpoint Manager,  !- Name
-!    Temperature,             !- Control Variable
-!    AHUAirSetpoint,     !- Schedule Name
-!    AIR LOOP AHU COOLING COIL AIR OUTLET NODE;  !- Setpoint Node or NodeList Name!
-
-!SetpointManager:Scheduled,
-!    Heating Coil Outlet Air Setpoint Manager,  !- Name
-!    Temperature,             !- Control Variable
-!    AHUAirSetpoint,     !- Schedule Name
-!    AIR LOOP AHU HEATING COIL AIR OUTLET NODE;  !- Setpoint Node or NodeList Name
-SetpointManager:Warmest,
+SetpointManager:Scheduled,
     Air Loop Supply Side Outlet Setpoint Manager,  !- Name
-    Temperature,  !- Control Variable
-    Air Loop,  !- HVAC Air Loop Name
-    12,  !- Minimum Setpoint Temperature
-    24,  !- Maximum Setpoint Temperature
-    MaximumTemperature,  !- Strategy
+    Temperature,             !- Control Variable
+    AHUAirSetpoint,          !- Schedule Name
     Air Loop Supply Side Outlet 1;  !- Setpoint Node or NodeList Name!
-SetpointManager:Warmest,
+SetpointManager:Scheduled,
     Mixed Air Temp Manager,  !- Name
-    Temperature,  !- Control Variable
-    Air Loop,  !- HVAC Air Loop Name
-    12,  !- Minimum Setpoint Temperature
-    24,  !- Maximum Setpoint Temperature
-    MaximumTemperature,  !- Strategy
-    Mixed Air Nodes;  !- Setpoint Node or NodeList Name!
-SetpointManager:Warmest,
+    Temperature,             !- Control Variable
+    AHUAirSetpoint,          !- Schedule Name
+    Mixed Air Nodes;         !- Setpoint Node or NodeList Name!
+SetpointManager:Scheduled,
     Cooling Coil Outlet Air Setpoint Manager,  !- Name
-    Temperature,  !- Control Variable
-    Air Loop,  !- HVAC Air Loop Name
-    12,  !- Minimum Setpoint Temperature
-    24,  !- Maximum Setpoint Temperature
-    MaximumTemperature,  !- Strategy
+    Temperature,             !- Control Variable
+    AHUAirSetpoint,     !- Schedule Name
     AIR LOOP AHU COOLING COIL AIR OUTLET NODE;  !- Setpoint Node or NodeList Name!
-SetpointManager:Warmest,
+SetpointManager:Scheduled,
     Heating Coil Outlet Air Setpoint Manager,  !- Name
-    Temperature,  !- Control Variable
-    Air Loop,  !- HVAC Air Loop Name
-    12,  !- Minimum Setpoint Temperature
-    24,  !- Maximum Setpoint Temperature
-    MaximumTemperature,  !- Strategy
+    Temperature,             !- Control Variable
+    AHUAirSetpoint,     !- Schedule Name
     AIR LOOP AHU HEATING COIL AIR OUTLET NODE;  !- Setpoint Node or NodeList Name
+!SetpointManager:Warmest,
+!    Air Loop Supply Side Outlet Setpoint Manager,  !- Name
+!    Temperature,  !- Control Variable
+!    Air Loop,  !- HVAC Air Loop Name
+!    12,  !- Minimum Setpoint Temperature
+!    24,  !- Maximum Setpoint Temperature
+!    MaximumTemperature,  !- Strategy
+!    Air Loop Supply Side Outlet 1;  !- Setpoint Node or NodeList Name!
+!SetpointManager:Warmest,
+!    Mixed Air Temp Manager,  !- Name
+!    Temperature,  !- Control Variable
+!    Air Loop,  !- HVAC Air Loop Name
+!    12,  !- Minimum Setpoint Temperature
+!    24,  !- Maximum Setpoint Temperature
+!    MaximumTemperature,  !- Strategy
+!    Mixed Air Nodes;  !- Setpoint Node or NodeList Name!
+!SetpointManager:Warmest,
+!    Cooling Coil Outlet Air Setpoint Manager,  !- Name
+!    Temperature,  !- Control Variable
+!    Air Loop,  !- HVAC Air Loop Name
+!    12,  !- Minimum Setpoint Temperature
+!    24,  !- Maximum Setpoint Temperature
+!    MaximumTemperature,  !- Strategy
+!    AIR LOOP AHU COOLING COIL AIR OUTLET NODE;  !- Setpoint Node or NodeList Name!
+!SetpointManager:Warmest,
+!    Heating Coil Outlet Air Setpoint Manager,  !- Name
+!    Temperature,  !- Control Variable
+!    Air Loop,  !- HVAC Air Loop Name
+!    12,  !- Minimum Setpoint Temperature
+!    24,  !- Maximum Setpoint Temperature
+!    MaximumTemperature,  !- Strategy
+!    AIR LOOP AHU HEATING COIL AIR OUTLET NODE;  !- Setpoint Node or NodeList Name
 
 !-   ===========  ALL OBJECTS IN CLASS: SETPOINTMANAGER:SINGLEZONE:HUMIDITY:MAXIMUM ===========
 
