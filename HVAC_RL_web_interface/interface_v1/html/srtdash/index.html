@@ -104,7 +104,7 @@
 
         }
         // Set current time
-        set_current_time_utc();       
+        set_current_time_utc();
         });
 
         // Repeated function
@@ -230,6 +230,7 @@
     }
 
     function project_selector_func_helper(select_value){
+        document.getElementById('project_select_status').innerText = 'Loading...';
         $.get("get_all_exp/?run_name=" + select_value, function(data, status){
                 document.getElementById('project_table_div').innerHTML = data;
                 var table = document.getElementById('project_table_div').getElementsByTagName('table')[0]
@@ -369,10 +370,7 @@
                     var col_i = all_cols_th[i];
                     col_i.classList.add('mv-icon');
                 }
-
-
-                
-
+                document.getElementById('project_select_status').innerText = '';
             });
         
 
@@ -713,8 +711,9 @@
                                     <select class="custome-select border-0 pr-3" id="project_select", onchange="project_selector_func(this)">
                                     </select>
                                 </div>
+                                <div id="project_select_status">loading...</div>
                                 <div class="market-status-table mt-4">
-                                    <div class="table-responsive" id="project_table_div" style="height: 400px;">
+                                    <div class="table-responsive" id="project_table_div" style="height: 600px;">
 
                                     </div>
                                 </div>
