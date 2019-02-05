@@ -18,6 +18,7 @@ def main():
     parser.add_argument('--state_limit_path', type=str, help='The state limit file path.')
     parser.add_argument('--ext_sch_paths', nargs='+', type=str, default = [],
     					help='The IDF external schedule files paths.')
+    parser.add_argument('--eplus_version', type=str, help='The EnergyPlus engine version, e.g. 8-3-0')
     args = parser.parse_args();
 
     # Change to abs path if the input is relative path
@@ -35,7 +36,8 @@ def main():
 
     env_creator = creator.EplusEnvCreator();
     env_creator.create_env(args.base_idf_path, args.add_idf_path, args.cfg_path, args.env_name,
-    						args.weather_path, args.state_limit_path, args.ext_sch_paths);
+    						args.weather_path, args.state_limit_path, args.ext_sch_paths,
+                            args.eplus_version);
 
 
 if __name__ == '__main__':

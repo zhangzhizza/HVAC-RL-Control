@@ -27,7 +27,7 @@ WEATHER_FORECAST_COLS_SELECT = {'tmy3': [0, 2, 8, 9],
 YEAR = 1991 # Non leap year
 CWD = os.getcwd();
 LOG_LEVEL_MAIN = 'INFO';
-LOG_LEVEL_EPLS = 'INFO'
+LOG_LEVEL_EPLS = 'ERROR';
 LOG_FMT = "[%(asctime)s] %(name)s %(levelname)s:%(message)s";
 
 

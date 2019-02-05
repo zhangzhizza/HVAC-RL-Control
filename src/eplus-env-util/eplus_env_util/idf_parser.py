@@ -26,6 +26,17 @@ class IdfParser(object):
 						if idf_line_prcd[-1] == ',':
 							obj_name = idf_line_prcd[:-1];
 							is_obj_start = True;
+						elif idf_line_prcd[-1] == ';':
+							obj_name = idf_line_prcd[0:idf_line_prcd.find(',')];
+							obj_content = idf_line_prcd[idf_line_prcd.find(',') + 1:];
+							if obj_name in self._idf_dict:
+								self._idf_dict[obj_name].append(obj_content);
+							else:
+								self._idf_dict[obj_name] = [obj_content];
+							# Reset obj temp fields
+							is_obj_start = False;
+							obj_content = '';
+							obj_name = '';
 				else:
 					obj_content += idf_line;
 					if len(idf_line_prcd) > 0:

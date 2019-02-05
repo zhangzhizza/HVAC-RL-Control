@@ -332,4 +332,5 @@ act_func_dict = {'1':[mull_stpt_iw, act_limits_iw_1],
                 '10':[stpt_directSelect_sspOnly, act_limits_iw_6],
                 'cslDxActCool_1':[directPass, act_limits_cslDxCool_1],
                 'cslDxActCool_2':[cslDxCool_ahuStptIncmt, act_limits_cslDxCool_1],
-                'part1_v1':[directPass, act_limits_part1_v1],}
+                'part1_v1':[directPass, act_limits_part1_v1],
+                'part2_v1':[directPass, act_limits_part2_v1],}

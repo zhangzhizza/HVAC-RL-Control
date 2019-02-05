@@ -1,0 +1,73 @@
+
+Output:Variable,
+    *,                       !- Key Value
+    Site Outdoor Air Drybulb Temperature,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Site Outdoor Air Relative Humidity,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Site Diffuse Solar Radiation Rate per Area,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Site Direct Solar Radiation Rate per Area,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,  !- Key Value
+    Zone Air Temperature,    !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,  !- Key Value
+    Zone Thermostat Cooling Setpoint Temperature,    !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,  !- Key Value
+    Zone Thermostat Heating Setpoint Temperature,    !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Air Loop Supply Side Outlet 1,  !- Key Value
+    System Node Temperature, !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Air Loop Supply Side Outlet 1,  !- Key Value
+    System Node Setpoint Temperature, !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Facility Total HVAC Electric Demand Power,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,      !- Key Value
+    Facility Cooling Setpoint Not Met Time,          !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,      !- Key Value
+    Facility Heating Setpoint Not Met Time,          !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Facility Total HVAC Electric Demand Power,  !- Variable Name
+    runperiod;                !- Reporting Frequency
+
+ExternalInterface,           !- Object to activate the external interface
+    PtolemyServer;              !- Name of external interface
+
+ExternalInterface:Schedule,
+    AHUAirSetpoint,                 !- Name
+    Temperature,             !- ScheduleType
+    18;                      !- Initial value, used during warm-up
