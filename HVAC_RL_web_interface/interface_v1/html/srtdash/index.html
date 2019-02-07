@@ -186,6 +186,11 @@
                 document.getElementById(div_id + "_cpu").innerText = status.cpu+' %'
                 document.getElementById(div_id + "_mem").innerText = status.mem+' %'
                 document.getElementById(div_id + "_dsk").innerText = status.dsk+' GB'
+                if (status.dsk < 30.0){
+                    document.getElementById(div_id + "_dsk").style.color = 'red'
+                }else{
+                    document.getElementById(div_id + "_dsk").style.color = 'green'
+                }
                 document.getElementById(div_id + "_run").innerText = status.running_queuing
                 document.getElementById(div_id + "_time").innerText = status.time;
                 // Update the local meta files
