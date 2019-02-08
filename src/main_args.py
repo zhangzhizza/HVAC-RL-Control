@@ -131,6 +131,7 @@ def get_args():
     parser.add_argument('--sharedNet_type', default='Dense', type=str, help='The shared network layer type.')
     parser.add_argument('--action_repeat_n', default=1, type=int, help='The action repeat times.')
     parser.add_argument('--check_args_only', default=False, type=bool, help='Print the arguments only.')
+    parser.add_argument('--eval_env_res_max_keep', default=20, type=int, help='Max keep result number for the evaluation env.')
     return parser;
 
 def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func, eval_action_func, 
@@ -189,7 +190,7 @@ def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func
                         args.gamma, args.rwd_e_para, args.rwd_p_para, args.save_freq, args.max_interactions,
                         args.eval_epi_num, args.eval_freq, reward_func, rewardArgs, metric_func, train_action_func, eval_action_func,  
                         train_action_limits, eval_action_limits, raw_state_process_func, raw_stateLimit_process_func, 
-                        args.debug_log_prob, args.is_greedy_policy, args.action_repeat_n);
+                        args.debug_log_prob, args.is_greedy_policy, args.action_repeat_n, args.eval_env_res_max_keep);
 
       if args.job_mode.lower() == 'test':
           main_logger.info ('Start the testing...')

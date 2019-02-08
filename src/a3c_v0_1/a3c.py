@@ -765,7 +765,7 @@ class A3CAgent:
             env_name_list, t_max, gamma, e_weight, p_weight, save_freq, T_max, eval_epi_num, eval_freq,
             reward_func, rewardArgs, metric_func, train_action_func, eval_action_func, train_action_limits, 
             eval_action_limits, raw_state_process_func, raw_stateLimit_process_func, debug_log_prob, is_greedy_policy,
-            action_repeat_n):
+            action_repeat_n, eval_env_res_max_keep = None):
         """
         This method is used to train the neural network. 
         
@@ -816,6 +816,8 @@ class A3CAgent:
         self._global_logger.info('Prepare the evaluation environments %s ...', env_name_list);
         for env_name in env_name_list:
             env_eval = gym.make(env_name);
+            if eval_env_res_max_keep is not None:
+                env_eval.set_max_res_to_keep(eval_env_res_max_keep);
             global_agent_eval = A3CEval(sess, global_network, env_eval, eval_epi_num, 
                                     self._window_len, self._forecast_len, e_weight, p_weight, 
                                     raw_stateLimit_process_func, self._noisyNet, 

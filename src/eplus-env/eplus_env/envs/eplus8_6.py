@@ -60,7 +60,7 @@ class EplusEnv(Env):
     def __init__(self, eplus_path, weather_path, bcvtb_path, variable_path, idf_path, env_name,
                  min_max_limits, incl_forecast = False, forecastRandMode = 'normal', forecastRandStd = 0.15,
                  forecastSource = 'tmy3', forecastFilePath = None, forecast_hour = 12, act_repeat = 1,
-                 max_ep_data_store_num = 10):
+                 max_ep_data_store_num = 5):
         self._env_name = env_name;
         self._thread_name = threading.current_thread().getName();
         self.logger_main = Logger().getLogger('EPLUS_ENV_%s_%s_ROOT'%(env_name, self._thread_name), 
@@ -113,7 +113,7 @@ class EplusEnv(Env):
                                                    self._weatherForecastSrc);
         self._epi_num = 0;
         self._act_repeat = act_repeat;
-        self._max_ep_data_store_num = max_ep_data_store_num;
+        self._max_res_to_keep = max_ep_data_store_num;
         self._last_action = [20.0]; 
 
         """legacy env
@@ -395,7 +395,7 @@ class EplusEnv(Env):
 
     def _render(self, mode='human', close=False):
         pass;
-    
+
     def _rm_past_history_dir(self, cur_eplus_working_dir, dir_sig):
         """Remove the past woring directory
 
@@ -411,8 +411,8 @@ class EplusEnv(Env):
 
         cur_dir_name, cur_dir_id = cur_eplus_working_dir.split(dir_sig)
         cur_dir_id = int(cur_dir_id);
-        if cur_dir_id - self._max_ep_data_store_num > 0:
-            rm_dir_id = cur_dir_id - self._max_ep_data_store_num;
+        if cur_dir_id - self._max_res_to_keep > 0:
+            rm_dir_id = cur_dir_id - self._max_res_to_keep;
             rm_dir_full_name = cur_dir_name + dir_sig + str(rm_dir_id);
             rmtree(rm_dir_full_name);
 
@@ -842,5 +842,7 @@ class EplusEnv(Env):
     def env_name(self):
         return self._env_name;
     
+    def set_max_res_to_keep(self, num):
+        self._max_res_to_keep = num;
 
     

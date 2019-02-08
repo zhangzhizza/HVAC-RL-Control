@@ -1,4 +1,4 @@
-python ../../../a3c_eplus_rlParametric_v0.1.py --env Part1-Heavy-Pit-Train-v1 --max_interactions 2500000 --window_len 42 \
+python ../../../a3c_eplus_rlParametric_v0.1.py --env Part1-Heavy-Pit-Train-v1 --max_interactions 5000000 --window_len 42 \
 --state_dim 71 --num_threads 16 --action_space part1_v1 --save_freq 500000 --eval_freq 100000 \
 --job_mode Train --test_env Part1-Heavy-Pit-Test-v1 Part1-Heavy-Pit-Test-v2 Part1-Heavy-Pit-Test-v3 Part1-Heavy-Pit-Test-v4 \
 --train_act_func part1_v1 --eval_act_func part1_v1 \

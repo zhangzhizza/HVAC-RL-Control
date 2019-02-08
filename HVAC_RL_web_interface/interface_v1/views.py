@@ -38,6 +38,7 @@ def get_info_from_config_file(key):
 @login_required
 def index(request):
 	run_dirs_names, run_dirs = getRuns();
+	run_dirs_names = sorted(run_dirs_names);
 	return render(request, 'interface_v1/html/srtdash/index.html',\
     	{'run_dirs_names': run_dirs_names,
     	 'available_computers': get_info_from_config_file('available_worker_clients')})
