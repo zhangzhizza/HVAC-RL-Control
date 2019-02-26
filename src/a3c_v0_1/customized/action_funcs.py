@@ -336,4 +336,5 @@ act_func_dict = {'1':[mull_stpt_iw, act_limits_iw_1],
                 'part2_v1':[directPass, act_limits_part2_v1],
                 'part2_v2':[directPass, act_limits_part2_v2],
                 'part2_v3':[directPass, act_limits_part2_v3],
-                'part2_v4':[directPass, act_limits_part2_v4],}
+                'part2_v4':[directPass, act_limits_part2_v4],
+                'part3_v1':[directPass, act_limits_part3_v1]}

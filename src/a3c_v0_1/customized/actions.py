@@ -326,6 +326,13 @@ cslDxCool_4 = [[0.0],
         [-2.0],
         [5.0],
         [-5.0]];
+
+part3_v1 = [[1,0,0,0,0],
+        [0,1,0,0,0],
+        [0,0,1,0,0],
+        [0,0,0,1,0],
+        [0,0,0,0,1],];
+
         
 action_map = {'default': actions_htcl_cmd, 'exp1': actions_htcl_cmd_exp1, 
               'exp2':actions_htcl_cmd_exp2, 'exp3': actions_htcl_cmd_exp3, 
@@ -337,6 +344,7 @@ action_map = {'default': actions_htcl_cmd, 'exp1': actions_htcl_cmd_exp1,
               'cslDxCool_1': part1_v1, 'cslDxCool_2': cslDxCool_2, 
               'cslDxCool_3': cslDxCool_3, 'cslDxCool_4': cslDxCool_4,
               'part1_v1': part1_v1, 'part2_v1': part2_v1, 'part2_v2': part2_v2,
-              'part2_v3': part2_v3, 'part2_v4': part2_v4};
+              'part2_v3': part2_v3, 'part2_v4': part2_v4,
+              'part3_v1': part3_v1,};
 
 

@@ -1973,3 +1973,21 @@ kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-7-0/',
 'forecastFilePath': None,
 'forecast_hour': 12,
 'act_repeat': 1});
+
+register(
+id='Part3-NA-Pit-Train-v1',
+entry_point='eplus_env.envs:EplusEnv',
+kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-7-0/',
+'weather_path':'/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/rl_exp_part_3/idf/../../../weather/pittsburgh_TMY3.epw',
+'bcvtb_path':FD + '/envs/bcvtb/',
+'variable_path':'/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/rl_exp_part_3/idf/../cfg/part3.cfg',
+'idf_path':'/home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/eplus_models/rl_exp_part_3/idf/1.1mp.cws.pittsburgh.sys.idf.env',
+'env_name':'Part3-NA-Pit-Train-v1',
+'min_max_limits': [(8.0, 30.0), (0.0, 100.0), (0.0, 1.0), (0.0, 20.0), (0.0, 1.0), (0.0, 1.0), (0.0, 20.0), (0.0, 1.0), (0.0, 1.0), (0.0, 20.0), (0.0, 1.0), (6.4112, 7.4112), (6.4112, 7.4112), (0.0, 1500000.0), (0.0, 1500000.0), (0.0, 330000.0)],
+'incl_forecast': False,
+'forecastRandMode': 'normal',
+'forecastRandStd': 0.15,
+'forecastSource': None,
+'forecastFilePath': None,
+'forecast_hour': 12,
+'act_repeat': 1});

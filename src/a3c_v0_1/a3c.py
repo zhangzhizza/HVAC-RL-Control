@@ -316,7 +316,7 @@ class A3CThread:
                                               env_st_yr, env_st_mn, env_st_dy,
                                               env_st_wd, pcd_state_limits, is_add_time_to_state); # 1-D list
                 # Get the reward
-                reward_next = reward_func(ob_next_prcd, e_weight, p_weight, *rewardArgs);
+                reward_next = reward_func(ob_this_prcd, action_stpt_prcd, ob_next_prcd, e_weight, p_weight, *rewardArgs);
                 
                 #################FOR DEBUG#######################
                 if is_show_dbg:

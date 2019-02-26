@@ -181,7 +181,8 @@ def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func
        global_saver) = a3c_agent.compile(args.is_warm_start, args.model_dir, 
                                          args.save_scope, args.save_max_to_keep);
       test_envs = [args.env]
-      test_envs.extend(args.test_env);
+      if args.test_env is not None:
+        test_envs.extend(args.test_env);
       if args.job_mode.lower() == "train":
           # Start the training
           main_logger.info ('Start the learning...')

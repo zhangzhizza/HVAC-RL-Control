@@ -5,7 +5,7 @@ import numpy as np
 
 TIMESTATE_LEN = 2;
 
-def ppd_energy_reward_smlRefBld(ob_next_prcd, e_weight, p_weight, mode, ppd_penalty_limit):
+def ppd_energy_reward_smlRefBld(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, mode, ppd_penalty_limit):
     """
     Get the reward from hvac energy and pmv. If occupancy status is 0 (not 
     occupied), then the PPD will be 0.0; else, PPD is the original normalized
@@ -45,7 +45,7 @@ def ppd_energy_reward_smlRefBld(ob_next_prcd, e_weight, p_weight, mode, ppd_pena
     return ret;
 
 
-def err_energy_reward_iw(ob_next_prcd, e_weight, p_weight, err_penalty_scl):
+def err_energy_reward_iw(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, err_penalty_scl):
     """
     NOTE: to make this reward function work, the e_weight needs to be much smaller than p_weight,
     if e_weight == p_weight, the policy may be stuck at turning off heating and get a -0.5 reward 
@@ -76,7 +76,7 @@ def err_energy_reward_iw(ob_next_prcd, e_weight, p_weight, err_penalty_scl):
     ret = - (e_weight * normalized_hvac_energy + p_weight * normalized_err);
     return ret;
 
-def err_energy_reward_iw_v2(ob_next_prcd, e_weight, p_weight, err_penalty_scl):
+def err_energy_reward_iw_v2(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, err_penalty_scl):
     """
     NOTE: this reward does not work well, perhaps because the agent can learn too little
     by giving it a constant negative reward -1.0 when temperature violates. But not too 
@@ -113,7 +113,7 @@ def err_energy_reward_iw_v2(ob_next_prcd, e_weight, p_weight, err_penalty_scl):
         ret = - (e_weight * normalized_hvac_energy + p_weight * normalized_err);
     return ret;
 
-def err_energy_reward_iw_v3(ob_next_prcd, e_weight, p_weight, err_penalty_scl):
+def err_energy_reward_iw_v3(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, err_penalty_scl):
     """
     NOTE: this reward function does not work well because the reward is too negative (-10.0)
     which will make learning very hard. 
@@ -148,7 +148,7 @@ def err_energy_reward_iw_v3(ob_next_prcd, e_weight, p_weight, err_penalty_scl):
         ret = - (e_weight * normalized_hvac_energy + p_weight * normalized_err);
     return ret;
 
-def err_energy_reward_iw_v4(ob_next_prcd, e_weight, p_weight, err_penalty_scl):
+def err_energy_reward_iw_v4(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, err_penalty_scl):
     """
     NOTE: by shrink the reward by a large factor, the effect of energy consumption may be too samll.
 
@@ -286,7 +286,7 @@ def err_energy_reward_iw_v6(ob_next_prcd, e_floor, p_division, err_penalty_scl):
 
     return cmbd_rwd;
 
-def ppd_energy_reward_iw_timeRelated(ob_next_prcd, e_weight, p_weight, ppd_penalty_limit):
+def ppd_energy_reward_iw_timeRelated(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, ppd_penalty_limit):
     """
     Get the reward from hvac energy and pmv. If occupancy status is 0 (not 
     occupied), then the PPD will be 0.0; else, PPD is the original normalized
@@ -338,7 +338,7 @@ def ppd_energy_reward_iw_timeRelated(ob_next_prcd, e_weight, p_weight, ppd_penal
     ret = e_weight * energy_rwd + p_weight * comfort_rwd;
     return ret;
 
-def ppd_energy_reward_iw_timeRelated_v2(ob_next_prcd, e_weight, p_weight, ppd_penalty_limit):
+def ppd_energy_reward_iw_timeRelated_v2(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, ppd_penalty_limit):
     """
     Get the reward from hvac energy and pmv. If occupancy status is 0 (not 
     occupied), then the PPD will be 0.0; else, PPD is the original normalized
@@ -390,7 +390,7 @@ def ppd_energy_reward_iw_timeRelated_v2(ob_next_prcd, e_weight, p_weight, ppd_pe
     ret = e_weight * energy_rwd + p_weight * comfort_rwd;
     return ret;
 
-def ppd_energy_reward_iw_timeRelated_v3(ob_next_prcd, e_weight, p_weight, ppd_penalty_limit):
+def ppd_energy_reward_iw_timeRelated_v3(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, ppd_penalty_limit):
     """
     Get the reward from hvac energy and pmv. If occupancy status is 0 (not 
     occupied), then the PPD will be 0.0; else, PPD is the original normalized
@@ -444,7 +444,7 @@ def ppd_energy_reward_iw_timeRelated_v3(ob_next_prcd, e_weight, p_weight, ppd_pe
     ret = e_weight * energy_rwd + p_weight * comfort_rwd;
     return ret + 1.0;
 
-def ppd_energy_reward_iw_timeRelated_v4(ob_next_prcd, e_weight, p_weight, ppd_penalty_limit):
+def ppd_energy_reward_iw_timeRelated_v4(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, ppd_penalty_limit):
     """
     Get the reward from hvac energy and pmv. If occupancy status is 0 (not 
     occupied), then the PPD will be 0.0; else, PPD is the original normalized
@@ -502,7 +502,7 @@ def ppd_energy_reward_iw_timeRelated_v4(ob_next_prcd, e_weight, p_weight, ppd_pe
     ret = e_weight * energy_rwd + p_weight * comfort_rwd;
     return ret;
 
-def ppd_energy_reward_iw_timeRelated_v5(ob_next_prcd, e_weight, p_weight, ppd_penalty_limit):
+def ppd_energy_reward_iw_timeRelated_v5(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, ppd_penalty_limit):
     """
     Get the reward from hvac energy and comfort level. If occupancy status is 0 (not 
     occupied), then the comfort level will be determined from the difference between 
@@ -559,7 +559,7 @@ def ppd_energy_reward_iw_timeRelated_v5(ob_next_prcd, e_weight, p_weight, ppd_pe
     ret = e_weight * energy_rwd + p_weight * comfort_rwd;
     return ret;
 
-def ppd_energy_reward_iw_timeRelated_v6(ob_next_prcd, e_weight, p_weight, ppd_penalty_limit):
+def ppd_energy_reward_iw_timeRelated_v6(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, ppd_penalty_limit):
     """
     Get the reward from hvac energy and comfort level. If occupancy status is 0 (not 
     occupied), then the comfort level will be determined from the difference between 
@@ -616,7 +616,7 @@ def ppd_energy_reward_iw_timeRelated_v6(ob_next_prcd, e_weight, p_weight, ppd_pe
     ret = e_weight * energy_rwd + p_weight * comfort_rwd;
     return ret;
 
-def ppd_energy_reward_iw_timeRelated_v7(ob_next_prcd, e_weight, p_weight, ppd_penalty_limit, stpt_violation_scl):
+def ppd_energy_reward_iw_timeRelated_v7(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, ppd_penalty_limit, stpt_violation_scl):
     """
     Get the reward from hvac energy and comfort level. If occupancy status is 0 (not 
     occupied), then the comfort level will be determined from the difference between 
@@ -669,7 +669,7 @@ def ppd_energy_reward_iw_timeRelated_v7(ob_next_prcd, e_weight, p_weight, ppd_pe
     ret = max(min(e_weight * energy_rwd + p_weight * comfort_rwd, 0.0), -1.0);
     return ret;
 
-def ppd_energy_reward_iw_timeRelated_v8(ob_next_prcd, e_weight, p_weight, ppd_penalty_limit, stpt_violation_scl):
+def ppd_energy_reward_iw_timeRelated_v8(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, ppd_penalty_limit, stpt_violation_scl):
     """
     Get the reward from hvac energy and comfort level. If occupancy status is 0 (not 
     occupied), then the comfort level will be determined from the difference between 
@@ -724,7 +724,7 @@ def ppd_energy_reward_iw_timeRelated_v8(ob_next_prcd, e_weight, p_weight, ppd_pe
     ret += 1.0;
     return ret;
 
-def ppd_energy_reward_iw_timeRelated_v9(ob_next_prcd, e_weight, p_weight, ppd_penalty_limit, stpt_violation_scl):
+def ppd_energy_reward_iw_timeRelated_v9(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, ppd_penalty_limit, stpt_violation_scl):
     """
     Get the reward from hvac energy and comfort level. If occupancy status is 0 (not 
     occupied), then the comfort level will be determined from the difference between 
@@ -785,7 +785,7 @@ def ppd_energy_reward_iw_timeRelated_v9(ob_next_prcd, e_weight, p_weight, ppd_pe
     return ret;
 
 
-def stptVio_energy_reward_cslDxCool_v1(ob_next_prcd, e_weight, p_weight, stpt_violation_scl):
+def stptVio_energy_reward_cslDxCool_v1(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, stpt_violation_scl):
     """
     Get the reward from hvac energy and indoor air temperature setpoint violation level (the max one
     is used for the multi-zone case). 
@@ -819,7 +819,7 @@ def stptVio_energy_reward_cslDxCool_v1(ob_next_prcd, e_weight, p_weight, stpt_vi
     return ret;
 
 
-def stpt_viol_energy_reward_part1_v1(ob_next_prcd, e_weight, p_weight, stpt_violation_scl):
+def stpt_viol_energy_reward_part1_v1(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, stpt_violation_scl):
     """
     Get the reward from hvac energy and indoor air temperature setpoint violation level (the max one
     is used for the multi-zone case). 
@@ -856,7 +856,7 @@ def stpt_viol_energy_reward_part1_v1(ob_next_prcd, e_weight, p_weight, stpt_viol
     ret += 1.0;
     return ret;
 
-def stpt_viol_energy_reward_part2_v1(ob_next_prcd, e_weight, p_weight, stpt_violation_scl):
+def stpt_viol_energy_reward_part2_v1(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, stpt_violation_scl):
     """
     Get the reward from hvac energy and indoor air temperature setpoint violation level (the max one
     is used for the multi-zone case). 
@@ -953,7 +953,7 @@ def stptVio_energy_metric_cslDxCool_v1(ob_next_raw, this_ep_energy, this_ep_comf
     
     return (this_ep_energy_toNow, this_ep_comfort_toNow);
 
-def stptVio_energy_reward_cslDxCool_v2(ob_next_prcd, e_weight, p_weight, stpt_violation_scl):
+def stptVio_energy_reward_cslDxCool_v2(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, stpt_violation_scl):
     """
     Get the reward from hvac energy and indoor air temperature setpoint violation level (the max one
     is used for the multi-zone case). 
@@ -997,6 +997,88 @@ def stptVio_energy_metric_cslDxCool_v2(ob_next_raw, this_ep_energy, this_ep_comf
     
     return (this_ep_energy_toNow, this_ep_comfort_toNow);
 
+def rl_parametric_reward_part3_v1(ob_this_prcd, action_this_prcd, ob_next_prcd, e_weight, p_weight, stpt_violation_scl):
+    """
+    """
+    CHILLER1_ONOFF_IDX = 2;
+    CHILLER1_SHTCY_IDX = 3;
+    CHILLER1_PRTLR_IDX = 4;
+    CHILLER1_PLR_LM = 0.19;
+
+    CHILLER2_ONOFF_IDX = 5;
+    CHILLER2_SHTCY_IDX = 6;
+    CHILLER2_PRTLR_IDX = 7;
+    CHILLER2_PLR_LM = 0.19;
+
+    CHILLER3_ONOFF_IDX = 8;
+    CHILLER3_SHTCY_IDX = 9;
+    CHILLER3_PRTLR_IDX = 10;
+    CHILLER3_PLR_LM = 0.25;
+
+    CHW_TEMP_IDX = 11;
+    CHW_TEMP_STPT_IDX = 12;
+
+    CLG_DMD_IDX = 13;
+    CLG_DLD_IDX = 14;
+    HVAC_E_IDX = 15;
+    # shtcyc_penl: penalize short cycle actions
+    is_chillers_short_cycle_ls = [_is_chiller_short_cycle(ob_this_prcd, ob_next_prcd, 
+                                                        CHILLER1_SHTCY_IDX, CHILLER1_ONOFF_IDX),
+                                _is_chiller_short_cycle(ob_this_prcd, ob_next_prcd, 
+                                                        CHILLER2_SHTCY_IDX, CHILLER2_ONOFF_IDX),
+                                _is_chiller_short_cycle(ob_this_prcd, ob_next_prcd, 
+                                                        CHILLER3_SHTCY_IDX, CHILLER3_ONOFF_IDX),
+                                ];
+    is_chillers_short_cycle = max(is_chillers_short_cycle_ls);
+    shtcyc_penl = is_chillers_short_cycle * 1.0;
+    # lowplr_penl: penalize too low part load ratio
+    chiller1_plr = ob_next_prcd[CHILLER1_PRTLR_IDX + TIMESTATE_LEN];
+    chiller2_plr = ob_next_prcd[CHILLER2_PRTLR_IDX + TIMESTATE_LEN];
+    chiller3_plr = ob_next_prcd[CHILLER3_PRTLR_IDX + TIMESTATE_LEN];
+    is_chillers_plr_low_ls = [0 < chiller1_plr < CHILLER1_PLR_LM,
+                              0 < chiller2_plr < CHILLER2_PLR_LM,
+                              0 < chiller3_plr < CHILLER3_PLR_LM,];
+    is_chillers_plr_low = max(is_chillers_plr_low_ls);
+    lowplr_penl = is_chillers_plr_low * 1.0;
+    # stptnm_penl: penalize the stpt not met
+    chw_temp = ob_next_prcd[CHW_TEMP_IDX + TIMESTATE_LEN];
+    chw_temp_stpt = ob_next_prcd[CHW_TEMP_STPT_IDX + TIMESTATE_LEN];
+    stptnm_penl = max((chw_temp - chw_temp_stpt), 0) * stpt_violation_scl * p_weight;
+    # erwd: energy reward
+    clg_delivered = ob_next_prcd[CLG_DLD_IDX + TIMESTATE_LEN] * 1500000;
+    hvac_energy = ob_next_prcd[HVAC_E_IDX + TIMESTATE_LEN] * 330000;
+    system_cop = max(clg_delivered/hvac_energy, 0);
+    system_cop_scl = system_cop/e_weight;
+    # final reward
+    reward = max(system_cop_scl - stptnm_penl - lowplr_penl - shtcyc_penl, 0);
+    return reward;
+
+def rl_parametric_metric_part3_v1(ob_next_raw, this_ep_energy, this_ep_comfort):
+    """
+    
+    """ 
+    CHW_TEMP_IDX = 11;
+    CHW_TEMP_STPT_IDX = 12;
+    HVAC_E_IDX = 15;
+
+    energy = ob_next_raw[HVAC_E_IDX]; # W
+    stpt_vio = 1.0*((ob_next_raw[CHW_TEMP_IDX] - ob_next_raw[CHW_TEMP_STPT_IDX]) > 0.2)
+    
+    this_ep_energy_toNow = this_ep_energy + energy; # Unit is Wh*timestep
+    this_ep_comfort_toNow = this_ep_comfort + stpt_vio; # Unit is hr*timestep
+    
+    return (this_ep_energy_toNow, this_ep_comfort_toNow);
+
+def _is_chiller_short_cycle(ob_this_prcd, ob_next_prcd, CHILLERX_SHTCY_IDX, CHILLERX_ONOFF_IDX):
+    chillerX_cycle_this = ob_this_prcd[CHILLERX_SHTCY_IDX + TIMESTATE_LEN];
+    chillerX_onoff_this = ob_this_prcd[CHILLERX_ONOFF_IDX + TIMESTATE_LEN];
+    chillerX_onoff_next = ob_next_prcd[CHILLERX_ONOFF_IDX + TIMESTATE_LEN];
+    chillerX_is_state_change = abs(chillerX_onoff_next - chillerX_onoff_this);
+
+    if chillerX_cycle_this < 1.0 and chillerX_is_state_change == 1.0:
+        return True;
+    else:
+        return False;
 
 reward_func_dict = {'1': err_energy_reward_iw,
                     '2': err_energy_reward_iw_v2,
@@ -1016,11 +1098,13 @@ reward_func_dict = {'1': err_energy_reward_iw,
                     'cslDxCool_1': stptVio_energy_reward_cslDxCool_v1,
                     'cslDxCool_2': stptVio_energy_reward_cslDxCool_v2,
                     'part1_v1': stpt_viol_energy_reward_part1_v1,
-                    'part2_v1': stpt_viol_energy_reward_part2_v1}
+                    'part2_v1': stpt_viol_energy_reward_part2_v1,
+                    'part3_v1': rl_parametric_reward_part3_v1,}
 
 metric_func_dict = {
                     'cslDxCool_1': stptVio_energy_metric_cslDxCool_v1,
                     'cslDxCool_2': stptVio_energy_metric_cslDxCool_v2,
                     'part1_v1': stpt_viol_energy_metric_part1_v1,
-                    'part2_v1': stpt_viol_energy_metric_part2_v1}
+                    'part2_v1': stpt_viol_energy_metric_part2_v1,
+                    'part3_v1': rl_parametric_metric_part3_v1,}
 

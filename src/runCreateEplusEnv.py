@@ -2,10 +2,10 @@ import argparse, os
 import eplus_env_util.eplus_env_creator as creator
 
 def get_abs_path(rel_path):
-	return_path = rel_path;
-	if rel_path[0] != '/':
-		return_path = os.getcwd() + '/' + rel_path;
-	return return_path;
+    return_path = rel_path;
+    if rel_path[0] != '/':
+        return_path = os.getcwd() + '/' + rel_path;
+    return return_path;
 
 
 def main(): 

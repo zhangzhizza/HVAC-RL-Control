@@ -353,7 +353,7 @@ class A3CEval:
                                               self._env_st_dy, self._env_st_wd, 
                                               self._pcd_state_limits, is_add_time_to_state); # 1-D list
             # Get the reward
-            reward_next = reward_func(ob_next_prcd, self._e_weight, self._p_weight, *rewardArgs);
+            reward_next = reward_func(ob_this_prcd, action_stpt_prcd, ob_next_prcd, self._e_weight, self._p_weight, *rewardArgs);
             this_ep_energy, this_ep_comfort = metric_func(ob_next_raw, this_ep_energy, this_ep_comfort);
             this_ep_reward += reward_next;
             #this_ep_max_ppd = max(normalized_ppd if occupancy_status > 0 else 0,
@@ -395,6 +395,7 @@ class A3CEval:
                 time_this = time_next;
                 ob_this_hist_prcd = ob_next_hist_prcd;
                 ob_this_raw = ob_next_raw;
+                ob_this_prcd = ob_next_prcd;
 
         env_interact_wrapper.end_episode();
         # In multi-threading mode, the results are stored in the mutable list

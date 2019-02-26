@@ -1,162 +1,51 @@
 
-  Output:Variable,
-  *,
-  Site Outdoor Air Drybulb Temperature,
-  timestep;
+  Output:Variable,*,Site Outdoor Air Drybulb Temperature,timestep;
+  Output:Variable,*,Site Outdoor Air Relative Humidity,timestep;
+  Output:Variable,PlantSupplySideInletPipe_OutletNode,System Node Temperature,hourly;
+  Output:Variable,ChilledWater_PumpOutletNode,System Node Temperature,timestep;
+  Output:Variable,ChilledWater_PumpOutletNode,System Node Setpoint Temperature,timestep;
+  Output:Variable,ChilledWater_PumpOutletNode,System Node Mass Flow Rate,hourly;
+!  Output:Variable,CondenserSupplySideInletPipe_OutletNode,System Node Temperature,timestep;
+!  Output:Variable,CondenserSupplySideInletPipe_OutletNode,System Node Setpoint Temperature,timestep;
+!  Output:Variable,CondenserSupplySideInletPipe_OutletNode,System Node Mass Flow Rate,timestep;
+  Output:Variable,CondenserWater_PumpOutletNode,System Node Temperature,hourly;
+!  Output:Variable,CondenserWater_PumpOutletNode,System Node Setpoint Temperature,timestep;
+!  Output:Variable,CondenserWater_PumpOutletNode,System Node Mass Flow Rate,timestep;
   
-  Output:Variable,
-  *,
-  Site Outdoor Air Relative Humidity,
-  timestep;
-  
-  Output:Variable,
-  PlantSupplySideInletPipe_OutletNode,
-  System Node Temperature,
-  hourly;
-  
-  Output:Variable,
-  ChilledWater_PumpOutletNode,
-  System Node Temperature,
-  timestep;
+  Output:Variable,*,Plant Supply Side Cooling Demand Rate,hourly;
+  Output:Variable,*,Plant Supply Side Unmet Demand Rate,hourly;
 
-  Output:Variable,
-  ChilledWater_PumpOutletNode,
-  System Node Setpoint Temperature,
-  timestep;
-  
-  Output:Variable,
-  ChilledWater_PumpOutletNode,
-  System Node Mass Flow Rate,
-  hourly;
-
-  Output:Variable,
-  CondenserWater_PumpOutletNode,
-  System Node Temperature,
-  hourly;
-  
-  Output:Variable,
-  *,
-  Plant Supply Side Cooling Demand Rate,
-  hourly;
-
-  Output:Variable,
-  *,
-  Chiller Electric Power,
-  hourly;
-
-  Output:Variable,
-  *,
-  Chiller COP,
-  hourly;
-
-  Output:Variable,
-  *,
-  Chiller Part Load Ratio,
-  timestep;
-
-  Output:Variable,
-  *,
-  Chiller Cycling Ratio,
-  hourly;
-
-  Output:Variable,
-  *,
-  Cooling Tower Fan Electric Power,
-  hourly;
-
-  Output:Variable,
-  *,
-  Pump Electric Power,
-  hourly;
-
-  Output:Variable,
-  *,
-  EMS_cooling_demand,
-  timestep;
-
-  Output:Variable,
-  *,
-  EMS_cooling_delivered,
-  timestep;
-
-  Output:Variable,
-  *,
-  EMS_chiller_cycle_number,
-  hourly;
-
-  Output:Variable,
-  *,
-  EMS_chiller1_cycle,
-  timestep;
-
-  Output:Variable,
-  *,
-  EMS_chiller2_cycle,
-  timestep;
-
-  Output:Variable,
-  *,
-  EMS_chiller3_cycle,
-  timestep;
-
-  Output:Variable,
-  *,
-  EMS_cooling_system_cop,
-  timestep;
-
-  Output:Variable,
-  *,
-  EMS_chiller1_shortcycle_flag,
-  timestep;
-
-  Output:Variable,
-  *,
-  EMS_chiller2_shortcycle_flag,
-  timestep;
-
-  Output:Variable,
-  *,
-  EMS_chiller3_shortcycle_flag,
-  timestep;
-
-  Output:Variable,
-  *,
-  EMS_chiller1_onoff_state,
-  timestep;
-
-  Output:Variable,
-  *,
-  EMS_chiller2_onoff_state,timestep;
-
-  Output:Variable,
-  *,
-  EMS_chiller3_onoff_state,
-  timestep;
-
-  Output:Variable,
-  *,
-  EMS_chiller1_newstart_flag,
-  timestep;
-
-  Output:Variable,
-  *,
-  EMS_chiller2_newstart_flag,
-  timestep;
-
-  Output:Variable,
-  *,
-  EMS_chiller3_newstart_flag,
-  timestep;
-
-  Output:Variable,
-  *,
-  Facility Total HVAC Electric Demand Power,
-  timestep;
-
-  Output:Variable,
-  *,
-  EMS_chw_not_met_times,
-  RunPeriod;
+  Output:Variable,*,Chiller Electric Power,hourly;
+  Output:Variable,*,Chiller COP,hourly;
+  Output:Variable,*,Chiller Part Load Ratio,timestep;
+  Output:Variable,*,Chiller Cycling Ratio,hourly;
+  Output:Variable,*,Cooling Tower Fan Electric Power,hourly;
+  Output:Variable,*,Pump Electric Power,hourly;
+  Output:Variable,*,EMS_cooling_demand,timestep;
+  Output:Variable,*,EMS_cooling_delivered,timestep;
+  Output:Variable,*,EMS_chiller_cycle_number,hourly;
+  Output:Variable,*,EMS_chiller_op_mode,hourly;
+  Output:Variable,*,EMS_DebugRdmOutput,hourly;
+  !Output:Variable,*,EMS_chiller1_cycle,timestep;
+  !Output:Variable,*,EMS_chiller2_cycle,timestep;
+  !Output:Variable,*,EMS_chiller3_cycle,timestep;
+  Output:Variable,*,EMS_cooling_system_cop,timestep;
+  Output:Variable,*,EMS_chiller1_shortcycle_flag,timestep;
+  Output:Variable,*,EMS_chiller2_shortcycle_flag,timestep;
+  Output:Variable,*,EMS_chiller3_shortcycle_flag,timestep;
+  Output:Variable,*,EMS_chiller1_onoff_state,timestep;
+  Output:Variable,*,EMS_chiller2_onoff_state,timestep;
+  Output:Variable,*,EMS_chiller3_onoff_state,timestep;
+!  Output:Variable,*,EMS_chiller1_newstart_flag,timestep;
+!  Output:Variable,*,EMS_chiller2_newstart_flag,timestep;
+!  Output:Variable,*,EMS_chiller3_newstart_flag,timestep;
+  Output:Variable,*,EMS_chillers_shortcycle_warning,timestep;
+  Output:Variable,*,EMS_chillers_lowplr_warning,timestep;
+  Output:Variable,*,Facility Total HVAC Electric Demand Power,timestep;
+  Output:Variable,*,Facility Total HVAC Electric Demand Power,RunPeriod;
+  Output:Variable,*,EMS_chillers_shortcycle_warning,RunPeriod;
+  Output:Variable,*,EMS_chillers_lowplr_warning,RunPeriod;
+  Output:Variable,*,EMS_chw_not_met_times,RunPeriod;
 
 ExternalInterface,           !- Object to activate the external interface
     PtolemyServer;              !- Name of external interface

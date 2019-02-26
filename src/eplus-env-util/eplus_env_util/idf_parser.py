@@ -1,4 +1,4 @@
-import os, copy, time,subprocess
+import os, copy, time,subprocess,traceback
 FD = os.path.dirname(os.path.realpath(__file__))
 EPLUS_PATH = {'8_3':FD + '/../../eplus-env/eplus_env/envs/EnergyPlus-8-3-0'}
 WEATHER_PATH_DF = FD + '/../../eplus-env/eplus_env/envs/weather/pittsburgh.epw'
@@ -81,7 +81,10 @@ class IdfParser(object):
 			for obj in value:
 				obj_lines = obj.split(',')[1: ] # Exclude the obj name itself from the reference
 				for obj_line in obj_lines:
-					effc_obj_line = obj_line.split('\n')[-1].strip();
+					# Remove \n 
+					nl_sps = obj_line.split('\n');
+					nl_free = nl_sps[1] if len(nl_sps) > 2 else nl_sps[-1]; # Handle the line with ;
+					effc_obj_line = nl_free.split(';')[0].strip();
 					if obj_name == effc_obj_line: 
 						ref_ct += 1;
 		return ref_ct;
