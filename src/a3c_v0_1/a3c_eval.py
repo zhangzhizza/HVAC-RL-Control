@@ -343,7 +343,8 @@ class A3CEval:
                                            '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
                                             %(action_raw_out[1], random_act_idx));
 
-            action_stpt_prcd, action_effect_idx = action_func(action_raw_tup, action_raw_idx, action_limits, ob_this_raw);
+            action_stpt_prcd, action_effect_idx = action_func(action_raw_tup, action_raw_idx, 
+                                                        action_limits, ob_this_raw, self._local_logger);
             action_stpt_prcd = list(action_stpt_prcd);
             # Perform the action
             time_next, ob_next_raw, is_terminal = env_interact_wrapper.step(action_stpt_prcd);
