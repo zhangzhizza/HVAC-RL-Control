@@ -307,7 +307,8 @@ class A3CThread:
                                                '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
                                                %(action_raw_out[1], random_act_idx));
                 
-                action_stpt_prcd, action_effect_idx = train_action_func(action_raw_tup, action_raw_idx, train_action_limits, ob_this_raw);
+                action_stpt_prcd, action_effect_idx = train_action_func(action_raw_tup, action_raw_idx, 
+                                                        train_action_limits, ob_this_raw, self._local_logger);
                 action_stpt_prcd = list(action_stpt_prcd);
                 # Take the action
                 for _ in range(action_repeat_n):

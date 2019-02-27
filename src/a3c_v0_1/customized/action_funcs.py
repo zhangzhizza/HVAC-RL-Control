@@ -142,7 +142,7 @@ def mull_stpt_noExpTurnOffMullOP(action_raw, stptLmt, ob_this_raw):
     return ((res_oae_ssp, res_swt_ssp),
                 (action_raw[0], res_swt_ssp - swt_ssp_cur)) 
 
-def stpt_directSelect(action_raw, action_raw_idx, stptLmt, ob_this_raw):
+def stpt_directSelect(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
     """
     Transfer the mull op to OAE setpoint.
     Check whether the action is legal, which is swt ssp must be within the range of stptLmt.
@@ -176,7 +176,7 @@ def stpt_directSelect(action_raw, action_raw_idx, stptLmt, ob_this_raw):
     return ((res_oae_ssp, res_swt_ssp),
                 (action_raw_idx))
 
-def stpt_directSelect_sspOnly(action_raw, action_raw_idx, stptLmt, ob_this_raw):
+def stpt_directSelect_sspOnly(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
     """ 
     Return: ((float), (float))
        
@@ -188,7 +188,7 @@ def stpt_directSelect_sspOnly(action_raw, action_raw_idx, stptLmt, ob_this_raw):
     return (([res_swt_ssp]),
                 (action_raw_idx))  
 
-def stpt_directSelect_withHeuristics(action_raw, action_raw_idx, stptLmt, ob_this_raw):
+def stpt_directSelect_withHeuristics(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
     """
     Transfer the mull op to OAE setpoint.
     Check whether the action is legal, which is swt ssp must be within the range of stptLmt.
@@ -275,7 +275,7 @@ def iw_iat_stpt_noExpHeatingOp(action_raw, stptLmt, ob_this_raw):
                 (action_raw[0], res_iat_ssp)) 
 
 
-def directPass(action_raw, action_raw_idx, stptLmt, ob_this_raw):
+def directPass(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
     """
     Pass the raw action as the output. 
     
@@ -296,7 +296,36 @@ def directPass(action_raw, action_raw_idx, stptLmt, ob_this_raw):
 
     return (action_raw, action_raw_idx)
 
-def cslDxCool_ahuStptIncmt(action_raw, action_raw_idx, stptLmt, ob_this_raw):
+def act_func_part3_v1(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
+    """
+    Change the action to open all chillers if the chw temp is too high.
+    This is to prevent eplus simulation diverge error.
+    
+    Args:
+        action_raw: (float, )
+            The raw action planned to be taken.
+        action_raw_idx: int
+            The index of the action in the action space.
+        stptLmt: [[float, float], [float, float], ...]
+            The low limit (included) and high limit (included) for each type of the actions.
+        ob_this_raw: [float]
+            The raw observation.
+        
+    Return: tuple
+        A tuple with length 2. The index 0 is a tuple of resulting action, 
+        and the index 1 is a tuple of resulting action idx.
+    """
+    CHW_TEMP_IDX = 11;
+    CHW_TEMP_STPT_IDX = 12;
+    chw_temp = ob_this_raw[CHW_TEMP_IDX];
+    chw_temp_stpt = ob_this_raw[CHW_TEMP_STPT_IDX];
+    if (chw_temp - chw_temp_stpt) > 10.0:
+        action_raw = [0, 0, 0, 0, 1];
+        logger.warning('The action is changed to %s to prevent too high chilled water temperature!'
+                        %action_raw)
+    return (action_raw, action_raw_idx)
+
+def cslDxCool_ahuStptIncmt(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
     """
     Pass the raw action as the output. 
     
@@ -337,4 +366,4 @@ act_func_dict = {'1':[mull_stpt_iw, act_limits_iw_1],
                 'part2_v2':[directPass, act_limits_part2_v2],
                 'part2_v3':[directPass, act_limits_part2_v3],
                 'part2_v4':[directPass, act_limits_part2_v4],
-                'part3_v1':[directPass, act_limits_part3_v1]}
+                'part3_v1':[act_func_part3_v1, act_limits_part3_v1]}
