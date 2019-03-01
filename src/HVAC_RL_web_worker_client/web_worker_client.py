@@ -222,6 +222,8 @@ class WorkerClient(object):
 	def _get_exp_status(self, task_id):
 		run_name, exp_id = task_id.split(':');
 		meta_file_path = RUNS_PATH + run_name + '/' + exp_id + '/run.meta';
+		current_status = None;
+		current_step = None;
 		if os.path.isfile(meta_file_path):
 			with open(meta_file_path, 'r') as meta_file:
 				meta_file_json = json.load(meta_file);

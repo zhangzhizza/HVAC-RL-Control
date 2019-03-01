@@ -1062,7 +1062,7 @@ def rl_parametric_metric_part3_v1(ob_next_raw, this_ep_energy, this_ep_comfort):
     HVAC_E_IDX = 15;
 
     energy = ob_next_raw[HVAC_E_IDX]; # W
-    stpt_vio = 1.0*((ob_next_raw[CHW_TEMP_IDX] - ob_next_raw[CHW_TEMP_STPT_IDX]) > 0.2)
+    stpt_vio = 1.0*((ob_next_raw[CHW_TEMP_IDX] - ob_next_raw[CHW_TEMP_STPT_IDX]) > 0.02)
     
     this_ep_energy_toNow = this_ep_energy + energy; # Unit is Wh*timestep
     this_ep_comfort_toNow = this_ep_comfort + stpt_vio; # Unit is hr*timestep
