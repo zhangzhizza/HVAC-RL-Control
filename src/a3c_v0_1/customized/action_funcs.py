@@ -1,5 +1,5 @@
 
-
+import copy
 from a3c_v0_1.customized.action_limits import * 
 
 def iat_stpt_smlRefBld(action_raw, stptLmt, ob_this_raw):
@@ -319,10 +319,11 @@ def act_func_part3_v1(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
     CHW_TEMP_STPT_IDX = 12;
     chw_temp = ob_this_raw[CHW_TEMP_IDX];
     chw_temp_stpt = ob_this_raw[CHW_TEMP_STPT_IDX];
+    org_action_raw = copy.deepcopy(action_raw);
     if (chw_temp - chw_temp_stpt) > 10.0:
         action_raw = [0, 0, 0, 0, 1];
-        logger.warning('The action is changed to %s to prevent too high chilled water temperature!'
-                        %action_raw)
+        logger.warning('The original action %s is changed to %s to prevent too high chilled water temperature (%s C)!'
+                        %(org_action_raw, action_raw, chw_temp))
     return (action_raw, action_raw_idx)
 
 def cslDxCool_ahuStptIncmt(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
