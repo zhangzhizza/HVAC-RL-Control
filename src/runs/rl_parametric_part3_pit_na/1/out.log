@@ -1,0 +1,282 @@
+Using TensorFlow backend.
+[2019-03-05 11:41:08,042] A3C_AGENT_MAIN INFO:Namespace(action_repeat_n=1, action_space='part3_v1', activation='linear', agent_num=5, check_args_only=False, clip_norm=5.0, debug_log_prob=0.0005, decay_steps=1000000, dropout_prob=0.0, end_e=0.0, env='Part3-NA-Pit-Train-v1', eval_act_func='part3_v1', eval_env_res_max_keep=20, eval_epi_num=1, eval_freq=100000, forecast_dim=0, gamma=0.99, h_decay_bounds=[], h_regu_frac=[0.0], init_e=0.0, isNoisyNet=True, isNoisyNetEval_rmNoise=True, is_greedy_policy=False, is_learning_rate_decay_staircase=False, is_warm_start=False, job_mode='Train', learning_rate=0.001, learning_rate_decay_rate=1.0, learning_rate_decay_steps=100000, max_interactions=10000000, metric_func='part3_v1', model_dir='None', model_param=[18, 1], model_type='nn', num_threads=16, output='./Part3-NA-Pit-Train-v1-res1', p_loss_frac=1.0, raw_state_prcs_func='cslDx_1', reward_func='part3_v1', rmsprop_decay=0.99, rmsprop_epsil=1e-10, rmsprop_momet=0.0, rwd_e_para=7.0, rwd_p_para=1.0, save_freq=500000, save_max_to_keep=5, save_scope='all', sharedNet_type='Dense', state_dim=16, test_env=None, test_mode='Multiple', train_act_func='part3_v1', train_freq=5, v_loss_frac=0.5, violation_penalty_scl=50.0, weight_initer='glorot_uniform', window_len=1)
+[2019-03-05 11:41:08,042] A3C_AGENT_MAIN INFO:Start compiling...
+2019-03-05 11:41:08.074849: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+[2019-03-05 11:41:22,838] A3C_AGENT_MAIN INFO:Start the learning...
+[2019-03-05 11:41:22,838] A3C_AGENT_MAIN INFO:Prepare the evaluation environments ['Part3-NA-Pit-Train-v1'] ...
+[2019-03-05 11:41:22,848] A3C_EVAL-Part3-NA-Pit-Train-v1 INFO:Evaluation worker starts!
+[2019-03-05 11:41:22,849] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-03-05 11:41:22,849] A3C_AGENT_WORKER-Thread-2 INFO:Local worker starts!
+[2019-03-05 11:41:22,902] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-2_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-03-05 11:41:22,903] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-2_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part3_pit_na/1/Eplus-env-Part3-NA-Pit-Train-v1-res2/Eplus-env-sub_run1
+[2019-03-05 11:41:23,776] A3C_AGENT_WORKER-Thread-2 INFO:Evaluating...
+[2019-03-05 11:41:23,777] A3C_EVAL-Part3-NA-Pit-Train-v1 INFO:Evaluation job starts!
+[2019-03-05 11:41:23,777] EPLUS_ENV_Part3-NA-Pit-Train-v1_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-03-05 11:41:23,779] EPLUS_ENV_Part3-NA-Pit-Train-v1_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part3_pit_na/1/Eplus-env-Part3-NA-Pit-Train-v1-res1/Eplus-env-sub_run1
+[2019-03-05 11:41:23,850] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-03-05 11:41:23,853] A3C_AGENT_WORKER-Thread-4 INFO:Local worker starts!
+[2019-03-05 11:41:23,917] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-4_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-03-05 11:41:23,918] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-4_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part3_pit_na/1/Eplus-env-Part3-NA-Pit-Train-v1-res3/Eplus-env-sub_run1
+[2019-03-05 11:41:24,854] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-03-05 11:41:24,855] A3C_AGENT_WORKER-Thread-5 INFO:Local worker starts!
+[2019-03-05 11:41:24,910] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-5_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-03-05 11:41:24,912] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-5_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part3_pit_na/1/Eplus-env-Part3-NA-Pit-Train-v1-res4/Eplus-env-sub_run1
+[2019-03-05 11:41:25,856] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-03-05 11:41:25,858] A3C_AGENT_WORKER-Thread-6 INFO:Local worker starts!
+[2019-03-05 11:41:25,914] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-6_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-03-05 11:41:25,915] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-6_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part3_pit_na/1/Eplus-env-Part3-NA-Pit-Train-v1-res5/Eplus-env-sub_run1
+[2019-03-05 11:41:26,859] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-03-05 11:41:26,860] A3C_AGENT_WORKER-Thread-7 INFO:Local worker starts!
+[2019-03-05 11:41:26,917] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-7_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-03-05 11:41:26,979] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-7_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part3_pit_na/1/Eplus-env-Part3-NA-Pit-Train-v1-res6/Eplus-env-sub_run1
+[2019-03-05 11:41:27,063] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (28.29923839076787 C)!
+[2019-03-05 11:41:27,219] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (24.77991245294627 C)!
+[2019-03-05 11:41:27,221] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (24.12280959139667 C)!
+[2019-03-05 11:41:27,243] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (23.0666507027164 C)!
+[2019-03-05 11:41:27,248] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 1, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.98804251763416 C)!
+[2019-03-05 11:41:27,268] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.12726483050037 C)!
+[2019-03-05 11:41:27,277] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.33360352677381 C)!
+[2019-03-05 11:41:27,285] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (29.83010616359103 C)!
+[2019-03-05 11:41:27,287] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.31523773339421 C)!
+[2019-03-05 11:41:27,292] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (23.98968349725382 C)!
+[2019-03-05 11:41:27,298] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.02169504322666 C)!
+[2019-03-05 11:41:27,860] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-03-05 11:41:27,862] A3C_AGENT_WORKER-Thread-8 INFO:Local worker starts!
+[2019-03-05 11:41:27,956] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-8_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-03-05 11:41:27,958] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-8_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part3_pit_na/1/Eplus-env-Part3-NA-Pit-Train-v1-res7/Eplus-env-sub_run1
+[2019-03-05 11:41:28,558] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.02465190861859 C)!
+[2019-03-05 11:41:28,862] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-03-05 11:41:28,864] A3C_AGENT_WORKER-Thread-9 INFO:Local worker starts!
+[2019-03-05 11:41:28,925] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-9_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-03-05 11:41:28,928] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-9_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part3_pit_na/1/Eplus-env-Part3-NA-Pit-Train-v1-res8/Eplus-env-sub_run1
+[2019-03-05 11:41:29,048] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (22.02186802382459 C)!
+[2019-03-05 11:41:29,072] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.1620678837729 C)!
+[2019-03-05 11:41:29,082] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (20.35933623691482 C)!
+[2019-03-05 11:41:29,089] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (20.24869366751905 C)!
+[2019-03-05 11:41:29,094] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 1, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.10917941822309 C)!
+[2019-03-05 11:41:29,098] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (21.58530291572098 C)!
+[2019-03-05 11:41:29,102] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.43888468419276 C)!
+[2019-03-05 11:41:29,233] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.14804906637302 C)!
+[2019-03-05 11:41:29,247] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.35392701789814 C)!
+[2019-03-05 11:41:29,253] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (21.92832926579538 C)!
+[2019-03-05 11:41:29,258] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (22.65971071467942 C)!
+[2019-03-05 11:41:29,277] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.65741849687899 C)!
+[2019-03-05 11:41:29,280] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (25.27543913127797 C)!
+[2019-03-05 11:41:29,281] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.60842825701155 C)!
+[2019-03-05 11:41:29,285] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (22.30879340078258 C)!
+[2019-03-05 11:41:29,289] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (22.76299397661319 C)!
+[2019-03-05 11:41:29,297] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (26.52596589246213 C)!
+[2019-03-05 11:41:29,299] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.31515612649115 C)!
+[2019-03-05 11:41:29,864] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-03-05 11:41:29,865] A3C_AGENT_WORKER-Thread-10 INFO:Local worker starts!
+[2019-03-05 11:41:29,922] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-10_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-03-05 11:41:29,924] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-10_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part3_pit_na/1/Eplus-env-Part3-NA-Pit-Train-v1-res9/Eplus-env-sub_run1
+[2019-03-05 11:41:30,194] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.41161966685232 C)!
+[2019-03-05 11:41:30,236] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (20.29864897349134 C)!
+[2019-03-05 11:41:30,253] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.26677434784279 C)!
+[2019-03-05 11:41:30,866] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-03-05 11:41:30,868] A3C_AGENT_WORKER-Thread-11 INFO:Local worker starts!
+[2019-03-05 11:41:30,924] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-11_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-03-05 11:41:30,926] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-11_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part3_pit_na/1/Eplus-env-Part3-NA-Pit-Train-v1-res10/Eplus-env-sub_run1
+[2019-03-05 11:41:31,329] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.07815562868488 C)!
+[2019-03-05 11:41:31,349] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (22.9450142395534 C)!
+[2019-03-05 11:41:31,366] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (26.16126478190764 C)!
+[2019-03-05 11:41:31,370] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.7540820641005 C)!
+[2019-03-05 11:41:31,390] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (24.41112360501575 C)!
+[2019-03-05 11:41:31,869] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-03-05 11:41:31,870] A3C_AGENT_WORKER-Thread-12 INFO:Local worker starts!
+[2019-03-05 11:41:31,925] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-12_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-03-05 11:41:31,927] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-12_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part3_pit_na/1/Eplus-env-Part3-NA-Pit-Train-v1-res11/Eplus-env-sub_run1
+[2019-03-05 11:41:32,305] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (29.45263501367556 C)!
+[2019-03-05 11:41:32,306] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.1306647869217 C)!
+[2019-03-05 11:41:32,871] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-03-05 11:41:32,873] A3C_AGENT_WORKER-Thread-13 INFO:Local worker starts!
+[2019-03-05 11:41:32,928] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-13_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-03-05 11:41:32,929] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-13_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part3_pit_na/1/Eplus-env-Part3-NA-Pit-Train-v1-res12/Eplus-env-sub_run1
+[2019-03-05 11:41:33,874] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-03-05 11:41:33,876] A3C_AGENT_WORKER-Thread-14 INFO:Local worker starts!
+[2019-03-05 11:41:33,965] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-14_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-03-05 11:41:33,967] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-14_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part3_pit_na/1/Eplus-env-Part3-NA-Pit-Train-v1-res13/Eplus-env-sub_run1
+[2019-03-05 11:41:34,433] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.55729868065646 C)!
+[2019-03-05 11:41:34,444] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (16.92491254369288 C)!
+[2019-03-05 11:41:34,574] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (20.9764055494905 C)!
+[2019-03-05 11:41:34,594] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (22.8106826826084 C)!
+[2019-03-05 11:41:34,599] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (24.0272435134604 C)!
+[2019-03-05 11:41:34,603] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (31.67032935063823 C)!
+[2019-03-05 11:41:34,604] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (21.94167766740976 C)!
+[2019-03-05 11:41:34,607] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.3984180963589 C)!
+[2019-03-05 11:41:34,630] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (20.18555214995458 C)!
+[2019-03-05 11:41:34,634] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (32.74897335758067 C)!
+[2019-03-05 11:41:34,636] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (28.93265757508357 C)!
+[2019-03-05 11:41:34,638] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (26.65753653300161 C)!
+[2019-03-05 11:41:34,639] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (23.95354614294857 C)!
+[2019-03-05 11:41:34,641] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (21.24452164019235 C)!
+[2019-03-05 11:41:34,643] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.34609456787438 C)!
+[2019-03-05 11:41:34,654] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (22.49653435313014 C)!
+[2019-03-05 11:41:34,771] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (23.18314560049271 C)!
+[2019-03-05 11:41:34,839] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.14810408262276 C)!
+[2019-03-05 11:41:34,877] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-03-05 11:41:34,878] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.84239980400486 C)!
+[2019-03-05 11:41:34,879] A3C_AGENT_WORKER-Thread-15 INFO:Local worker starts!
+[2019-03-05 11:41:34,933] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-15_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-03-05 11:41:34,935] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.09881030643075 C)!
+[2019-03-05 11:41:34,936] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-15_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part3_pit_na/1/Eplus-env-Part3-NA-Pit-Train-v1-res14/Eplus-env-sub_run1
+[2019-03-05 11:41:35,026] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (16.98501491833033 C)!
+[2019-03-05 11:41:35,093] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.95324139258392 C)!
+[2019-03-05 11:41:35,106] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (24.71340826267696 C)!
+[2019-03-05 11:41:35,108] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.61530548482538 C)!
+[2019-03-05 11:41:35,111] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (22.5393128356624 C)!
+[2019-03-05 11:41:35,123] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (20.04570443578796 C)!
+[2019-03-05 11:41:35,127] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (24.77794591033622 C)!
+[2019-03-05 11:41:35,130] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (27.20741201661433 C)!
+[2019-03-05 11:41:35,131] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (20.05725018123204 C)!
+[2019-03-05 11:41:35,134] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.86976134068185 C)!
+[2019-03-05 11:41:35,139] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 1, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.01515132674902 C)!
+[2019-03-05 11:41:35,149] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.95937266022822 C)!
+[2019-03-05 11:41:35,335] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.64516141039333 C)!
+[2019-03-05 11:41:35,363] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (23.91967966056324 C)!
+[2019-03-05 11:41:35,373] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 1, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.73881503359437 C)!
+[2019-03-05 11:41:35,383] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.86409506751707 C)!
+[2019-03-05 11:41:35,388] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (22.40207468222824 C)!
+[2019-03-05 11:41:35,401] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.05113934988511 C)!
+[2019-03-05 11:41:35,522] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (32.82562568578077 C)!
+[2019-03-05 11:41:35,523] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (21.68117814738511 C)!
+[2019-03-05 11:41:35,554] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.63953339611882 C)!
+[2019-03-05 11:41:35,570] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 1, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (20.32050928955008 C)!
+[2019-03-05 11:41:35,575] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (28.5927077922003 C)!
+[2019-03-05 11:41:35,577] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.0193904182172 C)!
+[2019-03-05 11:41:35,580] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (23.71980331796047 C)!
+[2019-03-05 11:41:35,880] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-03-05 11:41:35,881] A3C_AGENT_WORKER-Thread-16 INFO:Local worker starts!
+[2019-03-05 11:41:35,940] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-16_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-03-05 11:41:35,942] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-16_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part3_pit_na/1/Eplus-env-Part3-NA-Pit-Train-v1-res15/Eplus-env-sub_run1
+[2019-03-05 11:41:36,011] A3C_EVAL-Part3-NA-Pit-Train-v1 DEBUG:NoisyNet noise sample: [array([0.], dtype=float32), 0.0]
+[2019-03-05 11:41:36,011] A3C_EVAL-Part3-NA-Pit-Train-v1 DEBUG:Observation this: [21.0, 88.0, 1.0, 2.0, 0.2192712498076193, 1.0, 1.0, 0.2192712498076193, 1.0, 1.0, 0.4112596745701938, 6.911200000000001, 6.9112, 501234.9766396196, 501234.9766396194, 134565.453301594]
+[2019-03-05 11:41:36,011] A3C_EVAL-Part3-NA-Pit-Train-v1 DEBUG:Observation forecast: []
+[2019-03-05 11:41:36,012] A3C_EVAL-Part3-NA-Pit-Train-v1 INFO:Softmax [0.08291125 0.30050957 0.33330214 0.08826797 0.19500913], sampled 0.35463913754697385
+[2019-03-05 11:41:36,882] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-03-05 11:41:36,883] A3C_AGENT_WORKER-Thread-17 INFO:Local worker starts!
+[2019-03-05 11:41:36,936] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-17_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-03-05 11:41:36,938] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-17_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part3_pit_na/1/Eplus-env-Part3-NA-Pit-Train-v1-res16/Eplus-env-sub_run1
+[2019-03-05 11:41:36,958] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.13587317317145 C)!
+[2019-03-05 11:41:36,967] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.9386835694053 C)!
+[2019-03-05 11:41:37,152] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (28.08272015509049 C)!
+[2019-03-05 11:41:37,155] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.57027291283438 C)!
+[2019-03-05 11:41:37,168] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.3119708034222 C)!
+[2019-03-05 11:41:37,172] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.76602944394988 C)!
+[2019-03-05 11:41:37,185] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (22.77938227477092 C)!
+[2019-03-05 11:41:37,210] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.9720063241692 C)!
+[2019-03-05 11:41:37,376] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (24.92767433926638 C)!
+[2019-03-05 11:41:37,378] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.10927764816691 C)!
+[2019-03-05 11:41:37,401] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.53012066982829 C)!
+[2019-03-05 11:41:37,404] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.66795311874566 C)!
+[2019-03-05 11:41:37,407] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (35.63778355496987 C)!
+[2019-03-05 11:41:37,409] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (29.26273983822654 C)!
+[2019-03-05 11:41:37,410] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (25.03668821179536 C)!
+[2019-03-05 11:41:37,411] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (20.48457616053487 C)!
+[2019-03-05 11:41:37,414] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (26.33852441664067 C)!
+[2019-03-05 11:41:37,416] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.68933266032553 C)!
+[2019-03-05 11:41:37,420] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 1, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.19208406240531 C)!
+[2019-03-05 11:41:37,428] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.62624127214123 C)!
+[2019-03-05 11:41:37,591] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.81189917036385 C)!
+[2019-03-05 11:41:37,597] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.11747200895102 C)!
+[2019-03-05 11:41:37,602] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.62244713190681 C)!
+[2019-03-05 11:41:37,609] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.54924818354784 C)!
+[2019-03-05 11:41:37,627] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (30.65796495784564 C)!
+[2019-03-05 11:41:37,719] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (22.5964401667044 C)!
+[2019-03-05 11:41:37,798] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.80732171033601 C)!
+[2019-03-05 11:41:37,884] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-03-05 11:41:37,885] A3C_AGENT_WORKER-Thread-18 INFO:Local worker starts!
+[2019-03-05 11:41:37,933] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (21.19098407868124 C)!
+[2019-03-05 11:41:37,935] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-18_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-03-05 11:41:37,937] EPLUS_ENV_Part3-NA-Pit-Train-v1_Thread-18_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part3_pit_na/1/Eplus-env-Part3-NA-Pit-Train-v1-res17/Eplus-env-sub_run1
+[2019-03-05 11:41:37,954] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (20.17894917755758 C)!
+[2019-03-05 11:41:37,959] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.0037042223538 C)!
+[2019-03-05 11:41:38,123] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (21.35926199352264 C)!
+[2019-03-05 11:41:38,151] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.9391167714812 C)!
+[2019-03-05 11:41:38,179] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 1, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (20.24461413183528 C)!
+[2019-03-05 11:41:38,182] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.40486659712365 C)!
+[2019-03-05 11:41:38,187] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.19210579686991 C)!
+[2019-03-05 11:41:38,202] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.96700699538255 C)!
+[2019-03-05 11:41:38,206] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (20.55006412713864 C)!
+[2019-03-05 11:41:39,672] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.56822317399676 C)!
+[2019-03-05 11:41:39,917] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (24.43908421966714 C)!
+[2019-03-05 11:41:39,922] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.46221516868089 C)!
+[2019-03-05 11:41:39,932] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.90862586703031 C)!
+[2019-03-05 11:41:40,166] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (21.36729099650422 C)!
+[2019-03-05 11:41:40,169] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.12850768068873 C)!
+[2019-03-05 11:41:40,174] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (21.42265323213193 C)!
+[2019-03-05 11:41:40,209] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.24333089161978 C)!
+[2019-03-05 11:41:40,216] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (31.97042687013903 C)!
+[2019-03-05 11:41:40,218] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (22.25117840965754 C)!
+[2019-03-05 11:41:40,222] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (31.24112035221588 C)!
+[2019-03-05 11:41:40,223] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (21.71786640787361 C)!
+[2019-03-05 11:41:41,203] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.74669311735598 C)!
+[2019-03-05 11:41:41,214] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.57977967983299 C)!
+[2019-03-05 11:41:41,236] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.68547284842977 C)!
+[2019-03-05 11:41:41,414] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (21.8835453002416 C)!
+[2019-03-05 11:41:41,465] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 1, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.7354324734501 C)!
+[2019-03-05 11:41:41,476] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.05882296269811 C)!
+[2019-03-05 11:41:41,679] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.43974633081945 C)!
+[2019-03-05 11:41:43,056] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.7038488895581 C)!
+[2019-03-05 11:41:43,074] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.45516632267758 C)!
+[2019-03-05 11:41:43,079] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (25.18308184454983 C)!
+[2019-03-05 11:41:43,082] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.45674555587802 C)!
+[2019-03-05 11:41:43,086] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.90927840079538 C)!
+[2019-03-05 11:41:43,090] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (20.98935334098534 C)!
+[2019-03-05 11:41:43,094] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (29.60768271228628 C)!
+[2019-03-05 11:41:43,278] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.75375805656486 C)!
+[2019-03-05 11:41:43,286] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.20318041759582 C)!
+[2019-03-05 11:41:43,291] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (22.4380946940164 C)!
+[2019-03-05 11:41:43,295] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.72188954428416 C)!
+[2019-03-05 11:41:43,313] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (27.80863633000904 C)!
+[2019-03-05 11:41:43,315] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (21.50282087531662 C)!
+[2019-03-05 11:41:43,319] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (36.17857471607776 C)!
+[2019-03-05 11:41:43,321] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (29.03791625333437 C)!
+[2019-03-05 11:41:43,323] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (23.96214466501988 C)!
+[2019-03-05 11:41:43,332] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.96667521272445 C)!
+[2019-03-05 11:41:43,336] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.25638360659433 C)!
+[2019-03-05 11:41:43,575] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.01971742985071 C)!
+[2019-03-05 11:41:43,596] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.59932681191026 C)!
+[2019-03-05 11:41:43,608] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (22.04039048626574 C)!
+[2019-03-05 11:41:43,613] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (26.79030571142617 C)!
+[2019-03-05 11:41:43,615] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.63087824384677 C)!
+[2019-03-05 11:41:43,844] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (20.14560928225001 C)!
+[2019-03-05 11:41:43,852] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 1, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.50496785437304 C)!
+[2019-03-05 11:41:43,856] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.68799172423537 C)!
+[2019-03-05 11:41:43,872] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.90009352190483 C)!
+[2019-03-05 11:41:43,876] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (29.57102916419861 C)!
+[2019-03-05 11:41:43,878] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (21.06986526746552 C)!
+[2019-03-05 11:41:43,883] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.76520615939909 C)!
+[2019-03-05 11:41:43,889] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (24.08849798288149 C)!
+[2019-03-05 11:41:43,893] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (21.71111016611131 C)!
+[2019-03-05 11:41:43,897] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 1, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (25.48312270273394 C)!
+[2019-03-05 11:41:43,906] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.65539561587928 C)!
+[2019-03-05 11:41:43,913] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (20.75753254057441 C)!
+[2019-03-05 11:41:44,986] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (24.95730005915726 C)!
+[2019-03-05 11:41:45,038] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (20.06359365866351 C)!
+[2019-03-05 11:41:45,295] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (24.29482034583907 C)!
+[2019-03-05 11:41:45,549] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.58459273099153 C)!
+[2019-03-05 11:41:45,778] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.5149973508782 C)!
+[2019-03-05 11:41:47,490] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (20.35588152101824 C)!
+[2019-03-05 11:41:49,085] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (25.63781073217665 C)!
+[2019-03-05 11:41:49,305] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.54216145334992 C)!
+[2019-03-05 11:41:49,309] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.19899885555561 C)!
+[2019-03-05 11:41:49,320] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (21.64930890980772 C)!
+[2019-03-05 11:41:49,323] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (22.38544725341278 C)!
+[2019-03-05 11:41:49,325] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 1, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.58397400765685 C)!
+[2019-03-05 11:41:49,329] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (28.6977600734355 C)!
+[2019-03-05 11:41:49,331] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.83365569263973 C)!
+[2019-03-05 11:41:49,337] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [1, 0, 0, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.63497205704829 C)!
+[2019-03-05 11:41:49,341] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (19.78429876309286 C)!
+[2019-03-05 11:41:49,345] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (23.64078255053587 C)!
+[2019-03-05 11:41:49,350] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 0, 0, 1] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (27.70442745328594 C)!
+[2019-03-05 11:41:49,353] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (18.24046969229998 C)!
+[2019-03-05 11:41:50,117] A3C_EVAL-Part3-NA-Pit-Train-v1 DEBUG:NoisyNet noise sample: [array([0.], dtype=float32), 0.0]
+[2019-03-05 11:41:50,117] A3C_EVAL-Part3-NA-Pit-Train-v1 DEBUG:Observation this: [25.66666666666667, 66.33333333333334, 1.0, 2.0, 0.3629053437976923, 0.0, 2.0, 0.0, 1.0, 2.0, 0.6672574787503349, 6.911199999999998, 6.9112, 542388.442908009, 542388.4429080094, 130611.9179533765]
+[2019-03-05 11:41:50,117] A3C_EVAL-Part3-NA-Pit-Train-v1 DEBUG:Observation forecast: []
+[2019-03-05 11:41:50,118] A3C_EVAL-Part3-NA-Pit-Train-v1 INFO:Softmax [0.11110585 0.20729597 0.42343563 0.08960634 0.1685562 ], sampled 0.11296509968216639
+[2019-03-05 11:41:50,574] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (24.64416546915361 C)!
+[2019-03-05 11:41:50,765] A3C_EVAL-Part3-NA-Pit-Train-v1 WARNING:The original action [0, 0, 1, 0, 0] is changed to [0, 0, 0, 0, 1] to prevent too high chilled water temperature (17.04578075790173 C)!
+[2019-03-05 11:41:50,905] A3C_EVAL-Part3-NA-Pit-Train-v1 INFO:Evaluation: average rewards by now are 2950.2850 1494893511.4282 1310.0000
+[2019-03-05 11:41:51,919] A3C_AGENT_WORKER-Thread-2 INFO:Global step: 0, evaluation results [0.0, 2950.2850170242727, 1494893511.428226, 1310.0]
