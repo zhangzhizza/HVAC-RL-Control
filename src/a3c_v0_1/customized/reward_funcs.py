@@ -1003,17 +1003,17 @@ def rl_parametric_reward_part3_v1(ob_this_prcd, action_this_prcd, ob_next_prcd, 
     CHILLER1_ONOFF_IDX = 2;
     CHILLER1_SHTCY_IDX = 3;
     CHILLER1_PRTLR_IDX = 4;
-    CHILLER1_PLR_LM = 0.19;
+    CHILLER1_PLR_LM = 0.19001;
 
     CHILLER2_ONOFF_IDX = 5;
     CHILLER2_SHTCY_IDX = 6;
     CHILLER2_PRTLR_IDX = 7;
-    CHILLER2_PLR_LM = 0.19;
+    CHILLER2_PLR_LM = 0.19001;
 
     CHILLER3_ONOFF_IDX = 8;
     CHILLER3_SHTCY_IDX = 9;
     CHILLER3_PRTLR_IDX = 10;
-    CHILLER3_PLR_LM = 0.25;
+    CHILLER3_PLR_LM = 0.25001;
 
     CHW_TEMP_IDX = 11;
     CHW_TEMP_STPT_IDX = 12;
@@ -1045,8 +1045,8 @@ def rl_parametric_reward_part3_v1(ob_this_prcd, action_this_prcd, ob_next_prcd, 
     chw_temp_stpt = ob_next_prcd[CHW_TEMP_STPT_IDX + TIMESTATE_LEN];
     stptnm_penl = max((chw_temp - chw_temp_stpt), 0) * stpt_violation_scl * p_weight;
     # erwd: energy reward
-    clg_delivered = ob_next_prcd[CLG_DLD_IDX + TIMESTATE_LEN] * 1500000;
-    hvac_energy = ob_next_prcd[HVAC_E_IDX + TIMESTATE_LEN] * 330000;
+    clg_delivered = ob_next_prcd[CLG_DLD_IDX + TIMESTATE_LEN] * 2400000;
+    hvac_energy = ob_next_prcd[HVAC_E_IDX + TIMESTATE_LEN] * 400000;
     system_cop = max(clg_delivered/hvac_energy, 0);
     system_cop_scl = system_cop/e_weight;
     # final reward

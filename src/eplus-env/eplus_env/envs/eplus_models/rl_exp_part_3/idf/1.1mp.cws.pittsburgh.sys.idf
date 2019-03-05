@@ -45,7 +45,7 @@
 
 !-   ===========  ALL OBJECTS IN CLASS: TIMESTEP ===========
 
-  Timestep,60;
+  Timestep,6;
 
 !-   ===========  ALL OBJECTS IN CLASS: CONVERGENCELIMITS ===========
 
@@ -2269,7 +2269,7 @@ LoadProfile:Plant,
     CoolingLoadProfile_InletNode,  !- Inlet Node Name
     CoolingLoadProfile_OutletNode,  !- Outlet Node Name
     Cooling_load_sch,                !- Load Schedule Name
-    0.0751923333,               !- Peak Flow Rate {m3/s}
+    0.0752,               !- Peak Flow Rate {m3/s}
     Cooling_water_flow_frac_sch;         !- Flow Rate Fraction Schedule Name
 
 !-   ===========  ALL OBJECTS IN CLASS: SCHEDULE:FILE ===========
@@ -2290,24 +2290,24 @@ LoadProfile:Plant,
 Schedule:File,
     Cooling_load_sch,                !- Name
     Thermal_load,             !- Schedule Type Limits Name
-    C:\Users\Zhiangz\Dropbox\phd_bpd\drl_sim_exp\1mp_models\schedules\cooling_load\1.1mp.cws.pittsburgh.data.1m.csv,  !- File Name
+    C:\Users\Zhiangz\Dropbox\phd_bpd\drl_sim_exp\1mp_models\schedules\cooling_load\1.1mp.cws.pittsburgh.data.10m.csv,  !- File Name
     2,                       !- Column Number
     4,                       !- Rows to Skip at Top
     8760,                    !- Number of Hours of Data
     Comma,                   !- Column Separator
     Yes,                      !- Interpolate to Timestep!
-    1;                      !- Minutes per item
+    10;                      !- Minutes per item
 
 Schedule:File,
     Cooling_water_flow_frac_sch,                !- Name
     Fraction,             !- Schedule Type Limits Name
-    C:\Users\Zhiangz\Dropbox\phd_bpd\drl_sim_exp\1mp_models\schedules\cooling_load\1.1mp.cws.pittsburgh.data.1m.csv,  !- File Name
+    C:\Users\Zhiangz\Dropbox\phd_bpd\drl_sim_exp\1mp_models\schedules\cooling_load\1.1mp.cws.pittsburgh.data.10m.csv,  !- File Name
     4,                       !- Column Number
     4,                       !- Rows to Skip at Top
     8760,                    !- Number of Hours of Data
     Comma,                   !- Column Separator
     Yes,                      !- Interpolate to Timestep!
-    1;                      !- Minutes per item
+    10;                      !- Minutes per item
 ! 
 !-   ===========  ALL OBJECTS IN CLASS: HEADEREDPUMPS:VARIABLESPEED ===========
 !HeaderedPumps:ConstantSpeed,
@@ -3033,25 +3033,21 @@ EnergyManagementSystem:Sensor,
 !    allchillers_op_sch, !- Actuated Component Unique Name
 !    Schedule:Compact, !- Actuated Component Type
 !    Schedule Value ; !- Actuated Component Control Type!
-
 !EnergyManagementSystem:Actuator,
 !    Set_1smallChiller_op, !- Name
 !    1smallchiller_op_sch, !- Actuated Component Unique Name
 !    Schedule:Compact, !- Actuated Component Type
 !    Schedule Value ; !- Actuated Component Control Type!
-
 !EnergyManagementSystem:Actuator,
 !    Set_2bigChillers_op, !- Name
 !    2bigchillers_op_sch, !- Actuated Component Unique Name
 !    Schedule:Compact, !- Actuated Component Type
 !    Schedule Value ; !- Actuated Component Control Type!
-
 !EnergyManagementSystem:Actuator,
 !    Set_1bigChiller_op, !- Name
 !    1bigchiller_op_sch, !- Actuated Component Unique Name
 !    Schedule:Compact, !- Actuated Component Type
 !    Schedule Value ; !- Actuated Component Control Type!
-
 !EnergyManagementSystem:Actuator,
 !    Set_1big1smallChillers_op, !- Name
 !    1small1bigchillers_op_sch, !- Actuated Component Unique Name
@@ -3117,7 +3113,7 @@ EnergyManagementSystem:Program,
     SET Chiller2LastState = 0,
     SET Chiller3LastState = 0,
     SET CHW_not_met_notification = 0,
-    SET Cycle_limit = 20,
+    SET Cycle_limit = 2
     SET ChillersShortCycleWarning = 0,
     SET ChillersLowplrWarning = 0,
     SET NoOccpFlag = 0;      !- A4
@@ -3135,7 +3131,11 @@ EnergyManagementSystem:Program,
     GetCoolingDelivered_SysCOP,           !- Name
     SET CoolingDelivered = @Max 0 4200 * CHW_flow_rate * (CHW_in_temp - CHW_out_temp), ! in W
     SET CoolingDemand = @Max 0 4200 * CHW_flow_rate * (CHW_in_temp - sensor_chw_stpt), ! in W
-    SET Cooling_system_COP = CoolingDelivered/hvac_elec_demand;
+    IF hvac_elec_demand > 0,
+        SET Cooling_system_COP = CoolingDelivered/hvac_elec_demand,
+    ELSE,
+        SET Cooling_system_COP = 0,
+    ENDIF;
 
 EnergyManagementSystem:Program,
     GetChillerLowPlrWarning,
