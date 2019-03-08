@@ -1,5 +1,6 @@
 
 import copy
+import numpy as np
 from a3c_v0_1.customized.action_limits import * 
 
 def iat_stpt_smlRefBld(action_raw, stptLmt, ob_this_raw):
@@ -356,7 +357,7 @@ def act_func_part3_v2(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
     act_0_max_cap = chiller3_cap; # 1 small chiller
     act_1_max_cap = chiller1_cap; # 1 big chiller
     act_2_max_cap = chiller1_cap + chiller3_cap; # 1 small 1 big
-    act_3_max_cap = chiller2_cap + chiller3_cap; # 2 bigs
+    act_3_max_cap = chiller1_cap + chiller2_cap; # 2 bigs
     act_4_max_cap = chiller1_cap + chiller2_cap + chiller3_cap; # all chillers
     clg_demand = ob_this_raw[CLG_DMD_IDX];
     org_action_raw = copy.deepcopy(action_raw);
@@ -387,6 +388,81 @@ def act_func_part3_v2(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
     else:
         action_ret = act_choice_4;
     action_ret_idx = org_action_raw_idx; 
+    return (action_ret, action_ret_idx);
+
+def act_func_part3_v3(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
+    """
+    Limit the action to a random one that meet the cooling demand
+    
+    Args:
+        action_raw: (float, )
+            The raw action planned to be taken.
+        action_raw_idx: int
+            The index of the action in the action space.
+        stptLmt: [[float, float], [float, float], ...]
+            The low limit (included) and high limit (included) for each type of the actions.
+        ob_this_raw: [float]
+            The raw observation.
+        
+    Return: tuple
+        A tuple with length 2. The index 0 is a tuple of resulting action, 
+        and the index 1 is a tuple of resulting action idx.
+    """
+    CLG_DMD_IDX = 13;
+    act_choice_0 = [1,0,0,0,0];
+    act_choice_1 = [0,1,0,0,0];
+    act_choice_2 = [0,0,1,0,0];
+    act_choice_3 = [0,0,0,1,0];
+    act_choice_4 = [0,0,0,0,1];
+    act_num = 5;
+    act_choices = [act_choice_0, act_choice_1, act_choice_2, 
+                    act_choice_3, act_choice_4];
+    chiller1_cap = 742000 # W
+    chiller2_cap = 742000 # W
+    chiller3_cap = 383300 # W
+    act_0_max_cap = chiller3_cap; # 1 small chiller
+    act_1_max_cap = chiller1_cap; # 1 big chiller
+    act_2_max_cap = chiller1_cap + chiller3_cap; # 1 small 1 big
+    act_3_max_cap = chiller1_cap + chiller2_cap; # 2 bigs
+    act_4_max_cap = chiller1_cap + chiller2_cap + chiller3_cap; # all chillers
+    clg_demand = ob_this_raw[CLG_DMD_IDX];
+    org_action_raw = copy.deepcopy(action_raw);
+    org_action_raw_idx = action_raw_idx;
+    # Check the current cooling demand in which range
+    if clg_demand <= act_0_max_cap:
+        action_ret_idx = org_action_raw_idx;
+        action_ret = org_action_raw;
+    elif act_1_max_cap >= clg_demand > act_0_max_cap:
+        if org_action_raw_idx < 1:
+            action_ret_idx = np.random.randint(1, act_num);
+            action_ret = act_choices[action_ret_idx];
+        else:
+            action_ret_idx = org_action_raw_idx;
+            action_ret = org_action_raw;
+    elif act_2_max_cap >= clg_demand > act_1_max_cap:
+        if org_action_raw_idx < 2:
+            action_ret_idx = np.random.randint(2, act_num);
+            action_ret = act_choices[action_ret_idx];
+        else:
+            action_ret_idx = org_action_raw_idx;
+            action_ret = org_action_raw;
+    elif act_3_max_cap >= clg_demand > act_2_max_cap:
+        if org_action_raw_idx < 3:
+            action_ret_idx = np.random.randint(3, act_num);
+            action_ret = act_choices[action_ret_idx];
+        else:
+            action_ret_idx = org_action_raw_idx;
+            action_ret = org_action_raw;
+    elif act_4_max_cap >= clg_demand > act_3_max_cap:
+        if org_action_raw_idx < 4:
+            action_ret_idx = np.random.randint(4, act_num);
+            action_ret = act_choices[action_ret_idx];
+        else:
+            action_ret_idx = org_action_raw_idx;
+            action_ret = org_action_raw;
+    else:
+        action_ret_idx = org_action_raw_idx;
+        action_ret = act_choice_4;
     return (action_ret, action_ret_idx);
 
 def cslDxCool_ahuStptIncmt(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
@@ -431,4 +507,5 @@ act_func_dict = {'1':[mull_stpt_iw, act_limits_iw_1],
                 'part2_v3':[directPass, act_limits_part2_v3],
                 'part2_v4':[directPass, act_limits_part2_v4],
                 'part3_v1':[act_func_part3_v1, act_limits_part3_v1],
-                'part3_v2':[act_func_part3_v2, act_limits_part3_v1],}
+                'part3_v2':[act_func_part3_v2, act_limits_part3_v1],
+                'part3_v3':[act_func_part3_v3, act_limits_part3_v1],}
