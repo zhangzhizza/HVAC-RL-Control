@@ -4,7 +4,7 @@
   Output:Variable,PlantSupplySideInletPipe_OutletNode,System Node Temperature,hourly;
   Output:Variable,ChilledWater_PumpOutletNode,System Node Temperature,timestep;
   Output:Variable,ChilledWater_PumpOutletNode,System Node Setpoint Temperature,timestep;
-  Output:Variable,ChilledWater_PumpOutletNode,System Node Mass Flow Rate,hourly;
+  Output:Variable,ChilledWater_PumpOutletNode,System Node Mass Flow Rate,timestep;
 !  Output:Variable,CondenserSupplySideInletPipe_OutletNode,System Node Temperature,timestep;
 !  Output:Variable,CondenserSupplySideInletPipe_OutletNode,System Node Setpoint Temperature,timestep;
 !  Output:Variable,CondenserSupplySideInletPipe_OutletNode,System Node Mass Flow Rate,timestep;

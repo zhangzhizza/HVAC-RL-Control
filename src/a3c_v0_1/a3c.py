@@ -242,6 +242,7 @@ class A3CThread:
         env_st_dy = env.start_day;
         env_st_wd = env.start_weekday;
         env_state_limits = raw_stateLimit_process_func(env.min_max_limits);
+        raw_state_limits = np.transpose(np.copy(env_state_limits));
         if is_add_time_to_state:
             env_state_limits.insert(0, (0, 23)); # Add hour limit
             env_state_limits.insert(0, (0, 1)); # Add weekday limit
@@ -307,8 +308,8 @@ class A3CThread:
                                                '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
                                                %(action_raw_out[1], random_act_idx));
                 
-                action_stpt_prcd, action_effect_idx = train_action_func(action_raw_tup, action_raw_idx, 
-                                                        train_action_limits, ob_this_raw, self._local_logger);
+                action_stpt_prcd, action_effect_idx = train_action_func(action_raw_tup, action_raw_idx, raw_state_limits,
+                                                        train_action_limits, ob_this_raw, self._local_logger, is_show_dbg);
                 action_stpt_prcd = list(action_stpt_prcd);
                 # Take the action
                 for _ in range(action_repeat_n):
@@ -317,7 +318,7 @@ class A3CThread:
                                               env_st_yr, env_st_mn, env_st_dy,
                                               env_st_wd, pcd_state_limits, is_add_time_to_state); # 1-D list
                 # Get the reward
-                reward_next = reward_func(ob_this_prcd, action_stpt_prcd, ob_next_prcd, e_weight, p_weight, *rewardArgs);
+                reward_next = reward_func(ob_this_prcd, action_stpt_prcd, ob_next_prcd, pcd_state_limits, e_weight, p_weight, *rewardArgs);
                 
                 #################FOR DEBUG#######################
                 if is_show_dbg:

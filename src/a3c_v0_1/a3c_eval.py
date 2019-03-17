@@ -246,6 +246,7 @@ class A3CEval:
         self._env_st_dy = env.start_day;
         self._env_st_wd = env.start_weekday;
         env_state_limits = raw_stateLimit_process_func(env.min_max_limits);
+        self._raw_state_limits = np.transpose(np.copy(env_state_limits));
         env_state_limits.insert(0, (0, 23)); # Add hour limit
         env_state_limits.insert(0, (0, 6)); # Add weekday limit
         self._pcd_state_limits = np.transpose(env_state_limits);
@@ -343,8 +344,8 @@ class A3CEval:
                                            '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
                                             %(action_raw_out[1], random_act_idx));
 
-            action_stpt_prcd, action_effect_idx = action_func(action_raw_tup, action_raw_idx, 
-                                                        action_limits, ob_this_raw, self._local_logger);
+            action_stpt_prcd, action_effect_idx = action_func(action_raw_tup, action_raw_idx, self._raw_state_limits,
+                                                        action_limits, ob_this_raw, self._local_logger, is_show_debug = is_dbg_out);
             action_stpt_prcd = list(action_stpt_prcd);
             # Perform the action
             time_next, ob_next_raw, is_terminal = env_interact_wrapper.step(action_stpt_prcd);
@@ -354,7 +355,8 @@ class A3CEval:
                                               self._env_st_dy, self._env_st_wd, 
                                               self._pcd_state_limits, is_add_time_to_state); # 1-D list
             # Get the reward
-            reward_next = reward_func(ob_this_prcd, action_stpt_prcd, ob_next_prcd, self._e_weight, self._p_weight, *rewardArgs);
+            reward_next = reward_func(ob_this_prcd, action_stpt_prcd, ob_next_prcd, self._pcd_state_limits, 
+                                    self._e_weight, self._p_weight, *rewardArgs);
             this_ep_energy, this_ep_comfort = metric_func(ob_next_raw, this_ep_energy, this_ep_comfort);
             this_ep_reward += reward_next;
             #this_ep_max_ppd = max(normalized_ppd if occupancy_status > 0 else 0,

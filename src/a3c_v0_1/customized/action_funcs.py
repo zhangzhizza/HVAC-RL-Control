@@ -143,7 +143,7 @@ def mull_stpt_noExpTurnOffMullOP(action_raw, stptLmt, ob_this_raw):
     return ((res_oae_ssp, res_swt_ssp),
                 (action_raw[0], res_swt_ssp - swt_ssp_cur)) 
 
-def stpt_directSelect(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
+def stpt_directSelect(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
     """
     Transfer the mull op to OAE setpoint.
     Check whether the action is legal, which is swt ssp must be within the range of stptLmt.
@@ -177,7 +177,7 @@ def stpt_directSelect(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
     return ((res_oae_ssp, res_swt_ssp),
                 (action_raw_idx))
 
-def stpt_directSelect_sspOnly(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
+def stpt_directSelect_sspOnly(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
     """ 
     Return: ((float), (float))
        
@@ -189,7 +189,7 @@ def stpt_directSelect_sspOnly(action_raw, action_raw_idx, stptLmt, ob_this_raw, 
     return (([res_swt_ssp]),
                 (action_raw_idx))  
 
-def stpt_directSelect_withHeuristics(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
+def stpt_directSelect_withHeuristics(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
     """
     Transfer the mull op to OAE setpoint.
     Check whether the action is legal, which is swt ssp must be within the range of stptLmt.
@@ -276,7 +276,7 @@ def iw_iat_stpt_noExpHeatingOp(action_raw, stptLmt, ob_this_raw):
                 (action_raw[0], res_iat_ssp)) 
 
 
-def directPass(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
+def directPass(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
     """
     Pass the raw action as the output. 
     
@@ -297,7 +297,7 @@ def directPass(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
 
     return (action_raw, action_raw_idx)
 
-def act_func_part3_v1(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
+def act_func_part3_v1(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
     """
     Change the action to open all chillers if the chw temp is too high.
     This is to prevent eplus simulation diverge error.
@@ -318,16 +318,18 @@ def act_func_part3_v1(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
     """
     CHW_TEMP_IDX = 11;
     CHW_TEMP_STPT_IDX = 12;
+
     chw_temp = ob_this_raw[CHW_TEMP_IDX];
     chw_temp_stpt = ob_this_raw[CHW_TEMP_STPT_IDX];
     org_action_raw = copy.deepcopy(action_raw);
     if (chw_temp - chw_temp_stpt) > 10.0:
         action_raw = [0, 0, 0, 0, 1];
-        logger.warning('The original action %s is changed to %s to prevent too high chilled water temperature (%s C)!'
+        if np.random.uniform() < 0.2:
+            logger.warning('The original action %s is changed to %s to prevent too high chilled water temperature (%s C)!'
                         %(org_action_raw, action_raw, chw_temp))
     return (action_raw, action_raw_idx)
 
-def act_func_part3_v2(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
+def act_func_part3_v2(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
     """
     Limit the action to the one that meet the cooling demand
     
@@ -345,20 +347,22 @@ def act_func_part3_v2(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
         A tuple with length 2. The index 0 is a tuple of resulting action, 
         and the index 1 is a tuple of resulting action idx.
     """
-    CLG_DMD_IDX = 13;
+    CLG_DMD_IDX = 14;
+    CHILLER1_CAP = 1079600 # W
+    CHILLER2_CAP = 1079600 # W
+    CHILLER3_CAP = 541500 # W
+
     act_choice_0 = [1,0,0,0,0];
     act_choice_1 = [0,1,0,0,0];
     act_choice_2 = [0,0,1,0,0];
     act_choice_3 = [0,0,0,1,0];
     act_choice_4 = [0,0,0,0,1];
-    chiller1_cap = 742000 # W
-    chiller2_cap = 742000 # W
-    chiller3_cap = 383300 # W
-    act_0_max_cap = chiller3_cap; # 1 small chiller
-    act_1_max_cap = chiller1_cap; # 1 big chiller
-    act_2_max_cap = chiller1_cap + chiller3_cap; # 1 small 1 big
-    act_3_max_cap = chiller1_cap + chiller2_cap; # 2 bigs
-    act_4_max_cap = chiller1_cap + chiller2_cap + chiller3_cap; # all chillers
+
+    act_0_max_cap = CHILLER3_CAP; # 1 small chiller
+    act_1_max_cap = CHILLER1_CAP; # 1 big chiller
+    act_2_max_cap = CHILLER1_CAP + CHILLER3_CAP; # 1 small 1 big
+    act_3_max_cap = CHILLER1_CAP + CHILLER2_CAP; # 2 bigs
+    act_4_max_cap = CHILLER1_CAP + CHILLER2_CAP + CHILLER3_CAP; # all chillers
     clg_demand = ob_this_raw[CLG_DMD_IDX];
     org_action_raw = copy.deepcopy(action_raw);
     org_action_raw_idx = action_raw_idx;
@@ -388,9 +392,15 @@ def act_func_part3_v2(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
     else:
         action_ret = act_choice_4;
     action_ret_idx = org_action_raw_idx; 
+
+    if action_ret != org_action_raw:
+        if is_show_debug:
+            logger.debug('Action function: raw action %s has been changed to %s for '
+                        'the demand %s W.'%(org_action_raw, action_ret, clg_demand));
+            
     return (action_ret, action_ret_idx);
 
-def act_func_part3_v3(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
+def act_func_part3_v3(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
     """
     Limit the action to a random one that meet the cooling demand
     
@@ -408,7 +418,11 @@ def act_func_part3_v3(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
         A tuple with length 2. The index 0 is a tuple of resulting action, 
         and the index 1 is a tuple of resulting action idx.
     """
-    CLG_DMD_IDX = 13;
+    CLG_DMD_IDX = 14;
+    CHILLER1_CAP = 1079600 # W
+    CHILLER2_CAP = 1079600 # W
+    CHILLER3_CAP = 541500 # W
+
     act_choice_0 = [1,0,0,0,0];
     act_choice_1 = [0,1,0,0,0];
     act_choice_2 = [0,0,1,0,0];
@@ -416,15 +430,12 @@ def act_func_part3_v3(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
     act_choice_4 = [0,0,0,0,1];
     act_num = 5;
     act_choices = [act_choice_0, act_choice_1, act_choice_2, 
-                    act_choice_3, act_choice_4];
-    chiller1_cap = 742000 # W
-    chiller2_cap = 742000 # W
-    chiller3_cap = 383300 # W
-    act_0_max_cap = chiller3_cap; # 1 small chiller
-    act_1_max_cap = chiller1_cap; # 1 big chiller
-    act_2_max_cap = chiller1_cap + chiller3_cap; # 1 small 1 big
-    act_3_max_cap = chiller1_cap + chiller2_cap; # 2 bigs
-    act_4_max_cap = chiller1_cap + chiller2_cap + chiller3_cap; # all chillers
+                    act_choice_3, act_choice_4];  
+    act_0_max_cap = CHILLER3_CAP; # 1 small chiller
+    act_1_max_cap = CHILLER1_CAP; # 1 big chiller
+    act_2_max_cap = CHILLER1_CAP + CHILLER3_CAP; # 1 small 1 big
+    act_3_max_cap = CHILLER1_CAP + CHILLER2_CAP; # 2 bigs
+    act_4_max_cap = CHILLER1_CAP + CHILLER2_CAP + CHILLER3_CAP; # all chillers
     clg_demand = ob_this_raw[CLG_DMD_IDX];
     org_action_raw = copy.deepcopy(action_raw);
     org_action_raw_idx = action_raw_idx;
@@ -463,9 +474,14 @@ def act_func_part3_v3(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
     else:
         action_ret_idx = org_action_raw_idx;
         action_ret = act_choice_4;
+
+    if action_raw_idx != action_ret_idx:
+        if is_show_debug:
+            logger.debug('Action function: raw action %s has been changed to %s for '
+                        'the demand %s W.'%(action_raw_idx, action_ret_idx, clg_demand));
     return (action_ret, action_ret_idx);
 
-def cslDxCool_ahuStptIncmt(action_raw, action_raw_idx, stptLmt, ob_this_raw, logger):
+def cslDxCool_ahuStptIncmt(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
     """
     Pass the raw action as the output. 
     
