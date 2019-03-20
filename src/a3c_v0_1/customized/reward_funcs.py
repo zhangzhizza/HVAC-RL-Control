@@ -1173,7 +1173,7 @@ def rl_parametric_reward_part3_v3(ob_this_prcd, action_this_prcd, ob_next_prcd, 
     stptnm_penl = max((chw_temp - chw_temp_stpt), 0) * stpt_violation_scl * p_weight;
     # erwd: energy reward
     hvac_energy = ob_next_prcd[HVAC_E_IDX + TIMESTATE_LEN];
-    hvac_energy_rwd = 1 - hvac_energy;
+    hvac_energy_rwd = 1 - hvac_energy * e_weight;
     # final reward
     reward = max(hvac_energy_rwd - stptnm_penl - lowplr_penl - shtcyc_penl, 0);
     return reward;

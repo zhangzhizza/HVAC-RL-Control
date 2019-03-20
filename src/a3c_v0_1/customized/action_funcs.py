@@ -329,7 +329,7 @@ def act_func_part3_v1(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_
                         %(org_action_raw, action_raw, chw_temp))
     return (action_raw, action_raw_idx)
 
-def act_func_part3_v2(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
+def act_func_part3_pit_det_v1(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
     """
     Limit the action to the one that meet the cooling demand
     
@@ -400,7 +400,7 @@ def act_func_part3_v2(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_
             
     return (action_ret, action_ret_idx);
 
-def act_func_part3_v3(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
+def act_func_part3_pit_sto_v1(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
     """
     Limit the action to a random one that meet the cooling demand
     
@@ -523,5 +523,5 @@ act_func_dict = {'1':[mull_stpt_iw, act_limits_iw_1],
                 'part2_v3':[directPass, act_limits_part2_v3],
                 'part2_v4':[directPass, act_limits_part2_v4],
                 'part3_v1':[act_func_part3_v1, act_limits_part3_v1],
-                'part3_v2':[act_func_part3_v2, act_limits_part3_v1],
-                'part3_v3':[act_func_part3_v3, act_limits_part3_v1],}
+                'part3_pit_det_v1':[act_func_part3_pit_det_v1, act_limits_part3_v1],
+                'part3_pit_sto_v1':[act_func_part3_pit_sto_v1, act_limits_part3_v1],}
