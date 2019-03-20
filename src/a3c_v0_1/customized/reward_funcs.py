@@ -1178,6 +1178,54 @@ def rl_parametric_reward_part3_v3(ob_this_prcd, action_this_prcd, ob_next_prcd, 
     reward = max(hvac_energy_rwd - stptnm_penl - lowplr_penl - shtcyc_penl, 0);
     return reward;
 
+def rl_parametric_reward_part3_v4(ob_this_prcd, action_this_prcd, ob_next_prcd, pcd_state_limits, e_weight, p_weight, stpt_violation_scl):
+    """
+    Reward = system_energy + shortcycle_penl + stptnmt_penl
+    """
+    CHILLER1_ONOFF_IDX = 2;
+    CHILLER1_SHTCY_IDX = 3;
+    CHILLER1_PRTLR_IDX = 4;
+
+    CHILLER2_ONOFF_IDX = 5;
+    CHILLER2_SHTCY_IDX = 6;
+    CHILLER2_PRTLR_IDX = 7;
+
+    CHILLER3_ONOFF_IDX = 8;
+    CHILLER3_SHTCY_IDX = 9;
+    CHILLER3_PRTLR_IDX = 10;
+
+    CHW_TEMP_IDX = 11;
+    CHW_TEMP_STPT_IDX = 12;
+
+    CLG_DMD_IDX = 14;
+    CLG_DLD_IDX = 15;
+    HVAC_E_IDX = 16;
+
+    clg_delivered_min = pcd_state_limits[0][CLG_DLD_IDX + TIMESTATE_LEN]
+    hvac_energy_min = pcd_state_limits[0][HVAC_E_IDX + TIMESTATE_LEN]
+    clg_delivered_max = pcd_state_limits[1][CLG_DLD_IDX + TIMESTATE_LEN]
+    hvac_energy_max = pcd_state_limits[1][HVAC_E_IDX + TIMESTATE_LEN]
+    # shtcyc_penl: penalize short cycle actions
+    is_chillers_short_cycle_ls = [_is_chiller_short_cycle(ob_this_prcd, ob_next_prcd, 
+                                                        CHILLER1_SHTCY_IDX, CHILLER1_ONOFF_IDX),
+                                _is_chiller_short_cycle(ob_this_prcd, ob_next_prcd, 
+                                                        CHILLER2_SHTCY_IDX, CHILLER2_ONOFF_IDX),
+                                _is_chiller_short_cycle(ob_this_prcd, ob_next_prcd, 
+                                                        CHILLER3_SHTCY_IDX, CHILLER3_ONOFF_IDX),
+                                ];
+    is_chillers_short_cycle = max(is_chillers_short_cycle_ls);
+    shtcyc_penl = is_chillers_short_cycle * 1.0;
+    # stptnm_penl: penalize the stpt not met
+    chw_temp = ob_next_prcd[CHW_TEMP_IDX + TIMESTATE_LEN];
+    chw_temp_stpt = ob_next_prcd[CHW_TEMP_STPT_IDX + TIMESTATE_LEN];
+    stptnm_penl = max((chw_temp - chw_temp_stpt), 0) * stpt_violation_scl * p_weight;
+    # erwd: energy reward
+    hvac_energy = ob_next_prcd[HVAC_E_IDX + TIMESTATE_LEN];
+    hvac_energy_rwd = 1 - hvac_energy;
+    # final reward
+    reward = max(hvac_energy_rwd - stptnm_penl - shtcyc_penl, 0);
+    return reward;
+
 def rl_parametric_metric_part3_v1(ob_next_raw, this_ep_energy, this_ep_comfort):
     """
     
@@ -1226,7 +1274,8 @@ reward_func_dict = {'1': err_energy_reward_iw,
                     'part2_v1': stpt_viol_energy_reward_part2_v1,
                     'part3_v1': rl_parametric_reward_part3_v1,
                     'part3_v2': rl_parametric_reward_part3_v2,
-                    'part3_v3': rl_parametric_reward_part3_v3,}
+                    'part3_v3': rl_parametric_reward_part3_v3,
+                    'part3_v4': rl_parametric_reward_part3_v4,}
 
 metric_func_dict = {
                     'cslDxCool_1': stptVio_energy_metric_cslDxCool_v1,
