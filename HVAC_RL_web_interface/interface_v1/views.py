@@ -527,6 +527,7 @@ def get_all_exp(request):
 
 
 def check_exp_status(exp_full_dir):
+	print (exp_full_dir)
 	meta_dir = exp_full_dir + '/run.meta';
 	meta_run_step = None;
 	meta_run_status = None;

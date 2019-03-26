@@ -633,6 +633,158 @@ def act_func_part3_bej_sto_v1(action_raw, action_raw_idx, raw_state_limits, stpt
                         'the demand %s W.'%(action_raw_idx, action_ret_idx, clg_demand));
     return (action_ret, action_ret_idx);
 
+def act_func_part3_shg_det_v1(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
+    """
+    Limit the action to the one that meet the cooling demand
+    
+    Args:
+        action_raw: (float, )
+            The raw action planned to be taken.
+        action_raw_idx: int
+            The index of the action in the action space.
+        stptLmt: [[float, float], [float, float], ...]
+            The low limit (included) and high limit (included) for each type of the actions.
+        ob_this_raw: [float]
+            The raw observation.
+        
+    Return: tuple
+        A tuple with length 2. The index 0 is a tuple of resulting action, 
+        and the index 1 is a tuple of resulting action idx.
+    """
+    CLG_DMD_IDX = 14;
+    CHILLER1_CAP = 1656300 # W
+    CHILLER2_CAP = 1656300 # W
+    CHILLER3_CAP = 868600 # W
+
+    act_choice_0 = [1,0,0,0,0];
+    act_choice_1 = [0,1,0,0,0];
+    act_choice_2 = [0,0,1,0,0];
+    act_choice_3 = [0,0,0,1,0];
+    act_choice_4 = [0,0,0,0,1];
+
+    act_0_max_cap = CHILLER3_CAP; # 1 small chiller
+    act_1_max_cap = CHILLER1_CAP; # 1 big chiller
+    act_2_max_cap = CHILLER1_CAP + CHILLER3_CAP; # 1 small 1 big
+    act_3_max_cap = CHILLER1_CAP + CHILLER2_CAP; # 2 bigs
+    act_4_max_cap = CHILLER1_CAP + CHILLER2_CAP + CHILLER3_CAP; # all chillers
+    clg_demand = ob_this_raw[CLG_DMD_IDX];
+    org_action_raw = copy.deepcopy(action_raw);
+    org_action_raw_idx = action_raw_idx;
+    # Check the current cooling demand in which range
+    if clg_demand <= act_0_max_cap:
+        action_ret = org_action_raw;
+    elif act_1_max_cap >= clg_demand > act_0_max_cap:
+        if org_action_raw_idx < 1:
+            action_ret = act_choice_1;
+        else:
+            action_ret = org_action_raw;
+    elif act_2_max_cap >= clg_demand > act_1_max_cap:
+        if org_action_raw_idx < 2:
+            action_ret = act_choice_2;
+        else:
+            action_ret = org_action_raw;
+    elif act_3_max_cap >= clg_demand > act_2_max_cap:
+        if org_action_raw_idx < 3:
+            action_ret = act_choice_3;
+        else:
+            action_ret = org_action_raw;
+    elif act_4_max_cap >= clg_demand > act_3_max_cap:
+        if org_action_raw_idx < 4:
+            action_ret = act_choice_4;
+        else:
+            action_ret = org_action_raw;
+    else:
+        action_ret = act_choice_4;
+    action_ret_idx = org_action_raw_idx; 
+
+    if action_ret != org_action_raw:
+        if is_show_debug:
+            logger.debug('Action function: raw action %s has been changed to %s for '
+                        'the demand %s W.'%(org_action_raw, action_ret, clg_demand));
+            
+    return (action_ret, action_ret_idx);
+
+def act_func_part3_shg_sto_v1(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
+    """
+    Limit the action to a random one that meet the cooling demand
+    
+    Args:
+        action_raw: (float, )
+            The raw action planned to be taken.
+        action_raw_idx: int
+            The index of the action in the action space.
+        stptLmt: [[float, float], [float, float], ...]
+            The low limit (included) and high limit (included) for each type of the actions.
+        ob_this_raw: [float]
+            The raw observation.
+        
+    Return: tuple
+        A tuple with length 2. The index 0 is a tuple of resulting action, 
+        and the index 1 is a tuple of resulting action idx.
+    """
+    CLG_DMD_IDX = 14;
+    CHILLER1_CAP = 1656300 # W
+    CHILLER2_CAP = 1656300 # W
+    CHILLER3_CAP = 868600 # W
+
+    act_choice_0 = [1,0,0,0,0];
+    act_choice_1 = [0,1,0,0,0];
+    act_choice_2 = [0,0,1,0,0];
+    act_choice_3 = [0,0,0,1,0];
+    act_choice_4 = [0,0,0,0,1];
+    act_num = 5;
+    act_choices = [act_choice_0, act_choice_1, act_choice_2, 
+                    act_choice_3, act_choice_4];  
+    act_0_max_cap = CHILLER3_CAP; # 1 small chiller
+    act_1_max_cap = CHILLER1_CAP; # 1 big chiller
+    act_2_max_cap = CHILLER1_CAP + CHILLER3_CAP; # 1 small 1 big
+    act_3_max_cap = CHILLER1_CAP + CHILLER2_CAP; # 2 bigs
+    act_4_max_cap = CHILLER1_CAP + CHILLER2_CAP + CHILLER3_CAP; # all chillers
+    clg_demand = ob_this_raw[CLG_DMD_IDX];
+    org_action_raw = copy.deepcopy(action_raw);
+    org_action_raw_idx = action_raw_idx;
+    # Check the current cooling demand in which range
+    if clg_demand <= act_0_max_cap:
+        action_ret_idx = org_action_raw_idx;
+        action_ret = org_action_raw;
+    elif act_1_max_cap >= clg_demand > act_0_max_cap:
+        if org_action_raw_idx < 1:
+            action_ret_idx = np.random.randint(1, act_num);
+            action_ret = act_choices[action_ret_idx];
+        else:
+            action_ret_idx = org_action_raw_idx;
+            action_ret = org_action_raw;
+    elif act_2_max_cap >= clg_demand > act_1_max_cap:
+        if org_action_raw_idx < 2:
+            action_ret_idx = np.random.randint(2, act_num);
+            action_ret = act_choices[action_ret_idx];
+        else:
+            action_ret_idx = org_action_raw_idx;
+            action_ret = org_action_raw;
+    elif act_3_max_cap >= clg_demand > act_2_max_cap:
+        if org_action_raw_idx < 3:
+            action_ret_idx = np.random.randint(3, act_num);
+            action_ret = act_choices[action_ret_idx];
+        else:
+            action_ret_idx = org_action_raw_idx;
+            action_ret = org_action_raw;
+    elif act_4_max_cap >= clg_demand > act_3_max_cap:
+        if org_action_raw_idx < 4:
+            action_ret_idx = np.random.randint(4, act_num);
+            action_ret = act_choices[action_ret_idx];
+        else:
+            action_ret_idx = org_action_raw_idx;
+            action_ret = org_action_raw;
+    else:
+        action_ret_idx = org_action_raw_idx;
+        action_ret = act_choice_4;
+
+    if action_raw_idx != action_ret_idx:
+        if is_show_debug:
+            logger.debug('Action function: raw action %s has been changed to %s for '
+                        'the demand %s W.'%(action_raw_idx, action_ret_idx, clg_demand));
+    return (action_ret, action_ret_idx);
+
 def cslDxCool_ahuStptIncmt(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
     """
     Pass the raw action as the output. 
@@ -678,4 +830,6 @@ act_func_dict = {'1':[mull_stpt_iw, act_limits_iw_1],
                 'part3_pit_det_v1':[act_func_part3_pit_det_v1, act_limits_part3_v1],
                 'part3_pit_sto_v1':[act_func_part3_pit_sto_v1, act_limits_part3_v1],
                 'part3_bej_det_v1':[act_func_part3_bej_det_v1, act_limits_part3_v1],
-                'part3_bej_sto_v1':[act_func_part3_bej_sto_v1, act_limits_part3_v1],}
+                'part3_bej_sto_v1':[act_func_part3_bej_sto_v1, act_limits_part3_v1],
+                'part3_shg_det_v1':[act_func_part3_shg_det_v1, act_limits_part3_v1],
+                'part3_shg_sto_v1':[act_func_part3_shg_sto_v1, act_limits_part3_v1],}
