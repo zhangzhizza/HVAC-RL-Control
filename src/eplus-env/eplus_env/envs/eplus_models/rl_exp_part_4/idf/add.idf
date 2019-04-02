@@ -1,0 +1,28 @@
+
+Output:Variable,*,IW North Zone Average Temperature,timestep; !- Reporting Frequency
+Output:Variable,*,IW Effective Zone Air Temperature Setpoint,timestep; !- Reporting Frequency
+Output:Variable,*,Site Outdoor Air Drybulb Temperature,timestep; !- Zone Average [C]
+Output:Variable,*,Site Outdoor Air Relative Humidity,timestep; !- Zone Average [%]
+Output:Variable,*,Site Direct Solar Radiation Rate per Area,timestep; !- Zone Average [W/M2]
+Output:Variable,*,Site Diffuse Solar Radiation Rate per Area,timestep; !- Zone Average [W/M2]
+Output:Variable,tempHWLoop Supply Side Outlet,System Node Temperature,timestep; !- Zone Average [C]
+Output:Variable,tempHWLoop Supply Side Outlet,System Node Setpoint Temperature,timestep; !- Zone Average [C]
+Output:Variable,tempHWLoop Supply Side Outlet,System Node Mass Flow Rate,timestep; !- Zone Average [kg/s]
+Output:Variable,*,IW Calculated Heating Demand,timestep; !- Reporting
+Output:Variable,*,IW Calculated Heating Demand,runperiod; !- Reporting
+Output:Variable,*,IW Average PPD,timestep; !- Reporting
+Output:Variable,*,IW Average PMV,timestep; !- Reporting
+Output:Variable,*,IW Occupied Average PPD in the Run,timestep; !- Reporting
+Output:Variable,*,IW Is Occupied,timestep; !- Reporting
+Output:Variable,*,IW Hot Water System OA Enable Flag,timestep; !- Reporting!
+
+ExternalInterface,           !- Object to activate the external interface
+    PtolemyServer;              !- Name of external interface
+
+ExternalInterface:Schedule,
+    Heating set point schedule,                 !- Name
+    Any Number,             !- ScheduleType
+    19;                      !- Initial value, used during warm-up
+
+
+

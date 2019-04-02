@@ -86,7 +86,7 @@ ZoneCapacitanceMultiplier:ResearchSpecial,
 !-   ===========  ALL OBJECTS IN CLASS: TIMESTEP ===========
 
 Timestep,
-    12;                      !- Number of Timesteps per Hour
+    6;                      !- Number of Timesteps per Hour
 
 
 !-   ===========  ALL OBJECTS IN CLASS: CONVERGENCELIMITS ===========
@@ -177,8 +177,8 @@ RunPeriod,
     wholeyear,               !- Name
     1,                       !- Begin Month
     1,                       !- Begin Day of Month
-    1,                      !- End Month
-    31,                      !- End Day of Month
+    2,                      !- End Month
+    28,                      !- End Day of Month
     Sunday,          !- Day of Week for Start Day
     No,                      !- Use Weather File Holidays and Special Days
     No,                      !- Use Weather File Daylight Saving Period
@@ -438,9 +438,23 @@ Schedule:Compact,
     Heating set point schedule,  !- Name
     Any Number,              !- Schedule Type Limits Name
     Through: 12/31,          !- Field 1
-    For: AllDays,            !- Field 2
-    Until: 24:00,            !- Field 3
-    20 ;                     !- Field 4
+    For: Weekdays,            !- Field 2
+    Until: 7:00,            !- Field 3
+    19.00,                     !- Field 4
+    Until: 20:00,
+    22.50,
+    Until: 24:00,
+    19.00,
+    For: Weekends,
+    Until: 8:00,
+    19.00,
+    Until: 19:00,
+    19.00,
+    Until: 24:00,
+    19.00,
+    For: AllOtherDays,
+    Until: 24:00,
+    22.50;
 
 Schedule:Compact,
     Cooling set point schedule,  !- Name
@@ -448,7 +462,7 @@ Schedule:Compact,
     Through: 12/31,          !- Field 1
     For: AllDays,            !- Field 2
     Until: 24:00,            !- Field 3
-    24 ;                     !- Field 4
+    30;                     !- Field 4
 
 Schedule:Compact,
     Control type schedule: Always 4,  !- Name
@@ -792,12 +806,86 @@ Schedule:Compact,
     0;                       !- Field 116
 
 Schedule:Compact,
-    iw_occp_simple,  !- Name
+    iw_occp_sto,  !- Name
     Fraction,                !- Schedule Type Limits Name
     Through: 31 Dec,         !- Field 63
     For: AllDays,            !- Field 64
     Until: 24:00,            !- Field 65
     0;                       !- Field 66 was 0.2
+
+Schedule:Compact,
+    iw_equip_sto,  !- Name
+    Fraction,                !- Schedule Type Limits Name
+    Through: 31 Dec,         !- Field 63
+    For: AllDays,            !- Field 64
+    Until: 24:00,            !- Field 65
+    0;                       !- Field 66 was 0.2
+
+Schedule:Compact,
+    iw_occp_base,  !- Name
+    Fraction,                !- Schedule Type Limits Name
+    Through: 1 Jun,          !- Field 5
+    For: Weekdays SummerDesignDay,  !- Field 6
+    Until: 08:00,            !- Field 7
+    0.25,                    !- Field 8
+    Until: 09:00,            !- Field 9
+    0.75,                    !- Field 10
+    Until: 12:00,            !- Field 11
+    1,                       !- Field 12
+    Until: 13:00,            !- Field 13
+    0.75,                    !- Field 14
+    Until: 17:00,            !- Field 15
+    1,                       !- Field 16
+    Until: 18:00,            !- Field 17
+    0.5,                     !- Field 18
+    Until: 19:00,            !- Field 19
+    0.25,                    !- Field 20
+    Until: 24:00,            !- Field 21
+    0.00,                       !- Field 22 was 0.2
+    For: Weekends,           !- Field 23
+    Until: 24:00,            !- Field 24
+    0.00,                       !- Field 25 was 0.2
+    For: Holidays,           !- Field 26
+    Until: 24:00,            !- Field 27
+    0.00,                       !- Field 28 was 0.2
+    For: WinterDesignDay AllOtherDays,  !- Field 29
+    Until: 24:00,            !- Field 30
+    0.00,                       !- Field 31 was 0.2
+    Through: 1 Sep,          !- Field 32
+    For: AllDays,            !- Field 33
+    Until: 24:00,            !- Field 34
+    0.05,                       !- Field 35 was 0.2
+    Through: 20 Dec,         !- Field 36
+    For: Weekdays SummerDesignDay,  !- Field 37
+    Until: 08:00,            !- Field 38
+    0.25,                    !- Field 39
+    Until: 09:00,            !- Field 40
+    0.75,                    !- Field 41
+    Until: 12:00,            !- Field 42
+    1,                       !- Field 43
+    Until: 13:00,            !- Field 44
+    0.75,                    !- Field 45
+    Until: 17:00,            !- Field 46
+    1,                       !- Field 47
+    Until: 18:00,            !- Field 48
+    0.5,                     !- Field 49
+    Until: 19:00,            !- Field 50
+    0.25,                    !- Field 51
+    Until: 24:00,            !- Field 52
+    0.05,                       !- Field 53 was0.2
+    For: Weekends,           !- Field 54
+    Until: 24:00,            !- Field 55
+    0.05,                       !- Field 56 was 0.2
+    For: Holidays,           !- Field 57
+    Until: 24:00,            !- Field 58
+    0.05,                       !- Field 59 was 0.2
+    For: WinterDesignDay AllOtherDays,  !- Field 60
+    Until: 24:00,            !- Field 61
+    0.05,                       !- Field 62 was0.2
+    Through: 31 Dec,         !- Field 63
+    For: AllDays,            !- Field 64
+    Until: 24:00,            !- Field 65
+    0.05;                       !- Field 66 was 0.2
 
 Schedule:Compact,
     iw_office_term_related_occ,  !- Name
@@ -1149,9 +1237,9 @@ Material,
     0.6;                     !- Visible Absorptance
 
 Material,
-    foam_polyisocyanate_105mm,  !- Name
+    foam_polyisocyanate_91mm,  !- Name
     Rough,                   !- Roughness
-    0.105,                   !- Thickness {m} was 0.085 #CaliPara1:External Wall Insulation Thickness, originally
+    0.0910,                   !- Thickness {m} was 0.085 #CaliPara1:External Wall Insulation Thickness, originally
                                             ! #0.105m to match external wall U-ip value 0.049 Btu/(ft2-hr-F)
                                             ! #suggested by a 2006 study of Xiangyang Gong, manual calibration
                                             ! #shows 0.085 a good value. Range: 0.05m - 0.105m.
@@ -1233,9 +1321,9 @@ Material,
     0.6;                     !- Visible Absorptance
 
 Material,
-    rip40_batt_insulation_glass_fiber_30cm,  !- Name
+    rip40_batt_insulation_glass_fiber_0.3546m,  !- Name
     Rough,                   !- Roughness
-    0.145,                     !- Thickness {m} was 0.3 #CaliPara3: Pitched Roof Insulation Thickness, originally
+    0.3546,                     !- Thickness {m} was 0.3 #CaliPara3: Pitched Roof Insulation Thickness, originally
                                             ! #0.30m to match R-ip value 40 shown in the IW design drawings,
                                             ! #manual calibration shows 0.15 a good choice. Range: 0.05m - 0.3m
     0.043,                   !- Conductivity {W/m-K}
@@ -1319,13 +1407,9 @@ Material:InfraredTransparent,
 !-   ===========  ALL OBJECTS IN CLASS: WINDOWMATERIAL:GLAZING ===========
 WindowMaterial:SimpleGlazingSystem,
   iw_ext_win_simple, !- Name
-  2.655, !-  U-Factor #CaliPara4:External Window U, 
-                    ! #originally U-ip 0.43 (U-si 2.43) suggested by a 2006 study of Xiangyang Gong,
-                    ! #manual calibration shows U-si 1.792 a good choice. Range 1.5 - 3.0.
-  0.422, !- was 0.292 Solar Heat Gain Coefficient #CaliPara5:External Window SHGC, 
-                    ! #The 2006 study of Xiangyang Gong only says it is low-e glazing
-                    ! #manual calibration shows 0.292 a good choice. Range: 0.25 - 0.65
-  0.252; !-  Visible Transmittance
+  2.16, !- U-Factor 
+  0.38, !- SHGC
+  0.252; !- Visible Transmittance
 
 WindowMaterial:Glazing,
     lowe_glazing,            !- Name
@@ -1521,7 +1605,7 @@ Construction,
 Construction,
     insulated_metal_panel_wall_5,  !- Name
     steel_5mm,               !- Outside Layer
-    foam_polyisocyanate_105mm,  !- Layer 2
+    foam_polyisocyanate_91mm,  !- Layer 2
     steel_5mm;               !- Layer 3
 
 Construction,
@@ -1537,7 +1621,7 @@ Construction,
 Construction,
     pitched_roof_rip40_13,   !- Name
     stainless_steel_1cm,     !- Outside Layer
-    rip40_batt_insulation_glass_fiber_30cm,  !- Layer 2
+    rip40_batt_insulation_glass_fiber_0.3546m,  !- Layer 2
     stainless_steel_1cm;     !- Layer 3
 
 Construction,
@@ -1918,37 +2002,37 @@ InternalMass,
   swOff_intMass,  !- Surface Name
   internal_floor_noCarpet,  !- Construction Name
   swOff,  !- Zone
-  600.1234;  !- Total area exposed to Zone {m2} #CaliPara6
+  200.1234;  !- Total area exposed to Zone {m2} #CaliPara6
 
 InternalMass,
   seOff_intMass,  !- Surface Name
   internal_floor_noCarpet,  !- Construction Name
   seOff,  !- Zone
-  600.1234;  !- Total area exposed to Zone {m2} #CaliPara6
+  200.1234;  !- Total area exposed to Zone {m2} #CaliPara6
 
 InternalMass,
   nwOff_intMass,  !- Surface Name
   internal_floor_noCarpet,  !- Construction Name
   nwOff,  !- Zone
-  600.1234;  !- Total area exposed to Zone {m2} #CaliPara6
+  200.1234;  !- Total area exposed to Zone {m2} #CaliPara6
 
 InternalMass,
   neOff_intMass,  !- Surface Name
   internal_floor_noCarpet,  !- Construction Name
   neOff,  !- Zone
-  600.1234;  !- Total area exposed to Zone {m2} #CaliPara6
+  200.1234;  !- Total area exposed to Zone {m2} #CaliPara6
 
 InternalMass,
   largeConf_intMass,  !- Surface Name
   internal_floor_noCarpet,  !- Construction Name
   largeConf,  !- Zone
-  600.1234;  !- Total area exposed to Zone {m2} #CaliPara6
+  200.1234;  !- Total area exposed to Zone {m2} #CaliPara6
 
 InternalMass,
   central_intMass,  !- Surface Name
   internal_floor_noCarpet,  !- Construction Name
   central,  !- Zone
-  600.1234;  !- Total area exposed to Zone {m2} #CaliPara6
+  200.1234;  !- Total area exposed to Zone {m2} #CaliPara6
 
 
 
@@ -10569,7 +10653,7 @@ ZoneMixing,
 People,
     People central,          !- Name
     central,                 !- Zone or ZoneList Name
-    iw_occp_simple,     !- Number of People Schedule Name
+    iw_occp_sto,     !- Number of People Schedule Name
     People,                  !- Number of People Calculation Method
     3,                !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
@@ -10591,7 +10675,7 @@ People,
 People,
     People neOff,              !- Name
     neOff,                     !- Zone or ZoneList Name
-    iw_occp_simple,      !- Number of People Schedule Name
+    iw_occp_sto,     !- Number of People Schedule Name
     People,                  !- Number of People Calculation Method
     2,                       !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
@@ -10614,7 +10698,7 @@ People,
 People,
     People seOff,        !- Name
     seOff,               !- Zone or ZoneList Name
-    iw_occp_simple,  !- Number of People Schedule Name
+    iw_occp_sto,     !- Number of People Schedule Name
     People,                  !- Number of People Calculation Method
     8,                       !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
@@ -10636,7 +10720,7 @@ People,
 People,
     People nwOff,       !- Name
     nwOff,              !- Zone or ZoneList Name
-    iw_occp_simple,  !- Number of People Schedule Name
+    iw_occp_sto,     !- Number of People Schedule Name
     People,                  !- Number of People Calculation Method
     2,                       !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
@@ -10659,7 +10743,7 @@ People,
 People,
     People swOff,        !- Name
     swOff,               !- Zone or ZoneList Name
-    iw_occp_simple,  !- Number of People Schedule Name
+    iw_occp_sto,     !- Number of People Schedule Name
     People,                  !- Number of People Calculation Method
     8,                       !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
@@ -10681,7 +10765,7 @@ People,
 People,
     People largeConf,       !- Name
     largeConf,              !- Zone or ZoneList Name
-    iw_occp_simple,        !- Number of People Schedule Name
+    iw_occp_sto,     !- Number of People Schedule Name
     People,                  !- Number of People Calculation Method
     20,                !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
@@ -10796,7 +10880,7 @@ Lights,
 ElectricEquipment,
     central Equipment 1,     !- Name
     central,                 !- Zone or ZoneList Name
-    iw_office_allyear_occ,                   !- Schedule Name
+    iw_equip_sto,                   !- Schedule Name
     Watts/Area,          !- Design Level Calculation Method
     ,                 !- Design Level {W}
     10,                        !- Watts per Zone Floor Area {W/m2} #CaliPara11: Low equipment density zones. 
@@ -10810,7 +10894,7 @@ ElectricEquipment,
 ElectricEquipment,
     neOff Equipment 1,         !- Name
     neOff,                     !- Zone or ZoneList Name
-    iw_office_allyear_occ,                   !- Schedule Name
+    iw_equip_sto,                   !- Schedule Name
     Watts/Area,          !- Design Level Calculation Method
     ,                 !- Design Level {W}
     40,                        !- Watts per Zone Floor Area {W/m2} #CaliPara12: high equipment density zones. 
@@ -10824,7 +10908,7 @@ ElectricEquipment,
 ElectricEquipment,
     seOff Computing gain 1,  !- Name
     seOff,               !- Zone or ZoneList Name
-    iw_office_allyear_occ,  !- Schedule Name
+    iw_equip_sto,  !- Schedule Name
     Watts/Area,          !- Design Level Calculation Method
     ,                !- Design Level {W}
     20,                        !- Watts per Zone Floor Area {W/m2} #CaliPara11: Low equipment density zones. 
@@ -10838,7 +10922,7 @@ ElectricEquipment,
 ElectricEquipment,
     nwOff Computing gain 1,  !- Name
     nwOff,              !- Zone or ZoneList Name
-    iw_office_allyear_occ,  !- Schedule Name
+    iw_equip_sto,  !- Schedule Name
     Watts/Area,          !- Design Level Calculation Method
     ,                  !- Design Level {W}
     10,                        !- Watts per Zone Floor Area {W/m2} #CaliPara11: Low equipment density zones. 
@@ -10852,7 +10936,7 @@ ElectricEquipment,
 ElectricEquipment,
     swOff Computing gain 1,  !- Name
     swOff,               !- Zone or ZoneList Name
-    iw_office_allyear_occ,  !- Schedule Name
+    iw_equip_sto,  !- Schedule Name
     Watts/Area,          !- Design Level Calculation Method
     ,                !- Design Level {W}
     10,                        !- Watts per Zone Floor Area {W/m2} #CaliPara11: Low equipment density zones. 
@@ -10867,7 +10951,7 @@ ElectricEquipment,
 ElectricEquipment,
     largeConf Equipment 1,  !- Name
     largeConf,              !- Zone or ZoneList Name
-    iw_classroom_occ,        !- Schedule Name
+    iw_equip_sto,        !- Schedule Name
     Watts/Area,          !- Design Level Calculation Method
     ,                !- Design Level {W}
     10,                        !- Watts per Zone Floor Area {W/m2} #CaliPara11: Low equipment density zones. 
@@ -10889,7 +10973,7 @@ ZoneInfiltration:DesignFlowRate,
     0.057085,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    0.1750,                        !- Air Changes per Hour {1/hr} #CaliPara7: Infiltration Rate.
+    15.0,                        !- Air Changes per Hour {1/hr} #CaliPara7: Infiltration Rate.
                                                             ! #Manual calibration shows 0.36 a good choice.
                                                             ! #Range 0.01 - 0.5
     1.0,                       !- Constant Term Coefficient was 1
@@ -10905,7 +10989,7 @@ ZoneInfiltration:DesignFlowRate,
     0.002695,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    0.1750,                        !- Air Changes per Hour {1/hr}
+    15.0,                        !- Air Changes per Hour {1/hr}
     1.0,                       !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
     0,                       !- Velocity Term Coefficient
@@ -10919,7 +11003,7 @@ ZoneInfiltration:DesignFlowRate,
     0.002695,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    0.1750,                        !- Air Changes per Hour {1/hr}
+    15.0,                        !- Air Changes per Hour {1/hr}
     1.0,                       !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
     0,                       !- Velocity Term Coefficient
@@ -10933,7 +11017,7 @@ ZoneInfiltration:DesignFlowRate,
     0.002695,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    0.1750,                        !- Air Changes per Hour {1/hr}
+    15.0,                        !- Air Changes per Hour {1/hr}
     1.0,                       !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
     0,                       !- Velocity Term Coefficient
@@ -10947,7 +11031,7 @@ ZoneInfiltration:DesignFlowRate,
     0.002646,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    0.1750,                        !- Air Changes per Hour {1/hr}
+    15.0,                        !- Air Changes per Hour {1/hr}
     1.0,                       !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
     0,                       !- Velocity Term Coefficient
@@ -10961,7 +11045,7 @@ ZoneInfiltration:DesignFlowRate,
     0.002748,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    0.1750,                        !- Air Changes per Hour {1/hr}
+    15.0,                        !- Air Changes per Hour {1/hr}
     1.0,                       !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
     0,                       !- Velocity Term Coefficient
@@ -10975,7 +11059,7 @@ ZoneInfiltration:DesignFlowRate,
     0.005079,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    0.1750,                        !- Air Changes per Hour {1/hr}
+    15.0,                        !- Air Changes per Hour {1/hr}
     1.0,                       !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
     0,                       !- Velocity Term Coefficient
@@ -10989,7 +11073,7 @@ ZoneInfiltration:DesignFlowRate,
     0.005079,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    0.1750,                        !- Air Changes per Hour {1/hr}
+    15.0,                        !- Air Changes per Hour {1/hr}
     1.0,                       !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
     0,                       !- Velocity Term Coefficient
@@ -11003,7 +11087,7 @@ ZoneInfiltration:DesignFlowRate,
     0.005079,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    0.1750,                        !- Air Changes per Hour {1/hr}
+    15.0,                        !- Air Changes per Hour {1/hr}
     1.0,                       !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
     0,                       !- Velocity Term Coefficient
@@ -11017,7 +11101,7 @@ ZoneInfiltration:DesignFlowRate,
     0.005079,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    0.1750,                        !- Air Changes per Hour {1/hr}
+    15.0,                        !- Air Changes per Hour {1/hr}
     1.0,                       !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
     0,                       !- Velocity Term Coefficient
@@ -11032,7 +11116,7 @@ ZoneInfiltration:DesignFlowRate,
     0.008987,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    0.1750,                        !- Air Changes per Hour {1/hr}
+    15.0,                        !- Air Changes per Hour {1/hr}
     1.0,                       !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
     0,                       !- Velocity Term Coefficient
@@ -11046,7 +11130,7 @@ ZoneInfiltration:DesignFlowRate,
     0.005438,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    0.1750,                        !- Air Changes per Hour {1/hr}
+    15.0,                        !- Air Changes per Hour {1/hr}
     1.0,                       !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
     0,                       !- Velocity Term Coefficient
@@ -11060,7 +11144,7 @@ ZoneInfiltration:DesignFlowRate,
     0.00534,                 !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    0.1750,                        !- Air Changes per Hour {1/hr}
+    15.0,                        !- Air Changes per Hour {1/hr}
     1.0,                       !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
     0,                       !- Velocity Term Coefficient
@@ -11075,7 +11159,7 @@ ZoneInfiltration:DesignFlowRate,
     0.005438,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    0.1750,                        !- Air Changes per Hour {1/hr}
+    15.0,                        !- Air Changes per Hour {1/hr}
     1.0,                       !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
     0,                       !- Velocity Term Coefficient
@@ -11090,7 +11174,7 @@ ZoneInfiltration:DesignFlowRate,
     0.00534,                 !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    0.1750,                        !- Air Changes per Hour {1/hr}
+    15.0,                        !- Air Changes per Hour {1/hr}
     1.0,                       !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
     0,                       !- Velocity Term Coefficient
@@ -11105,7 +11189,7 @@ ZoneInfiltration:DesignFlowRate,
     0.016837,                !- Design Flow Rate {m3/s}
     ,                        !- Flow per Zone Floor Area {m3/s-m2}
     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-    0.1750,                        !- Air Changes per Hour {1/hr}
+    15.0,                        !- Air Changes per Hour {1/hr}
     1.0,                       !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
     0,                       !- Velocity Term Coefficient
@@ -15271,23 +15355,8 @@ Output:Constructions,
 
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUT:TABLE:SUMMARYREPORTS ===========
 
-!Output:Table:SummaryReports,
-!    AllSummary,              !- Report 1 Name
-!    AllMonthly,              !- Report 2 Name
-!    AnnualBuildingUtilityPerformanceSummary,  !- Report 3 Name
-!    DemandEndUseComponentsSummary,  !- Report 4 Name
-!   SensibleHeatGainSummary, !- Report 5 Name
-!    InputVerificationandResultsSummary,  !- Report 6 Name
-!    AdaptiveComfortSummary,  !- Report 7 Name
-!    ClimaticDataSummary,     !- Report 8 Name
-!    EquipmentSummary,        !- Report 9 Name
-!    EnvelopeSummary,         !- Report 10 Name
-!    LightingSummary,         !- Report 11 Name
-!    HVACSizingSummary,       !- Report 12 Name
-!    SystemSummary,           !- Report 13 Name
-!    ComponentSizingSummary,  !- Report 14 Name
-!    OutdoorAirSummary,       !- Report 15 Name
-!    ObjectCountSummary;      !- Report 16 Name
+Output:Table:SummaryReports,
+    AllSummary;              !- Report 1 Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUTCONTROL:TABLE:STYLE ===========
@@ -15318,6 +15387,8 @@ Output:Variable,
     IW Effective Zone Air Temperature Setpoint, !- Variable Name
     timestep; !- Reporting Frequency
 
+Output:Variable,*,People Occupant Count,timestep; !- Zone Average [C]
+Output:Variable,*,Electric Equipment Electric Power,timestep; !- Zone Average [C]
 Output:Variable,*,Site Outdoor Air Drybulb Temperature,timestep; !- Zone Average [C]
 Output:Variable,*,Site Outdoor Air Relative Humidity,timestep; !- Zone Average [%]
 !Output:Variable,*,Site Outdoor Air Dewpoint Temperature,timestep; !- Zone Average [C]
@@ -15326,12 +15397,8 @@ Output:Variable,*,Site Outdoor Air Relative Humidity,timestep; !- Zone Average [
 Output:Variable,*,Site Direct Solar Radiation Rate per Area,timestep; !- Zone Average [W/M2]
 Output:Variable,*,Site Diffuse Solar Radiation Rate per Area,timestep; !- Zone Average [W/M2]
 
-Output:Variable,*,IW Hot Water Supply Temperature Setpoint Action,timestep; !- Zone Average [C]
-
-Output:Variable,tempHWLoop Demand Side Inlet,System Node Temperature,timestep; !- Zone Average [C]
 Output:Variable,tempHWLoop Supply Side Outlet,System Node Temperature,timestep; !- Zone Average [C]
-
-Output:Variable,tempHWLoop Demand Side Inlet,System Node Mass Flow Rate,timestep; !- Zone Average [kg/s]
+Output:Variable,tempHWLoop Supply Side Outlet,System Node Setpoint Temperature,timestep; !- Zone Average [C]
 Output:Variable,tempHWLoop Supply Side Outlet,System Node Mass Flow Rate,timestep; !- Zone Average [kg/s]
 
 Output:Variable,
@@ -15341,38 +15408,39 @@ Output:Variable,
 
 Output:Variable,
     *, !- Key Value
+    IW Calculated Heating Demand, !- Variable Name
+    runperiod; !- Reporting
+
+Output:Variable,
+    *, !- Key Value
+    IW Average PPD, !- Variable Name
+    timestep; !- Reporting
+
+Output:Variable,
+    *, !- Key Value
     IW Average PMV, !- Variable Name
     timestep; !- Reporting
 
-!Output:Variable,
-!    *, !- Key Value
-!    IW Max PMV, !- Variable Name
-!    timestep; !- Reporting!
-
-!Output:Variable,
-!    *, !- Key Value
-!    IW Occupy Mode Flag, !- Variable Name
-!    timestep; !- Reporting
-
 Output:Variable,
     *, !- Key Value
-    Setback Flag Sensor, !- Variable Name
+    IW Occupy Mode Flag, !- Variable Name
     timestep; !- Reporting
 
 Output:Variable,
     *, !- Key Value
-    IW Occp First Come Pred, !- Variable Name
+    IW Occupied Average PPD in the Run, !- Variable Name
     timestep; !- Reporting
 
 Output:Variable,
     *, !- Key Value
-    IW Occp Last Leave Pred, !- Variable Name
+    DEBUG OUTPUT, !- Variable Name
     timestep; !- Reporting
 
 Output:Variable,
     *, !- Key Value
-    IW Occp Mode, !- Variable Name
+    IW Is Occupied, !- Variable Name
     timestep; !- Reporting
+
 
 !Output:Variable,
 !    *, !- Key Value
@@ -15467,11 +15535,6 @@ EnergyManagementSystem:Sensor,
 EnergyManagementSystem:Sensor,
     Heating_switch, !Name
     EMS_heating_time_switch_sch,! Output:Variable or Output:Meter Index Key Name
-    Schedule Value; ! Output:Variable or Output:Meter Name
-
-EnergyManagementSystem:Sensor,
-    IAT_temp_stpt_base, !Name
-    IAT_temp_stpt_base_sch,! Output:Variable or Output:Meter Index Key Name
     Schedule Value; ! Output:Variable or Output:Meter Name
 
 EnergyManagementSystem:Sensor,
@@ -15653,53 +15716,84 @@ EnergyManagementSystem:Sensor,
 
 
 EnergyManagementSystem:Sensor,
-    seOff_pmv_sensor, !Name HWLoop demand inlet node temperature
+    seOff_PMV_sensor, !Name HWLoop demand inlet node temperature
     People seOff,! Output:Variable or Output:Meter Index Key Name
     Zone Thermal Comfort Fanger Model PMV; ! Output:Variable or Output:Meter Name
 
 EnergyManagementSystem:Sensor,
-    swOff_pmv_sensor, !Name HWLoop demand inlet node temperature
+    swOff_PMV_sensor, !Name HWLoop demand inlet node temperature
     People swOff,! Output:Variable or Output:Meter Index Key Name
     Zone Thermal Comfort Fanger Model PMV; ! Output:Variable or Output:Meter Name
 
 EnergyManagementSystem:Sensor,
-    neOff_pmv_sensor, !Name HWLoop demand inlet node temperature
+    neOff_PMV_sensor, !Name HWLoop demand inlet node temperature
     People neOff,! Output:Variable or Output:Meter Index Key Name
     Zone Thermal Comfort Fanger Model PMV; ! Output:Variable or Output:Meter Name
 
 EnergyManagementSystem:Sensor,
-    nwOff_pmv_sensor, !Name HWLoop demand inlet node temperature
+    nwOff_PMV_sensor, !Name HWLoop demand inlet node temperature
     People nwOff,! Output:Variable or Output:Meter Index Key Name
     Zone Thermal Comfort Fanger Model PMV; ! Output:Variable or Output:Meter Name
 
 EnergyManagementSystem:Sensor,
-    largeConf_pmv_sensor, !Name HWLoop demand inlet node temperature
+    largeConf_PMV_sensor, !Name HWLoop demand inlet node temperature
     People largeConf,! Output:Variable or Output:Meter Index Key Name
     Zone Thermal Comfort Fanger Model PMV; ! Output:Variable or Output:Meter Name
 
 EnergyManagementSystem:Sensor,
-    central_pmv_sensor, !Name HWLoop demand inlet node temperature
+    central_PMV_sensor, !Name HWLoop demand inlet node temperature
     People central,! Output:Variable or Output:Meter Index Key Name
     Zone Thermal Comfort Fanger Model PMV; ! Output:Variable or Output:Meter Name
 
 EnergyManagementSystem:Sensor,
-    SETBACK_FLG_sensor, !Name HWLoop demand inlet node temperature
-    SETBACK_FLG,! Output:Variable or Output:Meter Index Key Name
+    seOff_PPD_sensor, !Name HWLoop demand inlet node temperature
+    People seOff,! Output:Variable or Output:Meter Index Key Name
+    Zone Thermal Comfort Fanger Model PPD; ! Output:Variable or Output:Meter Name
+
+EnergyManagementSystem:Sensor,
+    swOff_PPD_sensor, !Name HWLoop demand inlet node temperature
+    People swOff,! Output:Variable or Output:Meter Index Key Name
+    Zone Thermal Comfort Fanger Model PPD; ! Output:Variable or Output:Meter Name
+
+EnergyManagementSystem:Sensor,
+    neOff_PPD_sensor, !Name HWLoop demand inlet node temperature
+    People neOff,! Output:Variable or Output:Meter Index Key Name
+    Zone Thermal Comfort Fanger Model PPD; ! Output:Variable or Output:Meter Name
+
+EnergyManagementSystem:Sensor,
+    nwOff_PPD_sensor, !Name HWLoop demand inlet node temperature
+    People nwOff,! Output:Variable or Output:Meter Index Key Name
+    Zone Thermal Comfort Fanger Model PPD; ! Output:Variable or Output:Meter Name
+
+EnergyManagementSystem:Sensor,
+    largeConf_PPD_sensor, !Name HWLoop demand inlet node temperature
+    People largeConf,! Output:Variable or Output:Meter Index Key Name
+    Zone Thermal Comfort Fanger Model PPD; ! Output:Variable or Output:Meter Name
+
+EnergyManagementSystem:Sensor,
+    central_PPD_sensor, !Name HWLoop demand inlet node temperature
+    People central,! Output:Variable or Output:Meter Index Key Name
+    Zone Thermal Comfort Fanger Model PPD; ! Output:Variable or Output:Meter Name
+
+
+EnergyManagementSystem:Sensor,
+    iw_occp_sto_sensor, !Name 
+    iw_occp_sto,! Output:Variable or Output:Meter Index Key Name
     Schedule Value; ! Output:Variable or Output:Meter Name
 
 EnergyManagementSystem:Sensor,
-    iw_occp_simple_sensor, !Name HWLoop demand inlet node temperature
-    iw_occp_simple,! Output:Variable or Output:Meter Index Key Name
+    iw_occp_base_sensor, !Name HWLoop demand inlet node temperature
+    iw_occp_base,! Output:Variable or Output:Meter Index Key Name
     Schedule Value; ! Output:Variable or Output:Meter Name
 !EnergyManagementSystem:Sensor,
 !    IW_HeatMode_sensor, !Name The IW history heat mode
 !    iw_heatmode_sch,! Output:Variable or Output:Meter Index Key Name
 !    Schedule Value; ! Output:Variable or Output:Meter Name
 
-!was externalinterface EnergyManagementSystem:Sensor,
-!    IAT_EFFEC_STPT_sensor, !Name HWLoop demand inlet node temperature
-!    IAT_EFFEC_STPT_sch,! Output:Variable or Output:Meter Index Key Name
-!    Schedule Value; ! Output:Variable or Output:Meter Name 
+EnergyManagementSystem:Sensor,
+    IAT_EFFEC_STPT, !Name HWLoop demand inlet node temperature
+    Heating set point schedule,! Output:Variable or Output:Meter Index Key Name
+    Schedule Value; ! Output:Variable or Output:Meter Name 
 
 !-   ===========  ALL OBJECTS IN CLASS: EnergyManagementSystem:GlobalVariable ===========
 EnergyManagementSystem:GlobalVariable,
@@ -15730,9 +15824,6 @@ EnergyManagementSystem:GlobalVariable,
     IW_AVG_ZDP;  !- IW average zone dewpoint temperature
 
 EnergyManagementSystem:GlobalVariable,
-    IAT_EFFEC_STPT;  !- Effective indoor air temperature stpt
-
-EnergyManagementSystem:GlobalVariable,
     IAT_EFFEC_STPT_iw_logics;  !- Effective indoor air temperature stpt from iw logics
 
 EnergyManagementSystem:GlobalVariable,
@@ -15754,25 +15845,16 @@ EnergyManagementSystem:GlobalVariable,
     CalculatedHeatingDmd;  !- The calculated heating demand by cpmdt
 
 EnergyManagementSystem:GlobalVariable,
+    AveragePPD;  !- The average PPD of all zones
+
+EnergyManagementSystem:GlobalVariable,
     AveragePMV;  !- The average PPD of all zones
  
 EnergyManagementSystem:GlobalVariable,
-    MaxPMV;  !- The max PPD of all zones
+    MaxPPD;  !- The max PPD of all zones
  
 EnergyManagementSystem:GlobalVariable,
     IW_OCCUPY_MODE;  !- The IW occupy mode flag
-
-EnergyManagementSystem:GlobalVariable,
-    Occp_First_Come_Hr;  !- The IW occupy mode flag
-
-EnergyManagementSystem:GlobalVariable,
-    Occp_Last_Leave_Hr;  !- The IW occupy mode flag
-
-EnergyManagementSystem:GlobalVariable,
-    Occp_First_Come_Hr_Rpt;  !- The IW occupy mode flag
-
-EnergyManagementSystem:GlobalVariable,
-    Occp_Last_Leave_Hr_Rpt;  !- The IW occupy mode flag
 
 EnergyManagementSystem:GlobalVariable,
     Time_Frac;  !- The IW occupy mode flag
@@ -15782,6 +15864,18 @@ EnergyManagementSystem:GlobalVariable,
 
 EnergyManagementSystem:GlobalVariable,
     Step_First_Flag;  !- The IW occupy mode flag
+
+EnergyManagementSystem:GlobalVariable,
+    Occupied_average_PPD;  !- The IW occupy mode flag
+
+EnergyManagementSystem:GlobalVariable,
+    Occupied_average_PPD_ct;  !- The IW occupy mode flag
+
+EnergyManagementSystem:GlobalVariable,
+    DEBUG;  !- The IW occupy mode flag
+
+EnergyManagementSystem:GlobalVariable,
+    Is_Occupied;  !- The IW occupy mode flag
 
 !-   ===========  ALL OBJECTS IN CLASS: EnergyManagementSystem:Program ===========
 EnergyManagementSystem:Program, 
@@ -15794,44 +15888,96 @@ EnergyManagementSystem:Program,
     SET IW_FREECOOL = 0,
     SET IW_MAX_ZDP = 50,
     SET IW_AVG_ZDP = 50,
-    SET IAT_EFFEC_STPT = IAT_temp_stpt_base,
-    SET IAT_EFFEC_STPT_iw_logics = IAT_temp_stpt_base,
+    SET IAT_EFFEC_STPT_iw_logics = 30.999,
     SET IW_OCCUPY_MODE = 0,
     SET IW_SWINGMODE = 0,
     SET CalculatedHeatingDmd = 0,
-    SET AveragePMV = 0,
-    SET MaxPMV = 0,
+    SET AveragePPD = 0,
+    SET MaxPPD = 0,
     SET AVE_CO2 = 0,
     SET IS_DAY = 0,
     SET Heating_spw_stpt = 30,
     SET Heating_spw_stpt_lastStep = Heating_spw_stpt,
     SET PID_error_lastStep = 0,
-    SET Occp_First_Come_Hr = -999,
-    SET Occp_Last_Leave_Hr = -999,
-    SET Occp_First_Come_Hr_Rpt = -999,
-    SET Occp_Last_Leave_Hr_Rpt = -999,
-    SET Set_iw_occp_simple = 0.0,
+    SET Set_iw_occp_sto = 0.0,
     SET Last_Hour = 23,
-    SET Step_First_Flag = 1;
+    SET Step_First_Flag = 1.0,
+    SET Is_Occupied = 0;
+
+EnergyManagementSystem:Program, 
+    InitVarAfterWarmUp, ! Name init all global variables to zero at the start of simulation. 
+    SET Occupied_average_PPD = 0,
+    SET Occupied_average_PPD_ct = 0;
 
 EnergyManagementSystem:Program,
-    CalcAvgNMaxPMV, ! Name Calculate the average and max PMV of all zones.
-    !- Calculate average Pmv
-    SET SumNumerator = seOff_pmv_sensor + swOff_pmv_sensor + neOff_pmv_sensor + nwOff_pmv_sensor + largeConf_pmv_sensor + central_pmv_sensor,
+    StochasticSch,           !- Name
+    !SET DebugRdm = Minute,   !- Program Line 1
+    !For office schedule
+    SET SclOff = 0.15, ! Change 1
+
+    SET RdmNorm_OccpOff = @RandomNormal 5 1 0 10,
+    SET RdmNorm_OccpOff = RdmNorm_OccpOff - 5,
+    SET OccpOffRaw = RdmNorm_OccpOff * SclOff + iw_occp_base_sensor,
+    SET OccpOffPrcd = @Min (@Max OccpOffRaw 0.0) 1.0,
+
+    SET RdmNorm_EquiOff = @RandomNormal 5 1 0 10,
+    SET RdmNorm_EquiOff = RdmNorm_EquiOff - 5,
+    SET EquiOffRaw = RdmNorm_EquiOff * SclOff + iw_occp_base_sensor,
+    SET EquiOffPrcd = @Min (@Max EquiOffRaw 0.1) 1.0,
+
+    !- Overwrite the schedules
+    IF IW_OCCUPY_MODE == 1,
+        SET Set_off_occpSch = OccpOffPrcd,  !- A44
+    ELSE,
+        SET Set_off_occpSch = 0,
+    ENDIF,
+    IF DayOfWeek == 1 || DayOfWeek == 7,
+        SET Set_off_occpSch = 0,
+    ENDIF,
+    SET Set_off_equiSch = EquiOffPrcd;  !- A49
+
+EnergyManagementSystem:Program,
+    IsOccupied,
+    IF iw_occp_sto_sensor > 0,
+        SET Is_Occupied = 1,
+    ELSE,
+        SET Is_Occupied = 0,
+    ENDIF;
+
+EnergyManagementSystem:Program,
+    InfiltrationSch,           !- Name
+    SET SumNumerator = seOff_PMV_sensor + swOff_PMV_sensor + neOff_PMV_sensor + nwOff_PMV_sensor + largeConf_PMV_sensor + central_PMV_sensor,
     SET SumDenominator = 6,
     SET AveragePMV = SumNumerator / SumDenominator,
-    !- Calculate max PMV
-    SET MaxPMV0 = @MAX seOff_pmv_sensor swOff_pmv_sensor,
-    SET MaxPMV1 = @MAX neOff_pmv_sensor nwOff_pmv_sensor,
-    SET MaxPMV2 = @MAX largeConf_pmv_sensor central_pmv_sensor,
-    SET MaxPMV3 = @MAX MaxPMV0 MaxPMV1,
-    SET MaxPMV4 = @MAX MaxPMV3 MaxPMV2,
-    SET MaxPMV = MaxPMV4,
-    !- Only show when occpied
-    IF iw_occp_simple_sensor == 0,
-      SET MaxPMV = -999,
-      SET AveragePMV = -999,
+    IF AveragePMV < 0.5,
+        SET Set_infiltration = 0.0125,
+    ELSE,
+        SET Set_infiltration = 0.0125,
     ENDIF;
+
+EnergyManagementSystem:Program,
+    CalcAvgNMaxPPD, ! Name Calculate the average and max PPD of all zones.
+    !- Calculate average PPD
+    SET SumNumerator = seOff_PPD_sensor + swOff_PPD_sensor + neOff_PPD_sensor + nwOff_PPD_sensor + largeConf_PPD_sensor + central_PPD_sensor,
+    SET SumDenominator = 6,
+    IF SumNumerator == 0.0,
+        SET AveragePPD = 30,
+    ELSE,
+        SET AveragePPD = SumNumerator / SumDenominator,
+    ENDIF,
+    !- Calulate average occupied PPD
+    IF iw_occp_sto_sensor > 0,
+        SET Occupied_average_PPD_ct = Occupied_average_PPD_ct + 1,
+        SET Occupied_average_PPD_cp = Occupied_average_PPD,
+        SET Occupied_average_PPD = (Occupied_average_PPD_cp * (Occupied_average_PPD_ct - 1) + AveragePPD) / Occupied_average_PPD_ct,
+    ENDIF,
+    !- Calculate max PPD
+    SET MaxPPD0 = @MAX seOff_PPD_sensor swOff_PPD_sensor,
+    SET MaxPPD1 = @MAX neOff_PPD_sensor nwOff_PPD_sensor,
+    SET MaxPPD2 = @MAX largeConf_PPD_sensor central_PPD_sensor,
+    SET MaxPPD3 = @MAX MaxPPD0 MaxPPD1,
+    SET MaxPPD4 = @MAX MaxPPD3 MaxPPD2,
+    SET MaxPPD = MaxPPD4;
 
 EnergyManagementSystem:Program,
     SetWeather, ! Name Set the weather data
@@ -15928,36 +16074,23 @@ EnergyManagementSystem:Program,
 
 EnergyManagementSystem:Program,
     CalEffecStpt_iw_logics, !- Name Calculate effective indoor air temp stpt
-    IF IW_COOLMODE == 1,
-    SET IAT_EFFEC_STPT_iw_logics = IAT_temp_stpt_base,
-    ELSEIF IW_HEATMODE == 1,
       IF DayOfWeek > 1 && DayOfWeek < 7, !- weekdays
         IF Hour >= Weekday_occup_st_hr && Hour < Weekday_occup_ed_hr, !- day time
-          SET IAT_EFFEC_STPT_iw_logics = IAT_temp_stpt_base,
+          SET IAT_EFFEC_STPT_iw_logics = 30.999,
           SET IW_OCCUPY_MODE = 1,
         ELSE,
-          SET IAT_EFFEC_STPT_iw_logics = IAT_temp_stpt_base - Heating_nightsetback, !- night time
+          SET IAT_EFFEC_STPT_iw_logics = 30.999 - Heating_nightsetback, !- night time
           SET IW_OCCUPY_MODE = 0,
         ENDIF,
       ELSEIF DayOfWeek == 1 || DayOfWeek == 7, !- weekends
         IF Hour >= Weekend_occup_st_hr && Hour < Weekend_occup_ed_hr, !- day time
-          SET IAT_EFFEC_STPT_iw_logics = IAT_temp_stpt_base - Heating_weekendsetback,
+          SET IAT_EFFEC_STPT_iw_logics = 30.999 - Heating_weekendsetback,
           SET IW_OCCUPY_MODE = 1, 
         ELSE,
-          SET IAT_EFFEC_STPT_iw_logics = IAT_temp_stpt_base - Heating_nightsetback, !- night time
+          SET IAT_EFFEC_STPT_iw_logics = 30.999 - Heating_nightsetback, !- night time
           SET IW_OCCUPY_MODE = 0,
         ENDIF,
-      ENDIF,
-    ENDIF;
-
-EnergyManagementSystem:Program,
-    CalEffecStpt, !- Name Calculate effective indoor air temp stpt
-    !was externalinterface SET IAT_EFFEC_STPT = IAT_EFFEC_STPT_sensor;
-    IF SETBACK_FLG_sensor == 1,
-      SET IAT_EFFEC_STPT = IAT_temp_stpt_base - 6,
-    ELSE,
-      SET IAT_EFFEC_STPT = IAT_temp_stpt_base,
-    ENDIF;
+      ENDIF;
 
 EnergyManagementSystem:Program,
     DeterIsDay, !- Name Determine whether IS_DAY
@@ -16155,9 +16288,9 @@ EnergyManagementSystem:Program,
       IF hw_ssp_mode == 0,
         SET Heating_spw_stpt = iw_hw_ssp_2017_sensor,
       ELSE,
-        SET Kp = 10,
-        SET PID_error_thisStep = IAT_EFFEC_STPT - IW_Node4_N_T_Ave,
-        SET Heating_spw_stpt_PID = Kp * PID_error_thisStep,!- Heating_spw_stpt_lastStep + Kp * (PID_error_thisStep - PID_error_lastStep),
+        SET Kp = 35,
+        SET PID_error_thisStep = (IAT_EFFEC_STPT - IW_Node4_N_T_Ave),
+        SET Heating_spw_stpt_PID = Kp * PID_error_thisStep, !Heating_spw_stpt + Kp*(PID_error_thisStep-PID_error_lastStep), !=
         SET PID_error_lastStep = PID_error_thisStep,
         IF IS_DAY == 0,
           SET PID_High = 51.5,
@@ -16170,29 +16303,30 @@ EnergyManagementSystem:Program,
           SET Heating_spw_stpt = Heating_spw_stpt_PID,
           SET Heating_spw_stpt = @MIN stpt_high Heating_spw_stpt,
         ELSE,
-          IF (IAT_EFFEC_STPT - IW_Node4_N_T_Ave) > 0.6,
-            SET Heating_spw_stpt = 65, !was 70
+          IF (IAT_EFFEC_STPT - IW_Node4_N_T_Ave) > 10.0,!0.6,
+            SET Heating_spw_stpt = 65, 
           ELSE,
             SET PID_High = 65,
             SET PID_Low = 26.7,
             IF IAT_EFFEC_STPT > 21.6,
-              SET PID_Bias = 33.3,
+              SET PID_Bias = 0,!33.3,
             ELSE,
-              SET PID_Bias = 30.5,
+              SET PID_Bias = 0,!30.5,
             ENDIF,
             SET Heating_spw_stpt_PID = Heating_spw_stpt_PID + PID_Bias,
             SET Heating_spw_stpt_PID = @MIN Heating_spw_stpt_PID PID_High,
             SET Heating_spw_stpt_PID = @MAX Heating_spw_stpt_PID PID_Low,
             SET stpt_high = 65,
             !- calculate the OAT bias
-            SET day_oat_bias_stpt_high = 28.0,
-            SET day_oat_bias_stpt_low = 0.0,
-            SET day_oat_bias_oat_high = 7.2,
-            SET day_oat_bias_oat_low = -17.8,
+            SET day_oat_bias_stpt_high = 30.0,
+            SET day_oat_bias_stpt_low = -30,!0.0,
+            SET day_oat_bias_oat_high = 20.0,!7.2,
+            SET day_oat_bias_oat_low = -15.0,
             SET day_oat_bias_stpt = day_oat_bias_stpt_high + (day_oat_bias_stpt_low - day_oat_bias_stpt_high)/(day_oat_bias_oat_high - day_oat_bias_oat_low) * (OAT - day_oat_bias_oat_low),
             SET day_oat_bias_stpt = @MAX day_oat_bias_stpt day_oat_bias_stpt_low,
             SET day_oat_bias_stpt = @MIN day_oat_bias_stpt day_oat_bias_stpt_high,
             !- final daytime setpoint
+            SET DEBUG = day_oat_bias_stpt,
             SET Heating_spw_stpt = Heating_spw_stpt_PID + day_oat_bias_stpt,
             SET Heating_spw_stpt = @MIN Heating_spw_stpt stpt_high,
           ENDIF,
@@ -16237,52 +16371,6 @@ EnergyManagementSystem:Program,
       SET Set_radpanel_cooling_control_temp_low = 45, !- if zone temp < cooling control temp low, radpanel full off              
     ENDIF;
 
-EnergyManagementSystem:Program,
-    StoOccpSch,
-    ! Set first come time at every 0:05
-    IF (Hour == 0 && Last_Hour == 23) || (Step_First_Flag == 1),
-      ! For weekdays
-      IF DayOfWeek > 1 && DayOfWeek < 7,
-        SET Occp_First_Come_Hr = @RandomNormal 8 1 7 10,
-      ELSE,
-      ! For weekends
-        SET Occp_First_Come_Hr = @RandomNormal 10 3 8 14,
-        IF Occp_First_Come_Hr > 12,
-          SET Occp_First_Come_Hr = 99,
-        ENDIF,
-      ENDIF,
-      SET Occp_First_Come_Hr_Rpt = @Round Occp_First_Come_Hr,
-    !ELSE,
-    !  SET Occp_First_Come_Hr_Rpt = 99,
-    ENDIF,
-    ! Set last leave time at every 0:05
-    IF (Hour == 0 && Last_Hour == 23) || (Step_First_Flag == 1),
-      ! For weekdays
-      IF DayOfWeek > 1 && DayOfWeek < 7,
-        SET Occp_Last_Leave_Hr = @RandomNormal 18 1 17 20,
-      ELSE,
-      ! For weekends
-        IF Occp_First_Come_Hr <= 24,
-          SET Occp_Last_Leave_Hr = @RandomNormal 16 2 14 18,
-        ELSE,
-          SET Occp_Last_Leave_Hr = -99,
-        ENDIF,
-      ENDIF,
-      SET Occp_Last_Leave_Hr_Rpt = @Round Occp_Last_Leave_Hr,
-    !ELSE,
-    !  SET Occp_Last_Leave_Hr_Rpt = -999,
-    ENDIF,
-    ! Set the schedule
-    SET Time_Frac = CurrentTime,
-    IF (Time_Frac < Occp_First_Come_Hr),
-      SET Set_iw_occp_simple = 0.0,
-    ELSEIF ((Time_Frac >= Occp_First_Come_Hr) && (Time_Frac < Occp_Last_Leave_Hr)),
-      SET Set_iw_occp_simple = 1.0,
-    ELSE,
-      SET Set_iw_occp_simple = 0.0,
-    ENDIF,
-
-    SET Last_Hour = Hour;
 
 EnergyManagementSystem:Program,
     Step_First_Flag_Set,
@@ -16295,8 +16383,14 @@ EnergyManagementSystem:ProgramCallingManager,
     InitVar; ! Program Name 1
 
 EnergyManagementSystem:ProgramCallingManager,
+    init_program_call_aftwarmup, ! Name
+    AfterNewEnvironmentWarmUpIsComplete, ! EnergyPlus Model Calling Point
+    InitVarAfterWarmUp; ! Program Name 1
+
+EnergyManagementSystem:ProgramCallingManager,
     weather_set_call, ! Name
     BeginTimestepBeforePredictor, ! EnergyPlus Model Calling Point
+    InfiltrationSch,
     SetWeather; ! Program Name 1
 
 EnergyManagementSystem:ProgramCallingManager,
@@ -16313,7 +16407,6 @@ EnergyManagementSystem:ProgramCallingManager,
     DeterCWSIEN, ! Program Name 1
     DeterHWOEN,
     DeterMODE,
-    CalEffecStpt,
     CalEffecStpt_iw_logics,
     DeterIsDay, 
     DeterFreecool,
@@ -16322,18 +16415,24 @@ EnergyManagementSystem:ProgramCallingManager,
     DeterHeatRecvOp,
     DeterGasBurnerOp,
     DeterRegenFanOp,
-    CtrlRadiantSys,
-    StoOccpSch;
+    CtrlRadiantSys;
 
 EnergyManagementSystem:ProgramCallingManager,
     sensor_output_calls, ! Name the programs here do the calculation based on this time-step results, and output them
     EndOfZoneTimestepBeforeZoneReporting, ! EnergyPlus Model Calling Point
-    CalcAvgNMaxPMV,
+    CalcAvgNMaxPPD,
     CalDmdHeatingDmd,
-    Step_First_Flag_Set; 
+    Step_First_Flag_Set,
+    IsOccupied,
+    StochasticSch; 
 
 
 !-   ===========  ALL OBJECTS IN CLASS: EnergyManagementSystem:Actuator ===========
+EnergyManagementSystem:Actuator,
+    Set_infiltration, !- Name
+    Infiltration_Mar_More, !- Actuated Component Unique Name
+    Schedule:Compact, !- Actuated Component Type
+    Schedule Value ; !- Actuated Component Control Type
 
 EnergyManagementSystem:Actuator,
     Set_mullion_op, !- Name
@@ -16475,12 +16574,6 @@ EnergyManagementSystem:Actuator,
     Schedule Value ; !- Actuated Component Control Type
 
 EnergyManagementSystem:Actuator,
-    Set_iw_occp_simple, !- Name
-    iw_occp_simple, !- Actuated Component Unique Name
-    Schedule:Compact, !- Actuated Component Type
-    Schedule Value ; !- Actuated Component Control Type
-
-EnergyManagementSystem:Actuator,
     Set_oat, !- Name
     Environment, !- Actuated Component Unique Name
     Weather Data, !- Actuated Component Type
@@ -16533,6 +16626,19 @@ EnergyManagementSystem:Actuator,
     tempCHWLoop, !- Actuated Component Unique Name
     Plant Loop Overall, !- Actuated Component Type
     On/Off Supervisory; !- Actuated Component Control Type
+
+EnergyManagementSystem:Actuator,
+    Set_off_occpSch, !- Name
+    iw_occp_sto, !- Actuated Component Unique Name
+    Schedule:Compact, !- Actuated Component Type
+    Schedule Value; !- Actuated Component Control Type
+
+EnergyManagementSystem:Actuator,
+    Set_off_equiSch, !- Name
+    iw_equip_sto, !- Actuated Component Unique Name
+    Schedule:Compact, !- Actuated Component Type
+    Schedule Value; !- Actuated Component Control Type
+
 
 !-   ===========  ALL OBJECTS IN CLASS: EnergyManagementSystem:OutputVariable ===========
 EnergyManagementSystem:OutputVariable,
@@ -16640,14 +16746,6 @@ EnergyManagementSystem:OutputVariable,
     ;
 
 EnergyManagementSystem:OutputVariable,
-    IW Base Zone Air Temperature Setpoint, ! Name
-    IAT_temp_stpt_base, ! EMS Variable Name
-    Averaged, ! Type of Data in Variable
-    ZoneTimeStep, ! Update Frequency
-    ,      ! EMS Program or Subroutine Name
-    C;
-
-EnergyManagementSystem:OutputVariable,
     IW Hot Water System OA Enable Flag OA Setpoint, ! Name
     HWOEN_stpt, ! EMS Variable Name
     Averaged, ! Type of Data in Variable
@@ -16712,28 +16810,30 @@ EnergyManagementSystem:OutputVariable,
     ;
 
 EnergyManagementSystem:OutputVariable,
-    IW Occp First Come Pred, ! Name
-    Occp_First_Come_Hr_Rpt, ! EMS Variable Name
+    IW Occupied Average PPD in the Run, ! Name
+    Occupied_average_PPD, ! EMS Variable Name
     Averaged, ! Type of Data in Variable
     ZoneTimeStep, ! Update Frequency
     ,      ! EMS Program or Subroutine Name
     ;
 
 EnergyManagementSystem:OutputVariable,
-    IW Occp Last Leave Pred, ! Name
-    Occp_Last_Leave_Hr_Rpt, ! EMS Variable Name
+    DEBUG OUTPUT, ! Name
+    DEBUG, ! EMS Variable Name
     Averaged, ! Type of Data in Variable
     ZoneTimeStep, ! Update Frequency
     ,      ! EMS Program or Subroutine Name
     ;
 
 EnergyManagementSystem:OutputVariable,
-    IW Occp Mode, ! Name
-    IW_occp_simple_sensor, ! EMS Variable Name
+    IW Is Occupied, ! Name
+    Is_Occupied, ! EMS Variable Name
     Averaged, ! Type of Data in Variable
     ZoneTimeStep, ! Update Frequency
     ,      ! EMS Program or Subroutine Name
     ;
+
+
 !
 !EnergyManagementSystem:OutputVariable,
 !    IW Outdoor Dry Bulb Air Temperature, ! Name
@@ -16963,34 +17063,10 @@ EnergyManagementSystem:OutputVariable,
 EnergyManagementSystem:OutputVariable,  
     IW Calculated Heating Demand, ! Name            
     CalculatedHeatingDmd, ! EMS Variable Name           
-    Averaged, ! Type of Data in Variable            
+    summed, ! Type of Data in Variable            
     ZoneTimeStep, ! Update Frequency            
     ,      ! EMS Program or Subroutine Name         
     kW;
-
-EnergyManagementSystem:OutputVariable,  
-    DEBUG_1, ! Name            
-    Occp_First_Come_Hr, ! EMS Variable Name           
-    Averaged, ! Type of Data in Variable            
-    ZoneTimeStep, ! Update Frequency            
-    ,      ! EMS Program or Subroutine Name         
-    ;
-
-EnergyManagementSystem:OutputVariable,  
-    DEBUG_2, ! Name            
-    Occp_Last_Leave_Hr, ! EMS Variable Name           
-    Averaged, ! Type of Data in Variable            
-    ZoneTimeStep, ! Update Frequency            
-    ,      ! EMS Program or Subroutine Name         
-    ;
-
-EnergyManagementSystem:OutputVariable,  
-    DEBUG_3, ! Name            
-    Minute, ! EMS Variable Name           
-    Averaged, ! Type of Data in Variable            
-    ZoneTimeStep, ! Update Frequency            
-    ,      ! EMS Program or Subroutine Name         
-    ;
 
 EnergyManagementSystem:OutputVariable,  
     IW Hot Water Supply Setpoint, ! Name            
@@ -17001,6 +17077,14 @@ EnergyManagementSystem:OutputVariable,
     C;
 
 EnergyManagementSystem:OutputVariable,  
+    IW Average PPD, ! Name            
+    AveragePPD, ! EMS Variable Name           
+    Averaged, ! Type of Data in Variable            
+    ZoneTimeStep, ! Update Frequency            
+    ,      ! EMS Program or Subroutine Name         
+    %;
+
+EnergyManagementSystem:OutputVariable,  
     IW Average PMV, ! Name            
     AveragePMV, ! EMS Variable Name           
     Averaged, ! Type of Data in Variable            
@@ -17009,32 +17093,16 @@ EnergyManagementSystem:OutputVariable,
     %;
 
 EnergyManagementSystem:OutputVariable,  
-    IW Max PMV, ! Name            
-    MaxPMV, ! EMS Variable Name           
+    IW Max PPD, ! Name            
+    MaxPPD, ! EMS Variable Name           
     Averaged, ! Type of Data in Variable            
     ZoneTimeStep, ! Update Frequency            
     ,      ! EMS Program or Subroutine Name         
     %;
 
 EnergyManagementSystem:OutputVariable,  
-    IW Effective IAT Setpoint, ! Name            
-    IAT_EFFEC_STPT, ! EMS Variable Name           
-    Averaged, ! Type of Data in Variable            
-    ZoneTimeStep, ! Update Frequency            
-    ,      ! EMS Program or Subroutine Name         
-    C;
-
-EnergyManagementSystem:OutputVariable,  
     IW Occupy Mode Flag, ! Name            
     IW_OCCUPY_MODE, ! EMS Variable Name           
-    Averaged, ! Type of Data in Variable            
-    ZoneTimeStep, ! Update Frequency            
-    ,      ! EMS Program or Subroutine Name         
-    ;
-
-EnergyManagementSystem:OutputVariable,  
-    Setback Flag Sensor, ! Name            
-    SETBACK_FLG_sensor, ! EMS Variable Name           
     Averaged, ! Type of Data in Variable            
     ZoneTimeStep, ! Update Frequency            
     ,      ! EMS Program or Subroutine Name         
@@ -17056,28 +17124,7 @@ Schedule:Compact,
     Through: 31 Dec,            !- Field 9
     For: AllDays,                     !- Field 10
     Until: 24:00,            !- Field 11
-    1;                    !- Field 12
-
-Schedule:Compact,
-    IAT_temp_stpt_base_sch,        !- Name
-    Any Number,                !- Schedule Type Limits Name
-    Through: 31 Dec,         
-    For: AllDays,            
-    Until: 24:00,            
-    24;    
-!was before
-!Schedule:Compact,
- !   IAT_temp_stpt_base_sch,        !- Name
- !   Any Number,                !- Schedule Type Limits Name
- !   Through: 28 Feb,         !- Field 1 was 31 Dec
- !   For: AllDays,            !- Field 2
- !   Until: 24:00,            !- Field 3
- !   22.7,                       !- Field 4 was 22.2
- !   !The following lines was not here
- !   Through: 31 Dec,         
- !   For: AllDays,            
- !   Until: 24:00,            
- !   22.2;                      
+    1;                    !- Field 12                
 
 Schedule:Compact,
     HWOEN_stpt_sch,        !- Name
@@ -17118,7 +17165,7 @@ Schedule:Compact,
     Through: 31 Dec,         !- Field 1
     For: AllDays,            !- Field 2
     Until: 24:00,            !- Field 3
-    0;                       !- Field 4
+    7;                       !- Field 4
 
 Schedule:Compact,
     Weekday_occup_ed_hr_sch,        !- Name
@@ -17126,7 +17173,7 @@ Schedule:Compact,
     Through: 31 Dec,         !- Field 1
     For: AllDays,            !- Field 2
     Until: 24:00,            !- Field 3
-    24;                       !- Field 4
+    20;                       !- Field 4
 
 Schedule:Compact,
     Weekend_occup_st_hr_sch,        !- Name
@@ -17134,7 +17181,7 @@ Schedule:Compact,
     Through: 31 Dec,         !- Field 1
     For: AllDays,            !- Field 2
     Until: 24:00,            !- Field 3
-    0;                       !- Field 4
+    8;                       !- Field 4
 
 Schedule:Compact,
     Weekend_occup_ed_hr_sch,        !- Name
@@ -17142,7 +17189,7 @@ Schedule:Compact,
     Through: 31 Dec,         !- Field 1
     For: AllDays,            !- Field 2
     Until: 24:00,            !- Field 3
-    24;                       !- Field 4
+    19;                       !- Field 4
 
 !Schedule:Compact,
 !    Heating_spw_stpt_sch,        !- Name
@@ -17466,12 +17513,3 @@ Schedule:Compact,
 !-   ===========  ALL OBJECTS IN CLASS: Schedule:File ===========
 
 !-   ===========  ALL OBJECTS IN CLASS: ExternalInterface ===========
-
-ExternalInterface,           !- Object to activate the external interface
-    PtolemyServer;              !- Name of external interface
-
-
-ExternalInterface:Schedule,
-    SETBACK_FLG,                 !- Name
-    Any number,             !- ScheduleType
-    1;                      !- Initial value, used during warm-up

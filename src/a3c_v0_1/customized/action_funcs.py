@@ -937,6 +937,33 @@ def act_func_part3_sgp_sto_v1(action_raw, action_raw_idx, raw_state_limits, stpt
                         'the demand %s W.'%(action_raw_idx, action_ret_idx, clg_demand));
     return (action_ret, action_ret_idx);
 
+def act_func_part4_v1(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
+    """
+    Increment the current stpt by the action within the limit.
+    
+    Args:
+        action_raw: (float, )
+            The raw action planned to be taken.
+        action_raw_idx: int
+            The index of the action in the action space.
+        stptLmt: [[float, float], [float, float], ...]
+            The low limit (included) and high limit (included) for each type of the actions.
+        ob_this_raw: [float]
+            The raw observation.
+        
+    Return: tuple
+        A tuple with length 2. The index 0 is a tuple of resulting action, 
+        and the index 1 is a tuple of resulting action idx.
+    """
+    IAT_STPT_IDX = 4;
+
+    iat_stpt_ob = ob_this_raw[IAT_STPT_IDX];
+    iat_stpt_act_raw = iat_stpt_ob + action_raw[0];
+    action_ret = [max(min(iat_stpt_act_raw, stptLmt[0][1]), stptLmt[0][0])];
+    action_ret_idx = action_raw_idx;
+
+    return (action_ret, action_ret_idx);
+
 def cslDxCool_ahuStptIncmt(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
     """
     Pass the raw action as the output. 
@@ -986,4 +1013,5 @@ act_func_dict = {'1':[mull_stpt_iw, act_limits_iw_1],
                 'part3_shg_det_v1':[act_func_part3_shg_det_v1, act_limits_part3_v1],
                 'part3_shg_sto_v1':[act_func_part3_shg_sto_v1, act_limits_part3_v1],
                 'part3_sgp_det_v1':[act_func_part3_sgp_det_v1, act_limits_part3_v1],
-                'part3_sgp_sto_v1':[act_func_part3_sgp_sto_v1, act_limits_part3_v1],}
+                'part3_sgp_sto_v1':[act_func_part3_sgp_sto_v1, act_limits_part3_v1],
+                'part4_v1':[act_func_part4_v1, act_limits_part4_v1]}

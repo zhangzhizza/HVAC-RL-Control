@@ -1242,6 +1242,53 @@ def rl_parametric_metric_part3_v1(ob_next_raw, this_ep_energy, this_ep_comfort):
     
     return (this_ep_energy_toNow, this_ep_comfort_toNow);
 
+def rl_parametric_reward_part4_v1(ob_this_prcd, action_this_prcd, ob_next_prcd, pcd_state_limits, e_weight, p_weight, stpt_violation_scl):
+    """
+    Reward = system_energy + shortcycle_penl + stptnmt_penl
+    """
+    PPD_IDX = 6;
+    OCP_IDX = 7;
+    HTD_IDX = 9;
+
+    # PPD_penl: penalize PPD larger than 0.1
+    ppd = ob_next_prcd[PPD_IDX + TIMESTATE_LEN];
+    ocp = ob_next_prcd[OCP_IDX + TIMESTATE_LEN];
+    ppd_penl = 0.0;
+    if ocp == 0:
+        ppd_penl = 0.0;
+    else:
+        if ppd <= 0.1:
+            ppd_penl = 0.0;
+        else:
+            ppd_penl = (ppd - 0.1) * stpt_violation_scl;
+    ppd_penl = p_weight * ppd_penl;
+    # energy reward
+    hvac_energy = ob_next_prcd[HTD_IDX + TIMESTATE_LEN];
+    egy_penl = e_weight*hvac_energy;
+    # final reward
+    reward = max(1 - egy_penl - ppd_penl, 0);
+    return reward;
+
+def rl_parametric_metric_part4_v1(ob_next_raw, this_ep_energy, this_ep_comfort):
+    """
+    
+    """ 
+    PPD_IDX = 6;
+    OCP_IDX = 7;
+    HTD_IDX = 9;
+
+    energy = ob_next_raw[HTD_IDX]; # kW
+    ppd = ob_next_raw[PPD_IDX]; # %
+    ocp = ob_next_raw[OCP_IDX]; # 1 or 0
+
+    this_ep_energy_toNow = this_ep_energy + energy; # Unit is kWh*timestep
+    if ocp == 0:
+        this_ep_comfort_toNow = this_ep_comfort + 0;
+    else:
+        this_ep_comfort_toNow = this_ep_comfort + ppd;
+    
+    return (this_ep_energy_toNow, this_ep_comfort_toNow);
+
 def _is_chiller_short_cycle(ob_this_prcd, ob_next_prcd, CHILLERX_SHTCY_IDX, CHILLERX_ONOFF_IDX):
     chillerX_cycle_this = ob_this_prcd[CHILLERX_SHTCY_IDX + TIMESTATE_LEN];
     chillerX_onoff_this = ob_this_prcd[CHILLERX_ONOFF_IDX + TIMESTATE_LEN];
@@ -1275,12 +1322,14 @@ reward_func_dict = {'1': err_energy_reward_iw,
                     'part3_v1': rl_parametric_reward_part3_v1,
                     'part3_v2': rl_parametric_reward_part3_v2,
                     'part3_v3': rl_parametric_reward_part3_v3,
-                    'part3_v4': rl_parametric_reward_part3_v4,}
+                    'part3_v4': rl_parametric_reward_part3_v4,
+                    'part4_v1': rl_parametric_reward_part4_v1}
 
 metric_func_dict = {
                     'cslDxCool_1': stptVio_energy_metric_cslDxCool_v1,
                     'cslDxCool_2': stptVio_energy_metric_cslDxCool_v2,
                     'part1_v1': stpt_viol_energy_metric_part1_v1,
                     'part2_v1': stpt_viol_energy_metric_part2_v1,
-                    'part3_v1': rl_parametric_metric_part3_v1,}
+                    'part3_v1': rl_parametric_metric_part3_v1,
+                    'part4_v1': rl_parametric_metric_part4_v1}
 
