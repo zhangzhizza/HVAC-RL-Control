@@ -1244,48 +1244,51 @@ def rl_parametric_metric_part3_v1(ob_next_raw, this_ep_energy, this_ep_comfort):
 
 def rl_parametric_reward_part4_v1(ob_this_prcd, action_this_prcd, ob_next_prcd, pcd_state_limits, e_weight, p_weight, stpt_violation_scl):
     """
-    Reward = system_energy + shortcycle_penl + stptnmt_penl
+    Reward = system_energy + pmv_penal
     """
-    PPD_IDX = 6;
+    PMV_IDX = 6;
     OCP_IDX = 7;
-    HTD_IDX = 9;
+    BGR_IDX = 9;
 
-    # PPD_penl: penalize PPD larger than 0.1
-    ppd = ob_next_prcd[PPD_IDX + TIMESTATE_LEN];
+    pmv_min = pcd_state_limits[0][PMV_IDX + TIMESTATE_LEN]
+    pmv_max = pcd_state_limits[1][PMV_IDX + TIMESTATE_LEN]
+    # PMV_penl: penalize PMV smaller than -0.5
+    pmv_prcd = ob_next_prcd[PMV_IDX + TIMESTATE_LEN];
+    pmv_raw = pmv_min + pmv_prcd*(pmv_max - pmv_min);
     ocp = ob_next_prcd[OCP_IDX + TIMESTATE_LEN];
-    ppd_penl = 0.0;
+    pmv_penl = 0.0;
+    pmv_thres = -0.5;
     if ocp == 0:
-        ppd_penl = 0.0;
+        pmv_penl = 0.0;
     else:
-        if ppd <= 0.1:
-            ppd_penl = 0.0;
+        if pmv_raw >= pmv_thres:
+            pmv_penl = 0.0;
         else:
-            ppd_penl = (ppd - 0.1) * stpt_violation_scl;
-    ppd_penl = p_weight * ppd_penl;
+            pmv_penl = (pmv_thres - pmv_raw) * stpt_violation_scl;
+    pmv_penl = p_weight * pmv_penl;
     # energy reward
-    hvac_energy = ob_next_prcd[HTD_IDX + TIMESTATE_LEN];
+    hvac_energy = ob_next_prcd[BGR_IDX + TIMESTATE_LEN];
     egy_penl = e_weight*hvac_energy;
     # final reward
-    reward = max(1 - egy_penl - ppd_penl, 0);
+    reward = max(1 - egy_penl - pmv_penl, 0);
     return reward;
 
 def rl_parametric_metric_part4_v1(ob_next_raw, this_ep_energy, this_ep_comfort):
     """
-    
     """ 
-    PPD_IDX = 6;
+    PMV_IDX = 6;
     OCP_IDX = 7;
-    HTD_IDX = 9;
+    BGR_IDX = 9;
 
-    energy = ob_next_raw[HTD_IDX]; # kW
-    ppd = ob_next_raw[PPD_IDX]; # %
+    energy = ob_next_raw[BGR_IDX]; # W
+    pmv = ob_next_raw[PMV_IDX]; # %
     ocp = ob_next_raw[OCP_IDX]; # 1 or 0
 
     this_ep_energy_toNow = this_ep_energy + energy; # Unit is kWh*timestep
     if ocp == 0:
         this_ep_comfort_toNow = this_ep_comfort + 0;
     else:
-        this_ep_comfort_toNow = this_ep_comfort + ppd;
+        this_ep_comfort_toNow = this_ep_comfort + pmv;
     
     return (this_ep_energy_toNow, this_ep_comfort_toNow);
 

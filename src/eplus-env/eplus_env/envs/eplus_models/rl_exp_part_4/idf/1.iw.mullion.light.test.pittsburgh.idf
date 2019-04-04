@@ -13969,13 +13969,13 @@ Branch,
 ! - Component 1 outlet node name
 ! - Component 1 branch control type
 Branch,
-    CMU DistrictHeating tempHWLoop Supply Side Branch,  !- Name
+    Boiler1 tempHWLoop Supply Side Branch,  !- Name
     0.00300,                !- Maximum Flow Rate {m3/s}
     ,                        !- Pressure Drop Curve Name
-    DistrictHeating,         !- Component 1 Object Type
-    CMU DistrictHeating,                  !- Component 1 Name
-    CMU DistrictHeating Water Inlet Node, !- Component 1 Inlet Node Name
-    CMU DistrictHeating Water Outlet Node,!- Component 1 Outlet Node Name
+    Boiler:HotWater,         !- Component 1 Object Type
+    Boiler1,                  !- Component 1 Name
+    Boiler1 Water Inlet Node, !- Component 1 Inlet Node Name
+    Boiler1 Water Outlet Node,!- Component 1 Outlet Node Name
     Active;                  !- Component 1 Branch Control Type
 
 ! - Branch name
@@ -14364,7 +14364,7 @@ BranchList,
     tempHWLoop Supply Side Branches,  !- Name
     tempHWLoop Supply Side Inlet Branch,  !- Branch 1 Name
     tempHWLoop Supply Side Bypass Branch,  !- Branch 2 Name
-    CMU DistrictHeating tempHWLoop Supply Side Branch,  !- Branch 3 Name
+    Boiler1 tempHWLoop Supply Side Branch,  !- Branch 3 Name
     tempHWLoop Supply Side Outlet Branch;  !- Branch 4 Name
 
 ! - Name of branch list
@@ -14462,7 +14462,7 @@ Connector:Splitter,
     tempHWLoop Supply Splitter,  !- Name
     tempHWLoop Supply Side Inlet Branch,  !- Inlet Branch Name
     tempHWLoop Supply Side Bypass Branch,  !- Outlet Branch 1 Name
-    CMU DistrictHeating tempHWLoop Supply Side Branch;  !- Outlet Branch 2 Name
+    Boiler1 tempHWLoop Supply Side Branch;  !- Outlet Branch 2 Name
 
 ! - Splitter name
 ! - Inlet branch name
@@ -14554,7 +14554,7 @@ Connector:Mixer,
 Connector:Mixer,
     tempHWLoop Supply Mixer, !- Name
     tempHWLoop Supply Side Outlet Branch,  !- Outlet Branch Name
-    CMU DistrictHeating tempHWLoop Supply Side Branch,  !- Inlet Branch 1 Name
+    Boiler1 tempHWLoop Supply Side Branch,  !- Inlet Branch 1 Name
     tempHWLoop Supply Side Bypass Branch;  !- Inlet Branch 2 Name
 
 ! - Mixer name
@@ -14834,14 +14834,39 @@ Pump:ConstantSpeed,
     0.0,                   !- Fraction of Motor Inefficiencies to Fluid Stream
     Intermittent;          !- Pump Control Type
 
-!-   ===========  ALL OBJECTS IN CLASS: DistrictHeating ===========
+!-   ===========  ALL OBJECTS IN CLASS: Boiler:HotWater ===========
 
-DistrictHeating,
-    CMU DistrictHeating,                  !- Name
-    CMU DistrictHeating Water Inlet Node, !- Hot Water Inlet Node Name
-    CMU DistrictHeating Water Outlet Node,!- Hot Water Outlet Node Name
-    400000,                                 !- Nominal Capacity 
-    ;                                 !- Capacity Fraction Schedule Name
+Boiler:HotWater,
+  Boiler1,   !- Boiler Name
+  NaturalGas,          !- Fuel Type
+  autosize,               !- Nominal Capacity {W}
+  0.89,       !- Nominal Thermal Efficiency
+  EnteringBoiler,                !- Efficiency Curve Temperature Evaluation Variable
+  CondensingBoilerEff, !- Boiler Efficiency Curve Name
+  75,                  !- Design Boiler Water Outlet Temp {C}
+  0.0021,              !- Max Design Boiler Water Flow Rate {m3/s}
+  0.10,                !- Minimum Part Load Ratio
+  1.00,                !- Maximum Part Load Ratio
+  1.00,                !- Optimum Part Load Ratio
+  Boiler1 Water Inlet Node,   !- Boiler Water Inlet Node
+  Boiler1 Water Outlet Node,  !- Boiler Water Outlet Node
+  80,                  !- Temp Upper Limit Water Outlet {C}
+  ConstantFlow,        !- Boiler Flow Mode
+  25.0;                !- Parasitic Electric Load {W}
+
+Curve:Biquadratic,
+  CondensingBoilerEff,     !- Name
+  1.124970374,             !- Coefficient1 Constant
+  0.014963852,             !- Coefficient2 x
+ -0.02599835,              !- Coefficient3 x**2
+  0.0,                     !- Coefficient4 y
+ -1.40464E-6,              !- Coefficient5 y**2
+ -0.00153624,              !- Coefficient6 x*y
+  0.1,                     !- Minimum Value of x
+  1.0,                     !- Maximum Value of x
+  30.0,                    !- Minimum Value of y
+  85.0;                    !- Maximum Value of y
+
 
 
 !-   ===========  ALL OBJECTS IN CLASS: DistrictCooling ===========
@@ -14960,8 +14985,8 @@ PlantLoop,
 ! - Equipment 1 name
 PlantEquipmentList,
     tempHWLoop Scheme 1 Range 1 Equipment List,  !- Name
-    DistrictHeating,         !- Equipment 1 Object Type
-    CMU DistrictHeating;                  !- Equipment 1 Name
+    Boiler:HotWater,         !- Equipment 1 Object Type
+    Boiler1;                  !- Equipment 1 Name
 
 ! - Range equipment list name 0
 ! - Equipment 1 object type
@@ -15379,6 +15404,11 @@ Output:Variable,
 
 Output:Variable,
     *, !- Key Value
+    IW Occupied Average PMV in the Run, !- Variable Name
+    timestep; !- Reporting
+
+Output:Variable,
+    *, !- Key Value
     DEBUG OUTPUT, !- Variable Name
     timestep; !- Reporting
 
@@ -15387,7 +15417,15 @@ Output:Variable,
     IW Is Occupied, !- Variable Name
     timestep; !- Reporting
 
+Output:Variable,
+    *, !- Key Value
+    Boiler Gas Rate, !- Variable Name
+    timestep; !- Reporting
 
+Output:Variable,
+    *, !- Key Value
+    Boiler Gas Rate, !- Variable Name
+    RunPeriod; !- Reporting
 !Output:Variable,
 !    *, !- Key Value
 !    Debug_1, !- Variable Name
@@ -15818,6 +15856,12 @@ EnergyManagementSystem:GlobalVariable,
     Occupied_average_PPD_ct;  !- The IW occupy mode flag
 
 EnergyManagementSystem:GlobalVariable,
+    Occupied_average_PMV;  
+
+EnergyManagementSystem:GlobalVariable,
+    Occupied_average_PMV_ct;  
+
+EnergyManagementSystem:GlobalVariable,
     DEBUG;  !- The IW occupy mode flag
 
 EnergyManagementSystem:GlobalVariable,
@@ -15853,7 +15897,9 @@ EnergyManagementSystem:Program,
 EnergyManagementSystem:Program, 
     InitVarAfterWarmUp, ! Name init all global variables to zero at the start of simulation. 
     SET Occupied_average_PPD = 0,
-    SET Occupied_average_PPD_ct = 0;
+    SET Occupied_average_PPD_ct = 0,
+    SET Occupied_average_PMV = 0,
+    SET Occupied_average_PMV_ct = 0;
 
 EnergyManagementSystem:Program,
     StochasticSch,           !- Name
@@ -15880,7 +15926,17 @@ EnergyManagementSystem:Program,
     InfiltrationSch,           !- Name
     SET SumNumerator = seOff_PMV_sensor + swOff_PMV_sensor + neOff_PMV_sensor + nwOff_PMV_sensor + largeConf_PMV_sensor + central_PMV_sensor,
     SET SumDenominator = 6,
-    SET AveragePMV = SumNumerator / SumDenominator,
+    IF SumNumerator == 0.0,
+        SET AveragePMV = -0.75,
+    ELSE,
+        SET AveragePMV = SumNumerator / SumDenominator,
+    ENDIF,
+    !- Calulate average occupied PMV
+    IF iw_occp_sto_sensor > 0,
+        SET Occupied_average_PMV_ct = Occupied_average_PMV_ct + 1,
+        SET Occupied_average_PMV_cp = Occupied_average_PMV,
+        SET Occupied_average_PMV = (Occupied_average_PMV_cp * (Occupied_average_PMV_ct - 1) + AveragePMV) / Occupied_average_PMV_ct,
+    ENDIF,
     IF AveragePMV < 0.5,
         SET Set_infiltration = 0.0125,
     ELSE,
@@ -16276,7 +16332,7 @@ EnergyManagementSystem:Program,
         ENDIF,
         IF IS_RECIRC_ON == 1,
           IF (IAT_EFFEC_STPT - IW_Node4_N_T_Ave) < 0.3,
-            SET Heating_spw_stpt = IW_Node4_N_T_Ave,
+            SET Heating_spw_stpt = IW_Node4_N_T_Ave - 5,
           ENDIF,
         ELSE,
           SET Heating_spw_stpt = @MAX 30.0 Heating_spw_stpt,
@@ -16322,7 +16378,7 @@ EnergyManagementSystem:ProgramCallingManager,
 EnergyManagementSystem:ProgramCallingManager,
     weather_set_call, ! Name
     BeginTimestepBeforePredictor, ! EnergyPlus Model Calling Point
-    InfiltrationSch,
+    CtrlRadiantSys,
     SetWeather; ! Program Name 1
 
 EnergyManagementSystem:ProgramCallingManager,
@@ -16346,12 +16402,12 @@ EnergyManagementSystem:ProgramCallingManager,
     SemcoSyncOp,
     DeterHeatRecvOp,
     DeterGasBurnerOp,
-    DeterRegenFanOp,
-    CtrlRadiantSys;
+    DeterRegenFanOp;
 
 EnergyManagementSystem:ProgramCallingManager,
     sensor_output_calls, ! Name the programs here do the calculation based on this time-step results, and output them
     EndOfZoneTimestepBeforeZoneReporting, ! EnergyPlus Model Calling Point
+    InfiltrationSch,
     CalcAvgNMaxPPD,
     CalDmdHeatingDmd,
     Step_First_Flag_Set,
@@ -16744,6 +16800,14 @@ EnergyManagementSystem:OutputVariable,
 EnergyManagementSystem:OutputVariable,
     IW Occupied Average PPD in the Run, ! Name
     Occupied_average_PPD, ! EMS Variable Name
+    Averaged, ! Type of Data in Variable
+    ZoneTimeStep, ! Update Frequency
+    ,      ! EMS Program or Subroutine Name
+    ;
+
+EnergyManagementSystem:OutputVariable,
+    IW Occupied Average PMV in the Run, ! Name
+    Occupied_average_PMV, ! EMS Variable Name
     Averaged, ! Type of Data in Variable
     ZoneTimeStep, ! Update Frequency
     ,      ! EMS Program or Subroutine Name

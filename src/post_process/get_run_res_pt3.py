@@ -39,7 +39,7 @@ def get_res_from_eso(eval_res_path):
         is_reading_header = True;
         sim_days = int(eso_lines[355545-1].split(',')[1])
         avg_enrg = float(eso_lines[355549-1].split(',')[1])
-        tol_enrg = avg_enrg * sim_days * 24 / 1000.0;
+        tol_enrg = round(avg_enrg * sim_days * 24 / 1000.0);
         not_met = float(eso_lines[355546-1].split(',')[1])
         sht_cyc = float(eso_lines[355547-1].split(',')[1])
         low_plr = float(eso_lines[355548-1].split(',')[1])
