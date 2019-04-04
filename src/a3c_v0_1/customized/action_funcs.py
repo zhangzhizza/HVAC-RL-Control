@@ -964,6 +964,93 @@ def act_func_part4_v1(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_
 
     return (action_ret, action_ret_idx);
 
+def act_func_part4_v2_e(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
+    """
+    Increment the current stpt by the action within the limit.
+    
+    Args:
+        action_raw: (float, )
+            The raw action planned to be taken.
+        action_raw_idx: int
+            The index of the action in the action space.
+        stptLmt: [[float, float], [float, float], ...]
+            The low limit (included) and high limit (included) for each type of the actions.
+        ob_this_raw: [float]
+            The raw observation.
+        
+    Return: tuple
+        A tuple with length 2. The index 0 is a tuple of resulting action, 
+        and the index 1 is a tuple of resulting action idx.
+    """
+    IAT_STPT_IDX = 4;
+
+    iat_stpt_ob = ob_this_raw[IAT_STPT_IDX];
+    iat_stpt_act_raw = iat_stpt_ob + action_raw[0];
+    action_ret = [max(min(iat_stpt_act_raw, stptLmt[0][1]), stptLmt[0][0])];
+    action_ret_idx = action_raw_idx;
+
+    return (action_ret, action_ret_idx);
+
+def act_func_part4_v2_t(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
+    """
+    Increment the current stpt by the action within the limit. If occupied PMV < -0.5, random choose one from 
+    positive actions (including zero), if occupied PMV > 0.5, random choose one from the negative actions (incl zero)
+    
+    Args:
+        action_raw: (float, )
+            The raw action planned to be taken.
+        action_raw_idx: int
+            The index of the action in the action space.
+        stptLmt: [[float, float], [float, float], ...]
+            The low limit (included) and high limit (included) for each type of the actions.
+        ob_this_raw: [float]
+            The raw observation.
+        
+    Return: tuple
+        A tuple with length 2. The index 0 is a tuple of resulting action, 
+        and the index 1 is a tuple of resulting action idx.
+    """
+    IAT_STPT_IDX = 4;
+    OCP_IDX = 7;
+    PMV_IDX = 6;
+    ACTIONS = [[-2.0],
+        [-1.0],
+        [-0.5],
+        [0.0],
+        [0.5],
+        [1.0],
+        [2.0],];
+
+    ocp = ob_this_raw[OCP_IDX];
+    pmv = ob_this_raw[PMV_IDX];
+    iat_stpt_ob = ob_this_raw[IAT_STPT_IDX];    
+    act_num = len(ACTIONS);
+    # Process based on PMV
+    action_prcd = action_raw;
+    action_prcd_idx = action_raw_idx;
+    if ocp == 1:
+        if pmv < -0.5 and action_raw[0] < 0:
+            # If pmv < -0.5 and the action is to reduce setpoint
+            # Choose one action to increase the setpoint
+            action_prcd_idx = np.random.randint(3, act_num);
+            action_prcd = ACTIONS[action_prcd_idx];
+        elif pmv > 0.5 and action_raw[0] > 0:
+            # If pmv > 0.5 and the action is to increase setpoint
+            # Choose one action to reduce the setpoint
+            action_prcd_idx = np.random.randint(0, 4);
+            action_prcd = ACTIONS[action_prcd_idx];
+    # Get final action
+    iat_stpt_act_raw = iat_stpt_ob + action_prcd[0];
+    action_ret = [max(min(iat_stpt_act_raw, stptLmt[0][1]), stptLmt[0][0])];
+    action_ret_idx = action_prcd_idx;
+    # Log
+    if action_raw_idx != action_ret_idx:
+        if is_show_debug:
+            logger.debug('Action function: raw action %s has been changed to %s for '
+                        'the PMV %s.'%(action_raw_idx, action_ret_idx, pmv));
+    return (action_ret, action_ret_idx);
+
+
 def cslDxCool_ahuStptIncmt(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
     """
     Pass the raw action as the output. 
@@ -1014,4 +1101,6 @@ act_func_dict = {'1':[mull_stpt_iw, act_limits_iw_1],
                 'part3_shg_sto_v1':[act_func_part3_shg_sto_v1, act_limits_part3_v1],
                 'part3_sgp_det_v1':[act_func_part3_sgp_det_v1, act_limits_part3_v1],
                 'part3_sgp_sto_v1':[act_func_part3_sgp_sto_v1, act_limits_part3_v1],
-                'part4_v1':[act_func_part4_v1, act_limits_part4_v1]}
+                'part4_v1':[act_func_part4_v1, act_limits_part4_v1],
+                'part4_v2_e':[act_func_part4_v2_e, act_limits_part4_v1],
+                'part4_v2_t':[act_func_part4_v2_t, act_limits_part4_v1],}
