@@ -1273,6 +1273,382 @@ def rl_parametric_reward_part4_v1(ob_this_prcd, action_this_prcd, ob_next_prcd, 
     reward = max(1 - egy_penl - pmv_penl, 0);
     return reward;
 
+def rl_parametric_reward_part4_heuri_v1(ob_this_prcd, action_this_prcd, ob_next_prcd, pcd_state_limits, e_weight, p_weight, stpt_violation_scl):
+    """
+    Reward = system_energy + pmv_penal
+    """
+    PMV_IDX = 6;
+    OCP_IDX = 7;
+    BGR_IDX = 9;
+
+    pmv_min = pcd_state_limits[0][PMV_IDX + TIMESTATE_LEN]
+    pmv_max = pcd_state_limits[1][PMV_IDX + TIMESTATE_LEN]
+    act_stpt = action_this_prcd[0];
+    # PMV_penl: penalize PMV smaller than -0.5
+    pmv_prcd = ob_next_prcd[PMV_IDX + TIMESTATE_LEN];
+    pmv_raw = pmv_min + pmv_prcd*(pmv_max - pmv_min);
+    ocp = ob_next_prcd[OCP_IDX + TIMESTATE_LEN];
+    pmv_penl = 0.0;
+    pmv_thres = -0.5;
+    if ocp == 0:
+        pmv_penl = 0.0;
+    else:
+        if pmv_raw >= pmv_thres:
+            pmv_penl = 0.0;
+        else:
+            pmv_penl = (pmv_thres - pmv_raw) * stpt_violation_scl;
+    pmv_penl = p_weight * pmv_penl;
+    # energy reward
+    hvac_energy = ob_next_prcd[BGR_IDX + TIMESTATE_LEN];
+    egy_penl = e_weight*hvac_energy;
+    # energy heuristic
+    egy_heur = (act_stpt - 19)/(26 - 19);
+    # final reward
+    reward = max(1 - egy_penl * 0.5 - egy_heur * 0.5 - pmv_penl, 0);
+    return reward;
+
+def rl_parametric_reward_part4_heuri_v2(ob_this_prcd, action_this_prcd, ob_next_prcd, pcd_state_limits, e_weight, p_weight, stpt_violation_scl):
+    """
+    Reward = energy_heur + pmv_penal
+    """
+    PMV_IDX = 6;
+    OCP_IDX = 7;
+    BGR_IDX = 9;
+
+    pmv_min = pcd_state_limits[0][PMV_IDX + TIMESTATE_LEN]
+    pmv_max = pcd_state_limits[1][PMV_IDX + TIMESTATE_LEN]
+    act_stpt = action_this_prcd[0];
+    # PMV_penl: penalize PMV smaller than -0.5
+    pmv_prcd = ob_next_prcd[PMV_IDX + TIMESTATE_LEN];
+    pmv_raw = pmv_min + pmv_prcd*(pmv_max - pmv_min);
+    ocp = ob_next_prcd[OCP_IDX + TIMESTATE_LEN];
+    pmv_penl = 0.0;
+    pmv_thres = -0.5;
+    if ocp == 0:
+        pmv_penl = 0.0;
+    else:
+        if pmv_raw >= pmv_thres:
+            pmv_penl = 0.0;
+        else:
+            pmv_penl = (pmv_thres - pmv_raw) * stpt_violation_scl;
+    pmv_penl = p_weight * pmv_penl;
+    # energy heuristic
+    egy_heur = (act_stpt - 19)/(26 - 19);
+    # final reward
+    reward = max(1 - egy_heur - pmv_penl, 0);
+    return reward;
+
+def rl_parametric_reward_part4_heuri_v3(ob_this_prcd, action_this_prcd, ob_next_prcd, pcd_state_limits, e_weight, p_weight, stpt_violation_scl):
+    """
+    Reward = energy_heur + pmv_penal
+    """
+    PMV_IDX = 6;
+    OCP_IDX = 7;
+    BGR_IDX = 9;
+    SPT_IDX = 4;
+    IAT_IDX = 5;
+
+    pmv_min = pcd_state_limits[0][PMV_IDX + TIMESTATE_LEN]
+    pmv_max = pcd_state_limits[1][PMV_IDX + TIMESTATE_LEN]
+    spt_min = pcd_state_limits[0][SPT_IDX + TIMESTATE_LEN]
+    spt_max = pcd_state_limits[1][SPT_IDX + TIMESTATE_LEN]
+    iat_min = pcd_state_limits[0][IAT_IDX + TIMESTATE_LEN]
+    iat_max = pcd_state_limits[1][IAT_IDX + TIMESTATE_LEN]
+
+    act_stpt = action_this_prcd[0];
+    
+    stpt_last_prcd = ob_this_prcd[SPT_IDX + TIMESTATE_LEN];
+    stpt_last_raw = spt_min + stpt_last_prcd*(spt_max - spt_min);
+    act_stpt_delta = act_stpt - stpt_last_raw;
+    
+    iat_prcd_last = ob_this_prcd[IAT_IDX + TIMESTATE_LEN];
+    iat_raw_last = iat_min + iat_prcd_last*(iat_max - iat_min);
+    iat_err_raw_last = stpt_last_raw - iat_raw_last;
+
+    iat_prcd = ob_next_prcd[IAT_IDX + TIMESTATE_LEN];
+    iat_raw = iat_min + iat_prcd*(iat_max - iat_min);
+    iat_err_raw = act_stpt - iat_raw;
+    
+    pmv_prcd = ob_next_prcd[PMV_IDX + TIMESTATE_LEN];
+    pmv_raw = pmv_min + pmv_prcd*(pmv_max - pmv_min);
+    pmv_thres = -0.5;
+    
+    ocp = ob_next_prcd[OCP_IDX + TIMESTATE_LEN];
+    hvac_energy_prcd = ob_next_prcd[BGR_IDX + TIMESTATE_LEN];
+    egy_heur = 1 - (act_stpt - 19)/(26 - 19); # act_stpt==19 -> 1, act_stpt==26 -> 0
+    egy_penl_heur = max(e_weight*hvac_energy_prcd - egy_heur, 0);
+
+    reward = 0;
+    # if not occupied, just optimize energy
+    if ocp == 0:
+        reward = 1 - egy_penl_heur;
+    else:
+        # if occupied and pmv ok, optimze energy
+        if pmv_raw >= pmv_thres:
+            reward = 1 - egy_penl_heur;
+        else:
+        # if occupied and pmv not ok, reward good actions
+        # good actions include: increase stpt actions and
+        # keep stpt action if the stpt cannot be met
+            pmv_penl = min((pmv_thres - pmv_raw) * stpt_violation_scl, 1);
+            # Determine the pmv heuristic
+            pmv_heur = 0;
+            if act_stpt_delta < 0: # The action is to decrease the stpt
+                pmv_heur = 0; # bad action
+            else:  # The action is to increase or keep the stpt
+                if iat_err_raw_last > 0.5: # If the last stpt cannot be met
+                    pmv_heur = 1; # good action
+                else: # If the last stpt can be met
+                    if act_stpt_delta == 0: # If the action is to keep the stpt
+                        pmv_heur = 0; # bad action
+                    else:
+                        pmv_heur = 1; # good action
+            pmv_penl_heur = pmv_penl - pmv_heur * p_weight;
+            reward = 1 - pmv_penl_heur;
+    reward = min(max(reward, 0), 1);
+    return reward;
+
+def rl_parametric_reward_part4_heuri_v4(ob_this_prcd, action_this_prcd, ob_next_prcd, pcd_state_limits, e_weight, p_weight, stpt_violation_scl):
+    """
+    Reward = energy_heur + pmv_penal (consider pmv gradient)
+    """
+    PMV_IDX = 6;
+    OCP_IDX = 7;
+    BGR_IDX = 9;
+    SPT_IDX = 4;
+
+    pmv_min = pcd_state_limits[0][PMV_IDX + TIMESTATE_LEN]
+    pmv_max = pcd_state_limits[1][PMV_IDX + TIMESTATE_LEN]
+    spt_min = pcd_state_limits[0][SPT_IDX + TIMESTATE_LEN]
+    spt_max = pcd_state_limits[1][SPT_IDX + TIMESTATE_LEN]
+
+    act_stpt = action_this_prcd[0];
+    
+    pmv_prcd = ob_next_prcd[PMV_IDX + TIMESTATE_LEN];
+    pmv_prcd_last = ob_this_prcd[PMV_IDX + TIMESTATE_LEN];
+    pmv_raw = pmv_min + pmv_prcd*(pmv_max - pmv_min);
+    pmv_raw_last = pmv_min + pmv_prcd_last*(pmv_max - pmv_min);
+    pmv_thres = -0.5;
+    
+    ocp = ob_next_prcd[OCP_IDX + TIMESTATE_LEN];
+    hvac_energy_prcd = ob_next_prcd[BGR_IDX + TIMESTATE_LEN];
+    egy_heur = 1 - (act_stpt - 19)/(26 - 19); # act_stpt==19 -> 1, act_stpt==26 -> 0
+    egy_penl_heur = max(e_weight*hvac_energy_prcd - egy_heur, 0);
+
+    reward = 0;
+    # if not occupied, just optimize energy
+    if ocp == 0:
+        reward = 1 - egy_penl_heur;
+    else:
+        # if occupied and pmv ok, optimze energy
+        if pmv_raw >= pmv_thres:
+            reward = 1 - egy_penl_heur;
+        else:
+        # if occupied and pmv not ok, reward good actions
+        # good actions include: pmv is increasing
+            pmv_penl = min((pmv_thres - pmv_raw) * stpt_violation_scl, 1);
+            # Determine the pmv heuristic
+            pmv_heur = max(pmv_raw - pmv_raw_last, 0);
+            pmv_penl_heur = max(pmv_penl - pmv_heur * p_weight, 0);
+            reward = 1 - pmv_penl_heur;
+    reward = min(max(reward, 0), 1);
+    return reward;
+
+def rl_parametric_reward_part4_heuri_v5(ob_this_prcd, action_this_prcd, ob_next_prcd, pcd_state_limits, e_weight, p_weight, stpt_violation_scl):
+    """
+    Reward = energy_heur + pmv_penal
+    """
+    PMV_IDX = 6;
+    OCP_IDX = 7;
+    BGR_IDX = 9;
+    SPT_IDX = 4;
+    IAT_IDX = 5;
+
+    pmv_min = pcd_state_limits[0][PMV_IDX + TIMESTATE_LEN]
+    pmv_max = pcd_state_limits[1][PMV_IDX + TIMESTATE_LEN]
+    spt_min = pcd_state_limits[0][SPT_IDX + TIMESTATE_LEN]
+    spt_max = pcd_state_limits[1][SPT_IDX + TIMESTATE_LEN]
+    iat_min = pcd_state_limits[0][IAT_IDX + TIMESTATE_LEN]
+    iat_max = pcd_state_limits[1][IAT_IDX + TIMESTATE_LEN]
+
+    act_stpt = action_this_prcd[0];
+    
+    stpt_last_prcd = ob_this_prcd[SPT_IDX + TIMESTATE_LEN];
+    stpt_last_raw = spt_min + stpt_last_prcd*(spt_max - spt_min);
+    act_stpt_delta = act_stpt - stpt_last_raw;
+    
+    iat_prcd_last = ob_this_prcd[IAT_IDX + TIMESTATE_LEN];
+    iat_raw_last = iat_min + iat_prcd_last*(iat_max - iat_min);
+    iat_err_raw_last = stpt_last_raw - iat_raw_last;
+
+    iat_prcd = ob_next_prcd[IAT_IDX + TIMESTATE_LEN];
+    iat_raw = iat_min + iat_prcd*(iat_max - iat_min);
+    iat_err_raw = act_stpt - iat_raw;
+    
+    pmv_prcd = ob_next_prcd[PMV_IDX + TIMESTATE_LEN];
+    pmv_raw = pmv_min + pmv_prcd*(pmv_max - pmv_min);
+    pmv_thres = -0.5;
+    
+    ocp = ob_next_prcd[OCP_IDX + TIMESTATE_LEN];
+    hvac_energy_prcd = ob_next_prcd[BGR_IDX + TIMESTATE_LEN];
+    egy_heur = 0;
+    egy_penl_heur = max(e_weight*hvac_energy_prcd - egy_heur, 0);
+
+    reward = 0;
+    # if not occupied, just optimize energy
+    if ocp == 0:
+        reward = 1 - egy_penl_heur;
+    else:
+        # if occupied and pmv ok, optimze energy
+        if pmv_raw >= pmv_thres:
+            reward = 1 - egy_penl_heur;
+        else:
+        # if occupied and pmv not ok, reward good actions
+        # good actions include: increase stpt actions and
+        # keep stpt action if the stpt cannot be met
+            pmv_penl = min((pmv_thres - pmv_raw) * stpt_violation_scl, 1);
+            # Determine the pmv heuristic
+            pmv_heur = 0;
+            if act_stpt_delta < 0: # The action is to decrease the stpt
+                pmv_heur = 0; # bad action
+            else:  # The action is to increase or keep the stpt
+                if iat_err_raw_last > 0.5: # If the last stpt cannot be met
+                    pmv_heur = 1; # good action
+                else: # If the last stpt can be met
+                    if act_stpt_delta == 0: # If the action is to keep the stpt
+                        pmv_heur = 0; # bad action
+                    else:
+                        pmv_heur = 1; # good action
+            pmv_penl_heur = pmv_penl - pmv_heur * p_weight;
+            reward = 1 - pmv_penl_heur;
+    reward = min(max(reward, 0), 1);
+    return reward;
+
+def rl_parametric_reward_part4_heuri_v6(ob_this_prcd, action_this_prcd, ob_next_prcd, pcd_state_limits, e_weight, p_weight, stpt_violation_scl):
+    """
+    Reward = energy_heur + pmv_penal (consider pmv gradient)
+    """
+    PMV_IDX = 6;
+    OCP_IDX = 7;
+    BGR_IDX = 9;
+    SPT_IDX = 4;
+
+    pmv_min = pcd_state_limits[0][PMV_IDX + TIMESTATE_LEN]
+    pmv_max = pcd_state_limits[1][PMV_IDX + TIMESTATE_LEN]
+    spt_min = pcd_state_limits[0][SPT_IDX + TIMESTATE_LEN]
+    spt_max = pcd_state_limits[1][SPT_IDX + TIMESTATE_LEN]
+
+    act_stpt = action_this_prcd[0];
+    
+    pmv_prcd = ob_next_prcd[PMV_IDX + TIMESTATE_LEN];
+    pmv_prcd_last = ob_this_prcd[PMV_IDX + TIMESTATE_LEN];
+    pmv_raw = pmv_min + pmv_prcd*(pmv_max - pmv_min);
+    pmv_raw_last = pmv_min + pmv_prcd_last*(pmv_max - pmv_min);
+    pmv_thres = -0.5;
+    
+    ocp = ob_next_prcd[OCP_IDX + TIMESTATE_LEN];
+    hvac_energy_prcd = ob_next_prcd[BGR_IDX + TIMESTATE_LEN];
+    egy_heur = 0;
+    egy_penl_heur = max(e_weight*hvac_energy_prcd - egy_heur, 0);
+
+    reward = 0;
+    # if not occupied, just optimize energy
+    if ocp == 0:
+        reward = 1 - egy_penl_heur;
+    else:
+        # if occupied and pmv ok, optimze energy
+        if pmv_raw >= pmv_thres:
+            reward = 1 - egy_penl_heur;
+        else:
+        # if occupied and pmv not ok, reward good actions
+        # good actions include: pmv is increasing
+            pmv_penl = min((pmv_thres - pmv_raw) * stpt_violation_scl, 1);
+            # Determine the pmv heuristic
+            pmv_heur = max(pmv_raw - pmv_raw_last, 0);
+            pmv_penl_heur = max(pmv_penl - pmv_heur * p_weight, 0);
+            reward = 1 - pmv_penl_heur;
+    reward = min(max(reward, 0), 1);
+    return reward;
+
+def rl_parametric_reward_part4_prior_v1(ob_this_prcd, action_this_prcd, ob_next_prcd, pcd_state_limits, e_weight, p_weight, stpt_violation_scl):
+    """
+    Deterministic schedule reward
+    """
+    WEEKDAY_IDX = 0;
+    HOUR_IDX = 1;
+
+    is_weekday = ob_next_prcd[WEEKDAY_IDX]
+    now_hour = ob_next_prcd[HOUR_IDX] * 23.0;
+    act_stpt = action_this_prcd[0];
+    reward = 0;
+
+    if is_weekday == 1:
+        if now_hour <= 6.5:
+            if act_stpt <= 20.0:
+                reward = 1;
+        elif now_hour > 6.5 and now_hour <= 19.5:
+            if act_stpt >= 22.0:
+                reward = 1;
+        else:
+            if act_stpt <= 20.0:
+                reward = 1;
+    else:
+        if act_stpt <= 20.0:
+            reward = 1;
+
+    return reward;
+
+def rl_parametric_reward_part4_prior_v2(ob_this_prcd, action_this_prcd, ob_next_prcd, pcd_state_limits, e_weight, p_weight, stpt_violation_scl):
+    """
+    Reward = system_energy + pmv_penal
+    """
+    PMV_IDX = 6;
+    OCP_IDX = 7;
+    BGR_IDX = 9;
+
+    pmv_min = pcd_state_limits[0][PMV_IDX + TIMESTATE_LEN]
+    pmv_max = pcd_state_limits[1][PMV_IDX + TIMESTATE_LEN]
+    # PMV_penl: penalize PMV smaller than -0.5
+    pmv_prcd = ob_next_prcd[PMV_IDX + TIMESTATE_LEN];
+    pmv_raw = pmv_min + pmv_prcd*(pmv_max - pmv_min);
+    ocp = ob_next_prcd[OCP_IDX + TIMESTATE_LEN];
+    pmv_penl = 0.0;
+    pmv_thres = -0.5;
+    if ocp == 0:
+        pmv_penl = 0.0;
+    else:
+        if pmv_raw >= pmv_thres:
+            pmv_penl = 0.0;
+        else:
+            pmv_penl = (pmv_thres - pmv_raw) * stpt_violation_scl;
+    pmv_penl = p_weight * pmv_penl;
+    # energy reward
+    hvac_energy = ob_next_prcd[BGR_IDX + TIMESTATE_LEN];
+    egy_penl = e_weight*hvac_energy;
+    # final reward
+    if ocp == 0:
+        reward = max(1 - egy_penl, 0);
+    else:
+        reward = max(1 - pmv_penl, 0);
+    return reward;
+
+def rl_parametric_reward_part4_prior_v3(ob_this_prcd, action_this_prcd, ob_next_prcd, pcd_state_limits, e_weight, p_weight, stpt_violation_scl):
+    """
+    Reward = system_energy
+    """
+    PMV_IDX = 6;
+    OCP_IDX = 7;
+    BGR_IDX = 9;
+
+    pmv_min = pcd_state_limits[0][PMV_IDX + TIMESTATE_LEN]
+    pmv_max = pcd_state_limits[1][PMV_IDX + TIMESTATE_LEN]
+    # energy reward
+    hvac_energy = ob_next_prcd[BGR_IDX + TIMESTATE_LEN];
+    egy_penl = e_weight*hvac_energy;
+    # final reward
+    reward = max(1 - egy_penl, 0);
+    return reward;
+
 def rl_parametric_metric_part4_v1(ob_next_raw, this_ep_energy, this_ep_comfort):
     """
     """ 
@@ -1326,7 +1702,16 @@ reward_func_dict = {'1': err_energy_reward_iw,
                     'part3_v2': rl_parametric_reward_part3_v2,
                     'part3_v3': rl_parametric_reward_part3_v3,
                     'part3_v4': rl_parametric_reward_part3_v4,
-                    'part4_v1': rl_parametric_reward_part4_v1}
+                    'part4_v1': rl_parametric_reward_part4_v1,
+                    'part4_prior_v1': rl_parametric_reward_part4_prior_v1,
+                    'part4_prior_v2': rl_parametric_reward_part4_prior_v2,
+                    'part4_prior_v3': rl_parametric_reward_part4_prior_v3,
+                    'part4_heuri_v1': rl_parametric_reward_part4_heuri_v1,
+                    'part4_heuri_v2': rl_parametric_reward_part4_heuri_v2,
+                    'part4_heuri_v3': rl_parametric_reward_part4_heuri_v3,
+                    'part4_heuri_v4': rl_parametric_reward_part4_heuri_v4,
+                    'part4_heuri_v5': rl_parametric_reward_part4_heuri_v5,
+                    'part4_heuri_v6': rl_parametric_reward_part4_heuri_v6}
 
 metric_func_dict = {
                     'cslDxCool_1': stptVio_energy_metric_cslDxCool_v1,

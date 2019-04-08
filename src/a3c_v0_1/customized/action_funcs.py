@@ -1103,4 +1103,5 @@ act_func_dict = {'1':[mull_stpt_iw, act_limits_iw_1],
                 'part3_sgp_sto_v1':[act_func_part3_sgp_sto_v1, act_limits_part3_v1],
                 'part4_v1':[act_func_part4_v1, act_limits_part4_v1],
                 'part4_v2_e':[act_func_part4_v2_e, act_limits_part4_v1],
-                'part4_v2_t':[act_func_part4_v2_t, act_limits_part4_v1],}
+                'part4_v2_t':[act_func_part4_v2_t, act_limits_part4_v1],
+                'part4_v3': [directPass, act_limits_part4_v1]}

@@ -407,6 +407,7 @@ def run_exp(request):
 
 
 def deploy_run(exp_id, ip, port):
+	logger.info('Deploying the run %s to %s:%s'%(exp_id, ip, port))
 	# Create a socket to communicate with the workserver
 	s = socket.socket();
 	s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)

@@ -341,6 +341,14 @@ part4_v1 = [[-2.0],
         [1.0],
         [2.0],];
 
+part4_v2 = [[19.0],
+        [20.0],
+        [21.0],
+        [22.0],
+        [23.0],
+        [24.0],
+        [25.0],
+        [26.0]];
         
 action_map = {'default': actions_htcl_cmd, 'exp1': actions_htcl_cmd_exp1, 
               'exp2':actions_htcl_cmd_exp2, 'exp3': actions_htcl_cmd_exp3, 
@@ -354,6 +362,7 @@ action_map = {'default': actions_htcl_cmd, 'exp1': actions_htcl_cmd_exp1,
               'part1_v1': part1_v1, 'part2_v1': part2_v1, 'part2_v2': part2_v2,
               'part2_v3': part2_v3, 'part2_v4': part2_v4,
               'part3_v1': part3_v1,
-              'part4_v1': part4_v1};
+              'part4_v1': part4_v1,
+              'part4_v2': part4_v2};
 
 
