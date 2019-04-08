@@ -17,5 +17,6 @@ act_limits_part2_v3 = [[12.0, 24.0]];
 act_limits_part2_v4 = [[18.0, 30.0]];
 act_limits_part3_v1 = None;
 act_limits_part4_v1 = [[19.0, 26.0]];
+act_limits_part4_v2 = [[-30, 30],[20, 65]];
 
 

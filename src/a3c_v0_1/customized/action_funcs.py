@@ -1050,6 +1050,23 @@ def act_func_part4_v2_t(action_raw, action_raw_idx, raw_state_limits, stptLmt, o
                         'the PMV %s.'%(action_raw_idx, action_ret_idx, pmv));
     return (action_ret, action_ret_idx);
 
+def act_func_part4_v4(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
+    """
+    Use with mullion ssp water env.
+    """
+    OAT_RAW_IDX = 0;
+    oat_cur = ob_this_raw[OAT_RAW_IDX]
+    # Get the next step SWT ssp
+    res_swt_ssp = action_raw[0];
+    # Determine whether should turn off heating
+    if res_swt_ssp < stptLmt[1][0]:
+        res_oae_ssp = oat_cur - 5.0; # If res_swt_ssp < lower limit, set OAE setpoint < next step OAT, mull op is off
+    else:
+        res_oae_ssp = oat_cur + 5.0; # If res_swt_ssp >= lower limit, set OAE setpoint > next step OAT, mull op is on
+    # Set all action into limits
+    res_oae_ssp = max(min(res_oae_ssp, stptLmt[0][1]), stptLmt[0][0]);
+
+    return ((res_oae_ssp, res_swt_ssp), (action_raw_idx))
 
 def cslDxCool_ahuStptIncmt(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_this_raw, logger, is_show_debug):
     """
@@ -1104,4 +1121,5 @@ act_func_dict = {'1':[mull_stpt_iw, act_limits_iw_1],
                 'part4_v1':[act_func_part4_v1, act_limits_part4_v1],
                 'part4_v2_e':[act_func_part4_v2_e, act_limits_part4_v1],
                 'part4_v2_t':[act_func_part4_v2_t, act_limits_part4_v1],
-                'part4_v3': [directPass, act_limits_part4_v1]}
+                'part4_v3': [directPass, act_limits_part4_v1],
+                'part4_v4': [act_func_part4_v4, act_limits_part4_v2]}
