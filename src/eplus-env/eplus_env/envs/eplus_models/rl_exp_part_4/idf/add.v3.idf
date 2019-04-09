@@ -22,9 +22,9 @@ ExternalInterface,           !- Object to activate the external interface
     PtolemyServer;              !- Name of external interface
 
 ExternalInterface:Schedule,
-    HWOEN_stpt_sch,                 !- Name
+    iw_heatmode_sch,                 !- Name
     Any Number,             !- ScheduleType
-    10;                      !- Initial value, used during warm-up
+    1;                      !- Initial value, used during warm-up
 
 ExternalInterface:Schedule,
     iw_hw_ssp,                 !- Name

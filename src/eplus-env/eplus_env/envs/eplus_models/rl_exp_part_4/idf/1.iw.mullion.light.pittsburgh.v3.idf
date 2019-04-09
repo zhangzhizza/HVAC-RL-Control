@@ -16319,7 +16319,7 @@ EnergyManagementSystem:Program,
       SET Set_radpanel_cooling_control_temp_low = NULL, !- if zone temp < cooling control low, radpanel full off
       !- set inlet water temp of all water system to max_zdp
       SET Set_chw_sp_stpt = IW_MAX_ZDP,
-    ELSEIF IW_HEATMODE == 1,
+    ELSEIF IW_HeatMode_sensor == 1,
       !- turn off radpanel cooling
       SET Set_radpanel_cooling_control_temp_high = 55, !- if zone temp > cooling control temp high, radpanel full on
       SET Set_radpanel_cooling_control_temp_low = 51, !- if zone temp < cooling control temp low, radpanel full off
@@ -16420,6 +16420,7 @@ EnergyManagementSystem:Program,
       SET Set_hw_sp_stpt = Heating_spw_stpt,
       SET Heating_spw_stpt_lastStep = Heating_spw_stpt,
     ELSE,
+      SET Heating_spw_stpt = iw_hw_ssp_2017_sensor
       !- turn off chilled water loop, turn off hot water loop
       SET Set_HWLoop_SuperCtrl_op = 0,
       SET Set_CHWLoop_SuperCtrl_op = 0,
