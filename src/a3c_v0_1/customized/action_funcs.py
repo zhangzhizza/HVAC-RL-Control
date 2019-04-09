@@ -1054,17 +1054,13 @@ def act_func_part4_v4(action_raw, action_raw_idx, raw_state_limits, stptLmt, ob_
     """
     Use with mullion ssp water env.
     """
-    OAT_RAW_IDX = 0;
-    oat_cur = ob_this_raw[OAT_RAW_IDX]
     # Get the next step SWT ssp
     res_swt_ssp = action_raw[0];
     # Determine whether should turn off heating
-    if res_swt_ssp < stptLmt[1][0]:
-        res_oae_ssp = oat_cur - 5.0; # If res_swt_ssp < lower limit, set OAE setpoint < next step OAT, mull op is off
+    if res_swt_ssp < stptLmt[0][0]:
+        res_oae_ssp = 0; # If res_swt_ssp < lower limit, set OAE setpoint < next step OAT, mull op is off
     else:
-        res_oae_ssp = oat_cur + 5.0; # If res_swt_ssp >= lower limit, set OAE setpoint > next step OAT, mull op is on
-    # Set all action into limits
-    res_oae_ssp = max(min(res_oae_ssp, stptLmt[0][1]), stptLmt[0][0]);
+        res_oae_ssp = 1; # If res_swt_ssp >= lower limit, set OAE setpoint > next step OAT, mull op is on
 
     return ((res_oae_ssp, res_swt_ssp), (action_raw_idx))
 
