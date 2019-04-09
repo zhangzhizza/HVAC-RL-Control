@@ -15856,10 +15856,10 @@ EnergyManagementSystem:GlobalVariable,
     Occupied_average_PPD_ct;  !- The IW occupy mode flag
 
 EnergyManagementSystem:GlobalVariable,
-    Occupied_average_PMV;  
+    Occupied_average_PMV;  !- The IW occupy mode flag
 
 EnergyManagementSystem:GlobalVariable,
-    Occupied_average_PMV_ct;  
+    Occupied_average_PMV_ct;  !- The IW occupy mode flag
 
 EnergyManagementSystem:GlobalVariable,
     DEBUG;  !- The IW occupy mode flag
@@ -15903,16 +15903,30 @@ EnergyManagementSystem:Program,
 
 EnergyManagementSystem:Program,
     StochasticSch,           !- Name
-    SET SclOff = 0.075,      !- Program Line 1
-    SET RdmNorm_EquiOff = @RandomNormal 5 1 0 10,  !- Program Line 2
-    SET RdmNorm_EquiOff = RdmNorm_EquiOff - 5,  !- <none>
-    SET EquiOffRaw = RdmNorm_EquiOff * SclOff + iw_occp_base_sensor,  !- <none>
-    SET EquiOffPrcd = @Min (@Max EquiOffRaw 0.0) 1.0,  !- <none>
-    IF EquiOffPrcd <= 0.1,   !- <none>
-    SET EquiOffPrcd = 0.1,   !- <none>
-    ENDIF,                   !- <none>
-    SET Set_off_equiSch = EquiOffPrcd,
-    SET Set_off_occpSch = iw_occp_base_sensor;  !- <none>
+    !SET DebugRdm = Minute,   !- Program Line 1
+    !For office schedule
+    SET SclOff = 0.15, ! Change 1
+
+    SET RdmNorm_OccpOff = @RandomNormal 5 1 0 10,
+    SET RdmNorm_OccpOff = RdmNorm_OccpOff - 5,
+    SET OccpOffRaw = RdmNorm_OccpOff * SclOff + iw_occp_base_sensor,
+    SET OccpOffPrcd = @Min (@Max OccpOffRaw 0.0) 1.0,
+
+    SET RdmNorm_EquiOff = @RandomNormal 5 1 0 10,
+    SET RdmNorm_EquiOff = RdmNorm_EquiOff - 5,
+    SET EquiOffRaw = RdmNorm_EquiOff * SclOff + iw_occp_base_sensor,
+    SET EquiOffPrcd = @Min (@Max EquiOffRaw 0.1) 1.0,
+
+    !- Overwrite the schedules
+    IF IW_OCCUPY_MODE == 1,
+        SET Set_off_occpSch = OccpOffPrcd,  !- A44
+    ELSE,
+        SET Set_off_occpSch = 0,
+    ENDIF,
+    IF DayOfWeek == 1 || DayOfWeek == 7,
+        SET Set_off_occpSch = 0,
+    ENDIF,
+    SET Set_off_equiSch = EquiOffPrcd;  !- A49
 
 EnergyManagementSystem:Program,
     IsOccupied,
@@ -16240,7 +16254,7 @@ EnergyManagementSystem:Program,
       SET Set_radpanel_cooling_control_temp_low = NULL, !- if zone temp < cooling control low, radpanel full off
       !- set inlet water temp of all water system to max_zdp
       SET Set_chw_sp_stpt = IW_MAX_ZDP,
-    ELSEIF IW_HEATMODE == 1,
+    ELSEIF IW_HeatMode_sensor == 1,
       !- turn off radpanel cooling
       SET Set_radpanel_cooling_control_temp_high = 55, !- if zone temp > cooling control temp high, radpanel full on
       SET Set_radpanel_cooling_control_temp_low = 51, !- if zone temp < cooling control temp low, radpanel full off
@@ -16341,6 +16355,7 @@ EnergyManagementSystem:Program,
       SET Set_hw_sp_stpt = Heating_spw_stpt,
       SET Heating_spw_stpt_lastStep = Heating_spw_stpt,
     ELSE,
+      SET Heating_spw_stpt = iw_hw_ssp_2017_sensor
       !- turn off chilled water loop, turn off hot water loop
       SET Set_HWLoop_SuperCtrl_op = 0,
       SET Set_CHWLoop_SuperCtrl_op = 0,
@@ -16378,8 +16393,9 @@ EnergyManagementSystem:ProgramCallingManager,
 EnergyManagementSystem:ProgramCallingManager,
     weather_set_call, ! Name
     BeginTimestepBeforePredictor, ! EnergyPlus Model Calling Point
-    CtrlRadiantSys,
-    SetWeather; ! Program Name 1
+    SetWeather,
+    DeterHWOEN,
+    CtrlRadiantSys; ! Program Name 1
 
 EnergyManagementSystem:ProgramCallingManager,
     sensor_info_calls, ! Name the programs here set some variables based on the last timestep eplus sensor data
@@ -16393,7 +16409,7 @@ EnergyManagementSystem:ProgramCallingManager,
     control_calls, ! Name the programs here set some variables and make controls based on the this timestep data
     AfterPredictorAfterHVACManagers, ! EnergyPlus Model Calling Point
     DeterCWSIEN, ! Program Name 1
-    DeterHWOEN,
+    !DeterHWOEN,
     DeterMODE,
     CalEffecStpt_iw_logics,
     DeterIsDay, 
@@ -17103,6 +17119,7 @@ EnergyManagementSystem:OutputVariable,
     ZoneTimeStep, ! Update Frequency            
     ,      ! EMS Program or Subroutine Name         
     ;
+
 
 
 !-   ===========  ALL OBJECTS IN CLASS: Schedule:Compact ===========

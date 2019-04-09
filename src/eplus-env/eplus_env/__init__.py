@@ -2489,6 +2489,7 @@ kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-3-0/',
 'forecastFilePath': None,
 'forecast_hour': 12,
 'act_repeat': 1});
+
 register(
 id='Part4-Light-Pit-Test-v5',
 entry_point='eplus_env.envs:EplusEnv',
