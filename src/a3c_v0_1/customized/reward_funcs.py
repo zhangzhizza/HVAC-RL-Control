@@ -1703,7 +1703,7 @@ def rl_parametric_reward_part4_heuri_v7(ob_this_prcd, action_this_prcd, ob_next_
         cmf_heur = max(iat_raw - iat_raw_last, 0);
         cmf_penl_heur = min(max(cmf_penl - cmf_heur * stpt_violation_scl, 0), 1);
     else:
-        cmf_penl = min(max((pmv_thres - pmv_raw) * 10, 0), 1); # [0, 1]
+        cmf_penl = min(max((pmv_thres - pmv_raw) * 2, 0), 1); # [0, 1]
         # if occupied and pmv not ok, reward good actions
         # good actions include: pmv is increasing
         pmv_heur = max(pmv_raw - pmv_raw_last, 0);
