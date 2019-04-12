@@ -1,4 +1,4 @@
-python ../../../a3c_eplus_rlParametric_v0.1.py --env Part3-NA-Shg-Train-v1 --max_interactions 2500000 --window_len 29 \
+python ../../../a3c_eplus_rlParametric_v0.1.py --env Part3-NA-Shg-Train-v1 --max_interactions 1000000 --window_len 29 \
 --state_dim 17 --num_threads 16 --action_space part3_v1 --save_freq 500000 --eval_freq 25000 \
 --job_mode Train --test_env Part3-NA-Shg-Test-v1 Part3-NA-Shg-Test-v2 Part3-NA-Shg-Test-v3 Part3-NA-Shg-Test-v4 \
 --train_act_func part3_shg_sto_v1 --eval_act_func part3_shg_det_v1 \

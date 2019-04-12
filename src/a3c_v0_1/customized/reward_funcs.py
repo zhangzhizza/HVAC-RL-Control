@@ -1709,7 +1709,7 @@ def rl_parametric_reward_part4_heuri_v7(ob_this_prcd, action_this_prcd, ob_next_
         pmv_heur = max(pmv_raw - pmv_raw_last, 0);
         cmf_penl_heur = min(max(cmf_penl - pmv_heur * p_weight, 0), 1); # [0, 1]
     # optimize comfort only if comfort cannot be met
-    penal_total = (1 - cmf_penl) * egy_penl_heur + cmf_penl * cmf_penl_heur;
+    penal_total = 0.5 * egy_penl_heur + 0.5 * cmf_penl_heur;
     reward = 1 - penal_total;
     return reward;
 
