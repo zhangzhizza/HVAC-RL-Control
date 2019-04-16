@@ -133,6 +133,8 @@ def get_args():
     parser.add_argument('--action_repeat_n', default=1, type=int, help='The action repeat times.')
     parser.add_argument('--check_args_only', default=False, type=bool, help='Print the arguments only.')
     parser.add_argument('--eval_env_res_max_keep', default=20, type=int, help='Max keep result number for the evaluation env.')
+    parser.add_argument('--is_add_time_to_state', default='True', type=str, help='Is add time to the state.')
+    parser.add_argument('--is_r_term_zero', default='True', type=str, help='Is R return zero at terminal')
     return parser;
 
 def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func, eval_action_func, 
@@ -145,7 +147,11 @@ def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func
         dict_writer.writeheader()
         dict_writer.writerow(vars(args))
     else: 
+      # Preprocess the arguments
       args.output = get_output_folder(args.output, args.env)
+      args.is_add_time_to_state = True if args.is_add_time_to_state.lower() == 'true' else False;
+      args.is_r_term_zero = True if args.is_r_term_zero.lower() == 'true' else False;
+
       tf.gfile.MakeDirs(args.output + '/model_data')
       main_logger = Logger().getLogger(NAME, LOG_LEVEL, LOG_FORMATTER, args.output + '/main.log');
       main_logger.info(args)
@@ -192,7 +198,8 @@ def effective_main(args, reward_func, rewardArgs, metric_func, train_action_func
                         args.gamma, args.rwd_e_para, args.rwd_p_para, args.save_freq, args.max_interactions,
                         args.eval_epi_num, args.eval_freq, reward_func, rewardArgs, metric_func, train_action_func, eval_action_func,  
                         train_action_limits, eval_action_limits, raw_state_process_func, raw_stateLimit_process_func, 
-                        args.debug_log_prob, args.is_greedy_policy, args.action_repeat_n, args.eval_env_res_max_keep);
+                        args.debug_log_prob, args.is_greedy_policy, args.action_repeat_n, args.eval_env_res_max_keep,
+                        args.is_add_time_to_state, args.is_r_term_zero);
 
       if args.job_mode.lower() == 'test':
           main_logger.info ('Start the testing...')

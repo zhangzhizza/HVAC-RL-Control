@@ -1,0 +1,1192 @@
+Using TensorFlow backend.
+[2019-04-16 12:55:17,782] A3C_AGENT_MAIN INFO:Namespace(action_repeat_n=1, action_space='part4_v3', activation='linear', agent_num=5, check_args_only=False, clip_norm=1.0, debug_log_prob=0.001, decay_steps=1000000, dropout_prob=0.0, end_e=0.0, env='Part4-Light-Pit-Train-Repeat-v2', eval_act_func='part4_v4', eval_env_res_max_keep=50, eval_epi_num=1, eval_freq=50000, forecast_dim=0, gamma=0.99, h_decay_bounds=[], h_regu_frac=[0.0], init_e=0.0, isNoisyNet=True, isNoisyNetEval_rmNoise=True, is_add_time_to_state=True, is_greedy_policy=False, is_learning_rate_decay_staircase=False, is_r_term_zero=True, is_warm_start=False, job_mode='Train', learning_rate=0.0005, learning_rate_decay_rate=1.0, learning_rate_decay_steps=100000, max_interactions=3000000, metric_func='part4_v2', model_dir='None', model_param=[13, 1], model_type='nn', num_threads=16, output='./Part4-Light-Pit-Train-Repeat-v2-res1', p_loss_frac=1.0, raw_state_prcs_func='cslDx_1', reward_func='part4_heuri_v8', rmsprop_decay=0.99, rmsprop_epsil=1e-10, rmsprop_momet=0.0, rwd_e_para=1.0, rwd_p_para=10.0, save_freq=500000, save_max_to_keep=5, save_scope='all', sharedNet_type='Dense', state_dim=11, test_env=['Part4-Light-Pit-Test-Repeat-v3', 'Part4-Light-Pit-Test-Repeat-v4'], test_mode='Multiple', train_act_func='part4_v4', train_freq=25, v_loss_frac=0.5, violation_penalty_scl=5.0, weight_initer='glorot_uniform', window_len=10)
+[2019-04-16 12:55:17,782] A3C_AGENT_MAIN INFO:Start compiling...
+2019-04-16 12:55:17.814924: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+[2019-04-16 12:55:38,721] A3C_AGENT_MAIN INFO:Start the learning...
+[2019-04-16 12:55:38,722] A3C_AGENT_MAIN INFO:Prepare the evaluation environments ['Part4-Light-Pit-Train-Repeat-v2', 'Part4-Light-Pit-Test-Repeat-v3', 'Part4-Light-Pit-Test-Repeat-v4'] ...
+[2019-04-16 12:55:38,749] A3C_EVAL-Part4-Light-Pit-Train-v3 INFO:Evaluation worker starts!
+[2019-04-16 12:55:38,766] A3C_EVAL-Part4-Light-Pit-Test-v5 INFO:Evaluation worker starts!
+[2019-04-16 12:55:38,783] A3C_EVAL-Part4-Light-Pit-Test-v6 INFO:Evaluation worker starts!
+[2019-04-16 12:55:38,783] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-04-16 12:55:38,783] A3C_AGENT_WORKER-Thread-2 INFO:Local worker starts!
+[2019-04-16 12:55:38,859] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-2_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:38,861] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-2_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Train-v3-res2/Eplus-env-sub_run1
+[2019-04-16 12:55:39,784] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-04-16 12:55:39,786] A3C_AGENT_WORKER-Thread-3 INFO:Local worker starts!
+[2019-04-16 12:55:39,877] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-3_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:39,879] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-3_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Train-v3-res3/Eplus-env-sub_run1
+[2019-04-16 12:55:40,787] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-04-16 12:55:40,788] A3C_AGENT_WORKER-Thread-4 INFO:Local worker starts!
+[2019-04-16 12:55:40,870] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-4_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:40,871] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-4_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Train-v3-res4/Eplus-env-sub_run1
+[2019-04-16 12:55:41,789] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-04-16 12:55:41,790] A3C_AGENT_WORKER-Thread-5 INFO:Local worker starts!
+[2019-04-16 12:55:41,894] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-5_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:41,896] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-5_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Train-v3-res5/Eplus-env-sub_run1
+[2019-04-16 12:55:42,791] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-04-16 12:55:42,792] A3C_AGENT_WORKER-Thread-6 INFO:Local worker starts!
+[2019-04-16 12:55:42,862] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-6_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:42,863] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-6_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Train-v3-res6/Eplus-env-sub_run1
+[2019-04-16 12:55:43,793] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-04-16 12:55:43,794] A3C_AGENT_WORKER-Thread-7 INFO:Local worker starts!
+[2019-04-16 12:55:43,913] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-7_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:43,914] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-7_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Train-v3-res7/Eplus-env-sub_run1
+[2019-04-16 12:55:44,795] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-04-16 12:55:44,795] A3C_AGENT_WORKER-Thread-8 INFO:Local worker starts!
+[2019-04-16 12:55:44,902] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-8_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:44,904] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-8_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Train-v3-res8/Eplus-env-sub_run1
+[2019-04-16 12:55:45,796] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-04-16 12:55:45,797] A3C_AGENT_WORKER-Thread-9 INFO:Local worker starts!
+[2019-04-16 12:55:45,902] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-9_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:45,904] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-9_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Train-v3-res9/Eplus-env-sub_run1
+[2019-04-16 12:55:46,671] A3C_AGENT_WORKER-Thread-2 INFO:Evaluating...
+[2019-04-16 12:55:46,671] A3C_EVAL-Part4-Light-Pit-Train-v3 INFO:Evaluation job starts!
+[2019-04-16 12:55:46,671] EPLUS_ENV_Part4-Light-Pit-Train-v3_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:46,672] A3C_EVAL-Part4-Light-Pit-Test-v5 INFO:Evaluation job starts!
+[2019-04-16 12:55:46,672] A3C_EVAL-Part4-Light-Pit-Test-v6 INFO:Evaluation job starts!
+[2019-04-16 12:55:46,672] EPLUS_ENV_Part4-Light-Pit-Test-v5_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:46,672] EPLUS_ENV_Part4-Light-Pit-Test-v6_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:46,675] EPLUS_ENV_Part4-Light-Pit-Train-v3_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Train-v3-res1/Eplus-env-sub_run1
+[2019-04-16 12:55:46,675] EPLUS_ENV_Part4-Light-Pit-Test-v6_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Test-v6-res1/Eplus-env-sub_run1
+[2019-04-16 12:55:46,682] EPLUS_ENV_Part4-Light-Pit-Test-v5_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Test-v5-res1/Eplus-env-sub_run1
+[2019-04-16 12:55:46,799] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-04-16 12:55:46,800] A3C_AGENT_WORKER-Thread-13 INFO:Local worker starts!
+[2019-04-16 12:55:47,141] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-13_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:47,143] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-13_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Train-v3-res10/Eplus-env-sub_run1
+[2019-04-16 12:55:47,801] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-04-16 12:55:47,802] A3C_AGENT_WORKER-Thread-14 INFO:Local worker starts!
+[2019-04-16 12:55:48,015] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-14_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:48,017] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-14_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Train-v3-res11/Eplus-env-sub_run1
+[2019-04-16 12:55:48,822] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-04-16 12:55:48,823] A3C_AGENT_WORKER-Thread-15 INFO:Local worker starts!
+[2019-04-16 12:55:48,990] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-15_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:48,992] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-15_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Train-v3-res12/Eplus-env-sub_run1
+[2019-04-16 12:55:49,823] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-04-16 12:55:49,824] A3C_AGENT_WORKER-Thread-16 INFO:Local worker starts!
+[2019-04-16 12:55:50,020] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-16_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:50,021] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-16_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Train-v3-res13/Eplus-env-sub_run1
+[2019-04-16 12:55:50,825] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-04-16 12:55:50,826] A3C_AGENT_WORKER-Thread-17 INFO:Local worker starts!
+[2019-04-16 12:55:51,015] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-17_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:51,017] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-17_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Train-v3-res14/Eplus-env-sub_run1
+[2019-04-16 12:55:51,827] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-04-16 12:55:51,827] A3C_AGENT_WORKER-Thread-18 INFO:Local worker starts!
+[2019-04-16 12:55:52,162] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-18_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:52,164] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-18_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Train-v3-res15/Eplus-env-sub_run1
+[2019-04-16 12:55:52,828] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-04-16 12:55:52,829] A3C_AGENT_WORKER-Thread-19 INFO:Local worker starts!
+[2019-04-16 12:55:53,107] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-19_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:53,109] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-19_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Train-v3-res16/Eplus-env-sub_run1
+[2019-04-16 12:55:53,846] A3C_AGENT_MAIN INFO:Prepare the local workers ...
+[2019-04-16 12:55:53,847] A3C_AGENT_WORKER-Thread-20 INFO:Local worker starts!
+[2019-04-16 12:55:54,080] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-20_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 12:55:54,082] EPLUS_ENV_Part4-Light-Pit-Train-v3_Thread-20_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Train-v3-res17/Eplus-env-sub_run1
+[2019-04-16 12:55:59,759] A3C_EVAL-Part4-Light-Pit-Test-v6 DEBUG:NoisyNet noise sample: [array([0.], dtype=float32), 0.0]
+[2019-04-16 12:55:59,759] A3C_EVAL-Part4-Light-Pit-Test-v6 DEBUG:Observation this: [3.00003436, 88.2907087, 0.0, 0.0, 19.0, 24.1470190946799, 0.1458908325809283, 0.0, 1.0, 45.0, 28.65025844760666]
+[2019-04-16 12:55:59,760] A3C_EVAL-Part4-Light-Pit-Test-v6 DEBUG:Observation forecast: []
+[2019-04-16 12:55:59,761] A3C_EVAL-Part4-Light-Pit-Test-v6 INFO:Softmax [0.28950953 0.19344886 0.11571537 0.07205531 0.02821171 0.07302752
+ 0.02610287 0.03061257 0.03014249 0.10169113 0.0394826 ], sampled 0.44953241430867386
+[2019-04-16 12:57:14,805] A3C_EVAL-Part4-Light-Pit-Test-v5 INFO:Evaluation: average rewards by now are 2013.8247 120364.6267 892.0845
+[2019-04-16 12:57:14,871] EPLUS_ENV_Part4-Light-Pit-Test-v5_MainThread-EPLUSPROCESS_EPI_0 ERROR:*** stack smashing detected ***: /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/EnergyPlus-8-3-0//energyplus terminated
+
+[2019-04-16 12:57:15,096] EPLUS_ENV_Part4-Light-Pit-Test-v5_MainThread-EPLUSPROCESS_EPI_0 ERROR:Aborted (core dumped)
+
+[2019-04-16 12:57:35,832] A3C_EVAL-Part4-Light-Pit-Train-v3 INFO:Evaluation: average rewards by now are 1903.0712 129697.6869 569.6747
+[2019-04-16 12:57:35,870] EPLUS_ENV_Part4-Light-Pit-Train-v3_MainThread-EPLUSPROCESS_EPI_0 ERROR:*** stack smashing detected ***: /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/EnergyPlus-8-3-0//energyplus terminated
+
+[2019-04-16 12:57:36,066] EPLUS_ENV_Part4-Light-Pit-Train-v3_MainThread-EPLUSPROCESS_EPI_0 ERROR:Aborted (core dumped)
+
+[2019-04-16 12:57:38,261] A3C_EVAL-Part4-Light-Pit-Test-v6 INFO:Evaluation: average rewards by now are 1934.0993 129827.1483 295.3997
+[2019-04-16 12:57:38,296] EPLUS_ENV_Part4-Light-Pit-Test-v6_MainThread-EPLUSPROCESS_EPI_0 ERROR:*** stack smashing detected ***: /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/EnergyPlus-8-3-0//energyplus terminated
+
+[2019-04-16 12:57:38,477] EPLUS_ENV_Part4-Light-Pit-Test-v6_MainThread-EPLUSPROCESS_EPI_0 ERROR:Aborted (core dumped)
+
+[2019-04-16 12:57:39,298] A3C_AGENT_WORKER-Thread-2 INFO:Global step: 0, evaluation results [0.0, 1903.0712184884867, 129697.68690697041, 569.6747425969111, 2013.8247038432141, 120364.62673968083, 892.0845274713707, 1934.0992725757876, 129827.1482675074, 295.39969497905594]
+[2019-04-16 12:57:39,389] A3C_AGENT_WORKER-Thread-2 DEBUG:Policy network output: [0.14090097 0.10150633 0.08118517 0.07408545 0.06842025 0.14289156
+ 0.05315841 0.03751718 0.1038605  0.15665312 0.03982101], sum to 1.0000
+[2019-04-16 12:57:39,389] A3C_AGENT_WORKER-Thread-2 DEBUG:Softmax action selection sampled number: 0.6389
+[2019-04-16 12:57:39,633] A3C_AGENT_WORKER-Thread-2 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 6, 
+current raw observation is [7.2, 96.0, 0.0, 0.0, 19.0, 21.14738232039301, -0.5721252082371941, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [1, 45.0], 
+sim time this is 3600.0000, 
+sim time next is 4800.0000, 
+raw observation next is [7.200000000000001, 96.0, 0.0, 0.0, 19.0, 21.2135240804548, -0.4688219282971729, 0.0, 1.0, 45.0, 48.10577378029799], 
+processed observation next is [0.0, 0.043478260869565216, 0.662049861495845, 0.96, 0.0, 0.0, 0.08333333333333333, 0.26779367337123333, 0.34372602390094237, 0.0, 1.0, 0.6, 0.4810577378029799], 
+reward next is 0.0000, 
+noisyNet noise sample is [array([-1.0894123], dtype=float32), -0.5448749]. 
+=============================================
+[2019-04-16 12:57:57,434] A3C_AGENT_WORKER-Thread-13 DEBUG:Policy network output: [0.1039889  0.43351433 0.02629112 0.04501344 0.02333099 0.09358937
+ 0.03224283 0.0638485  0.01956218 0.12475931 0.03385899], sum to 1.0000
+[2019-04-16 12:57:57,434] A3C_AGENT_WORKER-Thread-13 DEBUG:Softmax action selection sampled number: 0.2660
+[2019-04-16 12:57:57,991] A3C_AGENT_WORKER-Thread-13 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 1, 
+current raw observation is [-7.666666666666666, 76.0, 86.5, 0.0, 22.5, 22.41750831060094, -0.4320380097002394, 1.0, 1.0, 20.0, 28.689543571740256], 
+current ob forecast is [], 
+actual action is [1, 20.0], 
+sim time this is 207600.0000, 
+sim time next is 208800.0000, 
+raw observation next is [-7.3, 75.0, 101.5, 0.0, 22.5, 22.44538803953957, -0.4309951332495108, 1.0, 1.0, 20.0, 25.532341752508845], 
+processed observation next is [1.0, 0.43478260869565216, 0.26038781163434904, 0.75, 0.3383333333333333, 0.0, 0.375, 0.3704490032949641, 0.3563349555834964, 1.0, 1.0, 0.1, 0.25532341752508847], 
+reward next is 0.6447, 
+noisyNet noise sample is [array([0.43192136], dtype=float32), -0.7741571]. 
+=============================================
+[2019-04-16 12:58:01,197] A3C_AGENT_WORKER-Thread-2 DEBUG:Policy network output: [0.2383048  0.39850464 0.03386793 0.04686696 0.0121506  0.08399859
+ 0.01641765 0.0241147  0.01171179 0.09454327 0.03951912], sum to 1.0000
+[2019-04-16 12:58:01,197] A3C_AGENT_WORKER-Thread-2 DEBUG:Softmax action selection sampled number: 0.1094
+[2019-04-16 12:58:01,213] A3C_AGENT_WORKER-Thread-2 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [-3.4, 65.0, 0.0, 0.0, 22.5, 23.8657024933628, -0.04539783486330088, 1.0, 1.0, 30.0, 33.37080745957215], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 241200.0000, 
+sim time next is 242400.0000, 
+raw observation next is [-3.4, 65.0, 0.0, 0.0, 22.5, 23.58300846349148, -0.2246540545203784, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.8260869565217391, 0.368421052631579, 0.65, 0.0, 0.0, 0.375, 0.46525070529095675, 0.4251153151598739, 0.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([1.4914943], dtype=float32), 0.43563995]. 
+=============================================
+[2019-04-16 12:58:03,077] A3C_AGENT_WORKER-Thread-3 DEBUG:Policy network output: [0.12032434 0.2786296  0.04674334 0.04691985 0.03578508 0.13514873
+ 0.0421959  0.0756314  0.03493614 0.14062217 0.04306346], sum to 1.0000
+[2019-04-16 12:58:03,077] A3C_AGENT_WORKER-Thread-3 DEBUG:Softmax action selection sampled number: 0.6749
+[2019-04-16 12:58:03,301] A3C_AGENT_WORKER-Thread-3 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 6, 
+current raw observation is [-10.23333333333333, 68.0, 0.0, 0.0, 19.0, 20.75393859158293, -0.6887064453724322, 0.0, 1.0, 45.0, 40.3788716634926], 
+current ob forecast is [], 
+actual action is [1, 45.0], 
+sim time this is 276000.0000, 
+sim time next is 277200.0000, 
+raw observation next is [-10.6, 67.0, 0.0, 0.0, 19.0, 20.61693071649558, -0.7128729327059151, 0.0, 1.0, 45.0, 40.32712471915543], 
+processed observation next is [1.0, 0.21739130434782608, 0.1689750692520776, 0.67, 0.0, 0.0, 0.08333333333333333, 0.21807755970796508, 0.2623756890980283, 0.0, 1.0, 0.6, 0.40327124719155427], 
+reward next is 0.0000, 
+noisyNet noise sample is [array([0.22187912], dtype=float32), 0.48224854]. 
+=============================================
+[2019-04-16 12:58:05,807] A3C_AGENT_WORKER-Thread-14 DEBUG:Policy network output: [0.13020203 0.41837224 0.04024254 0.06007292 0.01542827 0.09970567
+ 0.0312393  0.02892772 0.01951862 0.11759074 0.03869989], sum to 1.0000
+[2019-04-16 12:58:05,807] A3C_AGENT_WORKER-Thread-14 DEBUG:Softmax action selection sampled number: 0.7341
+[2019-04-16 12:58:06,089] A3C_AGENT_WORKER-Thread-14 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 5, 
+current raw observation is [-10.96666666666667, 61.0, 90.16666666666666, 536.3333333333334, 22.5, 23.88611719452002, -0.1236580737494795, 1.0, 1.0, 20.0, 33.54245929709384], 
+current ob forecast is [], 
+actual action is [1, 40.0], 
+sim time this is 297600.0000, 
+sim time next is 298800.0000, 
+raw observation next is [-10.6, 60.0, 96.5, 585.0, 22.5, 23.86693352011613, -0.1215319700507889, 1.0, 1.0, 40.0, 29.727682959206263], 
+processed observation next is [1.0, 0.4782608695652174, 0.1689750692520776, 0.6, 0.32166666666666666, 0.6464088397790055, 0.375, 0.48891112667634423, 0.45948934331640373, 1.0, 1.0, 0.5, 0.29727682959206264], 
+reward next is 0.2027, 
+noisyNet noise sample is [array([0.5475683], dtype=float32), 0.26585025]. 
+=============================================
+[2019-04-16 12:58:10,152] A3C_AGENT_WORKER-Thread-3 DEBUG:Policy network output: [0.11236684 0.36575815 0.0215779  0.02876179 0.0362105  0.08355338
+ 0.03757444 0.15346357 0.02903776 0.08818253 0.04351316], sum to 1.0000
+[2019-04-16 12:58:10,152] A3C_AGENT_WORKER-Thread-3 DEBUG:Softmax action selection sampled number: 0.1503
+[2019-04-16 12:58:10,223] A3C_AGENT_WORKER-Thread-3 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 1, 
+current raw observation is [-13.9, 67.33333333333334, 0.0, 0.0, 19.0, 20.0704309149364, -0.7322335234293836, 0.0, 1.0, 60.0, 59.311730138577424], 
+current ob forecast is [], 
+actual action is [1, 20.0], 
+sim time this is 344400.0000, 
+sim time next is 345600.0000, 
+raw observation next is [-13.9, 66.0, 0.0, 0.0, 19.0, 20.31831070898077, -0.7291366744172558, 0.0, 1.0, 20.0, 37.54263669176277], 
+processed observation next is [1.0, 0.0, 0.07756232686980608, 0.66, 0.0, 0.0, 0.08333333333333333, 0.19319255908173094, 0.2569544418609147, 0.0, 1.0, 0.1, 0.3754263669176277], 
+reward next is 0.5246, 
+noisyNet noise sample is [array([0.791886], dtype=float32), 0.33527303]. 
+=============================================
+[2019-04-16 12:58:10,383] A3C_AGENT_WORKER-Thread-4 DEBUG:Policy network output: [0.10150694 0.23014165 0.0177839  0.03633169 0.06764501 0.16693611
+ 0.03638199 0.08996615 0.04522397 0.15985972 0.04822284], sum to 1.0000
+[2019-04-16 12:58:10,385] A3C_AGENT_WORKER-Thread-4 DEBUG:Softmax action selection sampled number: 0.2741
+[2019-04-16 12:58:10,757] A3C_AGENT_WORKER-Thread-4 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 1, 
+current raw observation is [-15.96666666666667, 87.0, 27.33333333333334, 520.5, 22.5, 19.27216501844824, -1.062410081310276, 1.0, 1.0, 20.0, 29.77912392243102], 
+current ob forecast is [], 
+actual action is [1, 20.0], 
+sim time this is 376800.0000, 
+sim time next is 378000.0000, 
+raw observation next is [-15.6, 90.0, 32.0, 607.5, 22.5, 19.63937137178645, -1.030247346355027, 1.0, 1.0, 20.0, 24.364904093632624], 
+processed observation next is [1.0, 0.391304347826087, 0.030470914127423816, 0.9, 0.10666666666666667, 0.6712707182320442, 0.375, 0.1366142809822041, 0.15658421788165766, 1.0, 1.0, 0.1, 0.24364904093632625], 
+reward next is 0.3216, 
+noisyNet noise sample is [array([0.5449984], dtype=float32), -0.15280527]. 
+=============================================
+[2019-04-16 12:58:16,297] A3C_AGENT_WORKER-Thread-3 DEBUG:Policy network output: [0.13842341 0.41979364 0.01607781 0.05155539 0.02391669 0.06582425
+ 0.03400747 0.04202649 0.02920531 0.12480419 0.05436533], sum to 1.0000
+[2019-04-16 12:58:16,297] A3C_AGENT_WORKER-Thread-3 DEBUG:Softmax action selection sampled number: 0.4444
+[2019-04-16 12:58:16,461] A3C_AGENT_WORKER-Thread-3 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 1, 
+current raw observation is [-9.666666666666668, 40.66666666666667, 0.0, 0.0, 22.5, 21.43983742292312, -0.61996757022855, 1.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [1, 20.0], 
+sim time this is 415200.0000, 
+sim time next is 416400.0000, 
+raw observation next is [-9.833333333333332, 41.33333333333334, 0.0, 0.0, 22.5, 20.87105388021212, -0.6478330669203107, 1.0, 1.0, 20.0, 33.23300303678661], 
+processed observation next is [1.0, 0.8260869565217391, 0.19021237303785785, 0.41333333333333344, 0.0, 0.0, 0.375, 0.23925449001767665, 0.28405564435989644, 1.0, 1.0, 0.1, 0.3323300303678661], 
+reward next is 0.3409, 
+noisyNet noise sample is [array([0.5797356], dtype=float32), 0.5853039]. 
+=============================================
+[2019-04-16 12:58:20,555] A3C_AGENT_WORKER-Thread-14 DEBUG:Policy network output: [0.21094039 0.34052843 0.0263088  0.06024315 0.02245389 0.0742076
+ 0.02726942 0.02356526 0.03004202 0.12753281 0.05690822], sum to 1.0000
+[2019-04-16 12:58:20,555] A3C_AGENT_WORKER-Thread-14 DEBUG:Softmax action selection sampled number: 0.2021
+[2019-04-16 12:58:20,570] A3C_AGENT_WORKER-Thread-14 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [1.1, 37.0, 26.0, 0.0, 22.5, 24.35197905135176, -0.1158005879476319, 1.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 490800.0000, 
+sim time next is 492000.0000, 
+raw observation next is [1.1, 40.0, 16.66666666666667, 0.0, 22.5, 23.98916727840653, -0.2627442966829828, 1.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.6956521739130435, 0.49307479224376743, 0.4, 0.05555555555555557, 0.0, 0.375, 0.49909727320054414, 0.4124185677723391, 1.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([-0.5212386], dtype=float32), 0.39941463]. 
+=============================================
+[2019-04-16 12:58:24,349] A3C_AGENT_WORKER-Thread-7 DEBUG:Policy network output: [0.21872492 0.1074359  0.06490144 0.07786537 0.07194586 0.09522162
+ 0.04970534 0.04337954 0.08574464 0.12471274 0.0603626 ], sum to 1.0000
+[2019-04-16 12:58:24,349] A3C_AGENT_WORKER-Thread-7 DEBUG:Softmax action selection sampled number: 0.6274
+[2019-04-16 12:58:24,619] A3C_AGENT_WORKER-Thread-7 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 5, 
+current raw observation is [-0.6, 54.00000000000001, 82.66666666666667, 41.0, 19.0, 20.51428143792376, -0.844385918558428, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [1, 40.0], 
+sim time this is 660000.0000, 
+sim time next is 661200.0000, 
+raw observation next is [-0.6, 54.0, 73.66666666666667, 34.16666666666666, 19.0, 20.16746618927068, -0.8005034551641188, 0.0, 1.0, 40.0, 44.98323061204819], 
+processed observation next is [0.0, 0.6521739130434783, 0.44598337950138506, 0.54, 0.24555555555555558, 0.03775322283609575, 0.08333333333333333, 0.18062218243922334, 0.23316551494529372, 0.0, 1.0, 0.5, 0.44983230612048186], 
+reward next is 0.0502, 
+noisyNet noise sample is [array([0.68730974], dtype=float32), -0.8855768]. 
+=============================================
+[2019-04-16 12:58:26,951] A3C_AGENT_WORKER-Thread-14 DEBUG:Policy network output: [0.15810615 0.15450537 0.04542797 0.06119221 0.06704251 0.12189176
+ 0.06238745 0.05011031 0.12305832 0.0998318  0.05644618], sum to 1.0000
+[2019-04-16 12:58:26,951] A3C_AGENT_WORKER-Thread-14 DEBUG:Softmax action selection sampled number: 0.9238
+[2019-04-16 12:58:26,986] A3C_AGENT_WORKER-Thread-14 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 9, 
+current raw observation is [-3.9, 65.0, 117.5, 25.5, 19.0, 20.08320338774337, -0.9455615784846608, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [1, 60.0], 
+sim time this is 640800.0000, 
+sim time next is 642000.0000, 
+raw observation next is [-3.733333333333333, 65.0, 105.8333333333333, 8.499999999999998, 19.0, 19.64258080489889, -0.8642275036781776, 0.0, 1.0, 60.0, 71.98989717509302], 
+processed observation next is [0.0, 0.43478260869565216, 0.35918744228993543, 0.65, 0.3527777777777777, 0.009392265193370164, 0.08333333333333333, 0.13688173374157428, 0.21192416544060746, 0.0, 1.0, 0.9, 0.7198989717509302], 
+reward next is 0.0000, 
+noisyNet noise sample is [array([-0.36517304], dtype=float32), -1.2322457]. 
+=============================================
+[2019-04-16 12:58:28,400] A3C_AGENT_WORKER-Thread-16 DEBUG:Policy network output: [0.14792433 0.13748656 0.04160143 0.06146896 0.08373156 0.13335145
+ 0.0693832  0.06083674 0.10885455 0.10270479 0.05265639], sum to 1.0000
+[2019-04-16 12:58:28,400] A3C_AGENT_WORKER-Thread-16 DEBUG:Softmax action selection sampled number: 0.4543
+[2019-04-16 12:58:28,688] A3C_AGENT_WORKER-Thread-16 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 4, 
+current raw observation is [-1.566666666666667, 59.66666666666667, 165.1666666666667, 86.83333333333333, 19.0, 20.26730710934, -0.6749713457617422, 0.0, 1.0, 55.0, 61.42127967461499], 
+current ob forecast is [], 
+actual action is [1, 35.0], 
+sim time this is 654000.0000, 
+sim time next is 655200.0000, 
+raw observation next is [-1.2, 60.0, 131.5, 74.5, 19.0, 20.87281671895922, -0.6141719059235154, 0.0, 1.0, 35.0, 40.01849205694188], 
+processed observation next is [0.0, 0.6086956521739131, 0.42936288088642666, 0.6, 0.43833333333333335, 0.08232044198895028, 0.08333333333333333, 0.23940139324660178, 0.2952760313588282, 0.0, 1.0, 0.4, 0.4001849205694188], 
+reward next is 0.1998, 
+noisyNet noise sample is [array([-2.3057609], dtype=float32), -0.4438776]. 
+=============================================
+[2019-04-16 12:58:42,393] A3C_AGENT_WORKER-Thread-2 DEBUG:Policy network output: [0.15790117 0.39579833 0.00344915 0.05985196 0.037465   0.09456517
+ 0.03183834 0.04671642 0.05088832 0.06056512 0.0609611 ], sum to 1.0000
+[2019-04-16 12:58:42,393] A3C_AGENT_WORKER-Thread-2 DEBUG:Softmax action selection sampled number: 0.6698
+[2019-04-16 12:58:42,429] A3C_AGENT_WORKER-Thread-2 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 5, 
+current raw observation is [1.1, 84.0, 72.16666666666667, 0.0, 22.5, 23.25030677068996, -0.2108491636715777, 1.0, 1.0, 45.0, 32.230839604391875], 
+current ob forecast is [], 
+actual action is [1, 40.0], 
+sim time this is 901200.0000, 
+sim time next is 902400.0000, 
+raw observation next is [1.1, 84.0, 80.33333333333334, 0.0, 22.5, 23.36122866950076, -0.1959711547638325, 1.0, 1.0, 40.0, 24.41019955614335], 
+processed observation next is [1.0, 0.43478260869565216, 0.49307479224376743, 0.84, 0.26777777777777784, 0.0, 0.375, 0.4467690557917301, 0.43467628174538914, 1.0, 1.0, 0.5, 0.2441019955614335], 
+reward next is 0.2559, 
+noisyNet noise sample is [array([1.0206071], dtype=float32), -0.5464564]. 
+=============================================
+[2019-04-16 12:58:46,470] A3C_AGENT_WORKER-Thread-13 DEBUG:Policy network output: [0.25717872 0.29282048 0.00308677 0.05069782 0.04652929 0.11712495
+ 0.01678051 0.01943274 0.05043433 0.06675803 0.07915637], sum to 1.0000
+[2019-04-16 12:58:46,495] A3C_AGENT_WORKER-Thread-13 DEBUG:Softmax action selection sampled number: 0.9858
+[2019-04-16 12:58:46,536] A3C_AGENT_WORKER-Thread-13 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 10, 
+current raw observation is [12.0, 86.0, 121.3333333333333, 0.0, 22.5, 25.52979020181809, 0.4379447887779777, 1.0, 1.0, 20.0, 18.833839886732733], 
+current ob forecast is [], 
+actual action is [1, 65.0], 
+sim time this is 992400.0000, 
+sim time next is 993600.0000, 
+raw observation next is [12.2, 86.0, 124.0, 0.0, 22.5, 25.6352806043453, 0.532878458632455, 1.0, 1.0, 65.0, 51.66582648751755], 
+processed observation next is [1.0, 0.5217391304347826, 0.8005540166204987, 0.86, 0.41333333333333333, 0.0, 0.375, 0.6362733836954417, 0.677626152877485, 1.0, 1.0, 1.0, 0.5166582648751755], 
+reward next is 0.0000, 
+noisyNet noise sample is [array([-0.00017696], dtype=float32), 0.5115855]. 
+=============================================
+[2019-04-16 12:58:47,814] A3C_AGENT_WORKER-Thread-20 DEBUG:Policy network output: [0.27238703 0.25661653 0.00268254 0.04453922 0.07080384 0.0764242
+ 0.02805872 0.03173123 0.08175951 0.05600439 0.07899272], sum to 1.0000
+[2019-04-16 12:58:47,815] A3C_AGENT_WORKER-Thread-20 DEBUG:Softmax action selection sampled number: 0.1070
+[2019-04-16 12:58:48,102] A3C_AGENT_WORKER-Thread-20 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [14.4, 75.0, 0.0, 0.0, 19.0, 24.95055324644886, 0.5016489874165805, 0.0, 1.0, 50.0, 39.46151025058168], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 1030800.0000, 
+sim time next is 1032000.0000, 
+raw observation next is [14.4, 75.0, 0.0, 0.0, 19.0, 25.16704991029805, 0.4303042866653615, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.9565217391304348, 0.8614958448753465, 0.75, 0.0, 0.0, 0.08333333333333333, 0.5972541591915043, 0.6434347622217872, 0.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([0.00018525], dtype=float32), -0.28532958]. 
+=============================================
+[2019-04-16 12:58:48,495] A3C_AGENT_WORKER-Thread-16 DEBUG:Policy network output: [0.35361773 0.26124737 0.00146216 0.05055756 0.03779836 0.10061541
+ 0.01541324 0.02256393 0.04510756 0.04083803 0.0707787 ], sum to 1.0000
+[2019-04-16 12:58:48,495] A3C_AGENT_WORKER-Thread-16 DEBUG:Softmax action selection sampled number: 0.1825
+[2019-04-16 12:58:48,533] A3C_AGENT_WORKER-Thread-16 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [12.36666666666667, 86.0, 126.6666666666667, 0.0, 22.5, 25.61066657688397, 0.5348356503076511, 1.0, 1.0, 30.0, 28.024296838453793], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 994800.0000, 
+sim time next is 996000.0000, 
+raw observation next is [12.53333333333333, 86.0, 126.5, 0.0, 22.5, 25.87111586869193, 0.5073422662551231, 1.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.5217391304347826, 0.8097876269621421, 0.86, 0.4216666666666667, 0.0, 0.375, 0.6559263223909942, 0.6691140887517077, 1.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([-0.73476017], dtype=float32), -1.5705029]. 
+=============================================
+[2019-04-16 12:58:48,652] A3C_AGENT_WORKER-Thread-15 DEBUG:Policy network output: [0.23099202 0.1973508  0.00489657 0.05079335 0.06705492 0.15231392
+ 0.03337108 0.04281961 0.07104924 0.07576091 0.07359757], sum to 1.0000
+[2019-04-16 12:58:48,654] A3C_AGENT_WORKER-Thread-15 DEBUG:Softmax action selection sampled number: 0.5534
+[2019-04-16 12:58:48,832] A3C_AGENT_WORKER-Thread-15 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 5, 
+current raw observation is [9.6, 83.0, 0.0, 0.0, 19.0, 24.93488505952431, 0.3320883879051467, 0.0, 1.0, 55.0, 45.21560548491787], 
+current ob forecast is [], 
+actual action is [1, 40.0], 
+sim time this is 974400.0000, 
+sim time next is 975600.0000, 
+raw observation next is [10.0, 83.0, 0.0, 0.0, 19.0, 25.02739894867772, 0.3497033443973298, 0.0, 1.0, 40.0, 31.498059760591282], 
+processed observation next is [1.0, 0.30434782608695654, 0.739612188365651, 0.83, 0.0, 0.0, 0.08333333333333333, 0.5856165790564768, 0.6165677814657766, 0.0, 1.0, 0.5, 0.3149805976059128], 
+reward next is 0.1850, 
+noisyNet noise sample is [array([-0.67532545], dtype=float32), 0.24321859]. 
+=============================================
+[2019-04-16 12:59:01,724] A3C_AGENT_WORKER-Thread-6 DEBUG:Policy network output: [0.41892233 0.12005043 0.00603176 0.08600651 0.0655441  0.03057204
+ 0.01701217 0.02281672 0.08600716 0.03748721 0.10954951], sum to 1.0000
+[2019-04-16 12:59:01,725] A3C_AGENT_WORKER-Thread-6 DEBUG:Softmax action selection sampled number: 0.5124
+[2019-04-16 12:59:02,293] A3C_AGENT_WORKER-Thread-6 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 1, 
+current raw observation is [16.1, 79.33333333333333, 0.0, 0.0, 19.0, 27.61919814682151, 1.040566111702324, 0.0, 0.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [1, 20.0], 
+sim time this is 1212000.0000, 
+sim time next is 1213200.0000, 
+raw observation next is [16.1, 80.0, 0.0, 0.0, 19.0, 27.61805827749742, 1.104664940900707, 0.0, 0.0, 20.0, 36.18762711728049], 
+processed observation next is [0.0, 0.043478260869565216, 0.9085872576177286, 0.8, 0.0, 0.0, 0.08333333333333333, 0.8015048564581182, 0.8682216469669024, 0.0, 0.0, 0.1, 0.3618762711728049], 
+reward next is 0.5381, 
+noisyNet noise sample is [array([0.6554189], dtype=float32), -0.5284489]. 
+=============================================
+[2019-04-16 12:59:05,943] A3C_AGENT_WORKER-Thread-4 DEBUG:Policy network output: [0.42065758 0.08955252 0.00436964 0.08268886 0.07532794 0.05309312
+ 0.01781112 0.01472961 0.09366249 0.03222512 0.11588199], sum to 1.0000
+[2019-04-16 12:59:05,944] A3C_AGENT_WORKER-Thread-4 DEBUG:Softmax action selection sampled number: 0.0993
+[2019-04-16 12:59:06,045] A3C_AGENT_WORKER-Thread-4 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [15.0, 100.0, 76.0, 0.0, 19.0, 26.56768302023851, 0.891817896441904, 0.0, 0.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 1245600.0000, 
+sim time next is 1246800.0000, 
+raw observation next is [14.8, 100.0, 77.33333333333333, 0.0, 19.0, 26.46415804644483, 0.8749309940226487, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [0.0, 0.43478260869565216, 0.8725761772853187, 1.0, 0.2577777777777778, 0.0, 0.08333333333333333, 0.7053465038704024, 0.7916436646742162, 0.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([0.2665712], dtype=float32), -1.3857324]. 
+=============================================
+[2019-04-16 12:59:15,157] A3C_AGENT_WORKER-Thread-20 DEBUG:Policy network output: [3.76774400e-01 1.80910453e-01 1.52720786e-05 1.70857459e-02
+ 1.30768120e-01 8.23616534e-02 7.88622256e-03 9.74471681e-03
+ 9.19760764e-02 1.09095955e-02 9.15677994e-02], sum to 1.0000
+[2019-04-16 12:59:15,157] A3C_AGENT_WORKER-Thread-20 DEBUG:Softmax action selection sampled number: 0.6727
+[2019-04-16 12:59:15,229] A3C_AGENT_WORKER-Thread-20 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 4, 
+current raw observation is [1.266666666666667, 92.0, 0.0, 0.0, 19.0, 25.19723086318452, 0.4609627237581097, 0.0, 1.0, 30.0, 33.76136265115299], 
+current ob forecast is [], 
+actual action is [1, 35.0], 
+sim time this is 1462800.0000, 
+sim time next is 1464000.0000, 
+raw observation next is [1.433333333333333, 92.0, 0.0, 0.0, 19.0, 24.98075732308552, 0.4210960140582133, 0.0, 1.0, 35.0, 19.62212459643037], 
+processed observation next is [1.0, 0.9565217391304348, 0.502308402585411, 0.92, 0.0, 0.0, 0.08333333333333333, 0.5817297769237934, 0.6403653380194044, 0.0, 1.0, 0.4, 0.1962212459643037], 
+reward next is 0.4038, 
+noisyNet noise sample is [array([-0.3250952], dtype=float32), 1.2751678]. 
+=============================================
+[2019-04-16 12:59:18,102] A3C_AGENT_WORKER-Thread-2 DEBUG:Policy network output: [4.3109170e-01 8.2534842e-02 2.9970470e-06 1.5560949e-02 7.7266090e-02
+ 1.6367626e-01 4.0804138e-03 6.0459427e-03 1.1892005e-01 4.4769961e-03
+ 9.6343815e-02], sum to 1.0000
+[2019-04-16 12:59:18,102] A3C_AGENT_WORKER-Thread-2 DEBUG:Softmax action selection sampled number: 0.3647
+[2019-04-16 12:59:18,148] A3C_AGENT_WORKER-Thread-2 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [3.666666666666667, 95.0, 85.5, 590.0, 22.5, 27.10105005177681, 0.7463120425041301, 1.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 1509600.0000, 
+sim time next is 1510800.0000, 
+raw observation next is [4.033333333333333, 94.0, 90.0, 706.6666666666666, 22.5, 26.7778082094289, 0.7165387097962744, 1.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.4782608695652174, 0.5743305632502309, 0.94, 0.3, 0.7808471454880295, 0.375, 0.7314840174524084, 0.7388462365987581, 1.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([-0.2940518], dtype=float32), 0.37315214]. 
+=============================================
+[2019-04-16 12:59:19,434] A3C_AGENT_WORKER-Thread-14 DEBUG:Policy network output: [4.75747705e-01 7.33618662e-02 2.54046354e-05 1.53068155e-02
+ 9.24348384e-02 1.37095094e-01 4.75876313e-03 7.00290501e-03
+ 1.31148726e-01 9.09661315e-03 5.40212914e-02], sum to 1.0000
+[2019-04-16 12:59:19,434] A3C_AGENT_WORKER-Thread-14 DEBUG:Softmax action selection sampled number: 0.8746
+[2019-04-16 12:59:19,468] A3C_AGENT_WORKER-Thread-14 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 8, 
+current raw observation is [1.466666666666667, 98.66666666666666, 0.0, 0.0, 19.0, 25.19203589248999, 0.4385655725112023, 0.0, 1.0, 35.0, 41.4029149224302], 
+current ob forecast is [], 
+actual action is [1, 55.0], 
+sim time this is 1492800.0000, 
+sim time next is 1494000.0000, 
+raw observation next is [1.1, 100.0, 0.0, 0.0, 19.0, 25.48406622079754, 0.4262560979859507, 0.0, 1.0, 55.0, 42.07920388176436], 
+processed observation next is [1.0, 0.30434782608695654, 0.49307479224376743, 1.0, 0.0, 0.0, 0.08333333333333333, 0.6236721850664617, 0.6420853659953168, 0.0, 1.0, 0.8, 0.4207920388176436], 
+reward next is 0.0000, 
+noisyNet noise sample is [array([-1.3914512], dtype=float32), -0.32333446]. 
+=============================================
+[2019-04-16 12:59:27,912] A3C_AGENT_WORKER-Thread-19 DEBUG:Policy network output: [7.7109510e-01 1.4052069e-02 1.5110997e-07 9.3939947e-03 3.1671349e-02
+ 2.6945630e-02 7.1668485e-04 1.1909372e-03 7.1384721e-02 1.8461305e-03
+ 7.1703300e-02], sum to 1.0000
+[2019-04-16 12:59:27,912] A3C_AGENT_WORKER-Thread-19 DEBUG:Softmax action selection sampled number: 0.1800
+[2019-04-16 12:59:28,224] A3C_AGENT_WORKER-Thread-19 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [1.233333333333333, 92.0, 68.83333333333333, 0.0, 22.5, 24.5106666696767, 0.2002847278635433, 1.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 1680000.0000, 
+sim time next is 1681200.0000, 
+raw observation next is [1.1, 92.0, 74.5, 0.0, 22.5, 24.46183564673976, 0.1960540626686481, 1.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.4782608695652174, 0.49307479224376743, 0.92, 0.24833333333333332, 0.0, 0.375, 0.5384863038949801, 0.5653513542228827, 1.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([-0.91479623], dtype=float32), -0.008394432]. 
+=============================================
+[2019-04-16 12:59:28,273] A3C_AGENT_WORKER-Thread-5 DEBUG:Policy network output: [7.7256143e-01 3.8434931e-03 8.4287805e-08 4.8054638e-03 7.0651412e-02
+ 5.5339094e-02 3.1664080e-04 6.8039884e-04 2.4166772e-02 2.1371858e-03
+ 6.5498158e-02], sum to 1.0000
+[2019-04-16 12:59:28,273] A3C_AGENT_WORKER-Thread-5 DEBUG:Softmax action selection sampled number: 0.5189
+[2019-04-16 12:59:28,630] A3C_AGENT_WORKER-Thread-5 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [1.1, 88.0, 96.66666666666667, 0.0, 22.5, 25.65673961352817, 0.4546036629968153, 1.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 1690800.0000, 
+sim time next is 1692000.0000, 
+raw observation next is [1.1, 88.0, 90.0, 0.0, 22.5, 25.58632722801879, 0.40929094718719, 1.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.6086956521739131, 0.49307479224376743, 0.88, 0.3, 0.0, 0.375, 0.6321939356682323, 0.6364303157290633, 1.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([0.74750096], dtype=float32), -0.18396612]. 
+=============================================
+[2019-04-16 12:59:29,907] A3C_AGENT_WORKER-Thread-2 DEBUG:Policy network output: [7.4818611e-01 1.2014953e-02 2.5988902e-07 6.5618437e-03 7.0774876e-02
+ 2.2953259e-02 1.6059977e-03 3.3267920e-03 8.9313000e-02 1.7154575e-03
+ 4.3547433e-02], sum to 1.0000
+[2019-04-16 12:59:29,908] A3C_AGENT_WORKER-Thread-2 DEBUG:Softmax action selection sampled number: 0.7979
+[2019-04-16 12:59:29,982] A3C_AGENT_WORKER-Thread-2 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 4, 
+current raw observation is [0.1666666666666667, 94.0, 0.0, 0.0, 19.0, 22.62175432598623, 0.0966705611504204, 0.0, 1.0, 55.0, 89.24904946513303], 
+current ob forecast is [], 
+actual action is [1, 35.0], 
+sim time this is 1723200.0000, 
+sim time next is 1724400.0000, 
+raw observation next is [0.0, 95.0, 0.0, 0.0, 19.0, 23.56233268691967, 0.1526271606273379, 0.0, 1.0, 35.0, 43.53284310325189], 
+processed observation next is [1.0, 1.0, 0.46260387811634357, 0.95, 0.0, 0.0, 0.08333333333333333, 0.4635277239099726, 0.5508757202091127, 0.0, 1.0, 0.4, 0.43532843103251895], 
+reward next is 0.1647, 
+noisyNet noise sample is [array([0.4313337], dtype=float32), -0.9309383]. 
+=============================================
+[2019-04-16 12:59:30,048] A3C_AGENT_WORKER-Thread-13 DEBUG:Policy network output: [6.9368887e-01 8.4225228e-03 4.2678477e-07 4.3389844e-03 1.2744352e-01
+ 3.6901057e-02 1.0261730e-03 1.8879863e-03 6.8535246e-02 2.3315887e-03
+ 5.5423677e-02], sum to 1.0000
+[2019-04-16 12:59:30,049] A3C_AGENT_WORKER-Thread-13 DEBUG:Softmax action selection sampled number: 0.4463
+[2019-04-16 12:59:30,109] A3C_AGENT_WORKER-Thread-13 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [0.0, 95.0, 0.0, 0.0, 19.0, 22.05496094687489, -0.2816375879002824, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 1724400.0000, 
+sim time next is 1725600.0000, 
+raw observation next is [0.1666666666666667, 94.0, 0.0, 0.0, 19.0, 21.70101526294132, -0.3617384366109016, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 1.0, 0.4672206832871654, 0.94, 0.0, 0.0, 0.08333333333333333, 0.3084179385784432, 0.3794205211296995, 0.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([0.7117156], dtype=float32), -1.4611301]. 
+=============================================
+[2019-04-16 12:59:31,678] A3C_AGENT_WORKER-Thread-15 DEBUG:Policy network output: [8.0189526e-01 8.8085234e-03 1.3962450e-07 5.2826223e-03 2.9687786e-02
+ 2.1250358e-02 1.0744623e-03 1.6830396e-03 5.3431038e-02 1.2682786e-03
+ 7.5618498e-02], sum to 1.0000
+[2019-04-16 12:59:31,678] A3C_AGENT_WORKER-Thread-15 DEBUG:Softmax action selection sampled number: 0.8861
+[2019-04-16 12:59:31,822] A3C_AGENT_WORKER-Thread-15 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 8, 
+current raw observation is [0.7000000000000001, 90.66666666666666, 0.0, 0.0, 19.0, 22.34770246629455, -0.1425313431501831, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [1, 55.0], 
+sim time this is 1716000.0000, 
+sim time next is 1717200.0000, 
+raw observation next is [0.5, 92.0, 0.0, 0.0, 19.0, 22.57599502118822, 0.09505701758779496, 0.0, 1.0, 55.0, 83.63200707005856], 
+processed observation next is [1.0, 0.9130434782608695, 0.4764542936288089, 0.92, 0.0, 0.0, 0.08333333333333333, 0.3813329184323517, 0.531685672529265, 0.0, 1.0, 0.8, 0.8363200707005857], 
+reward next is 0.0000, 
+noisyNet noise sample is [array([2.271287], dtype=float32), -0.5982087]. 
+=============================================
+[2019-04-16 12:59:32,251] A3C_AGENT_WORKER-Thread-8 DEBUG:Policy network output: [5.53752899e-01 1.19213834e-02 1.48733425e-05 2.06511486e-02
+ 1.21787623e-01 8.45807418e-02 4.14154585e-03 5.39332721e-03
+ 1.10547021e-01 3.71596264e-03 8.34935158e-02], sum to 1.0000
+[2019-04-16 12:59:32,251] A3C_AGENT_WORKER-Thread-8 DEBUG:Softmax action selection sampled number: 0.5546
+[2019-04-16 12:59:32,568] A3C_AGENT_WORKER-Thread-8 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 1, 
+current raw observation is [-2.633333333333333, 83.0, 124.8333333333333, 0.0, 19.0, 21.46849374338104, -0.41292107128424, 0.0, 1.0, 35.0, 34.61429337056721], 
+current ob forecast is [], 
+actual action is [1, 20.0], 
+sim time this is 1773600.0000, 
+sim time next is 1774800.0000, 
+raw observation next is [-2.8, 83.0, 122.5, 0.0, 19.0, 21.58394517195757, -0.4203247988425743, 0.0, 1.0, 20.0, 30.580079146257635], 
+processed observation next is [0.0, 0.5652173913043478, 0.38504155124653744, 0.83, 0.4083333333333333, 0.0, 0.08333333333333333, 0.29866209766313084, 0.3598917337191419, 0.0, 1.0, 0.1, 0.3058007914625763], 
+reward next is 0.5942, 
+noisyNet noise sample is [array([0.14734052], dtype=float32), -0.18429764]. 
+=============================================
+[2019-04-16 12:59:36,180] A3C_AGENT_WORKER-Thread-17 DEBUG:Policy network output: [7.1636605e-01 2.1012902e-02 7.5831604e-06 1.2181689e-02 6.1936893e-02
+ 4.3940801e-02 1.3662237e-03 2.5003366e-03 9.0276249e-02 2.6443976e-03
+ 4.7766887e-02], sum to 1.0000
+[2019-04-16 12:59:36,180] A3C_AGENT_WORKER-Thread-17 DEBUG:Softmax action selection sampled number: 0.3298
+[2019-04-16 12:59:36,706] A3C_AGENT_WORKER-Thread-17 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [-1.366666666666667, 87.0, 0.0, 0.0, 19.0, 23.24994213367047, -0.04943229938309734, 0.0, 1.0, 55.0, 50.545020295254915], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 1750800.0000, 
+sim time next is 1752000.0000, 
+raw observation next is [-1.533333333333333, 87.0, 0.0, 0.0, 19.0, 23.05089447153874, -0.2268077020493493, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [0.0, 0.2608695652173913, 0.42012927054478305, 0.87, 0.0, 0.0, 0.08333333333333333, 0.4209078726282283, 0.4243974326502169, 0.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([1.0860721], dtype=float32), 0.75524557]. 
+=============================================
+[2019-04-16 12:59:37,617] A3C_AGENT_WORKER-Thread-18 DEBUG:Policy network output: [7.1666557e-01 2.2793146e-02 4.9072441e-06 1.2631490e-02 1.1174667e-01
+ 2.6471203e-02 2.2579201e-03 5.1488648e-03 5.7626553e-02 3.1955047e-03
+ 4.1458022e-02], sum to 1.0000
+[2019-04-16 12:59:37,617] A3C_AGENT_WORKER-Thread-18 DEBUG:Softmax action selection sampled number: 0.9779
+[2019-04-16 12:59:37,997] A3C_AGENT_WORKER-Thread-18 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 10, 
+current raw observation is [-3.9, 82.0, 0.0, 0.0, 19.0, 19.36775160281306, -0.9834881622992578, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [1, 65.0], 
+sim time this is 1792800.0000, 
+sim time next is 1794000.0000, 
+raw observation next is [-4.1, 82.33333333333334, 0.0, 0.0, 19.0, 19.6598102518847, -0.6781709881278889, 0.0, 1.0, 65.0, 105.2951152098082], 
+processed observation next is [0.0, 0.782608695652174, 0.3490304709141275, 0.8233333333333335, 0.0, 0.0, 0.08333333333333333, 0.13831752099039166, 0.27394300395737037, 0.0, 1.0, 1.0, 1.052951152098082], 
+reward next is 0.0000, 
+noisyNet noise sample is [array([0.5410144], dtype=float32), 2.775376]. 
+=============================================
+[2019-04-16 12:59:42,169] A3C_AGENT_WORKER-Thread-2 DEBUG:Policy network output: [5.1166064e-01 1.3029088e-02 8.2539992e-07 3.9670942e-03 1.4267467e-01
+ 6.0368240e-02 2.6990261e-03 4.8355609e-03 1.2005191e-01 6.9460459e-03
+ 1.3376683e-01], sum to 1.0000
+[2019-04-16 12:59:42,169] A3C_AGENT_WORKER-Thread-2 DEBUG:Softmax action selection sampled number: 0.2670
+[2019-04-16 12:59:42,216] A3C_AGENT_WORKER-Thread-2 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [-8.900000000000002, 82.0, 0.0, 0.0, 19.0, 18.50983459081836, -1.283760103512345, 0.0, 1.0, 35.0, 36.24821571550483], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 1920000.0000, 
+sim time next is 1921200.0000, 
+raw observation next is [-8.9, 82.0, 0.0, 0.0, 19.0, 18.35572429088031, -1.43880428612274, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.21739130434782608, 0.21606648199445982, 0.82, 0.0, 0.0, 0.08333333333333333, 0.029643690906692537, 0.020398571292420026, 0.0, 1.0, 0.0, 0.0], 
+reward next is 0.0000, 
+noisyNet noise sample is [array([0.7819582], dtype=float32), 1.975841]. 
+=============================================
+[2019-04-16 12:59:43,289] A3C_AGENT_WORKER-Thread-7 DEBUG:Policy network output: [4.6640596e-01 6.8491688e-03 8.5160977e-08 4.4385577e-03 2.7201936e-01
+ 3.2369468e-02 9.4420090e-04 3.2947036e-03 1.3684556e-01 1.5018755e-03
+ 7.5330928e-02], sum to 1.0000
+[2019-04-16 12:59:43,289] A3C_AGENT_WORKER-Thread-7 DEBUG:Softmax action selection sampled number: 0.8417
+[2019-04-16 12:59:43,367] A3C_AGENT_WORKER-Thread-7 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 8, 
+current raw observation is [-5.8, 83.0, 0.0, 0.0, 19.0, 19.79358608614324, -0.7284243692301219, 0.0, 1.0, 55.0, 90.91654417063532], 
+current ob forecast is [], 
+actual action is [1, 55.0], 
+sim time this is 1982400.0000, 
+sim time next is 1983600.0000, 
+raw observation next is [-5.6, 83.0, 0.0, 0.0, 19.0, 20.66575898395898, -0.6275937095010714, 0.0, 1.0, 55.0, 59.93493573340329], 
+processed observation next is [1.0, 1.0, 0.30747922437673136, 0.83, 0.0, 0.0, 0.08333333333333333, 0.2221465819965817, 0.2908020968329762, 0.0, 1.0, 0.8, 0.5993493573340329], 
+reward next is 0.0000, 
+noisyNet noise sample is [array([-0.8242252], dtype=float32), 1.5921437]. 
+=============================================
+[2019-04-16 12:59:45,899] A3C_AGENT_WORKER-Thread-17 DEBUG:Policy network output: [3.7380475e-01 1.1240058e-02 6.6152138e-06 1.2758634e-02 1.5415516e-01
+ 6.8879053e-02 3.6750033e-03 1.5416468e-03 1.3147983e-01 7.0233312e-03
+ 2.3543581e-01], sum to 1.0000
+[2019-04-16 12:59:45,899] A3C_AGENT_WORKER-Thread-17 DEBUG:Softmax action selection sampled number: 0.8659
+[2019-04-16 12:59:46,109] A3C_AGENT_WORKER-Thread-17 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 10, 
+current raw observation is [-4.5, 71.0, 178.0, 62.0, 19.0, 20.5403468971034, -0.9121668839781302, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [1, 65.0], 
+sim time this is 1864800.0000, 
+sim time next is 1866000.0000, 
+raw observation next is [-4.5, 75.0, 183.3333333333333, 76.66666666666667, 19.0, 20.4328766355332, -0.709779350273375, 0.0, 1.0, 65.0, 95.24237354375165], 
+processed observation next is [0.0, 0.6086956521739131, 0.3379501385041552, 0.75, 0.6111111111111109, 0.0847145488029466, 0.08333333333333333, 0.2027397196277668, 0.26340688324220835, 0.0, 1.0, 1.0, 0.9524237354375166], 
+reward next is 0.0000, 
+noisyNet noise sample is [array([-0.925532], dtype=float32), -1.2199905]. 
+=============================================
+[2019-04-16 12:59:48,613] A3C_AGENT_WORKER-Thread-5 DEBUG:Policy network output: [6.2436694e-01 7.0530042e-04 2.4367359e-09 1.6108217e-03 1.3590291e-01
+ 3.4739364e-02 2.2450461e-04 3.0432985e-04 5.6662869e-02 6.7175843e-04
+ 1.4481118e-01], sum to 1.0000
+[2019-04-16 12:59:48,613] A3C_AGENT_WORKER-Thread-5 DEBUG:Softmax action selection sampled number: 0.6508
+[2019-04-16 12:59:48,692] A3C_AGENT_WORKER-Thread-5 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 4, 
+current raw observation is [-2.8, 62.0, 66.66666666666667, 0.0, 22.5, 23.48854559184827, -0.3523057993147481, 1.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [1, 35.0], 
+sim time this is 1957200.0000, 
+sim time next is 1958400.0000, 
+raw observation next is [-2.8, 62.0, 52.0, 0.0, 22.5, 23.03184383674058, -0.2893654379263259, 1.0, 1.0, 35.0, 54.12286847429105], 
+processed observation next is [1.0, 0.6956521739130435, 0.38504155124653744, 0.62, 0.17333333333333334, 0.0, 0.375, 0.41932031972838174, 0.40354485402455803, 1.0, 1.0, 0.4, 0.5412286847429105], 
+reward next is 0.0588, 
+noisyNet noise sample is [array([-0.40398708], dtype=float32), 0.50280005]. 
+=============================================
+[2019-04-16 12:59:50,862] A3C_AGENT_WORKER-Thread-2 DEBUG:Policy network output: [4.8568952e-01 1.8653312e-03 8.1187013e-09 1.4783874e-03 1.9071041e-01
+ 2.7819019e-02 2.7436079e-04 8.8563183e-04 1.2989046e-01 1.1268172e-03
+ 1.6026013e-01], sum to 1.0000
+[2019-04-16 12:59:50,862] A3C_AGENT_WORKER-Thread-2 DEBUG:Softmax action selection sampled number: 0.0484
+[2019-04-16 12:59:50,910] A3C_AGENT_WORKER-Thread-2 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [-5.6, 83.0, 0.0, 0.0, 19.0, 22.23132895988823, -0.4148618812836155, 0.0, 1.0, 35.0, 40.183636306695455], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 1986000.0000, 
+sim time next is 1987200.0000, 
+raw observation next is [-5.6, 83.0, 0.0, 0.0, 19.0, 21.93215838931365, -0.5922188346733489, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.0, 0.30747922437673136, 0.83, 0.0, 0.0, 0.08333333333333333, 0.32767986577613745, 0.3025937217755504, 0.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([0.6365385], dtype=float32), 0.22895436]. 
+=============================================
+[2019-04-16 12:59:51,230] A3C_AGENT_WORKER-Thread-20 DEBUG:Policy network output: [6.16528094e-01 1.37270545e-03 1.34597116e-08 2.08990462e-03
+ 1.08874954e-01 1.11652864e-02 4.20656579e-04 9.50030866e-04
+ 4.62763980e-02 8.43750953e-04 2.11478189e-01], sum to 1.0000
+[2019-04-16 12:59:51,231] A3C_AGENT_WORKER-Thread-20 DEBUG:Softmax action selection sampled number: 0.6359
+[2019-04-16 12:59:51,361] A3C_AGENT_WORKER-Thread-20 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 4, 
+current raw observation is [-5.6, 83.0, 0.0, 0.0, 19.0, 20.73722817750978, -0.7249645814173906, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [1, 35.0], 
+sim time this is 1983600.0000, 
+sim time next is 1984800.0000, 
+raw observation next is [-5.6, 83.0, 0.0, 0.0, 19.0, 21.13963473250376, -0.4445455118328441, 0.0, 1.0, 35.0, 89.39940073304967], 
+processed observation next is [1.0, 1.0, 0.30747922437673136, 0.83, 0.0, 0.0, 0.08333333333333333, 0.2616362277086468, 0.3518181627223853, 0.0, 1.0, 0.4, 0.8939940073304967], 
+reward next is 0.0000, 
+noisyNet noise sample is [array([0.00603595], dtype=float32), -0.5244946]. 
+=============================================
+[2019-04-16 12:59:54,445] A3C_AGENT_WORKER-Thread-15 DEBUG:Policy network output: [3.8515341e-01 1.8419432e-03 1.3934265e-07 3.0229017e-03 1.9580066e-01
+ 3.1859800e-02 7.4015273e-04 7.7937869e-04 1.4053111e-01 1.0117152e-03
+ 2.3925884e-01], sum to 1.0000
+[2019-04-16 12:59:54,446] A3C_AGENT_WORKER-Thread-15 DEBUG:Softmax action selection sampled number: 0.7365
+[2019-04-16 12:59:54,669] A3C_AGENT_WORKER-Thread-15 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 8, 
+current raw observation is [-6.2, 87.0, 0.0, 0.0, 19.0, 21.46951257925147, -0.599493617563659, 0.0, 1.0, 40.0, 38.652215664936975], 
+current ob forecast is [], 
+actual action is [1, 55.0], 
+sim time this is 2012400.0000, 
+sim time next is 2013600.0000, 
+raw observation next is [-6.2, 87.0, 0.0, 0.0, 22.5, 21.55182595803019, -0.5502877945598886, 1.0, 1.0, 55.0, 65.64812521947697], 
+processed observation next is [1.0, 0.30434782608695654, 0.2908587257617729, 0.87, 0.0, 0.0, 0.375, 0.29598549650251577, 0.3165707351467038, 1.0, 1.0, 0.8, 0.6564812521947697], 
+reward next is 0.2514, 
+noisyNet noise sample is [array([-0.86243194], dtype=float32), 0.77494484]. 
+=============================================
+[2019-04-16 13:00:05,521] A3C_AGENT_WORKER-Thread-14 DEBUG:Policy network output: [6.3532996e-01 2.3177727e-03 4.1500261e-09 8.2303816e-04 3.7162393e-02
+ 8.5372040e-03 1.2009222e-04 5.7900901e-04 5.9326269e-02 4.5466708e-04
+ 2.5534961e-01], sum to 1.0000
+[2019-04-16 13:00:05,521] A3C_AGENT_WORKER-Thread-14 DEBUG:Softmax action selection sampled number: 0.8198
+[2019-04-16 13:00:05,641] A3C_AGENT_WORKER-Thread-14 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 10, 
+current raw observation is [-7.3, 82.0, 0.0, 0.0, 19.0, 23.21673418063278, -0.235483056365604, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [1, 65.0], 
+sim time this is 2158800.0000, 
+sim time next is 2160000.0000, 
+raw observation next is [-7.3, 82.0, 0.0, 0.0, 19.0, 22.57468369237515, -0.1154810796485254, 0.0, 1.0, 65.0, 86.99868443369527], 
+processed observation next is [1.0, 0.0, 0.26038781163434904, 0.82, 0.0, 0.0, 0.08333333333333333, 0.38122364103126244, 0.4615063067838248, 0.0, 1.0, 1.0, 0.8699868443369527], 
+reward next is 0.0000, 
+noisyNet noise sample is [array([-2.2364383], dtype=float32), 0.26474383]. 
+=============================================
+[2019-04-16 13:00:05,646] A3C_AGENT_WORKER-Thread-14 DEBUG:Value prediction is [[43.456112]
+ [44.38585 ]
+ [45.305637]
+ [45.981583]
+ [44.735107]
+ [44.476345]
+ [45.700073]
+ [45.68053 ]
+ [46.32529 ]
+ [46.72209 ]
+ [47.477345]
+ [47.767746]
+ [47.597984]
+ [46.81082 ]
+ [47.948223]
+ [49.161964]
+ [48.671143]
+ [48.943687]
+ [49.617985]
+ [50.437267]
+ [49.77747 ]
+ [49.86875 ]
+ [49.58866 ]
+ [49.494408]
+ [49.417446]], R is [[43.32881546]
+ [43.89552689]
+ [43.63353729]
+ [43.19720078]
+ [42.76522827]
+ [43.33757782]
+ [42.90420151]
+ [42.47515869]
+ [43.05040741]
+ [43.61990356]
+ [44.18370438]
+ [43.74186707]
+ [43.30444717]
+ [42.87140274]
+ [43.44268799]
+ [44.00826263]
+ [43.56818008]
+ [44.13249969]
+ [44.69117355]
+ [45.2442627 ]
+ [44.79182053]
+ [45.34390259]
+ [45.89046478]
+ [45.43156052]
+ [44.97724533]].
+[2019-04-16 13:00:11,899] A3C_AGENT_WORKER-Thread-4 DEBUG:Policy network output: [3.4159499e-01 5.6367582e-03 6.0809406e-09 2.5541594e-03 5.6279369e-02
+ 1.2316638e-02 3.6168759e-04 2.2975884e-03 1.0997331e-01 8.0167712e-04
+ 4.6818379e-01], sum to 1.0000
+[2019-04-16 13:00:11,900] A3C_AGENT_WORKER-Thread-4 DEBUG:Softmax action selection sampled number: 0.1781
+[2019-04-16 13:00:11,955] A3C_AGENT_WORKER-Thread-4 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [-7.3, 80.0, 0.0, 0.0, 19.0, 22.40303079270067, -0.1317149785823502, 0.0, 1.0, 65.0, 95.53268940154221], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 2162400.0000, 
+sim time next is 2163600.0000, 
+raw observation next is [-7.3, 79.0, 0.0, 0.0, 19.0, 23.07027804608277, -0.2845283917022907, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.043478260869565216, 0.26038781163434904, 0.79, 0.0, 0.0, 0.08333333333333333, 0.42252317050689747, 0.4051572027659031, 0.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([-0.6276634], dtype=float32), -0.12729631]. 
+=============================================
+[2019-04-16 13:00:28,241] A3C_AGENT_WORKER-Thread-13 DEBUG:Policy network output: [5.6081176e-01 1.1776561e-03 1.6048043e-07 2.8713176e-03 7.7281572e-02
+ 1.2374574e-02 3.4025445e-04 4.0014688e-04 1.5926509e-01 1.6036771e-03
+ 1.8387379e-01], sum to 1.0000
+[2019-04-16 13:00:28,241] A3C_AGENT_WORKER-Thread-13 DEBUG:Softmax action selection sampled number: 0.7244
+[2019-04-16 13:00:28,313] A3C_AGENT_WORKER-Thread-13 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 8, 
+current raw observation is [-0.8666666666666667, 31.66666666666667, 0.0, 0.0, 19.0, 21.04958052705477, -0.5439928729278137, 0.0, 1.0, 55.0, 71.77381311215696], 
+current ob forecast is [], 
+actual action is [1, 55.0], 
+sim time this is 2492400.0000, 
+sim time next is 2493600.0000, 
+raw observation next is [-1.033333333333333, 34.33333333333333, 0.0, 0.0, 19.0, 21.68807188636737, -0.4701382802747236, 0.0, 1.0, 55.0, 49.083345847152394], 
+processed observation next is [0.0, 0.8695652173913043, 0.43397968605724846, 0.34333333333333327, 0.0, 0.0, 0.08333333333333333, 0.30733932386394763, 0.34328723990842547, 0.0, 1.0, 0.8, 0.49083345847152393], 
+reward next is 0.0000, 
+noisyNet noise sample is [array([1.1041018], dtype=float32), 0.34905687]. 
+=============================================
+[2019-04-16 13:00:29,748] A3C_AGENT_WORKER-Thread-16 DEBUG:Policy network output: [6.55995488e-01 3.44244007e-04 1.27008635e-08 1.21413986e-03
+ 1.33645972e-02 2.95774220e-03 1.18437696e-04 1.15526069e-04
+ 8.11713561e-02 1.44322170e-03 2.43275225e-01], sum to 1.0000
+[2019-04-16 13:00:29,748] A3C_AGENT_WORKER-Thread-16 DEBUG:Softmax action selection sampled number: 0.6166
+[2019-04-16 13:00:29,800] A3C_AGENT_WORKER-Thread-16 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [-1.7, 39.33333333333334, 0.0, 0.0, 19.0, 22.24433801822492, -0.5564927175712276, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 2510400.0000, 
+sim time next is 2511600.0000, 
+raw observation next is [-1.7, 38.66666666666667, 0.0, 0.0, 19.0, 21.6296780841436, -0.6761049120137148, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.043478260869565216, 0.4155124653739613, 0.3866666666666667, 0.0, 0.0, 0.08333333333333333, 0.30247317367863324, 0.2746316959954284, 0.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([0.15364206], dtype=float32), 0.4658331]. 
+=============================================
+[2019-04-16 13:00:33,569] A3C_AGENT_WORKER-Thread-9 DEBUG:Policy network output: [5.8765984e-01 1.3686113e-04 3.6161598e-09 6.6487241e-04 3.4747958e-02
+ 1.4658145e-02 5.4016458e-05 1.4401435e-04 5.5771533e-02 1.0304931e-03
+ 3.0513233e-01], sum to 1.0000
+[2019-04-16 13:00:33,571] A3C_AGENT_WORKER-Thread-9 DEBUG:Softmax action selection sampled number: 0.4340
+[2019-04-16 13:00:33,839] A3C_AGENT_WORKER-Thread-9 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [-6.9, 78.33333333333334, 0.0, 0.0, 19.0, 18.83708095367562, -1.118544016524745, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 2614800.0000, 
+sim time next is 2616000.0000, 
+raw observation next is [-7.1, 78.66666666666667, 0.0, 0.0, 19.0, 18.75959908317574, -1.161225090225222, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.2608695652173913, 0.2659279778393352, 0.7866666666666667, 0.0, 0.0, 0.08333333333333333, 0.06329992359797831, 0.11292496992492602, 0.0, 1.0, 0.0, 0.0], 
+reward next is 0.7688, 
+noisyNet noise sample is [array([0.01512727], dtype=float32), -0.027456138]. 
+=============================================
+[2019-04-16 13:00:36,481] A3C_AGENT_WORKER-Thread-8 DEBUG:Policy network output: [9.0638232e-01 2.2816508e-05 9.6670928e-11 7.0877497e-05 8.8678785e-03
+ 1.1697732e-03 3.5979597e-06 5.4496059e-06 9.9988570e-03 1.2225177e-04
+ 7.3356181e-02], sum to 1.0000
+[2019-04-16 13:00:36,481] A3C_AGENT_WORKER-Thread-8 DEBUG:Softmax action selection sampled number: 0.1893
+[2019-04-16 13:00:36,594] A3C_AGENT_WORKER-Thread-8 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [-1.2, 60.0, 0.0, 0.0, 22.5, 23.5466766614241, -0.1972830539836264, 1.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 2660400.0000, 
+sim time next is 2661600.0000, 
+raw observation next is [-1.2, 61.00000000000001, 0.0, 0.0, 22.5, 22.98932690980755, -0.3341836504298625, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.8260869565217391, 0.42936288088642666, 0.6100000000000001, 0.0, 0.0, 0.375, 0.41577724248396236, 0.38860544985671247, 0.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([-0.63495445], dtype=float32), -2.1572106]. 
+=============================================
+[2019-04-16 13:00:42,055] A3C_AGENT_WORKER-Thread-17 DEBUG:Policy network output: [3.2563618e-01 1.2420803e-04 3.7778697e-11 1.7841015e-04 7.5303121e-03
+ 2.0928627e-03 1.4457239e-05 1.1609331e-05 7.2581649e-02 2.3327195e-04
+ 5.9159702e-01], sum to 1.0000
+[2019-04-16 13:00:42,055] A3C_AGENT_WORKER-Thread-17 DEBUG:Softmax action selection sampled number: 0.1056
+[2019-04-16 13:00:42,140] A3C_AGENT_WORKER-Thread-17 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [-2.466666666666666, 67.66666666666667, 0.0, 0.0, 19.0, 25.9460253168204, 0.5232611143663481, 0.0, 1.0, 65.0, 53.987609392716614], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 2670000.0000, 
+sim time next is 2671200.0000, 
+raw observation next is [-3.1, 69.0, 0.0, 0.0, 19.0, 25.72265838795925, 0.3471921745795943, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.9565217391304348, 0.37673130193905824, 0.69, 0.0, 0.0, 0.08333333333333333, 0.6435548656632708, 0.6157307248598648, 0.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([-0.6957249], dtype=float32), -0.471451]. 
+=============================================
+[2019-04-16 13:00:44,489] A3C_AGENT_WORKER-Thread-4 DEBUG:Policy network output: [1.7571512e-01 2.8909266e-05 1.9201264e-10 1.2226912e-04 1.3022880e-02
+ 1.2152529e-03 2.8222541e-05 1.0003412e-04 3.4979299e-02 4.1664691e-05
+ 7.7474636e-01], sum to 1.0000
+[2019-04-16 13:00:44,489] A3C_AGENT_WORKER-Thread-4 DEBUG:Softmax action selection sampled number: 0.0203
+[2019-04-16 13:00:44,526] A3C_AGENT_WORKER-Thread-4 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [-11.63333333333333, 78.33333333333334, 0.0, 0.0, 19.0, 24.13791766925758, 0.07403781257775176, 0.0, 1.0, 65.0, 61.47229396911714], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 2686800.0000, 
+sim time next is 2688000.0000, 
+raw observation next is [-12.26666666666667, 80.66666666666666, 0.0, 0.0, 19.0, 23.77167362074842, -0.1847146320714194, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.08695652173913043, 0.12280701754385957, 0.8066666666666665, 0.0, 0.0, 0.08333333333333333, 0.48097280172903495, 0.4384284559761935, 0.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([-0.20197369], dtype=float32), 1.6120374]. 
+=============================================
+[2019-04-16 13:00:53,408] A3C_AGENT_WORKER-Thread-20 DEBUG:Policy network output: [3.2156986e-01 6.6768093e-04 6.0118499e-10 3.2520268e-04 2.9591518e-02
+ 3.6620698e-03 8.8270404e-05 3.2007325e-04 9.5072880e-02 1.3363957e-04
+ 5.4856873e-01], sum to 1.0000
+[2019-04-16 13:00:53,408] A3C_AGENT_WORKER-Thread-20 DEBUG:Softmax action selection sampled number: 0.2830
+[2019-04-16 13:00:53,443] A3C_AGENT_WORKER-Thread-20 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [0.3333333333333334, 92.66666666666667, 0.0, 0.0, 22.5, 25.41142648132695, 0.5465459167164507, 1.0, 1.0, 65.0, 83.04951293559117], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 2917200.0000, 
+sim time next is 2918400.0000, 
+raw observation next is [-0.3333333333333333, 92.33333333333333, 0.0, 0.0, 22.5, 25.69491034908289, 0.4327207437612962, 1.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.782608695652174, 0.4533702677747, 0.9233333333333333, 0.0, 0.0, 0.375, 0.6412425290902407, 0.6442402479204321, 1.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([2.347439], dtype=float32), -0.26066318]. 
+=============================================
+[2019-04-16 13:00:54,110] A3C_AGENT_WORKER-Thread-7 INFO:Local step 2500, global step 38855: loss -16.5142
+[2019-04-16 13:00:54,283] A3C_AGENT_WORKER-Thread-7 DEBUG:Local step 2500, global step 38855: learning rate 0.0005
+[2019-04-16 13:00:54,533] A3C_AGENT_WORKER-Thread-16 DEBUG:Policy network output: [4.8548928e-01 2.2641257e-04 1.4771238e-09 2.8080534e-04 4.0103965e-03
+ 2.8670034e-03 5.1138843e-05 8.2932871e-05 5.9978541e-02 3.5340781e-04
+ 4.4666013e-01], sum to 1.0000
+[2019-04-16 13:00:54,533] A3C_AGENT_WORKER-Thread-16 DEBUG:Softmax action selection sampled number: 0.3956
+[2019-04-16 13:00:54,547] A3C_AGENT_WORKER-Thread-16 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [1.0, 100.0, 131.0, 0.0, 22.5, 26.67112454336726, 0.6277809931668618, 1.0, 1.0, 65.0, 42.786357058786905], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 2894400.0000, 
+sim time next is 2895600.0000, 
+raw observation next is [1.333333333333333, 100.0, 160.3333333333333, 0.0, 22.5, 26.62748963710955, 0.3610769444821075, 1.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.5217391304347826, 0.4995383194829178, 1.0, 0.5344444444444443, 0.0, 0.375, 0.7189574697591293, 0.6203589814940358, 1.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([-0.79437447], dtype=float32), -0.12403932]. 
+=============================================
+[2019-04-16 13:00:54,959] A3C_AGENT_WORKER-Thread-6 DEBUG:Policy network output: [5.7766992e-01 5.4775627e-04 3.2433709e-09 2.8235861e-04 9.6737482e-03
+ 1.1395515e-03 7.9963545e-05 1.7117670e-04 2.8554780e-02 1.9202755e-04
+ 3.8168871e-01], sum to 1.0000
+[2019-04-16 13:00:54,959] A3C_AGENT_WORKER-Thread-6 DEBUG:Softmax action selection sampled number: 0.8494
+[2019-04-16 13:00:54,998] A3C_AGENT_WORKER-Thread-4 DEBUG:Policy network output: [2.54835397e-01 2.74295150e-03 1.63616960e-08 8.91509524e-04
+ 7.48374239e-02 1.01159755e-02 2.91780656e-04 5.10734855e-04
+ 1.48201421e-01 1.15063775e-03 5.06422162e-01], sum to 1.0000
+[2019-04-16 13:00:54,998] A3C_AGENT_WORKER-Thread-4 DEBUG:Softmax action selection sampled number: 0.6410
+[2019-04-16 13:00:55,060] A3C_AGENT_WORKER-Thread-4 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 10, 
+current raw observation is [1.0, 90.66666666666667, 0.0, 0.0, 19.0, 24.92738464473478, 0.05435032208646312, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [1, 65.0], 
+sim time this is 2864400.0000, 
+sim time next is 2865600.0000, 
+raw observation next is [1.0, 93.0, 0.0, 0.0, 19.0, 24.08845897071648, 0.2216974976479789, 0.0, 1.0, 65.0, 103.63544741746597], 
+processed observation next is [1.0, 0.17391304347826086, 0.4903047091412743, 0.93, 0.0, 0.0, 0.08333333333333333, 0.50737158089304, 0.5738991658826597, 0.0, 1.0, 1.0, 1.0363544741746598], 
+reward next is 0.0000, 
+noisyNet noise sample is [array([0.3345808], dtype=float32), 0.014056863]. 
+=============================================
+[2019-04-16 13:00:55,072] A3C_AGENT_WORKER-Thread-6 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 10, 
+current raw observation is [-2.0, 85.0, 0.0, 0.0, 19.0, 25.90722262973917, 0.4432202481495093, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [1, 65.0], 
+sim time this is 2941200.0000, 
+sim time next is 2942400.0000, 
+raw observation next is [-2.0, 85.0, 0.0, 0.0, 19.0, 25.44247221464516, 0.5711768170974431, 0.0, 1.0, 65.0, 81.65996966903529], 
+processed observation next is [0.0, 0.043478260869565216, 0.40720221606648205, 0.85, 0.0, 0.0, 0.08333333333333333, 0.6202060178870967, 0.6903922723658144, 0.0, 1.0, 1.0, 0.8165996966903529], 
+reward next is 0.0000, 
+noisyNet noise sample is [array([1.7649026], dtype=float32), 0.14316224]. 
+=============================================
+[2019-04-16 13:00:57,199] A3C_AGENT_WORKER-Thread-3 INFO:Local step 2500, global step 39532: loss 41.2916
+[2019-04-16 13:00:57,200] A3C_AGENT_WORKER-Thread-3 DEBUG:Local step 2500, global step 39532: learning rate 0.0005
+[2019-04-16 13:00:57,683] A3C_AGENT_WORKER-Thread-14 INFO:Local step 2500, global step 39658: loss 256.3400
+[2019-04-16 13:00:57,684] A3C_AGENT_WORKER-Thread-14 DEBUG:Local step 2500, global step 39658: learning rate 0.0005
+[2019-04-16 13:00:58,126] A3C_AGENT_WORKER-Thread-6 INFO:Local step 2500, global step 39778: loss 1.4096
+[2019-04-16 13:00:58,127] A3C_AGENT_WORKER-Thread-6 DEBUG:Local step 2500, global step 39778: learning rate 0.0005
+[2019-04-16 13:00:58,263] A3C_AGENT_WORKER-Thread-20 INFO:Local step 2500, global step 39821: loss 139.6642
+[2019-04-16 13:00:58,265] A3C_AGENT_WORKER-Thread-20 DEBUG:Local step 2500, global step 39821: learning rate 0.0005
+[2019-04-16 13:00:58,339] A3C_AGENT_WORKER-Thread-9 INFO:Local step 2500, global step 39843: loss 110.1201
+[2019-04-16 13:00:58,342] A3C_AGENT_WORKER-Thread-9 DEBUG:Local step 2500, global step 39843: learning rate 0.0005
+[2019-04-16 13:00:58,612] A3C_AGENT_WORKER-Thread-15 INFO:Local step 2500, global step 39928: loss 193.7777
+[2019-04-16 13:00:58,646] A3C_AGENT_WORKER-Thread-15 DEBUG:Local step 2500, global step 39928: learning rate 0.0005
+[2019-04-16 13:00:59,141] A3C_AGENT_WORKER-Thread-8 INFO:Local step 2500, global step 40088: loss 315.5237
+[2019-04-16 13:00:59,154] A3C_AGENT_WORKER-Thread-8 DEBUG:Local step 2500, global step 40091: learning rate 0.0005
+[2019-04-16 13:00:59,237] A3C_AGENT_WORKER-Thread-2 INFO:Local step 2500, global step 40115: loss 141.5885
+[2019-04-16 13:00:59,237] A3C_AGENT_WORKER-Thread-2 DEBUG:Local step 2500, global step 40115: learning rate 0.0005
+[2019-04-16 13:00:59,255] A3C_AGENT_WORKER-Thread-13 INFO:Local step 2500, global step 40125: loss 247.7190
+[2019-04-16 13:00:59,273] A3C_AGENT_WORKER-Thread-13 DEBUG:Local step 2500, global step 40125: learning rate 0.0005
+[2019-04-16 13:00:59,535] A3C_AGENT_WORKER-Thread-5 INFO:Local step 2500, global step 40197: loss 134.1822
+[2019-04-16 13:00:59,571] A3C_AGENT_WORKER-Thread-5 DEBUG:Local step 2500, global step 40212: learning rate 0.0005
+[2019-04-16 13:00:59,681] A3C_AGENT_WORKER-Thread-16 INFO:Local step 2500, global step 40254: loss 188.8950
+[2019-04-16 13:00:59,686] A3C_AGENT_WORKER-Thread-16 DEBUG:Local step 2500, global step 40254: learning rate 0.0005
+[2019-04-16 13:00:59,844] A3C_AGENT_WORKER-Thread-17 INFO:Local step 2500, global step 40299: loss 245.2017
+[2019-04-16 13:00:59,846] A3C_AGENT_WORKER-Thread-17 DEBUG:Local step 2500, global step 40299: learning rate 0.0005
+[2019-04-16 13:00:59,943] A3C_AGENT_WORKER-Thread-6 DEBUG:Policy network output: [6.2273568e-01 1.0838290e-03 7.3049767e-07 3.2632155e-03 3.2311969e-02
+ 1.0261194e-02 3.8078192e-04 7.3141058e-04 6.3305452e-02 1.7438863e-03
+ 2.6418188e-01], sum to 1.0000
+[2019-04-16 13:00:59,943] A3C_AGENT_WORKER-Thread-6 DEBUG:Softmax action selection sampled number: 0.6687
+[2019-04-16 13:01:00,006] A3C_AGENT_WORKER-Thread-6 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 5, 
+current raw observation is [-6.0, 77.0, 0.0, 0.0, 19.0, 22.06571991580669, -0.3053579757973701, 0.0, 1.0, 55.0, 72.41794617393737], 
+current ob forecast is [], 
+actual action is [1, 40.0], 
+sim time this is 3039600.0000, 
+sim time next is 3040800.0000, 
+raw observation next is [-6.0, 77.0, 0.0, 0.0, 19.0, 22.50286069867606, -0.2808518664013517, 0.0, 1.0, 40.0, 40.51749878684711], 
+processed observation next is [0.0, 0.17391304347826086, 0.296398891966759, 0.77, 0.0, 0.0, 0.08333333333333333, 0.37523839155633826, 0.40638271119954944, 0.0, 1.0, 0.5, 0.4051749878684711], 
+reward next is 0.0948, 
+noisyNet noise sample is [array([-0.9065693], dtype=float32), 0.42637914]. 
+=============================================
+[2019-04-16 13:01:00,041] A3C_AGENT_WORKER-Thread-19 INFO:Local step 2500, global step 40367: loss 264.5868
+[2019-04-16 13:01:00,042] A3C_AGENT_WORKER-Thread-19 DEBUG:Local step 2500, global step 40367: learning rate 0.0005
+[2019-04-16 13:01:00,059] A3C_AGENT_WORKER-Thread-18 INFO:Local step 2500, global step 40372: loss 279.4127
+[2019-04-16 13:01:00,060] A3C_AGENT_WORKER-Thread-18 DEBUG:Local step 2500, global step 40372: learning rate 0.0005
+[2019-04-16 13:01:01,098] A3C_AGENT_WORKER-Thread-4 INFO:Local step 2500, global step 40690: loss 171.4339
+[2019-04-16 13:01:01,098] A3C_AGENT_WORKER-Thread-4 DEBUG:Local step 2500, global step 40690: learning rate 0.0005
+[2019-04-16 13:01:02,579] A3C_AGENT_WORKER-Thread-19 DEBUG:Policy network output: [7.5139302e-01 3.0793113e-04 5.5565943e-07 1.0974100e-03 1.9692965e-02
+ 6.9037066e-03 2.7417883e-04 1.4704854e-04 4.9698099e-02 2.4540238e-03
+ 1.6803108e-01], sum to 1.0000
+[2019-04-16 13:01:02,585] A3C_AGENT_WORKER-Thread-19 DEBUG:Softmax action selection sampled number: 0.6736
+[2019-04-16 13:01:02,621] A3C_AGENT_WORKER-Thread-19 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [-6.0, 59.0, 91.0, 497.0, 19.0, 21.50953814915251, -0.5809713602577639, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 3056400.0000, 
+sim time next is 3057600.0000, 
+raw observation next is [-5.333333333333333, 57.33333333333334, 96.33333333333333, 589.0000000000001, 19.0, 21.00141332307777, -0.6672216784682238, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [0.0, 0.391304347826087, 0.3148661126500462, 0.5733333333333335, 0.32111111111111107, 0.650828729281768, 0.08333333333333333, 0.2501177769231475, 0.2775927738439254, 0.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([0.37394896], dtype=float32), -0.14014803]. 
+=============================================
+[2019-04-16 13:01:04,430] A3C_AGENT_WORKER-Thread-2 DEBUG:Policy network output: [6.9582886e-01 1.6590700e-04 3.6817829e-10 1.6278063e-04 1.8943589e-02
+ 2.8088377e-03 8.9809755e-06 6.6617038e-05 1.8833429e-02 3.5959244e-04
+ 2.6282141e-01], sum to 1.0000
+[2019-04-16 13:01:04,430] A3C_AGENT_WORKER-Thread-2 DEBUG:Softmax action selection sampled number: 0.0648
+[2019-04-16 13:01:04,461] A3C_AGENT_WORKER-Thread-2 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [2.6, 100.0, 0.0, 0.0, 19.0, 21.94719714020714, -0.2516393527756208, 0.0, 1.0, 65.0, 112.81512496449619], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 3124800.0000, 
+sim time next is 3126000.0000, 
+raw observation next is [2.733333333333333, 100.0, 0.0, 0.0, 19.0, 22.73740518263649, -0.3980129412360233, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.17391304347826086, 0.538319482917821, 1.0, 0.0, 0.0, 0.08333333333333333, 0.3947837652197075, 0.3673290195879922, 0.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([1.1300886], dtype=float32), -0.19378425]. 
+=============================================
+[2019-04-16 13:01:05,472] A3C_AGENT_WORKER-Thread-3 DEBUG:Policy network output: [8.7284166e-01 1.7050346e-05 5.4720652e-11 1.9002831e-05 1.9453547e-03
+ 2.0751041e-04 1.8738261e-06 5.5365772e-06 1.9435912e-03 1.0937398e-04
+ 1.2290905e-01], sum to 1.0000
+[2019-04-16 13:01:05,473] A3C_AGENT_WORKER-Thread-3 DEBUG:Softmax action selection sampled number: 0.0069
+[2019-04-16 13:01:05,512] A3C_AGENT_WORKER-Thread-3 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [2.0, 93.0, 0.0, 0.0, 19.0, 22.76250618805278, -0.06650847994630109, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 3193200.0000, 
+sim time next is 3194400.0000, 
+raw observation next is [2.0, 93.0, 0.0, 0.0, 19.0, 22.60638272763366, -0.1013119819220683, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 1.0, 0.518005540166205, 0.93, 0.0, 0.0, 0.08333333333333333, 0.38386522730280515, 0.4662293393593106, 0.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([-0.577182], dtype=float32), 0.5129277]. 
+=============================================
+[2019-04-16 13:01:06,916] A3C_AGENT_WORKER-Thread-5 DEBUG:Policy network output: [8.4269381e-01 1.9371513e-05 1.8650064e-12 2.2666069e-05 4.6310821e-04
+ 1.0695125e-04 1.9076879e-07 1.2866773e-06 2.3857942e-03 3.5845678e-05
+ 1.5427095e-01], sum to 1.0000
+[2019-04-16 13:01:06,917] A3C_AGENT_WORKER-Thread-5 DEBUG:Softmax action selection sampled number: 0.2891
+[2019-04-16 13:01:06,961] A3C_AGENT_WORKER-Thread-5 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [3.0, 100.0, 0.0, 0.0, 19.0, 25.66893444126409, 0.521886222466697, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 3183600.0000, 
+sim time next is 3184800.0000, 
+raw observation next is [3.0, 100.0, 0.0, 0.0, 19.0, 25.13784685055995, 0.4178047918079776, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.8695652173913043, 0.5457063711911359, 1.0, 0.0, 0.0, 0.08333333333333333, 0.5948205708799957, 0.6392682639359926, 0.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([-0.1167808], dtype=float32), 1.054322]. 
+=============================================
+[2019-04-16 13:01:09,659] A3C_AGENT_WORKER-Thread-7 DEBUG:Policy network output: [4.2328310e-01 4.8264919e-05 1.7692105e-10 1.8325089e-04 6.3703018e-03
+ 9.9317078e-04 1.2390516e-05 5.3056970e-06 1.5005208e-02 3.9472347e-04
+ 5.5370426e-01], sum to 1.0000
+[2019-04-16 13:01:09,661] A3C_AGENT_WORKER-Thread-7 DEBUG:Softmax action selection sampled number: 0.9271
+[2019-04-16 13:01:09,720] A3C_AGENT_WORKER-Thread-7 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 10, 
+current raw observation is [-4.333333333333334, 51.33333333333333, 112.6666666666667, 792.0, 22.5, 26.51122944515306, 0.676863385355861, 1.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [1, 65.0], 
+sim time this is 3332400.0000, 
+sim time next is 3333600.0000, 
+raw observation next is [-4.0, 50.0, 110.0, 776.0, 22.5, 27.04899888575553, 0.8511533188184378, 1.0, 1.0, 65.0, 46.450975699269875], 
+processed observation next is [1.0, 0.6086956521739131, 0.3518005540166205, 0.5, 0.36666666666666664, 0.8574585635359117, 0.375, 0.7540832404796275, 0.7837177729394793, 1.0, 1.0, 1.0, 0.46450975699269875], 
+reward next is 0.0000, 
+noisyNet noise sample is [array([-0.41832513], dtype=float32), -0.7091366]. 
+=============================================
+[2019-04-16 13:01:10,576] A3C_AGENT_WORKER-Thread-20 DEBUG:Policy network output: [5.5728489e-01 3.6374433e-05 1.0783565e-10 3.0658193e-05 6.0952699e-04
+ 2.0741692e-04 2.2684792e-06 6.5423578e-06 3.1777914e-03 8.0865073e-05
+ 4.3856367e-01], sum to 1.0000
+[2019-04-16 13:01:10,576] A3C_AGENT_WORKER-Thread-20 DEBUG:Softmax action selection sampled number: 0.0037
+[2019-04-16 13:01:10,643] A3C_AGENT_WORKER-Thread-20 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [-6.0, 92.0, 0.0, 0.0, 19.0, 25.6188195147089, 0.3832035262746564, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 3278400.0000, 
+sim time next is 3279600.0000, 
+raw observation next is [-6.0, 92.0, 0.0, 0.0, 19.0, 24.56895902136129, 0.2088812538009362, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 1.0, 0.296398891966759, 0.92, 0.0, 0.0, 0.08333333333333333, 0.5474132517801076, 0.5696270846003121, 0.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([-0.9304882], dtype=float32), -0.7626565]. 
+=============================================
+[2019-04-16 13:01:11,161] A3C_AGENT_WORKER-Thread-2 DEBUG:Policy network output: [3.57473135e-01 1.30917804e-04 1.34504241e-10 2.94227466e-05
+ 1.60741375e-03 1.66048951e-04 2.67458449e-06 1.23274585e-05
+ 2.91619753e-03 4.76756031e-05 6.37614310e-01], sum to 1.0000
+[2019-04-16 13:01:11,161] A3C_AGENT_WORKER-Thread-2 DEBUG:Softmax action selection sampled number: 0.3548
+[2019-04-16 13:01:11,171] A3C_AGENT_WORKER-Thread-2 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [-6.0, 92.0, 0.0, 0.0, 19.0, 24.93965176556952, 0.3160176498952598, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 3277200.0000, 
+sim time next is 3278400.0000, 
+raw observation next is [-6.0, 92.0, 0.0, 0.0, 19.0, 24.31626431252881, 0.2239053962910234, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.9565217391304348, 0.296398891966759, 0.92, 0.0, 0.0, 0.08333333333333333, 0.5263553593774007, 0.5746351320970078, 0.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([-0.05148098], dtype=float32), -1.5442274]. 
+=============================================
+[2019-04-16 13:01:11,302] A3C_AGENT_WORKER-Thread-3 DEBUG:Policy network output: [4.0882561e-01 3.0037825e-04 2.5467761e-10 5.9493585e-05 1.3657794e-03
+ 2.8065527e-03 1.3170000e-05 1.8946053e-05 1.3522289e-02 6.1004801e-04
+ 5.7247776e-01], sum to 1.0000
+[2019-04-16 13:01:11,302] A3C_AGENT_WORKER-Thread-3 DEBUG:Softmax action selection sampled number: 0.1819
+[2019-04-16 13:01:11,329] A3C_AGENT_WORKER-Thread-3 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [-7.0, 64.0, 113.5, 769.0, 22.5, 26.69950596057165, 0.6358053845329888, 1.0, 1.0, 65.0, 39.86640010642246], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 3322800.0000, 
+sim time next is 3324000.0000, 
+raw observation next is [-6.666666666666667, 60.66666666666667, 115.1666666666667, 788.3333333333333, 22.5, 26.56867178697557, 0.4777168835364202, 1.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.4782608695652174, 0.27793167128347185, 0.6066666666666667, 0.383888888888889, 0.871086556169429, 0.375, 0.7140559822479643, 0.6592389611788068, 1.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([1.4196093], dtype=float32), -0.67966443]. 
+=============================================
+[2019-04-16 13:01:12,422] A3C_AGENT_WORKER-Thread-16 DEBUG:Policy network output: [1.3289945e-01 5.4906280e-04 1.0176747e-09 2.7421533e-04 3.0225005e-03
+ 9.5737795e-04 1.1376676e-05 2.3987370e-05 1.5284157e-02 4.8405729e-04
+ 8.4649378e-01], sum to 1.0000
+[2019-04-16 13:01:12,422] A3C_AGENT_WORKER-Thread-16 DEBUG:Softmax action selection sampled number: 0.2125
+[2019-04-16 13:01:12,481] A3C_AGENT_WORKER-Thread-16 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 10, 
+current raw observation is [-8.0, 77.0, 0.0, 0.0, 19.0, 25.17665639598175, 0.4652087411831641, 0.0, 1.0, 65.0, 83.23708889485316], 
+current ob forecast is [], 
+actual action is [1, 65.0], 
+sim time this is 3294000.0000, 
+sim time next is 3295200.0000, 
+raw observation next is [-8.3, 77.0, 0.0, 0.0, 19.0, 25.61180596582379, 0.500116170995882, 0.0, 1.0, 65.0, 58.226919817480976], 
+processed observation next is [1.0, 0.13043478260869565, 0.23268698060941828, 0.77, 0.0, 0.0, 0.08333333333333333, 0.6343171638186492, 0.6667053903319607, 0.0, 1.0, 1.0, 0.5822691981748097], 
+reward next is 0.0000, 
+noisyNet noise sample is [array([-0.09310244], dtype=float32), -0.73138815]. 
+=============================================
+[2019-04-16 13:01:17,086] A3C_AGENT_WORKER-Thread-2 DEBUG:Policy network output: [8.4875149e-01 1.1610696e-03 1.3756112e-08 6.7045813e-04 1.0985487e-02
+ 9.9039441e-03 1.9819877e-04 1.1467988e-04 3.8446222e-02 1.6752561e-03
+ 8.8093184e-02], sum to 1.0000
+[2019-04-16 13:01:17,091] A3C_AGENT_WORKER-Thread-2 DEBUG:Softmax action selection sampled number: 0.1386
+[2019-04-16 13:01:17,111] A3C_AGENT_WORKER-Thread-2 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [2.0, 67.0, 64.83333333333333, 544.8333333333333, 22.5, 24.85557016382399, 0.1262472097466104, 1.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 3428400.0000, 
+sim time next is 3429600.0000, 
+raw observation next is [2.0, 67.0, 52.83333333333334, 447.6666666666667, 22.5, 24.57600358380169, 0.202319105072893, 1.0, 1.0, 15.0, 0.0], 
+processed observation next is [1.0, 0.6956521739130435, 0.518005540166205, 0.67, 0.17611111111111113, 0.4946593001841621, 0.375, 0.5480002986501408, 0.5674397016909644, 1.0, 1.0, 0.0, 0.0], 
+reward next is 1.0000, 
+noisyNet noise sample is [array([-0.24068911], dtype=float32), 1.2650305]. 
+=============================================
+[2019-04-16 13:01:21,962] A3C_AGENT_WORKER-Thread-14 DEBUG:Policy network output: [9.0726513e-01 8.0287675e-05 1.2109285e-07 5.8641180e-04 1.7479876e-02
+ 2.1025585e-03 1.6709197e-04 7.4457683e-05 1.5742270e-02 9.4602047e-04
+ 5.5555739e-02], sum to 1.0000
+[2019-04-16 13:01:21,966] A3C_AGENT_WORKER-Thread-14 DEBUG:Softmax action selection sampled number: 0.9013
+[2019-04-16 13:01:21,977] A3C_AGENT_WORKER-Thread-14 DEBUG:TRAINING DEBUG INFO ======>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Current H regulation is 0.0000, 
+Environment debug: raw action idx is 0, 
+current raw observation is [9.333333333333334, 26.33333333333334, 0.0, 0.0, 19.0, 18.5624725881396, -1.284921402148891, 0.0, 1.0, 15.0, 0.0], 
+current ob forecast is [], 
+actual action is [0, 15.0], 
+sim time this is 3652800.0000, 
+sim time next is 3654000.0000, 
+raw observation next is [9.0, 27.0, 0.0, 0.0, 19.0, 18.4466174308753, -1.30185363590293, 0.0, 1.0, 15.0, 0.0], 
+processed observation next is [0.0, 0.30434782608695654, 0.7119113573407203, 0.27, 0.0, 0.0, 0.08333333333333333, 0.037218119239608306, 0.06604878803235666, 0.0, 1.0, 0.0, 0.0], 
+reward next is 0.0000, 
+noisyNet noise sample is [array([0.51549894], dtype=float32), 0.4576577]. 
+=============================================
+[2019-04-16 13:01:25,141] A3C_AGENT_WORKER-Thread-7 INFO:Evaluating...
+[2019-04-16 13:01:25,151] A3C_EVAL-Part4-Light-Pit-Train-v3 INFO:Evaluation job starts!
+[2019-04-16 13:01:25,151] A3C_EVAL-Part4-Light-Pit-Test-v5 INFO:Evaluation job starts!
+[2019-04-16 13:01:25,151] EPLUS_ENV_Part4-Light-Pit-Train-v3_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 13:01:25,151] A3C_EVAL-Part4-Light-Pit-Test-v6 INFO:Evaluation job starts!
+[2019-04-16 13:01:25,151] EPLUS_ENV_Part4-Light-Pit-Test-v5_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 13:01:25,151] EPLUS_ENV_Part4-Light-Pit-Test-v6_MainThread_ROOT INFO:Creating EnergyPlus simulation environment...
+[2019-04-16 13:01:25,154] EPLUS_ENV_Part4-Light-Pit-Train-v3_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Train-v3-res1/Eplus-env-sub_run2
+[2019-04-16 13:01:25,178] EPLUS_ENV_Part4-Light-Pit-Test-v5_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Test-v5-res1/Eplus-env-sub_run2
+[2019-04-16 13:01:25,196] EPLUS_ENV_Part4-Light-Pit-Test-v6_MainThread_ROOT INFO:EnergyPlus working directory is in /home/zhiangz/Documents/HVAC-RL-Control/src/runs/rl_parametric_part4_pit_lightx/2/Eplus-env-Part4-Light-Pit-Test-v6-res1/Eplus-env-sub_run2
+[2019-04-16 13:02:04,980] A3C_EVAL-Part4-Light-Pit-Test-v5 DEBUG:NoisyNet noise sample: [array([-0.13952322], dtype=float32), 0.13634276]
+[2019-04-16 13:02:04,980] A3C_EVAL-Part4-Light-Pit-Test-v5 DEBUG:Observation this: [-1.333333333333333, 66.66666666666666, 0.0, 0.0, 22.5, 23.15694285338634, 0.1333471535031159, 1.0, 1.0, 65.0, 108.20335335072889]
+[2019-04-16 13:02:04,980] A3C_EVAL-Part4-Light-Pit-Test-v5 DEBUG:Observation forecast: []
+[2019-04-16 13:02:04,981] A3C_EVAL-Part4-Light-Pit-Test-v5 INFO:Softmax [8.2974696e-01 5.2166770e-06 1.7324413e-11 1.8669705e-05 1.8016692e-03
+ 1.2039678e-04 9.3919658e-07 5.5213735e-07 1.8420733e-03 1.7791734e-05
+ 1.6644581e-01], sampled 0.7727464741926477
+[2019-04-16 13:02:37,339] A3C_EVAL-Part4-Light-Pit-Test-v5 INFO:Evaluation: average rewards by now are 3117.7231 86644.8048 267.1309
+[2019-04-16 13:02:37,373] EPLUS_ENV_Part4-Light-Pit-Test-v5_MainThread-EPLUSPROCESS_EPI_0 ERROR:*** stack smashing detected ***: /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/EnergyPlus-8-3-0//energyplus terminated
+
+[2019-04-16 13:02:37,373] EPLUS_ENV_Part4-Light-Pit-Test-v5_MainThread-EPLUSPROCESS_EPI_0 ERROR:*** stack smashing detected ***: /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/EnergyPlus-8-3-0//energyplus terminated
+
+[2019-04-16 13:02:37,543] EPLUS_ENV_Part4-Light-Pit-Test-v5_MainThread-EPLUSPROCESS_EPI_0 ERROR:Aborted (core dumped)
+
+[2019-04-16 13:02:37,543] EPLUS_ENV_Part4-Light-Pit-Test-v5_MainThread-EPLUSPROCESS_EPI_0 ERROR:Aborted (core dumped)
+
+[2019-04-16 13:02:51,789] A3C_EVAL-Part4-Light-Pit-Test-v6 DEBUG:NoisyNet noise sample: [array([-0.13952322], dtype=float32), 0.13634276]
+[2019-04-16 13:02:51,789] A3C_EVAL-Part4-Light-Pit-Test-v6 DEBUG:Observation this: [6.228595900999999, 45.31138810666667, 135.3366771666666, 682.7852614999999, 19.0, 21.23564585651803, -0.4854594070268565, 0.0, 1.0, 15.0, 0.0]
+[2019-04-16 13:02:51,790] A3C_EVAL-Part4-Light-Pit-Test-v6 DEBUG:Observation forecast: []
+[2019-04-16 13:02:51,790] A3C_EVAL-Part4-Light-Pit-Test-v6 INFO:Softmax [6.96995795e-01 1.01278988e-06 1.13891216e-10 2.88737883e-05
+ 1.09981680e-02 5.98273706e-04 3.13034138e-06 5.27783300e-07
+ 6.89917244e-03 6.52365343e-05 2.84409791e-01], sampled 0.3542486804847601
+[2019-04-16 13:02:54,335] A3C_EVAL-Part4-Light-Pit-Train-v3 INFO:Evaluation: average rewards by now are 2975.3193 95085.8915 -61.1124
+[2019-04-16 13:02:54,371] EPLUS_ENV_Part4-Light-Pit-Train-v3_MainThread-EPLUSPROCESS_EPI_0 ERROR:*** stack smashing detected ***: /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/EnergyPlus-8-3-0//energyplus terminated
+
+[2019-04-16 13:02:54,371] EPLUS_ENV_Part4-Light-Pit-Train-v3_MainThread-EPLUSPROCESS_EPI_0 ERROR:*** stack smashing detected ***: /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/EnergyPlus-8-3-0//energyplus terminated
+
+[2019-04-16 13:02:54,612] EPLUS_ENV_Part4-Light-Pit-Train-v3_MainThread-EPLUSPROCESS_EPI_0 ERROR:Aborted (core dumped)
+
+[2019-04-16 13:02:54,612] EPLUS_ENV_Part4-Light-Pit-Train-v3_MainThread-EPLUSPROCESS_EPI_0 ERROR:Aborted (core dumped)
+
+[2019-04-16 13:02:57,022] A3C_EVAL-Part4-Light-Pit-Test-v6 INFO:Evaluation: average rewards by now are 2911.9387 98354.9737 -223.2773
+[2019-04-16 13:02:57,057] EPLUS_ENV_Part4-Light-Pit-Test-v6_MainThread-EPLUSPROCESS_EPI_0 ERROR:*** stack smashing detected ***: /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/EnergyPlus-8-3-0//energyplus terminated
+
+[2019-04-16 13:02:57,057] EPLUS_ENV_Part4-Light-Pit-Test-v6_MainThread-EPLUSPROCESS_EPI_0 ERROR:*** stack smashing detected ***: /home/zhiangz/Documents/HVAC-RL-Control/src/eplus-env/eplus_env/envs/EnergyPlus-8-3-0//energyplus terminated
+
+[2019-04-16 13:02:57,225] EPLUS_ENV_Part4-Light-Pit-Test-v6_MainThread-EPLUSPROCESS_EPI_0 ERROR:Aborted (core dumped)
+
+[2019-04-16 13:02:57,225] EPLUS_ENV_Part4-Light-Pit-Test-v6_MainThread-EPLUSPROCESS_EPI_0 ERROR:Aborted (core dumped)
+
+[2019-04-16 13:02:58,059] A3C_AGENT_WORKER-Thread-7 INFO:Global step: 50000, evaluation results [50000.0, 2975.3192714652528, 95085.8914650254, -61.112395278067446, 3117.723113918958, 86644.8047923537, 267.1308888487866, 2911.9386525295918, 98354.97370785956, -223.2772599571552]

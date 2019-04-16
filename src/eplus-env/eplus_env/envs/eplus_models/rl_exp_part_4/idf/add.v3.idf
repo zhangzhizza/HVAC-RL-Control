@@ -17,6 +17,8 @@ Output:Variable,*,IW Average PMV,timestep; !- Reporting
 Output:Variable,*,IW Occupied Average PMV in the Run,timestep; !- Reporting
 Output:Variable,*,IW Is Occupied,timestep; !- Reporting
 Output:Variable,*,IW Hot Water System OA Enable Flag,timestep; !- Reporting!
+Output:Variable,*,PMV cool flag,timestep; !- Reporting!
+Output:Variable,*,PMV cool flag,runperiod; !- Reporting!
 
 ExternalInterface,           !- Object to activate the external interface
     PtolemyServer;              !- Name of external interface

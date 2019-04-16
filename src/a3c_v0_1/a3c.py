@@ -178,7 +178,7 @@ class A3CThread:
               global_res_list, action_space_name, dropout_prob, reward_func, 
               rewardArgs, metric_func, train_action_func, eval_action_func, train_action_limits, 
               eval_action_limits, raw_state_process_func, raw_stateLimit_process_func, debug_log_prob, 
-              is_greedy_policy, action_repeat_n, is_add_time_to_state = True):
+              is_greedy_policy, action_repeat_n, is_add_time_to_state = True, is_r_term_zero = True):
         """
         The function that the thread worker works to train the networks.
         
@@ -427,7 +427,7 @@ class A3CThread:
                             process_state_for_network(ob_this_prcd) # 2-D array
             # Prepare for the training step
             feed_dict_R = {self._state_placeholder:ob_this_hist_prcd}
-            R = 0 if is_terminal else sess.run(
+            R = 0 if (is_terminal and is_r_term_zero) else sess.run(
                             self._value_pred,
                             feed_dict = feed_dict_R)####DEBUG FOR DROPOUT####
             traj_len = len(trajectory_list);
@@ -767,7 +767,7 @@ class A3CAgent:
             env_name_list, t_max, gamma, e_weight, p_weight, save_freq, T_max, eval_epi_num, eval_freq,
             reward_func, rewardArgs, metric_func, train_action_func, eval_action_func, train_action_limits, 
             eval_action_limits, raw_state_process_func, raw_stateLimit_process_func, debug_log_prob, is_greedy_policy,
-            action_repeat_n, eval_env_res_max_keep = None):
+            action_repeat_n, eval_env_res_max_keep = None, is_add_time_to_state = True, is_r_term_zero = True):
         """
         This method is used to train the neural network. 
         
@@ -839,7 +839,7 @@ class A3CAgent:
                                                 rewardArgs, metric_func, train_action_func, eval_action_func, 
                                                 train_action_limits, eval_action_limits, raw_state_process_func,
                                                 raw_stateLimit_process_func, debug_log_prob, is_greedy_policy,
-                                                action_repeat_n);
+                                                action_repeat_n, is_add_time_to_state, is_r_term_zero);
 
             thread = threading.Thread(target = (worker_train));
             thread.start();

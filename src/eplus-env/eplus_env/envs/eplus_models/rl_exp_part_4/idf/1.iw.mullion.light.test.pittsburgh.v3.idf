@@ -15867,6 +15867,9 @@ EnergyManagementSystem:GlobalVariable,
 EnergyManagementSystem:GlobalVariable,
     Is_Occupied;  !- The IW occupy mode flag
 
+EnergyManagementSystem:GlobalVariable,
+    PMV_cool_flag; 
+
 !-   ===========  ALL OBJECTS IN CLASS: EnergyManagementSystem:Program ===========
 EnergyManagementSystem:Program, 
     InitVar, ! Name init all global variables to zero at the start of simulation. 
@@ -15892,7 +15895,8 @@ EnergyManagementSystem:Program,
     SET Set_iw_occp_sto = 0.0,
     SET Last_Hour = 23,
     SET Step_First_Flag = 1.0,
-    SET Is_Occupied = 0;
+    SET Is_Occupied = 0,
+    SET PMV_cool_flag = 0;
 
 EnergyManagementSystem:Program, 
     InitVarAfterWarmUp, ! Name init all global variables to zero at the start of simulation. 
@@ -15950,6 +15954,13 @@ EnergyManagementSystem:Program,
         SET Occupied_average_PMV_ct = Occupied_average_PMV_ct + 1,
         SET Occupied_average_PMV_cp = Occupied_average_PMV,
         SET Occupied_average_PMV = (Occupied_average_PMV_cp * (Occupied_average_PMV_ct - 1) + AveragePMV) / Occupied_average_PMV_ct,
+        IF (AveragePMV + 0.5) < 0,
+            SET PMV_cool_flag = 1,
+        ELSE,
+            SET PMV_cool_flag = 0,
+        ENDIF,
+    ELSE,
+        SET PMV_cool_flag = 0,
     ENDIF,
     IF AveragePMV < 0.5,
         SET Set_infiltration = 0.0125,
@@ -16841,6 +16852,14 @@ EnergyManagementSystem:OutputVariable,
     IW Is Occupied, ! Name
     Is_Occupied, ! EMS Variable Name
     Averaged, ! Type of Data in Variable
+    ZoneTimeStep, ! Update Frequency
+    ,      ! EMS Program or Subroutine Name
+    ;
+
+EnergyManagementSystem:OutputVariable,
+    PMV cool flag, ! Name
+    PMV_cool_flag, ! EMS Variable Name
+    summed, ! Type of Data in Variable
     ZoneTimeStep, ! Update Frequency
     ,      ! EMS Program or Subroutine Name
     ;
