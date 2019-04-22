@@ -1,4 +1,4 @@
-python ../../../a3c_eplus_rlParametric_v0.1.py --env Part4-Heavy-Bej-Train-Repeat-v2 --max_interactions 10000 --window_len 8 \
+python ../../../a3c_eplus_rlParametric_v0.1.py --env Part4-Heavy-Bej-Train-Repeat-v2 --max_interactions 3000000 --window_len 8 \
 --state_dim 11 --num_threads 16 --action_space part4_v3 --save_freq 500000 --eval_freq 50000 \
 --job_mode Train --test_env Part4-Heavy-Bej-Test-Repeat-v3 Part4-Heavy-Bej-Test-Repeat-v4 \
 --train_act_func part4_v4 --eval_act_func part4_v4 \
