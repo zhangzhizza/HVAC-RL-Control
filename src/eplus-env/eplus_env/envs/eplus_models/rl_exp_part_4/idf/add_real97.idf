@@ -1,0 +1,65 @@
+Output:Variable,
+    *, !- Key Value
+    IW North Zone Average Temperature, !- Variable Name
+    timestep; !- Reporting Frequency
+
+Output:Variable,
+    *, !- Key Value
+    IW Effective Zone Air Temperature Setpoint, !- Variable Name
+    timestep; !- Reporting Frequency
+Output:Variable,*,IW Effective Zone Air Temperature Setpoint,timestep; !- Zone Average [C]
+
+Output:Variable,*,IW Outdoor Dry Bulb Air Temperature,timestep; !- Zone Average [C]
+Output:Variable,*,IW Outdoor Air Relative Humidity,timestep; !- Zone Average [%]
+Output:Variable,*,IW Outdoor Air Dew Point,timestep; !- Zone Average [C]
+Output:Variable,*,IW Outdoor Air Wind Speed,timestep; !- Zone Average [M/S]
+Output:Variable,*,IW Outdoor Air Wind Direction,timestep; !- Zone Average [DEG]
+Output:Variable,*,IW Outdoor Direct Beam Solar Radiation,timestep; !- Zone Average [W/M2]
+Output:Variable,*,IW Outdoor Diffuse Horizontal Solar Radiation,timestep; !- Zone Average [W/M2]
+
+Output:Variable,*,IW Hot Water System OA Enable Flag OA Setpoint,timestep; !- Zone Average [C]
+Output:Variable,*,IW Hot Water Supply Setpoint,timestep; !- Zone Average [C]
+
+Output:Variable,tempHWLoop Demand Side Inlet,System Node Temperature,timestep; !- Zone Average [C]
+Output:Variable,tempHWLoop Supply Side Outlet,System Node Temperature,timestep; !- Zone Average [C]
+
+Output:Variable,tempHWLoop Demand Side Inlet,System Node Mass Flow Rate,timestep; !- Zone Average [kg/s]
+Output:Variable,tempHWLoop Supply Side Outlet,System Node Mass Flow Rate,timestep; !- Zone Average [kg/s]
+Output:Variable,*,Zone Mean Radiant Temperature,timestep; !- Zone Average [C]
+Output:Variable,
+    *, !- Key Value
+    IW Calculated Heating Demand, !- Variable Name
+    timestep; !- Reporting
+
+Output:Variable,
+    *, !- Key Value
+    IW Average PPD, !- Variable Name
+    timestep; !- Reporting
+
+Output:Variable,
+    *, !- Key Value
+    IW Max PPD, !- Variable Name
+    timestep; !- Reporting
+
+Output:Variable,
+    *, !- Key Value
+    IW Effective IAT Setpoint by Logics, !- Variable Name
+    timestep; !- Reporting
+
+Output:Variable,
+    *, !- Key Value
+    IW Occupy Mode Flag, !- Variable Name
+    timestep; !- Reporting
+
+ExternalInterface,           !- Object to activate the external interface
+    PtolemyServer;              !- Name of external interface
+
+ExternalInterface:Schedule,
+    HWOEN_stpt_sch,                 !- Name
+    Temperature,             !- ScheduleType
+    10;                      !- Initial value, used during warm-up
+
+ExternalInterface:Schedule,
+    hw_sp_stpt,                 !- Name
+    Temperature,             !- ScheduleType
+    65;                      !- Initial value, used during warm-up

@@ -1763,8 +1763,55 @@ def rl_parametric_reward_part4_heuri_v8(ob_this_prcd, action_this_prcd, ob_next_
     reward = 1 - penal_total;
     return reward;
 
+def rl_parametric_reward_part4_heuri_cmp97(ob_this_prcd, action_this_prcd, ob_next_prcd, pcd_state_limits, e_weight, p_weight, stpt_violation_scl):
+    """
+    Reward = energy_heur + pmv_penal (consider pmv gradient)
+    """
+    PMV_IDX = 7;
+    OCP_IDX = 11;
+    BGR_IDX = 12;
+    SPT_IDX = 10;
+    IAT_IDX = 9;
 
+    pmv_min = pcd_state_limits[0][PMV_IDX + TIMESTATE_LEN]
+    pmv_max = pcd_state_limits[1][PMV_IDX + TIMESTATE_LEN]
+    spt_min = pcd_state_limits[0][SPT_IDX + TIMESTATE_LEN]
+    spt_max = pcd_state_limits[1][SPT_IDX + TIMESTATE_LEN]
+    iat_min = pcd_state_limits[0][IAT_IDX + TIMESTATE_LEN]
+    iat_max = pcd_state_limits[1][IAT_IDX + TIMESTATE_LEN]
     
+    pmv_prcd = ob_next_prcd[PMV_IDX + TIMESTATE_LEN];
+    pmv_prcd_last = ob_this_prcd[PMV_IDX + TIMESTATE_LEN];
+    pmv_raw = pmv_min + pmv_prcd*(pmv_max - pmv_min);
+    pmv_raw_last = pmv_min + pmv_prcd_last*(pmv_max - pmv_min);
+    pmv_thres = -0.5;
+
+    iat_prcd = ob_next_prcd[IAT_IDX + TIMESTATE_LEN];
+    iat_prcd_last = ob_this_prcd[IAT_IDX + TIMESTATE_LEN];
+    iat_raw = iat_min + iat_prcd*(iat_max - iat_min);
+    iat_raw_last = iat_min + iat_prcd_last*(iat_max - iat_min);
+    
+    ocp = ob_next_prcd[OCP_IDX + TIMESTATE_LEN];
+    # energy penalty
+    hvac_energy_prcd = ob_next_prcd[BGR_IDX + TIMESTATE_LEN]; # [0, 1]
+    act_stpt = action_this_prcd[1];
+    egy_heur = (act_stpt - 17.5)/(65 - 15);
+    egy_penl_heur = min(max(hvac_energy_prcd + e_weight * egy_heur, 0), 1); # larger than 0
+    # comfort penalty
+    if ocp == 0:
+        cmf_penl = min(max((19 - iat_raw) * 2, 0),1); # [0, 1]
+        cmf_heur = max(iat_raw - iat_raw_last, 0);
+        cmf_penl_heur = min(max(cmf_penl - cmf_heur * stpt_violation_scl, 0), 1);
+    else:
+        cmf_penl = min(max((pmv_thres - pmv_raw) * 5, 0), 1); # [0, 1]
+        # if occupied and pmv not ok, reward good actions
+        # good actions include: pmv is increasing
+        pmv_heur = max(pmv_raw - pmv_raw_last, 0);
+        cmf_penl_heur = min(max(cmf_penl - pmv_heur * p_weight, 0), 1); # [0, 1]
+    # optimize comfort only if comfort cannot be met
+    penal_total = (1-cmf_penl) * egy_penl_heur + cmf_penl * cmf_penl_heur;
+    reward = 1 - penal_total;
+    return reward;
 
 def rl_parametric_reward_part4_prior_v1(ob_this_prcd, action_this_prcd, ob_next_prcd, pcd_state_limits, e_weight, p_weight, stpt_violation_scl):
     """
@@ -1883,6 +1930,28 @@ def rl_parametric_metric_part4_v2(ob_next_raw, this_ep_energy, this_ep_comfort):
     
     return (this_ep_energy_toNow, this_ep_comfort_toNow);
 
+def rl_parametric_metric_part4_cmp97(ob_next_raw, this_ep_energy, this_ep_comfort):
+    """
+    """ 
+    PMV_IDX = 7;
+    OCP_IDX = 11;
+    BGR_IDX = 12;
+    SPT_IDX = 10;
+    IAT_IDX = 9;
+
+    energy = ob_next_raw[BGR_IDX]; # W
+    pmv = ob_next_raw[PMV_IDX]; # %
+    ocp = ob_next_raw[OCP_IDX]; # 1 or 0
+
+    this_ep_energy_toNow = this_ep_energy + energy; # Unit is kWh*timestep
+    if ocp == 0:
+        this_ep_comfort_toNow = this_ep_comfort + 0;
+    else:
+        this_ep_comfort_toNow = this_ep_comfort + pmv;
+    
+    return (this_ep_energy_toNow, this_ep_comfort_toNow);
+
+
 def _is_chiller_short_cycle(ob_this_prcd, ob_next_prcd, CHILLERX_SHTCY_IDX, CHILLERX_ONOFF_IDX):
     chillerX_cycle_this = ob_this_prcd[CHILLERX_SHTCY_IDX + TIMESTATE_LEN];
     chillerX_onoff_this = ob_this_prcd[CHILLERX_ONOFF_IDX + TIMESTATE_LEN];
@@ -1929,6 +1998,7 @@ reward_func_dict = {'1': err_energy_reward_iw,
                     'part4_heuri_v6': rl_parametric_reward_part4_heuri_v6,
                     'part4_heuri_v7': rl_parametric_reward_part4_heuri_v7,
                     'part4_heuri_v8': rl_parametric_reward_part4_heuri_v8,
+                    'part4_heuri_cmp97': rl_parametric_reward_part4_heuri_cmp97,
                     'part4_v2': rl_parametric_reward_part4_v2,
                     'part4_v3': rl_parametric_reward_part4_v3}
 
@@ -1939,5 +2009,6 @@ metric_func_dict = {
                     'part2_v1': stpt_viol_energy_metric_part2_v1,
                     'part3_v1': rl_parametric_metric_part3_v1,
                     'part4_v1': rl_parametric_metric_part4_v1,
-                    'part4_v2': rl_parametric_metric_part4_v2}
+                    'part4_v2': rl_parametric_metric_part4_v2,
+                    'part4_cmp97': rl_parametric_metric_part4_cmp97,}
 
