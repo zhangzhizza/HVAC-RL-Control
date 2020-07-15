@@ -69,7 +69,7 @@ def get_args():
     parser.add_argument('--window_len', default=4, type=int, help='The state stacking window length, default is 4.');
     parser.add_argument('--state_dim', default=15, type=int, help='The observation state length of one step, default is 15.');
     parser.add_argument('--forecast_dim', default=15, type=int, help='The total forecast state length, default is 15.');
-    parser.add_argument('--gamma', default=0.99);
+    parser.add_argument('--gamma', default=0.99, type=float);
     parser.add_argument('--v_loss_frac', default=0.5, type=float);
     parser.add_argument('--p_loss_frac', default=1.0, type=float);
     parser.add_argument('--h_regu_frac', default=0.01, nargs='+', type=float, 
