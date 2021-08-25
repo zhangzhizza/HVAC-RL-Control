@@ -1,7 +1,7 @@
 gym==0.9.4
 keras==2.1.2
 numpy
-tensorflow==1.4.1
+tensorflow==2.5.1
 scipy
 matplotlib
 jupyter
